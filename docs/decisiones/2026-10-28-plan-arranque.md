@@ -43,7 +43,7 @@ Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 
 ## 3. Dónde corre cada cosa
 
-- **Hermes:** en la PC, con Windows nativo. Sus carpetas de trabajo van en E:, porque C: tiene 53 GB libres.
+- **Hermes:** en la PC, con Windows nativo. Sus datos van en `%LOCALAPPDATA%\hermes` y trabaja desde ONIA-CENTRAL, como dice `AGENTS.md`. Lo pesado (video, audio) va a E: o a Drive; de E: no se usa nada de `E:\onia-wt` ni de `E:\onia-orquesta`.
 - **Los trabajadores:** Hermes les pasa el trabajo a Claude Code (`claude -p`) y a Codex (`codex exec`), con sus binarios oficiales y tu login.
 - **Lo que tiene que correr con la PC apagada:** sesiones y tareas programadas de Claude en la nube, que están incluidas en Max y gastan del mismo cupo, y Codex en la nube, incluido en Plus. Ninguna de las dos ve tu PC.
 - **Ningún agente en el VPS de producción:** ahí conviven la app, la base, n8n y el bot.
@@ -70,19 +70,15 @@ La auditoría dio 3 sobre 10: lo nuevo está limpio, pero el repo viejo sigue tr
    - archivar las 223 memorias de proyecto viejas de Claude;
    - sacar la ruta del repo viejo del CLAUDE.md global;
    - dejar en el modo automático solo ONIA-CENTRAL como repo de confianza.
-6. **Las 16 copias del repo viejo en C: y E::** revisar las que tienen cambios sin guardar y archivar todo en E:.
+6. **Las 16 copias del repo viejo en C: y E::** archivarlas en E: tal como están, sin abrir su contenido. Si Sergio Urcullo quiere rescatar algo, lo pide puntualmente.
 7. **El VPS** (el Hermes de Telegram y los cron que se mudaron ahí): lo revisa Sergio Urcullo o se habilita un acceso explícito. Desde acá no se entra por ssh.
 8. **Al final, archivar onia-hermes en GitHub.** Queda de solo lectura y se frena todo lo que corre ahí.
 
 ## 5. Hermes desde cero
 
-1. **Respaldar** `%LOCALAPPDATA%\hermes` en E: y apartarlo. Ahí está la configuración vieja.
-2. **Instalar v0.22.5** con el instalador oficial, en una carpeta de datos nueva y con la opción **Blank Slate**: sin el catálogo de skills y sin importar Claude, Codex ni OpenClaw.
-3. **Configuración mínima:**
-   - `auth.adopt_external_logins: false`, para que no toque los logins de Claude Code y Codex;
-   - `skills.write_approval: true` y `memory.write_approval: true`: ni skills ni memorias sin tu OK;
-   - aprobación manual de comandos;
-   - `external_dirs` vacío.
+1. **Apartar lo viejo** con `limpiar-hermes.ps1`, que lo deja en `C:\Users\PC\.hermes-archivo-20261028` sin borrar nada.
+2. **Instalar v0.22.5** con el instalador oficial. Lo corre Sergio Urcullo desde una PowerShell abierta desde el menú Inicio, como todo lo que sigue en esta lista. Contesta que no a importar otros agentes (Claude, Codex, Cursor y OpenClaw) y a las dos preguntas del gateway, y elige **Blank Slate**. Antes de quitar las skills de fábrica hay que decidir cómo se conservan `claude-code` y `codex`. El detalle está en `2026-10-28-hermes-oficial.md`.
+3. **Configuración mínima:** las claves de la lista de `2026-10-28-hermes-oficial.md`, que suma `terminal.cwd` y el límite de la app de escritorio.
 4. **Escribir un SOUL.md nuevo y corto.** El contexto del proyecto es el `AGENTS.md` de ONIA-CENTRAL.
 5. **Modelo:** con los créditos de API de Claude, una API key con tope de gasto.
 6. **Telegram:** un bot nuevo, porque el viejo lo comparten n8n, la orquesta y el Hermes del VPS. El bot lo crea Sergio Urcullo en BotFather.

@@ -42,13 +42,21 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 
 ## 3. Hermes (`C:\Users\PC\AppData\Local\hermes`)
 
-**Falta todo.** Es el paso "Hermes desde cero". Hoy:
-- ocupa 7,8 GB;
+**Listo:**
+- Investigado contra la fuente oficial e inventariado en la PC: `docs/decisiones/2026-10-28-hermes-oficial.md`.
+- El script que aparta todo lo viejo, ya probado: `C:\Users\PC\.hermes-archivo-20261028\limpiar-hermes.ps1`.
+
+**Falta:**
+- Que Sergio Urcullo corra el script desde una PowerShell abierta desde el menú Inicio. Desde la app de Claude no llega al disco real.
+- Instalar la v0.22.5 limpia y armarla. Lo corre Sergio Urcullo desde esa misma PowerShell; una sesión nueva de Claude prepara los comandos y revisa el resultado.
+
+**El Hermes viejo, hoy:**
+- ocupa 7,6 GB;
 - tiene la configuración y el SOUL viejos;
 - lee sus skills de `E:\onia-wt\hermes-base`, que es una copia del repo viejo;
 - guarda 1 memoria vieja.
 
-No corre ningún proceso de Hermes. Del estado actual se conserva solo el login del proveedor.
+No corre ningún proceso de Hermes. De lo viejo no se conserva nada: lo nuevo lleva credenciales nuevas.
 
 ## 4. Archivos locales
 
@@ -58,7 +66,7 @@ No corre ningún proceso de Hermes. Del estado actual se conserva solo el login 
 - Lo archivado en `C:\Users\PC\.claude-archivo-20261028` y `C:\Users\PC\.codex-archivo-20261028`.
 
 **Falta:**
-- **16 copias del repo viejo.** Hay que revisar las que tienen cambios sin guardar y archivar todo en E:.
+- **16 copias del repo viejo.** Se archivan en E: tal como están, sin abrir su contenido. Si Sergio Urcullo quiere rescatar algún cambio sin guardar, lo pide puntualmente.
   - `C:\dev\proyectos\onia-hermes` (47 GB).
   - `onia-hermes-codex-c16c` y `onia-hermes-codex-hc`.
   - `onia-hermes-contenido` (6 GB, 6 cambios sin guardar).
@@ -103,12 +111,12 @@ No corre ningún proceso de Hermes. Del estado actual se conserva solo el login 
 
 1. Mergear el PR de la estructura inicial. Lo aprueba Sergio Urcullo, porque cambia las reglas.
 2. Codex: con la app cerrada, apagar y archivar las memorias, quitar `onia-hooks` y los proyectos viejos confiables, y borrar las 2 automatizaciones viejas.
-3. Hermes desde cero. Hacen falta tres cosas de Sergio Urcullo:
+3. Hermes: Sergio Urcullo corre `limpiar-hermes.ps1`, y en una sesión nueva se instala y se arma desde cero. Para eso hacen falta tres cosas de Sergio Urcullo:
    - saber si el plan de ChatGPT es Plus o Pro;
    - un bot nuevo de Telegram;
    - revisar los créditos de API de Claude.
 4. Claude: con la app cerrada, limpiar `.claude.json`, los datos de plugins viejos, la papelera y las tareas viejas.
-5. Las copias del repo viejo: revisar los cambios sin guardar y archivar.
+5. Las copias del repo viejo: archivarlas en E: sin abrirlas.
 6. Vercel y los secretos. Decide Sergio Urcullo.
 7. Archivar el repo viejo.
 8. El VPS y n8n, junto con Sergio Urcullo.
