@@ -1,0 +1,114 @@
+# Plan de arranque de ONIA-CENTRAL
+
+28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges. Quedan abiertos el plan de ChatGPT y lo de Vercel.
+
+Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
+- una investigación con 8 agentes (4 investigan y 4 verifican contra la fuente oficial);
+- una auditoría de la PC, los agentes y GitHub.
+
+## 1. Agente principal: Hermes, no OpenClaw
+
+| | Hermes Agent (Nous Research) | OpenClaw |
+|---|---|---|
+| Licencia y dueño | MIT, Nous Research | MIT, OpenClaw Foundation |
+| Windows 11 | Nativo, en el nivel de soporte más alto | La vía recomendada instala un Gateway en WSL, con Node y un servicio en segundo plano |
+| Seguridad | Aprobaciones y bloqueos. Hay que endurecer tres cosas que vienen abiertas (punto 5). | 762 avisos de seguridad en GitHub en unos 9 meses, 26 de ellos críticos. Un robo de token con un clic y una campaña de skills maliciosas en ClawHub. |
+| Suscripción de ChatGPT | OpenAI lo lista oficialmente en "Sign in with ChatGPT" | Solo lo dice la documentación de OpenClaw |
+| Claude | Llama al binario oficial de Claude Code (`claude -p`) con tu login | Anthropic lo bloqueó en abril de 2026 y después lo toleró sin anuncio formal |
+| Skills | Formato compatible con las Agent Skills de Anthropic | Tienda ClawHub: hay que tratar cada skill como código no confiable |
+| Ya instalado | Sí: v0.22.2. La última es v0.22.5. | No |
+
+**Por qué Hermes:** es lo que mejor cumple la regla de que no entre a la PC nada que no sepamos qué hace.
+
+**Contras de Hermes que hay que tener en cuenta:**
+- Tiene unos 17.000 issues abiertos.
+- En Windows, el gateway de Telegram arranca como tarea al iniciar sesión: si la PC está apagada, no responde.
+- Por defecto se escribe solo memoria y skills, y adopta los logins de Claude y Codex. Las dos cosas se apagan.
+
+## 2. Qué pagar y cuándo
+
+**Claude (vence el 3-nov):**
+1. **Antes del 3-nov,** fijate en Settings > Billing > API credits si este ciclo trae créditos de API. Desde el 7-oct, Max los incluye: US$200 en Max 20x. Si están, sirven para probar Hermes sin costo extra. Ojo: hay que elegir bien la organización de Console, porque no se cambia sin pedírselo a soporte.
+2. **Programá la bajada a Max 5x (US$100).** La documentación no dice si se aplica al final del período o al instante: hay que mirarlo en pantalla.
+3. **Desde el 3-nov,** Max 5x trae US$100 por mes en créditos de API. No sirven para Claude Code, pero sí para que Hermes piense con Sonnet 5.5, que se estima en unos US$64 por mes. No se acumulan de un mes a otro y, cuando se acaban, la API se corta sola: no cobra de más.
+
+**Codex (vence el 14-nov):**
+- Falta un dato: **¿tu plan de ChatGPT hoy es Plus o Pro?**
+- Recomendación: **quedarse en Plus (US$20).** Si hoy es Pro, bajarlo a Plus antes del 14-nov.
+- Pasar a pagar API no conviene: se pierde Codex en la nube, el costo no tiene techo y se estima en US$50 a 250 por mes para programar todos los días.
+
+**Total recomendado: US$120 por mes** (Max 5x más Plus). Si la plata aprieta, queda Max 5x solo: US$100.
+
+**Lo que NO se hace:** usar el login de tu suscripción de Claude como "cerebro" de Hermes. Anthropic no lo permite para apps de terceros, y además se cobra como uso extra.
+
+## 3. Dónde corre cada cosa
+
+- **Hermes:** en la PC, con Windows nativo. Sus carpetas de trabajo van en E:, porque C: tiene 53 GB libres.
+- **Los trabajadores:** Hermes les pasa el trabajo a Claude Code (`claude -p`) y a Codex (`codex exec`), con sus binarios oficiales y tu login.
+- **Lo que tiene que correr con la PC apagada:** sesiones y tareas programadas de Claude en la nube, que están incluidas en Max y gastan del mismo cupo, y Codex en la nube, incluido en Plus. Ninguna de las dos ve tu PC.
+- **Ningún agente en el VPS de producción:** ahí conviven la app, la base, n8n y el bot.
+- **Para después, si hace falta Telegram 24/7:** un VPS aparte (Hetzner, desde €6,49 por mes). Ahora no.
+
+**Ojo con el cupo:** los límites de Max suponen "uso ordinario e individual". Hermes lanzando Claude Code sin parar puede chocar con eso. Al principio, poca carga, y se mide.
+
+## 4. Cortar lo viejo, en este orden
+
+La auditoría dio 3 sobre 10: lo nuevo está limpio, pero el repo viejo sigue trabajando solo.
+
+1. **Apagar la orquesta en la nube de GitHub** (lo urgente: gasta cupo de Claude y abre PRs). Este comando lo corre Sergio Urcullo:
+   ```powershell
+   gh workflow disable orquesta.yml -R oninteligenciaartificial/onia-hermes
+   ```
+   Después, las otras 5 automatizaciones por horario: Daily Hygiene, Docs Hygiene, Auditor de Código, Repo Pulse y Hermes QA. También se cancelan las 2 corridas que están en cola.
+2. **Cerrar y volver a abrir las apps de Claude y Codex.** Tienen la configuración vieja en memoria. También hay que cerrar el proceso de claude-mem, que sigue vivo y escribiendo.
+3. **Vercel:** onia-center y nuvia-store despliegan desde el repo viejo. Antes de archivarlo hay que decidir si se mudan a su propio repo o se desconectan.
+4. **Secretos del repo viejo** (token de Claude, llave SSH del VPS, token de Telegram, entre otros): borrarlos cuando los workflows estén apagados, y emitir credenciales nuevas para lo nuevo.
+5. **Restos en la PC:**
+   - archivar en Codex sus memorias viejas, que hoy se meten en cada sesión;
+   - archivar las 223 memorias de proyecto viejas de Claude;
+   - sacar la ruta del repo viejo del CLAUDE.md global;
+   - dejar en el modo automático solo ONIA-CENTRAL como repo de confianza.
+6. **Las 16 copias del repo viejo en C: y E::** revisar las que tienen cambios sin guardar y archivar todo en E:.
+7. **El VPS** (el Hermes de Telegram y los cron que se mudaron ahí): lo revisa Sergio Urcullo o se habilita un acceso explícito. Desde acá no se entra por ssh.
+8. **Al final, archivar onia-hermes en GitHub.** Queda de solo lectura y se frena todo lo que corre ahí.
+
+## 5. Hermes desde cero
+
+1. **Respaldar** `%LOCALAPPDATA%\hermes` en E: y apartarlo. Ahí está la configuración vieja.
+2. **Instalar v0.22.5** con el instalador oficial, en una carpeta de datos nueva y con la opción **Blank Slate**: sin el catálogo de skills y sin importar Claude, Codex ni OpenClaw.
+3. **Configuración mínima:**
+   - `auth.adopt_external_logins: false`, para que no toque los logins de Claude Code y Codex;
+   - `skills.write_approval: true` y `memory.write_approval: true`: ni skills ni memorias sin tu OK;
+   - aprobación manual de comandos;
+   - `external_dirs` vacío.
+4. **Escribir un SOUL.md nuevo y corto.** El contexto del proyecto es el `AGENTS.md` de ONIA-CENTRAL.
+5. **Modelo:** con los créditos de API de Claude, una API key con tope de gasto.
+6. **Telegram:** un bot nuevo, porque el viejo lo comparten n8n, la orquesta y el Hermes del VPS. El bot lo crea Sergio Urcullo en BotFather.
+7. **Primera prueba:** una tarea real y chica, de punta a punta.
+
+## 6. Merges sin Sergio Urcullo
+
+**Lo mergea Claude, sin preguntar,** cuando el PR pasó la revisión de un revisor distinto del que lo escribió:
+- documentos;
+- estructura del repo;
+- skills;
+- configuración interna;
+- pruebas.
+
+**Lo aprueba Sergio Urcullo:**
+- lo que se publica o ve un cliente;
+- el gasto;
+- producción (VPS, base de datos, Vercel);
+- lo legal.
+
+Esta regla se escribe en el `AGENTS.md` de ONIA-CENTRAL. Si el control de permisos de Claude pide igual el OK para mergear, se agrega una regla de permiso solo para `gh pr merge` en este repo.
+
+## 7. Decisiones de Sergio Urcullo
+
+1. Hermes como agente principal (recomendado).
+2. ¿El plan de ChatGPT de hoy es Plus o Pro?
+3. Que Hermes piense con los créditos de API de Claude (recomendado).
+4. La regla de merges del punto 6.
+5. Vercel: ¿se mudan onia-center y nuvia-store, o se desconectan?
+
+**Aparte:** la venta del taller cierra mañana jueves a las 20:00. Lo que la frena (el QR de Leslie Mercado Moreno y los mensajes 1 a 1) no depende de ningún agente.
