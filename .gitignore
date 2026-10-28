@@ -1,0 +1,41 @@
+# Secretos: nunca entran
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*_token.txt
+credentials*.json
+auth.json
+token.json
+client_secret*.json
+cookies*.txt
+id_rsa*
+id_ed25519*
+*.ppk
+*.p12
+*.pfx
+*.kdbx
+
+# Pesados: van a E: o a Drive, acá queda el enlace
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.webm
+*.psd
+*.raw
+*.cr2
+*.cr3
+*.nef
+*.arw
+*.dng
+*.zip
+
+# Herramientas y sistema
+node_modules/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
