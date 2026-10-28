@@ -1,11 +1,11 @@
 # Reinicio de Claude y Codex
 
-28-oct-2026. **Aplicado ese mismo día:** 244 elementos archivados, sin errores. El script `reinicio.py` (modos mirar, aplicar y revertir) y su manifiesto quedaron en `C:\Users\PC\.claude-archivo-20261028`.
+28-oct-2026. **Aplicado ese mismo día:** 244 entradas (carpetas y archivos) movidas al archivo, sin errores. El script `reinicio.py` (modos mirar, aplicar y revertir) y su manifiesto quedaron en `C:\Users\PC\.claude-archivo-20261028`.
 
 **Lo que cambió al aplicar:**
 - Ponytail salió, porque no es oficial. Su idea quedó en el CLAUDE.md global.
 - Orca no se usa más.
-- La orquesta vieja quedó pausada.
+- La tarea programada de Windows "ONIA Orquesta" quedó pausada. El workflow `orquesta.yml` de GitHub es otra cosa: está en el plan de arranque.
 - A propósito no se tocaron las 7 tareas programadas viejas de Claude, que ya estaban apagadas, ni los conectores Stitch y Exa de Claude.
 
 **Aclaración de Sergio Urcullo sobre "solo oficial":** no quiere decir que lo de la comunidad sea malo. Se prefiere lo oficial para que no entre a la PC nada que no sepamos qué hace.
@@ -92,7 +92,7 @@
 - **Comandos:** los 72 de ECC.
 - **Skills personales:** salieron 97 de las 102 carpetas: gstack, marketingskills de Corey Haines, las de ECC, las de diseño de terceros, las de n8n de czlonkowski, las copias viejas de HyperFrames y las de ONIA. Quedaron supabase, supabase-postgres-best-practices y prisma-cli, más las carpetas `synced` y `.trash`, que son de la app.
 - **ECC completo:** su AGENTS.md, que se cargaba como instrucciones; sus archivos sueltos; las carpetas `ecc` y `everything-claude-code`; y las copias para Codex, Cursor, Gemini y OpenCode.
-- **Otros restos:** `madre-capturas` (tiene capturas de login de producción y quedó en el archivo privado), `dev-mods`, `image-gen` (fallaba en cada sesión) con su registro, logs viejos, `settings.json.bak`, archivos de caveman, `fix_wf04.py` y las carpetas de archivos anteriores.
+- **Otros restos:** `madre-capturas` (tiene capturas de login de producción; quedó en el archivo privado y hay otra copia en `E:\respaldos\claude-config-20261028`), `dev-mods`, `image-gen` (fallaba en cada sesión) con su registro, logs viejos, `settings.json.bak`, archivos de caveman, `fix_wf04.py` y las carpetas de archivos anteriores.
 - **El enlace `C:\Users\PC\.agents\skills`** al repo viejo: se quitó solo el enlace. Las 28 skills del repo siguen ahí.
 
 ### Codex
@@ -107,9 +107,9 @@
 
 1. **Ponytail sale;** su idea pasa a 3 líneas del CLAUDE.md global.
 2. **Orca no se usa más.**
-3. **La orquesta vieja se pausa.**
+3. **La tarea programada "ONIA Orquesta" de Windows se pausa.**
 4. **Las skills de la cuenta de claude.ai:** quedan solo las 13 de Anthropic (docx, pdf, pptx, xlsx, skill-creator, docs, deep-research, computer-use, chrome-browser, built-in-browser, google-workspace, import-memory y morning).
-5. **`fix_wf04.py`** tiene 4 textos con forma de clave: hay que revisar si alguno sigue vivo y rotarlo.
+5. **`fix_wf04.py`** tiene 4 textos con forma de clave: hay que revisar si alguno sigue vivo y rotarlo. Hay dos copias: una en el archivo y otra en el respaldo de E:.
 
 ## 7. Las 4 trampas que encontró la revisión
 
@@ -131,7 +131,12 @@
 - **Hermes limpio, apuntando a este repo.**
 - **Huecos sin skill oficial:** Meta Ads (solo hay un MCP), copywriting en español, ver videos de referencia, el VPS y Easypanel, y la contabilidad de Bolivia.
 
-**Para volver atrás:**
+**Para volver atrás:** lo corre Sergio Urcullo, con Claude y Codex cerrados.
+
+Antes de correrlo hay que respaldar los `settings.json` y `CLAUDE.md` actuales de Claude y el `config.toml` y `AGENTS.md` de Codex, porque los pisa con las versiones de antes del reinicio. Además:
+- vuelve a crear el enlace `.agents\skills` al repo viejo;
+- vuelve a sumar el MCP image-gen;
+- devuelve todo lo archivado a su lugar.
 
 ```powershell
 python -I C:\Users\PC\.claude-archivo-20261028\reinicio.py revertir

@@ -1,6 +1,6 @@
 # Plan de arranque de ONIA-CENTRAL
 
-28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges. Quedan abiertos el plan de ChatGPT y lo de Vercel.
+28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges (ajustada después de la revisión del PR para cerrar sus huecos). Quedan abiertos el plan de ChatGPT y lo de Vercel.
 
 Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 - una investigación con 8 agentes (4 investigan y 4 verifican contra la fuente oficial);
@@ -55,14 +55,16 @@ Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 
 La auditoría dio 3 sobre 10: lo nuevo está limpio, pero el repo viejo sigue trabajando solo.
 
-1. **Apagar la orquesta en la nube de GitHub** (lo urgente: gasta cupo de Claude y abre PRs). Este comando lo corre Sergio Urcullo:
-   ```powershell
-   gh workflow disable orquesta.yml -R oninteligenciaartificial/onia-hermes
-   ```
-   Después, las otras 5 automatizaciones por horario: Daily Hygiene, Docs Hygiene, Auditor de Código, Repo Pulse y Hermes QA. También se cancelan las 2 corridas que están en cola.
-2. **Cerrar y volver a abrir las apps de Claude y Codex.** Tienen la configuración vieja en memoria. También hay que cerrar el proceso de claude-mem, que sigue vivo y escribiendo.
+1. **Apagar el workflow `orquesta.yml` de GitHub** y las otras 5 automatizaciones por horario del repo viejo. Es otra cosa que la tarea programada "ONIA Orquesta" de Windows, que ya estaba pausada. **Hecho el 28-oct:**
+   - Sergio Urcullo apagó `orquesta.yml`, Daily Hygiene, Docs Hygiene, Auditor de Código, Repo Pulse y Hermes QA.
+   - Canceló las 2 corridas en cola.
+   - Quedan activos, pero solo se disparan a mano o con un PR: Deploy ONIA Center, Hermes Jarvis (pruebas), Hermes Jarvis (acceso al VPS) y Video Intake. Se apagan cuando se archive el repo.
+2. **Cerrar y volver a abrir las apps de Claude y Codex.** **Hecho el 28-oct.** El proceso de claude-mem ya no corre.
 3. **Vercel:** onia-center y nuvia-store despliegan desde el repo viejo. Antes de archivarlo hay que decidir si se mudan a su propio repo o se desconectan.
-4. **Secretos del repo viejo** (token de Claude, llave SSH del VPS, token de Telegram, entre otros): borrarlos cuando los workflows estén apagados, y emitir credenciales nuevas para lo nuevo.
+4. **Secretos del repo viejo** (token de Claude, llave SSH del VPS, token de Telegram, entre otros):
+   - Borrarlos de GitHub no alcanza, porque siguen valiendo. Hay que revocarlos donde se crearon: en Anthropic, en el `authorized_keys` del VPS y en BotFather.
+   - Si alguno se comparte con producción (el bot de Telegram lo usan n8n y el Hermes del VPS), se revoca solo con el sí de Sergio Urcullo.
+   - Lo nuevo lleva credenciales nuevas.
 5. **Restos en la PC:**
    - archivar en Codex sus memorias viejas, que hoy se meten en cada sesión;
    - archivar las 223 memorias de proyecto viejas de Claude;
@@ -88,20 +90,12 @@ La auditoría dio 3 sobre 10: lo nuevo está limpio, pero el repo viejo sigue tr
 
 ## 6. Merges sin Sergio Urcullo
 
-**Lo mergea Claude, sin preguntar,** cuando el PR pasó la revisión de un revisor distinto del que lo escribió:
-- documentos;
-- estructura del repo;
-- skills;
-- configuración interna;
-- pruebas.
+La regla vale como está escrita en el `AGENTS.md` de ONIA-CENTRAL. En corto:
 
-**Lo aprueba Sergio Urcullo:**
-- lo que se publica o ve un cliente;
-- el gasto;
-- producción (VPS, base de datos, Vercel);
-- lo legal.
+- **Claude mergea sin preguntar** solo documentos internos de `docs/`, estructura de carpetas, skills escritas en el repo que no tocan nada de la otra lista, y pruebas. Antes tiene que pasar una revisión con veredicto "aprobar", hecha por un agente que no comparte su contexto.
+- **Sergio Urcullo aprueba siempre:** lo que se publica o ve un cliente (guiones, páginas y mensajes incluidos), el gasto, producción (VPS, base de datos, Vercel), lo legal, lo que viene de afuera, y los cambios a las reglas, los permisos o el `.gitignore`. Si hay duda, también.
 
-Esta regla se escribe en el `AGENTS.md` de ONIA-CENTRAL. Si el control de permisos de Claude pide igual el OK para mergear, se agrega una regla de permiso solo para `gh pr merge` en este repo.
+Si el control de permisos de Claude pide el OK para mergear, se sigue pidiendo. No se agrega un permiso general para `gh pr merge`, porque no distingue entre las dos listas.
 
 ## 7. Decisiones de Sergio Urcullo
 
@@ -110,5 +104,3 @@ Esta regla se escribe en el `AGENTS.md` de ONIA-CENTRAL. Si el control de permis
 3. Que Hermes piense con los créditos de API de Claude (recomendado).
 4. La regla de merges del punto 6.
 5. Vercel: ¿se mudan onia-center y nuvia-store, o se desconectan?
-
-**Aparte:** la venta del taller cierra mañana jueves a las 20:00. Lo que la frena (el QR de Leslie Mercado Moreno y los mensajes 1 a 1) no depende de ningún agente.
