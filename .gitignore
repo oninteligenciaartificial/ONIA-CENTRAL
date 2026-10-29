@@ -37,5 +37,7 @@ id_ed25519*
 # Herramientas y sistema
 node_modules/
 .claude/settings.local.json
+# Enlace (junction) a .agents/skills, para que Claude Code lea las skills: docs/decisiones/2026-10-28-skills-compartidas.md
+.claude/skills
 .DS_Store
 Thumbs.db
