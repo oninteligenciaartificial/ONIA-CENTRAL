@@ -48,7 +48,7 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
   - Se quitaron el protocolo `hermes://` y la variable `HERMES_WRITE_SAFE_ROOT`.
 - **La v0.22.5 quedó instalada limpia** (commit `bf0203a`), con el navegador y el control de la computadora. Es la única: pasan los controles de `docs/decisiones/2026-10-28-hermes-oficial.md`, WSL incluido.
 - **Piensa con la suscripción de ChatGPT**, con su propio login. No toma prestados los logins de Codex ni de Claude Code, y no usa el token de `gh` ni la `GEMINI_API_KEY` de Windows. Tiene además una API key de Anthropic como segundo proveedor, que se elige a mano y gasta créditos de API.
-- **La configuración quedó cerrada.** Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas. En la prueba quedó guardada por error una aprobación permanente (`command_allowlist`) para los scripts con `-e`/`-c`, y se borró el mismo día.
+- **La configuración quedó cerrada,** con los límites que explica `2026-10-28-hermes-oficial.md`: los bloqueos no son una garantía. Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas. En la prueba quedó guardada por error una aprobación permanente (`command_allowlist`) para los scripts con `-e`/`-c`, y se borró el mismo día.
 - **La prueba real salió bien:** Hermes escribió un archivo y lanzó a Claude Code y a Codex en solo lectura. El detalle está en `2026-10-28-hermes-oficial.md`.
 
 De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.

@@ -159,7 +159,7 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
     - `hermes config set model_catalog.excluded_providers '[copilot, gemini]'` los saca del menú de modelos.
   - **Herramientas.** Se eligieron con `hermes tools`, en CLI.
     - Prendidas: archivos, terminal, visión, skills, navegador ("Local Browser"), control de la computadora (cua-driver), búsqueda web, lista de pasos, preguntas aclaratorias y video.
-    - La búsqueda usa OpenAI Native, incluida en ChatGPT. No quedó guardada: Hermes la elige porque es la única con credencial. Leer una página (`web_extract`) no pasa por ChatGPT: va a los planes gratis y anónimos de Exa, Parallel, Firecrawl o Keenable, que reciben la dirección.
+    - La búsqueda usa OpenAI Native, incluida en ChatGPT. No quedó guardada: Hermes la elige porque es la única con credencial. OpenAI Native solo busca. Según el código y la guía oficial (`user-guide/features/web-search.md`), mientras no haya `web.extract_backend`, leer una página (`web_extract`) devuelve un error en vez de ir a los planes gratis de Exa, Parallel, Firecrawl o Keenable. No se probó. Para leer páginas queda el navegador.
     - Prendidas pero ocultas: X y voz. Hermes no se las muestra al modelo hasta que tengan lo que les falta. X necesita una credencial de xAI ([#6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6)).
     - La memoria también figura prendida, pero está apagada por dentro: Blank Slate dejó `memory.memory_enabled: false` y `memory.user_profile_enabled: false`.
     - Apagadas: tareas programadas, A2A, ejecución de código, delegación y Kanban.
@@ -180,7 +180,19 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
 
     Según el código, con aprobaciones manuales el agente puede correr `hermes config set` sin preguntar, y este bloqueo frena los casos comunes. **No es una garantía.** La documentación oficial (`user-guide/security.md`) avisa que un bloqueo por patrón no es un sandbox: se puede rodear con un script y la terminal puede escribir cualquier archivo del usuario.
 
-    Otros comandos de Hermes que tocan su configuración tampoco están cubiertos: `hermes --oneshot`, `hermes dashboard`, `hermes import`, `hermes fallback` y `hermes pairing`. Para cerrarlos, Sergio Urcullo puede sumar `'*hermes* --oneshot*'`, `'*hermes* dashboard*'`, `'*hermes* import *'`, `'*hermes* fallback*'` y `'*hermes* pairing *'` al mismo `hermes config set approvals.deny`. Al revés, los patrones también frenan comandos inocentes en los que "hermes" aparece antes de esas palabras, por ejemplo un `git commit -m` que diga "Hermes … skills".
+    Otros comandos de Hermes que tocan su configuración, sus logins o sus datos tampoco están cubiertos.
+    - Entre ellos:
+      - `hermes --oneshot`;
+      - `hermes dashboard`;
+      - `hermes import`;
+      - `hermes fallback`;
+      - `hermes pairing`;
+      - `hermes logout`, que borra el login y resetea el proveedor;
+      - `hermes uninstall`, que con `--data --yes` borra los datos sin preguntar.
+    - La lista no es completa: hay más, como `hermes webhook`, `hermes secrets` y `hermes vault`.
+    - Los patrones que terminan en espacio, como `'*hermes* auth *'`, no frenan el comando solo, sin nada después (`hermes auth`).
+    - Para cerrar esos siete, Sergio Urcullo puede sumar estos patrones al mismo `hermes config set approvals.deny`: `'*hermes* --oneshot*'`, `'*hermes* dashboard*'`, `'*hermes* import *'`, `'*hermes* fallback*'`, `'*hermes* pairing *'`, `'*hermes* logout*'` y `'*hermes* uninstall*'`.
+    - Al revés, los patrones también frenan comandos inocentes en los que "hermes" aparece antes de esas palabras, por ejemplo un `git commit -m` que diga "Hermes … skills".
   - **Límites que hay que conocer.**
     - `approvals.mode: manual` frena solo los comandos que Hermes considera peligrosos. Los comandos comunes, la edición de archivos y las acciones del navegador corren sin preguntar.
     - Las capturas del control de la computadora tampoco piden permiso, así que conviene cerrar las ventanas sensibles antes de usarlo.
