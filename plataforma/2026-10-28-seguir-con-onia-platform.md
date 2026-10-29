@@ -4,7 +4,7 @@
 
 Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitHub, el checkout local y sus worktrees. No se tocó producción (VPS, base de datos, Vercel) ni se leyó el repo viejo: lo que se dice de él sale de cómo lo nombra el código de la plataforma.
 
-**En corto:** se sigue desarrollando la plataforma, en paralelo y con agentes, siempre que el repo y el harness estén en orden. El resto de la propuesta se mantiene. Antes del primer cliente hay dos cosas que hacer (punto 8, pasos 4 y 5):
+**En corto:** se sigue desarrollando la plataforma, en paralelo y con agentes, siempre que el repo y el harness estén en orden. Lo demás se mantiene (punto 7). Antes del primer cliente hay dos cosas que hacer (punto 8, pasos 4 y 5):
 - sacar del repo viejo el despliegue y los crons;
 - tener un respaldo probado, QA con su propia base, el cobro completo, la factura de ONIA y los términos.
 
@@ -93,7 +93,7 @@ Es un dato para la limpieza del método viejo.
 
 **Del repo `onia-hermes` sí depende, en producción:**
 - **El despliegue de la plataforma.** Los scripts que arman y publican la imagen (`build-and-stage.sh` y los que lo acompañan) viven en `hermes-content/deploy/onia-platform/`, dentro del repo viejo. El cron publica con la copia ya instalada en el VPS; el repo viejo hace falta para cambiar esos scripts o arreglarlos si fallan.
-- **Los crons del VPS.** Los recordatorios de citas y los de renovación corren con dos scripts que se copian desde `hermes-content/infra/vps-ops/crons/` a `/root/bin` (lo dice `__tests__/sin-envoltorios-de-cron-del-vps.test.ts`). El cron de los agentes (`/root/bin/run-onia-agents-cron.sh`) seguramente sale del mismo lugar. La renovación es justo lo que mide la fecha de corte.
+- **Los crons del VPS.** Los recordatorios de citas y los de renovación corren con dos scripts que se copian desde `hermes-content/infra/vps-ops/crons/` a `/root/bin` (lo dice `__tests__/sin-envoltorios-de-cron-del-vps.test.ts`). El cron de los agentes (`/root/bin/run-onia-agents-cron.sh`) seguramente sale del mismo lugar. La renovación es lo que tiene que andar con el primer cliente.
 - **La web de venta (onia.com.bo),** con los precios. Se construye en `web-factory/apps/onia-platform`, dentro del repo viejo. Es la puerta de entrada de la prueba comercial.
 - **El chatbot de WhatsApp.** Su motor vive en el repo viejo (`hermes-content/deploy/vps-ops/bot/`) y corre en el VPS como `onia-center`, en el puerto 3020. La plataforma lee su estado y sus conversaciones (`onia_center.bot_conversations`).
 - **SIAT.** La integración está en el repo viejo (`hermes-content/integrations/siat`).
@@ -142,7 +142,7 @@ El 29-oct-2026 eligió A, con estas palabras: "opcion A, lo demas se mantiene, R
 Qué cambia con A:
 - **El desarrollo sigue, en paralelo y con agentes.** No se congela ni hay tope de tiempo por semana.
 - **La condición es el orden.** Repo limpio, sin errores, con el harness, el contexto y los documentos al día (paso 10).
-- **No hay fecha de pausa.** La prueba comercial sigue en paralelo, y el 31-ene-2027 hay un hito de revisión (paso 8).
+- **No hay fecha de pausa.** La prueba comercial sigue en paralelo, y se propone un hito de revisión el 31-ene-2027 (paso 8).
 - **El resto se mantiene:**
   - mudar el despliegue y los crons del repo viejo;
   - respaldo, QA, cobro y lo legal antes del primer cliente;
@@ -168,7 +168,7 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 7. **Prueba comercial, en paralelo al desarrollo.** Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema, y se anota cada fricción real. Conviene empezar por los pedidos de acceso que quedaron sin contestar, si siguen ahí. Hecho cuando están contactadas antes del 30-nov, con su respuesta anotada.
 8. **Hito de revisión, el 31-ene-2027.** Mirar los pagos, el costo del mes y el estado del harness, y anotar acá si algo cambia. No es una fecha de pausa. Hecho cuando la revisión está escrita en esta carpeta.
 9. **Ordenar ramas y worktrees:** 241 ramas locales, 42 worktrees y un stash viejo, del 30-ago. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`. Hecho cuando solo quedan las ramas y worktrees en uso.
-10. **Repo y harness en orden,** la condición de A. Tres partes:
+10. **(sí) Repo y harness en orden,** la condición de A. Cada merge es un cambio en producción, y tocar las reglas de la plataforma pide su aprobación. Tres partes:
     - las reglas y skills de `onia-platform`, reescritas con el método nuevo y sin rutas al repo viejo;
     - la CI en verde;
     - los 65 issues de Sentry, tratados.
@@ -206,7 +206,8 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 ## 10. Lo que decidió Sergio Urcullo, el 29-oct-2026
 
 1. La opción A: seguir desarrollando, en paralelo y con agentes.
-2. Sin fecha de pausa ni tope de tiempo. Queda el hito de revisión del paso 8.
+2. Sin fecha de pausa ni tope de tiempo. El hito de revisión del paso 8 es una propuesta, no una pausa.
 3. Sí a guardar los 68 cambios en una rama de archivo, revisados con `gitleaks` oficial, y a limpiar el checkout.
 4. Sí a quitar el worktree `onia-platform-crece4` y borrar su rama.
-5. Sigue faltando un dato: cuánto cuesta por mes el VPS de producción.
+
+Sigue faltando un dato: cuánto cuesta por mes el VPS de producción.
