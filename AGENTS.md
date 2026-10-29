@@ -29,7 +29,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
   Si un PR entra en las dos listas, o hay duda, lo aprueba él.
 - Una sesión, un objetivo, con su "hecho cuando" definido al empezar. Lo que aparece fuera de ese objetivo va a un issue.
 - Skills y herramientas: primero las oficiales (Anthropic o el proveedor de la herramienta). Instalar algo pide el OK de Sergio Urcullo.
-- Cada respuesta a Sergio Urcullo cierra con un bloque corto, "Para aprender", que sigue el plan de `otros/aprender-ia-y-agentes.md`.
+- Cada respuesta a Sergio Urcullo cierra con un bloque corto, "Para aprender". Al empezar cada sesión, el agente lee `otros/aprender-ia-y-agentes.md`, que dice qué tema le toca y cómo armar ese bloque.
 
 ## Hermes
 
