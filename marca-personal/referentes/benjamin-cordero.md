@@ -290,7 +290,7 @@ La de Codex (https://codex.imperioagentico.com/) sigue el mismo esquema, con tar
 
 ### Cómo se replicaría con código (sin Stripe, PayPal ni Mercado Pago)
 
-El taller de ONIA se vende con anuncios que abren WhatsApp, así que la página no es el destino del anuncio. Igual hace falta una página, para mandarla por WhatsApp con el temario y para medir.
+El taller de ONIA se vende con anuncios que abren WhatsApp, así que la página no es el destino del anuncio. En la primera edición no hay página: todo va por WhatsApp, como dice el plan. Lo de abajo es para ediciones siguientes, si Sergio Urcullo decide tener página.
 1. **Página del taller:** HTML estático o Astro en Vercel o Cloudflare Pages, con su esqueleto:
    - etiqueta con la fecha;
    - titular;
@@ -320,6 +320,7 @@ Fuentes: https://www.skool.com/imperio/about (texto y código de la página) ; h
      - Sergio graba en una hora 6 ganchos, 3 cuerpos y 2 cierres para "Claude de 0 a 100". Algunos ganchos posibles: "3 clases en vivo. Bs 50 cada una o Bs 120 las tres."; "No hay vendedor que te llame: escribís por WhatsApp y pagás con QR"; "¿Por qué Bs 50?".
      - Un script con ffmpeg arma 10 variantes de 20 a 35 segundos, con subtítulos quemados.
      - Las variantes se cargan en pausa en una campaña "laboratorio" de Click a WhatsApp, con los US$10 por día ya decididos.
+     - En la primera edición, de esa grabación salen los 2 o 3 videos del plan, de 30 a 45 segundos. El resto queda de reserva para reemplazar el que se pause el día 3, con el sí de Sergio Urcullo. Cargar 10 variantes en una campaña laboratorio es propuesta para una próxima edición, que decide Sergio Urcullo.
    - **Para qué:** con US$10 por día, lo caro es producir, no el anuncio. Grabando en bloques se prueba qué frase trae conversaciones sin volver a grabar. Y su anuncio más visto lleva 90 días activo con el mismo gancho: cuando uno funciona, se deja correr.
 
 2. **Bajar el riesgo de comprar sin devolución: grabación incluida, demo real y testimonios con descargo.**

@@ -298,7 +298,8 @@ No muestra precio ni garantía.
 
 ### Cómo se replicaría con código (sin Stripe, PayPal ni Mercado Pago)
 
-Para el taller "Claude de 0 a 100" de ONIA, donde el anuncio abre WhatsApp y se cobra con QR:
+Para el taller "Claude de 0 a 100" de ONIA, donde el anuncio abre WhatsApp y se cobra con QR. En la primera edición no hay página: todo va por WhatsApp, como dice el plan. Lo de abajo es para ediciones siguientes, si Sergio Urcullo decide tener página.
+
 1. **Página de la clase,** si hace falta además de WhatsApp. Una página estática (Astro en Vercel o Cloudflare Pages) con el orden de la página del evento:
    - fecha y hora de Bolivia y cuenta regresiva en JavaScript;
    - problema, tres cosas que vas a aprender y para quién es;
