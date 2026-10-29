@@ -21,7 +21,7 @@ Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/eri
 
 | # | Sección | Qué dice | De dónde sale |
 |---|---|---|---|
-| 1 | Cartel | El nombre del taller, la promesa en una línea, la fecha, el horario de Bolivia, la duración, por Zoom y el cupo | Erik: cartel con fecha, 2 horas, 25 cupos y Zoom |
+| 1 | Cartel | El nombre del taller, la promesa en una línea, la fecha, el horario de Bolivia, la duración, por Meet o Zoom, y el cupo | Erik: cartel con fecha, 2 horas, 25 cupos y Zoom |
 | 2 | Botón | "Reservar mi cupo", que lleva al pago o a WhatsApp. Se repite al medio y al final | Iman lo repite 8 veces |
 | 3 | El problema | Lo que le pasa al cliente, con sus palabras y sin culparlo | Enrique: "Y ahí te quedaste" |
 | 4 | Con qué salís | El resultado concreto del mismo día | Erik: "Con qué sales el mismo día" |
@@ -71,7 +71,7 @@ Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/eri
 2. **El botón de reserva** lleva al pago, o a WhatsApp con el mensaje armado.
    - Si hay pasarela, su aviso de pago confirmado (webhook) resta un cupo y manda la confirmación.
    - Erik aparta el cupo unos minutos mientras se paga.
-3. **Un día antes,** se manda el enlace de Zoom y el recordatorio por WhatsApp.
+3. **Un día antes,** se manda el enlace de Meet o Zoom y el recordatorio por WhatsApp.
    - **A mano,** desde la app de WhatsApp Business, no cuesta.
    - **Automático,** necesita la API de WhatsApp Business. Ahí los mensajes de plantilla que manda la empresa se cobran por mensaje entregado ([precios de WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/)). Es gasto y es un mensaje a clientes: el gasto y el texto los aprueba Sergio Urcullo.
 4. **Cuando no hay fecha,** el botón se cambia por una lista de espera, como hace Erik.
@@ -81,7 +81,7 @@ Publicarla en un dominio de ONIA es producción, así que pide el sí de Sergio 
 
 ## Lista para revisar antes de pedir el sí
 - [ ] La fecha, el horario, el cupo y el precio coinciden con los del anuncio y con la respuesta de WhatsApp.
-- [ ] Dice qué se devuelve y hasta cuándo.
+- [ ] Dice la política de devolución antes de pagar, también si es "sin devolución".
 - [ ] No promete ingresos.
 - [ ] No muestra datos de clientes sin su permiso.
 - [ ] El botón funciona en el celular y abre el pago o WhatsApp.

@@ -84,7 +84,7 @@ Los planes son: Starter, US$15 por mes con 200 créditos; Plus, US$49 con 1.000;
 - 30 segundos de Speak 2.0 a 720p: 6 × 14 = unos 84 créditos.
 - Total: unos 204 créditos por anuncio, sin contar los intentos que salen mal.
 
-La cuenta tenía 432,93 créditos el 29-oct-2026 (herramienta `balance` de Higgsfield). Con ese saldo entran dos anuncios así, no tres. Un solo anuncio ya no entra en los 200 créditos del plan Starter.
+La cuenta tenía 432,93 créditos el 29-oct-2026 (herramienta `balance` de Higgsfield). Con ese saldo entran dos anuncios así, no tres. Un solo anuncio ya no entra en los 200 créditos del plan Starter. Además, Higgsfield Speak no está en Starter: el ejemplo pide Plus o Ultra ([precios de Higgsfield](https://higgsfield.ai/blog/higgsfield-pricing-explained)).
 
 ## Publicarlo para que abra WhatsApp
 
