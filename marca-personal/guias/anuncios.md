@@ -105,5 +105,5 @@ Sigue los pasos de Meta ([ayuda de Meta](https://www.facebook.com/business/help/
 - [ ] Dice fecha, horario de Bolivia, cupo y precio, igual que la respuesta automática de WhatsApp.
 - [ ] Tiene un solo llamado a la acción.
 - [ ] El texto y los logos están dentro de la zona segura.
-- [ ] Hay 3 variantes de gancho para probar.
+- [ ] Hay 2 o 3 variantes de gancho para probar.
 - [ ] Están anotados el presupuesto y la regla para pausar ([plan de campaña](../../workshops-comunidad/plan-meta-ads-borrador.md)).

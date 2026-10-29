@@ -31,13 +31,13 @@ Sergio Urcullo lo eligió el 29-oct-2026. Estas son sus palabras:
 - **Siempre hay algo nuevo.** Claude cambia seguido, y eso le da sentido a una comunidad con clases en vivo cada semana. Es lo que hacen Erik Taveras y Santiago Muñoz en sus comunidades pagas (ver el [resumen](../marca-personal/referentes/resumen-2026-10-29.md)).
 - **Lleva a lo que sigue:**
   - quien aprende a usar Claude puede pasar a un nivel 2, a la comunidad o a una llamada 1 a 1;
-  - un negocio puede pasar a la implementación con ONIA Platform, cuando esté lista para clientes.
+  - un negocio podría pasar a la implementación con ONIA Platform, pero hoy no está lista para clientes (issues #27 y #28). Por eso el resumen dice que el taller B no lleva a la plataforma. Qué escalones siguen lo define el #65.
 - **Riesgo:** hay webinars gratis del mismo tema, como el de Gemini de Eduardo Vázquez (ver el resumen). La diferencia tiene que ser la práctica en vivo.
 
 ## Cómo se hace escalable
 
 1. **Un temario fijo.** Se repite la misma clase, con el número de edición: V1, V2, V3.
-2. **Cada clase se graba.** Zoom Pro graba en la nube ([precios de Zoom](https://zoom.us/pricing)). Si la grabación para siempre se vende aparte, suma plata (decisión 3).
+2. **Cada clase se graba.** Zoom Pro graba en la nube, con 10 GB por licencia ([precios de Zoom](https://zoom.us/pricing)). Para no llenar ese espacio, cada grabación se baja, se sube a YouTube como no listado y se borra de Zoom. Si la grabación para siempre se vende aparte, suma plata (decisión 3).
 3. **Al final de cada clase se ofrece lo que sigue** (decisión 8). El resto de la escalera lo arma el #65.
 4. **Cada persona que se inscribe queda etiquetada en WhatsApp Business.** Así se le avisa de la próxima oferta.
 5. **Los testimonios se piden desde la primera clase.** Sirven para los anuncios siguientes.
@@ -50,9 +50,9 @@ Sergio Urcullo lo eligió el 29-oct-2026. Estas son sus palabras:
 | Horas en vivo por semana | 9 | 15 | 9 |
 | Temarios para armar ya | 1 | 1 | 3 |
 | Con US$10 por día de anuncios | Se reparten en 3 fechas, y cada clase junta más gente | Se reparten en 5, y algunas clases pueden quedar casi vacías | Igual que la primera, pero hay que vender tres productos |
-| Plata por persona | Bs 50, más la grabación | Bs 50, más la grabación | Hasta Bs 150 |
+| Plata por persona | Bs 50, más la grabación | Bs 50, más la grabación | De Bs 50 a Bs 120 con el combo |
 
-**Recomendación:** arrancar con 3 por semana. Se pasa a una por día cuando dos clases seguidas pasen de 48 inscriptos, la mitad del cupo de 95 (decisión 2). Así queda tiempo para grabar contenido, para vender por WhatsApp y para el plan de aprendizaje de Sergio Urcullo, que empieza el 2-nov.
+**Recomendación:** arrancar con 3 por semana. Se pasa a una por día cuando dos clases seguidas pasen de 80 inscriptos, cerca del cupo de 95 (decisión 2), o cuando muchos chats no compren porque no les sirve el horario. En las tres estructuras la plata entra igual, al inscribirse: lo que cambia es el trabajo y cuánto se llena cada clase. Así queda tiempo para grabar contenido, para vender por WhatsApp y para el plan de aprendizaje de Sergio Urcullo, que empieza el 2-nov.
 
 ## Caja en 7 días
 
@@ -60,8 +60,9 @@ La plata entra cuando cada persona se inscribe, antes de su clase.
 
 | Cuándo | Qué |
 |---|---|
-| Jueves 29 y viernes 30 de octubre | Sergio Urcullo crea la página con su nombre y le conecta WhatsApp Business. Carga el método de pago en "ONIA Ads", contrata la sala (decisión 4) y graba 2 videos. Un agente redacta la respuesta automática, el texto y el temario, y Sergio Urcullo aprueba todo con captura. El viernes se cargan los anuncios, programados para el sábado: Meta revisa la mayoría en 24 horas y, si están programados, arrancan en esa fecha ([ayuda de Meta](https://www.facebook.com/business/help/204798856225114)) |
-| Sábado 31 de octubre | Arrancan los anuncios. Ese mismo día Sergio Urcullo publica gratis en su perfil, en sus estados y en sus grupos |
+| Jueves 29 y viernes 30 de octubre | Sergio Urcullo crea la página con su nombre y le conecta WhatsApp Business. Carga el método de pago en "ONIA Ads", contrata la sala (decisión 4) y graba 2 videos. Un agente redacta la respuesta automática, los mensajes de confirmación y recordatorio, el texto y el temario. Sergio Urcullo aprueba todo con captura. El viernes se cargan los anuncios, programados para el sábado: Meta revisa la mayoría en 24 horas y, si están programados, arrancan en esa fecha ([ayuda de Meta](https://www.facebook.com/business/help/204798856225114)) |
+| Viernes 30 de octubre | Apenas aprueba la respuesta, el QR y el texto, Sergio Urcullo publica gratis en su perfil, en sus estados y en sus grupos. Eso no espera a Meta: suma un día de venta antes del 3 |
+| Sábado 31 de octubre | Arrancan los anuncios |
 | Del 31 de octubre al 6 de noviembre | 7 días de anuncios |
 | Martes 3 | Se renueva Claude (ver "Cuánto hay que vender") |
 | Martes 3 y jueves 5 de noviembre, de 19:00 a 22:00, y sábado 7, de 9:00 a 12:00 | Las tres clases de la semana (decisiones 1 y 2). El lunes 2 no hay clase |
@@ -83,23 +84,29 @@ Sin factura, cada inscripción deja Bs 50. Los dólares se pasan a Bs 12,12 ([BC
 
 - **La meta es 26 inscripciones, o 46 si Claude es Max.** Qué plan tiene es un dato que falta. Claude Pro cuesta US$20 por mes y Max, desde US$100 ([precios de Claude](https://claude.com/pricing)). Con 17 inscripciones solo se cubren los anuncios, y la caja queda negativa por Zoom.
 - **Antes del 3 de noviembre, cuando se renueva Claude,** hay como mucho tres días de anuncios: del sábado 31 al lunes 2.
-  - Esa renovación depende sobre todo de lo que se venda sin anuncios: su perfil, sus estados y sus grupos.
+  - Esa renovación depende sobre todo de lo que se venda sin anuncios desde el viernes 30: su perfil, sus estados y sus grupos.
   - Si no alcanza, es la decisión 9.
-- **Codex se vence el 14 de noviembre.** Lo cubre la segunda semana, si se sigue con anuncios.
+- **Con 26 justas no queda nada para Codex, el VPS ni Higgsfield.**
+  - Codex se vence el 14 de noviembre. Lo tiene que cubrir lo que se venda de más en la primera semana, o la segunda semana, si se sigue con anuncios.
+  - Como el balance es el domingo 8, la segunda semana tiene unos 6 días de anuncios antes del 14.
+  - Las fechas y los montos del VPS y de Higgsfield son datos que faltan. Si alguno vence antes del 8, la meta sube.
 - **Cada grabación vendida suma aparte** (decisión 3).
 
 **Para sostener los costos fijos todas las semanas,** si se siguiera con anuncios:
 - Los costos fijos son Claude, Codex, el VPS, Higgsfield y Zoom Pro (US$16,99, unos Bs 206).
 - El monto exacto es un dato que falta.
 
-| Costos fijos por mes, sin Zoom | Inscripciones por semana | Por clase, con 3 clases |
-|---|---|---|
-| US$150 | 27 | 9 |
-| US$300 | 35 | 12 |
-| US$450 | 44 | 15 |
+| Costos fijos por mes, sin Zoom | Inscripciones por semana | Por clase, con 3 clases | En la tarjeta por mes, con anuncios y Zoom |
+|---|---|---|---|
+| US$150 | 27 | 9 | unos US$470 |
+| US$300 | 35 | 12 | unos US$620 |
+| US$450 | 44 | 15 | unos US$770 |
 
-Se calcula así: los anuncios de la semana, más los costos fijos del mes con Zoom divididos por 4,33 (las semanas que tiene un mes en promedio), y todo dividido por Bs 50.
-- **El tope de la tarjeta:** con débito, el tope mensual de cada banco para pagos al exterior es uno solo. De ahí salen a la vez Claude, Codex, Higgsfield, el VPS, Zoom y los anuncios (ver el resumen).
+Se calcula así: los anuncios de la semana, más los costos fijos del mes con Zoom divididos por 4,33 (las semanas que tiene un mes en promedio), y todo dividido por Bs 50. En la tarjeta, por mes: US$70 × 4,33 de anuncios, más Zoom, más los fijos.
+
+**El tope de la tarjeta:** con débito, la norma de ASFI obliga a cada banco a permitir al menos US$500 por mes para pagos al exterior. En BNB, Ganadero, BISA, Económico, BancoSol y FIE ese mínimo es también el tope (ver el [resumen](../marca-personal/referentes/resumen-2026-10-29.md)).
+- Con ese tope, solo la primera fila entra en un mes.
+- Vender en bolivianos no sube el tope. El banco de la tarjeta, y si es de débito o de crédito, son datos que faltan.
 
 ## Lo que tiene que estar antes de lanzar
 
@@ -110,7 +117,10 @@ Se calcula así: los anuncios de la semana, más los costos fijos del mes con Zo
 | Método de pago en "ONIA Ads" | No tiene (herramienta de Meta `ads_get_ad_accounts`). Tampoco tiene una cuenta de Instagram conectada (`ads_get_ig_accounts`). | Sergio Urcullo |
 | Sala para 3 horas y hasta 100 personas | Zoom Basic corta cada reunión a los 40 minutos. Zoom Pro cuesta US$16,99 por mes, deja 100 personas por reunión, dura hasta 30 horas y graba en la nube ([precios de Zoom](https://zoom.us/pricing), consultada el 29-oct-2026). Decisión 4. | Sergio Urcullo |
 | Cobro con QR | A definir (decisión 5). | Sergio Urcullo |
-| Respuesta automática en WhatsApp | A escribir. Tiene que decir las 3 fechas, el temario, el precio, cómo pagar y la grabación aparte. A Bs 50 llegan muchos chats por cada venta: tiene que traer todo y dejar a mano solo la confirmación del pago. Es un mensaje a clientes. | Agente redacta, Sergio Urcullo aprueba |
+| Número de WhatsApp Business | A definir: el personal de Sergio Urcullo, uno nuevo o el de ONIA. | Sergio Urcullo |
+| Respuesta automática en WhatsApp | A escribir. Tiene que decir las fechas que quedan, el temario, el precio, cómo pagar y la grabación aparte. A Bs 50 llegan muchos chats por cada venta, así que tiene que traer todo. Si se elige el QR a mano (decisión 5), lo único que queda a mano es confirmar el pago. Es un mensaje a clientes. | Agente redacta, Sergio Urcullo aprueba |
+| Confirmación y recordatorio | A escribir. Al confirmar el pago va el enlace de Zoom, y el día de la clase, un recordatorio. Son mensajes a clientes. | Agente redacta, Sergio Urcullo aprueba con captura |
+| Control de la sala | Que no entre quien no pagó: sala de espera en Zoom y se deja pasar a quien está en la lista de "Pagó". | Sergio Urcullo o quien atienda el chat |
 | Temario | A escribir. El plan gratis de Claude trae chat, búsqueda web, archivos, artefactos, conectores, skills y hasta 5 proyectos, con límites de uso ([precios de Claude](https://claude.com/pricing)). "Con la cuenta gratis" va en los anuncios solo si el temario se probó entero con una cuenta gratis. | Agente redacta; Sergio Urcullo lo prueba y aprueba |
 | Política de devolución | A definir (decisión 6). | Sergio Urcullo, porque es legal |
 | Los videos | A grabar, con los guiones de abajo. | Sergio Urcullo graba |
@@ -127,7 +137,7 @@ Sigue los pasos de Meta para anuncios que abren un chat de WhatsApp ([ayuda de M
 
 ## Público
 
-**Toda Bolivia, de 18 a 65 años o más, sin intereses.** Es lo que pidió Sergio Urcullo. Arranca en 18 porque es un taller pago.
+**Toda Bolivia, sin intereses, como pidió Sergio Urcullo.** La edad va de 18 a 65 años o más. El piso de 18 lo agrega este plan porque es un taller pago.
 
 ## Mensaje
 
@@ -164,7 +174,7 @@ Son borradores: los textos finales los aprueba Sergio Urcullo. Lo que va entre c
 
 **Texto del anuncio, borrador:**
 > ¿Usás la IA solo para hacerle preguntas? En "Claude de 0 a 100" aprendés a usar Claude con tus archivos y tus proyectos, y a dejarle trabajo armado. Sin programar {y con la cuenta gratis}.
-> 📅 Elegí tu día: martes 3 o jueves 5, de 19:00 a 22:00, o sábado 7, de 9:00 a 12:00 (Bolivia) · Zoom · 3 horas
+> 📅 Elegí tu día: martes, jueves o sábado de esta semana (hora de Bolivia) · Zoom · 3 horas
 > 👥 95 cupos por clase · Bs 50 la inscripción · Grabación para siempre: Bs [precio]
 > Tocá el botón y escribime: te paso el temario.
 
@@ -195,8 +205,12 @@ Van como preguntas de 3 opciones. La primera es la recomendada.
    - 3 clases distintas.
 2. **Fecha, horario y cupo:**
    - **martes 3 y jueves 5, de 19:00 a 22:00, y sábado 7, de 9:00 a 12:00, con 95 cupos por clase (recomendada).** Es el horario de noche de los talleres que hoy se anuncian en Bolivia, más una mañana de sábado. El cupo es el tope de Zoom Pro;
-   - arrancar el jueves 5: hay dos días más para vender, pero la caja llega después del 3;
-   - arrancar el lunes 9: hay una semana entera de anuncios antes, pero la caja llega después del 3.
+   - arrancar el jueves 5, con clases el jueves 5, el sábado 7 y el martes 10: la primera clase tiene dos días más para llenarse;
+   - arrancar el martes 10, con clases el martes 10, el jueves 12 y el sábado 14: hay una semana entera de anuncios antes.
+
+   En las tres se cobra desde el viernes 30. La diferencia es cuántos días tiene la primera clase para llenarse. Con la recomendada, la clase del martes 3 tiene unos 3 días de anuncios y puede quedar con poca gente. A cambio, una fecha cercana empuja a pagar antes de que se renueve Claude.
+
+   Las fechas van en la respuesta automática, no en el texto del anuncio. Así el anuncio no ofrece un día que ya pasó, y no hay que cambiarlo a mitad de semana, que lo manda a revisión otra vez.
 3. **Grabación para siempre:**
    - **Bs 30 aparte (recomendada):** suma plata sin subir el precio de entrada, como el kit de US$9 que Iman Gadzhi ofrece justo después del registro ([ficha](../marca-personal/referentes/iman-gadzhi.md));
    - Bs 50 aparte;
@@ -233,5 +247,7 @@ Van como preguntas de 3 opciones. La primera es la recomendada.
 No son decisiones, así que no tienen opción recomendada:
 - **Qué plan de Claude tiene:** Pro o Max. Con eso, la meta de la semana queda en 26 o en 46 inscripciones.
 - **Cuánto suman por mes Claude, Codex, el VPS y Higgsfield:** hasta US$150, de US$150 a US$300 o más de US$300.
+- **Cuándo se vencen el VPS y Higgsfield, y cuánto cuestan.** Si alguno vence antes del 8 de noviembre, sube la meta de la primera semana.
+- **Con qué tarjeta se paga:** el banco, y si es de débito o de crédito. De eso depende el tope por mes.
 
 Antes de publicar, Sergio Urcullo ve la vista previa con captura y da el sí.
