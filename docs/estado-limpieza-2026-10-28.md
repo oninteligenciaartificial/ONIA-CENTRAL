@@ -35,11 +35,13 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 - La app se reinició a las 07:52.
 
 **Listo el 29-oct** ([#19](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/19) y [#20](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/20)), con Codex cerrado del todo, también desde el ícono de la bandeja:
-- **Memorias apagadas** con el comando oficial `codex features disable memories`. Las 135 notas viejas, la skill que se creó sola y su base de datos están archivadas. Una sesión nueva ya no recibe el bloque de memoria. Codex vuelve a crear `memories_1.sqlite` vacío al arrancar: es normal.
-- **Sin el hook de `onia-hermes`:** se quitó su aprobación de `config.toml` y se archivó `onia-hooks`. `.hook-trust` queda: es un archivo propio de Codex y solo guarda un hash.
-- **Confiable solo ONIA-CENTRAL.** Salieron las 27 carpetas que había: las del repo viejo, Orca y `hermes`, cuatro que ya no existen y chats sueltos. Lo eligió Sergio Urcullo: "solo onia central". Otra carpeta se vuelve a marcar cuando haga falta.
-- **Plugin "OpenAI Developers" apagado.** El 403 era un desafío anti-bots de Cloudflare sobre su conector de créditos de la API, en `chatgpt.com`. No es una falla de la PC, y ONIA no lo usa.
-- **Restos de otras herramientas, apartados:** `~/.openclaw`, la configuración de OpenClaw del 9-abr, y `~/.agents/.skill-lock.json`, el registro de la CLI `skills` de Vercel Labs. `external_agent_session_imports.json` queda: es de Codex, no importó nada y solo anota 18 sesiones viejas de Claude que encontró.
+- **Memorias apagadas** con el comando oficial `codex features disable memories`. El comando borró la línea en vez de escribir `false`: rige el valor por defecto, que es apagado. La carpeta vieja (135 archivos, con la skill que se creó sola) y su base de datos están archivadas. Una sesión nueva ya no recibe el bloque de memoria. Codex vuelve a crear `memories_1.sqlite` vacío al arrancar: es normal.
+- **Sin el hook de `onia-hermes`:** se quitó su aprobación de `config.toml` y se archivó `onia-hooks`. La carpeta `.hook-trust` queda: es de Codex y solo guarda un hash. Además, `onia-hermes` ya no es confiable, y Codex no corre los hooks de una carpeta que no lo es.
+- **Confiable solo ONIA-CENTRAL.** Salieron las 27 carpetas que había y entró ONIA-CENTRAL, que no estaba. Las que salieron eran del repo viejo, de Orca y de `hermes`, cuatro que ya no existen y chats sueltos. Lo eligió Sergio Urcullo: "solo onia central". Otra carpeta se vuelve a marcar cuando haga falta.
+- **Plugin "OpenAI Developers" apagado.** ONIA no lo usa. El 403 salió en la prueba de Codex del #10, el 28-oct: su conector de créditos de la API, en `chatgpt.com`, recibió un desafío anti-bots de Cloudflare. El 29-oct no se repitió.
+- **OpenClaw, apartado:** `~/.openclaw` es su configuración del 9-abr.
+- **Registro de skills, apartado:** `~/.agents/.skill-lock.json` es de la CLI `skills` de Vercel Labs.
+- **Queda `external_agent_session_imports.json`:** es de Codex y no importó nada. Solo anota 18 sesiones viejas de Claude que encontró.
 - **En Claude, del mismo #19:** `autoMode` ya no cita `onia-infra`, `onia-deploy` ni la "CLAUDE.md gold rule". Ahora cita los frenos del `AGENTS.md`.
 - Las copias de respaldo, lo archivado y cómo volver atrás están en `C:\Users\PC\.codex-archivo-20261028\issues-19-20-20261029`, con su `MANIFIESTO.md`.
 
@@ -47,6 +49,8 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 - 2 automatizaciones viejas pausadas, "ONIA 1.0 revisión" y "ONIA Infra": borrarlas.
 - `rules\default.rules` aprueba 14 comandos, 6 del método viejo, y la lista entra en cada sesión: [#32](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/32).
 - La CLI de OpenClaw sigue instalada con npm, aunque no corre: [#33](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/33).
+- El estado de la app todavía nombra `onia-hermes` y Orca como espacios de trabajo, y las memorias no tienen `false` explícito: [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38).
+- En Claude, `autoMode.environment` todavía describe la infraestructura del método viejo: [#39](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/39).
 - Opcional: datos pesados, como 1,6 GB de sesiones archivadas y 559 MB de worktrees.
 
 ## 3. Hermes (`C:\Users\PC\AppData\Local\hermes`)
