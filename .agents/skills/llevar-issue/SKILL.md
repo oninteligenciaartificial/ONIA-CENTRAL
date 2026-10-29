@@ -54,9 +54,11 @@ codex exec --sandbox workspace-write - < <notas>/prompt-escritor.md
 # Revisa Codex
 codex exec --sandbox read-only --ephemeral -o <notas>/revision-<R>.md - < <notas>/prompt-revisor.md
 
-# Revisa Claude Code
-claude -p --restricted --strict-mcp-config --permission-mode dontAsk --no-session-persistence --tools "Read,Glob,Grep,Bash" --allowedTools "Read,Glob,Grep,Bash(git diff *),Bash(git log *),Bash(git grep *),Bash(git status *)" --max-turns 20 < <notas>/prompt-revisor.md > <notas>/revision-<R>.md
+# Revisa Claude Code, sin Bash: lee el diff que deja Hermes en <notas>/cambio.diff
+claude -p --restricted --strict-mcp-config --permission-mode dontAsk --no-session-persistence --tools "Read,Glob,Grep" --allowedTools "Read,Glob,Grep" --add-dir <notas> --max-turns 20 < <notas>/prompt-revisor.md > <notas>/revision-<R>.md
 ```
+
+El revisor de Claude Code no lleva Bash porque hasta `git diff` o `git grep` tienen opciones que escriben archivos o corren programas.
 
 El merge tiene su comando en el paso 9.
 
@@ -67,7 +69,10 @@ El merge tiene su comando en el paso 9.
 - `--permission-mode dontAsk` niega todo lo demás.
 - `--strict-mcp-config` deja afuera los MCP.
 
-Se probó el 29-oct: con esos permisos, un `git status` corrió y un `echo hola > archivo` quedó negado.
+Se probó el 29-oct:
+- con Bash limitado a `git status`, ese comando corrió y un `echo hola > archivo` quedó negado;
+- con permiso para `gh pr view 35`, corrió ese y no `gh pr view 31`;
+- el revisor sin Bash leyó el diff de la carpeta de notas y no pudo crear archivos.
 
 **Quien escribe no hace commit ni push.** Lo hace Hermes, después de mirar el diff.
 
@@ -136,15 +141,22 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    gh pr create --base main --head issue/<N>-<palabras> --title "<qué hace>" --body-file <notas>/cuerpo-pr.md
    ```
 
-7. **Revisión independiente.** Antes, `git -C <worktree> fetch origin`, porque el revisor de solo lectura no puede traer nada. El prompt, en `<notas>/prompt-revisor.md`, dice:
+7. **Revisión independiente.** Antes, Hermes trae `main` y deja el diff en un archivo, porque el revisor no puede traer nada:
+
+   ```bash
+   git -C <worktree> fetch origin
+   git -C <worktree> diff origin/main...HEAD > <notas>/cambio.diff
+   ```
+
+   El prompt, en `<notas>/prompt-revisor.md`, dice:
    - que es el revisor y no escribió el cambio;
    - el issue y su "hecho cuando";
-   - que mire `git diff origin/main...HEAD`;
+   - dónde está el cambio: `<notas>/cambio.diff`, o `git diff origin/main...HEAD` si revisa Codex;
    - qué revisar:
      - si cumple el "hecho cuando";
      - si toca solo lo necesario, sin secretos ni datos personales;
      - si respeta el `AGENTS.md` y `docs/lecciones.md`;
-     - si algo del resto del repo queda viejo o contradice el cambio, buscando con `git grep`;
+     - si algo del resto del repo queda viejo o contradice el cambio, buscándolo en el repo;
      - si toca algo reservado.
    - que conteste así:
 
@@ -183,7 +195,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
      - el número del PR y el SHA completo del commit que aprobó la última revisión;
      - qué comprobar:
        - con `gh pr view <PR> --json files,commits,comments,mergeable`: que los archivos sean los permitidos, que el último comentario "Revisión" diga "aprobar" y nombre ese SHA, que sea mergeable y, si era reservado, que haya un comentario con la aprobación de Sergio Urcullo;
-       - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`;
+       - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
      - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA;
      - que, si algo falla, no mergee y diga qué falló.
 
