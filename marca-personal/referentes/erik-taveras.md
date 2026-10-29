@@ -2,7 +2,7 @@
 
 Investigado el 29-oct-2026 por Claude Code (subagente de la sesión del issue #6).
 
-Dominicano que vive en High Point, Carolina del Norte. Es desarrollador backend (Python y Django) y enseña automatización con n8n, agentes de IA, WhatsApp e IA local en español para Latinoamérica. Además de crear contenido, tiene producto propio (TalosFlow) y una consultora (Taveras Solutions LLC).
+Dominicano que vive en Estados Unidos. Es desarrollador backend (Python y Django) y enseña automatización con n8n, agentes de IA, WhatsApp e IA local en español para Latinoamérica. Además de crear contenido, tiene producto propio (TalosFlow) y una consultora (Taveras Solutions LLC).
 
 Todas las fuentes se consultaron el 29-oct-2026.
 
@@ -225,7 +225,7 @@ Fuentes: https://comunidad.eriktaveras.com/ ; https://autodev.eriktaveras.com/ ;
 
 **Cómo se replicaría con código:**
 1. Una página estática con estas secciones: cartel, banda de hora, resultado, temario numerado, requisitos marcables, quién enseña, compra y términos. La fecha, los cupos y el precio salen de un JSON o de una tabla.
-2. Un botón de pago (PayPal, Stripe o Mercado Pago) que aparta el cupo unos minutos. Al confirmarse el pago, un webhook resta el cupo y manda un correo con la página de acceso y el archivo de calendario (.ics).
+2. Un botón de pago que aparta el cupo unos minutos. Para ONIA: QR interbancario con confirmación automática, o una plataforma que acepte empresas bolivianas. Stripe, PayPal y Mercado Pago no las aceptan (ver el [resumen](resumen-2026-10-29.md)). Al confirmarse el pago, un webhook resta el cupo y manda un correo con la página de acceso y el archivo de calendario (.ics).
 3. Un día antes, una tarea programada (por ejemplo en n8n) manda el enlace de Zoom.
 4. Cuando no hay fecha, la compra se cambia por una lista de espera (nombre y correo).
 5. Umami o Plausible para contar los clics en "Reservar" y las compras.
@@ -236,7 +236,7 @@ Fuentes: https://workshops.eriktaveras.com/w/sistema-de-edicion-17-oct/ ; https:
 
 1. **Un workshop con cara de cartel: fecha, cupo y lo que te llevás.**
    - **Qué tomar:** el armado de su página de taller. Fecha fija, 20 a 25 cupos, 2 horas por Zoom, "con qué salís el mismo día", temario en 8 bloques, requisitos que se pueden marcar, guía de instalación por correo antes de la sesión, y dos personas: una enseña y la otra atiende el chat.
-   - **Cómo adaptarlo:** el primer workshop de ONIA que se venda con Meta Ads necesita sumar lo que a él le falta, porque el tráfico frío no lo conoce. Tres a cinco testimonios, preguntas frecuentes y una garantía simple. Cobro con Mercado Pago o Stripe.
+   - **Cómo adaptarlo:** el primer workshop de ONIA que se venda con Meta Ads necesita sumar lo que a él le falta, porque el tráfico frío no lo conoce. Tres a cinco testimonios, preguntas frecuentes y una garantía simple. Cobro con QR interbancario y, para cobrar afuera, una plataforma que acepte empresas de Bolivia (ver el [resumen](resumen-2026-10-29.md)).
    - **Para qué:** vender un resultado concreto, por ejemplo "salís con tu agente de WhatsApp funcionando", y no una clase.
 2. **Cada reel promete una guía, y la guía vive en la comunidad gratis de ONIA.**
    - **Qué tomar:** el cierre "comentá PALABRA y te lo mando". El mensaje directo sale automático y lleva a una guía que, para descargarse, pide crear una cuenta con email.

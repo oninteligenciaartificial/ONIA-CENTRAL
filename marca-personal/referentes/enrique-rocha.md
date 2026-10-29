@@ -284,7 +284,7 @@ Tiene además un `llms.txt` y versiones `.md` de cada página, pensadas para que
 ### Cómo se replicaría con código
 
 1. **Página del workshop:** usar Luma tal cual (cero código) o hacer una página estática (Next.js o Astro en Cloudflare Pages) con estas secciones en este orden: etiqueta de edición, titular, problema, agitación, temario, "esto no es", para quién, qué incluye, precio con ancla y cupo.
-2. **Cobro:** dos Payment Links de Stripe, uno en dólares y otro en moneda local. Un webhook de Stripe dispara un correo con Resend que trae el enlace de Meet y lo agenda en Google Calendar.
+2. **Cobro:** él usa dos Payment Links de Stripe, uno en dólares y otro en moneda local. Un webhook de Stripe dispara un correo con Resend que trae el enlace de Meet y lo agenda en Google Calendar. Para ONIA no sirve tal cual: Stripe no acepta empresas registradas en Bolivia, y por eso tampoco el cobro de Luma. Hace falta QR interbancario o una plataforma que acepte empresas bolivianas (ver el [resumen](resumen-2026-10-29.md)).
 3. **Registro:** un formulario con 3 o 4 preguntas para calificar y el WhatsApp optativo. Las respuestas van a una tabla (Supabase o Google Sheets).
 4. **Bóveda de guías:** páginas generadas desde archivos markdown, con un modal de nombre y correo que los guarda en Resend y deja una cookie para no volver a pedirlos.
 5. **Comentario a mensaje:** una automatización en Instagram (ManyChat, o la API de Meta con un webhook) que responde a la palabra clave con el enlace a la guía. Para medir los anuncios de ONIA, a diferencia de él, sumar el píxel de Meta en la página propia o en el campo de píxel de Luma.
