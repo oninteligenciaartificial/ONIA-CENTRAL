@@ -7,7 +7,7 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 ## La regla
 
 - **El original de cada secreto está en la bóveda.** Ningún agente la abre ni la lee.
-- **Un secreto nunca pasa** por el chat, un log, un commit, un argumento de comando ni una variable de entorno de Windows.
+- **Un secreto nunca se escribe** en el chat, un log, un commit, un comando ni una variable de entorno de Windows. Tampoco queda en el historial de PowerShell.
 - **Cada agente tiene solo los secretos que usa,** guardados en el lugar oficial de ese agente. Los carga Sergio Urcullo.
 - **Si falta un secreto o un login,** el agente dice cuál falta y dónde se carga, y sigue con lo que sí puede hacer. Nunca pide por chat el secreto ni la contraseña maestra.
 - **Entrar a una cuenta no da más permisos.** Publicar, mandar mensajes, pagar o tocar producción sigue pidiendo el sí de Sergio Urcullo.
@@ -23,7 +23,7 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
   - las notas dicen en qué agente está cargado, así se sabe dónde reemplazarlo cuando cambie.
 - Después de cada cambio, se guarda una copia del `.kdbx` en E:. Va cifrada, igual que el original.
 
-**Lo que hoy está suelto en `BovedaPrivada`** pasa a la bóveda, y después Sergio Urcullo borra el original:
+**Lo que hoy está suelto en `BovedaPrivada`** pasa a la bóveda, y después Sergio Urcullo borra el original con Shift+Supr, para que no quede en texto plano en la Papelera:
 - `claude-cloud-entorno-variables.txt`: una entrada por cada valor;
 - la clave SSH `claude-cloud-vps-20260930`, como adjunto de una entrada. La `.pub` es pública y puede quedar como está.
 
@@ -31,18 +31,20 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 
 | Agente | Su login | Otras claves | Logins de sitios |
 |---|---|---|---|
-| Hermes | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, cifrado |
+| Hermes | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, y `browser-profile\` si se usa el perfil real |
 | Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador |
 | Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | no tiene |
 
 Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_external_logins: false`. Está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
+
+El cofre de Hermes está cifrado, pero su llave (`vault.key`) vive en la misma carpeta (`agent/vault_store.py`). En Windows cualquier programa que corra con el usuario de Sergio Urcullo lo puede abrir, igual que los demás archivos de la tabla.
 
 ## Por qué no hay un puente automático
 
 - **Hermes v0.22.5 no puede leer KeePassXC en Windows nativo.**
   - Lo que lo conectaría es su fuente de secretos `command`, que solo corre en Linux y macOS. La documentación instalada dice "POSIX-only (needs /bin/sh). On Windows the source reports itself unconfigured" (`user-guide/secrets/command.md`), y el código lo confirma (`agent/secret_sources/command.py`).
   - Las fuentes que sí andan en Windows son Bitwarden y 1Password, que son otros gestores de contraseñas.
-- **`keepassxc-cli` pide la contraseña maestra cada vez que se corre.** No se conecta con el KeePassXC que está abierto, y dejar la contraseña en un archivo o una variable para automatizarlo rompe la regla.
+- **`keepassxc-cli` pide la contraseña maestra, o un archivo llave, cada vez que abre la bóveda.** No se conecta con el KeePassXC que está abierto. Para automatizarlo habría que dejar una de las dos en un archivo o una variable, y eso rompe la regla.
 - **Por eso el puente es Sergio Urcullo:** copia el secreto de la bóveda y lo pega en el agente. Si algún día hace falta automatizarlo, se decide aparte y con su OK. Por ejemplo, con un plugin de Hermes o cambiando de gestor.
 
 ## Cómo se carga un secreto
@@ -50,8 +52,12 @@ Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_ex
 Siempre igual:
 1. En KeePassXC, copiar la contraseña de la entrada con Ctrl+C. KeePassXC vacía el portapapeles a los 10 segundos.
 2. Pegarla en el campo oculto que pide el agente.
-3. **Nunca escribirla como argumento de un comando,** porque PowerShell guarda cada comando en su historial. Si un comando solo acepta el secreto como argumento, primero se lee con `$s = Read-Host -AsSecureString` y en el comando va `$([Net.NetworkCredential]::new('', $s).Password)`. Así el historial guarda el nombre de la variable, no el valor. Al final, `Remove-Variable s`.
-4. Si el historial del portapapeles de Windows (Win+V) está prendido, revisar que el secreto no haya quedado ahí.
+3. **Nunca escribirla en un comando,** porque PowerShell guarda cada comando en su historial.
+   - La única excepción es un comando que solo acepta el secreto como argumento, por ejemplo `claude mcp add --header`.
+   - En ese caso, primero se lee con `$s = Read-Host -AsSecureString`, y en el comando va `$([Net.NetworkCredential]::new('', $s).Password)`. Al final, `Remove-Variable s`.
+   - Así no se escribe y el historial guarda el nombre de la variable, no el valor.
+   - Lo que queda es esto: mientras el comando corre, otros programas del mismo usuario pueden ver su línea de comandos. Por eso se usa solo para cargar el secreto una vez.
+4. **El historial del portapapeles (Win+V):** KeePassXC marca lo que copia para que no quede ahí. Lo que se copia desde otro programa, como PowerShell o el navegador, sí queda, y en la nube si está activada. Después de pegarlo, se borra esa entrada en Win+V, o todo el historial en *Configuración → Sistema → Portapapeles → Borrar*.
 
 ### Hermes
 
@@ -62,8 +68,12 @@ Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú I
 - **Logins de sitios:** `hermes vault add`, o en la app de escritorio, *Settings → Passwords & Logins → Add*.
   - La contraseña se pide oculta y el comando no la acepta como argumento (`hermes_cli/vault.py`).
   - El modelo nunca la ve: Hermes la escribe directo en la página, y solo si el sitio es el mismo que se guardó (`user-guide/features/credential-vault.md`).
+  - Cuando pide *Authenticator key*, se aprieta Enter sin cargar nada. Con esa clave Hermes genera solo los códigos de verificación en dos pasos, y esos los resuelve Sergio Urcullo. Si una tarea sin nadie mirando pide un código, falla y avisa.
 - **Tarjetas:** no se cargan. Si alguna vez hacen falta, se decide aparte, porque es gasto.
-- **Lo que Hermes ya protege por su cuenta:** a sus terminales y a sus servidores MCP les saca las claves del entorno. Para pasarle una hay que nombrarla en `terminal.env_passthrough` o en el `env` del MCP (`user-guide/security.md`).
+- **Lo que Hermes saca del entorno por su cuenta** (`user-guide/security.md`):
+  - A su terminal le saca solo las claves que conoce, las de sus proveedores y herramientas. Cualquier otra variable le llega.
+  - A `execute_code` le saca toda variable con KEY, TOKEN, SECRET, PASSWORD, CREDENTIAL, PASSWD o AUTH en el nombre.
+  - A sus servidores MCP no les pasa nada, salvo lo que se nombra en su `env`. Ahí se escribe `"${NOMBRE}"` y el valor queda en el `.env`, así `config.yaml` no guarda el secreto (`reference/mcp-config-reference.md`).
 
 #### La clave de API de Anthropic
 
@@ -96,7 +106,8 @@ Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú I
 
 `GEMINI_API_KEY`, `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN` están en las variables de usuario de Windows, donde cualquier programa las puede leer.
 - Al 28-oct no las usa nada: ni Claude, ni Codex, ni los proyectos de `C:\dev\proyectos`, sin contar las copias del repo viejo.
-- Hermes ya las ignora: Gemini se apagó con `hermes auth remove gemini`, y la voz está apagada.
+- A la terminal de Hermes le llega `N8N_MCP_TOKEN`, porque no es una clave que Hermes conozca. Las otras dos se las saca.
+- Mientras la variable exista, Hermes deja de usar la de Gemini con `hermes auth remove gemini <n>`, con el número que muestra `hermes auth list gemini`.
 
 Se pasan a la bóveda de a una, desde una PowerShell abierta desde el menú Inicio. La que se abre desde la app de Claude ve una copia del registro, no el real.
 
@@ -111,14 +122,14 @@ Se pasan a la bóveda de a una, desde una PowerShell abierta desde el menú Inic
      [Environment]::GetEnvironmentVariable('GEMINI_API_KEY', 'User') | Set-Clipboard
      ```
 
-     Se pega en la entrada nueva de KeePassXC y se vacía el portapapeles con `Set-Clipboard -Value ' '`.
+     Se pega en la entrada nueva de KeePassXC y se reemplaza el portapapeles con `Set-Clipboard -Value ' '`. Eso no borra la copia que queda en el historial del portapapeles: hay que borrarla en Win+V, como dice el paso 4 de "Cómo se carga un secreto".
 2. **Borrar la variable:**
 
    ```powershell
    [Environment]::SetEnvironmentVariable('GEMINI_API_KEY', $null, 'User')
    ```
 
-3. **Comprobar que no quedó,** en una PowerShell nueva. Esto devuelve `True` sin mostrar ningún valor:
+3. **Comprobar que no quedó.** Esto lee el registro y devuelve `True` sin mostrar ningún valor:
 
    ```powershell
    $null -eq [Environment]::GetEnvironmentVariable('GEMINI_API_KEY', 'User')
@@ -133,7 +144,7 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 **Para todos:**
 - Los agentes usan sesiones que ya están abiertas. El login, la verificación en dos pasos, el consentimiento de Google y las sesiones vencidas los resuelve Sergio Urcullo en su pantalla.
 - Ningún agente escribe una contraseña en un formulario. La excepción es Hermes con su cofre, que no se la muestra al modelo.
-- Los perfiles persistentes que se armen para agentes van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, nunca dentro de un repo.
+- Los perfiles de navegador que se armen a mano para un agente van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, y nunca dentro de un repo. La copia que hace Hermes de un perfil real queda en su carpeta, que maneja él.
 - Cada perfil lo usa un agente a la vez. No se copian cookies entre worktrees.
 - El puerto de control del navegador (CDP) nunca se abre a Internet.
 
@@ -146,11 +157,12 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 **Hermes** ([detalle en su documentación](https://hermes-agent.nousresearch.com/docs), `user-guide/features/browser.md`):
 - Por defecto abre un Chromium limpio, sin sesiones.
 - Para los sitios con login usa su cofre (`hermes vault add`).
-- `browser.use_real_profile: true` copia el perfil activo de Chrome, con todas sus cookies, a la carpeta de Hermes.
-  - **No se usa con el perfil personal,** porque le daría a Hermes todas las cuentas abiertas.
+- `browser.use_real_profile: true` copia el perfil activo del navegador predeterminado a `%LOCALAPPDATA%\hermes\browser-profile\`, con sus cookies, sus contraseñas guardadas y sus preferencias.
+  - **No se usa con el perfil personal,** porque le daría a Hermes todas las cuentas y contraseñas de ese perfil.
   - Si hace falta, se crea en Chrome un perfil aparte, solo con las cuentas de trabajo, y se fija con `browser.real_profile_pin`.
-  - En Windows, la primera copia necesita Chrome cerrado del todo.
-- En las tareas sin nadie mirando (cron, Telegram) Hermes no puede preguntar: lo que necesite tiene que estar guardado antes en su cofre.
+  - El pin lleva el nombre de la carpeta del perfil (por ejemplo `"Profile 2"`), no el nombre que se ve en Chrome. La carpeta aparece en `chrome://version`, en "Ruta de acceso del perfil".
+  - En Windows, la primera copia necesita el navegador cerrado del todo.
+- En las tareas sin nadie mirando (cron, Telegram) Hermes no puede preguntar. Las contraseñas que necesite tienen que estar guardadas antes en su cofre, y si un sitio pide un código, la tarea falla y avisa.
 - El armado concreto es el [issue #7](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/7).
 
 ## Si un secreto se filtra
