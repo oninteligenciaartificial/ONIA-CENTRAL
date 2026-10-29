@@ -9,15 +9,7 @@ La usa sobre todo Hermes, que orquesta: toma el issue, lanza a quien escribe y a
 
 ## Frenos
 
-- **Lo reservado no se mergea sin Sergio Urcullo.** Es lo que el `AGENTS.md` le reserva:
-  - lo que se publica o ve un cliente, incluido todo lo de `marca-personal/` y `workshops-comunidad/`;
-  - el gasto;
-  - producción (VPS, base de datos, Vercel);
-  - lo legal;
-  - skills o herramientas de afuera;
-  - cambios a `AGENTS.md`, `CLAUDE.md`, `.gitignore` o los permisos.
-
-  Si hay duda, es reservado.
+- **Lo reservado no se mergea sin Sergio Urcullo.** Reservado es lo que entra en la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`. La lista se lee ahí cada vez y no se copia en esta skill, para que no quede atrás. Si un PR entra en esa lista y también en "Lo mergea Claude sin preguntar", o hay duda, es reservado.
 - **Hermes y Codex no mergean.** Lo dice el `AGENTS.md`: el merge lo hace Claude Code, y acá lo lanza Hermes (paso 9).
 - **Nada de modos sin permisos:** nunca `--dangerously-skip-permissions`, `bypassPermissions`, `--dangerously-bypass-approvals-and-sandbox`, `--yolo` ni `danger-full-access`. Hermes además los frena en `approvals.deny`.
 - **A una aprobación de Hermes se contesta "once", nunca "always".**
@@ -155,9 +147,9 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    - qué revisar:
      - si cumple el "hecho cuando";
      - si toca solo lo necesario, sin secretos ni datos personales;
-     - si respeta el `AGENTS.md` y `docs/lecciones.md`;
+     - si respeta el `AGENTS.md` y `docs/lecciones.md`, que lee del worktree;
      - si algo del resto del repo queda viejo o contradice el cambio, buscándolo en el repo;
-     - si toca algo reservado.
+     - si toca algo de la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`.
    - que conteste así:
 
      ```text
@@ -182,19 +174,19 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    - mirá el diff, y hacé commit y push (paso 5);
    - volvé al paso 7 con un revisor nuevo, sin la sesión anterior.
 
-   Hasta tres vueltas. Si la tercera revisión sigue pidiendo cambios, se frena y se le lleva a Sergio Urcullo (paso 10).
+   Hasta tres vueltas. Si la tercera revisión sigue pidiendo cambios, se frena: el PR queda abierto sin mergear, con un comentario que dice qué sigue fallando, y se cuenta en el cierre (paso 11). No se le pregunta a Sergio Urcullo, salvo que lo que traba sea reservado o algo que solo él puede hacer (paso 10).
 9. **Merge.**
    - **Sin preguntar,** solo si se cumplen las tres:
-     - el PR toca nada más que documentos internos de `docs/`, la estructura de carpetas, skills de `.agents/skills/` que no hacen nada reservado, o pruebas;
+     - el PR entra en "Lo mergea Claude sin preguntar" del `AGENTS.md` y en nada de "Lo aprueba Sergio Urcullo, siempre". Por ejemplo, un PR que toca solo `docs/` o una skill, pero cambia cómo trabaja la empresa, es reservado;
      - la última revisión dice "aprobar" y "Reservado: no";
      - esa revisión nombra el último commit del PR.
    - **Si es reservado,** no se mergea hasta la respuesta de Sergio Urcullo (paso 10).
    - Primero, Hermes borra el worktree, que ya está todo pusheado: `git -C C:/dev/proyectos/ONIA-CENTRAL worktree remove C:/dev/worktrees/ONIA-CENTRAL/issue-<N>`. Es porque `--delete-branch` borra también la rama local, y git no borra una rama abierta en un worktree.
    - Después lanza a Claude Code con `<notas>/prompt-merge.md`, que dice:
-     - que mergea según el `AGENTS.md`;
+     - que mergea según el `AGENTS.md`, con las dos listas "Lo mergea Claude sin preguntar" y "Lo aprueba Sergio Urcullo, siempre" copiadas tal cual del `AGENTS.md` de `main` en ese momento. Van en el prompt porque Claude Code con `--restricted` no carga el `AGENTS.md` y el que mergea no tiene con qué leerlo (probado el 29-oct);
      - el número del PR y el SHA completo del commit que aprobó la última revisión;
      - qué comprobar:
-       - con `gh pr view <PR> --json files,commits,comments,mergeable`: que los archivos sean los permitidos, que el último comentario "Revisión" diga "aprobar" y nombre ese SHA, que sea mergeable y, si era reservado, que haya un comentario con la aprobación de Sergio Urcullo;
+       - con `gh pr view <PR> --json files,commits,comments,mergeable`: que los archivos entren en "Lo mergea Claude sin preguntar" o, si era reservado, que haya un comentario con la aprobación de Sergio Urcullo que los cubra; que el último comentario "Revisión" diga "aprobar" y nombre ese SHA; y que sea mergeable;
        - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
      - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA;
      - que, si algo falla, no mergee y diga qué falló.
@@ -206,7 +198,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
      ```
 
      Va con `workdir` en el checkout principal. Si alguien sumó un commit después de la revisión, `--match-head-commit` no deja mergear.
-10. **A Sergio Urcullo, solo lo reservado o lo trabado.** Todo junto, en un solo mensaje corto:
+10. **A Sergio Urcullo, solo lo reservado y lo que solo él puede hacer,** como logins, secretos o comandos en su PowerShell. Así lo dice el `AGENTS.md`, en "Los planes no se le preguntan". Lo técnico lo decide el agente. Todo junto, en un solo mensaje corto:
     - qué es y por qué le toca a él, con la regla del `AGENTS.md`;
     - el enlace al PR;
     - dos o tres opciones cortas, con la recomendada marcada "(recomendada)";
@@ -214,7 +206,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
 
     Cuando contesta, Hermes deja un comentario en el PR que cita sus palabras textuales y la fecha, porque la cuenta de GitHub es compartida. Recién ahí vuelve al paso 9.
 11. **Cerrar.**
-    - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR.
+    - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
     - Contale a Sergio Urcullo en corto: el issue, el PR, quién escribió, quién revisó, cuántas vueltas hubo y qué quedó afuera.
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
@@ -230,7 +222,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
 En el TUI de Hermes, abierto desde ONIA-CENTRAL, con un objetivo que siga solo hasta terminar:
 
 ```text
-/goal Llevá el issue #<N> de ONIA-CENTRAL de punta a punta con la skill llevar-issue. Terminá cuando el PR esté mergeado y el issue cerrado, o frená cuando algo necesite a Sergio Urcullo.
+/goal Llevá el issue #<N> de ONIA-CENTRAL de punta a punta con la skill llevar-issue. Terminá cuando el PR esté mergeado y el issue cerrado, o frená cuando algo necesite a Sergio Urcullo o la skill diga que se frena.
 ```
 
 Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo va, y `/goal pause` lo frena.
@@ -246,6 +238,9 @@ Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo
 ## Cómo se comprueba
 
 - El PR dice `Closes #<N>`, quién orquestó, quién escribió y quién revisó.
-- Hay un comentario "Revisión <R>" por cada vuelta, con el commit que revisó. El último dice "aprobar" y nombra el último commit.
-- Si era reservado, hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras.
-- El PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
+- Hay un comentario "Revisión <R>" por cada vuelta, con el commit que revisó.
+- Si se mergeó:
+  - la última revisión dice "aprobar" y nombra el último commit;
+  - si era reservado, hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras;
+  - el PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
+- Si quedó trabado en el paso 8: el PR y el issue siguen abiertos, hay un comentario que dice qué sigue fallando, y se contó en el cierre.
