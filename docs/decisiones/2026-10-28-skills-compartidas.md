@@ -1,6 +1,6 @@
 # Skills de ONIA: una sola carpeta para Hermes, Claude Code y Codex
 
-28-oct-2026. **Sergio Urcullo aprobó las decisiones 1 a 6 del punto 8 el mismo día.** La 7 queda para más adelante. Al aprobarse, todavía no había cambiado nada: ni la configuración de los agentes, ni el `.gitignore`, ni había skills en el repo. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
+28-oct-2026. **Sergio Urcullo aprobó las decisiones 1 a 6 del punto 8 el mismo día.** Hasta ese momento no había cambiado nada: ni la configuración de los agentes, ni el `.gitignore`, ni había skills en el repo. **Esa misma noche quedaron aplicadas y probadas: los tres agentes cargan la skill (punto 9).** Se recomienda no aplicar la 7 por ahora; la decide él. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
 
 Cómo se armó, todo de solo lectura salvo las pruebas en una carpeta temporal:
 - **Hermes v0.22.5:** su documentación y su código, los dos instalados en `%LOCALAPPDATA%\hermes\hermes-agent`. Abajo, `docs/` es `website/docs/` de esa carpeta.
@@ -147,7 +147,6 @@ hermes skills list
   - Con el junction, `claude -p "/prueba-onia"` devolvió la clave de la skill.
   - Sin el junction, contestó que el comando no estaba disponible.
   - Desde un worktree sin `.claude\skills`, también la cargó.
-  - No se probó si Claude detecta cambios en vivo a través del junction.
 - **Límite:** las sesiones de Claude en la nube clonan el repo sin el junction, así que no ven las skills de ONIA. Las de Codex en la nube sí, porque leen `.agents/skills` directo. Si se empieza a usar Claude en la nube para ONIA, el enlace se puede crear en el script de inicio de ese entorno; no está probado.
 
 ### Lo que se descartó
@@ -295,7 +294,11 @@ Sergio Urcullo preguntó si conviene usar alguna.
 4. **Primera skill: `investigar-referente`** (recomendado).
 5. **El proceso para skills de terceros** del punto 7.
 6. **Skills populares:** ninguna entra ahora. El orden para cuando haga falta está en el punto 6 (recomendado).
-7. **Claude Code: `"disableSkillShellExecution": true`** en su configuración de usuario, para que ninguna skill corra comandos al cargarse. Es opcional. Antes se revisa que ningún plugin instalado los use.
+7. **Claude Code: `"disableSkillShellExecution": true`** en su configuración de usuario, para que ninguna skill corra comandos al cargarse. **Se recomienda no aplicarla por ahora; la decide Sergio Urcullo:**
+   - `claude-security`, el plugin oficial de Anthropic, usa dos de esos comandos (`date` y `find`) para armar su contexto, y es el único instalado que los usa.
+   - Las skills de ONIA no los usan.
+   - El riesgo mayor son las skills de un repo clonado, y eso ya lo frena la regla del punto 7: no abrir Claude Code ni Codex en un repo de terceros sin mirar antes sus skills.
+   - Los plugins instalados son oficiales y entran con el OK de Sergio Urcullo.
 
 Con el OK, el orden es:
 1. un PR con la skill y la línea del `.gitignore`;
@@ -304,9 +307,34 @@ Con el OK, el orden es:
 4. los comandos de Hermes;
 5. la prueba en los tres.
 
-Esta decisión se actualiza con el resultado. El issue #10 sigue abierto hasta que los tres agentes carguen la skill.
+## 9. Resultado
+
+Aplicado el 28-oct-2026, en el orden de arriba:
+
+- **[PR #15](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/15):**
+  - suma `.agents/skills/investigar-referente/SKILL.md` y la línea `.claude/skills` del `.gitignore`;
+  - pasó la revisión independiente, que agregó frenos: no sigue, no da like, no usa cuentas de Sergio Urcullo, no se anota a nada y no gasta;
+  - el escáner de Hermes (`tools/skills_guard.py`) la da por "safe".
+- **Checkout principal:** se actualizó con `git pull` y se creó el junction `.claude\skills` → `.agents\skills`. `git status` no lo muestra.
+- **Hermes:** Sergio Urcullo corrió los comandos del punto 3. En `config.yaml` quedaron `skills.project_discovery: true` y `skills.trusted_project_dirs` con `C:\dev\proyectos\ONIA-CENTRAL` y nada más.
+- **Prueba:** se le pidió a cada agente el título del paso 3, sin investigar. Los tres respondieron "Anuncios":
+
+| Agente | Desde dónde | Señal de carga |
+|---|---|---|
+| Claude Code 2.1.288 | `claude -p "/investigar-referente …"`, desde el checkout principal y desde un worktree sin `.claude\skills` | Corrió la skill como comando. |
+| Codex 0.164.0 | `codex exec 'Usá la skill $investigar-referente…'`, desde el checkout principal | La tenía en su lista de skills y la cargó desde `.agents/skills` sin correr comandos, según su log de sesión. |
+| Hermes v0.22.5 | `hermes chat -q "/investigar-referente …"`, desde el checkout principal | "1 project skill(s) loaded from this repo". `hermes skills list` la muestra con origen `project`. |
+
+Además, ya con el junction, una sesión de Claude que estaba abierta en un worktree vio aparecer la skill sin reiniciar.
+
+Con esto se cumple el "Hecho cuando" del #10.
 
 ## Encontrado de paso, fuera del objetivo
 
+Los cuatro primeros quedaron en el [issue #20](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/20).
+
 - `C:\Users\PC\.agents` tiene un `.skill-lock.json` de una herramienta que no es Codex. No se abrió.
 - El `config.toml` de Codex sigue marcando como confiables carpetas del repo viejo y de Orca. Además, conserva un hook confiable de `onia-hermes`.
+- **Hermes detectó una carpeta vieja de OpenClaw en `~/.openclaw`** y sugiere importarla. No se importa: el `AGENTS.md` dice que Hermes no importa nada de otro agente.
+- **En la prueba de Codex, un plugin con conexión MCP a chatgpt.com falló con un 403.** No afectó a la skill.
+- **El checkout principal tiene una carpeta `ONIA-CENTRAL/` sin trackear:** es una bóveda de Obsidian del 28-oct. No se tocó.
