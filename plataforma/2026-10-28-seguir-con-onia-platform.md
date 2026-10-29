@@ -4,7 +4,7 @@
 
 Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitHub, el checkout local y sus worktrees. No se tocó producción (VPS, base de datos, Vercel) ni se leyó el repo viejo: lo que se dice de él sale de cómo lo nombra el código de la plataforma.
 
-**En corto:** seguir, pero congelado. Nada de funciones nuevas hasta que una clínica pague y renueve, con fecha de corte. Si no pasa, se pausa. Antes del primer cliente hay que arreglar el respaldo y sacar la plataforma del repo viejo.
+**En corto:** seguir, pero congelado. Nada de funciones nuevas hasta que una clínica pague y renueve, con fecha de corte. Si no pasa, se pausa. Antes del primer cliente hay que dejar listos el respaldo, el cobro completo, la factura de ONIA, los términos y el cron de recordatorios (punto 8, pasos 4 y 5).
 
 ## 1. Qué es y en qué estado está
 
@@ -18,17 +18,18 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
 **Precio.** Cuatro planes de Bs 320, 550, 890 y 1.290 por mes, más uno empresarial de Bs 2.900. El chatbot se compra aparte por Bs 390 por mes, salvo en los dos planes más altos, que lo incluyen.
 
 **Tamaño.**
-- Desde el 6-abr-2026 lleva 2.098 commits en `master`: 931 en septiembre y 492 en octubre.
-- Tiene 1.973 archivos de código, 1.123 de pruebas, 84 tablas, 132 pantallas y 175 rutas de API.
+- Desde el 6-abr-2026 lleva 2.098 commits en `master`: 931 en septiembre y 508 en octubre.
+- Tiene unos 1.000 archivos de código propio, 955 de pruebas, 84 tablas, 132 pantallas y 175 rutas de API.
 
-**Dónde corre.** En el VPS de producción. Lo comparte con Supabase propio, correo, Chatwoot, n8n, el bot y otras webs: 24 contenedores el 23-sep.
+**Dónde corre.** En el VPS de producción. Lo comparte con Supabase propio, correo, Chatwoot, n8n, el bot y otras webs: 24 contenedores el 23-sep. La web de venta, onia.com.bo, es otro despliegue (punto 4).
 
-**Ventas.** El tablero de producción del 27-sep mostraba 5 organizaciones registradas, 0 pagos aprobados y Bs 0 cobrados. No consta cuántas de esas cuentas son de la casa. En el repo no hay rastro de un pago posterior.
+**Ventas.** El tablero de producción del 27-sep mostraba 5 organizaciones registradas, 0 pagos aprobados y Bs 0 cobrados ese mes. Al menos una de esas cuentas es la organización interna de ONIA. En el repo no hay rastro de un pago posterior.
 
 **Último trabajo.**
 - El último cambio en `master` es del 16-oct (PR #183).
-- Desde el 1-oct, casi todo fue pulido: textos de usted, accesibilidad y fechas de La Paz.
-- No consta qué versión corre hoy en el VPS. La última lectura, del 28-sep, mostraba un build distinto del candidato local.
+- Hasta el 11-oct entraron cambios de funcionamiento: pedir la factura para aprobar un pago (#114), recuperar citas canceladas (#133) y correcciones de caja (#158), entre otros.
+- Del 15 al 16-oct, todo fue pulido: textos de usted, accesibilidad y fechas de La Paz (#171 a #183).
+- No consta qué versión corre hoy en el VPS. La última lectura, del 28-sep, mostraba una versión distinta de la que estaba lista en la PC.
 
 **La 1.0 no está cerrada.** El propio repo pide un cliente dental que se registre, cargue datos, trabaje un día, pague y renueve sin ayuda técnica. Siguen abiertos:
 - el cobro real y la renovación;
@@ -39,8 +40,8 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
 ## 2. Pros y contras
 
 **A favor:**
-- El núcleo existe. En el corte del 27-sep, los 5 rubros pasaron su recorrido de punta a punta en un entorno de prueba, igual que el cobro por QR, la agenda y el alta.
-- Está pensado para Bolivia: bolivianos, hora de La Paz, vocabulario de cada rubro y SIAT. Los competidores grandes no prueban SIAT.
+- El núcleo existe. En el corte del 27-sep, los 5 rubros pasaron su recorrido completo en un entorno de prueba, igual que el alta y la agenda. El cobro por QR y la renovación no se probaron de punta a punta.
+- Está pensado para Bolivia: bolivianos, hora de La Paz, vocabulario de cada rubro y SIAT. En la revisión de competidores del 28-sep no se encontró que los grandes cubran SIAT.
 - Tiene mucha prueba automática: unas 7.000 pruebas pasaban el 28-sep.
 - Ya está en producción y el costo de infraestructura es bajo, porque comparte el VPS.
 - Es un caso propio para contar en la marca personal y enseñar en los talleres.
@@ -52,10 +53,13 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
   - el respaldo diario de la base era un gzip vacío al 23-sep (DG-040);
   - el entorno de QA del VPS usa la misma base que producción;
   - el VPS corría Node 20 al 23-sep, que ya no tiene soporte;
-  - las pruebas de GitHub corren en un runner dentro del mismo VPS de producción;
+  - las pruebas automáticas de GitHub corren en un runner (la máquina que las ejecuta) dentro del mismo VPS de producción;
   - todo depende de un solo servidor.
 - Piezas que corren en producción dependen del repo viejo (punto 4).
-- Hay desorden acumulado: 241 ramas locales, 42 worktrees en C:, E:, Codex y Orca, 10 PRs abiertos y 65 issues automáticos de Sentry sin tratar.
+- Hay desorden acumulado:
+  - 241 ramas locales y 42 worktrees en C:, E:, Codex y Orca;
+  - 10 PRs abiertos y 65 issues automáticos de Sentry sin tratar;
+  - 3.501 archivos de librerías de terceros subidos a `master`, dentro de `n8n-mcp-server/node_modules/`.
 - La competencia ya ofrece IA y WhatsApp: Dentalink en dental, y AgendaPro, que tiene página para Bolivia.
 - Con el primer cliente dental entran datos clínicos, con su responsabilidad de seguridad y legal.
 
@@ -80,17 +84,18 @@ Es un dato para la limpieza del método viejo.
 **El túnel del puerto 3108: no lo usa.** Ni el código ni la configuración lo nombran, y hoy no escucha nada en ese puerto ni en los que usaba el desarrollo local.
 
 **Del repo `onia-hermes` sí depende, en producción:**
+- **La web de venta (onia.com.bo),** con los precios. Se construye en `web-factory/apps/onia-platform`, dentro del repo viejo. Es la puerta de entrada de la prueba comercial.
 - **El chatbot de WhatsApp.** Su motor vive en el repo viejo (`hermes-content/deploy/vps-ops/bot/`) y corre en el VPS como `onia-center`, en el puerto 3020. La plataforma lee su estado y sus conversaciones (`onia_center.bot_conversations`).
 - **Los recordatorios de citas.** Los dispara un cron del VPS cuyo script se copia desde el repo viejo (`app/api/cron/appointment-reminders/route.ts`).
 - **SIAT.** La integración está en el repo viejo (`hermes-content/integrations/siat`).
 - **El contrato de ONIA Core.** Se sincroniza desde `../onia-hermes/onia-core/contract.json` (`scripts/sync-onia-core.mjs`). La CI tolera que falte.
-- **Las pruebas de GitHub.** Corren en un runner propio dentro del VPS de producción, y sus límites están definidos en el repo viejo.
+- **Las pruebas de GitHub.** Su runner está dentro del VPS de producción, y sus límites están definidos en el repo viejo.
 - **El Hermes viejo del VPS.** Lee `/api/onia-core/bridge/pending` para avisarle al dueño por Telegram.
-- **"Mi web".** Se construye en `web-factory`, dentro del repo viejo.
+- **"Mi web".** También se construye en `web-factory`, dentro del repo viejo.
 - **El desarrollo local.** Según `docs/DEV_LOCAL_SETUP.md`, entraba a la base de producción con un túnel SSH y la llave `onia_hermes_vps_ed25519`.
 - **Worktrees de la plataforma en carpetas del método viejo.** Hay 27 en `E:\onia-wt` y 1 en `E:\onia-orquesta`. Antes de archivar esas carpetas hay que revisar si tienen cambios sin guardar. Después, `git worktree prune` borra los registros que quedaron colgados.
 
-**Consecuencia.** Lo que ya corre en el VPS sigue andando mientras nadie lo toque. Pero sin mudar esas piezas, no hay de dónde arreglarlas ni volver a desplegarlas. Antes de archivar `onia-hermes` o de apagar "Deploy ONIA Center", hay que confirmar desde afuera qué despliega ese workflow. Revocar la llave SSH vieja corta el acceso de quien la use.
+**Consecuencia.** Lo que ya corre en el VPS sigue andando mientras nadie lo toque. Pero sin mudar esas piezas, no hay un repo permitido desde donde arreglarlas ni volver a desplegarlas, porque el viejo ya no se usa. Antes de archivar `onia-hermes` o de apagar "Deploy ONIA Center", hay que confirmar desde afuera qué despliega ese workflow. Revocar la llave SSH vieja corta el acceso de quien la use.
 
 ## 5. Cómo encaja con marca personal y talleres
 
@@ -103,8 +108,8 @@ Es un dato para la limpieza del método viejo.
 | Opción | A favor | En contra |
 |---|---|---|
 | **A. Seguir como hasta ahora:** más funciones y más pulido | El producto mejora. | 6,5 meses y 0 pagos. Cada función suma mantenimiento, y el pulido no prueba que alguien pague. |
-| **B. Seguir congelado, con una prueba comercial con fecha** | Usa lo ya hecho. El criterio ya está escrito en el propio repo. El costo queda acotado. | Pide tiempo de venta de Sergio Urcullo, no de agentes. Antes hay que arreglar el respaldo y las dependencias. |
-| **C. Pausar ahora y archivar** | Libera todo el tiempo para marca personal y talleres, y baja el riesgo operativo. | El trabajo queda sin probar en el mercado. Apagar bien también lleva trabajo: exportar datos, avisar a las 5 cuentas y bajar contenedores. |
+| **B. Seguir congelado, con una prueba comercial con fecha** | Usa lo ya hecho. El criterio ya está escrito en el propio repo. El costo queda acotado. | Pide tiempo de venta de Sergio Urcullo, no de agentes. Antes hay que dejar listos el respaldo, el cobro y lo legal. |
+| **C. Pausar ahora y archivar** | Libera todo el tiempo para marca personal y talleres, y baja el riesgo operativo. | El trabajo queda sin probar en el mercado. Apagar bien también lleva trabajo: exportar datos, avisar a las cuentas y bajar contenedores. |
 | **D. Usar herramientas existentes** (Dentalink, AgendaPro, Alegra u Odoo, con un bot de WhatsApp aparte) **y vender la implementación** | No hay nada que mantener y son productos probados. Encaja con los talleres: "te lo implemento". | Margen chico y sin diferencia propia. SIAT no está probado en esas herramientas, y se depende de terceros. |
 
 ## 7. Recomendación: B
@@ -112,28 +117,32 @@ Es un dato para la limpieza del método viejo.
 Seguir, pero congelado y con una prueba comercial con fecha:
 - **Un solo rubro:** dental, que es el más trabajado y el que pide el propio criterio de la 1.0.
 - **Sin funciones nuevas.** Solo se arregla lo que bloquea a un cliente real o lo que promete algo que no hace.
+- **Sin chatbot en la oferta de la prueba,** así su mudanza puede esperar.
 - **Venta asistida,** con cobro por QR. No hace falta esperar a SIAT si la clínica no exige factura desde el sistema.
-- **Fecha de corte,** que decide Sergio Urcullo. Propuesta: primer pago antes del 31-dic-2026 y su renovación en enero. Si no se cumple, se pasa a C.
+- **Tope de tiempo por semana** para la plataforma, de agentes y de venta. Lo fija Sergio Urcullo.
+- **Fecha de corte,** que también decide él. Propuesta: primer pago antes del 31-dic-2026 y su renovación en enero. Si no se cumple, se pasa a C.
 
 **Por qué:** lo que falta no es código, es la prueba de que alguien paga. El producto ya tiene el núcleo, y seguir sumando funciones agranda el costo sin responder esa pregunta. Pausar ahora tira 6,5 meses sin haberlo ofrecido de verdad. D se puede retomar después si B falla.
 
 ## 8. Próximos pasos, si Sergio Urcullo aprueba
 
-Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan producción o el repo del producto y piden su aprobación.
+Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan producción, el repo del producto, lo legal o el cobro, y piden su aprobación.
 
-1. **(sí)** Guardar los 68 cambios y limpiar el checkout (punto 9).
-2. **(sí)** Quitar el worktree `onia-platform-crece4` (punto 9).
-3. **(sí)** Congelar: revisar los 10 PRs abiertos. Se mergea solo lo que corrige una promesa falsa o bloquea a un cliente. El resto se cierra, con su rama guardada en GitHub.
-4. **(sí)** Mudar a `onia-platform`, o a un repo propio, lo que vive en el repo viejo: el bot, el cron de recordatorios, SIAT, el contrato de ONIA Core y la configuración del runner. Es requisito para archivar `onia-hermes`.
-5. **(sí)** Antes del primer cliente:
+1. **(sí) Guardar los 68 cambios y limpiar el checkout** (punto 9). Hecho cuando están en una rama de archivo en GitHub y el checkout queda en `master` sin cambios.
+2. **(sí) Quitar el worktree `onia-platform-crece4`** (punto 9). Hecho cuando la carpeta y sus ramas ya no están.
+3. **(sí) Congelar.** Revisar los 10 PRs abiertos. Se mergea solo lo que corrige una promesa falsa, bloquea a un cliente, o es de seguridad, legal o del cobro y la renovación (como #154, #124 y #113). El resto se cierra, con su rama guardada en GitHub. Hecho cuando no queda ningún PR sin decidir.
+4. **(sí) Mudar el cron de recordatorios** a `onia-platform`. Hecho cuando el VPS corre el script desde ahí. Va antes del primer cliente, porque la clínica lo usa todos los días. El resto de lo que vive en el repo viejo (el bot, SIAT, la web de venta, "Mi web", el contrato de ONIA Core y la configuración del runner) se muda después. La web de venta, antes, si hay que cambiarla para la prueba. Todo eso es requisito para archivar `onia-hermes`.
+5. **(sí) Dejar lista la plataforma para el primer cliente.** Hecho cuando están estos seis:
    - un respaldo diario probado con una restauración;
    - QA con su propia base, separada de producción;
-   - Node 22 en el VPS;
-   - revisar `npm audit` (DG-029).
-6. Medir el costo real del mes (VPS, OpenAI, Resend y dominio) y anotarlo acá.
-7. Prueba comercial: Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema. Se anota cada fricción real.
-8. En la fecha de corte, decidir entre seguir y pausar, con lo medido.
-9. Ordenar ramas y worktrees: 241 ramas locales y 42 worktrees. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`.
+   - Node 22 en el VPS y `npm audit` revisado (DG-029);
+   - el cobro por QR probado completo en QA: pago, aprobación, plan activo y renovación;
+   - definido cómo factura ONIA a la clínica: desde el 10-oct (PR #114, ya en `master`), aprobar un pago real exige el número de factura;
+   - términos y privacidad aceptados en el alta (PR #124, abierto), porque entran datos clínicos.
+6. **Medir el costo real del mes** (VPS, OpenAI, Resend y dominio) y anotarlo acá. Hecho cuando la tabla del punto 3 no tiene huecos.
+7. **Prueba comercial.** Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema, y se anota cada fricción real. Hecho cuando están contactadas antes del 30-nov, con su respuesta anotada.
+8. **Decidir en la fecha de corte** entre seguir y pausar, con lo medido. Hecho cuando la decisión está escrita en esta carpeta.
+9. **(sí) Ordenar ramas y worktrees:** 241 ramas locales, 42 worktrees y un stash viejo, del 30-ago. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`. Hecho cuando solo quedan las ramas y worktrees en uso.
 
 ## 9. Los 68 cambios sin guardar y la copia duplicada
 
@@ -143,10 +152,11 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 
 **Comparados contra `master`:**
 - De los 49 archivos modificados, 24 ya están enteros en `master` y 5 casi enteros. Los otros 20 tienen partes que no están: sobre todo el editor del chatbot, los estilos, los planes y MFA. Todos se tocaron el 14-sep, y `master` cambió esos mismos archivos después, por su lado.
-- De los 19 archivos nuevos, 5 son idénticos a `master`, 13 son versiones viejas de archivos que `master` ya tiene y 1 es un `error.log`.
+- De los 19 archivos nuevos, 5 son idénticos a `master`. Otros 13 existen en `master` con otro contenido: 12 son versiones viejas, y el `HANDOFF_CLAUDE.md` es una nota propia de este checkout. El último es un `error.log`.
 
 **Qué hacer:**
-- Guardarlos enteros en una rama de archivo en GitHub, por ejemplo `archivo/f2-f3-panel-20260912`, sin el `error.log` y después de pasar `gitleaks`.
+- Guardarlos enteros en una rama de archivo en GitHub, por ejemplo `archivo/f2-f3-panel-20260912`, sin el `error.log`.
+- Antes de subirlos, pasarlos por `gitleaks`, un buscador de secretos. No está instalado en la PC, así que instalar la versión oficial pide el OK de Sergio Urcullo. Hace falta porque subir una rama de archivo no dispara el control de secretos de GitHub: ese control corre solo en `master` y en los PRs.
 - Después, dejar el checkout en `master` limpio.
 - No se integran. Si algún día hace falta un trozo, se saca de esa rama.
 
@@ -154,15 +164,19 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 
 **No es una copia: es un worktree** del mismo repo, en la rama `fix/crece-4-usuarios`.
 - Su único commit propio ("Crece pasa de 3 a 4 usuarios", 20-oct) ya llegó a `master` por otro camino (commit `8f2c2b56`). Por eso el PR #187 se cerró sin mergear.
-- Sus 2 cambios sin guardar son snapshots de pruebas, que se regeneran solos.
+- Sus 2 cambios sin guardar son dos snapshots de pruebas con el mismo contenido: solo cambian los saltos de línea.
 - Ocupa 1,3 GB.
 
-**Qué hacer:** quitar el worktree con `git worktree remove` y borrar la rama local. No se pierde nada.
+**Qué hacer:**
+- Quitar el worktree con `git worktree remove --force`. Hace falta `--force` por esos 2 archivos.
+- Borrar la rama `fix/crece-4-usuarios`, tanto la local como la de GitHub.
+- No se pierde nada.
 
 ## 10. Lo que decide Sergio Urcullo
 
 1. Qué opción sigue: B (recomendada), A, C o D.
 2. Las fechas de corte del primer pago y de la renovación.
-3. Si se guardan los 68 cambios en una rama de archivo y se limpia el checkout.
-4. Si se quita el worktree `onia-platform-crece4`.
-5. Un dato que falta: cuánto cuesta por mes el VPS de producción.
+3. El tope de tiempo por semana para la plataforma mientras dura la prueba.
+4. Si se guardan los 68 cambios en una rama de archivo, con `gitleaks` instalado para revisarlos, y se limpia el checkout.
+5. Si se quita el worktree `onia-platform-crece4` y se borra su rama.
+6. Un dato que falta: cuánto cuesta por mes el VPS de producción.
