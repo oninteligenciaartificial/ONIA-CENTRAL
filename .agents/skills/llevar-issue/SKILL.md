@@ -186,7 +186,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
      - que mergea según el `AGENTS.md`, con las dos listas "Lo mergea Claude sin preguntar" y "Lo aprueba Sergio Urcullo, siempre" copiadas tal cual del `AGENTS.md` de `main` en ese momento. Van en el prompt porque Claude Code con `--restricted` no carga el `AGENTS.md` y el que mergea no tiene con qué leerlo (probado el 29-oct);
      - el número del PR y el SHA completo del commit que aprobó la última revisión;
      - qué comprobar:
-       - con `gh pr view <PR> --json files,commits,comments,mergeable`: que los archivos entren en "Lo mergea Claude sin preguntar", que el último comentario "Revisión" diga "aprobar" y nombre ese SHA, que sea mergeable y, si era reservado, que haya un comentario con la aprobación de Sergio Urcullo;
+       - con `gh pr view <PR> --json files,commits,comments,mergeable`: que los archivos entren en "Lo mergea Claude sin preguntar" o, si era reservado, que haya un comentario con la aprobación de Sergio Urcullo que los cubra; que el último comentario "Revisión" diga "aprobar" y nombre ese SHA; y que sea mergeable;
        - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
      - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA;
      - que, si algo falla, no mergee y diga qué falló.
@@ -238,6 +238,9 @@ Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo
 ## Cómo se comprueba
 
 - El PR dice `Closes #<N>`, quién orquestó, quién escribió y quién revisó.
-- Hay un comentario "Revisión <R>" por cada vuelta, con el commit que revisó. El último dice "aprobar" y nombra el último commit.
-- Si era reservado, hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras.
-- El PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
+- Hay un comentario "Revisión <R>" por cada vuelta, con el commit que revisó.
+- Si se mergeó:
+  - la última revisión dice "aprobar" y nombra el último commit;
+  - si era reservado, hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras;
+  - el PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
+- Si quedó trabado en el paso 8: el PR y el issue siguen abiertos, hay un comentario que dice qué sigue fallando, y se contó en el cierre.
