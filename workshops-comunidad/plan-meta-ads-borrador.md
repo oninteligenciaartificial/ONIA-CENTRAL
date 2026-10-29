@@ -127,7 +127,7 @@ Sin factura, cada clase suelta deja Bs 50 y cada combo, Bs 120. Los dólares se 
 
 - **La meta de la primera semana son Bs 2.060:** 42 clases sueltas, 18 combos, o una mezcla.
 - **Antes del 3 de noviembre** hay como mucho tres días de anuncios, del sábado 31 al lunes 2. Lo que se junte para Claude depende sobre todo de lo que se venda sin anuncios desde el viernes 30. Si no alcanza, Claude se paga igual con la tarjeta.
-- **Para mediados de noviembre** (Codex, el VPS y Higgsfield) hace falta la segunda edición. Con costos fijos de más de US$300 por mes, las dos semanas tienen que juntar más de Bs 5.333.
+- **Para mediados de noviembre** (Codex y el VPS), y para Higgsfield en noviembre, hace falta la segunda edición. Con costos fijos de más de US$300 por mes, las dos semanas tienen que juntar más de Bs 5.333.
 - **La tarjeta:**
   - La línea de crédito de Bs 7.000 son unos US$578.
   - Entran dos semanas de anuncios y un mes de costos fijos de US$300 (US$440), si la tarjeta está libre.
@@ -173,7 +173,7 @@ Sigue los pasos de Meta para anuncios que abren un chat de WhatsApp ([ayuda de M
 - **Prueba:** Sergio Urcullo mostrando en pantalla una tarea real hecha con Claude, sin datos de clientes.
 - **Oferta:** 3 clases en vivo, Bs 50 cada una o Bs 120 las tres, con la grabación incluida.
 - **Llamado a la acción:** "Tocá el botón y escribime por WhatsApp". El chat se abre con el mensaje de la plantilla ya escrito.
-- **Marca:** el taller no usa el logo de Claude ni da a entender que es un curso oficial de Anthropic.
+- **Marca:** el taller no usa el logo de Claude ni da a entender que es un curso oficial de Anthropic. El nombre lleva la marca Claude, así que lo legal lo confirma Sergio Urcullo.
 - **Fechas:** van en la respuesta automática, no en el anuncio. Así el anuncio no ofrece un día que ya pasó, y no hay que cambiarlo a mitad de semana, que lo manda a revisión otra vez.
 
 ## Creativos con su cara
