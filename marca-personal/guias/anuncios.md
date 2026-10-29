@@ -4,15 +4,15 @@
 
 **Frenos:**
 - Publicar un anuncio, gastar en anuncios y generar con Higgsfield, que gasta créditos, piden el sí de Sergio Urcullo con captura.
-- Instalar una herramienta nueva, como Remotion o FFmpeg, pide su OK antes.
+- Instalar una herramienta nueva, como Remotion, FFmpeg o Whisper, pide su OK antes.
 - Esta guía solo explica cómo se hace.
 
 ## Lo que funciona, según los referentes
-- **Un video vertical, con la cara del autor hablando a cámara y subtítulos palabra por palabra.** Iman Gadzhi tiene unos 490 videos activos así, la mayoría de 1 a 2 minutos ([ficha](../referentes/iman-gadzhi.md)). En Bolivia, Pankarita usa videos de 21 a 24 segundos ([Biblioteca](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BO&media_type=all&search_type=page&view_all_page_id=540883439100967)).
+- **Un video vertical, con la cara del autor hablando a cámara y subtítulos palabra por palabra.** Iman Gadzhi tiene unos 490 anuncios de video activos, la mayoría de 1 a 2 minutos. En los que se pudieron ver, habla él a cámara con subtítulos ([ficha](../referentes/iman-gadzhi.md)). En Bolivia, Pankarita usa videos de 21 a 24 segundos ([Biblioteca](https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BO&media_type=all&search_type=page&view_all_page_id=540883439100967)).
 - **Pocos textos y muchos videos.** Iman combina 4 textos con decenas de videos. Pankarita prueba el mismo video con distintos ángulos: 50% de descuento para el segundo que se anota, un mes de soporte, bonos.
 - **Trabajar por olas.** Iman prende los anuncios 3 o 4 semanas antes de cada evento y los apaga después. Ninguno de sus anuncios activos lleva meses.
 - **En Bolivia el botón abre un chat de WhatsApp,** y el texto trae fecha, horario, precio y cupos (Academi365, Diego Bravo, Pankarita).
-- **Prometer ingresos se paga caro.** Meta le dio de baja a Iman varios de los anuncios con más impresiones de la ola anterior. Meta pide que los anuncios no prometan resultados económicos irreales ([guía de políticas de Meta](https://en-gb.facebook.com/business/m/small-business/ad-policy-guidance)).
+- **No prometer ingresos.** Meta le dio de baja a Iman varios de los anuncios con más impresiones de la ola anterior, sin decir el motivo, y sus anuncios prometen ingresos. Meta pide que los anuncios no prometan resultados económicos irreales ([guía de políticas de Meta](https://en-gb.facebook.com/business/m/small-business/ad-policy-guidance)).
 
 ## El guion
 
@@ -32,7 +32,10 @@ Para un video de 30 a 60 segundos:
 ## Especificaciones
 - **Formato:** 9:16 y 1080 × 1920 px, en .mp4 o .mov ([Meta, buenas prácticas de video en Instagram](https://en-gb.facebook.com/business/help/188534925073536)).
 - **Pensado para verse sin sonido:** subtítulos y texto grande en pantalla (misma fuente).
-- **Zona segura:** los bordes libres de texto y logos. En Reels, el 35% de abajo libre ([zona segura de Meta](https://www.facebook.com/business/help/980593475366490); [guía de Reels de Meta](https://margosolution.com/wp-content/uploads/2025/05/META-Reels-Ads-Guide.pdf), copia de un tercero).
+- **Zona segura** ([zona segura de Meta](https://www.facebook.com/business/help/980593475366490)):
+  - En 9:16, los bordes de arriba, de abajo y de los costados libres de texto, logos y elementos clave.
+  - Si el anuncio lleva un aviso legal, el 40% de abajo libre.
+  - Para comprobarlo, en el Administrador de anuncios se prende "Safe zone guardrail", que marca en amarillo la zona segura.
 - **Que se sienta como un reel y no como una publicidad** ([Meta, buenas prácticas de video en Instagram](https://en-gb.facebook.com/business/help/188534925073536)).
 
 ## Tres formas de hacerlo
@@ -44,12 +47,12 @@ Para un video de 30 a 60 segundos:
 - **Costo:** cero, más el tiempo de grabar.
 
 ### 2. Editado con código
-Es como editan Erik Taveras y Santiago Muñoz: con Claude Code y una skill propia, Remotion o Hyperframes ([ficha de Erik](../referentes/erik-taveras.md), [ficha de Santiago](../referentes/santiago-munoz.md)).
+Así editan Erik Taveras, con Claude Code y una skill propia, y Santiago Muñoz, con Claude Code y Remotion o Hyperframes ([ficha de Erik](../referentes/erik-taveras.md), [ficha de Santiago](../referentes/santiago-munoz.md)).
 
 1. **Grabar** el video con el celular, como en la forma 1.
 2. **Transcribir** el audio a texto con marcas de tiempo, con un modelo de voz a texto como Whisper, de código abierto.
 3. **Armar los subtítulos palabra por palabra** con la palabra que se dice resaltada. Se puede de dos maneras:
-   - **Remotion:** video escrito en React. Es gratis para una persona y para empresas con fines de lucro de hasta 3 empleados; si no, hace falta la licencia de empresa ([licencia de Remotion](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)).
+   - **Remotion:** video escrito en React. Es gratis para una persona y para empresas con fines de lucro de hasta 3 empleados; si no, hace falta la licencia de empresa. La misma licencia avisa que cambia en la versión 5.0, así que hay que leerla antes de usarla ([licencia de Remotion](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)).
    - **FFmpeg:** quema un archivo de subtítulos sobre el video.
 4. **Sumar** tarjetas con el precio y la fecha, un contador de cupos y el logo, dentro de la zona segura.
 5. **Exportar** las variantes: el mismo video con 3 ganchos distintos sale cambiando solo los primeros 3 segundos.
@@ -58,14 +61,14 @@ Es como editan Erik Taveras y Santiago Muñoz: con Claude Code y una skill propi
 - **Hace falta:** el OK de Sergio Urcullo para instalar Remotion o FFmpeg en la PC.
 
 ### 3. Con Higgsfield
-Higgsfield genera video con IA y está conectado a la sesión de Claude. Santiago Muñoz lo usa para el b-roll ([ficha](../referentes/santiago-munoz.md)). Iman Gadzhi es inversor y lo usa en sus anuncios ([ficha](../referentes/iman-gadzhi.md)).
+Higgsfield genera video con IA y está conectado a la sesión de Claude. Santiago Muñoz lo usa para el b-roll ([ficha](../referentes/santiago-munoz.md)). Iman Gadzhi es inversor y lo promociona en sus anuncios y en el tráiler de su reto ([ficha](../referentes/iman-gadzhi.md)).
 
 - **Para el b-roll:** planos cortos que acompañan la voz, por ejemplo un celular con un chat de WhatsApp o un negocio de noche, de 5 segundos cada uno. Sirven modelos como Seedance 2.0.
 - **Para que "hable" una imagen de Sergio Urcullo:** modelos que mueven los labios con una foto y un audio, como Higgsfield Speak.
   - Conviene usarlo solo para pruebas.
   - La cara real grabada genera más confianza, y es lo que hacen los cuatro referentes.
 
-**Cuánto cuesta**, según el blog oficial de Higgsfield del 25-oct-2026 ([precios de Higgsfield](https://higgsfield.ai/blog/higgsfield-pricing-explained)):
+**Cuánto cuesta**, según el blog oficial de Higgsfield de fines de octubre de 2026, consultado el 29-oct-2026 ([precios de Higgsfield](https://higgsfield.ai/blog/higgsfield-pricing-explained)):
 
 | Qué | Créditos |
 |---|---|
@@ -81,7 +84,7 @@ Los planes son: Starter, US$15 por mes con 200 créditos; Plus, US$49 con 1.000;
 - 30 segundos de Speak 2.0 a 720p: 6 × 14 = unos 84 créditos.
 - Total: unos 204 créditos por anuncio, sin contar los intentos que salen mal.
 
-La cuenta tenía 432,93 créditos el 29-oct-2026 (herramienta `balance` de Higgsfield).
+La cuenta tenía 432,93 créditos el 29-oct-2026 (herramienta `balance` de Higgsfield). Con ese saldo entran dos anuncios así, no tres. Un solo anuncio ya no entra en los 200 créditos del plan Starter.
 
 ## Publicarlo para que abra WhatsApp
 
@@ -89,7 +92,7 @@ Sigue los pasos de Meta ([ayuda de Meta](https://www.facebook.com/business/help/
 
 1. Tener WhatsApp Business conectado a la página de Facebook.
 2. En el Administrador de anuncios, crear una campaña con objetivo Tráfico o Interacción.
-3. En "Ubicación de la conversión", elegir "Destinos de mensajes" y marcar WhatsApp.
+3. En "Ubicación de la conversión", elegir "Destinos de mensajes" y marcar WhatsApp. Con Interacción, en "Objetivo de rendimiento" se elige en un menú el que busca más conversaciones.
 4. Elegir presupuesto, calendario y público, y subir el video y el texto.
 5. Escribir en la plantilla de mensaje el texto que llega armado, por ejemplo "Hola, quiero info del taller".
 

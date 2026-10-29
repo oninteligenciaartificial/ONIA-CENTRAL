@@ -41,10 +41,14 @@ Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/eri
 - **En Bolivia:**
   - El QR interbancario es el medio más usado ([PagosYa](https://www.pagosya.com.bo/guias/pasarelas-de-pago-bolivia), 19-oct-2026).
   - Para no revisar capturas a mano, hay pasarelas que generan un QR por pedido y confirman el pago solas. Por ejemplo, PagosYa desde Bs 249 por mes, o EnlazateOnline con 2,15% por cobro más Bs 27 por mes ([EnlazateOnline](https://www.enlazateonline.com/)). Son ejemplos para comparar, no una recomendación: la elección es de Sergio Urcullo.
-- **Fuera de Bolivia:** Stripe y PayPal no aceptan empresas registradas en Bolivia ([The Internet's Money](https://www.theinternets.money/countries/bolivia), consultada el 29-oct-2026). Por eso Luma, que cobra con Stripe, no sirve tal cual. La misma fuente lista algunas plataformas que sí aceptan empresas de Bolivia, como Gumroad, Paddle y Polar. Hay que confirmarlo en cada una antes de elegir.
+- **Fuera de Bolivia:**
+  - Stripe no está disponible para empresas de Bolivia: no figura en su lista de países ([Stripe](https://stripe.com/global), consultada el 29-oct-2026). Por eso Luma, que cobra con Stripe, no sirve tal cual.
+  - Un sitio de terceros dice que Mercado Pago tampoco las acepta, y que PayPal no las da de alta ([The Internet's Money](https://www.theinternets.money/countries/bolivia), consultada el 29-oct-2026). Lo de PayPal queda a confirmar con PayPal.
+  - La misma fuente lista algunas plataformas que sí aceptan empresas de Bolivia, como Payoneer, dLocal, Gumroad, Paddle y Polar. Hay que confirmarlo en cada una antes de elegir.
 - **Por WhatsApp:**
   - El botón puede abrir un chat con el mensaje ya escrito, con un enlace `https://wa.me/<número>?text=<mensaje>` ([ayuda de WhatsApp](https://faq.whatsapp.com/5913398998672934/?locale=es_LA)).
   - El número va en formato internacional, sin "+", ceros, espacios ni guiones.
+  - El mensaje va codificado para URL: los espacios pasan a `%20`, por ejemplo.
 - **El formulario pide lo mínimo:**
   - nombre, WhatsApp y rubro del negocio;
   - el rubro sirve para adaptar el taller, como hace Enrique con sus preguntas en Luma.
@@ -55,6 +59,10 @@ Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/eri
 - **El píxel de Meta y su API de conversiones,** con un evento "Lead" al enviar el formulario y "Purchase" al confirmar el pago. Así se ve qué anuncio vende. Iman y Santiago lo tienen puesto; Erik y Enrique no, porque no anuncian.
 - **Una herramienta simple de visitas,** como Umami, que usa Erik.
 - **UTM en cada enlace,** para saber de qué video o red llegó cada persona.
+- **Frenos:**
+  - El token de la API de conversiones es un secreto. Va en la credencial del servicio que lo use, según [`docs/credenciales.md`](../../docs/credenciales.md), y nunca en el código, en el repo ni en el chat.
+  - El ID del píxel tampoco va al repo.
+  - Medir visitas y datos de quien se inscribe pide un aviso de privacidad en la página. Es un tema legal y lo aprueba Sergio Urcullo.
 
 ## Cómo construirla con código
 1. **Una página estática** con las 13 secciones. Los datos que cambian en cada edición salen de un archivo: fecha, cupo, precio y si está abierta o en lista de espera.
@@ -63,7 +71,9 @@ Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/eri
 2. **El botón de reserva** lleva al pago, o a WhatsApp con el mensaje armado.
    - Si hay pasarela, su aviso de pago confirmado (webhook) resta un cupo y manda la confirmación.
    - Erik aparta el cupo unos minutos mientras se paga.
-3. **Un día antes,** una tarea programada manda el enlace de Zoom y el recordatorio por WhatsApp.
+3. **Un día antes,** se manda el enlace de Zoom y el recordatorio por WhatsApp.
+   - **A mano,** desde la app de WhatsApp Business, no cuesta.
+   - **Automático,** necesita la API de WhatsApp Business. Ahí los mensajes de plantilla que manda la empresa se cobran por mensaje entregado ([precios de WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/)). Es gasto y es un mensaje a clientes: el gasto y el texto los aprueba Sergio Urcullo.
 4. **Cuando no hay fecha,** el botón se cambia por una lista de espera, como hace Erik.
 5. **El píxel, la API de conversiones y la herramienta de visitas,** como en "Medición".
 

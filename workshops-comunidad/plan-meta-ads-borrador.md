@@ -18,16 +18,18 @@ Vender los cupos de la primera edición del taller con conversaciones de WhatsAp
 | Página de Facebook | La única disponible para anunciar es "Onia", y no tiene anuncios activos en Bolivia. (`ads_get_user_pages` y Biblioteca de anuncios.) | Sergio Urcullo elige |
 | WhatsApp Business conectado a la página | No verificado. Meta lo pide para los anuncios que abren un chat de WhatsApp ([ayuda de Meta](https://www.facebook.com/business/help/447934475640650)). | Sergio Urcullo lo conecta |
 | Respuesta automática en WhatsApp | A escribir: fecha, temario, precio y cómo pagar. Es un mensaje a clientes, así que lo aprueba Sergio Urcullo. | Agente redacta, Sergio Urcullo aprueba |
-| Cobro con QR | A definir: QR del banco o una pasarela con confirmación automática ([guía de PagosYa](https://www.pagosya.com.bo/guias/pasarelas-de-pago-bolivia)). | Sergio Urcullo |
+| Herramienta del taller y demo andando | A definir: es la decisión 4 del resumen. Si es ONIA Platform, tienen que estar cerrados los issues [#27](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/27) y [#28](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/28). Hasta entonces no se ofrece la plataforma en los anuncios. | Sergio Urcullo elige; los agentes la dejan andando |
+| Cobro con QR | A definir (decisión 6). | Sergio Urcullo |
 | Fecha, cupo y temario del taller | A definir. | Sergio Urcullo |
-| Política de devolución | A definir. Referencia: Enrique Rocha devuelve todo hasta 7 días antes, la mitad hasta 48 horas antes, y deja pasar el lugar a otra persona o a otra edición ([ficha](../marca-personal/referentes/enrique-rocha.md)). | Sergio Urcullo, porque es legal |
+| Política de devolución | A definir (decisión 7). | Sergio Urcullo, porque es legal |
+| Factura del taller | A definir (decisión 8). | Sergio Urcullo, porque es legal |
 | Los videos | A grabar, con guiones de abajo. | Sergio Urcullo graba |
 
 ## Estructura de la campaña
 
 Sigue los pasos de Meta para anuncios que abren un chat de WhatsApp ([ayuda de Meta](https://www.facebook.com/business/help/447934475640650)):
 
-- **Campaña:** objetivo Interacción. En "Ubicación de la conversión" va "Destinos de mensajes", con WhatsApp marcado.
+- **Campaña:** objetivo Interacción. En "Ubicación de la conversión" va "Destinos de mensajes", con WhatsApp marcado. En "Objetivo de rendimiento", que con Interacción se elige en un menú, va el que busca más conversaciones.
 - **Conjunto de anuncios:** uno solo, con el público que elija Sergio Urcullo, ubicaciones automáticas y la plantilla de mensaje con un texto ya escrito ("Hola, quiero info del taller de WhatsApp con IA").
 - **Anuncios:** 3 videos verticales con un mismo texto. Es la forma de probar creativos de Iman Gadzhi, en chico ([ficha](../marca-personal/referentes/iman-gadzhi.md)).
 
@@ -42,8 +44,8 @@ Si en el resumen se elige otro público para el taller, esta lista sigue esa ele
 ## Mensaje
 
 - **Idea central:** te escriben "precio" a las 11 de la noche, contestás a la mañana, y ya le compraron a otro.
-- **Qué se promete:** salís del taller con tu asistente armado con las preguntas, los precios y los horarios de tu negocio. **No se prometen ingresos ni ventas.** Meta pide que los anuncios no prometan resultados económicos irreales ([guía de políticas de Meta](https://en-gb.facebook.com/business/m/small-business/ad-policy-guidance)), y a Iman Gadzhi le dieron de baja anuncios por prometer ingresos ([ficha](../marca-personal/referentes/iman-gadzhi.md)).
-- **Prueba:** Sergio Urcullo mostrando en su celular un asistente que contesta de verdad.
+- **Qué se promete:** la promesa de la opción A del resumen. Salís con las preguntas, los precios y los horarios de tu negocio listos, y con tu asistente armado en la herramienta que se elija. **No se prometen ingresos ni ventas.** Meta pide que los anuncios no prometan resultados económicos irreales ([guía de políticas de Meta](https://en-gb.facebook.com/business/m/small-business/ad-policy-guidance)). A Iman Gadzhi, cuyos anuncios prometen ingresos, Meta le dio de baja varios sin decir el motivo ([ficha](../marca-personal/referentes/iman-gadzhi.md)).
+- **Prueba:** Sergio Urcullo mostrando en su celular un asistente que contesta de verdad, hecho con la herramienta elegida.
 - **Oferta:** fecha, horario de Bolivia, cupo y precio de fundador.
 - **Llamado a la acción:** "Escribime TALLER por WhatsApp".
 
@@ -54,7 +56,7 @@ Tres videos verticales 9:16 de 30 a 45 segundos, grabados con el celular, con su
 **Video 1, el problema (gancho de dolor)**
 - 0-3 s, a cámara: "¿Cuántos clientes perdiste esta semana por contestar tarde el WhatsApp?"
 - 3-15 s: "Te escriben 'precio' de noche, contestás a la mañana y ya le compraron a otro. No es tu culpa: no podés estar las 24 horas."
-- 15-30 s: "En [2 noches] te enseño a armar un asistente con IA que contesta las preguntas de tu negocio por WhatsApp, con tus precios y tus horarios. Sin programar."
+- 15-30 s: "En [2 noches] te enseño a armar con IA un asistente que contesta las preguntas de tu negocio por WhatsApp, con tus precios y tus horarios. Sin programar." Si la herramienta elegida no lo deja andando en 2 noches, esta frase cambia según la promesa ajustada.
 - 30-40 s: "[Fechas], de 19:30 a 21:30, por Zoom. [30] cupos. Escribime TALLER y te paso el temario."
 
 **Video 2, la demo (gancho de prueba)**
@@ -66,24 +68,27 @@ Tres videos verticales 9:16 de 30 a 45 segundos, grabados con el celular, con su
 - 0-3 s: "Armé ONIA para que los negocios de Bolivia no pierdan clientes por WhatsApp."
 - 3-25 s: qué vio en los negocios, qué armó y qué aprendió.
 - 25-40 s: la oferta y "Escribime TALLER".
+- Cuenta la historia y no ofrece ONIA Platform. Eso cambia recién cuando se cierren los issues #27 y #28.
 
 **Texto del anuncio, borrador:**
-> ¿Te escriben "precio" y contestás tarde? En el taller "[nombre]" armás con IA el asistente que contesta las preguntas de tu negocio por WhatsApp, con tus precios y tus horarios. Sin programar.
+> ¿Te escriben "precio" y contestás tarde? En el taller "[nombre]" dejás listas con IA las respuestas de tu negocio y armás tu asistente para WhatsApp, con tus precios y tus horarios. Sin programar.
 > 📅 [fechas] · 19:30 a 21:30 (Bolivia) · Zoom
 > 👥 [30] cupos · Precio de fundador: Bs [precio]
 > Escribime TALLER y te paso el temario.
 
 ## Presupuesto de prueba
 
-La cuenta permite desde US$1 por día (`ads_get_ad_accounts`). Cambio a Bs 12,02 por dólar ([BCB](https://www.bcb.gob.bo/librerias/indicadores/dolar/bolsin.php), 28-oct-2026).
+- **Mínimo:** la cuenta permite desde US$1 por día (`ads_get_ad_accounts`).
+- **Cambio:** aproximado, a Bs 12,12 por dólar ([BCB](https://www.bcb.gob.bo/librerias/indicadores/dolar/bolsin.php), vigente desde el 29-oct-2026). Se mueve, así que se recalcula al aprobar.
+- **Tope:** con tarjeta de débito, el tope mensual de cada banco para pagos al exterior pone techo al gasto (ver el [resumen](../marca-personal/referentes/resumen-2026-10-29.md)).
 
-1. **US$10 por día durante 7 días: US$70, unos Bs 841 (recomendada).** Alcanza para ver qué video trae conversaciones antes de gastar más.
-2. **US$5 por día durante 7 días:** US$35, unos Bs 421. Más barato, pero tarda más en mostrar cuál funciona.
-3. **US$20 por día durante 7 días:** US$140, unos Bs 1.683. Junta datos más rápido, con más riesgo.
+1. **US$10 por día durante 7 días: US$70, unos Bs 848 (recomendada).** Alcanza para ver qué video trae conversaciones antes de gastar más.
+2. **US$5 por día durante 7 días:** US$35, unos Bs 424. Más barato, pero tarda más en mostrar cuál funciona.
+3. **US$20 por día durante 7 días:** US$140, unos Bs 1.697. Junta datos más rápido, con más riesgo.
 
 **Cuándo se pausa o se sigue** (supuestos a medir; no hay datos propios de costos en Bolivia):
 - **Día 3:** se pausa el video que trae menos conversaciones por dólar y se graba otro gancho.
-- **Meta de costo:** que cada inscripción pagada cueste en anuncios menos de un tercio del precio del taller. Con Bs 390, menos de Bs 130.
+- **Meta de costo:** que cada inscripción pagada cueste en anuncios menos de un tercio del precio que elija Sergio Urcullo. Con los Bs 290 de fundador, menos de Bs 97.
 - **Si al día 7 no se llega,** se cambia la oferta o el gancho antes de subir el presupuesto.
 
 Subir el presupuesto o extender la campaña vuelve a pedir el sí de Sergio Urcullo.
@@ -115,5 +120,14 @@ Las fechas las elige Sergio Urcullo.
 3. **¿Qué público?** 1 (recomendada), 2 o 3, de la lista de arriba.
 4. **¿Qué presupuesto de prueba?** 1 (recomendada), 2 o 3, de la lista de arriba.
 5. **¿Aprobás los guiones y el texto?** Sí / con cambios.
+6. **¿Cómo se cobra?**
+   - **QR del banco, confirmando cada pago a mano, para la primera edición (recomendada):** sin costo fijo, y con 30 cupos se puede revisar.
+   - Una pasarela con un QR por pedido y confirmación automática. Por ejemplo, PagosYa desde Bs 249 por mes, o EnlazateOnline con 2,15% más Bs 27 por mes (ver la [guía de web de venta](../marca-personal/guias/web-de-venta.md)).
+7. **¿Qué política de devolución?**
+   - **La de Enrique Rocha (recomendada):** todo hasta 7 días antes, la mitad hasta 48 horas antes, y se puede pasar el lugar a otra persona o a otra edición ([ficha](../marca-personal/referentes/enrique-rocha.md)).
+   - La de Erik Taveras: no se devuelve, pero se puede cambiar de fecha una vez avisando con 24 horas, o ceder el cupo ([ficha](../marca-personal/referentes/erik-taveras.md)).
+8. **¿Cómo se factura el taller?**
+   - **Con el NIT de ONIA, en el Portal Web del SIN, que onia.com.bo menciona como gratuito, a confirmar con el contador (recomendada).**
+   - Otra forma que indique el contador.
 
 Después de estas respuestas, los anuncios se arman en el Administrador. Antes de publicar, Sergio Urcullo ve la vista previa con captura y da el sí.
