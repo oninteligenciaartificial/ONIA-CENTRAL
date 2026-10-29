@@ -1,10 +1,10 @@
 # ONIA Platform: seguir o no, y cómo
 
-28-oct-2026. **Propuesta, pendiente de aprobación de Sergio Urcullo** (issue #9).
+28-oct-2026, decidido el 29-oct-2026. **Decisión de Sergio Urcullo: opción A, seguir desarrollando** (issue #9). El análisis recomendaba B; la decisión y su razón están en el punto 7.
 
 Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitHub, el checkout local y sus worktrees. No se tocó producción (VPS, base de datos, Vercel) ni se leyó el repo viejo: lo que se dice de él sale de cómo lo nombra el código de la plataforma.
 
-**En corto:** seguir, pero congelado. Nada de funciones nuevas hasta que una clínica pague y renueve, con fecha de corte. Si no pasa, se pausa. Antes del primer cliente hay dos cosas que hacer (punto 8, pasos 4 y 5):
+**En corto:** se sigue desarrollando la plataforma, en paralelo y con agentes, siempre que el repo y el harness estén en orden. El resto de la propuesta se mantiene. Antes del primer cliente hay dos cosas que hacer (punto 8, pasos 4 y 5):
 - sacar del repo viejo el despliegue y los crons;
 - tener un respaldo probado, QA con su propia base, el cobro completo, la factura de ONIA y los términos.
 
@@ -121,7 +121,9 @@ Es un dato para la limpieza del método viejo.
 | **C. Pausar ahora y archivar** | Libera todo el tiempo para marca personal y talleres, y baja el riesgo operativo. | El trabajo queda sin probar en el mercado. Apagar bien también lleva trabajo: exportar datos, avisar a las cuentas y bajar contenedores. |
 | **D. Usar herramientas existentes** (Dentalink, AgendaPro, Alegra u Odoo, con un bot de WhatsApp aparte) **y vender la implementación** | No hay nada que mantener y son productos probados. Encaja con los talleres: "te lo implemento". | Margen chico y sin diferencia propia. SIAT no está probado en esas herramientas, y se depende de terceros. |
 
-## 7. Recomendación: B
+## 7. Recomendación del análisis y decisión
+
+### Lo que recomendaba el análisis: B
 
 Seguir, pero congelado y con una prueba comercial con fecha:
 - **Un solo rubro:** dental, que es el más trabajado y el que pide el propio criterio de la 1.0.
@@ -133,13 +135,27 @@ Seguir, pero congelado y con una prueba comercial con fecha:
 
 **Por qué:** lo que falta no es código, es la prueba de que alguien paga. El producto ya tiene el núcleo, y seguir sumando funciones agranda el costo sin responder esa pregunta. Pausar ahora tira 6,5 meses sin haberlo ofrecido de verdad. D se puede retomar después si B falla.
 
-## 8. Próximos pasos, si Sergio Urcullo aprueba
+### Lo que decidió Sergio Urcullo: A
 
-Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan producción, el repo del producto, lo legal o el cobro, y piden su aprobación.
+El 29-oct-2026 eligió A, con estas palabras: "opcion A, lo demas se mantiene, Recordad que toda la empresa la queremos automatizar, entonces desarrollar código no es un problema para nosotros. Puede ser una tarea que se haga en paralelo mientras, si todo está bien orquestado, con los agentes funcionando, todo el repositorio limpio, sin errores, todo el harness funcionando con los agentes, el contexto, los documentos y demás, todo en orden, no hay problema. Literalmente la startup se construiría sola."
 
-1. **(sí) Guardar los 68 cambios y limpiar el checkout** (punto 9). Hecho cuando están en una rama de archivo en GitHub y el checkout queda en `master` sin cambios.
-2. **(sí) Quitar el worktree `onia-platform-crece4`** (punto 9). Hecho cuando la carpeta y sus ramas ya no están.
-3. **(sí) Congelar.** Revisar los 10 PRs abiertos. Se mergea solo lo que corrige una promesa falsa, bloquea a un cliente, o es de seguridad, legal o del cobro y la renovación (como #154, #124 y #113). El resto se cierra, con su rama guardada en GitHub. Como mergear es publicar, cada merge es un cambio en producción. Un PR con migración, como #124, se mergea después del respaldo del paso 5 y con la migración ya aplicada. Hecho cuando no queda ningún PR sin decidir.
+Qué cambia con A:
+- **El desarrollo sigue, en paralelo y con agentes.** No se congela ni hay tope de tiempo por semana.
+- **La condición es el orden.** Repo limpio, sin errores, con el harness, el contexto y los documentos al día (paso 10).
+- **No hay fecha de pausa.** La prueba comercial sigue en paralelo, y el 31-ene-2027 hay un hito de revisión (paso 8).
+- **El resto se mantiene:**
+  - mudar el despliegue y los crons del repo viejo;
+  - respaldo, QA, cobro y lo legal antes del primer cliente;
+  - mergear a `master` es publicar;
+  - guardar los 68 cambios y quitar `onia-platform-crece4`.
+
+## 8. Próximos pasos
+
+Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan producción, lo legal o el cobro, y piden la aprobación de Sergio Urcullo. Los marcados con **(aprobado)** ya la tienen, del 29-oct.
+
+1. **(aprobado) Guardar los 68 cambios y limpiar el checkout** (punto 9). Hecho cuando están en una rama de archivo en GitHub y el checkout queda en `master` sin cambios.
+2. **(aprobado) Quitar el worktree `onia-platform-crece4`** (punto 9). Hecho cuando la carpeta y sus ramas ya no están.
+3. **(sí) Decidir los 10 PRs abiertos.** Con A se mergea lo que esté listo y sirva. Lo de seguridad, legal o del cobro y la renovación va primero (como #154, #124 y #113). Lo que ya no sirve se cierra, con su rama guardada en GitHub. Como mergear es publicar, cada merge es un cambio en producción. Un PR con migración, como #124, se mergea después del respaldo del paso 5 y con la migración ya aplicada. Hecho cuando no queda ningún PR sin decidir.
 4. **(sí) Mudar a `onia-platform` el despliegue y los crons** (citas, renovación y agentes). Va antes del primer cliente, porque por ahí salen los arreglos y la clínica usa los avisos todos los días. Hecho cuando el VPS publica y corre los crons con scripts que viven en `onia-platform`. La lista de crons sale del crontab del VPS, porque puede haber más que estos tres. La prueba `__tests__/sin-envoltorios-de-cron-del-vps.test.ts` hoy prohíbe esos scripts en el repo: se cambia a propósito en ese PR. El resto de lo que vive en el repo viejo se muda después: el bot, SIAT, la web de venta, el configurador de webs, el contrato de ONIA Core y la configuración del runner. La web de venta va antes si hay que cambiarla para la prueba. Todo eso es requisito para archivar `onia-hermes`.
 5. **(sí) Dejar lista la plataforma para el primer cliente.** Hecho cuando están estos seis:
    - un respaldo diario probado con una restauración;
@@ -149,9 +165,15 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
    - definido cómo factura ONIA a la clínica: desde el 10-oct (PR #114, ya en `master`), aprobar un pago real exige el número de factura;
    - términos y privacidad aceptados en el alta (PR #124, abierto), porque entran datos clínicos.
 6. **Medir el costo real del mes** (VPS, OpenAI, Resend, dominio y Vercel, si sigue sirviendo algo) y anotarlo acá. Hecho cuando la tabla del punto 3 no tiene huecos.
-7. **Prueba comercial.** Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema, y se anota cada fricción real. Conviene empezar por los pedidos de acceso que quedaron sin contestar, si siguen ahí. Hecho cuando están contactadas antes del 30-nov, con su respuesta anotada.
-8. **Decidir en la fecha de corte** entre seguir y pausar, con lo medido. Hecho cuando la decisión está escrita en esta carpeta.
-9. **(sí) Ordenar ramas y worktrees:** 241 ramas locales, 42 worktrees y un stash viejo, del 30-ago. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`. Hecho cuando solo quedan las ramas y worktrees en uso.
+7. **Prueba comercial, en paralelo al desarrollo.** Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema, y se anota cada fricción real. Conviene empezar por los pedidos de acceso que quedaron sin contestar, si siguen ahí. Hecho cuando están contactadas antes del 30-nov, con su respuesta anotada.
+8. **Hito de revisión, el 31-ene-2027.** Mirar los pagos, el costo del mes y el estado del harness, y anotar acá si algo cambia. No es una fecha de pausa. Hecho cuando la revisión está escrita en esta carpeta.
+9. **Ordenar ramas y worktrees:** 241 ramas locales, 42 worktrees y un stash viejo, del 30-ago. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`. Hecho cuando solo quedan las ramas y worktrees en uso.
+10. **Repo y harness en orden,** la condición de A. Tres partes:
+    - las reglas y skills de `onia-platform`, reescritas con el método nuevo y sin rutas al repo viejo;
+    - la CI en verde;
+    - los 65 issues de Sentry, tratados.
+
+    Hecho cuando una sesión nueva puede tomar un issue de la plataforma y entregarlo por PR sin ayuda.
 
 ## 9. Los 68 cambios sin guardar y la copia duplicada
 
@@ -165,7 +187,7 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 
 **Qué hacer:**
 - Guardarlos enteros en una rama de archivo en GitHub, por ejemplo `archivo/f2-f3-panel-20260912`, sin el `error.log`.
-- Antes de subirlos, pasarlos por `gitleaks`, un buscador de secretos. No está instalado en la PC, así que instalar la versión oficial pide el OK de Sergio Urcullo. Hace falta porque subir una rama de archivo no dispara el control de secretos de GitHub: ese control corre solo en `master` y en los PRs.
+- Antes de subirlos, pasarlos por `gitleaks`, un buscador de secretos. No está instalado en la PC; Sergio Urcullo ya dio el OK para instalar la versión oficial. Hace falta porque subir una rama de archivo no dispara el control de secretos de GitHub: ese control corre solo en `master` y en los PRs.
 - Después, dejar el checkout en `master` limpio.
 - No se integran. Si algún día hace falta un trozo, se saca de esa rama.
 
@@ -181,11 +203,10 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 - Borrar la rama `fix/crece-4-usuarios`, tanto la local como la de GitHub.
 - No se pierde nada.
 
-## 10. Lo que decide Sergio Urcullo
+## 10. Lo que decidió Sergio Urcullo, el 29-oct-2026
 
-1. Qué opción sigue: B (recomendada), A, C o D.
-2. Las fechas de corte del primer pago y de la renovación.
-3. El tope de tiempo por semana para la plataforma mientras dura la prueba.
-4. Si se guardan los 68 cambios en una rama de archivo, con `gitleaks` instalado para revisarlos, y se limpia el checkout.
-5. Si se quita el worktree `onia-platform-crece4` y se borra su rama.
-6. Un dato que falta: cuánto cuesta por mes el VPS de producción.
+1. La opción A: seguir desarrollando, en paralelo y con agentes.
+2. Sin fecha de pausa ni tope de tiempo. Queda el hito de revisión del paso 8.
+3. Sí a guardar los 68 cambios en una rama de archivo, revisados con `gitleaks` oficial, y a limpiar el checkout.
+4. Sí a quitar el worktree `onia-platform-crece4` y borrar su rama.
+5. Sigue faltando un dato: cuánto cuesta por mes el VPS de producción.
