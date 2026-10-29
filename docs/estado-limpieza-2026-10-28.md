@@ -12,9 +12,9 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 - Sin reglas, agentes ni comandos de ECC.
 - Las 223 memorias de proyecto del repo viejo, archivadas.
 - La app se reinició a las 07:51 y ya carga esta configuración.
+- El modo automático ya no nombra a onia-hermes como repo de confianza, y la app ya no guarda el modo sin preguntas para esa carpeta (issue #3).
 
 **Falta:**
-- El modo automático todavía nombra a onia-hermes como repo de confianza, en 4 líneas. Se saca al archivar el repo viejo.
 - `.claude.json` guarda 71 entradas de proyectos del repo viejo, de Orca y de onia-wt. Se limpian con Claude cerrado.
 - Quedan datos de plugins viejos (12 carpetas en `plugins\data`) y la papelera de skills sincronizadas (127 carpetas).
 - Hay 7 tareas programadas viejas de Claude: están apagadas, pero hay que borrarlas desde la app.
@@ -66,6 +66,9 @@ De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 - ONIA-CENTRAL, limpio, en `C:\dev\proyectos\ONIA-CENTRAL`.
 - Respaldos en `E:\respaldos`.
 - Lo archivado en `C:\Users\PC\.claude-archivo-20261028` y `C:\Users\PC\.codex-archivo-20261028`.
+- Nada del repo viejo arranca con Windows. Se apartaron la entrada Run, el `.vbs` de Inicio y la tarea `\ONIA Orquesta`, y se cortó el túnel al VPS del puerto 3108, que nada actual usaba (issue #2).
+- Orca, desinstalada con su desinstalador oficial (issue #4).
+- Lo apartado de esos dos issues está en `C:\Users\PC\.arranque-archivo-20261028`, con lo necesario para revertirlo.
 
 **Falta:**
 - **16 copias del repo viejo.** Se archivan en E: tal como están, sin abrir su contenido. Si Sergio Urcullo quiere rescatar algún cambio sin guardar, lo pide puntualmente.
