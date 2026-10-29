@@ -56,7 +56,9 @@ La app de Claude manda a una carpeta propia lo que sus procesos escriben en `App
 Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes --tui
 ```
 
-O, desde cualquier carpeta, `hermes --tui --in C:\dev\proyectos\ONIA-CENTRAL`. El TUI y la versión clásica trabajan en la carpeta desde donde se abren e ignoran `terminal.cwd`; abierto desde `C:\Users\PC`, Hermes no tiene el `AGENTS.md`. Para trabajar se usa `--tui`: `hermes` a secas y `hermes chat` dejan un gateway corriendo en segundo plano, y `hermes -z` aprueba solo los comandos peligrosos porque nadie lo atiende.
+O, desde cualquier carpeta, `hermes --tui --in C:\dev\proyectos\ONIA-CENTRAL`. El TUI y la versión clásica trabajan en la carpeta desde donde se abren e ignoran `terminal.cwd`; abierto desde `C:\Users\PC`, Hermes no tiene el `AGENTS.md`.
+
+Para trabajar se usa `--tui`. Es la vista que recomiendan los docs y la única que tiene todos los comandos de barra; la clásica (`hermes` a secas o `hermes chat`) acepta solo unos pocos. Todas las formas levantan el mismo gateway en segundo plano, que se apaga solo a los 10 minutos sin uso. `hermes -z` no se usa: aprueba por su cuenta todos los comandos peligrosos, porque nadie lo atiende.
 
 Hay cuatro formas, y comparten configuración, sesiones, skills y memoria:
 
@@ -83,7 +85,21 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
   - Hermes carga un solo archivo de proyecto, el primero que encuentra: `.hermes.md`, `AGENTS.md` o `CLAUDE.md`. Abierto desde ONIA-CENTRAL, lee este `AGENTS.md` y deja tapado el `CLAUDE.md`. Se comprobó el 28-oct.
   - No hay que crear `.hermes.md`, `HERMES.md` ni `AGENTS.override.md` en ONIA-CENTRAL, porque taparían al `AGENTS.md`.
   - El `SOUL.md` sale de su carpeta. Se edita a mano y se guarda como texto plano UTF-8. Ojo: el Notepad de Windows 11, en modo Markdown "Formatted", agrega `\` antes de los guiones; hay que guardarlo en modo "Syntax".
-  - Los cambios en `SOUL.md`, `AGENTS.md` o la configuración valen para las sesiones nuevas, no para la que está abierta.
+  - El `SOUL.md` del 28-oct dice esto:
+
+    ```
+    Sos Hermes, el agente de ONIA. Trabajás para Sergio Urcullo.
+
+    - Empezá cada respuesta con "Sergio Urcullo,". Es el canario: si dejás de hacerlo, perdiste estas reglas y hay que cambiar de sesión.
+    - Hablale en español, con voseo, corto y en prosa normal.
+    - Antes de decir "listo", comprobalo. Si algo falló o no lo pudiste verificar, decilo así.
+    - Nunca muestres ni escribas un secreto (claves, tokens, contraseñas, cookies) en el chat, un archivo, un commit o un log.
+    - Cuando lances a Claude Code o a Codex, decí qué les pediste y en qué carpeta, y revisá lo que devuelven antes de darlo por bueno.
+    - Cerrá cada respuesta con un bloque corto, "Para aprender": un concepto o un ejercicio sobre lo que hiciste.
+    ```
+
+    El canario también está en el `CLAUDE.md` global de Claude Code y en el `AGENTS.md` global de Codex.
+  - Los cambios en `SOUL.md` y `AGENTS.md` valen para las sesiones nuevas, no para la que está abierta. Los cambios en `approvals` (`mode`, `deny`, `command_allowlist`) valen al instante, también en la sesión abierta.
   - Para Telegram, la carpeta de trabajo se fija con `terminal.cwd`. Sin esa clave, el lanzador de Windows trabaja desde la carpeta de Hermes y no carga el contexto.
 - **Claude Code y Codex:**
   - Hermes los llama con `claude -p` y `codex exec`, mediante sus skills de fábrica `claude-code` y `codex`. Cada uno usa su propio login. Esas dos skills le enseñan a Hermes a lanzarlos; no son skills de ONIA para Claude ni para Codex ([#10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10)).
@@ -116,7 +132,8 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
 - **"Blank Slate" no es un parámetro.** Es la tercera opción del asistente de la primera vez, y aparece solo si no hay un proveedor configurado.
   - Antes de ese menú, el asistente ofrece importar lo de Claude, Codex, Cursor y OpenClaw, con "Sí" por defecto. **Hay que contestar que no.**
   - El instalador siembra las 58 skills de fábrica antes del asistente. Blank Slate no las borra; solo evita que se vuelvan a sembrar.
-  - **Decisión del 28-oct: desactivarlas, no borrarlas.** Se desactivan con `hermes skills config` (oficial): primero por categoría, dejando solo `autonomous-ai-agents`, y después una por una, apagando `opencode`. Quedan activas `claude-code`, `codex`, `computer-use` y `hermes-agent`, que no se puede apagar. Se comprueba con `hermes skills list --enabled-only`.
+  - **Decisión del 28-oct: desactivarlas, no borrarlas.** Se desactivan con `hermes skills config` (oficial): primero por categoría, dejando solo `autonomous-ai-agents`, y después una por una, apagando `opencode`. Quedan activas `claude-code`, `codex`, `computer-use` y `hermes-agent`, que no se puede apagar. `skills.disabled` tiene 47; las otras seis no corren en Windows.
+  - Se comprueba con `hermes prompt-size`, que lista las skills que ve el modelo. `hermes skills list --enabled-only` muestra además `sdlc-review`. Esa sigue prendida, pero Hermes no se la muestra al modelo porque necesita Kanban, que está apagado. Si algún día se prende Kanban, hay que apagarla con `hermes skills config`.
   - No se usan `hermes skills opt-out --remove`, que borra también las que se quieren conservar, ni `skills opt-in --sync`, que vuelve a traer las 58. Tampoco `skills reset --restore`: con las skills de fábrica apagadas dice "Restored", pero no restaura nada.
 - **Modelo:** en el asistente se elige OpenAI → "ChatGPT or Codex Subscription".
   - A "Import these credentials?" **hay que contestar N**. Con "y", Hermes comparte la sesión de Codex CLI y se pueden desloguear entre sí.
@@ -126,7 +143,7 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
   - Otra opción: antes de instalar, en esa misma PowerShell, correr `$env:HERMES_GATEWAY_INSTALL_START_ON_LOGIN = '0'` y `$env:HERMES_GATEWAY_INSTALL_START_NOW = '0'`.
   - No se corre sin una terminal interactiva: según el código, ahí tomaría el "Sí" solo. Es una inferencia; la documentación dice lo contrario.
   - `-NonInteractive` no sirve acá, porque también se salta el asistente y con él Blank Slate.
-- **Configuración para dejarlo cerrado** (claves confirmadas en el código de la v0.22.5; aplicadas el 28-oct con `hermes config set`):
+- **Configuración para dejarlo cerrado** (claves confirmadas en el código de la v0.22.5; aplicadas el 28-oct con `hermes config set <clave> <valor>`). En PowerShell 5.1, una lista va entre comillas simples para que llegue como un solo valor, como en `hermes config set skills.external_dirs '[]'`. Si sus elementos llevan comillas, va entre comillas dobles con los elementos entre simples, como en el `approvals.deny` de abajo.
   - `auth.adopt_external_logins: false`. Por defecto Hermes lee los logins de Claude Code y Codex.
   - `skills.write_approval: true` y `memory.write_approval: true`.
   - `approvals.mode: manual`.
@@ -138,21 +155,32 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
 - **Lo que se sumó al armarlo, el 28-oct, siguiendo la documentación oficial:**
   - **Credenciales.**
     - `hermes auth remove copilot 1` y `hermes auth remove gemini 1` apagan, solo dentro de Hermes y para siempre, el token de `gh` y la `GEMINI_API_KEY` de las variables de Windows. No tocan ni `gh` ni la variable.
-    - `model_catalog.excluded_providers: [copilot, gemini]` los saca del menú de modelos.
+    - `hermes config set model_catalog.excluded_providers '[copilot, gemini]'` los saca del menú de modelos.
   - **Herramientas.** Se eligieron con `hermes tools`, en CLI.
     - Prendidas: archivos, terminal, visión, skills, navegador ("Local Browser"), control de la computadora (cua-driver), búsqueda web (OpenAI Native, incluida en ChatGPT), lista de pasos, preguntas aclaratorias y video.
-    - Prendidas pero ocultas: X, voz y memoria. Hermes no se las muestra al modelo hasta que tengan lo que les falta. X necesita una credencial de xAI ([#6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6)).
+    - Prendidas pero ocultas: X y voz. Hermes no se las muestra al modelo hasta que tengan lo que les falta. X necesita una credencial de xAI ([#6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6)).
+    - La memoria también figura prendida, pero está apagada por dentro: Blank Slate dejó `memory.memory_enabled: false` y `memory.user_profile_enabled: false`.
     - Apagadas: tareas programadas, A2A, ejecución de código, delegación y Kanban.
+    - Esta selección vale solo para la CLI, que incluye el TUI. Telegram arranca con `hermes-telegram`, que trae todas las herramientas de fábrica, incluidas las tareas programadas y el control de la computadora. Al armar el [#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11) hay que elegirlas de nuevo con `hermes tools`, para Telegram.
   - **`browser.backend: off`.** Si no, el navegador usa `browser_exec`, que corre código Python escrito por el modelo sin pedir aprobación. El navegador es un Chromium aparte, sin las sesiones de Chrome.
-  - **`checkpoints.enabled: true`**, para deshacer con `/rollback`, y **`auxiliary.background_review.enabled: false`**, porque con la memoria apagada esa revisión de fondo solo gasta cuota.
-  - **`approvals.deny`**, con 13 patrones:
-    - los modos sin permisos de Claude y Codex;
-    - `git push --force`;
-    - `curl | sh`;
-    - `hermes config`, `auth`, `skills`, `tools` y `setup`.
+  - **`checkpoints.enabled: true`**, para deshacer con `/rollback`.
+  - **`auxiliary.background_review.enabled: false`.** Aun con la memoria apagada, esa revisión de fondo corre después de las tareas largas para proponer skills nuevas o cambios, y cada vez gasta cuota. No se quieren skills que nadie pidió.
+  - **`approvals.deny`**, con 21 patrones. Bloquean:
+    - los modos sin permisos de Claude y de Codex;
+    - `git push --force` y `curl | sh`;
+    - que el agente corra los comandos de Hermes que cambian su configuración, sus logins, sus skills, sus herramientas, su gateway o sus aprobaciones;
+    - `hermes -z`.
 
-    Según el código, con aprobaciones manuales el agente puede correr `hermes config set` sin preguntar; este bloqueo hace cumplir que solo Sergio Urcullo toque Hermes.
-  - **Límites que hay que conocer.** `approvals.mode: manual` frena solo los comandos que Hermes considera peligrosos. Los comandos comunes, la edición de archivos y las acciones del navegador corren sin preguntar, y las capturas del control de la computadora tampoco piden permiso, así que conviene cerrar las ventanas sensibles antes de usarlo. A una aprobación se contesta "once", nunca "always", porque "always" la deja guardada.
+    ```powershell
+    hermes config set approvals.deny "['*git push --force*', '*curl*|*sh*', '*--dangerously-skip-permissions*', '*bypassPermissions*', '*--dangerously-bypass-approvals-and-sandbox*', '*--yolo*', '*danger-full-access*', '*hermes* config *', '*hermes* auth *', '*hermes* skills *', '*hermes* tools *', '*hermes* setup*', '*hermes* model*', '*hermes* gateway *', '*hermes* cron *', '*hermes* mcp *', '*hermes* plugins *', '*hermes* profile *', '*hermes* memory *', '*hermes* approvals *', '*hermes* -z*']"
+    ```
+
+    Según el código, con aprobaciones manuales el agente puede correr `hermes config set` sin preguntar, y este bloqueo frena los casos comunes. **No es una garantía.** La documentación oficial (`user-guide/security.md`) avisa que un bloqueo por patrón no es un sandbox: se puede rodear con un script y la terminal puede escribir cualquier archivo del usuario.
+  - **Límites que hay que conocer.**
+    - `approvals.mode: manual` frena solo los comandos que Hermes considera peligrosos. Los comandos comunes, la edición de archivos y las acciones del navegador corren sin preguntar.
+    - Las capturas del control de la computadora tampoco piden permiso, así que conviene cerrar las ventanas sensibles antes de usarlo.
+    - A una aprobación se contesta "once", nunca "always": "always" la deja guardada en `command_allowlist` y vale para todas las sesiones.
+  - **Una aprobación quedó guardada por error.** El 28-oct, en la prueba real, se contestó "always" a `script execution via -e/-c flag`, y `config.yaml` quedó con `command_allowlist: [script execution via -e/-c flag]`. Así, `python -c`, `node -e`, `perl -e` y `ruby -e` corrían sin preguntar en todas las sesiones. Sergio Urcullo la borró el mismo día con `hermes config set command_allowlist '[]'`. Para revisarlo: `command_allowlist` tiene que estar vacía.
   - **Chequeos sin gastar cuota.** `hermes prompt-size` muestra qué carga Hermes (`AGENTS.md`, skills y herramientas), y `hermes computer-use doctor` revisa el control de la computadora.
 - **KeePassXC:** la fuente de secretos `command`, que es el camino que usaría la bóveda, no funciona en Windows nativo.
 
@@ -176,7 +204,7 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
 - ninguna tarea `Hermes_Gateway`;
 - ningún proceso de Hermes corriendo.
 
-WSL no se revisó por dentro: ver el comando de arriba.
+En el inventario, WSL no se revisó por dentro. Se revisó después, el 28-oct: ni en Ubuntu ni en docker-desktop hay `~/.hermes`, `~/.local/bin/hermes` ni `hermes` en el PATH.
 
 **El script de limpieza** es `C:\Users\PC\.hermes-archivo-20261028\limpiar-hermes.ps1`:
 - Aparta todo lo del inventario en `C:\Users\PC\.hermes-archivo-20261028`, salvo las carpetas de pruebas de Temp. No borra nada y deja un manifiesto para volver atrás.
@@ -189,7 +217,7 @@ WSL no se revisó por dentro: ver el comando de arriba.
 - Se apartaron las 10 cosas del inventario, se quitaron el protocolo y la variable, y el manifiesto quedó en `C:\Users\PC\.hermes-archivo-20261028\manifiesto.json`.
 - **El `Move-Item` de PowerShell 5.1 parte las carpetas.** Cuando Windows le niega mover una carpeta entera, sigue archivo por archivo y falla con las ocultas, como `.git`. Pasó dos veces. El script ahora mueve cada carpeta de una sola vez con `[IO.Directory]::Move`, con reintentos.
 - **Windows no dejó mover `%LOCALAPPDATA%\hermes` a otra carpeta.** Daba acceso denegado, sin ningún proceso visible que la tuviera abierta; el antivirus activo es Avast. Sí dejó renombrarla en su lugar, y quedó como `%LOCALAPPDATA%\hermes-viejo-20261028`.
-- **Con Avast, un script lanzado como proceso aparte** (`powershell -ExecutionPolicy Bypass -File …`) no pudo ni mover ni renombrar esa carpeta. Pegado en la misma ventana, sí. Por eso los scripts de mantenimiento se corren dentro de la ventana:
+- **Con Avast, un script lanzado como proceso aparte** (`powershell -ExecutionPolicy Bypass -File …`) no pudo ni mover ni renombrar esa carpeta. Pegado en la misma ventana, sí. Por eso `limpiar-hermes.ps1` se corre pegado en la misma ventana, no como proceso aparte:
 
   ```powershell
   & ([scriptblock]::Create((Get-Content -Raw <ruta del script>))) -Modo aplicar

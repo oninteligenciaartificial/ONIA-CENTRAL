@@ -48,7 +48,7 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
   - Se quitaron el protocolo `hermes://` y la variable `HERMES_WRITE_SAFE_ROOT`.
 - **La v0.22.5 quedó instalada limpia** (commit `bf0203a`), con el navegador y el control de la computadora. Es la única: pasan los controles de `docs/decisiones/2026-10-28-hermes-oficial.md`, WSL incluido.
 - **Piensa con la suscripción de ChatGPT**, con su propio login. No toma prestados los logins de Codex ni de Claude Code, y no usa el token de `gh` ni la `GEMINI_API_KEY` de Windows.
-- **La configuración quedó cerrada.** Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas.
+- **La configuración quedó cerrada.** Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas. En la prueba quedó guardada por error una aprobación permanente (`command_allowlist`) para los scripts con `-e`/`-c`, y se borró el mismo día.
 - **La prueba real salió bien:** Hermes escribió un archivo y lanzó a Claude Code y a Codex en solo lectura. El detalle está en `2026-10-28-hermes-oficial.md`.
 
 De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
@@ -57,6 +57,7 @@ De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 - Telegram, con un bot nuevo: [#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11).
 - Las skills de ONIA para Hermes, Claude Code y Codex: [#10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
 - Desanclar a mano el ícono viejo de la barra de tareas.
+- Decidir qué pasa con `%LOCALAPPDATA%\hermes-viejo-20261028`: son 7,6 GB, con la configuración y las credenciales viejas. Quedó renombrada en su lugar, fuera del archivo. Ya no se vuelve atrás con `limpiar-hermes.ps1 -Modo revertir`, porque la instalación nueva ocupa `%LOCALAPPDATA%\hermes` y el script se frena.
 
 ## 4. Archivos locales
 
@@ -114,6 +115,6 @@ De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 3. Hermes: **hecho el 28-oct.** Se apartó lo viejo y se instaló y armó desde cero, pensando con la suscripción de ChatGPT. Falta Telegram, con un bot nuevo que trae Sergio Urcullo ([#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11)).
 4. Claude: con la app cerrada, limpiar `.claude.json`, los datos de plugins viejos, la papelera y las tareas viejas.
 5. Las copias del repo viejo: archivarlas en E: sin abrirlas.
-6. Vercel y los secretos. Decide Sergio Urcullo.
+6. Vercel, los secretos y el plan de ChatGPT (Plus o Pro), que ahora también usa Hermes. Decide Sergio Urcullo.
 7. Archivar el repo viejo.
 8. El VPS y n8n, junto con Sergio Urcullo.
