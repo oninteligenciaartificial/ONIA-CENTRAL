@@ -43,18 +43,22 @@ Se prueba en este orden, y se pasa al siguiente solo si el anterior no existe:
 4. **El navegador con sesión,** solo donde no hay nada de lo anterior: el cofre de Hermes o Claude en Chrome, según `docs/credenciales.md`.
 
 **Lo que sale para afuera** (publicar, mandar, gastar o cobrar) queda en borrador o en pausa hasta el sí de Sergio Urcullo con captura. Las herramientas que publican o gastan solas quedan afuera de lo que el agente puede usar sin preguntar:
-- Higgsfield gasta créditos en cada llamada, no tiene tope propio y puede publicar en TikTok ([Higgsfield](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp));
+- Higgsfield gasta créditos en cada llamada y puede publicar en TikTok ([Higgsfield](https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp)). Por el conector de claude.ai no tiene tope propio. Si algún día se conecta por Hermes, `tool_costs` y `spend_limit` le ponen un tope por chat (`reference/mcp-config-reference.md` de Hermes);
 - los MCP de anuncios de Meta y de TikTok crean campañas y tocan presupuestos;
 - el conector de Gmail envía, aunque por defecto pide aprobación ([Anthropic](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors));
-- Opus Clip y Submagic publican en redes.
+- Opus Clip y Submagic publican en redes;
+- los conectores de Supabase, Vercel y Cloudflare llegan a producción (punto 5).
 
-**Lo que se descarta:**
-- **El WhatsApp de Hermes con Baileys.** Imita a WhatsApp Web, no es oficial y arriesga que den de baja el número (`user-guide/messaging/whatsapp.md` de Hermes).
+**Lo que no se recomienda:**
+- **No son oficiales,** y la regla es primero lo oficial:
+  - el WhatsApp de Hermes con Baileys, que imita a WhatsApp Web y arriesga que den de baja el número (`user-guide/messaging/whatsapp.md` de Hermes);
+  - los plugins de la comunidad del catálogo de Hermes para anuncios, YouTube o WhatsApp (`adspirer`, `markifact`, `vidiq`, `go-whatsapp`).
 - **El correo de Hermes por IMAP.** Pide una contraseña de aplicación que abre todo el Gmail (`user-guide/messaging/email.md`).
-- **Un OAuth propio de Google con Gmail personal,** como la skill `google-workspace` de Hermes. Sin Google Workspace la app queda en modo Testing, y la autorización vence a los 7 días ([Google](https://support.google.com/cloud/answer/15549945)).
-- **El MCP oficial de Google Workspace.** Está en Developer Preview, pide una cuenta de Workspace paga y en Gmail solo deja borradores ([Google](https://developers.google.com/workspace/guides/configure-mcp-servers)).
-- **El n8n del VPS.** Es producción, y su MCP de instancia ejecuta workflows y, desde la versión 2.13, también los edita ([n8n](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server)). No se conecta a ningún agente hasta revisar el VPS.
-- **Los plugins de la comunidad** del catálogo de Hermes para anuncios, YouTube o WhatsApp (`adspirer`, `markifact`, `vidiq`, `go-whatsapp`): no son oficiales.
+- **Un acceso propio de Google para Hermes, por ahora** (decisión 12). Hoy los conectores de claude.ai ya cubren Gmail, Calendar y Drive. Si hiciera falta:
+  - Hermes puede conectar los MCP oficiales de Google para Gmail y Calendar, y su gateway los mantiene conectados (`user-guide/features/mcp.md`). El de Drive pide un cliente OAuth propio;
+  - los MCP oficiales de Google están en Developer Preview, y en Gmail solo dejan borradores ([Google](https://developers.google.com/workspace/guides/configure-mcp-servers)). Que pidan una cuenta de Workspace paga está sin confirmar;
+  - con Gmail personal, una app propia de Google se publica para uso personal sin verificación, con el aviso de "app no verificada" ([Google](https://support.google.com/cloud/answer/13464323)). Si queda en modo Testing, la autorización vence a los 7 días ([Google](https://support.google.com/cloud/answer/15549945)).
+- **Conectar el n8n del VPS** (decisión 13). Es producción, y su MCP de instancia ejecuta workflows y, desde la versión 2.13, también los edita ([n8n](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server)).
 
 ## 2. Marca personal
 
@@ -64,27 +68,27 @@ Se prueba en este orden, y se pasa al siguiente solo si el anterior no existe:
 | Planificar la semana | `marca-personal/calendario/` y su Google Calendar para grabar | Archivos del repo y conector de Calendar | `planificar-contenido` (#45) | Sus temas, cuántas veces publica en cada red y qué días graba | US$0 |
 | Guiones de reels y videos | El repo | Archivos | `escribir-guion` (#46). Los de anuncios, `hacer-anuncio` (#42) | De 3 a 5 videos suyos de referencia y lo que nunca promete | US$0 |
 | Carruseles | Canva, Figma, Gamma o Higgsfield | Canva: MCP oficial con OAuth; la marca y las plantillas piden Pro ([Canva](https://www.canva.dev/docs/apps/mcp/tools/)). Figma y Gamma: conectores de claude.ai | `armar-carrusel` (#47) | El kit de marca: logo, colores y tipografías | Canva Pro, unos US$144 por año. Figma y Gamma, sin gasto nuevo |
-| Reels: tomas, subtítulos, voz y b-roll | Su cámara; CapCut, Descript, Opus Clip o Submagic; ElevenLabs; Higgsfield | CapCut no tiene API. Descript, Opus Clip y Submagic tienen MCP oficial. ElevenLabs tiene MCP remoto con OAuth, y su clave de API acepta un tope de créditos ([ElevenLabs](https://elevenlabs.io/docs/overview/administration/workspaces/api-keys)) | `preparar-reel` (#48) | Graba y deja los crudos en Drive o en E: | De US$0 a unos US$90 por mes (decisión 5) |
+| Reels: tomas, subtítulos, voz y b-roll | Su cámara; CapCut, Descript, Opus Clip o Submagic; ElevenLabs; Higgsfield | CapCut no tiene API. Descript, Opus Clip y Submagic tienen MCP oficial. ElevenLabs tiene MCP remoto con OAuth, y su clave de API acepta un tope de créditos ([ElevenLabs](https://elevenlabs.io/docs/overview/administration/workspaces/api-keys)) | `preparar-reel` (#48) | Graba y deja los crudos en Drive o en E: | De US$0 a unos US$87 por mes (decisión 4) |
 | Publicar en Instagram y Facebook | Instagram profesional y la Página "Onia" | API de Instagram con una app propia: no hay MCP oficial para eso. Para su propia cuenta alcanza el acceso estándar, sin App Review. La API no programa y pide el archivo en una URL pública ([Meta](https://developers.facebook.com/docs/instagram-platform/content-publishing)) | `publicar-contenido` (#49) | El login con 2FA para crear la app | US$0 |
 | Publicar en TikTok y YouTube | Sus cuentas | TikTok: sin auditoría, la API publica solo en privado, así que va como borrador a la app. YouTube: Data API v3, 100 subidas por día, sin MCP oficial | `publicar-contenido` (#50) | Los logins y las apps de desarrollador | US$0 |
-| Comentarios y mensajes ("comentá PALABRA") | Instagram | API de Instagram: un mensaje se contesta dentro de las 24 h; un comentario recibe una sola respuesta privada, dentro de 7 días | `responder-comunidad` (#51) | Si la guía sale sola (decisión 8) | US$0 |
+| Comentarios y mensajes ("comentá PALABRA") | Instagram | API de Instagram: un mensaje se contesta dentro de las 24 h; un comentario recibe una sola respuesta privada, dentro de 7 días | `responder-comunidad` (#51) | Si la guía sale sola (decisión 7) | US$0 |
 | Métricas de la semana | Instagram y anuncios de Meta | API de Instagram (los datos tardan hasta 48 h) y conector Meta ads. Tarea programada de Hermes que avisa por Telegram | `informe-semanal` (#52) | Nada | US$0 |
 
 **Publicar sin app propia mientras tanto:** el agente deja listos el archivo, el texto y la hora, y Sergio Urcullo publica desde la app o desde Meta Business Suite. Así se puede arrancar sin esperar el #49.
 
 ## 3. Talleres y comunidad
 
-El taller lo define el #6. Su resumen (PR #40) recomienda la opción A, "Tu negocio contesta solo por WhatsApp": en vivo, 2 noches, cupo de 30, inscripción por WhatsApp y cobro con QR, como se venden hoy los talleres en Bolivia. El plan de campaña está en el PR #41.
+El taller lo define el #6. Su resumen (PR #40) recomienda la opción A, "Tu negocio contesta solo por WhatsApp": en vivo, 2 noches, cupo de 30, inscripción por WhatsApp y cobro con QR, como se venden hoy los talleres en Bolivia. El plan de campaña está en el PR #41: trae 8 decisiones (cuenta, página, público, presupuesto, guiones, cobro, devolución y factura) y propone dar el taller el 17 y el 19 de noviembre. Este mapa no las repite.
 
 | Proceso | Herramienta o cuenta | Cómo se conecta | Skill de ONIA | Qué da Sergio Urcullo | Costo |
 |---|---|---|---|---|---|
 | Elegir el taller, el precio y el público | Las fichas y opciones del PR #40 | — | — | Las decisiones del PR #40 | — |
-| Anuncios del taller | Página "Onia" y cuenta publicitaria "ONIA Ads" | Conector Meta ads | `hacer-anuncio` (#42) y `armar-campana` (#55) | Las decisiones del PR #41 y el medio de pago | El PR #41 propone US$10 por día durante 7 días |
-| Consultas e inscripción | WhatsApp Business | La app no tiene API: el agente prepara y Sergio Urcullo carga. La Cloud API, más adelante (punto 4) | `atender-inscriptos` (#53) | El número (decisión 4) | App: US$0 |
-| Página del taller | Cloudflare Pages o Vercel | Conectores de claude.ai | `web-de-venta` (#42) | Dónde se publica (decisión 6) | Cloudflare: US$0. Vercel Pro: US$20 por mes |
-| Cobro y factura | QR de su cuenta y el SIAT | A mano al principio; después, un QR que se confirma solo (punto 4) | `registrar-movimiento` (#54) | La cuenta del titular del NIT, y emitir la factura | US$0 |
-| Materiales y clase | Gamma o Google Slides, Zoom o Meet, Google Calendar | Conectores de Gamma y Calendar. Zoom tiene un MCP oficial; que cree reuniones está sin confirmar | `preparar-taller` (#57) | La fecha, aprobar el temario y dar la clase | Zoom Pro: US$16,99 por un mes (decisión 7) |
-| Comunidad después del taller | Grupo de WhatsApp; Skool más adelante | — | — | Decisión 10 | WhatsApp: US$0. Skool Hobby: US$9 por mes más 10% y 30¢ por venta |
+| Anuncios del taller | Página "Onia" y cuenta publicitaria "ONIA Ads" | Conector Meta ads | `hacer-anuncio` (#42) y `armar-campana` (#55) | Las decisiones 1 a 5 del PR #41 y el medio de pago | El PR #41 propone US$10 por día durante 7 días |
+| Consultas e inscripción | WhatsApp Business | La app no tiene API: el agente prepara y Sergio Urcullo carga. La Cloud API, más adelante (punto 4) | `atender-inscriptos` (#53) | El número (dato 1) y si va la app o la API (decisión 3) | App: US$0 |
+| Página del taller | Cloudflare Pages o Vercel | Conectores de claude.ai | `web-de-venta` (#42) | Dónde se publica (decisión 5) | Cloudflare: US$0. Vercel Pro: US$20 por mes |
+| Cobro, devolución y factura | QR de su cuenta y el SIAT | A mano al principio; después, un QR que se confirma solo (punto 4) | `registrar-movimiento` (#54) | Las decisiones 6, 7 y 8 del PR #41, la cuenta del titular del NIT, y emitir la factura | US$0 |
+| Materiales y clase | Gamma o Google Slides, Zoom o Meet, Google Calendar | Conectores de Gamma y Calendar. Zoom tiene un MCP oficial; que cree reuniones está sin confirmar | `preparar-taller` (#57) | Confirmar las fechas, aprobar el temario y dar la clase | Zoom Pro: US$16,99 por un mes (decisión 6) |
+| Comunidad después del taller | Grupo de WhatsApp; Skool más adelante | — | — | Decisión 9 | WhatsApp: US$0. Skool Hobby: US$9 por mes más 10% por venta ([Skool](https://www.skool.com/pricing)) |
 | Datos de inscriptos | Planilla en su Drive, nunca en Git | Conector de Drive | `atender-inscriptos` y `registrar-movimiento` | — | US$0 |
 
 **La sala:** el plan gratis de Zoom corta a los 40 minutos, y el de Meet a los 60 con 3 o más personas ([Google](https://support.google.com/meet/answer/7317473)). Zoom Pro admite 100 participantes, que alcanza para un cupo de 30 ([Zoom](https://zoom.us/pricing)).
@@ -93,7 +97,7 @@ El taller lo define el #6. Su resumen (PR #40) recomienda la opción A, "Tu nego
 - quién vende y su NIT, el precio total, la fecha y qué incluye ([Ley 453](https://www.lexivox.org/norms/BO-L-N453.html), de consumidores);
 - un aviso de privacidad: para qué se usan los datos, quién es el responsable y cómo pedir acceso, corrección o baja, con consentimiento expreso ([DS 1793](https://www.lexivox.org/norms/BO-RE-DSN1793.html), reglamento de la Ley 164, art. 56);
 - dos casillas separadas y sin marcar, una para recibir mensajes por WhatsApp y otra por correo. En la publicidad, el remitente identificable y cómo darse de baja (DS 1793, art. 57, y la [política de WhatsApp Business](https://whatsappbusiness.com/es-la/policy/));
-- los términos y la política de reembolso. No se encontró un plazo legal de arrepentimiento para compras en línea en Bolivia;
+- los términos y la política de devolución, que es la decisión 7 del PR #41. No se encontró un plazo legal de arrepentimiento para compras en línea en Bolivia;
 - que se entrega factura.
 
 ## 4. Lo transversal
@@ -101,16 +105,16 @@ El taller lo define el #6. Su resumen (PR #40) recomienda la opción A, "Tu nego
 | Proceso | Herramienta o cuenta | Cómo se conecta | Skill de ONIA | Qué da Sergio Urcullo | Costo |
 |---|---|---|---|---|---|
 | Ventas: seguir a quien preguntó y no compró | WhatsApp y la planilla | Como en el punto 3 | `atender-inscriptos` (#53) | — | US$0 |
-| Cobros | QR interoperable de su banco | A mano. Después, la API de QR del BNB, OpenBCB o una pasarela local | `registrar-movimiento` (#54) | El banco, el NIT y confirmar cada pago | QR: US$0 |
-| Anuncios de Meta | MCP oficial de anuncios de Meta, en beta | Conector de claude.ai. Las "reglas del MCP" topan presupuestos. Otros agentes pueden entrar desde el 16-jul-2026 con su propia app ([Meta](https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/)) | `armar-campana` (#55) | El medio de pago, las reglas de presupuesto y activar | La pauta |
+| Cobros | QR interoperable de su banco | A mano. Después, la API de QR del BNB, OpenBCB o una pasarela local | `registrar-movimiento` (#54) | Cómo cobrar (decisión 6 del PR #41), el banco y confirmar cada pago | QR: US$0 |
+| Anuncios de Meta | MCP oficial de anuncios de Meta, en beta abierta desde el 29-abr-2026 ([Meta](https://www.facebook.com/business/news/meta-ads-ai-connectors)) | Conector de claude.ai, con OAuth; con un token de usuario del sistema, el rol tiene que ser Employee ([Meta](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md)). Que sus "reglas" topen presupuestos está sin confirmar en detalle. Otros agentes pueden entrar desde el 16-jul-2026 con su propia app ([Meta](https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/)) | `armar-campana` (#55) | El medio de pago, el tope y activar | La pauta |
 | Anuncios de TikTok | MCP oficial de TikTok for Business, solo de anuncios | Conector de claude.ai. Bolivia puede abrir cuentas publicitarias ([TikTok](https://ads.tiktok.com/help/article/available-countries-and-regions-for-ad-account-creation-in-bc)) | `armar-campana` (#55) | Business Center y el medio de pago | La pauta |
 | Correo | Gmail | Conector de claude.ai: lee, deja borradores y envía con aprobación | `ordenar-correo` (#56) | Nada | US$0 |
 | Agenda | Google Calendar | Conector de claude.ai | `ordenar-correo` (#56) y `planificar-contenido` (#45) | Nada | US$0 |
 | Archivos | Google Drive y E: | Conector de Drive | Todas | Las carpetas de trabajo | US$0 |
-| WhatsApp | App WhatsApp Business; Cloud API después | La app, a mano. La Cloud API, directo con Meta, sin intermediario | `atender-inscriptos` (#53) | El número (decisión 4) | Tabla de abajo |
+| WhatsApp | App WhatsApp Business; Cloud API después | La app, a mano. La Cloud API, directo con Meta, sin intermediario, con un webhook público (Hermes usa cloudflared, `user-guide/messaging/whatsapp-cloud.md`) | `atender-inscriptos` (#53) | El número (dato 1) y si va la app o la API (decisión 3) | Tabla de abajo |
 | Finanzas | Planilla en su Drive | Conector de Drive | `registrar-movimiento` (#54) | Lo que ya paga y el extracto del banco | US$0 |
-| Facturas | SIAT | Las emite Sergio Urcullo | `registrar-movimiento` (#54) | Su modalidad de factura | US$0 |
-| Lo legal | Textos en el repo | — | Los de cada página: `web-de-venta` (#42) y, para la plataforma, el #28 | Aprobarlos (decisión 11) | Si revisa un abogado, su costo |
+| Facturas | SIAT | Las emite Sergio Urcullo | `registrar-movimiento` (#54) | Cómo factura (decisión 8 del PR #41, con su contador) | US$0 |
+| Lo legal | Textos en el repo | — | Los de cada página: `web-de-venta` (#42) y, para la plataforma, el #28 | Aprobarlos (decisión 10) | Si revisa un abogado, su costo |
 | Orquestar | Hermes, Telegram y tareas programadas | `llevar-issue`, `hermes gateway` y `hermes cron`, que corre Sergio Urcullo | `llevar-issue` (ya está) | El bot de Telegram (#11) | US$0 |
 | Credenciales | Bóveda KeePassXC | `docs/credenciales.md` | — | Crear la bóveda (#7) | US$0 |
 
@@ -147,12 +151,14 @@ El taller lo define el #6. Su resumen (PR #40) recomienda la opción A, "Tu nego
 
 **Orquestar con Hermes,** lo que limita al resto:
 - Kanban de Hermes v0.22.5 no lanza a Claude Code ni a Codex como trabajadores. Por eso el reparto va por `llevar-issue` (hallazgo de la sesión del orquestador).
-- Las tareas programadas corren solo con el gateway prendido. En Windows, el gateway vive mientras la sesión de Windows está iniciada: con la PC apagada no hay informes ni respuestas por Telegram (`user-guide/windows-native.md` de Hermes).
+- Las tareas programadas corren solo con el gateway prendido, y en Windows no hay servicio: con la PC apagada no hay informes ni respuestas por Telegram (`user-guide/windows-native.md` de Hermes).
+  - Si se instala con `hermes gateway install`, que el #11 deja por decidir, arranca al iniciar la sesión de Windows y vive mientras siga iniciada.
+  - Si no, lo levanta Hermes al abrirse, y con Telegram configurado o tareas pendientes no se apaga solo (`docs/decisiones/2026-10-28-hermes-oficial.md`).
 - `hermes cron` y `hermes mcp` están bloqueados para el agente (`approvals.deny`). Los corre Sergio Urcullo con los comandos que preparan los agentes.
 
 ## 5. ONIA Platform
 
-La decisión A (seguir desarrollando con agentes) está en `plataforma/2026-10-28-seguir-con-onia-platform.md`, y cada paso ya tiene su issue, del #24 al #29. Este mapa no suma issues para la plataforma.
+La decisión A (seguir desarrollando con agentes) está en `plataforma/2026-10-28-seguir-con-onia-platform.md`. Los pasos 1 a 5 y el 10 de su punto 8 tenían issue, del #24 al #29. Los pasos 6 a 9 no tenían, y este mapa les abrió uno: #60 a #63.
 
 | Proceso | Herramienta o cuenta | Cómo se conecta | Skill de ONIA | Qué da Sergio Urcullo | Costo |
 |---|---|---|---|---|---|
@@ -162,8 +168,12 @@ La decisión A (seguir desarrollando con agentes) está en `plataforma/2026-10-2
 | Cobro, factura y términos del SaaS | QR, SIAT y los textos | #28 | — | El pago de prueba y aprobar los textos | Un pago chico de prueba |
 | Errores | Sentry | #29 | — | — | — |
 | Bot de WhatsApp de los clientes | Cloud API de Meta; su motor vive en el repo viejo | Después del #26 | — | — | Lo paga el cliente |
+| Costo real del mes | Las facturas del VPS, OpenAI, Resend, el dominio y Vercel | — | — | Los montos (#60) | — |
+| Prueba comercial con 3 a 5 clínicas dentales | WhatsApp, correo y una planilla en su Drive | Conectores de claude.ai | — | Elegir las clínicas y hacer la venta (#61, decisión 14) | US$0 |
+| Hito de revisión, el 31-ene-2027 | `plataforma/` | Archivos | — | Leer la revisión (#62) | — |
+| Ramas y worktrees viejos | Git | Local | — | Nada (#63) | — |
 
-Los conectores de Supabase y Vercel de claude.ai llegan a producción: se usan solo para leer, y cualquier cambio pide su sí.
+**Los conectores de Supabase, Vercel y Cloudflare de claude.ai llegan a producción.** Ninguna tarea los usa sin el sí de Sergio Urcullo, y la skill del #44 los deja afuera. Filtrar por el nombre de la herramienta no alcanza: el `execute_sql` de Supabase, por ejemplo, también escribe.
 
 ## 6. Skills de ONIA que hacen falta
 
@@ -194,7 +204,7 @@ Van en `.agents/skills/<nombre>/`, con el formato de `docs/decisiones/2026-10-28
 - Claude: Max 5x, US$100 por mes desde el 3-nov (#30).
 - ChatGPT: Plus o Pro, a decidir antes del 14-nov (#30).
 - La API de Anthropic de Hermes, con el tope que fije Sergio Urcullo (#30).
-- Higgsfield y el VPS: faltan los datos (punto 9).
+- Higgsfield: falta el dato (punto 9). El VPS y el resto de la plataforma: #60.
 
 **Lo nuevo, según cada decisión:**
 
@@ -224,7 +234,7 @@ El orden es una decisión de Sergio Urcullo (decisión 1). La propuesta:
 3. **Marca personal con agentes:**
    - primero la guía de voz y los guiones (#46), el calendario (#45), los carruseles (#47) y los reels (#48);
    - después publicar por API (#49), los comentarios (#51), el informe semanal (#52), y TikTok y YouTube (#50).
-4. **ONIA Platform, en paralelo todo el tiempo,** del #24 al #29, sin tocar los archivos de las otras etapas.
+4. **ONIA Platform, en paralelo todo el tiempo,** del #24 al #29 y del #60 al #63, sin tocar los archivos de las otras etapas. La prueba comercial con clínicas (#61) pide tiempo de venta de Sergio Urcullo: cuándo se hace es la decisión 14.
 
 Por qué: es lo único que trae plata en noviembre, y es lo que menos cuentas nuevas pide. Lo que no necesita cuentas, como los guiones (#46) o el calendario (#45), puede arrancar igual en paralelo.
 
@@ -242,15 +252,14 @@ Se cargan siguiendo `docs/credenciales.md`: el secreto va a la bóveda y al agen
 
 1. **La bóveda:** crear `C:\Users\PC\BovedaPrivada\Agentes.kdbx` con KeePassXC (#7). Todo lo que sigue se guarda ahí.
 2. **Telegram:** crear el bot nuevo en BotFather y configurarlo con `hermes gateway setup` (#11).
-3. **Meta, en una sola sentada y con 2FA:**
-   - cargar el medio de pago en la cuenta publicitaria que elija (PR #41);
+3. **WhatsApp Business** en el número de ONIA (#53). Va antes que Meta, porque después se conecta a la Página.
+4. **Meta, en una sola sentada y con 2FA:**
+   - cargar el medio de pago en la cuenta publicitaria que elija (decisión 1 del PR #41);
    - comprobar que Instagram es una cuenta profesional y está vinculado a la Página "Onia";
    - conectar el WhatsApp Business a la Página, que lo piden los anuncios que abren un chat (PR #41);
-   - crear con un agente al lado la app de Meta para Instagram (#49);
-   - fijar las reglas de presupuesto del MCP de anuncios (#55).
-4. **WhatsApp Business** en el número de ONIA (#53).
-5. **Lo que decida contratar** (decisiones 5 y 7): crear la cuenta y autorizar el OAuth de cada conector él mismo.
-6. **Más adelante, en la etapa de marca personal:** la app de desarrollador de TikTok y el proyecto de Google Cloud para YouTube (#50).
+   - fijar el tope de gasto, en la cuenta publicitaria o en las reglas del MCP de anuncios (#55).
+5. **Lo que decida contratar** (decisiones 4 y 6): crear la cuenta y autorizar el OAuth de cada conector él mismo.
+6. **Más adelante, en la etapa de marca personal:** la app de Meta para Instagram, con un agente al lado (#49), la app de desarrollador de TikTok y el proyecto de Google Cloud para YouTube (#50).
 
 ### Datos
 
@@ -263,12 +272,9 @@ Van por mensaje, sin secretos.
    - qué días puede grabar;
    - de 3 a 5 videos suyos que le gusten, y lo que nunca promete.
 3. **El kit de marca,** o el enlace a la carpeta de Drive donde está (#47).
-4. **Para cobrar y facturar** (#54):
-   - si factura como persona natural o como empresa;
-   - qué modalidad de factura figura en su padrón del SIAT;
-   - en qué banco está la cuenta del QR.
-5. **Lo que ya paga,** con su vencimiento: el plan de Higgsfield, y si paga Canva, ElevenLabs, Zoom u otras. Y cuánto cuesta por mes el VPS (#54 y #30).
-6. **La fecha y el horario** tentativos del primer taller (#57).
+4. **En qué banco** está la cuenta del QR (#54). Cómo cobrar y cómo facturar son las decisiones 6 y 8 del PR #41; la factura, a confirmar con su contador.
+5. **Lo que ya paga,** con su vencimiento: el plan de Higgsfield, y si paga Canva, ElevenLabs, Zoom u otras (#54). El costo del VPS y del resto de la plataforma va en el #60.
+6. **Confirmar las fechas del taller** que propone el PR #41: el martes 17 y el jueves 19 de noviembre, de 19:30 a 21:30 (#57).
 7. **Si alguien más** atiende el WhatsApp o da el taller con él.
 
 ### Decisiones
@@ -276,19 +282,19 @@ Van por mensaje, sin secretos.
 Opciones cortas, con la recomendada en negrita.
 
 1. **Orden de la empresa (punto 8):** **A, el taller primero** / B, la marca personal primero / C, la plataforma primero.
-2. **El taller:** las decisiones que traen los PRs #40 (qué taller, precio, público, herramienta y referentes) y #41 (cuenta, página, público, presupuesto y guiones). No se repiten acá.
-3. **Cómo cobrar el primer taller:** **QR de tu cuenta, confirmado a mano en la app del banco** / una pasarela con QR que se confirma solo, desde Bs 249 por mes / Hotmart, con 9,9% más US$1 por venta y el retiro a Bolivia sin confirmar.
-4. **WhatsApp:** **la app Business ahora, y la Cloud API cuando el volumen lo pida** / la Cloud API ya, con costo por mensaje / un proveedor de Meta (BSP) para usar el mismo número en la app y en la API.
-5. **Suscripciones de contenido:** **nada nuevo el primer mes; se mide y se decide** / básico: Canva Pro y ElevenLabs Starter, unos US$18 por mes / completo: además Submagic u Opus Clip, de US$50 a US$90 por mes.
-6. **Dónde va la página del taller:** **Cloudflare Pages, gratis** / Vercel Pro, US$20 por mes / sin página, solo WhatsApp. Publicarla en un dominio de ONIA es producción y pide tu sí.
-7. **Sala del taller:** **Zoom Pro por el mes del taller, US$16,99** / Google Workspace Business Standard, US$14 por mes con plan anual, que cambia tu cuenta de Google.
-8. **"Comentá PALABRA":** **el agente propone las respuestas y vos aprobás cada tanda** / la guía sale sola a quien comenta la palabra, con un texto que aprobás una vez.
-9. **Publicación en redes:** **el agente publica a la hora lo que aprobaste con captura** / vos publicás todo a mano.
-10. **Comunidad después del taller** (sin apuro): **un grupo de WhatsApp gratis** / Skool Hobby, US$9 por mes más 10% y 30¢ por venta.
-11. **Textos legales:** **el agente los redacta con la norma citada y vos los aprobás** / que los revise antes un abogado, con su costo.
-12. **Telegram con la PC apagada** (sin apuro): **no, solo con la PC prendida** / un VPS aparte, desde €6,49 por mes.
-13. **Google** (sin apuro): **seguir con Gmail personal y los conectores de claude.ai** / Google Workspace, desde US$7 por usuario y mes, para correo con dominio y el MCP oficial de Google.
-14. **n8n del VPS** (sin apuro): **no se conecta a ningún agente hasta revisar el VPS** / prender ahora su MCP de instancia.
+2. **El taller:** las que traen el PR #40 (qué taller, precio, público, herramienta y referentes) y el PR #41 (cuenta, página, público, presupuesto, guiones, cobro, devolución y factura). No se repiten acá.
+3. **WhatsApp:** **la app Business ahora, y la Cloud API cuando el volumen lo pida** / la Cloud API ya, con costo por mensaje / un proveedor de Meta (BSP) para usar el mismo número en la app y en la API.
+4. **Suscripciones de contenido:** **nada nuevo el primer mes: carruseles con Figma o Gamma, y reels editados a mano en CapCut** / básico: Canva Pro y ElevenLabs Starter, unos US$18 por mes / completo: además Opus Clip o Submagic para editar los reels, de unos US$47 a US$87 por mes.
+5. **Dónde va la página del taller:** **Cloudflare Pages, gratis** / Vercel Pro, US$20 por mes / sin página, solo WhatsApp. Publicarla en un dominio de ONIA es producción y pide tu sí.
+6. **Sala del taller:** **Zoom Pro por el mes del taller, US$16,99** / Google Workspace Business Standard, US$14 por mes con plan anual, que cambia tu cuenta de Google.
+7. **"Comentá PALABRA":** **el agente propone las respuestas y vos aprobás cada tanda** / la guía sale sola a quien comenta la palabra, con un texto que aprobás una vez.
+8. **Publicación en redes:** **el agente publica a la hora lo que aprobaste con captura** / vos publicás todo a mano.
+9. **Comunidad después del taller** (sin apuro): **un grupo de WhatsApp gratis** / Skool Hobby, US$9 por mes más 10% por venta.
+10. **Textos legales:** **el agente los redacta con la norma citada y vos los aprobás** / que los revise antes un abogado, con su costo.
+11. **Telegram con la PC apagada** (sin apuro): **no, solo con la PC prendida** / un VPS aparte, desde €6,49 por mes.
+12. **Google** (sin apuro): **seguir con Gmail personal y los conectores de claude.ai** / sumarle a Hermes los MCP oficiales de Google, que están en Developer Preview / Google Workspace, desde US$7 por usuario y mes, para correo con dominio.
+13. **n8n del VPS** (sin apuro): **no se conecta a ningún agente hasta revisar el VPS** / prender ahora su MCP de instancia.
+14. **Prueba comercial de la plataforma con clínicas (#61):** **después del taller, con las clínicas contactadas antes del 15-dic** / en paralelo con el taller, antes del 30-nov, como dice la decisión de la plataforma.
 
 ## 10. Issues
 
@@ -307,6 +313,10 @@ Nuevos, uno por pieza:
 - [#55](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55) Campañas de Meta en pausa con tope, y skill armar-campana
 - [#56](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/56) Correo y agenda, y resumen diario por Telegram
 - [#57](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/57) Skill preparar-taller
+- [#60](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/60) Medir el costo real del mes de onia-platform
+- [#61](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/61) Prueba comercial de onia-platform con 3 a 5 clínicas dentales
+- [#62](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/62) Hito de revisión de onia-platform el 31-ene-2027
+- [#63](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/63) Ordenar las ramas y los worktrees de onia-platform
 
 Ya existían y no se duplicaron: #7 (cuentas y bóveda), #11 (Telegram), #24 a #29 (plataforma), #30 (pagos de noviembre) y #42 (skills de anuncio y de web de venta).
 
