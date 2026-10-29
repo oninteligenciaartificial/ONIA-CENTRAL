@@ -76,7 +76,7 @@ Sigue los pasos de Meta para anuncios que abren un chat de WhatsApp ([ayuda de M
 
 ## Creativos con su cara
 
-Tres videos verticales 9:16, de 30 a 45 segundos, grabados con el celular, con subtítulos grandes y la parte de abajo libre (ver la guía de anuncios).
+Tres videos verticales 9:16, de 30 a 45 segundos, grabados con el celular, con subtítulos grandes y el texto dentro de la zona segura (ver la guía de anuncios).
 
 Son borradores: los textos finales los aprueba Sergio Urcullo, y los datos entre corchetes se completan con lo que él decida. Lo que va entre llaves, {con la cuenta gratis}, entra solo si el temario se probó con una cuenta gratis.
 
@@ -121,7 +121,7 @@ Decidido: **US$10 por día durante 7 días, US$70, unos Bs 848.**
   - El IT es el 3% de los ingresos brutos: Bs 1,50 ([SIN, IT](https://www.impuestos.gob.bo/wp-content/uploads/2025/10/IT-18F.pdf)).
 - **Con Zoom Pro:** a Bs 42 netos, hacen falta 26 inscripciones pagas para cubrir el total.
 - **Sin Zoom Pro,** si ya hay una cuenta: 21.
-- **Con 95 cupos llenos:** entran Bs 4.750, unos Bs 3.990 después de impuestos.
+- **Con 95 cupos llenos:** entran Bs 4.750, unos Bs 3.990 después de IVA e IT.
 
 **Cuándo se pausa o se sigue** (supuestos a medir; no hay datos propios de costos en Bolivia):
 - **Día 3:** se pausa el video que trae menos conversaciones por dólar. Si hace falta otro gancho, el video nuevo vuelve a pedir el sí de Sergio Urcullo con captura.
@@ -155,12 +155,12 @@ Las fechas las elige Sergio Urcullo (decisión 4).
    - **"Onia", con la cara de Sergio Urcullo en los videos (recomendada):** es la única que hoy está disponible.
    - Una página nueva de marca personal. Hay que crearla y no tiene historial.
 3. **¿Cómo se llama el taller?** Lo ve el cliente. Usar "Claude" en el nombre de algo pago toca la marca de Anthropic, que es un tema legal.
-   - **"Tu trabajo con Claude, taller práctico" (recomendada):** dice qué es y no se parece al título de Enrique Rocha, "Claude desde 0 A 100".
+   - **"Tu trabajo con Claude, taller práctico" (recomendada):** dice qué es y no se parece al título de Enrique Rocha, "Claude desde 0 A 100". Lleva la marca, así que es a confirmar con un abogado. Si no se puede, va la opción que sigue.
    - "IA para tu trabajo, en 3 horas": no lleva la marca en el nombre, y Claude se nombra en el texto.
    - "Claude de 0 a 100": es igual al nombre del taller de Enrique Rocha.
 4. **¿Qué fecha, horario y cupo?**
    - **Martes 17 de noviembre, de 19:00 a 22:00, con 95 cupos (recomendada):** es el horario de noche de los talleres que hoy se anuncian en Bolivia, y deja los 7 días de anuncios antes.
-   - Sábado 21 de noviembre, de 9:00 a 12:00, con 95 cupos: es para quien de noche no puede, y da unos días más de anuncios.
+   - Sábado 21 de noviembre, de 9:00 a 12:00, con 95 cupos: es para quien de noche no puede, y da más margen para ubicar los 7 días de anuncios.
 5. **¿Por dónde se da?** Es gasto.
    - **Zoom Pro por un mes, US$16,99, unos Bs 206 (recomendada):** reuniones de hasta 30 horas, 100 personas y grabación en la nube ([precios de Zoom](https://zoom.us/pricing)).
    - Una cuenta paga que ya tengas, si deja 3 horas seguidas y unas 100 personas.

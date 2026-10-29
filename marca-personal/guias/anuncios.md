@@ -27,7 +27,7 @@ Para un video de 30 a 60 segundos:
 3. **Qué cambió:** la IA ya lo hace, y no hace falta programar.
 4. **La prueba:** la demo en pantalla o un caso real. Sin datos de clientes.
 5. **La oferta:** qué es, cuándo, cuántos cupos y el precio.
-6. **El llamado a la acción:** una sola cosa, por ejemplo "Escribime TALLER".
+6. **El llamado a la acción:** una sola cosa, por ejemplo "Tocá el botón y escribime". En un anuncio que abre WhatsApp, el chat llega con el texto de la plantilla, no con una palabra clave.
 
 ## Especificaciones
 - **Formato:** 9:16 y 1080 × 1920 px, en .mp4 o .mov ([Meta, buenas prácticas de video en Instagram](https://en-gb.facebook.com/business/help/188534925073536)).
