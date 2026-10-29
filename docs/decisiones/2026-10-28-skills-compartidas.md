@@ -1,6 +1,6 @@
 # Skills de ONIA: una sola carpeta para Hermes, Claude Code y Codex
 
-28-oct-2026. **Propuesta para que la apruebe Sergio Urcullo.** Todavía no cambió nada: ni la configuración de los agentes, ni el `.gitignore`, ni hay skills en el repo. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
+28-oct-2026. **Sergio Urcullo aprobó las decisiones 1 a 6 del punto 8 el mismo día.** La 7 queda para más adelante. Al aprobarse, todavía no había cambiado nada: ni la configuración de los agentes, ni el `.gitignore`, ni había skills en el repo. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
 
 Cómo se armó, todo de solo lectura salvo las pruebas en una carpeta temporal:
 - **Hermes v0.22.5:** su documentación y su código, los dos instalados en `%LOCALAPPDATA%\hermes\hermes-agent`. Abajo, `docs/` es `website/docs/` de esa carpeta.
