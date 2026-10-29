@@ -43,11 +43,11 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 ## 3. Hermes (`C:\Users\PC\AppData\Local\hermes`)
 
 **Listo el 28-oct:**
-- **Lo viejo quedó apartado** con `limpiar-hermes.ps1`, y el manifiesto para volver atrás está en `C:\Users\PC\.hermes-archivo-20261028`.
+- **Lo viejo quedó apartado** con `limpiar-hermes.ps1`, y el manifiesto de qué se movió y adónde está en `C:\Users\PC\.hermes-archivo-20261028`.
   - La carpeta vieja se renombró en su lugar, como `%LOCALAPPDATA%\hermes-viejo-20261028`. Windows no dejó moverla a otra carpeta, pero sí renombrarla.
   - Se quitaron el protocolo `hermes://` y la variable `HERMES_WRITE_SAFE_ROOT`.
 - **La v0.22.5 quedó instalada limpia** (commit `bf0203a`), con el navegador y el control de la computadora. Es la única: pasan los controles de `docs/decisiones/2026-10-28-hermes-oficial.md`, WSL incluido.
-- **Piensa con la suscripción de ChatGPT**, con su propio login. No toma prestados los logins de Codex ni de Claude Code, y no usa el token de `gh` ni la `GEMINI_API_KEY` de Windows.
+- **Piensa con la suscripción de ChatGPT**, con su propio login. No toma prestados los logins de Codex ni de Claude Code, y no usa el token de `gh` ni la `GEMINI_API_KEY` de Windows. Tiene además una API key de Anthropic como segundo proveedor, que se elige a mano y gasta créditos de API.
 - **La configuración quedó cerrada.** Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas. En la prueba quedó guardada por error una aprobación permanente (`command_allowlist`) para los scripts con `-e`/`-c`, y se borró el mismo día.
 - **La prueba real salió bien:** Hermes escribió un archivo y lanzó a Claude Code y a Codex en solo lectura. El detalle está en `2026-10-28-hermes-oficial.md`.
 
@@ -57,6 +57,7 @@ De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 - Telegram, con un bot nuevo: [#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11).
 - Las skills de ONIA para Hermes, Claude Code y Codex: [#10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
 - Desanclar a mano el ícono viejo de la barra de tareas.
+- Confirmar en la consola de Anthropic el tope de gasto de la API key de Hermes.
 - Decidir qué pasa con `%LOCALAPPDATA%\hermes-viejo-20261028`: son 7,6 GB, con la configuración y las credenciales viejas. Quedó renombrada en su lugar, fuera del archivo. Ya no se vuelve atrás con `limpiar-hermes.ps1 -Modo revertir`, porque la instalación nueva ocupa `%LOCALAPPDATA%\hermes` y el script se frena.
 
 ## 4. Archivos locales

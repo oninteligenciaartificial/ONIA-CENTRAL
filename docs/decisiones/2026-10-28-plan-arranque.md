@@ -33,7 +33,7 @@ Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 1. **Antes del 3-nov,** fijate en Settings > Billing > API credits si este ciclo trae créditos de API. Desde el 7-oct, Max los incluye: US$200 en Max 20x. Si están, sirven para probar Hermes sin costo extra. Ojo: hay que elegir bien la organización de Console, porque no se cambia sin pedírselo a soporte.
 2. **Programá la bajada a Max 5x (US$100).** La documentación no dice si se aplica al final del período o al instante: hay que mirarlo en pantalla.
 3. **Desde el 3-nov,** Max 5x trae US$100 por mes en créditos de API. No sirven para Claude Code, pero sí para que Hermes piense con Sonnet 5.5, que se estima en unos US$64 por mes. No se acumulan de un mes a otro y, cuando se acaban, la API se corta sola: no cobra de más.
-4. **Desde el cambio del 28-oct, Hermes ya no usa estos créditos.** Piensa con la suscripción de ChatGPT y comparte el cupo con Codex. Con ese dato, Sergio Urcullo vuelve a decidir lo de Max 5x y lo de Plus o Pro.
+4. **Desde el cambio del 28-oct, Hermes piensa con la suscripción de ChatGPT** y comparte el cupo con Codex. Además tiene una API key de Anthropic como segundo proveedor, que se elige a mano y gasta de estos créditos. Con ese dato, Sergio Urcullo vuelve a decidir lo de Max 5x y lo de Plus o Pro.
 
 **Codex (vence el 14-nov):**
 - Falta un dato: **¿tu plan de ChatGPT hoy es Plus o Pro?**
