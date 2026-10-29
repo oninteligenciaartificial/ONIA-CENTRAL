@@ -102,7 +102,7 @@ Sigue los pasos de Meta ([ayuda de Meta](https://www.facebook.com/business/help/
 - [ ] El gancho se entiende en 3 segundos y sin sonido.
 - [ ] No promete ingresos ni resultados económicos.
 - [ ] No muestra datos de clientes reales.
-- [ ] Dice fecha, horario de Bolivia, cupo y precio, igual que la respuesta automática de WhatsApp.
+- [ ] Dice cupo, precio y que hay fechas para elegir. Las fechas y el horario de Bolivia van en la respuesta automática de WhatsApp, así el anuncio no ofrece un día que ya pasó.
 - [ ] Tiene un solo llamado a la acción.
 - [ ] El texto y los logos están dentro de la zona segura.
 - [ ] Hay 2 o 3 variantes de gancho para probar.

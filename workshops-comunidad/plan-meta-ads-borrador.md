@@ -160,7 +160,7 @@ Son borradores: los textos finales los aprueba Sergio Urcullo. Lo que va entre c
 - **0-3 s, a cámara:** "Si a la IA solo le hacés preguntas, la estás usando a medias."
 - **3-15 s:** "Le preguntás algo, copiás, pegás, y la próxima vez le volvés a explicar todo de cero."
 - **15-30 s:** "En 3 horas te enseño a usar Claude con tus archivos y tus proyectos, y a dejarle trabajo armado. Sin programar {y con la cuenta gratis}."
-- **30-40 s:** "Martes, jueves o sábado, por Zoom. Bs 50. Tocá el botón y escribime: te paso el temario."
+- **30-40 s:** "Elegí tu día, por Zoom. Bs 50. Tocá el botón y escribime: te paso el temario."
 
 **Video 2, la demo (gancho de prueba)**
 - **0-3 s, la pantalla:** "Mirá lo que le pido a Claude un lunes a la mañana."
@@ -174,7 +174,7 @@ Son borradores: los textos finales los aprueba Sergio Urcullo. Lo que va entre c
 
 **Texto del anuncio, borrador:**
 > ¿Usás la IA solo para hacerle preguntas? En "Claude de 0 a 100" aprendés a usar Claude con tus archivos y tus proyectos, y a dejarle trabajo armado. Sin programar {y con la cuenta gratis}.
-> 📅 Elegí tu día: martes, jueves o sábado de esta semana (hora de Bolivia) · Zoom · 3 horas
+> 📅 3 fechas para elegir, en hora de Bolivia · Zoom · 3 horas
 > 👥 95 cupos por clase · Bs 50 la inscripción · Grabación para siempre: Bs [precio]
 > Tocá el botón y escribime: te paso el temario.
 
@@ -191,7 +191,7 @@ Son supuestos a medir: no hay datos propios de costos en Bolivia.
 - **En el Administrador de anuncios:** conversaciones iniciadas y costo por conversación, por video.
 - **En WhatsApp Business,** tres etiquetas:
   - "Anuncio", para los chats que llegan del anuncio;
-  - "Pagó", cuando se confirma el QR;
+  - "Pagó", cuando se confirma el pago;
   - "Grabación", si compró la grabación.
 - **Una planilla con columnas** para el día, el gasto, las inscripciones, las grabaciones y la clase elegida.
 
