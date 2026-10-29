@@ -51,7 +51,7 @@ description: Investiga a un referente de marca personal (creador, coach o marca 
    - el camino que va del contenido gratis a la venta, con precios si son públicos.
 6. Escribí la ficha en `marca-personal/referentes/<nombre>.md`, con el nombre en minúsculas y con guiones, siguiendo la plantilla de abajo.
 7. Cerrá con tres ideas concretas para ONIA: qué tomar, cómo adaptarlo y para qué.
-8. Si son varios referentes, sumá `marca-personal/referentes/resumen-<fecha>.md` con:
+8. Si son varios referentes, sumá `marca-personal/referentes/resumen-<AAAA-MM-DD>.md` con:
    - lo que tienen en común;
    - en qué se diferencian;
    - una propuesta para la comunidad y las ventas de ONIA.
@@ -67,6 +67,7 @@ Investigado el <fecha> por <agente>.
 - Instagram: <url> (<seguidores> seguidores al <fecha>)
 - TikTok: <url> (<seguidores> seguidores al <fecha>)
 - YouTube: <url> (<suscriptores> suscriptores al <fecha>)
+- X o LinkedIn: <url>, si publica ahí
 - Web: <url>
 
 ## Propuesta de venta
