@@ -2,6 +2,8 @@
 
 28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges (ajustada después de la revisión del PR para cerrar sus huecos). Quedan abiertos el plan de ChatGPT y lo de Vercel.
 
+**Cambio del mismo 28-oct:** Sergio Urcullo decidió que Hermes piense con la suscripción de ChatGPT, con un login propio de Hermes, en vez de los créditos de API de Claude. El detalle está en `2026-10-28-hermes-oficial.md`.
+
 Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 - una investigación con 8 agentes (4 investigan y 4 verifican contra la fuente oficial);
 - una auditoría de la PC, los agentes y GitHub.
@@ -31,6 +33,7 @@ Sale de dos trabajos de solo lectura, sin usar el repo viejo como fuente:
 1. **Antes del 3-nov,** fijate en Settings > Billing > API credits si este ciclo trae créditos de API. Desde el 7-oct, Max los incluye: US$200 en Max 20x. Si están, sirven para probar Hermes sin costo extra. Ojo: hay que elegir bien la organización de Console, porque no se cambia sin pedírselo a soporte.
 2. **Programá la bajada a Max 5x (US$100).** La documentación no dice si se aplica al final del período o al instante: hay que mirarlo en pantalla.
 3. **Desde el 3-nov,** Max 5x trae US$100 por mes en créditos de API. No sirven para Claude Code, pero sí para que Hermes piense con Sonnet 5.5, que se estima en unos US$64 por mes. No se acumulan de un mes a otro y, cuando se acaban, la API se corta sola: no cobra de más.
+4. **Desde el cambio del 28-oct, Hermes piensa con la suscripción de ChatGPT** y comparte el cupo con Codex. Además tiene una API key de Anthropic como segundo proveedor, que se elige a mano y gasta de estos créditos. Con ese dato, Sergio Urcullo vuelve a decidir lo de Max 5x y lo de Plus o Pro.
 
 **Codex (vence el 14-nov):**
 - Falta un dato: **¿tu plan de ChatGPT hoy es Plus o Pro?**
@@ -77,10 +80,10 @@ La auditoría dio 3 sobre 10: lo nuevo está limpio, pero el repo viejo sigue tr
 ## 5. Hermes desde cero
 
 1. **Apartar lo viejo** con `limpiar-hermes.ps1`, que lo deja en `C:\Users\PC\.hermes-archivo-20261028` sin borrar nada.
-2. **Instalar v0.22.5** con el instalador oficial. Lo corre Sergio Urcullo desde una PowerShell abierta desde el menú Inicio, como todo lo que sigue en esta lista. Contesta que no a importar otros agentes (Claude, Codex, Cursor y OpenClaw) y a las dos preguntas del gateway, y elige **Blank Slate**. Antes de quitar las skills de fábrica hay que decidir cómo se conservan `claude-code` y `codex`. El detalle está en `2026-10-28-hermes-oficial.md`.
+2. **Instalar v0.22.5** con el instalador oficial. Lo corre Sergio Urcullo desde una PowerShell abierta desde el menú Inicio, como todo lo que sigue en esta lista. Contesta que no a importar otros agentes (Claude, Codex, Cursor y OpenClaw) y a las dos preguntas del gateway, y elige **Blank Slate**. Las skills de fábrica se desactivan con `hermes skills config`, y quedan activas `claude-code`, `codex`, `computer-use` y `hermes-agent`. El detalle está en `2026-10-28-hermes-oficial.md`.
 3. **Configuración mínima:** las claves de la lista de `2026-10-28-hermes-oficial.md`, que suma `terminal.cwd` y el límite de la app de escritorio.
 4. **Escribir un SOUL.md nuevo y corto.** El contexto del proyecto es el `AGENTS.md` de ONIA-CENTRAL.
-5. **Modelo:** con los créditos de API de Claude, una API key con tope de gasto.
+5. **Modelo:** la suscripción de ChatGPT, con un login propio de Hermes. Cambiado el 28-oct; antes eran los créditos de API de Claude, con una API key con tope de gasto.
 6. **Telegram:** un bot nuevo, porque el viejo lo comparten n8n, la orquesta y el Hermes del VPS. El bot lo crea Sergio Urcullo en BotFather.
 7. **Primera prueba:** una tarea real y chica, de punta a punta.
 
@@ -97,6 +100,6 @@ Si el control de permisos de Claude pide el OK para mergear, se sigue pidiendo. 
 
 1. Hermes como agente principal (recomendado).
 2. ¿El plan de ChatGPT de hoy es Plus o Pro?
-3. Que Hermes piense con los créditos de API de Claude (recomendado).
+3. Que Hermes piense con los créditos de API de Claude (recomendado). **Cambiado el 28-oct:** piensa con la suscripción de ChatGPT.
 4. La regla de merges del punto 6.
 5. Vercel: ¿se mudan onia-center y nuvia-store, o se desconectan?
