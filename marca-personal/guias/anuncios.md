@@ -58,7 +58,7 @@ Así editan Erik Taveras, con Claude Code y una skill propia, y Santiago Muñoz,
 5. **Exportar** las variantes: el mismo video con 3 ganchos distintos sale cambiando solo los primeros 3 segundos.
 
 - **Costo:** cero en licencias mientras ONIA tenga hasta 3 empleados.
-- **Hace falta:** el OK de Sergio Urcullo para instalar Remotion o FFmpeg en la PC.
+- **Hace falta:** el OK de Sergio Urcullo para instalar Remotion, FFmpeg o Whisper en la PC.
 
 ### 3. Con Higgsfield
 Higgsfield genera video con IA y está conectado a la sesión de Claude. Santiago Muñoz lo usa para el b-roll ([ficha](../referentes/santiago-munoz.md)). Iman Gadzhi es inversor y lo promociona en sus anuncios y en el tráiler de su reto ([ficha](../referentes/iman-gadzhi.md)).
