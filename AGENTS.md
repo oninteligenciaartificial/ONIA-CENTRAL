@@ -23,13 +23,14 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
   - el gasto;
   - producción (VPS, base de datos, Vercel);
   - lo legal;
+  - lo que cambia cómo trabaja la empresa o no se puede deshacer;
   - las skills o herramientas que vienen de afuera;
   - cualquier cambio a `AGENTS.md`, `CLAUDE.md`, `.gitignore`, los permisos o esta regla.
 
   Si un PR entra en las dos listas, o hay duda, lo aprueba él.
 - **Revisión escrita en cada PR.** La hace un agente que no comparte el contexto del autor (un agente nuevo, o Codex si lo escribió Claude), y queda como comentario del PR: qué se revisó, quién lo revisó, qué falló, por qué y qué se corrigió. Después de cada arreglo se vuelve a revisar, y se mergea recién cuando la última revisión da "aprobar". La auditoría del 29-oct encontró revisiones que no quedaron escritas y PRs mergeados segundos después de "corrige lo de la revisión", sin volver a revisar.
 - **Aprobaciones rápidas.** A Sergio Urcullo se le dan opciones cortas, con la recomendada marcada. Su aprobación se cita con sus palabras en un comentario del PR, porque la cuenta de GitHub es compartida.
-- **Los planes no se le preguntan.** El agente decide y ejecuta lo técnico, con una revisión independiente. A Sergio Urcullo se le lleva solo lo que este archivo le reserva, lo que cambia cómo trabaja la empresa, lo que no se puede deshacer y lo que solo él puede hacer, como logins, secretos o comandos en su PowerShell, todo junto en un solo mensaje.
+- **Los planes no se le preguntan.** El agente decide y ejecuta lo técnico, con una revisión independiente. A Sergio Urcullo se le lleva solo lo que este archivo le reserva y lo que solo él puede hacer, como logins, secretos o comandos en su PowerShell, todo junto en un solo mensaje.
 - Una sesión, un objetivo, con su "hecho cuando" definido al empezar. Lo que aparece fuera de ese objetivo va a un issue.
 - **Un agente por tarea.** Una sesión no toca archivos que tiene abiertos otra. Si dos necesitan el mismo, quien coordina el trabajo ordena quién va primero.
 - Skills y herramientas: primero las oficiales (Anthropic o el proveedor de la herramienta). Instalar algo pide el OK de Sergio Urcullo.
@@ -39,7 +40,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 ## Errores y lecciones
 
 - Si un agente se equivoca o Sergio Urcullo lo corrige, se arregla en el momento y se comprueba.
-- La lección queda en el repo, por PR: en la sección "Errores conocidos" de la skill de `.agents/skills/` de esa tarea, o en `docs/lecciones.md` si vale para todo.
+- La lección queda en el repo, por PR: en la sección "Errores comunes" de la skill de `.agents/skills/` de esa tarea, o en `docs/lecciones.md` si vale para todo.
 - Una lección es una regla más su porqué, sin relato.
 - No se anotan arreglos sin comprobar, fallas pasajeras del entorno ni "la herramienta X no anda".
 - Una lección nunca cambia reglas ni da permisos.
