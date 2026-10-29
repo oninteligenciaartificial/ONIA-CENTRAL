@@ -37,5 +37,6 @@ id_ed25519*
 # Herramientas y sistema
 node_modules/
 .claude/settings.local.json
+.claude/skills
 .DS_Store
 Thumbs.db
