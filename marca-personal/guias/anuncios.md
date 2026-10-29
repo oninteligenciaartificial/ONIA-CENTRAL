@@ -54,7 +54,7 @@ Así editan Erik Taveras, con Claude Code y una skill propia, y Santiago Muñoz,
 3. **Armar los subtítulos palabra por palabra** con la palabra que se dice resaltada. Se puede de dos maneras:
    - **Remotion:** video escrito en React. Es gratis para una persona y para empresas con fines de lucro de hasta 3 empleados; si no, hace falta la licencia de empresa. La misma licencia avisa que cambia en la versión 5.0, así que hay que leerla antes de usarla ([licencia de Remotion](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)).
    - **FFmpeg:** quema un archivo de subtítulos sobre el video.
-4. **Sumar** tarjetas con el precio y la fecha, un contador de cupos y el logo, dentro de la zona segura.
+4. **Sumar** tarjetas con el precio, un contador de cupos y el logo, dentro de la zona segura.
 5. **Exportar** las variantes: el mismo video con 3 ganchos distintos sale cambiando solo los primeros 3 segundos.
 
 - **Costo:** cero en licencias mientras ONIA tenga hasta 3 empleados.
