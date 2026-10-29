@@ -42,21 +42,23 @@ Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no s
 
 ## 3. Hermes (`C:\Users\PC\AppData\Local\hermes`)
 
-**Listo:**
-- Investigado contra la fuente oficial e inventariado en la PC: `docs/decisiones/2026-10-28-hermes-oficial.md`.
-- El script que aparta todo lo viejo, ya probado: `C:\Users\PC\.hermes-archivo-20261028\limpiar-hermes.ps1`.
+**Listo el 28-oct:**
+- **Lo viejo quedó apartado** con `limpiar-hermes.ps1`, y el manifiesto de qué se movió y adónde está en `C:\Users\PC\.hermes-archivo-20261028`.
+  - La carpeta vieja se renombró en su lugar, como `%LOCALAPPDATA%\hermes-viejo-20261028`. Windows no dejó moverla a otra carpeta, pero sí renombrarla.
+  - Se quitaron el protocolo `hermes://` y la variable `HERMES_WRITE_SAFE_ROOT`.
+- **La v0.22.5 quedó instalada limpia** (commit `bf0203a`), con el navegador y el control de la computadora. Es la única: pasan los controles de `docs/decisiones/2026-10-28-hermes-oficial.md`, WSL incluido.
+- **Piensa con la suscripción de ChatGPT**, con su propio login. No toma prestados los logins de Codex ni de Claude Code, y no usa el token de `gh` ni la `GEMINI_API_KEY` de Windows. Tiene además una API key de Anthropic como segundo proveedor, que se elige a mano y gasta créditos de API.
+- **La configuración quedó cerrada,** con los límites que explica `2026-10-28-hermes-oficial.md`: los bloqueos no son una garantía. Tiene un `SOUL.md` nuevo con el canario y cuatro skills activas. En la prueba quedó guardada por error una aprobación permanente (`command_allowlist`) para los scripts con `-e`/`-c`, y se borró el mismo día.
+- **La prueba real salió bien:** Hermes escribió un archivo y lanzó a Claude Code y a Codex en solo lectura. El detalle está en `2026-10-28-hermes-oficial.md`.
+
+De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 
 **Falta:**
-- Que Sergio Urcullo corra el script desde una PowerShell abierta desde el menú Inicio. Desde la app de Claude no llega al disco real.
-- Instalar la v0.22.5 limpia y armarla. Lo corre Sergio Urcullo desde esa misma PowerShell; una sesión nueva de Claude prepara los comandos y revisa el resultado.
-
-**El Hermes viejo, hoy:**
-- ocupa 7,6 GB;
-- tiene la configuración y el SOUL viejos;
-- lee sus skills de `E:\onia-wt\hermes-base`, que es una copia del repo viejo;
-- guarda 1 memoria vieja.
-
-No corre ningún proceso de Hermes. De lo viejo no se conserva nada: lo nuevo lleva credenciales nuevas.
+- Telegram, con un bot nuevo: [#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11).
+- Las skills de ONIA para Hermes, Claude Code y Codex: [#10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
+- Desanclar a mano el ícono viejo de la barra de tareas.
+- Confirmar en la consola de Anthropic el tope de gasto de la API key de Hermes.
+- Decidir qué pasa con `%LOCALAPPDATA%\hermes-viejo-20261028`: son 7,6 GB, con la configuración y las credenciales viejas. Quedó renombrada en su lugar, fuera del archivo. Ya no se vuelve atrás con `limpiar-hermes.ps1 -Modo revertir`, porque la instalación nueva ocupa `%LOCALAPPDATA%\hermes` y el script se frena.
 
 ## 4. Archivos locales
 
@@ -111,12 +113,9 @@ No corre ningún proceso de Hermes. De lo viejo no se conserva nada: lo nuevo ll
 
 1. Mergear el PR de la estructura inicial. Lo aprueba Sergio Urcullo, porque cambia las reglas.
 2. Codex: con la app cerrada, apagar y archivar las memorias, quitar `onia-hooks` y los proyectos viejos confiables, y borrar las 2 automatizaciones viejas.
-3. Hermes: Sergio Urcullo corre `limpiar-hermes.ps1`, y en una sesión nueva se instala y se arma desde cero. Para eso hacen falta tres cosas de Sergio Urcullo:
-   - saber si el plan de ChatGPT es Plus o Pro;
-   - un bot nuevo de Telegram;
-   - revisar los créditos de API de Claude.
+3. Hermes: **hecho el 28-oct.** Se apartó lo viejo y se instaló y armó desde cero, pensando con la suscripción de ChatGPT. Falta Telegram, con un bot nuevo que trae Sergio Urcullo ([#11](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11)).
 4. Claude: con la app cerrada, limpiar `.claude.json`, los datos de plugins viejos, la papelera y las tareas viejas.
 5. Las copias del repo viejo: archivarlas en E: sin abrirlas.
-6. Vercel y los secretos. Decide Sergio Urcullo.
+6. Vercel, los secretos y el plan de ChatGPT (Plus o Pro), que ahora también usa Hermes. Decide Sergio Urcullo.
 7. Archivar el repo viejo.
 8. El VPS y n8n, junto con Sergio Urcullo.
