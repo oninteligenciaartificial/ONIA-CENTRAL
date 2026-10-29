@@ -17,7 +17,7 @@
 
 ## La estructura
 
-Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/erik-taveras.md)) y Enrique Rocha ([ficha](../referentes/enrique-rocha.md)). Le suma lo que a ellos les falta para vender a gente que no los conoce: testimonios, preguntas frecuentes y una política de devolución clara, que puede ser "sin devolución" si se dice antes de pagar. Esas tres cosas las tienen las páginas de Iman Gadzhi y Santiago Muñoz.
+Toma lo que se repite en las páginas de Erik Taveras ([ficha](../referentes/erik-taveras.md)) y Enrique Rocha ([ficha](../referentes/enrique-rocha.md)). Le suma lo que a ellos les falta para vender a gente que no los conoce: testimonios, preguntas frecuentes y una política de devolución clara, que puede ser "sin devolución" si se dice antes de pagar. Las tiene la página de Iman Gadzhi. La de Santiago Muñoz, en lugar de devolución, da acompañamiento 1 a 1 si a los 30 días no funciona.
 
 | # | Sección | Qué dice | De dónde sale |
 |---|---|---|---|
