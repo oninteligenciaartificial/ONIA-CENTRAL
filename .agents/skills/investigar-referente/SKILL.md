@@ -101,6 +101,10 @@ Fuentes: <url> (consultada el <fecha>)
 - **Comentarios:** se resumen, sin nombres ni usuarios de quienes comentan.
 - **Videos e imágenes:** no se descargan al repo. Si hacen falta, van a E: o a Drive, y en la ficha queda el enlace.
 - **Datos del referente:** solo los públicos y profesionales. Nada de su vida privada.
+- **Antes del PR, cada dato del resumen, y de un plan que use las fichas, se compara con la ficha de la que sale.**
+  - Por qué: el resumen no coincidía con las fichas: Santiago da dos clases por semana, lo de Iman en TikTok se deducía solo del píxel y la oferta de 24 horas fue un solo caso ([revisión 1 del PR #40 (referentes)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/40#issuecomment-6488598860)). En el plan de Meta Ads, la oferta de Enrique Rocha estaba mezclada: el workshop de 3 días y el nivel 2, de US$167 a US$297, son cosas aparte ([revisión del taller B del PR #41](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6502844662)). 29-oct.
+- **Una idea para ONIA que copia una herramienta del referente se comprueba que funcione desde Bolivia.** Para cobrar se propone el QR interbancario o una plataforma que acepte empresas bolivianas.
+  - Por qué: la ficha de Erik Taveras recomendaba cobrar con Mercado Pago o Stripe, y las demás fichas suponían Stripe ([revisión 1 del PR #40 (referentes)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/40#issuecomment-6488598860)). Stripe no acepta empresas de Bolivia, según su página oficial, citada en el [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6488664963). Lo de Mercado Pago y PayPal sigue sin confirmar en fuente oficial. 29-oct.
 
 ## Cómo se comprueba
 
