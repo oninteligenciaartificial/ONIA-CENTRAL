@@ -27,7 +27,7 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
 
 **Mergear es publicar.** Un cron del VPS publica `master` cada 3 horas, y ningún paso mira las migraciones. Un PR con migración se mergea recién cuando la migración ya está aplicada en producción; si no, producción se cae.
 
-**Ventas.** El tablero de producción del 27-sep mostraba 5 organizaciones registradas, 0 pagos aprobados y Bs 0 cobrados ese mes. En el repo no hay rastro de un pago posterior. El panel interno, contado el 2-oct, muestra de qué estaban hechas esas cuentas:
+**Ventas.** El tablero de producción del 27-sep mostraba 5 organizaciones registradas, 0 pagos aprobados y Bs 0 cobrados ese mes. En el repo no hay rastro de un pago posterior. El panel interno, contado el 2-oct, muestra lo que había detrás:
 - la organización interna de ONIA y dos pruebas propias;
 - cuatro usuarios activos, todos cuentas de Sergio Urcullo;
 - una importadora que llegó por Facebook y nunca confirmó el correo;
@@ -36,7 +36,7 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
 **Último trabajo.**
 - El último cambio en `master` es del 16-oct (PR #183).
 - Hasta el 11-oct entraron cambios de funcionamiento: pedir la factura para aprobar un pago (#114), recuperar citas canceladas (#133) y correcciones de caja (#158), entre otros.
-- Del 15 al 16-oct, casi todo fue pulido: textos de usted, accesibilidad y fechas de La Paz (#171 a #183).
+- Del 15 al 16-oct, sobre todo pulido: textos de usted, accesibilidad y fechas de La Paz (#171 a #183).
 - No consta qué versión corre hoy en el VPS. La última lectura, del 28-sep, mostraba una versión distinta de la que estaba lista en la PC.
 
 **La 1.0 no está cerrada.** El propio repo pide un cliente dental que se registre, cargue datos, trabaje un día, pague y renueve sin ayuda técnica. Siguen abiertos:
@@ -81,7 +81,7 @@ Sale de una revisión de solo lectura del repo `onia-platform`: `master` en GitH
 | WhatsApp (Meta) | Lo paga el cliente con su tarjeta. | |
 | Claude y Codex | Compartidos con todo ONIA: US$120 por mes en el plan de arranque. | |
 
-El documento de precios de junio ponía el punto de equilibrio en 7 u 8 clientes del plan básico. Pero contaba con Vercel y Supabase en la nube, que ya no se usan: hay que recalcularlo con la factura real del VPS.
+El documento de precios de junio ponía el punto de equilibrio en 7 u 8 clientes del plan básico. Pero contaba con Vercel y Supabase en la nube, que el producto ya no usa (Vercel quizá siga sirviendo páginas de marketing): hay que recalcularlo con la factura real del VPS.
 
 **El costo grande es el tiempo.** En septiembre se fueron 931 commits. Mantener 84 tablas, 7 rubros, SIAT y un VPS con 24 contenedores pide horas aunque no haya clientes. Y los riesgos de la operación frágil cuestan caro si pasan con un cliente adentro.
 
@@ -92,7 +92,7 @@ Es un dato para la limpieza del método viejo.
 **El túnel del puerto 3108: no lo usa.** Ni el código ni la configuración lo nombran, y hoy no escucha nada en ese puerto ni en los que usaba el desarrollo local.
 
 **Del repo `onia-hermes` sí depende, en producción:**
-- **El despliegue de la plataforma.** Los scripts que arman y publican la imagen (`build-and-stage.sh` y los que lo acompañan) viven en `hermes-content/deploy/onia-platform/`, dentro del repo viejo. Todo arreglo durante la prueba sale por ahí.
+- **El despliegue de la plataforma.** Los scripts que arman y publican la imagen (`build-and-stage.sh` y los que lo acompañan) viven en `hermes-content/deploy/onia-platform/`, dentro del repo viejo. El cron publica con la copia ya instalada en el VPS; el repo viejo hace falta para cambiar esos scripts o arreglarlos si fallan.
 - **Los crons del VPS.** Los recordatorios de citas y los de renovación corren con dos scripts que se copian desde `hermes-content/infra/vps-ops/crons/` a `/root/bin` (lo dice `__tests__/sin-envoltorios-de-cron-del-vps.test.ts`). El cron de los agentes (`/root/bin/run-onia-agents-cron.sh`) seguramente sale del mismo lugar. La renovación es justo lo que mide la fecha de corte.
 - **La web de venta (onia.com.bo),** con los precios. Se construye en `web-factory/apps/onia-platform`, dentro del repo viejo. Es la puerta de entrada de la prueba comercial.
 - **El chatbot de WhatsApp.** Su motor vive en el repo viejo (`hermes-content/deploy/vps-ops/bot/`) y corre en el VPS como `onia-center`, en el puerto 3020. La plataforma lee su estado y sus conversaciones (`onia_center.bot_conversations`).
@@ -140,7 +140,7 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
 1. **(sí) Guardar los 68 cambios y limpiar el checkout** (punto 9). Hecho cuando están en una rama de archivo en GitHub y el checkout queda en `master` sin cambios.
 2. **(sí) Quitar el worktree `onia-platform-crece4`** (punto 9). Hecho cuando la carpeta y sus ramas ya no están.
 3. **(sí) Congelar.** Revisar los 10 PRs abiertos. Se mergea solo lo que corrige una promesa falsa, bloquea a un cliente, o es de seguridad, legal o del cobro y la renovación (como #154, #124 y #113). El resto se cierra, con su rama guardada en GitHub. Como mergear es publicar, cada merge es un cambio en producción. Un PR con migración, como #124, se mergea después del respaldo del paso 5 y con la migración ya aplicada. Hecho cuando no queda ningún PR sin decidir.
-4. **(sí) Mudar a `onia-platform` el despliegue y los crons** (citas, renovación y agentes). Va antes del primer cliente, porque por ahí salen los arreglos y la clínica usa los avisos todos los días. Hecho cuando el VPS publica y corre los crons con scripts que viven en `onia-platform`. El resto de lo que vive en el repo viejo se muda después: el bot, SIAT, la web de venta, el configurador de webs, el contrato de ONIA Core y la configuración del runner. La web de venta va antes si hay que cambiarla para la prueba. Todo eso es requisito para archivar `onia-hermes`.
+4. **(sí) Mudar a `onia-platform` el despliegue y los crons** (citas, renovación y agentes). Va antes del primer cliente, porque por ahí salen los arreglos y la clínica usa los avisos todos los días. Hecho cuando el VPS publica y corre los crons con scripts que viven en `onia-platform`. La lista de crons sale del crontab del VPS, porque puede haber más que estos tres. La prueba `__tests__/sin-envoltorios-de-cron-del-vps.test.ts` hoy prohíbe esos scripts en el repo: se cambia a propósito en ese PR. El resto de lo que vive en el repo viejo se muda después: el bot, SIAT, la web de venta, el configurador de webs, el contrato de ONIA Core y la configuración del runner. La web de venta va antes si hay que cambiarla para la prueba. Todo eso es requisito para archivar `onia-hermes`.
 5. **(sí) Dejar lista la plataforma para el primer cliente.** Hecho cuando están estos seis:
    - un respaldo diario probado con una restauración;
    - QA con su propia base, separada de producción;
@@ -148,7 +148,7 @@ Cada paso es un issue con su propia sesión. Los marcados con **(sí)** tocan pr
    - el cobro por QR probado completo. El 22-sep ya pasaron, en local, el comprobante, la aprobación y el plan activo (DG-064). Faltan el QR y el banco reales, el checkout en pantalla y la renovación;
    - definido cómo factura ONIA a la clínica: desde el 10-oct (PR #114, ya en `master`), aprobar un pago real exige el número de factura;
    - términos y privacidad aceptados en el alta (PR #124, abierto), porque entran datos clínicos.
-6. **Medir el costo real del mes** (VPS, OpenAI, Resend y dominio) y anotarlo acá. Hecho cuando la tabla del punto 3 no tiene huecos.
+6. **Medir el costo real del mes** (VPS, OpenAI, Resend, dominio y Vercel, si sigue sirviendo algo) y anotarlo acá. Hecho cuando la tabla del punto 3 no tiene huecos.
 7. **Prueba comercial.** Sergio Urcullo elige entre 3 y 5 clínicas dentales para ofrecerles el sistema, y se anota cada fricción real. Conviene empezar por los pedidos de acceso que quedaron sin contestar, si siguen ahí. Hecho cuando están contactadas antes del 30-nov, con su respuesta anotada.
 8. **Decidir en la fecha de corte** entre seguir y pausar, con lo medido. Hecho cuando la decisión está escrita en esta carpeta.
 9. **(sí) Ordenar ramas y worktrees:** 241 ramas locales, 42 worktrees y un stash viejo, del 30-ago. Va junto con el archivo de `E:\onia-wt` y `E:\onia-orquesta`. Hecho cuando solo quedan las ramas y worktrees en uso.
