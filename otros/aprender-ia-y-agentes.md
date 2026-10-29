@@ -4,7 +4,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Para qué:** entender qué hacen por dentro Claude Code, Codex y Hermes, y poder hacer a mano lo básico, sin IA: moverte en la terminal, usar git, revisar un PR y leer lo que devuelve una API. No hace falta programar.
 
-**Tema actual:** el que marca el calendario. Si Sergio Urcullo se atrasa o se adelanta, un agente cambia esta línea por PR, por ejemplo: "Tema actual: 4, desde el 18-ene".
+**Tema actual:** el que marca el calendario. Si Sergio Urcullo se atrasa o se adelanta, se cambia esta línea, por ejemplo: "Tema actual: 4, desde el 18-ene". El agente que se entera lo anota en un issue, y el cambio entra por PR, como todo.
 
 ## Desde dónde arranca
 
@@ -56,12 +56,12 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** un agente es un modelo más un programa que repite un bucle: el modelo lee todo lo que tiene delante, decide, pide una herramienta (leer un archivo, correr un comando); el programa la ejecuta, a veces con tu aprobación, y el resultado vuelve al modelo. Sigue hasta que el modelo decide que terminó. La diferencia entre un flujo fijo, con pasos escritos de antemano, y un agente, que elige sus pasos.
 
-**Ejercicio:**
-1. Pedile a Claude Code, en ONIA-CENTRAL: "¿cuál fue el último commit y qué hay en la carpeta `otros/`?". Para contestar tiene que usar herramientas. Anotá en papel cada paso: qué herramienta pidió, qué aprobaste y qué volvió.
-2. Repetilo con Hermes (`hermes --tui` desde ONIA-CENTRAL) y compará los dos papeles.
-
 **Lo básico:**
 - [Cómo funciona Claude Code](https://code.claude.com/docs/es/how-claude-code-works), docs de Anthropic, en español.
+
+**Ejercicio:**
+1. Pedile a Claude Code, en ONIA-CENTRAL: "¿cuál fue el último commit y qué hay en la carpeta `otros/`?". Para contestar tiene que usar herramientas. Anotá en papel cada paso: qué herramienta pidió, qué aprobaste y qué volvió.
+2. Repetilo con Hermes. En una PowerShell abierta desde Inicio, pegá `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes --tui`. La primera parte lo abre en ONIA-CENTRAL, para que lea el `AGENTS.md`. Compará los dos papeles.
 
 **Si te sobra tiempo:**
 - [Building effective AI agents](https://www.anthropic.com/research/building-effective-agents), Anthropic, dic-2024. Hasta "When (and when not) to use agents": flujo fijo o agente.
@@ -81,13 +81,13 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 - "Pensar" es escribir tokens de razonamiento antes de la respuesta. También se cuentan.
 - El agente y el modelo son cosas distintas. Hermes Agent es el programa; tu Hermes piensa con un modelo de OpenAI, por la suscripción de ChatGPT. Nous Research, que hace Hermes Agent, también entrena modelos propios que se llaman Hermes.
 
-**Ejercicio:**
-1. En el tokenizador de OpenAI, pegá la misma frase en español y en inglés y contá los tokens de cada una. Después pegá el primer párrafo del `AGENTS.md`.
-2. Mirá el video corto de 3Blue1Brown y anotá en una línea qué es un token y qué es entrenar.
-
 **Lo básico:**
 - [Tokenizer](https://platform.openai.com/tokenizer), OpenAI. Anda sin login.
 - [Large Language Models explained briefly](https://www.3blue1brown.com/lessons/mini-llm/), 3Blue1Brown, 8 minutos. No es de un proveedor, pero es la referencia para entenderlo sin matemática.
+
+**Ejercicio:**
+1. En el tokenizador de OpenAI, pegá la misma frase en español y en inglés y contá los tokens de cada una. Después pegá el primer párrafo del `AGENTS.md`.
+2. Mirá el video corto de 3Blue1Brown y anotá en una línea qué es un token y qué es entrenar.
 
 **Si te sobra tiempo:**
 - [Transformers, the tech behind LLMs](https://www.3blue1brown.com/lessons/gpt/), 3Blue1Brown, no oficial.
@@ -104,13 +104,13 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** el modelo no tiene memoria entre mensajes. Cada vez recibe de nuevo todo junto: sus instrucciones, el `AGENTS.md`, la lista de herramientas y la conversación entera. Eso es la ventana de contexto. Cuando se llena, el programa resume lo viejo (compactar) y se pierden detalles. Lo que queda en el medio de una ventana larga se aprovecha peor.
 
-**Ejercicio:**
-1. En una sesión de Claude Code, escribí `/context` y anotá qué ocupa más lugar.
-2. Desde ONIA-CENTRAL, corré `hermes prompt-size` y compará: qué carga Hermes antes de que le escribas nada.
-3. Escribí en una frase por qué conviene una sesión nueva para cada objetivo.
-
 **Lo básico:**
 - [Explorar la ventana de contexto](https://code.claude.com/docs/es/context-window), docs de Claude Code, en español. Explica `/context`.
+
+**Ejercicio:**
+1. En una sesión de Claude Code, escribí `/context` y anotá qué ocupa más lugar.
+2. En una PowerShell abierta desde Inicio, corré `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes prompt-size` y compará: qué carga Hermes antes de que le escribas nada.
+3. Escribí en una frase por qué conviene una sesión nueva para cada objetivo.
 
 **Si te sobra tiempo:**
 - [Ventanas de contexto](https://platform.claude.com/docs/es/build-with-claude/context-windows), docs de la API de Claude, en español.
@@ -126,19 +126,20 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** la carpeta actual y las rutas; qué es un comando, sus argumentos y sus opciones; las variables de entorno y el `PATH`, que es por qué `hermes` anda desde cualquier carpeta; la codificación de un archivo; por qué un comando que baja y corre un script de internet (`irm … | iex`) pide más cuidado que uno que solo lee.
 
+**Lo básico:**
+- PowerShell 101, Microsoft Learn, en español: [Introducción a PowerShell](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/01-getting-started?view=powershell-5.1) y [Detección de objetos, propiedades y métodos](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/03-discovering-objects?view=powershell-5.1). Saltá los pasos que piden abrir PowerShell como administrador o correr `Set-ExecutionPolicy` o `Update-Help`: cambian el sistema y no hacen falta.
+
 **Ejercicio:**
 1. Corré, de a uno, y anotá qué hace cada uno: `Get-Location`, `Set-Location C:\dev\proyectos\ONIA-CENTRAL`, `Get-ChildItem`, `Get-Content AGENTS.md -TotalCount 10 -Encoding UTF8`, `Get-Command hermes -All` y `$env:PATH -split ';'`.
 2. Probá el `Get-Content` sin `-Encoding UTF8` y mirá cómo salen los acentos. Un archivo es una fila de números, y la codificación dice qué letra es cada uno. PowerShell 5.1 no adivina UTF-8.
 3. Con `Get-Help Get-ChildItem -Online`, abrí la ayuda oficial de un comando sin preguntarle a nadie.
 4. Tomá un comando largo de `docs/decisiones/2026-10-28-hermes-oficial.md` y, sin correrlo, explicá en papel cada parte.
 
-**Lo básico:**
-- [PowerShell 101](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/00-introduction?view=powershell-5.1), Microsoft Learn, en español. Los capítulos 1 a 3. Saltá los pasos que piden abrir PowerShell como administrador, `Set-ExecutionPolicy` o `Update-Help`: cambian el sistema y no hacen falta.
-
 **Si te sobra tiempo:**
+- [Sistema de ayuda](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/02-help-system?view=powershell-5.1), el capítulo 2 de PowerShell 101. En esta PC la ayuda local no está instalada: usá `Get-Help <comando> -Online`.
 - [about_Environment_Variables](https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1), Microsoft Learn, en español: variables de entorno y `PATH`.
 
-**Lo tenés cuando:** antes de pegar un comando que te pasó un agente, podés decir qué hace cada parte, o buscarlo con `Get-Help -Online`.
+**Lo tenés cuando:** antes de pegar un comando que te pasó un agente, podés decir qué hace cada parte, o buscarlo con `Get-Help <comando> -Online`.
 
 ### 5. Git y PRs a mano
 
@@ -146,9 +147,12 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** un repositorio guarda la historia de una carpeta. Un commit es una foto con mensaje; una rama, una línea de trabajo aparte; un diff, lo que cambió; un PR, el pedido de sumar una rama a `main`, con revisión antes del merge. Un worktree es otra carpeta con el mismo repo en otra rama: así cada sesión de Claude trabaja sin pisar a las demás.
 
+**Lo básico:**
+- Pro Git, el libro oficial de git, en español: [Guardando cambios en el repositorio](https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio) y [Procedimientos básicos para ramificar y fusionar](https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar).
+
 **Ejercicio:**
 1. En ONIA-CENTRAL, solo mirar: `git status`, `git log --oneline -10`, `git show --stat HEAD`, `git branch -a` y `git worktree list`.
-2. En la carpeta de práctica, de a uno. Cuando Notepad pregunte si crea el archivo, decile que sí; escribí una línea, guardá y cerrá.
+2. En la carpeta de práctica, pegá los comandos de a uno. Cuando se abre Notepad, PowerShell no lo espera: escribí una línea, guardá y cerrá Notepad antes de pegar el comando siguiente. Si pregunta si crea el archivo, decile que sí.
 
    ```powershell
    New-Item -ItemType Directory C:\dev\practica-git
@@ -169,9 +173,6 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
    En esta PC, `git init` arranca en la rama `master`. El archivo se edita con Notepad y no con `'hola' > notas.txt`, porque PowerShell 5.1 lo guardaría en otra codificación y `git diff` lo tomaría como un archivo binario.
 3. En GitHub, abrí un PR que te haya hecho un agente y leé "Files changed" línea por línea antes de darle el OK.
 
-**Lo básico:**
-- Pro Git, el libro oficial de git, en español: [Guardando cambios en el repositorio](https://git-scm.com/book/es/v2/Fundamentos-de-Git-Guardando-cambios-en-el-Repositorio) y [Procedimientos básicos para ramificar y fusionar](https://git-scm.com/book/es/v2/Ramificaciones-en-Git-Procedimientos-B%C3%A1sicos-para-Ramificar-y-Fusionar).
-
 **Si te sobra tiempo:**
 - [Pro Git](https://git-scm.com/book/es/v2) entero, los capítulos 1 a 3.
 - [Pull requests](https://docs.github.com/es/pull-requests/reference/pull-requests), GitHub Docs, en español.
@@ -185,13 +186,13 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** qué lee cada agente siempre (sus instrucciones y el `AGENTS.md`) y qué lee solo cuando hace falta (una skill: el agente ve su nombre y su descripción, y abre el resto si le sirve). En qué se diferencian una instrucción, una memoria y una skill. Por qué el canario avisa que el agente perdió sus reglas: está en el archivo global de cada agente (`~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` y el `SOUL.md` de Hermes); si no lo cargó, por ejemplo en otra cuenta o en una sesión en la nube, o si en una sesión muy larga o compactada las instrucciones pierden peso, deja de saludar así.
 
+**Lo básico:**
+- [Which File Does What?](https://hermes-agent.nousresearch.com/docs/user-guide/which-file-does-what), docs de Hermes.
+- Cómo Claude recuerda tu proyecto, docs de Claude Code, en español. Solo dos secciones: [CLAUDE.md y la memoria automática](https://code.claude.com/docs/es/memory#claude-md-vs-auto-memory) y [AGENTS.md](https://code.claude.com/docs/es/memory#agents-md).
+
 **Ejercicio:**
 1. Armá una tabla con Claude Code, Codex y Hermes: qué archivo de instrucciones lee cada uno, de dónde y si tiene memoria. La respuesta de Hermes está en su página "Which File Does What?".
 2. Leé `.agents/skills/investigar-referente/SKILL.md`, la skill de ONIA que cargan los tres agentes. Marcá qué parte ve siempre el agente (el nombre y la descripción de arriba) y qué parte abre solo si la necesita (el resto).
-
-**Lo básico:**
-- [Which File Does What?](https://hermes-agent.nousresearch.com/docs/user-guide/which-file-does-what), docs de Hermes.
-- [Cómo Claude recuerda tu proyecto](https://code.claude.com/docs/es/memory), docs de Claude Code, en español.
 
 **Si te sobra tiempo:**
 - [Use SOUL.md with Hermes](https://hermes-agent.nousresearch.com/docs/guides/use-soul-with-hermes), docs de Hermes.
@@ -208,13 +209,13 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** una herramienta es una función con nombre, descripción y datos de entrada. El modelo no la ejecuta: pide usarla, y el programa la corre. MCP es el enchufe estándar para sumar herramientas: el agente es el cliente y cada conector es un servidor. En Hermes, cada herramienta ocupa lugar en la ventana aunque no se use. Claude Code puede cargar primero solo los nombres de las herramientas MCP y buscar el resto cuando le hacen falta.
 
-**Ejercicio:**
-1. Elegí un conector y leé la lista de sus herramientas con sus descripciones. Marcá cuáles solo leen y cuáles cambian algo.
-2. Con `hermes prompt-size`, contá cuántas herramientas ve el modelo de Hermes.
-
 **Lo básico:**
 - [What is MCP?](https://modelcontextprotocol.io/docs/getting-started/intro), docs oficiales de MCP. La versión vigente es la del 28-jul-2026.
 - [Cómo funciona el uso de herramientas](https://platform.claude.com/docs/es/agents-and-tools/tool-use/how-tool-use-works), docs de la API de Claude, en español.
+
+**Ejercicio:**
+1. Elegí un conector y leé la lista de sus herramientas con sus descripciones. Marcá cuáles solo leen y cuáles cambian algo.
+2. Con `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes prompt-size`, contá cuántas herramientas ve el modelo de Hermes.
 
 **Si te sobra tiempo:**
 - [Architecture overview](https://modelcontextprotocol.io/docs/learn/architecture), docs de MCP.
@@ -231,17 +232,18 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** qué frena cada mecanismo y qué no. Una lista de comandos prohibidos no es un sandbox: un sandbox encierra al programa, una lista solo compara texto. Prompt injection: un texto en una página, un mail o un archivo que intenta darle órdenes al agente. La combinación peligrosa es un agente con datos privados, que lee contenido de afuera y puede mandar cosas hacia afuera.
 
+**Lo básico:**
+- [Los modos de permisos](https://code.claude.com/docs/es/permissions#permission-modes) de Claude Code, en español. Solo esa sección.
+- [Sandbox and approvals](https://learn.chatgpt.com/docs/agent-approvals-security#sandbox-and-approvals), docs de Codex. Solo esa sección.
+
 **Ejercicio:**
 1. Solo mirar: leé tu lista de bloqueos con `hermes config get approvals.deny` y comprobá con `hermes config get command_allowlist` que la otra lista está vacía.
 2. Compará en una tabla los modos de Codex y los de Claude Code: qué puede hacer el agente sin preguntarte en cada uno.
 3. Escribí en una frase por qué a una aprobación de Hermes se contesta "once" y no "always".
 
-**Lo básico:**
-- [Configurar permisos](https://code.claude.com/docs/es/permissions), docs de Claude Code, en español.
-- [Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security), docs de Codex.
-
 **Si te sobra tiempo:**
-- [Seguridad](https://code.claude.com/docs/es/security), docs de Claude Code, en español.
+- [Configurar permisos](https://code.claude.com/docs/es/permissions) entera y [Seguridad](https://code.claude.com/docs/es/security), docs de Claude Code, en español.
+- [Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security) entera, docs de Codex.
 - [Sandbox](https://learn.chatgpt.com/docs/sandboxing), docs de Codex.
 - [Security](https://hermes-agent.nousresearch.com/docs/user-guide/security), docs de Hermes: aprobaciones, `approvals.deny` y por qué una lista no es un sandbox.
 - [Making Claude Code safer with sandboxing](https://www.anthropic.com/research/claude-code-sandboxing), Anthropic, oct-2025.
@@ -260,14 +262,14 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 - 429: demasiados pedidos seguidos;
 - 529: la API de Claude está sobrecargada. Lo ves en Claude Code como "Overloaded".
 
+**Lo básico:**
+- MDN, en español: [Generalidades del protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/Overview) y [Códigos de estado](https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status).
+
 **Ejercicio:**
 1. Corré `curl.exe -i https://api.github.com/repos/NousResearch/hermes-agent` y buscá en el JSON la licencia y las estrellas.
 2. Corré lo mismo con `oninteligenciaartificial/ONIA-CENTRAL`. Da 404 porque el repo es privado: GitHub contesta "no está" en vez de "no tenés permiso" para no confirmar que existe.
 3. Repetí el primero con `Invoke-RestMethod` en PowerShell y compará.
 4. En la documentación de la API de Claude, señalá dónde van el modelo, los mensajes y la clave. No la llames: cuesta plata.
-
-**Lo básico:**
-- MDN, en español: [Generalidades del protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/Overview) y [Códigos de estado](https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status).
 
 **Si te sobra tiempo:**
 - [Trabajar con JSON](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/JSON), MDN, en español.
@@ -284,14 +286,14 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Qué vas a entender:** la diferencia entre una contraseña, una clave de API y un token de OAuth. Con OAuth le das permiso a una app sin darle tu contraseña, y ese permiso tiene alcance (scopes), vence y se puede revocar. Por qué una variable de entorno de Windows la puede leer cualquier programa que corra con tu usuario. Por qué borrar un secreto de GitHub no alcanza: hay que revocarlo donde se creó.
 
+**Lo básico:**
+- [`docs/credenciales.md`](../docs/credenciales.md), de este repo: dónde vive cada secreto de ONIA.
+- [Authentication](https://learn.chatgpt.com/docs/auth), docs de Codex: login con ChatGPT o con clave de API, y dónde se guarda.
+
 **Ejercicio:**
 1. Corré `gh auth status` y explicá qué muestra. Nunca le sumes `--show-token`.
 2. Armá una tabla: con qué login entra cada agente (Hermes, Codex, Claude Code y `gh`) y cómo se le corta el acceso. Comparala con `docs/credenciales.md`.
 3. Solo mirar: en GitHub, Settings > Applications, revisá qué apps tienen acceso a tu cuenta.
-
-**Lo básico:**
-- [`docs/credenciales.md`](../docs/credenciales.md), de este repo: dónde vive cada secreto de ONIA.
-- [Authentication](https://learn.chatgpt.com/docs/auth), docs de Codex: login con ChatGPT o con clave de API, y dónde se guarda.
 
 **Si te sobra tiempo:**
 - [OAuth 2.0](https://oauth.net/2/) y [Getting started](https://oauth.net/getting-started/), en oauth.net. Es el sitio de referencia del estándar, pero no es del IETF.
@@ -307,15 +309,15 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Ya lo viste:** Hermes lanza a Claude Code y a Codex; las sesiones de Claude que abren otras sesiones; las revisiones de un agente nuevo, que no comparte el contexto del autor.
 
-**Qué vas a entender:** los patrones de base: cadena de pasos, enrutador, tareas en paralelo, orquestador con trabajadores y evaluador que corrige. Los tres primeros son flujos fijos; los dos últimos usan agentes. El bucle del tema 1 tiene nombre: ReAct (razonar, actuar, mirar el resultado). Por qué un agente nuevo revisa mejor: no arrastra los supuestos del que escribió. Cuánto cuestan varios agentes: cada uno gasta su propia ventana.
+**Qué vas a entender:** los patrones de base: cadena de pasos, enrutador, tareas en paralelo, orquestador con trabajadores y evaluador que corrige. Los cinco son flujos: el programa fija la forma, aunque en el orquestador y en el evaluador el modelo decide más. Un agente es otra cosa: el bucle del tema 1, que elige sus propios pasos. Ese bucle tiene nombre: ReAct (razonar, actuar, mirar el resultado). Por qué un agente nuevo revisa mejor: no arrastra los supuestos del que escribió. Cuánto cuestan varios agentes: cada uno gasta su propia ventana.
+
+**Lo básico:**
+- [Building effective AI agents](https://www.anthropic.com/research/building-effective-agents), Anthropic, otra vez: ahora la parte de los patrones.
 
 **Ejercicio:**
 1. Dibujá en papel cómo está armado ONIA hoy: Hermes, `claude -p`, `codex exec`, qué ve cada uno, quién aprueba y dónde queda el resultado.
 2. Ubicá cada patrón en algo que ya hiciste. Por ejemplo, la revisión independiente es un evaluador.
 3. Marcá en el dibujo dónde se podría romper y qué lo frenaría.
-
-**Lo básico:**
-- [Building effective AI agents](https://www.anthropic.com/research/building-effective-agents), Anthropic, otra vez: ahora la parte de los patrones.
 
 **Si te sobra tiempo:**
 - [How we built our multi-agent research system](https://www.anthropic.com/research/multi-agent-research-system), Anthropic, jun-2025.
@@ -345,11 +347,11 @@ Sin IA, vas a poder:
 
 ## Cómo lo usan los agentes
 
-El `AGENTS.md` les pide a Claude Code, Codex y Hermes que lean este archivo al empezar cada sesión y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
+El `AGENTS.md` les pide a Claude Code, Codex y Hermes que lean este archivo al empezar cada sesión con Sergio Urcullo y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
 
 - **Qué tema:** el de "Tema actual", arriba de todo. Antes del 2-nov, el 1. En la semana de repaso, cualquiera del 1 al 3. En las semanas libres, nada nuevo: una idea de lo ya visto. Si Sergio Urcullo dice en la conversación en qué tema está, vale eso para esa sesión.
 - **Otro tema:** si lo que hizo el agente se conecta mejor con un tema anterior, puede usar ese. De un tema que todavía no vio, solo la idea en palabras simples, sin jerga.
 - **Cuánto:** una idea o un ejercicio, en una o dos líneas, conectado con lo que se acaba de hacer. No es una clase.
 - **Ejercicios:** el agente no los hace por él. Explica, corrige y pregunta.
 - **Fuentes:** si cita una, sale de la lista del tema.
-- **Cambio de tema:** si Sergio Urcullo pasa el "Lo tenés cuando" de un tema antes o después de lo que marca el calendario, el agente propone el PR que actualiza "Tema actual".
+- **Cambio de tema:** si Sergio Urcullo pasa el "Lo tenés cuando" de un tema antes o después de lo que marca el calendario, el agente abre un issue para actualizar "Tema actual". No lo cambia en esa misma sesión, porque es otro objetivo.
