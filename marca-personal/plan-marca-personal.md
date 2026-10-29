@@ -2,12 +2,13 @@
 
 29-oct-2026, por Claude Code, para el [issue #65](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65).
 
-**Estado: borrador para que lo apruebe Sergio Urcullo.** No se publica nada, no se gasta y no se crea nada a su nombre sin su sí con captura: páginas, cuentas, comunidad. Lo que es decisión suya va al final, con tres opciones y la recomendada marcada.
+**Estado: borrador para que lo apruebe Sergio Urcullo.** No se publica nada, no se gasta y no se crea nada a su nombre sin su sí con captura: páginas, cuentas, grupos, comunidad. Lo que es decisión suya va al final, con tres opciones y la recomendada marcada.
 
 Sale de:
 - lo que pidió Sergio Urcullo en el #65, también en el [comentario del 29-oct](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65) que suma 3 videos por día, YouTube, clases y llamadas gratis o pagas, y el análisis de enseñar contra el producto;
+- lo que decidió el 29-oct en la sesión que lleva el #6, sobre el taller y la comunidad, que esa sesión le pasó a esta con sus palabras. Todavía no está en el PR #41;
 - las fichas de cuatro referentes y su resumen, en [`referentes/`](referentes/resumen-2026-10-29.md) (PR #40). Las cifras de los referentes son al 29-oct-2026 y cada ficha trae sus fuentes;
-- el plan del primer taller, `workshops-comunidad/plan-meta-ads-borrador.md` (PR #41), en su versión del 29-oct-2026 (commit `a1d74c3`). Lo lleva otra sesión, y este plan no lo cambia;
+- el plan del primer taller, `workshops-comunidad/plan-meta-ads-borrador.md` (PR #41), en su versión del 29-oct-2026 (commit `415ec16`). Lo lleva otra sesión, y este plan no lo cambia;
 - el mapa para operar ONIA, `docs/decisiones/2026-10-29-mapa-operacion-onia.md`, ya en `main`.
 
 Los dólares se pasan a bolivianos a Bs 12,12, el cambio oficial vigente desde el 29-oct-2026 ([BCB](https://www.bcb.gob.bo/librerias/indicadores/dolar/bolsin.php), consultada el 29-oct-2026).
@@ -18,12 +19,14 @@ Lo pidió Sergio Urcullo en el #65: que el taller escale a una comunidad, la com
 
 | Escalón | Qué es | Precio | Cobro | Estado |
 |---|---|---|---|---|
-| 1. Gratis | 3 videos cortos por día, un video de YouTube por semana, guías por palabra clave y una clase abierta por mes | Gratis | — | Propuesto (decisiones 2 y 5) |
-| 2. Taller de entrada | "Claude de 0 a 100": 3 horas en vivo, para todo público de Bolivia | Bs 50. La grabación para siempre, aparte | QR del banco | Decidido el 29-oct; el resto lo define el PR #41 |
-| 3. Comunidad paga | Una clase en vivo por semana, una plantilla por semana y un grupo para dudas | Bs 99 por mes. Fundadores: Bs 79 | QR, el 16 de cada mes | Propuesto (decisiones 3 y 4) |
+| 1. Gratis | 3 videos cortos por día, un video de YouTube por semana, guías por palabra clave, una clase abierta por mes y su comunidad grande de WhatsApp | Gratis | — | La comunidad grande la decidió él; el resto, propuesto (decisiones 2 y 5) |
+| 2. Taller de entrada | "Claude de 0 a 100": una serie de 3 clases distintas por Meet, con la grabación incluida | Bs 50 cada clase, o Bs 120 las tres | QR, a mano | Decidido el 29-oct (sesión del #6) |
+| 3. Grupo de miembros | Dentro de su comunidad de WhatsApp: una clase en vivo por semana, una plantilla por semana y dudas | Bs 99 por mes. Fundadores: Bs 79 | QR, cada mes | Propuesto (decisiones 3, 4 y 9) |
 | 4a. Llamadas | Diagnóstico gratis de 20 minutos para negocios. Sesión 1 a 1 paga, de 60 minutos | Gratis y Bs 350 | QR por adelantado | Propuesto (decisiones 6 y 7) |
 | 4b. Implementación para negocios | 3 sesiones de 90 minutos para dejar la IA andando en un negocio | Desde Bs 2.500 | QR, mitad al empezar | Propuesto (decisión 7) |
-| Después | ONIA Platform, el asistente de WhatsApp | Desde Bs 320 por mes ([onia.com.bo](https://onia.com.bo), consultada el 29-oct-2026) | — | Cuando se cierren los issues #27 y #28 |
+| Después | ONIA Platform. El asistente de WhatsApp es un complemento de Bs 390 por mes, o viene en los dos planes más altos, desde Bs 890 | Planes desde Bs 320 por mes | — | Cuando se cierren los issues #27 y #28 |
+
+Los precios de ONIA Platform salen de [onia.com.bo/precios](https://onia.com.bo/precios), consultada el 29-oct-2026, y de `plataforma/2026-10-28-seguir-con-onia-platform.md`.
 
 **Por qué esta forma:** es la escalera que ya funciona en los referentes en español, con precios de Bolivia y cobro con QR.
 - Erik Taveras: workshop, después Skool a US$59 por mes, y llamadas de US$75 y US$397 ([ficha](referentes/erik-taveras.md)).
@@ -39,16 +42,16 @@ Sergio Urcullo pidió analizar si enseñar es la vía correcta, "ya que no va a 
 | | Enseñar: contenido, taller, comunidad y llamadas | El producto: ONIA Platform |
 |---|---|---|
 | Dónde está hoy | Arranca sin audiencia | Sin clientes que paguen: el tablero del 27-sep mostraba 5 organizaciones registradas, 0 pagos aprobados y Bs 0 cobrados ese mes (`plataforma/2026-10-28-seguir-con-onia-platform.md`) |
-| Cuándo trae caja | Con el primer taller, la primera semana de noviembre (PR #41) | Cuando se cierren los issues #27 y #28 y salga la prueba con clínicas (#61) |
-| Cuánto por venta | Bs 50 el taller, de Bs 79 a Bs 99 por mes la comunidad, Bs 350 una sesión y desde Bs 2.500 una implementación | De Bs 320 a Bs 2.900 por mes por cliente, y el chatbot aparte a Bs 390 (mismo documento) |
-| De qué depende | De las horas de Sergio Urcullo: grabar, dar clases y llamadas. Si deja de publicar, deja de vender | De que el producto ande y se venda a negocios. Una vez instalado, cobra todos los meses sin sus horas, salvo el soporte |
+| Cuándo trae caja | Con el primer taller, la primera semana de noviembre | Cuando se cierren los issues #27 y #28 y salga la prueba con clínicas (#61) |
+| Cuánto por venta | Bs 50 una clase o Bs 120 la serie, de Bs 79 a Bs 99 por mes el grupo de miembros, Bs 350 una sesión y desde Bs 2.500 una implementación | De Bs 320 a Bs 2.900 por mes por cliente, más el asistente de WhatsApp en los planes que no lo traen (mismo documento) |
+| De qué depende | De las horas de Sergio Urcullo: grabar, dar clases y llamadas. Si deja de publicar, deja de vender | De que el producto ande y se venda a negocios. Cada cliente paga todos los meses, pero mantenerla pide horas aunque no haya clientes (mismo documento) |
 | Riesgo | Mucha competencia en IA en español, y los temas de moda cambian | Tarda, y depende del VPS y de que le funcione al cliente |
 
 **¿Alcanza una sola?**
-- **El piso de gastos** son los US$120 por mes de Claude y Codex del plan de arranque, unos Bs 1.454 (mismo documento). No cuenta el VPS ni Higgsfield, que no tienen monto en el repo.
-- **Enseñando,** con Zoom Pro sumado, son unos Bs 1.660 por mes (ver "Cómo se mide"). Se cubren con 22 miembros de la comunidad, 5 sesiones o una implementación.
-- **Con el producto,** el piso se cubre con 5 clientes del plan básico. El documento de precios de junio ponía el punto de equilibrio de la plataforma en 7 u 8 clientes del básico, con la infraestructura de entonces: hay que recalcularlo (#60).
-- **Ninguna alcanza sola para siempre.** Enseñar trae caja rápido, pero depende de sus horas. El producto escala sin sus horas, pero hoy no cobra.
+- **El piso de gastos** son los US$120 por mes de Claude y Codex del plan de arranque, unos Bs 1.454 (mismo documento). Supone ChatGPT Plus para Codex; si pasa a Pro, sube (#30). No cuenta el VPS ni Higgsfield, que no tienen monto en el repo.
+- **Enseñando,** el piso se cubre con 19 miembros a Bs 79, 5 sesiones o una implementación por mes (ver "Cómo se mide").
+- **Con el producto,** con 6 clientes del plan básico. La plataforma factura (mismo documento): con IVA e IT, cada cliente de Bs 320 deja unos Bs 269, y 5 dejan Bs 1.344. El documento de precios de junio ponía el punto de equilibrio en 7 u 8 clientes del básico, con la infraestructura de entonces: hay que recalcularlo (#60).
+- **Ninguna alcanza sola para siempre.** Enseñar trae caja rápido, pero depende de sus horas. El producto cobra todos los meses, pero hoy no cobra y su mantenimiento ya pide horas.
 
 **Los referentes hacen las dos cosas,** salvo uno:
 - Erik Taveras vende TalosFlow, un CRM de WhatsApp a US$49 por mes, además de su Skool y sus talleres, y vende con la demo de su propio producto ([ficha](referentes/erik-taveras.md)).
@@ -60,7 +63,7 @@ Sergio Urcullo pidió analizar si enseñar es la vía correcta, "ya que no va a 
 - **El producto prueba que sabe hacer.** Aparece en los videos "voy a un negocio" y en la implementación, cuando esté listo para clientes.
 - **Enseñar prueba que sabe enseñar,** y trae confianza y contactos. De cada taller y cada video salen dueños de negocio que pueden pasar a la implementación y, después, a la plataforma.
 - **La implementación para negocios es el puente** entre las dos.
-- **Lo grabado y lo recurrente** hacen que enseñar dependa menos de sus horas: la comunidad cobra todos los meses, y el taller vende su grabación para siempre (decisión 3 del PR #41).
+- **Lo grabado y lo recurrente** hacen que enseñar dependa menos de sus horas. El grupo de miembros cobra todos los meses. Y las grabaciones de cada serie se pueden volver a vender: "El curso puede vender las grabaciones para que lo tengan para siempre" (Sergio Urcullo, #65). Eso lo define el #6.
 
 **Lo que recomienda este plan (decisión 8):** las dos, en orden.
 1. Noviembre y diciembre: enseñar, para hacer caja.
@@ -81,11 +84,11 @@ Sergio Urcullo pidió analizar si enseñar es la vía correcta, "ya que no va a 
 **Qué lo diferencia:**
 - **Es de Bolivia:** precios en bolivianos, cobro con QR, horarios de Bolivia y ejemplos de negocios de acá. Erik Taveras, Santiago Muñoz y Enrique Rocha le hablan a toda Latinoamérica y cobran en dólares; Enrique, también en pesos mexicanos (fichas de [Erik](referentes/erik-taveras.md), [Santiago](referentes/santiago-munoz.md) y [Enrique](referentes/enrique-rocha.md)).
 - **Lo usa para su propia empresa:** no enseña desde la teoría.
-- **Es práctico:** en el taller y en la comunidad se trabaja con los archivos de cada uno. Contra los webinars gratis de venta, como el de Eduardo Vázquez, es la misma diferencia que usa el plan del taller (PR #41).
+- **Es práctico:** en el taller y en el grupo de miembros se trabaja con los archivos de cada uno. Contra los webinars gratis de venta, como el de Eduardo Vázquez, es la misma diferencia que usa el plan del taller (PR #41).
 
 **Qué no promete:** ingresos ni ahorros en plata. Meta pide que los anuncios no prometan resultados económicos irreales ([guía de políticas de Meta](https://en-gb.facebook.com/business/m/small-business/ad-policy-guidance)). A Iman Gadzhi, que promete "$373 por día", Meta le dio de baja varios anuncios sin decir el motivo ([ficha](referentes/iman-gadzhi.md)). Además, lo legal lo aprueba Sergio Urcullo.
 
-**Marca personal y ONIA:** la marca personal vende lo que enseña Sergio Urcullo: taller, comunidad y llamadas. ONIA vende la plataforma. La implementación para negocios une las dos.
+**Marca personal y ONIA:** la marca personal vende lo que enseña Sergio Urcullo: taller, grupo de miembros y llamadas. ONIA vende la plataforma. La implementación para negocios une las dos.
 
 **La página ya está decidida.** Sergio Urcullo eligió anunciar desde "mi marca personal, perfil personal" (PR #41, 29-oct-2026). Como los anuncios que abren WhatsApp piden una página de Facebook, sale de una página con su nombre, y su perfil personal se usa para publicar gratis (PR #41). La ayuda de Meta lo confirma:
 - un anuncio que abre WhatsApp se arma eligiendo una página, con el número conectado a esa página o al portafolio ([ayuda de Meta](https://www.facebook.com/business/help/447934475640650), consultada el 29-oct-2026);
@@ -99,17 +102,19 @@ Con el modo profesional, su perfil personal puede tener seguidores sin límite y
 
 "3 videos diarios, un video horizontal de YouTube enseñando algo gratis, pero luego se enseña más avanzado o todo completo en el curso" (Sergio Urcullo, #65, 29-oct-2026).
 
+**Este plan lo lee como 3 cortos por día y un video de YouTube por semana.** Un video largo por día serían unas 40 horas por semana solo de YouTube, con las horas de abajo. Si quiso decir otra cosa, se cambia.
+
 **La regla de qué es gratis y qué es pago:**
 - **Gratis, en YouTube y en los cortos:** un tema entero, con un ejemplo. Qué es y cómo se hace el primer paso.
-- **Pago, en el taller:** el sistema completo, en vivo y con tus archivos. La grabación queda para siempre si la comprás (decisión 3 del PR #41).
-- **Pago, en la comunidad:** lo nuevo de cada semana y tu caso.
+- **Pago, en el taller:** el sistema completo, en vivo y con tus archivos, con la grabación incluida.
+- **Pago, en el grupo de miembros:** lo nuevo de cada semana y tu caso.
 
 Así lo hacen Santiago Muñoz, con tutoriales gratis de 15 a 60 minutos que mandan a su Skool ([ficha](referentes/santiago-munoz.md)), y Erik Taveras, que pone el enlace a su Skool en la primera línea de la descripción de sus videos ([ficha](referentes/erik-taveras.md)). El tutorial largo de Claude de Iman Gadzhi tiene 1,77 millones de vistas ([resumen](referentes/resumen-2026-10-29.md)).
 
 ### Dónde
 
-- **Facebook va primero.** En Bolivia tenía 8.632.400 usuarios en septiembre de 2026, contra 2.834.600 de Instagram ([NapoleonCat, Facebook](https://napoleoncat.com/stats/facebook-users-in-bolivia/2025/07) e [Instagram](https://napoleoncat.com/stats/instagram-users-in-bolivia/2025/08), un sitio de terceros, consultadas el 29-oct-2026). Además, su perfil personal y su página son donde eligió anunciar y publicar (PR #41).
-- **Cada corto va a seis lugares:** su perfil y su página de Facebook, sus estados de WhatsApp, TikTok, Instagram y YouTube Shorts. Publicar el mismo video en otra red cuesta solo el tiempo de subirlo. Para TikTok en Bolivia no se encontró una cifra confiable.
+- **Facebook va primero.** En Bolivia tenía 8.632.400 usuarios en septiembre de 2026, contra 2.834.600 de Instagram ([NapoleonCat, Facebook](https://napoleoncat.com/stats/facebook-users-in-bolivia/) e [Instagram](https://napoleoncat.com/stats/instagram-users-in-bolivia/), un sitio de terceros, consultadas el 29-oct-2026). Además, su perfil personal y su página son donde eligió anunciar y publicar (PR #41).
+- **Cada corto va a seis lugares:** su perfil y su página de Facebook, sus estados de WhatsApp, TikTok, Instagram y YouTube Shorts. Para TikTok en Bolivia no se encontró una cifra confiable.
 - **El video horizontal va a YouTube.** Los Shorts de Enrique Rocha rinden poco, con 1,7 mil vistas el mejor de sus últimos 48 ([ficha](referentes/enrique-rocha.md)); lo que trae audiencia en YouTube es el video largo, como en Santiago Muñoz.
 - **Punto de partida:** falta saber cuántos seguidores tiene hoy en cada red y si tiene Instagram profesional. "ONIA Ads" no tiene un Instagram conectado (PR #41).
 
@@ -119,7 +124,7 @@ Así lo hacen Santiago Muñoz, con tutoriales gratis de 15 a 60 minutos que mand
 |---|---|---|
 | 1. Tutorial | Un truco o una herramienta, con la pantalla. Es la pieza fuerte | Una palabra clave |
 | 2. Recorte del video de YouTube de la semana | Un minuto del video largo | "El video completo está en mi YouTube" |
-| 3. Liviano | Detrás de escena, una novedad de Claude, la respuesta a un comentario o un testimonio con permiso | Seguirlo, o el próximo taller |
+| 3. Liviano | Detrás de escena, una novedad de Claude, la respuesta a un comentario o un testimonio con permiso | Seguirlo, o la próxima clase |
 
 Duran de 45 a 90 segundos, como los de Enrique Rocha, que duran de 46 a 113 ([ficha](referentes/enrique-rocha.md)). Enrique sube a YouTube hasta tres Shorts por día, a horas fijas ([ficha](referentes/enrique-rocha.md)).
 
@@ -179,7 +184,7 @@ No se muestran pantallas con logins, claves ni datos de clientes.
 - **Cómo funciona:**
   1. El tutorial cierra con "Comentá PALABRA".
   2. Quien comenta recibe por mensaje el enlace a la guía.
-  3. La guía termina con el próximo taller y un enlace a su WhatsApp.
+  3. La guía termina con la próxima clase y un enlace a su WhatsApp.
 
   Así lo hacen Erik Taveras, Santiago Muñoz y Enrique Rocha. Con ese llamado, los comentarios de Enrique llegan al 40-80% de los "me gusta"; sin él, al 3-8% ([resumen](referentes/resumen-2026-10-29.md)).
 - **Dónde viven las guías:** en documentos de Google públicos de su Drive, sin pedir correo, como las de Santiago Muñoz ([ficha](referentes/santiago-munoz.md)). No cuesta nada y no pide herramientas nuevas. El contacto se junta en WhatsApp, que es donde se vende en Bolivia.
@@ -187,7 +192,7 @@ No se muestran pantallas con logins, claves ni datos de clientes.
 - **Reglas:**
   - una palabra por tutorial, corta y en mayúsculas;
   - la guía dice exactamente lo que prometió el video. A Enrique Rocha le reclaman en los comentarios que lo que llega por mensaje no coincide con el video ([ficha](referentes/enrique-rocha.md));
-  - a quien escribe por WhatsApp se le contesta lo que pidió. Para mandarle avisos después, hace falta su permiso (ver "El paso a la comunidad").
+  - a quien escribe por WhatsApp se le contesta lo que pidió. Para mandarle mensajes después, hace falta su permiso (ver "El camino, paso a paso").
 - **Las palabras del primer mes:**
 
   | Palabra | Qué recibe |
@@ -195,7 +200,7 @@ No se muestran pantallas con logins, claves ni datos de clientes.
   | CLAUDE | Guía de primeros pasos: cuenta, proyectos y archivos |
   | PROYECTO | Las instrucciones de proyecto que usa Sergio Urcullo |
   | ARCHIVOS | 5 pedidos para hacerle a Claude con tus archivos |
-  | TALLER | Las fechas, el temario y el precio del taller, por WhatsApp |
+  | TALLER | Las fechas, el temario y el precio de la serie, por WhatsApp |
   | NEGOCIO | Qué incluye la implementación para negocios, por WhatsApp |
 
 ### Frecuencia y horas
@@ -204,34 +209,34 @@ No se muestran pantallas con logins, claves ni datos de clientes.
 
 | Semana | Cortos por día | YouTube |
 |---|---|---|
-| 1: 31-oct al 8-nov, el primer taller | 1, el tutorial | No |
+| 1: 31-oct al 8-nov, la primera serie | 1, el tutorial | No |
 | 2: 9 al 15 | 1 | El primero |
 | 3: 16 al 22 | 2: tutorial y recorte | Sí |
 | 4: 23 al 29 | 3 | Sí |
 
-**Por qué de a poco:** la primera semana Sergio Urcullo da 9 horas de clase en vivo y atiende las ventas del taller (PR #41). Y arranca su plan de aprendizaje el 2-nov. Si las horas no dan, se queda en 2 por día.
+**Por qué de a poco:** la primera semana Sergio Urcullo da la primera serie y atiende sus ventas. Y arranca su plan de aprendizaje el 2-nov. Si las horas no dan, se queda en 2 por día.
 
 **Las horas de la semana,** estimación propia, porque no hay datos suyos:
-- un corto propio: 15 minutos de grabación, 20 de edición y 10 de publicación en los seis lugares;
-- un recorte del video de YouTube: 15 minutos de edición y 10 de publicación;
+- un corto propio: 15 minutos de grabación, 20 de edición y 15 de publicación en los seis lugares;
+- un recorte del video de YouTube: 15 minutos de edición y 15 de publicación;
 - un video de YouTube: 2,5 horas de grabación, 3 de edición y un cuarto de hora de publicación;
 - comentarios y mensajes del contenido: 15 minutos por día;
 - aprobar guiones: una hora por semana;
-- el taller, cada semana que se dé: 9 horas en vivo, una de preparación y media hora por día de ventas por WhatsApp;
-- la comunidad: la clase, una hora para prepararla, media hora para la plantilla y dos rondas de dudas de media hora;
+- el taller, cada semana que haya serie: unas 6 horas en vivo, si la primera clase dura 3 y las otras 1,5 (sesión del #6); una hora para preparar cada clase; y 45 minutos por día para atender, confirmar pagos y mandar los mensajes uno por uno;
+- el grupo de miembros: la clase de 50 minutos, una hora para prepararla, media hora para la plantilla y dos rondas de dudas de media hora;
 - la clase abierta: 45 minutos y 45 de preparación.
 
-| Semana | Contenido | Taller, si sigue | Comunidad | Clase abierta | Total |
+| Semana | Contenido | Taller, si hay serie | Miembros | Clase abierta | Total |
 |---|---|---|---|---|---|
-| 1 | 8 h | 13,5 h | — | — | Unas 21,5 h |
-| 2 | 13,8 h | 13,5 h | — | — | Unas 27 h |
-| 3 | 16,7 h | 13,5 h | 3,5 h | — | Unas 34 h |
-| 4 | 21,9 h | 13,5 h | 3,5 h | 1,5 h | Unas 40 h |
+| 1 | 8,6 h | 14,3 h | — | — | Unas 23 h |
+| 2 | 14,3 h | 14,3 h | — | — | Unas 28,5 h |
+| 3 | 17,8 h | 14,3 h | 3,3 h | — | Unas 35,5 h |
+| 4 | 23,7 h | 14,3 h | 3,3 h | 1,5 h | Unas 43 h |
 
-A eso se suman las sesiones 1 a 1, hasta 5 horas por semana. Si el taller no sigue después de la semana 1, la semana 4 baja a unas 27 horas.
+A eso se suman las sesiones 1 a 1, hasta 5 horas por semana, y cada implementación: unas 3,5 horas por semana durante dos semanas, entre las sesiones, la preparación y el soporte. Si no hay serie después de la semana 1, la semana 4 baja a unas 28,5 horas.
 
 **Para bajar horas:**
-- una herramienta que saque los recortes del video largo, como Opus Clip Pro, US$29 por mes. Es la opción "completo" de la decisión 4 del mapa: es gasto y pide su sí;
+- una herramienta que saque los recortes del video largo, como Opus Clip Pro, US$29 por mes. Es parte de la opción "completo" de la decisión 4 del mapa, que con Canva Pro y ElevenLabs suma unos US$47 por mes. Es gasto y pide su sí. Además, con débito, en varios bancos el tope para pagar afuera es US$500 por mes, y de ahí sale todo: Claude, Codex, los anuncios y cualquier herramienta nueva (PR #41);
 - la publicación por API, cuando estén los issues #49 y #50.
 
 **Quién hace qué:**
@@ -251,76 +256,97 @@ A eso se suman las sesiones 1 a 1, hasta 5 horas por semana. Si el taller no sig
 "Clases gratuitas", pidió Sergio Urcullo (#65, 29-oct-2026).
 
 **Recomendado: una clase abierta por mes, de 45 minutos, en YouTube Live** (decisión 5).
-- **Qué se da:** un tema entero, por ejemplo "tu primer proyecto en Claude", y preguntas. Al final, 5 minutos: el próximo taller y la comunidad.
-- **Por qué YouTube Live:** queda en el canal como un video gratis más, y no ocupa la sala de Zoom del taller. Pide el canal verificado, y se puede transmitir desde la computadora con la cámara ([ayuda de YouTube](https://support.google.com/youtube/answer/2474026?hl=es-419), consultada el 29-oct-2026).
-- **Cuándo:** la semana en que no hay taller, o un lunes, que no tiene clase del taller. La primera, el lunes 23 de noviembre a las 19:30.
+- **Qué se da:** un tema entero, por ejemplo "tu primer proyecto en Claude", y preguntas. Al final, 5 minutos: la próxima serie y el grupo de miembros.
+- **Por qué YouTube Live:** queda en el canal como un video gratis más. Pide el canal verificado, y se puede transmitir desde la computadora con la cámara ([ayuda de YouTube](https://support.google.com/youtube/answer/2474026?hl=es-419), consultada el 29-oct-2026).
+- **Cuándo:** un día sin clase del taller. La primera, el lunes 23 de noviembre a las 19:30, avisada en la comunidad grande.
 - **Referencias:**
   - Santiago Muñoz da masterclasses gratis de 4 a 5 horas, con regalos para quien está en vivo y una oferta de 24 horas después ([ficha](referentes/santiago-munoz.md)).
   - Iman Gadzhi hace un reto gratis de 5 días ([ficha](referentes/iman-gadzhi.md)).
   - Enrique Rocha no hace webinars gratis de venta, y se diferencia por eso: sus páginas dicen que su taller no es "una masterclass de 47 minutos con 40 de venta" ([ficha](referentes/enrique-rocha.md)). Por eso la clase abierta enseña de verdad, y la oferta dura 5 minutos al final.
 
-## 5. El taller de entrada y el paso a la comunidad
+## 5. El taller y el camino hasta la comunidad grande
 
 ### El taller
 
-**Lo que decidió Sergio Urcullo** el 29-oct-2026, citado en el PR #41:
-- el taller y el nombre: "Claude de 0 a 100";
-- Bs 50, sin factura: "el curso low ticket sera informal";
-- para todo público de Bolivia;
-- la cuenta "ONIA Ads" y la página con su nombre;
-- US$10 por día de anuncios durante 7 días.
+**Lo que decidió Sergio Urcullo** el 29-oct-2026:
+- en el PR #41: el taller y el nombre, "Claude de 0 a 100"; sin factura, "el curso low ticket sera informal"; todo público de Bolivia; la cuenta "ONIA Ads"; la página con su nombre; y US$10 por día de anuncios durante 7 días;
+- después, en la sesión del #6, según esa sesión: una serie de 3 clases distintas, a Bs 50 cada una o Bs 120 las tres; el martes 3, el jueves 5 y el sábado 7 de noviembre; la primera clase larga y las otras de hasta una hora y media; por Meet gratis, con la grabación incluida; y cobro con QR a mano.
 
-**Lo que propone el PR #41 y falta decidir:** tres clases por semana, el martes 3 y el jueves 5 de noviembre de 19:00 a 22:00 y el sábado 7 de 9:00 a 12:00, con anuncios del 31 de octubre al 6 de noviembre; la grabación para siempre, a Bs 30 aparte; la sala, el cobro con QR, la devolución y qué se ofrece al final. Este plan usa esas fechas. **Si cambian, el calendario se corre igual.**
+**Dos datos para la sala,** que se le mandaron a la sesión del #6:
+- Meet gratis corta a los 60 minutos las reuniones de 3 o más personas, y admite hasta 100 ([ayuda de Google Meet](https://support.google.com/meet/answer/7317473?hl=es-419), consultada el 29-oct-2026). Una clase de más de una hora no entra entera.
+- Meet graba solo con algunas ediciones de Google Workspace o con Google One de 2 TB o más ([ayuda de Google Meet](https://support.google.com/meet/answer/9308681?hl=es-419), consultada el 29-oct-2026). Una cuenta personal gratis no figura.
 
-### El paso a la comunidad
+Cómo se resuelve lo define el #6. El grupo de miembros usa la misma sala y la misma forma de grabar.
 
-1. **Al inscribirse,** en la confirmación del pago, una pregunta aparte: "¿Querés que te avise por WhatsApp de las próximas clases y de la comunidad? Respondé SÍ." Si no contesta, no se le mandan avisos.
-   - El DS 1793 pide consentimiento expreso para usar datos (art. 56) y, en los mensajes, un remitente identificable y una forma de darse de baja (art. 57) ([lexivox](https://www.lexivox.org/norms/BO-RE-DSN1793.html), consultada el 29-oct-2026, citado también en el mapa de operación).
-   - La confirmación la redacta el PR #41: esta pregunta se le pasa a esa sesión. El texto es legal y lo aprueba Sergio Urcullo.
-2. **Al final de cada clase,** 5 minutos:
-   - **el grupo gratis de avisos,** que es lo que recomienda la decisión 8 del PR #41. Entra quien quiere, con el enlace;
-   - **la comunidad paga:** qué trae cada semana, que arranca el lunes 16 de noviembre y que hay preventa de fundador. Los primeros 30 que paguen hasta el viernes 13 a las 23:59 entran a Bs 79 por mes, congelado mientras sigan pagando. Después, Bs 99.
+### Lo que pidió para la comunidad
+
+"Primero vamos armando grupos, grupos grupos por cada fecha y por cada taller pero luego armemos una comunidad grande en donde siempre se envíen cosas. Por ejemplo ya tengo una comunidad en WhatsApp, así que este punto hay que analizarlo bien, cómo sería el [funnel] para luego moverlo hacia otra clase y seguir escalando eso" (Sergio Urcullo, sesión del #6, 29-oct-2026).
+
+### Cómo se arma en WhatsApp
+
+- **La comunidad grande es la comunidad de WhatsApp que ya tiene.** Faltan tres datos: desde qué número la creó, cuántos miembros tiene hoy y cómo se llama.
+  - La app WhatsApp Business no puede crear comunidades ([ayuda de WhatsApp](https://faq.whatsapp.com/438859978317289), consultada el 29-oct-2026 en la revisión 2). Por eso conviene usar la que ya existe, y crear los grupos desde el número que la administra.
+  - El número que vende el taller todavía está a definir en el PR #41. Si es otro, ese número manda los enlaces en la confirmación del pago.
+- **Su grupo de avisos es "donde siempre se envían cosas".** Todos los miembros de la comunidad están en él, y solo escriben los administradores. Solo los administradores ven quiénes son los miembros ([ayuda de WhatsApp](https://faq.whatsapp.com/582420703681043/?locale=es_LA), consultada el 29-oct-2026).
+  - No se menciona a nadie con @ en los avisos, porque eso muestra su número a toda la comunidad ([guía de WhatsApp](https://www.whatsapp.com/communities/learning/buildingasafecommunity), consultada el 29-oct-2026).
+  - Van 2 o 3 avisos por semana: la guía de la semana, la próxima clase o serie, y la clase abierta del mes. Más que eso empuja a silenciar o a salir; es un supuesto a medir con cuántos salen.
+- **Un grupo por clase y por fecha,** dentro de la comunidad. Por ejemplo, "Clase 1 · Claude de 0 a 100 · mar 3-nov". En ese grupo los miembros se ven entre sí: se avisa al invitar.
+- **Un grupo de miembros,** también dentro de la comunidad, solo para los que pagan (decisión 3). Solo los administradores suman gente.
+- **Los límites:**
+  - una comunidad admite hasta 2.000 miembros, contando el grupo de avisos (misma ayuda de WhatsApp);
+  - y hasta 50 grupos, más el de avisos (guía de WhatsApp). Con 3 grupos por semana, se llenan en unas 16 semanas: los grupos viejos se cierran y se sacan.
+  - Antes de sacar el primero, hay que comprobar en la app que su gente sigue en la comunidad. No se encontró en la ayuda.
+  - Si la comunidad se acerca a los 2.000, se abre una segunda comunidad o un canal de WhatsApp. En un canal, el número de cada seguidor no lo ven los demás seguidores, y el administrador lo ve solo si lo tiene guardado ([WhatsApp](https://www.whatsapp.com/channels), consultada el 29-oct-2026).
+
+### El camino, paso a paso
+
+1. **Te ve:** los cortos, YouTube, los anuncios del taller (PR #41) y la clase abierta.
+2. **Escribe:** por la palabra clave y la guía, o por el botón del anuncio, que abre WhatsApp.
+3. **Paga:** con QR, Bs 50 una clase o Bs 120 las tres.
+4. **Entra:** con la confirmación del pago recibe dos enlaces, el de la comunidad grande y el del grupo de su clase. Y una pregunta aparte: "¿Querés que te escriba por WhatsApp cuando haya una clase o una oferta nueva? Respondé SÍ."
+   - Entrar a la comunidad con el enlace es elegir recibir sus avisos, y se puede salir cuando quiera. El mensaje lo dice.
+   - Los mensajes uno a uno van solo a quien respondió SÍ. El DS 1793 pide consentimiento expreso para usar datos (art. 56) y, en los mensajes, un remitente identificable y una forma de darse de baja (art. 57) ([lexivox](https://www.lexivox.org/norms/BO-RE-DSN1793.html), consultada el 29-oct-2026, citado también en el mapa).
+   - Este texto se aprueba con los del PR #41, el jueves 29 y el viernes 30, antes de que se cobre la primera inscripción. A quien pagó antes, se le hace la pregunta en el recordatorio del día de su clase. Es legal: lo aprueba Sergio Urcullo.
+5. **Toma la clase:** en el grupo de su clase, antes, el enlace y el material; después, la grabación, una tarea y 7 días de dudas.
+6. **Al final de cada clase, 5 minutos:**
+   - **la clase siguiente de la serie.** Quien compró clases sueltas completa la serie pagando la diferencia hasta Bs 120. Es una propuesta de este plan; como es el precio del taller, lo decide Sergio Urcullo con la sesión del #6;
+   - **el grupo de miembros.** Arranca el lunes 16 de noviembre. Los primeros 30 que paguen hasta el viernes 13 a las 23:59 entran a Bs 79 por mes, congelado mientras sigan pagando. Desde el sábado 14, Bs 99.
 
    Son límites reales, como el cupo de fundador de Erik Taveras, que se llenó antes de la primera llamada ([ficha](referentes/erik-taveras.md)), y la oferta de 24 horas de Santiago Muñoz después de su masterclass ([ficha](referentes/santiago-munoz.md)).
-3. **Al día siguiente de cada clase,** solo a quien dijo que sí a los avisos: gracias, el pedido de testimonio y la preventa, con el QR.
-4. **El jueves 12,** un aviso en el grupo: la preventa cierra el viernes.
-5. **La preventa trae caja antes del 14 de noviembre,** cuando vence Codex (PR #41).
+7. **Se queda:** a los 7 días, el grupo de su clase queda solo para avisos de los administradores, y más adelante se saca. La persona sigue en la comunidad grande.
+8. **Vuelve:** cada serie o edición nueva se avisa primero en la comunidad grande, con un precio para quienes ya fueron, que decide Sergio Urcullo. Después, en los anuncios.
+9. **Sube:** del grupo de miembros a las sesiones 1 a 1 y a la implementación.
 
 Todos los mensajes los aprueba Sergio Urcullo, porque llegan a clientes.
 
-**La grabación no se cruza:** la del taller se vende aparte (decisión 3 del PR #41). La comunidad no la incluye; tiene sus propias clases grabadas.
+**La preventa trae caja antes del 14 de noviembre,** cuando vence Codex (PR #41).
 
-**Choca con dos recomendaciones,** y Sergio Urcullo elige una sola en la decisión 3:
-- la decisión 8 del PR #41 recomienda un grupo gratis de WhatsApp para los inscriptos, "sin prometer todavía algo pago";
-- la decisión 9 del mapa de operación recomienda un grupo gratis de WhatsApp después del taller.
+**Con las recomendaciones de antes:** la decisión 8 del PR #41 recomienda un grupo gratis para los inscriptos, y la decisión 9 del mapa, un grupo de WhatsApp gratis después del taller. Lo que decidió Sergio Urcullo va en esa línea: grupos por clase y una comunidad grande gratis. Lo que queda abierto es si, además, se abre un grupo pago (decisión 3). Si lo elige, la fila "Comunidad después del taller" del mapa se pone al día por un issue.
 
-Este plan suma las dos cosas: el grupo gratis de avisos y, aparte, la comunidad paga desde la primera clase. El #65 pide una escalera con comunidad paga, y Sergio Urcullo quiere caja pronto: "tener caja al menos hasta en 7 dias" (PR #41). Si elige la comunidad paga, la decisión 9 del mapa queda vieja y se abre un issue para actualizarla.
-
-## 6. La comunidad paga
+## 6. El grupo de miembros
 
 ### Qué trae cada semana
 
-- **Una clase en vivo de 60 minutos,** los miércoles a las 19:30, por Zoom: un tema nuevo y después "traé tu caso". Se graba. Va el miércoles para no chocar con las clases del taller, que son martes, jueves y sábado (PR #41). Erik Taveras da una llamada por semana en su comunidad, y Santiago Muñoz dos ([resumen](referentes/resumen-2026-10-29.md)).
+- **Una clase en vivo de 50 minutos,** los miércoles a las 19:30: un tema nuevo y después "traé tu caso". Dura 50 minutos para entrar en Meet gratis, que corta a los 60 (ayuda de Google Meet, arriba). Va el miércoles para no chocar con las clases del taller, que son martes, jueves y sábado. Erik Taveras da una llamada por semana en su comunidad paga, y Santiago Muñoz dos ([resumen](referentes/resumen-2026-10-29.md)).
+- **La grabación de la clase,** con la misma forma de grabar que decida el #6 para el taller. Si no se puede grabar, el resumen escrito de la clase.
 - **Una plantilla los lunes,** lista para copiar: instrucciones de proyecto, un prompt o una tarea armada.
-- **Un grupo para dudas.** Sergio Urcullo contesta dos veces por semana, no a toda hora, para que se pueda sostener.
+- **Dudas en el grupo.** Sergio Urcullo contesta dos veces por semana, no a toda hora, para que se pueda sostener.
 - **Un objetivo por mes,** por ejemplo "dejale a Claude tu reporte semanal armado".
 - **Para miembros:** la sesión 1 a 1 a Bs 250 en vez de Bs 350.
 
 ### Dónde (decisión 3)
 
-**Recomendado: los dos grupos en una comunidad de WhatsApp, las clases por Zoom y el cobro por QR.**
-- **Una comunidad de WhatsApp** con su grupo de avisos, donde solo escriben los administradores, y un grupo para charlar, solo para los que pagan. Se pueden sumar hasta 2.000 miembros a una comunidad y a su grupo de avisos. En el grupo de avisos, solo los administradores ven quiénes son los miembros ([ayuda de WhatsApp](https://faq.whatsapp.com/582420703681043/?locale=es_LA), consultada el 29-oct-2026). En el grupo para charlar los miembros sí se ven entre sí: se avisa al invitar.
-- **Las clases, por Zoom Pro,** la misma cuenta que se pague para el taller: US$16,99 por mes, unos Bs 206 ([precios de Zoom](https://zoom.us/pricing), consultada el 29-oct-2026 en el PR #41). Google Meet gratis corta a los 60 minutos cuando hay 3 o más personas (mapa de operación), y la clase dura 60.
-- **Las grabaciones y las plantillas,** en una carpeta de Drive compartida solo con los miembros.
-- **A favor:** en Bolivia todos tienen WhatsApp, y se paga con QR sin tarjeta.
+**Recomendado: un grupo de miembros dentro de su comunidad de WhatsApp, con la clase por Meet y el cobro por QR.**
+- **A favor:** en Bolivia todos tienen WhatsApp, se paga con QR sin tarjeta, y está al lado de la comunidad grande, donde ya está la gente.
 - **En contra:** está menos ordenado que Skool, y el cobro se confirma a mano.
+- **Las grabaciones y las plantillas,** en una carpeta de Drive compartida solo con los miembros, o en YouTube como no listado, como hace el PR #41 con las del taller.
 
 **Las otras dos opciones:**
 - **Skool Hobby:** US$9 por mes, más 10% y US$0,30 por cobro ([precios](https://www.skool.com/pricing) y [preguntas frecuentes de Skool](https://help.skool.com/article/86-subscriptions-faq), consultadas el 29-oct-2026).
   - Skool le paga a cuentas de Bolivia, pero los miembros pagan en dólares (misma fuente). Hace falta una tarjeta habilitada para el exterior.
   - Con 10 miembros a Bs 99, unos US$8,17 cada uno, Skool se lleva cerca del 25%: los US$9 fijos, el 10% y los US$0,30 de cada cobro.
   - Es lo que usan Erik Taveras y Santiago Muñoz, con clases en vivo, grabaciones y reseñas (fichas de [Erik](referentes/erik-taveras.md) y [Santiago](referentes/santiago-munoz.md)).
-- **Solo el grupo gratis por ahora,** como recomiendan la decisión 8 del PR #41 y la 9 del mapa, y la comunidad paga recién con 50 miembros activos. Junta audiencia, pero no trae caja ahora.
+- **Todavía no:** solo la comunidad grande gratis, y el grupo pago se decide de nuevo el 29-nov con los números del mes. Junta audiencia, pero no trae caja ahora.
 
 ### Precio (decisión 4)
 
@@ -332,22 +358,24 @@ Este plan suma las dos cosas: el grupo gratis de avisos y, aparte, la comunidad 
 | Skool de Santiago Muñoz ([ficha](referentes/santiago-munoz.md)) | US$64 por mes | Unos Bs 776 |
 | Digital Launchpad de Iman Gadzhi ([ficha](referentes/iman-gadzhi.md)) | US$37 por mes | Unos Bs 448 |
 | Talleres que hoy se anuncian en Bolivia ([resumen](referentes/resumen-2026-10-29.md)) | Pago único | Bs 250 a Bs 550 |
-| El taller de entrada (PR #41) | Pago único | Bs 50 |
+| La serie del taller de entrada (sesión del #6) | Pago único | Bs 120, o Bs 50 por clase |
 | Salario mínimo de Bolivia en 2026 ([Bloomberg Línea](https://www.bloomberglinea.com/latinoamerica/bolivia/rodrigo-paz-aumenta-un-20-el-salario-minimo-en-bolivia/), 18-dic-2025) | Por mes | Bs 3.300 |
 
-- **Por qué Bs 99:** son dos talleres por mes. Es el 3% del salario mínimo, y menos de la mitad de lo que cobran los talleres de Bolivia por una sola vez.
-- **Por qué el precio de fundador:** es la escalera que usan Erik Taveras (US$59, que sube a US$79 a los 250 miembros) y Santiago Muñoz (fundador a US$57, ahora US$64 y después US$79), con el precio congelado para quien entra antes ([resumen](referentes/resumen-2026-10-29.md)).
-- **Cuándo se cubre el costo:** Zoom Pro, unos Bs 206 por mes, se paga con 3 miembros a Bs 79. Si el taller sigue, el taller ya lo paga.
+- **Por qué Bs 99:** son dos clases del taller por mes. Es el 3% del salario mínimo, y menos de la mitad de lo que cobran los talleres de Bolivia por una sola vez.
+- **Por qué el precio de fundador:** es la escalera que usan Erik Taveras (US$59, que sube a US$79 a los 250 miembros) y Santiago Muñoz (fundador a US$57, ahora US$64 y después US$79), con el precio congelado para quien entra antes (fichas de [Erik](referentes/erik-taveras.md) y [Santiago](referentes/santiago-munoz.md)).
+- **Qué cuesta:** con Meet gratis, nada fijo. Si la clase necesita más de 50 minutos o grabar en la nube, Zoom Pro cuesta US$16,99 por mes, unos Bs 206 ([precios de Zoom](https://zoom.us/pricing), citada en el PR #41), y se paga con 3 miembros a Bs 79.
 
 ### Cómo se cobra con QR
 
-1. **Un solo día de cobro: el 16 de cada mes,** el día que arranca la comunidad. El pago de la preventa cubre del 16 de noviembre al 15 de diciembre.
-2. El 16, cada miembro recibe por WhatsApp un mensaje con el QR de la cuenta, el monto y el mes que paga. El texto lo aprueba Sergio Urcullo una vez.
+1. **Cada miembro tiene su día de cobro:** el día que entra. Los de la preventa, el 16. El pago de la preventa cubre del 16 de noviembre al 15 de diciembre.
+2. Ese día, el miembro recibe por WhatsApp un mensaje con el QR de la cuenta, el monto y el mes que paga. El texto lo aprueba Sergio Urcullo una vez.
 3. El miembro manda el comprobante por el mismo chat.
-4. Sergio Urcullo confirma que el pago llegó a su banco, y el agente lo anota en la planilla de cobros de su Drive, nunca en Git (skill `registrar-movimiento`, issue #54).
-5. Quien no pagó el día 21 recibe un recordatorio. Si no paga el 23, sale del grupo para charlar y de la carpeta, con un mensaje que le dice cómo volver.
+4. Sergio Urcullo confirma que el pago llegó a su banco, y el agente lo anota en la planilla de cobros de su Drive, nunca en Git (skill `registrar-movimiento`, issue #54). La planilla dice a quién le toca cada día.
+5. Quien no pagó a los 5 días recibe un recordatorio. Si no paga a los 7, sale del grupo de miembros y de la carpeta, pero sigue en la comunidad grande, con un mensaje que le dice cómo volver.
 
 Confirmar a mano alcanza para las primeras decenas de miembros. Si crece, el mapa de operación lista cómo confirmar solo: la API de QR del BNB, OpenBCB o una pasarela local desde Bs 249 por mes.
+
+**Antes de cobrar la preventa** se deciden la devolución y la factura del grupo de miembros (decisión 9), como el PR #41 decide la devolución del taller antes de cobrarlo.
 
 ## 7. Llamadas 1 a 1 e implementación para negocios
 
@@ -359,13 +387,15 @@ Confirmar a mano alcanza para las primeras decenas de miembros. Si crece, el map
 - **Diagnóstico gratis de 20 minutos,** solo para negocios que quieren la implementación.
   - Antes, tres preguntas por WhatsApp: rubro, qué quiere resolver y cuántas personas trabajan.
   - Hasta 3 por semana, para que no le coman la semana.
-  - Así filtra Erik Taveras: su página "Trabajemos" manda a cada uno a un diagnóstico gratis, a una sesión paga o a un proyecto ([ficha](referentes/erik-taveras.md)). Santiago Muñoz agenda una cita de 30 minutos antes de su consultoría ([ficha](referentes/santiago-munoz.md)).
+  - Se filtra antes de dar horas, como hacen los referentes. Erik Taveras ofrece gratis un cuestionario, Radar IA, y cobra US$75 su llamada de diagnóstico de 15 minutos. Su página "Trabajemos" manda a cada uno a lo que le toca ([ficha](referentes/erik-taveras.md)). Santiago Muñoz agenda una cita de 30 minutos antes de su consultoría ([ficha](referentes/santiago-munoz.md)).
 - **Sesión 1 a 1 paga,** de 60 minutos, para cualquiera.
+
+Las llamadas van por Meet: entre dos personas, Meet gratis dura hasta 24 horas (ayuda de Google Meet, arriba).
 
 ### Sesión 1 a 1
 
-- **Qué es:** 60 minutos por Zoom con pantalla compartida, sobre un caso de la persona. Termina con un plan escrito y la grabación.
-- **Precio:** Bs 350, unos US$28,88. Bs 250 para miembros de la comunidad (decisión 7).
+- **Qué es:** 60 minutos con pantalla compartida, sobre un caso de la persona. Termina con un plan escrito.
+- **Precio:** Bs 350, unos US$28,88. Bs 250 para miembros (decisión 7).
 - **Cómo se compra:** escribe por WhatsApp, paga con QR por adelantado y elige el horario. El cobro adelantado es como en Erik Taveras, que cobra al reservar ([ficha](referentes/erik-taveras.md)).
 - **Cuántas:** hasta 4 por semana.
 
@@ -378,10 +408,10 @@ Confirmar a mano alcanza para las primeras decenas de miembros. Si crece, el map
 
   Incluye soporte por WhatsApp durante esas dos semanas.
 - **Precio:** desde Bs 2.500, unos US$206. La mitad se paga al empezar y la otra mitad en la sesión 3, con QR (decisión 7).
-- **De dónde salen los clientes:** del diagnóstico gratis, del contenido "voy a un negocio", de la palabra NEGOCIO y de los miembros de la comunidad que tienen negocio.
-- **Con ONIA Platform:** cuando esté lista para clientes (issues #27 y #28), la implementación suma el asistente de WhatsApp, con su plan mensual aparte, desde Bs 320. La prueba con clínicas dentales del #61 va por su lado. Si se hace después del taller, como recomienda la decisión 14 del mapa, esta implementación puede ser su puerta de entrada.
+- **De dónde salen los clientes:** del diagnóstico gratis, del contenido "voy a un negocio", de la palabra NEGOCIO y de los miembros que tienen negocio.
+- **Con ONIA Platform:** cuando esté lista para clientes (issues #27 y #28), la implementación puede sumar el asistente de WhatsApp, con su plan mensual aparte. La prueba con clínicas dentales del #61 va por su lado. Si se hace después del taller, como recomienda la decisión 14 del mapa, esta implementación puede ser su puerta de entrada.
 
-**Los precios son sin factura.** Si se factura, el IVA es 13% y el IT 3% (mapa de operación): de cada Bs 2.500 quedan unos Bs 2.100. Los negocios suelen pedir factura. Se decide con el contador, y es legal.
+**Los precios son sin factura.** Si se factura, el IVA es 13% y el IT 3% (mapa de operación): de cada Bs 2.500 quedan unos Bs 2.100, antes del IUE o del RC-IVA. Los negocios suelen pedir factura. Se decide con el contador, y es legal.
 
 ### Referencias de precio
 
@@ -399,76 +429,83 @@ Bs 350 la hora queda en el rango de las agencias de Bolivia, y muy por debajo de
 
 ## 8. Calendario de 30 días
 
-Del sábado 31 de octubre al domingo 29 de noviembre de 2026. Arranca el día que arrancan los anuncios del taller y usa las fechas que propone el PR #41. **Si cambian, todo se corre igual.** Los talleres de las semanas 2 a 4 van solo si Sergio Urcullo da el sí a seguir con anuncios, porque es gasto.
+Del sábado 31 de octubre al domingo 29 de noviembre de 2026. Usa las fechas que decidió Sergio Urcullo para la primera serie. **Si cambian, todo se corre igual.** Las series de las semanas 2 a 4 van solo si da el sí a seguir con anuncios, porque es gasto.
 
 **Todas las semanas:**
 - **Domingo y miércoles:** tandas de grabación, con los guiones aprobados el día antes.
 - **Todos los días:** los cortos de la semana (ver "Frecuencia y horas") y unos 15 minutos para comentarios y mensajes.
+- **En la comunidad grande:** 2 o 3 avisos, como la guía de la semana y la próxima clase.
 - **Desde la semana 2:** un video de YouTube, que sale el viernes.
-- **Desde la semana 3:** la plantilla de la comunidad el lunes y la clase en vivo el miércoles a las 19:30.
+- **Desde la semana 3:** la plantilla de miembros el lunes y su clase el miércoles a las 19:30.
 
 | Cuándo | Qué | Quién |
 |---|---|---|
-| **Semana 1: el primer taller** | | |
-| Antes, jue 29 y vie 30-oct | La página, WhatsApp, el pago de los anuncios y los videos del anuncio, según el PR #41 | Sergio Urcullo, con la sesión del #6 |
-| Sáb 31 | Arrancan los anuncios. Primer corto, grabado con los videos del anuncio, en su perfil, su página y sus estados: quién es y qué va a mostrar, con TALLER | Sergio Urcullo publica |
-| Dom 1-nov | Grabación de los tutoriales de la semana. El agente deja los textos de la comunidad, de la preventa y del permiso para avisos | Sergio Urcullo graba; agente redacta |
-| Lun 2 | Aprueba los textos de la comunidad, la preventa y el permiso. Corto CLAUDE | Sergio Urcullo |
-| Mar 3 | Clase 1 del taller, de 19:00 a 22:00. Al final, el grupo de avisos y la preventa. Corto PROYECTO | Sergio Urcullo |
-| Mié 4, vie 6 y dom 8 | Mensaje a los asistentes de la clase anterior que dijeron sí a los avisos | Sergio Urcullo manda lo aprobado |
-| Mié 4 | Grabación | Sergio Urcullo |
-| Jue 5 | Clase 2 del taller, de 19:00 a 22:00 | Sergio Urcullo |
-| Sáb 7 | Clase 3 del taller, de 9:00 a 12:00 | Sergio Urcullo |
-| Dom 8 | Balance del taller (PR #41). Grabación del primer video de YouTube | Sergio Urcullo |
+| **Antes** | | |
+| Jue 29 y vie 30-oct | Con los textos del PR #41: la confirmación con los dos enlaces y la pregunta de permiso. Crear en su comunidad los grupos de las tres clases | Agente redacta; Sergio Urcullo aprueba y crea los grupos |
+| Vie 30 | Empieza la venta gratis en su perfil, sus estados y sus grupos (PR #41). Primer corto: quién es y qué va a mostrar, con TALLER | Sergio Urcullo publica |
+| **Semana 1: la primera serie** | | |
+| Sáb 31 | Arrancan los anuncios (PR #41). Corto CLAUDE | Sergio Urcullo publica |
+| Dom 1-nov | Grabación de los cortos de la semana. El agente deja los textos de la preventa | Sergio Urcullo graba; agente redacta |
+| Lun 2 | Decide la devolución y la factura del grupo de miembros (decisión 9), y aprueba los textos de la preventa. Corto PROYECTO | Sergio Urcullo |
+| Mar 3 | Clase 1. Al final, la clase siguiente y la preventa | Sergio Urcullo |
+| Mié 4, vie 6 y dom 8 | En el grupo de la clase anterior: la grabación y la tarea. Mensaje a quien respondió SÍ | Sergio Urcullo manda lo aprobado |
+| Jue 5 | Clase 2 | Sergio Urcullo |
+| Sáb 7 | Clase 3 | Sergio Urcullo |
+| Dom 8 | Balance de la serie (PR #41). Grabación del primer video de YouTube | Sergio Urcullo |
 | **Semana 2: la preventa** | | |
-| Mar 10, jue 12 y sáb 14 | Segundo taller, si da el sí | Sergio Urcullo |
+| Mar 10, jue 12 y sáb 14 | Segunda serie o segunda edición, si da el sí | Sergio Urcullo |
 | Durante la semana, si da el sí | Ofrecer el diagnóstico gratis y la implementación a sus contactos con negocio | Agente redacta, Sergio Urcullo aprueba y manda |
-| Jue 12 | Aviso en el grupo: la preventa cierra el viernes | Sergio Urcullo manda lo aprobado |
-| Vie 13 | Primer video de YouTube. A las 23:59 cierra la preventa de fundador | Sergio Urcullo |
-| Dom 15 | Grabación. Preparar la primera clase de la comunidad | Sergio Urcullo |
-| **Semana 3: arranca la comunidad** | | |
-| Lun 16 | Bienvenida en la comunidad y primera plantilla | Agente arma, Sergio Urcullo aprueba |
-| Mar 17, jue 19 y sáb 21 | Tercer taller, si da el sí | Sergio Urcullo |
-| Mié 18 | Primera clase de la comunidad, de 19:30 a 20:30 | Sergio Urcullo |
+| Mié 11 | El grupo de la clase 1 queda solo para avisos. Su gente sigue en la comunidad grande | Sergio Urcullo |
+| Jue 12 | Aviso en la comunidad grande: la preventa cierra el viernes | Sergio Urcullo manda lo aprobado |
+| Vie 13 | Primer video de YouTube. A las 23:59 cierra la preventa | Sergio Urcullo |
+| Dom 15 | Grabación. Preparar la primera clase de miembros | Sergio Urcullo |
+| **Semana 3: arranca el grupo de miembros** | | |
+| Lun 16 | Bienvenida y primera plantilla | Agente arma, Sergio Urcullo aprueba |
+| Mar 17, jue 19 y sáb 21 | Serie, si da el sí | Sergio Urcullo |
+| Mié 18 | Primera clase de miembros, de 19:30 a 20:20 | Sergio Urcullo |
 | Vie 20 | Segundo video de YouTube | Sergio Urcullo |
 | **Semana 4: los 3 por día** | | |
 | Lun 23 | Clase abierta gratis en YouTube Live, de 19:30 a 20:15 | Sergio Urcullo |
-| Mar 24, jue 26 y sáb 28 | Cuarto taller, si da el sí | Sergio Urcullo |
-| Mié 25 | Clase de la comunidad | Sergio Urcullo |
+| Mar 24, jue 26 y sáb 28 | Serie, si da el sí | Sergio Urcullo |
+| Mié 25 | Clase de miembros | Sergio Urcullo |
 | Vie 27 | Tercer video de YouTube | Sergio Urcullo |
 | Sáb 28 | Ofrecer sesiones 1 a 1 a los miembros, a Bs 250. Pedirle a un negocio el primer "voy a un negocio" | Agente redacta, Sergio Urcullo aprueba y manda |
-| Dom 29 | Los números del mes (ver abajo) y qué sigue | Agente arma, Sergio Urcullo decide |
+| Dom 29 | Los números del mes (ver abajo) y qué sigue, incluido el grupo de miembros si eligió "todavía no" | Agente arma, Sergio Urcullo decide |
 
 ## 9. Cómo se mide
 
-| Escalón | Qué se cuenta | Dónde |
+| Paso | Qué se cuenta | Dónde |
 |---|---|---|
 | Contenido | Seguidores nuevos por red, comentarios con palabra clave y guías enviadas | Cada red |
 | Clase abierta | Personas en vivo y vistas de la grabación | YouTube |
-| Taller | Chats, inscriptos que pagaron, asistentes y grabaciones vendidas | WhatsApp con etiquetas y la planilla (PR #41) |
-| Comunidad | Miembros que pagaron, y cuántos asistentes del taller entraron | La planilla de cobros |
+| Taller | Chats, inscriptos que pagaron por clase, series completas y asistentes | WhatsApp con etiquetas y la planilla (PR #41) |
+| Comunidad grande | Miembros, cuántos entran por clase y cuántos salen cada semana | La comunidad de WhatsApp |
+| Grupo de miembros | Miembros que pagaron, y cuántos asistentes del taller entraron | La planilla de cobros |
 | Llamadas e implementación | Diagnósticos, sesiones e implementaciones vendidas | La planilla de cobros |
 | Todo | Caja neta del mes: cobros menos anuncios y herramientas | La planilla de cobros |
 
 **Supuestos a medir, porque no hay datos propios:**
-- **Del taller a la comunidad:** entre el 10% y el 20% de los asistentes. Es un supuesto: los referentes no publican esa cifra. Como pista, Erik Taveras tiene 3.056 personas en su comunidad gratis y 126 en la paga, un 4% ([ficha](referentes/erik-taveras.md)). Quien pagó el taller ya compró una vez, así que debería pasar más.
-- **Cuánta caja hace falta:** el piso son los US$120 por mes de Claude y Codex del plan de arranque (`plataforma/2026-10-28-seguir-con-onia-platform.md`), más Zoom Pro, US$16,99. Son US$136,99, unos Bs 1.660. No cuenta el VPS ni Higgsfield, que no tienen monto en el repo. El plan de Claude baja a Max 5x, US$100 por mes (#30).
+- **Del taller al grupo de miembros:** entre el 10% y el 20% de los asistentes. Es un supuesto: los referentes no publican esa cifra. Como pista, Erik Taveras tiene 3.056 personas en su comunidad gratis y 126 en la paga, un 4% ([ficha](referentes/erik-taveras.md)). Quien pagó una clase ya compró una vez, así que debería pasar más.
+- **Cuánta caja hace falta:** el piso son los US$120 por mes de Claude y Codex, unos Bs 1.454 (ver "Enseñar y el producto"). El plan de Claude baja a Max 5x, US$100 por mes (#30).
 
-  | Cómo se llega a Bs 1.660 por mes | |
+  | Cómo se llega a Bs 1.454 por mes | |
   |---|---|
-  | Solo comunidad | 22 miembros a Bs 79 |
+  | Solo grupo de miembros | 19 miembros a Bs 79 |
   | Solo sesiones 1 a 1 | 5 sesiones a Bs 350 |
   | Solo implementación | 1 implementación a Bs 2.500 |
 
-  La comunidad da ingreso todos los meses, pero tarda en llegar. Las sesiones y las implementaciones traen caja antes.
+  El grupo de miembros da ingreso todos los meses, pero tarda en llegar. Las sesiones y las implementaciones traen caja antes.
 
 ## 10. Lo que tiene que hacer Sergio Urcullo
 
-1. Contestar las decisiones de abajo.
-2. Grabar en las tandas, y dar las clases y las sesiones.
-3. Aprobar con captura todo lo que sale: guiones, guías y mensajes.
-4. Confirmar cada pago en su banco.
-5. Contar el punto de partida: cuántos seguidores tiene hoy en cada red y si tiene Instagram profesional.
+1. Contestar las decisiones de abajo, y la 9 antes del lunes 2.
+2. Pasar los datos que faltan:
+   - de su comunidad de WhatsApp: desde qué número la creó, cuántos miembros tiene y cómo se llama;
+   - cuántos seguidores tiene hoy en cada red, y si tiene Instagram profesional.
+3. Crear los grupos de cada clase en su comunidad.
+4. Grabar en las tandas, y dar las clases y las sesiones.
+5. Aprobar con captura todo lo que sale: guiones, guías y mensajes.
+6. Confirmar cada pago en su banco.
 
 ## Decisiones para Sergio Urcullo
 
@@ -477,23 +514,23 @@ Tres opciones por decisión, con la recomendada marcada. Su respuesta se cita co
 1. **¿De qué habla?**
    - **IA práctica para el trabajo y el negocio: Claude en el trabajo, la IA en negocios bolivianos y detrás de escena (recomendada).**
    - Solo Claude para el trabajo, como Enrique Rocha. ONIA Platform queda afuera de la marca personal.
-   - Solo IA para dueños de negocio. Queda más cerca de ONIA Platform, pero el taller de Bs 50 es para todo público.
+   - Solo IA para dueños de negocio. Queda más cerca de ONIA Platform, pero el taller es para todo público.
 2. **¿Cómo llega a 3 videos por día?**
-   - **De a poco: 1 por día las dos primeras semanas, 2 la tercera y 3 la cuarta, con YouTube semanal desde la segunda (recomendada).** De unas 8 a unas 22 horas por semana solo de contenido.
-   - 3 por día y YouTube semanal desde el primer día: unas 22 horas por semana de contenido, en la misma semana de las 9 horas de clase del primer taller.
-   - Quedarse en 1 por día, con YouTube cada dos semanas: unas 11 horas por semana.
-3. **¿Qué pasa al final del taller?**
-   - **Las dos cosas: el grupo gratis de avisos y una comunidad paga aparte, en WhatsApp, con clases por Zoom y cobro por QR, en preventa desde la primera clase (recomendada).**
-   - La comunidad paga en Skool Hobby: US$9 por mes, 10% y US$0,30 por cobro, y los miembros pagan en dólares con tarjeta.
-   - Solo el grupo gratis por ahora, como recomiendan la decisión 8 del PR #41 y la 9 del mapa. La paga, con 50 miembros activos.
-4. **¿Cuánto cuesta la comunidad?**
+   - **De a poco: 1 por día las dos primeras semanas, 2 la tercera y 3 la cuarta, con YouTube semanal desde la segunda (recomendada).** De unas 9 a unas 24 horas por semana solo de contenido.
+   - 3 por día y YouTube semanal desde el primer día: unas 24 horas por semana de contenido, en la misma semana de la primera serie.
+   - Quedarse en 1 por día, con YouTube cada dos semanas: unas 11,5 horas por semana.
+3. **¿Además de la comunidad grande gratis, abre un grupo pago?**
+   - **Sí: un grupo de miembros dentro de su comunidad de WhatsApp, con clase semanal por Meet y cobro por QR, en preventa desde la primera clase (recomendada).**
+   - Sí, pero en Skool Hobby: US$9 por mes, 10% y US$0,30 por cobro, y los miembros pagan en dólares con tarjeta.
+   - Todavía no: solo la comunidad grande, y se decide de nuevo el 29-nov con los números del mes.
+4. **¿Cuánto cuesta el grupo de miembros?**
    - **Bs 99 por mes, y Bs 79 para los primeros 30 de la preventa (recomendada).**
    - Bs 49 por mes: se vende más fácil, pero hacen falta el doble de miembros para lo mismo.
    - Bs 149 por mes: más margen, más difícil para público general.
 5. **¿Clases gratis?**
    - **Una clase abierta por mes, de 45 minutos, en YouTube Live (recomendada).**
    - Una por semana: trae más gente, pero suma unas 4,5 horas más por mes.
-   - Ninguna por ahora: lo gratis son los videos.
+   - Ninguna por ahora: lo gratis son los videos y la comunidad grande.
 6. **¿Las llamadas, gratis o pagas?**
    - **Diagnóstico gratis de 20 minutos solo para negocios que quieren la implementación, y la sesión 1 a 1 paga (recomendada).**
    - Todo pago, también el diagnóstico, como Erik Taveras, que cobra US$75 el suyo de 15 minutos.
@@ -506,18 +543,21 @@ Tres opciones por decisión, con la recomendada marcada. Su respuesta se cita co
    - **Las dos, en orden: enseñar en noviembre y diciembre, la prueba con clínicas después del primer taller, y comparar con números el 31-ene-2027 (recomendada).**
    - Las dos a la vez desde ya: la prueba con clínicas antes del 30-nov, como dice la decisión de la plataforma.
    - Solo enseñar hasta tener audiencia; la plataforma espera.
+9. **¿Devolución y factura del grupo de miembros?** Es legal, y va antes de cobrar la preventa.
+   - **Informal, como el taller, y se devuelve el primer pago a quien lo pida en sus primeros 7 días (recomendada).** Desde cuándo se factura se ve con el contador. La garantía se parece a la de 14 días de Erik Taveras en Skool ([ficha](referentes/erik-taveras.md)).
+   - Con factura desde el primer pago, y la misma devolución.
+   - Informal y sin devolución: se puede pausar un mes.
 
 ## Lo que queda para después
 
-- **El nombre de la comunidad.** Lo ve el cliente. El taller no usa el logo de Claude ni da a entender que es un curso oficial de Anthropic (PR #41, "Mensaje"). Lo mismo vale para la comunidad, y conviene que su nombre no lleve "Claude".
-- **La devolución de la comunidad y de las sesiones,** por ejemplo devolver el primer mes si no sirvió, como la garantía de 14 días de Erik Taveras en Skool ([ficha](referentes/erik-taveras.md)). Es legal: la decide Sergio Urcullo.
-- **La factura de la comunidad, las sesiones y la implementación.** Se ve con el contador. Es legal.
-- **Los textos de permiso:** para los avisos, para usar testimonios y para grabar en un negocio. Son legales.
-- **El mapa de operación:** si elige la comunidad paga, su decisión 9 queda vieja. Va a un issue.
+- **El nombre del grupo de miembros.** Lo ve el cliente. El taller no usa el logo de Claude ni da a entender que es un curso oficial de Anthropic (PR #41, "Mensaje"). Lo mismo vale para el grupo, y conviene que su nombre no lleve "Claude".
+- **Los textos de permiso para usar testimonios y para grabar en un negocio.** Son legales.
+- **El mapa de operación:** si elige el grupo pago, su fila "Comunidad después del taller" se pone al día por un issue.
 
 ## Límites de este plan
 
 - **No hay datos propios.** Las conversiones y las horas son supuestos o estimaciones; se corrigen con los números del 29-nov.
-- **El precio de la comunidad no se probó en Bolivia.** No se encontró una comunidad paga de IA en Bolivia para comparar.
+- **El precio del grupo de miembros no se probó en Bolivia.** No se encontró una comunidad paga de IA en Bolivia para comparar.
+- **Lo que decidió Sergio Urcullo en la sesión del #6** llega con sus palabras, pero todavía no está en el PR #41. Si ese PR lo escribe distinto, vale el PR.
 - **Los datos de Instagram y TikTok** de los referentes son los de sus fichas, que no pudieron ver los reels sin iniciar sesión.
 - **Lo legal** se cita de normas públicas, sin la opinión de un abogado.
