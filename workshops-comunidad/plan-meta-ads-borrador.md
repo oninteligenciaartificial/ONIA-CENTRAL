@@ -16,7 +16,7 @@ Lo eligió el 29-oct-2026. Estas son sus palabras:
 - **Para qué:** "ahora mismo armemos para tener caja al menos hasta en 7 dias, claude se vence el 3 de noviembre, y codex el 14", y "primero armemos el primer workshop low ticket, pero que sea escalable para luego seguir lanzando las otras cosas".
 - **Estructura:** "3 clases distintas", es decir, una serie por semana, a Bs 50 cada clase o Bs 120 las tres.
 - **Fechas:** martes 3, jueves 5 y sábado 7 de noviembre, con 95 cupos por clase.
-- **Desde el miércoles 4:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del #6 (sin enlace). Desde el 4 se ofrecen la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Los Bs 70 para completar la serie siguen en "Lo que falta".
+- **Desde el miércoles 4:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del [issue #6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6), la de este plan (sin enlace a la sesión). Desde el 4 se ofrecen la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Los Bs 70 para completar la serie siguen en "Lo que falta".
 - **Duración:** "que la primera sea larga para introducir y que haya preguntas y demás, pero las demás, digamos que sea máximo una hora y media de clase". La primera dura "2 horas".
 - **Grabación:** "Incluida en los Bs 50".
 - **Sala:** "Algo free, puede ser meet y de que se venza lo abrimos el nuevo link".
