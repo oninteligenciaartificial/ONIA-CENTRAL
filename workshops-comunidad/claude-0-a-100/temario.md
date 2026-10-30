@@ -116,7 +116,7 @@ Lo tenés cuando bajaste el documento y la presentación, y después de revisarl
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
 | 9:00 | 5 | Bienvenida | Aviso de grabación. A las 9:45 cambiamos de sala. 2 o 3 cuentan en el chat el pedido que guardaron |
-| 9:05 | 20 | Conectores | Qué son y qué permiso le das. Claude pide tu OK antes de mandar o borrar algo, y lo que lee queda guardado con el chat ([ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)). Demo con Google Drive, en una cuenta de Google sin datos de clientes que tiene `mi-negocio-ejemplo.txt`: "Buscá mi documento de precios y resumilo". Gmail y Google Calendar, si la prueba los confirma. El directorio con las demás apps. **Ejercicio rápido, 5 minutos:** conectá Drive u otra app tuya y pedile algo |
+| 9:05 | 20 | Conectores | Qué son y qué permiso le das. Claude pide tu OK antes de mandar o borrar algo, y lo que lee queda guardado con el chat ([ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)). Demo con Google Drive, en una cuenta de Google sin datos de clientes que tiene en Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt`: "Buscá mi documento de precios y resumilo". Gmail y Google Calendar, si la prueba los confirma. El directorio con las demás apps. **Ejercicio rápido, 5 minutos:** conectá Drive u otra app tuya y pedile algo |
 | 9:25 | 15 | Pedidos que se reusan | Tres lugares: las instrucciones de un proyecto; tus preferencias, que Claude lee en todos los chats; y tu "recetario" de pedidos en un documento. Demo: "Convertí lo que hicimos en un pedido que pueda pegar la próxima vez" |
 | 9:40 | 5 | Preguntas y aviso de sala | — |
 | 9:45 | 5 | Cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
@@ -181,7 +181,7 @@ Para cada punto, anotá si anduvo y cómo se llama el menú en español. Si algo
 - [ ] Las skills que ya vienen: ¿están en Customize > Skills?
 
 **Clase 3:**
-- [ ] Conectar Google Drive, Gmail y Google Calendar con una cuenta de Google sin datos de clientes, que tenga en su Drive `mi-negocio-ejemplo.txt` como documento de precios. ¿Entran los tres en el plan gratis? ¿Encuentra el documento?
+- [ ] Conectar Google Drive, Gmail y Google Calendar con una cuenta de Google sin datos de clientes, que tenga en su Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt` ([lista](lista-jueves-viernes.md), paso 7). ¿Entran los tres en el plan gratis? ¿Encuentra el documento?
 - [ ] Pedirle a Claude la skill en .zip, subirla y probarla en un chat nuevo.
 - [ ] Guardar algo en las preferencias.
 

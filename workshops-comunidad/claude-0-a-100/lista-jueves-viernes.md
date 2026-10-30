@@ -14,8 +14,9 @@ Los pasos de cada servicio salen de su ayuda oficial, leída el 29-oct-2026. Los
 
 1. Comprá un chip nuevo de Entel, Tigo o Viva. Es un gasto chico y lo hacés vos.
 2. Elegí en qué celular va:
-   - WhatsApp y WhatsApp Business andan a la vez en el mismo celular, cada app con su número. Para eso el celular necesita doble SIM o eSIM ([ayuda de WhatsApp](https://faq.whatsapp.com/665643701880397/?locale=es_LA&cms_platform=android)).
-   - Si tu número de hoy ya está en WhatsApp Business, el nuevo va en otro celular: WhatsApp Business no deja agregar una segunda cuenta (misma ayuda).
+   - WhatsApp y WhatsApp Business andan a la vez en el mismo celular, cada app con su número ([ayuda de WhatsApp](https://faq.whatsapp.com/665643701880397/?locale=es_LA&cms_platform=android)).
+   - Lo fácil es un celular con doble SIM o eSIM, así el chip nuevo va al lado del tuyo. Si no tiene, usá otro celular. Que haga falta está sin confirmar: esa ayuda no lo dice.
+   - Si tu número de hoy ya está en WhatsApp Business, usá otro celular para el nuevo. Si Business deja dos cuentas en la misma app está sin confirmar.
 3. Instalá WhatsApp Business, de Meta, desde la tienda del celular.
 4. Registrá el número: elegí Bolivia, escribí el número sin ceros adelante y esperá el código de 6 dígitos por SMS, o tocá "Llámame". Puede tardar hasta 10 minutos; no lo adivines, porque bloquea un rato ([ayuda de WhatsApp](https://faq.whatsapp.com/1344487902959714/?locale=es_LA&cms_platform=android)).
 5. Perfil de empresa:
@@ -92,7 +93,7 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    ```
 
 7. Subí la prueba a YouTube y ponela como **no listado**: YouTube Studio > Contenido > Visibilidad > No listado > Guardar ([ayuda de YouTube](https://support.google.com/youtube/answer/157177?hl=es-419)). Abrí el enlace en una ventana privada: tiene que verse solo Claude y oírse tu voz.
-8. **Prueba larga:** cuando no estés en la compu, grabá el mismo rectángulo 55 minutos, con una ventana quieta. ¿Se guardó entero? Mirá cuánto pesa con el comando del paso 5: por dos, es lo que pesaría la clase 1.
+8. **Prueba larga:** cuando no estés en la compu, grabá el mismo rectángulo 55 minutos, con una ventana quieta. ¿Se guardó entero? Mirá cuánto pesa con el comando del paso 5: por dos y medio, es lo que pesaría la clase 1, que se graba de 18:50 a 21:00.
    - En clase se graba una toma por sala, de menos de una hora ([temario](temario.md)), porque no está probado que Recortes aguante 2 horas seguidas.
    - Lo que va a pesar está sin confirmar. Tus grabaciones de agosto a octubre duran de 9 a 103 segundos y pesan de 0,6 a 1 MB por segundo, unos 2 a 3,7 GB por hora. Grabando solo la ventana de Claude debería pesar menos.
 9. Creá la carpeta de las grabaciones y los videos en E:, y mové ahí las dos pruebas:
@@ -130,14 +131,15 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    ```
 
 3. Creá una cuenta gratis con otro correo, no el de tu plan pago.
-4. Seguí la lista "Qué probar el jueves 29 con una cuenta gratis", al final del [temario](temario.md).
-5. Mandale a un agente la lista marcada y las capturas, sin datos personales.
+4. Para la clase 3 hace falta una cuenta de Google sin datos de clientes: usá una de prueba o creala vos. En su Drive, Nuevo > Documentos de Google: ponele de nombre "Precios de la panadería" y pegá el texto de `mi-negocio-ejemplo.txt`. Según la ayuda de Claude, la búsqueda en Drive trae documentos de Google ([ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)): un .txt puede no aparecer.
+5. Seguí la lista "Qué probar el jueves 29 con una cuenta gratis", al final del [temario](temario.md).
+6. Mandale a un agente la lista marcada y las capturas, sin datos personales.
 
 **Listo cuando:** la lista está marcada. El agente corrige el temario y dice si el anuncio puede decir "con la cuenta gratis".
 
 ### 8. Claude, al plan de US$100
 
-Ya lo decidiste en el [issue #30](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/30): la bajada se programa en claude.ai antes de que se renueve, el martes 3 (plan, "Lo que decidió Sergio Urcullo").
+Ya lo decidiste en el [issue #30 (pagos de noviembre)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/30): la bajada se programa en claude.ai antes de que se renueve, el martes 3 (plan, "Lo que decidió Sergio Urcullo").
 
 ## Viernes 30
 
@@ -163,8 +165,9 @@ Uno por clase, con aprobación para entrar, como propone el [PR #66 (plan de mar
 
 - Los grupos de una comunidad se crean desde el número dueño de la comunidad, y una comunidad no se puede crear desde WhatsApp Business ([ayuda de WhatsApp](https://faq.whatsapp.com/438859978317289)).
 - Sumá el número de closer como administrador de cada grupo: de ahí salen el recordatorio, "/sala" y la grabación.
+- Los 3 de la segunda edición se crean igual el miércoles 4 ([whatsapp.md](whatsapp.md), "Los cambios del martes 3 y del miércoles 4").
 
-**Listo cuando:** los 3 grupos existen, el número de closer es administrador en cada uno y tenés sus enlaces.
+**Listo cuando:** los 3 grupos de esta semana existen, el número de closer es administrador en cada uno y tenés sus enlaces.
 
 ### 12. Cargar WhatsApp Business
 
@@ -185,7 +188,7 @@ En el celular del número de closer, con los textos aprobados de [whatsapp.md](w
 1. Si dijiste que sí en la pregunta 3, un agente la carga con el conector de Meta como borrador, sin gastar ([anuncio.md](anuncio.md)), con los frenos de "Sesión con frenos" ([issue #55 (campañas de Meta en pausa con tope)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55#issuecomment-6527845355)).
 2. En el borrador, desde el Administrador de anuncios, escribís la plantilla de mensaje de cada anuncio: el saludo y la pregunta sugerida de [anuncio.md](anuncio.md). El conector no la carga.
 3. Revisás la vista previa de los dos anuncios con captura.
-4. Si das el sí, se publica. Meta la revisa, la mayoría en menos de 24 horas, y no arranca antes de la fecha de inicio, el sábado 31 ([ayuda de Meta](https://es-la.facebook.com/business/help/204798856225114)).
+4. Si das el sí, la publicás vos desde el Administrador de anuncios: la sesión que la cargó no puede activarla. Meta la revisa, la mayoría en menos de 24 horas, y no arranca antes de la fecha de inicio, el sábado 31 ([ayuda de Meta](https://es-la.facebook.com/business/help/204798856225114)).
 
 **Listo cuando:** la campaña está aprobada por vos con captura y programada para el sábado 31.
 

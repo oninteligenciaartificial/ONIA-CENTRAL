@@ -90,6 +90,8 @@ Esta sí lleva fechas, porque la publica Sergio Urcullo y la puede borrar. Va en
 
 Si Sergio Urcullo da el sí, un agente la carga con el conector de Meta y le pasa la vista previa para que la revise con captura. Antes tienen que estar la página con su nombre conectada al WhatsApp de closer, la tarjeta en "ONIA Ads" y los 2 videos aprobados ([lista del jueves y el viernes](lista-jueves-viernes.md)).
 
+**Con qué frenos se carga:** "Sesión con frenos (Recomendado)", como eligió Sergio Urcullo el 30-oct para el [issue #55 (campañas de Meta en pausa con tope)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55#issuecomment-6527845355). La carga una sesión de la app de Claude que pregunta antes de cada herramienta y tiene bloqueadas `ads_activate_entity`, `ads_update_entity` y `ads_boost_ig_post`. Después de cada creación comprueba con `ads_get_ad_entities` que el estado sea `PAUSED` o `DRAFT`, y si no lo es, frena. La tarjeta y el límite de gasto los pone Sergio Urcullo antes.
+
 Estado de "ONIA Ads" al 29-oct-2026, según el conector de Meta (`ads_get_ad_accounts` y `ads_get_user_pages`): la cuenta está activa, en dólares y sin método de pago, y la única página disponible es "Onia".
 
 **Cómo la carga el conector,** según la descripción de sus herramientas, leída el 29-oct-2026:
@@ -105,6 +107,6 @@ Estado de "ONIA Ads" al 29-oct-2026, según el conector de Meta (`ads_get_ad_acc
 | Anuncios | Dos: "Video 1 · contraste" y "Video 2 · demo". Los dos con el texto principal y el título de arriba, y el botón que abre WhatsApp. La plantilla la escribe Sergio Urcullo |
 | Tope | Pregunta abierta: US$70 es la recomendada |
 
-**Para activarla:** Sergio Urcullo ve la vista previa de los dos anuncios con captura y da el sí. Recién ahí se publica, por él o por el agente con su sí. Meta revisa la mayoría de los anuncios en 24 horas y, si están programados, arrancan en la fecha de inicio ([ayuda de Meta](https://www.facebook.com/business/help/204798856225114)).
+**Para activarla:** Sergio Urcullo ve la vista previa de los dos anuncios con captura y da el sí. Recién ahí la publica él, desde el Administrador de anuncios: la sesión que la cargó no puede activarla. Meta revisa la mayoría de los anuncios en 24 horas y, si están programados, arrancan en la fecha de inicio ([ayuda de Meta](https://www.facebook.com/business/help/204798856225114)).
 
-**Después:** las reglas del plan, en "Cuándo se pausa o se sigue". El día 3 se pausa el video que trae menos conversaciones por dólar, y seguir después del viernes 6 vuelve a pedir su sí.
+**Después:** las reglas del plan, en "Cuándo se pausa o se sigue". El día 3 de anuncios, el lunes 2, se pausa el video que trae menos conversaciones por dólar, y seguir después del viernes 6 vuelve a pedir su sí.

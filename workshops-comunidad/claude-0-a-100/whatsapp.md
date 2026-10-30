@@ -5,8 +5,8 @@
 **Estado: borrador.** Son mensajes a clientes: los aprueba Sergio Urcullo con captura, y los carga él en la app del número de closer. Nada sale antes de su sí.
 
 Cada texto va en dos versiones:
-- **A, esta semana:** del viernes 30 al martes 3, hasta que termina la clase 1.
-- **B, desde el miércoles 4:** con lo que eligió Sergio Urcullo el 29-oct-2026, "2ª edición y sueltas": la segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana, sueltas.
+- **A, esta semana:** del viernes 30 al martes 3. Al terminar la clase 1, se le sacan la clase 1 y la serie, y se suman los Bs 70 (abajo, en "Los cambios del martes 3 y del miércoles 4").
+- **B, desde el miércoles 4:** con lo que eligió Sergio Urcullo el 29-oct-2026 ([README](README.md), "Lo que ya decidió"), "2ª edición y sueltas": la segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana, sueltas.
 
 Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al cargar el texto o al mandarlo. Lo que va entre llaves con texto, como `{ gratis}`, entra solo si la prueba del jueves 29 sale bien con una cuenta gratis ([temario](temario.md), al final), igual que en el anuncio. Si no, se borra.
 
@@ -22,12 +22,12 @@ Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al
 1. La persona toca el botón del anuncio y la pregunta sugerida, "Hola, quiero info del taller de Claude" ([anuncio.md](anuncio.md)). Le sale la bienvenida automática.
 2. Se le manda "/taller".
 3. Cuando elige, "/qr".
-4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen las etiquetas.
+4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen "Pagó", la de su clase y, si pagó las tres, "Combo".
 5. El día de la clase va el recordatorio al grupo. A quien no está en el grupo, por chat.
 
 ## Etiquetas
 
-Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más:
+Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más. Quien completa la serie con los Bs 70 también lleva "Combo": con la clase 1, pagó las tres por Bs 120.
 - **"Clase 1", "Clase 2" y "Clase 3":** para saber a qué grupo aprobar y a quién recordarle.
 - **"Acepta mensajes":** para quien respondió SÍ a la pregunta de permiso. A quién se le escribe uno a uno con una oferta lo decide Sergio Urcullo ([README](README.md), pregunta 5): el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66) propone que sea solo a quien tiene esta etiqueta, y el plan del taller dice que "Pagó" sirve "para avisarle de la próxima edición".
 
@@ -104,6 +104,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 Cuando una clase llega a 95, se borra de "/taller" y se escribe "sin cupo" al lado.
 
 **Después de cada clase, se saca de "/taller" y de "/qr" todo lo que la ofrece,** para que nadie pague algo que ya pasó:
+- el martes 3, al terminar la clase 1: la clase 1 y la serie, como dice "Los cambios del martes 3 y del miércoles 4";
 - el jueves 5, antes de abrir la sala de la clase 2: la línea de completar la serie, en "/taller" y en "/qr";
 - el jueves 5 a las 20:30: la clase 2 de esta semana;
 - el sábado 7 a las 10:30: toda la parte "Y esta semana, sueltas";
@@ -161,13 +162,13 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 | /pagadojue5 | Clase 2 | Trabajo armado · jueves 5, de 19:00 a 20:30 | A y B |
 | /pagadosab7 | Clase 3 | Conectá Claude a lo que usás · sábado 7, de 9:00 a 10:30 | A y B |
 | /pagadoserie1 | Las tres, Bs 120 | Martes 3, jueves 5 y sábado 7 | A |
-| /pagadocompleta | Clases 2 y 3, Bs 70 | Jueves 5 y sábado 7 | B |
+| /pagadocompleta | Clases 2 y 3, Bs 70 | Jueves 5 y sábado 7 | A, desde el final de la clase 1, y B |
 | /pagadomar10 | Clase 1 | Claude desde cero · martes 10, de 19:00 a 21:00 | B |
 | /pagadojue12 | Clase 2 | Trabajo armado · jueves 12, de 19:00 a 20:30 | B |
 | /pagadosab14 | Clase 3 | Conectá Claude a lo que usás · sábado 14, de 9:00 a 10:30 | B |
 | /pagadoserie2 | Las tres, Bs 120 | Martes 10, jueves 12 y sábado 14 | B |
 
-El miércoles 4 se borran /pagadomar3 y /pagadoserie1 y se cargan los de la B. Después de cada clase, se borra el suyo.
+Después de cada clase, se borra su /pagado.
 
 **Si los grupos van dentro de su comunidad de WhatsApp** (lo decide el [issue #65 (marca personal y comunidad)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65)), la confirmación suma este párrafo, que es el del [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66). Si allá cambia, se cambia acá:
 > El grupo de tu clase está dentro de mi comunidad de WhatsApp. Al entrar, recibís sus avisos: una guía por semana y las clases nuevas. Los podés silenciar. En el grupo de tu clase, los demás ven tu número. Si preferís no estar en la comunidad, avisame y te mando el enlace de la clase y la grabación por acá.
@@ -178,6 +179,18 @@ Va en un mensaje aparte, justo después de la confirmación. Es el texto del [PR
 > ¿Querés que te escriba por WhatsApp cuando haya una clase o una oferta nueva? Respondé SÍ.
 
 A quien responde SÍ se le pone "Acepta mensajes". Cada mensaje con una oferta cierra con "Si no querés más mensajes, respondé NO y no te escribo más", y a quien responde NO se le saca la etiqueta.
+
+## Los cambios del martes 3 y del miércoles 4
+
+**El martes 3, al terminar la clase 1,** desde el celular:
+1. En la bienvenida A, el 📅 pasa a "📅 Esta semana quedan la clase 2, el jueves 5, y la clase 3, el sábado 7.", y el 💵, a "💵 Bs 50 cada clase, con la grabación incluida."
+2. En "/taller" A se borran la clase 1 (el 1️⃣) y "o Bs 120 las tres". Debajo del 💵 va la línea 🔁 de los Bs 70 de "/taller" B, y la pregunta del final queda "¿Qué clase querés? Te paso el QR."
+3. En "/qr" A, "Una clase: Bs 50 · Las tres: Bs 120" pasa a "Una clase: Bs 50", y debajo va la línea de completar la serie de "/qr" B.
+4. Se borran /pagadomar3 y /pagadoserie1, y se carga /pagadocompleta.
+
+**El miércoles 4,** para pasar a la B:
+1. Se crean los 3 grupos de la segunda edición, igual que los de esta semana ([lista](lista-jueves-viernes.md), paso 11). Sus enlaces van en /pagadomar10, /pagadojue12, /pagadosab14 y /pagadoserie2.
+2. La bienvenida, "/taller" y "/qr" se cambian por la B, y se cargan los /pagado de la segunda edición.
 
 ## El recordatorio con el enlace de Meet
 
@@ -215,7 +228,7 @@ Va al grupo apenas la grabación está en YouTube.
 > 💬 Si te sirvió, contame en una frase qué armaste. Y si me dejás compartir tu frase con tu nombre de pila, avisame.
 
 Después de las clases 1 y 2 suma una línea con la clase que sigue:
-- **Después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés: Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2. Escribime por privado."
+- **Después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2. Escribime por privado."
 - **Después de la clase 1 del martes 10:** "La clase 2 es el jueves 12, de 19:00 a 20:30. Si todavía no la tenés, escribime por privado."
 - **Después de la clase 2:** "La clase 3 es el sábado {7 o 14}, de 9:00 a 10:30. Si todavía no la tenés, escribime por privado."
 
