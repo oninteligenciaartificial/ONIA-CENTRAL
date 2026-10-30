@@ -1,6 +1,6 @@
 # Claude de 0 a 100: guiones, texto del anuncio y campaña
 
-29-oct-2026, por Claude Code. Sale de las secciones "Mensaje", "Creativos con su cara" y "Estructura de la campaña" del [plan del taller](../plan-meta-ads-borrador.md) (PR #41), y de la [guía de anuncios](../../marca-personal/guias/anuncios.md).
+29-oct-2026, por Claude Code. Sale de las secciones "Mensaje", "Creativos con su cara" y "Estructura de la campaña" del [plan del taller](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41), y de la [guía de anuncios](../../marca-personal/guias/anuncios.md).
 
 **Estado: borrador.** Lo ve un cliente: lo aprueba Sergio Urcullo antes de grabar y antes de publicar. La campaña se carga en pausa y no se activa sin su sí con captura, porque es gasto.
 
@@ -21,7 +21,7 @@ Vertical 9:16, unos 35 segundos, Sergio Urcullo a cámara.
 
 ## Video 2: la demo
 
-Vertical 9:16, unos 35 segundos. La demo se graba con el grabador de pantalla del celular, en la app de Claude, así ya sale vertical.
+Vertical 9:16, unos 35 segundos. La demo se graba con el grabador de pantalla del celular, en la app de Claude, así ya sale vertical. Se graba con la cuenta gratis de prueba, sin el correo ni un plan pago a la vista, y con el celular en "No molestar".
 
 | Segundos | Qué se ve | Qué dice | Texto en pantalla |
 |---|---|---|---|
@@ -33,7 +33,7 @@ Vertical 9:16, unos 35 segundos. La demo se graba con el grabador de pantalla de
 
 > Te paso las ventas de octubre de mi panadería. 1) Resumime en 3 líneas cómo nos fue. 2) Armame una tabla con lo que vendió cada producto en el mes. 3) Escribime un mensaje corto de WhatsApp para mi equipo con los resultados.
 
-Antes de usar la toma, se revisa que la respuesta tenga bien las cifras: Bs 17.766 en el mes, y la salteña primera en plata, con Bs 5.180 ([temario](temario.md), clase 1).
+Antes de usar la toma, se revisa que la respuesta tenga bien las cifras: Bs 17.766 del 1 al 28 de octubre, y la salteña primera en plata, con Bs 5.180 ([temario](temario.md), clase 1).
 
 ## Cómo grabarlos
 

@@ -23,7 +23,7 @@ Los pasos de cada servicio salen de su ayuda oficial, leída el 29-oct-2026. Los
    - categoría: Educación;
    - descripción: "Talleres de IA en vivo. Claude de 0 a 100.";
    - foto: tu cara, la misma de la página.
-6. Abrilo también en la compu, para pegar los textos desde ahí:
+6. Abrilo también en la compu, para pegar los textos desde ahí. Durante las clases, WhatsApp Web va cerrado, porque la grabación lo podría tomar:
 
    ```powershell
    Start-Process 'https://web.whatsapp.com'
@@ -85,7 +85,6 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    Get-ChildItem "$([Environment]::GetFolderPath('MyVideos'))\Screen Recordings" -Filter *.mp4 | Sort-Object LastWriteTime -Descending | Select-Object -First 1 Name, @{n='MB';e={[math]::Round($_.Length/1MB,1)}}, LastWriteTime | Format-List
    ```
 
-   Los MB de 3 minutos por 40 dan lo que pesa la clase 1, de 2 horas. Esas grabaciones tuyas, de pantalla completa, pesan cerca de 1 MB por segundo, unos 3,5 GB por hora: la clase 1 serían unos 7 GB. Grabando solo la ventana de Claude debería pesar menos.
 6. Mirá el espacio libre. El 29-oct había 46 GB en C: y 491 GB en E:.
 
    ```powershell
@@ -93,7 +92,10 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    ```
 
 7. Subí la prueba a YouTube y ponela como **no listado**: YouTube Studio > Contenido > Visibilidad > No listado > Guardar ([ayuda de YouTube](https://support.google.com/youtube/answer/157177?hl=es-419)). Abrí el enlace en una ventana privada: tiene que verse solo Claude y oírse tu voz.
-8. Creá la carpeta de las grabaciones y los videos en E:, y mové ahí la prueba:
+8. **Prueba larga:** cuando no estés en la compu, grabá el mismo rectángulo 55 minutos, con una ventana quieta. ¿Se guardó entero? Mirá cuánto pesa con el comando del paso 5: por dos, es lo que pesaría la clase 1.
+   - En clase se graba una toma por sala, de menos de una hora ([temario](temario.md)), porque no está probado que Recortes aguante 2 horas seguidas.
+   - Lo que va a pesar está sin confirmar. Tus grabaciones de agosto a octubre duran de 9 a 103 segundos y pesan de 0,6 a 1 MB por segundo, unos 2 a 3,7 GB por hora. Grabando solo la ventana de Claude debería pesar menos.
+9. Creá la carpeta de las grabaciones y los videos en E:, y mové ahí las dos pruebas:
 
    ```powershell
    New-Item -ItemType Directory -Force 'E:\ONIA-talleres\claude-0-a-100\anuncios', 'E:\ONIA-talleres\claude-0-a-100\clases'
@@ -103,9 +105,9 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    Get-ChildItem "$([Environment]::GetFolderPath('MyVideos'))\Screen Recordings" -Filter *.mp4 | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Move-Item -Destination 'E:\ONIA-talleres\claude-0-a-100\clases'
    ```
 
-   El segundo mueve la última grabación. Después de cada clase se usa el mismo.
+   El segundo mueve la última grabación: corrélo dos veces, una por prueba. Después de cada clase se usa el mismo, una vez por toma.
 
-**Listo cuando:** la prueba se ve bien en YouTube como no listado y sabés cuánto va a pesar la clase 1.
+**Listo cuando:** la prueba se ve bien en YouTube como no listado, la prueba larga se guardó entera y sabés cuánto va a pesar la clase 1.
 
 ### 7. La prueba del temario con una cuenta gratis
 
@@ -113,6 +115,12 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
 
    ```powershell
    $dest = Join-Path ([Environment]::GetFolderPath('Desktop')) 'taller-claude'; New-Item -ItemType Directory -Force $dest | Out-Null; Copy-Item 'C:\dev\proyectos\ONIA-CENTRAL\.claude\worktrees\unruffled-payne-010df0\workshops-comunidad\claude-0-a-100\material\*' $dest; Start-Process $dest
+   ```
+
+   Esa ruta es la de la sesión de Claude que armó esto, y existe hasta que se limpie. Después del merge, la ruta es la del repo:
+
+   ```powershell
+   $dest = Join-Path ([Environment]::GetFolderPath('Desktop')) 'taller-claude'; New-Item -ItemType Directory -Force $dest | Out-Null; Copy-Item 'C:\dev\proyectos\ONIA-CENTRAL\workshops-comunidad\claude-0-a-100\material\*' $dest; Start-Process $dest
    ```
 
 2. Abrí Claude en una ventana privada de Edge, así no se mezcla con tu cuenta paga:
@@ -135,7 +143,7 @@ Ya lo decidiste en el [issue #30](https://github.com/oninteligenciaartificial/ON
 
 ### 9. Contestar las preguntas y aprobar los textos
 
-1. Contestá las 4 preguntas de [README.md](README.md), en "Lo que falta decidir".
+1. Contestá las 5 preguntas de [README.md](README.md), en "Lo que falta decidir".
 2. Leé en el PR el temario, los textos de WhatsApp, los guiones y el texto del anuncio. Tu aprobación queda citada en un comentario del PR, con captura.
 
 **Listo cuando:** el PR tiene tu aprobación citada.
@@ -151,9 +159,12 @@ Ya lo decidiste en el [issue #30](https://github.com/oninteligenciaartificial/ON
 
 ### 11. Los grupos de cada clase
 
-Uno por clase, con aprobación para entrar, como dice el plan de marca personal (PR #66). Si van dentro de tu comunidad de WhatsApp o aparte lo decidís con el [issue #65](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65). Sus enlaces van en los "/pagado" del paso 12.
+Uno por clase, con aprobación para entrar, como propone el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66). Si van dentro de tu comunidad de WhatsApp o aparte lo decidís con el [issue #65 (marca personal y comunidad)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65). Sus enlaces van en los "/pagado" del paso 12.
 
-**Listo cuando:** los 3 grupos existen y tenés sus enlaces.
+- Los grupos de una comunidad se crean desde el número dueño de la comunidad, y una comunidad no se puede crear desde WhatsApp Business ([ayuda de WhatsApp](https://faq.whatsapp.com/438859978317289)).
+- Sumá el número de closer como administrador de cada grupo: de ahí salen el recordatorio, "/sala" y la grabación.
+
+**Listo cuando:** los 3 grupos existen, el número de closer es administrador en cada uno y tenés sus enlaces.
 
 ### 12. Cargar WhatsApp Business
 

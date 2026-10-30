@@ -1,6 +1,6 @@
 # Claude de 0 a 100: textos de WhatsApp Business
 
-29-oct-2026, por Claude Code. Sale del [plan del taller](../plan-meta-ads-borrador.md) (PR #41) y, para la comunidad y el permiso de mensajes, del plan de marca personal (PR #66).
+29-oct-2026, por Claude Code. Sale del [plan del taller](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41), y, para la comunidad y el permiso de mensajes, del [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66), que todavía no está aprobado.
 
 **Estado: borrador.** Son mensajes a clientes: los aprueba Sergio Urcullo con captura, y los carga él en la app del número de closer. Nada sale antes de su sí.
 
@@ -8,7 +8,7 @@ Cada texto va en dos versiones:
 - **A, esta semana:** del viernes 30 al martes 3, hasta que termina la clase 1.
 - **B, desde el miércoles 4:** con lo que eligió Sergio Urcullo el 29-oct-2026, "2ª edición y sueltas": la segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana, sueltas.
 
-Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al cargar el texto o al mandarlo.
+Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al cargar el texto o al mandarlo. Lo que va entre llaves con texto, como `{ gratis}`, entra solo si la prueba del jueves 29 sale bien con una cuenta gratis ([temario](temario.md), al final), igual que en el anuncio. Si no, se borra.
 
 **Los Bs 70 para completar la serie todavía no están decididos** ([README](README.md), pregunta 1). Las líneas marcadas con *(Bs 70)* entran solo si los aprueba. Si no, se borran.
 
@@ -29,7 +29,7 @@ Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al
 
 Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más:
 - **"Clase 1", "Clase 2" y "Clase 3":** para saber a qué grupo aprobar y a quién recordarle.
-- **"Acepta mensajes":** solo para quien respondió SÍ a la pregunta de permiso. "Pagó" no es un permiso para escribirle con ofertas (PR #66).
+- **"Acepta mensajes":** para quien respondió SÍ a la pregunta de permiso. A quién se le escribe uno a uno con una oferta lo decide Sergio Urcullo ([README](README.md), pregunta 5): el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66) propone que sea solo a quien tiene esta etiqueta, y el plan del taller dice que "Pagó" sirve "para avisarle de la próxima edición".
 
 Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de la app se ve una cosa o la otra ([etiquetas](https://faq.whatsapp.com/3398508707096369/?locale=es_LA&cms_platform=android) y [listas](https://faq.whatsapp.com/2861038884085362/?locale=es_LA&cms_platform=android), ayuda de WhatsApp).
 
@@ -66,7 +66,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 > 💵 Bs 50 cada clase o Bs 120 las tres.
 > 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
 > 👥 95 cupos por clase.
-> 💻 Necesitás una compu (o el celular con la app de Claude) y una cuenta gratis de Claude. No hace falta programar.
+> 💻 Necesitás una compu y una cuenta de Claude{ gratis}. No hace falta programar.
 >
 > ⚠️ No hay devolución. Si no podés conectarte, te queda la grabación. Si la clase no se puede dar por un problema nuestro, pasás a la próxima fecha.
 >
@@ -93,7 +93,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 > 🔁 ¿Hiciste la clase 1 el martes 3? Completás la serie con las clases 2 y 3 de esta semana por Bs 70. *(Bs 70)*
 > 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
 > 👥 95 cupos por clase.
-> 💻 Necesitás una compu (o el celular con la app de Claude) y una cuenta gratis de Claude. No hace falta programar.
+> 💻 Necesitás una compu y una cuenta de Claude{ gratis}. No hace falta programar.
 >
 > ⚠️ No hay devolución. Si no podés conectarte, te queda la grabación. Si la clase no se puede dar por un problema nuestro, pasás a la próxima fecha.
 >
@@ -102,6 +102,11 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 > ¿Qué clase querés, o la serie? Te paso el QR.
 
 Cuando una clase llega a 95, se borra de "/taller" y se escribe "sin cupo" al lado.
+
+**Después de cada clase, se saca de "/taller" y de "/qr" todo lo que la ofrece,** para que nadie pague algo que ya pasó:
+- el jueves 5 a las 20:30: la clase 2 de esta semana y la línea de completar la serie *(Bs 70)*;
+- el sábado 7 a las 10:30: toda la parte "Y esta semana, sueltas";
+- en la segunda edición, lo mismo: después del martes 10 ya no se ofrece la serie completa, y así con cada clase.
 
 ## /qr
 
@@ -142,8 +147,8 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 >
 > 1️⃣ Entrá al grupo de tu clase: {enlace del grupo}
 > Ahí te paso el enlace de Meet el día de la clase y, después, la grabación. En el grupo, los demás ven tu número.
-> 2️⃣ Antes de la clase, creá tu cuenta gratis en claude.ai y entrá una vez. Así no perdés tiempo ese día.
-> 3️⃣ Conviene conectarte desde una compu. Si es desde el celular, bajate la app de Claude.
+> 2️⃣ Antes de la clase, creá tu cuenta{ gratis} en claude.ai y entrá una vez. Así no perdés tiempo ese día.
+> 3️⃣ Conectate desde una compu.
 >
 > Te recuerdo que no hay devolución: si no podés conectarte, te queda la grabación. Si la clase no se puede dar por un problema nuestro, pasás a la próxima fecha.
 
@@ -163,12 +168,12 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 
 El miércoles 4 se borran /pagadomar3 y /pagadoserie1 y se cargan los de la B. Después de cada clase, se borra el suyo.
 
-**Si los grupos van dentro de su comunidad de WhatsApp** (lo decide el #65), la confirmación suma este párrafo, que es el del PR #66. Si allá cambia, se cambia acá:
+**Si los grupos van dentro de su comunidad de WhatsApp** (lo decide el [issue #65 (marca personal y comunidad)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65)), la confirmación suma este párrafo, que es el del [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66). Si allá cambia, se cambia acá:
 > El grupo de tu clase está dentro de mi comunidad de WhatsApp. Al entrar, recibís sus avisos: una guía por semana y las clases nuevas. Los podés silenciar. En el grupo de tu clase, los demás ven tu número. Si preferís no estar en la comunidad, avisame y te mando el enlace de la clase y la grabación por acá.
 
 ### La pregunta de permiso
 
-Va en un mensaje aparte, justo después de la confirmación. Es el texto del PR #66, que sale del DS 1793 (artículos 56 y 57). Es un texto legal: lo aprueba Sergio Urcullo.
+Va en un mensaje aparte, justo después de la confirmación. Es el texto del [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66), que sale del DS 1793 (artículos 56 y 57). Es un texto legal: lo aprueba Sergio Urcullo.
 > ¿Querés que te escriba por WhatsApp cuando haya una clase o una oferta nueva? Respondé SÍ.
 
 A quien responde SÍ se le pone "Acepta mensajes". Cada mensaje con una oferta cierra con "Si no querés más mensajes, respondé NO y no te escribo más", y a quien responde NO se le saca la etiqueta.
@@ -180,7 +185,7 @@ Va al grupo de la clase el mismo día, a la mañana (el viernes a la noche para 
 > 🕖 De {hora} a {hora}, hora de Bolivia.
 > 👉 Enlace de Meet: {enlace de la sala 1}. Abro la sala 10 minutos antes.
 >
-> • Entrá con el mismo nombre que pusiste al pagar: acepto solo a quienes están en la lista.
+> • Entrá con el mismo nombre que pusiste al pagar, o avisá acá con qué nombre entrás: acepto solo a quienes están en la lista.
 > • Meet gratis corta a los 60 minutos. A las {hora del cambio} te paso por acá el enlace de la sala que sigue.
 > • Tené abierta tu cuenta de Claude en otra pestaña.
 > • Se graba solo mi pantalla y mi voz. La grabación llega a este grupo después de la clase.
@@ -198,7 +203,7 @@ Para la clase del sábado, la primera línea dice "Mañana es la clase 3" en vez
 
 ### /sala: el cambio de sala
 
-Se manda al grupo en cada cambio, con el enlace pegado al final. El enlace de la sala que sigue no va antes: si entran 3 personas antes de tiempo, la sala arranca su cuenta de 60 minutos.
+Se manda al grupo en cada cambio, desde el celular, con el enlace pegado al final. Desde la compu no: la grabación está en marcha y podría tomar el chat del grupo, con nombres y números. El enlace de la sala que sigue no va antes: si entran 3 personas antes de tiempo, la sala arranca su cuenta de 60 minutos.
 > 🔁 Cambiamos de sala. Tocá este enlace y volvé a entrar 👉
 
 ## Después de la clase

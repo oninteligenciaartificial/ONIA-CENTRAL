@@ -1,6 +1,6 @@
 # Claude de 0 a 100
 
-El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, el jueves 5 y el sábado 7 de noviembre de 2026, a Bs 50 cada clase o Bs 120 las tres. El plan, con las decisiones de Sergio Urcullo, está en [`../plan-meta-ads-borrador.md`](../plan-meta-ads-borrador.md) (PR #41).
+El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, el jueves 5 y el sábado 7 de noviembre de 2026, a Bs 50 cada clase o Bs 120 las tres. El plan, con las decisiones de Sergio Urcullo, está en [`../plan-meta-ads-borrador.md`](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41).
 
 **Estado: borrador para que lo apruebe Sergio Urcullo con captura.** Todo esto lo ve un cliente. Nada se publica, se manda, se activa ni se gasta sin su sí.
 
@@ -14,7 +14,7 @@ El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, e
 
 ## Lo que ya decidió
 
-**Desde el miércoles 4 se venden la segunda edición y las clases sueltas:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del #6. Es la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Las versiones B de [`whatsapp.md`](whatsapp.md) son para esto.
+**Desde el miércoles 4 se venden la segunda edición y las clases sueltas:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del [issue #6 (referentes y workshop)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6) (sin enlace). Es la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Las versiones B de [`whatsapp.md`](whatsapp.md) son para esto.
 
 ## Lo que falta decidir
 
@@ -33,8 +33,12 @@ Las decide Sergio Urcullo. La primera opción de cada una es la recomendada.
    - No: la cargás vos a mano con [`anuncio.md`](anuncio.md).
    - Todavía no.
 4. **¿Va "Taller independiente, no oficial de Anthropic"?**
-   - **Sí, en el anuncio y en "/taller" (recomendada).** El nombre lleva la marca Claude, y lo legal lo confirmás vos (plan, "Mensaje").
+   - **Sí, en el anuncio y en "/taller" (recomendada).** El nombre lleva la marca Claude: lo legal queda a confirmar con un abogado (plan, "Mensaje").
    - Solo en "/taller".
    - En ninguno.
+5. **¿A quién le escribís uno a uno para ofrecerle la próxima clase o edición?**
+   - **Solo a quien respondió SÍ a la pregunta de permiso (recomendada).** Es lo que propone el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66), todavía sin aprobar, por el DS 1793. Es un tema legal: a confirmar con un abogado.
+   - A todos los que pagaron. El plan del taller dice que a quien paga se lo etiqueta "para avisarle de la próxima edición".
+   - A nadie uno a uno: solo en el grupo de la clase.
 
-Y un resultado: si el temario anda con una cuenta gratis, el anuncio dice "con la cuenta gratis". Sale de la prueba del jueves 29 ([`temario.md`](temario.md), al final).
+Y un resultado: si el temario anda con una cuenta gratis, el anuncio dice "con la cuenta gratis" y "/taller" dice "cuenta gratis". Sale de la prueba del jueves 29 ([`temario.md`](temario.md), al final).
