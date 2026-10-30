@@ -58,8 +58,13 @@ Sin fechas, para que no ofrezca un día que ya pasó. Las fechas van en la respu
 **Título:**
 > Claude de 0 a 100 · 3 clases en vivo
 
-**Mensaje que llega escrito al chat (la plantilla):**
-> Hola, quiero info del taller de Claude
+**La plantilla de mensaje.** Se arma en el anuncio, en "Plantilla de mensaje" > "Iniciar conversación", con un saludo y preguntas sugeridas que la persona toca para mandar ([ayuda de Meta](https://es-la.facebook.com/business/help/447934475640650)).
+- Saludo:
+  > ¡Hola! Soy Sergio Urcullo. Tocá la pregunta de abajo y te paso las fechas, el temario y los precios del taller.
+- Pregunta sugerida:
+  > Hola, quiero info del taller de Claude
+
+La ayuda de Meta habla de saludo y preguntas sugeridas, no de un texto que llega ya escrito. Cómo se ve se confirma en la vista previa.
 
 ## La publicación gratis del viernes 30
 

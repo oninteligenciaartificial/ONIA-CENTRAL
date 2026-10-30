@@ -12,27 +12,27 @@ El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, e
 | [`lista-jueves-viernes.md`](lista-jueves-viernes.md) | Lo que hace Sergio Urcullo el jueves 29 y el viernes 30, en orden |
 | [`material/`](material/) | Dos archivos de una panadería inventada, para practicar en clase y para la demo del video 2. Ningún dato es real |
 
+## Lo que ya decidió
+
+**Desde el miércoles 4 se venden la segunda edición y las clases sueltas:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del #6. Es la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Las versiones B de [`whatsapp.md`](whatsapp.md) son para esto.
+
 ## Lo que falta decidir
 
 Las decide Sergio Urcullo. La primera opción de cada una es la recomendada.
 
-1. **¿Qué se vende desde el miércoles 4?**
-   - **La segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana sueltas (recomendada).** Las versiones B de [`whatsapp.md`](whatsapp.md) están escritas para esta.
-   - El combo: Bs 120 por las clases 2 y 3 en vivo más la clase 1 grabada.
-   - Otro curso, un nivel 2. Todavía no existe.
-2. **¿Cuánto paga quien hizo la clase 1 para completar la serie?**
+1. **¿Cuánto paga quien hizo la clase 1 para completar la serie?**
    - **Bs 70: con la clase 1 suma Bs 120, lo mismo que la serie (recomendada).**
    - Bs 100, el precio de las dos clases sueltas.
    - No se ofrece: compra las clases sueltas o la segunda edición.
-3. **¿Qué tope de gasto lleva "ONIA Ads"?**
-   - **US$70, lo de los 7 días a US$10 (recomendada).**
+2. **¿Qué tope de gasto lleva "ONIA Ads"?**
+   - **US$70, lo de los 7 días a US$10 (recomendada).** Con presupuesto diario, un día puede gastar hasta el 175% del presupuesto. Si el conjunto tiene fecha de fin, el tope es el presupuesto diario por los días que quedan, más hasta un 25% ([ayuda de Meta](https://es-la.facebook.com/business/help/190490051321426)): con US$10 y 7 días, hasta unos US$87,50. El límite de gasto de la cuenta pausa los anuncios al llegar a US$70 ([ayuda de Meta](https://es-la.facebook.com/business/help/141820733085330)).
    - US$100, con margen para seguir unos días si das el sí.
    - Sin tope de cuenta, solo el presupuesto diario.
-4. **¿Se carga la campaña en pausa con el conector de Meta?**
-   - **Sí: la carga un agente en pausa y vos la revisás con captura antes de activarla (recomendada).**
+3. **¿Se carga la campaña con el conector de Meta?**
+   - **Sí: la carga un agente como borrador, sin gastar, y vos la revisás con captura antes de publicarla (recomendada).**
    - No: la cargás vos a mano con [`anuncio.md`](anuncio.md).
    - Todavía no.
-5. **¿Va "Taller independiente, no oficial de Anthropic"?**
+4. **¿Va "Taller independiente, no oficial de Anthropic"?**
    - **Sí, en el anuncio y en "/taller" (recomendada).** El nombre lleva la marca Claude, y lo legal lo confirmás vos (plan, "Mensaje").
    - Solo en "/taller".
    - En ninguno.

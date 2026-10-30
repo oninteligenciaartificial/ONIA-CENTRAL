@@ -16,6 +16,7 @@ Lo eligió el 29-oct-2026. Estas son sus palabras:
 - **Para qué:** "ahora mismo armemos para tener caja al menos hasta en 7 dias, claude se vence el 3 de noviembre, y codex el 14", y "primero armemos el primer workshop low ticket, pero que sea escalable para luego seguir lanzando las otras cosas".
 - **Estructura:** "3 clases distintas", es decir, una serie por semana, a Bs 50 cada clase o Bs 120 las tres.
 - **Fechas:** martes 3, jueves 5 y sábado 7 de noviembre, con 95 cupos por clase.
+- **Desde el miércoles 4:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del #6 (sin enlace). Desde el 4 se ofrecen la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Los Bs 70 para completar la serie siguen en "Lo que falta".
 - **Duración:** "que la primera sea larga para introducir y que haya preguntas y demás, pero las demás, digamos que sea máximo una hora y media de clase". La primera dura "2 horas".
 - **Grabación:** "Incluida en los Bs 50".
 - **Sala:** "Algo free, puede ser meet y de que se venza lo abrimos el nuevo link".
@@ -99,17 +100,19 @@ La plata entra cuando cada persona paga, antes de su clase.
 | Miércoles 4 | Cambia lo que ofrece la respuesta automática (ver "Qué se vende desde el miércoles 4") |
 | Jueves 5 | Clase 2, de 19:00 a 20:30. Balance de la semana. Si se sigue con anuncios después del viernes 6, es con el sí de Sergio Urcullo, así no quedan días sin anuncios antes de la segunda edición |
 | Sábado 7 | Clase 3, de 9:00 a 10:30 |
-| Del 9 al 14 de noviembre | Segunda edición, si se decide. A mediados de mes vencen el VPS y Codex (el 14). Higgsfield vence en noviembre: la fecha es un dato que falta |
+| Del 9 al 14 de noviembre | Segunda edición: martes 10, jueves 12 y sábado 14. A mediados de mes vencen el VPS y Codex (el 14). Higgsfield vence en noviembre: la fecha es un dato que falta |
 
 ## Qué se vende desde el miércoles 4
 
 Sergio Urcullo pidió analizarlo: "analizar para pasar a otras clases o para otro curso o como lo podemos armar".
 
+**Eligió la primera opción, "2ª edición y sueltas"** (ver "Lo que decidió Sergio Urcullo"). Abajo queda el análisis.
+
 Del miércoles 4 al viernes 6, los anuncios siguen corriendo y la clase 1 ya pasó. El texto del anuncio no tiene fechas, así que no hace falta cambiarlo. Lo que cambia es la respuesta automática.
 
 | Opción | Qué se ofrece | A favor | En contra |
 |---|---|---|---|
-| **Segunda edición y clases sueltas (recomendada)** | La serie del martes 10, el jueves 12 y el sábado 14, a Bs 50 o Bs 120. Además, las clases 2 y 3 de esta semana, sueltas | Nadie paga algo que ya pasó. Junta la caja de mediados de mes (Codex, el VPS) y repite el mismo temario, que es lo escalable | Hay que dar la serie otra vez la semana siguiente |
+| **Segunda edición y clases sueltas (recomendada y elegida)** | La serie del martes 10, el jueves 12 y el sábado 14, a Bs 50 o Bs 120. Además, las clases 2 y 3 de esta semana, sueltas | Nadie paga algo que ya pasó. Junta la caja de mediados de mes (Codex, el VPS) y repite el mismo temario, que es lo escalable | Hay que dar la serie otra vez la semana siguiente |
 | Combo con la clase 1 grabada | Bs 120 por las clases 2 y 3 en vivo más la clase 1 en grabación | Se vende ya, sin otra fecha | La clase 1, que es la de la base, se ve sin poder preguntar |
 | Otro curso | Un nivel 2 para quien hizo la serie | Más plata por persona | Todavía no existe, y armarlo lleva tiempo |
 
@@ -224,9 +227,8 @@ Son supuestos a medir: no hay datos propios de costos en Bolivia.
 ## Lo que falta
 
 Decisiones de Sergio Urcullo:
-1. **Qué se vende desde el miércoles 4:** la segunda edición con las clases sueltas (recomendada), el combo con la clase 1 grabada, u otro curso.
-2. **El precio para completar la serie** si ya hizo la clase 1: Bs 70.
-3. **Los guiones, el texto, el temario y los mensajes:** los ve antes de grabar y de publicar.
+1. **El precio para completar la serie** si ya hizo la clase 1: Bs 70 (recomendada). Las opciones están en `claude-0-a-100/README.md`.
+2. **Los guiones, el texto, el temario y los mensajes:** los ve antes de grabar y de publicar. Están en `claude-0-a-100/`.
 
 Un dato: **la fecha en que vence Higgsfield.**
 

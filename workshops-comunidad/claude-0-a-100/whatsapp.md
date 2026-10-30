@@ -6,13 +6,20 @@
 
 Cada texto va en dos versiones:
 - **A, esta semana:** del viernes 30 al martes 3, hasta que termina la clase 1.
-- **B, desde el miércoles 4:** con la opción recomendada, que todavía decide Sergio Urcullo: la segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana sueltas, con Bs 70 para completar la serie. Si elige otra opción, se reescriben las B.
+- **B, desde el miércoles 4:** con lo que eligió Sergio Urcullo el 29-oct-2026, "2ª edición y sueltas": la segunda edición (martes 10, jueves 12 y sábado 14) y las clases 2 y 3 de esta semana, sueltas.
 
 Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al cargar el texto o al mandarlo.
 
+**Los Bs 70 para completar la serie todavía no están decididos** ([README](README.md), pregunta 1). Las líneas marcadas con *(Bs 70)* entran solo si los aprueba. Si no, se borran.
+
+**Cómo se cargan,** según la ayuda de WhatsApp leída el 29-oct-2026:
+- Se cargan en el celular: Herramientas > Respuestas rápidas > + ([ayuda de WhatsApp](https://faq.whatsapp.com/1791149784551042/?locale=es_LA&cms_platform=android)). Entran hasta 50, y el atajo empieza con "/", sin espacios, de hasta 25 caracteres.
+- Una respuesta rápida puede llevar una imagen, pero en WhatsApp Web y en la app de escritorio no se mandan con imagen ([ayuda de WhatsApp](https://faq.whatsapp.com/625086225949121/?locale=es_LA&cms_platform=android)). "/qr" con la imagen se manda desde el celular.
+- La bienvenida: Herramientas > Mensaje de bienvenida ([ayuda de WhatsApp](https://faq.whatsapp.com/501866148528310/?locale=es_LA&cms_platform=android)).
+
 ## Cómo va una conversación
 
-1. La persona toca el botón del anuncio y llega con "Hola, quiero info del taller de Claude". Le sale la bienvenida automática.
+1. La persona toca el botón del anuncio y la pregunta sugerida, "Hola, quiero info del taller de Claude" ([anuncio.md](anuncio.md)). Le sale la bienvenida automática.
 2. Se le manda "/taller".
 3. Cuando elige, "/qr".
 4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen las etiquetas.
@@ -23,6 +30,8 @@ Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al
 Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más:
 - **"Clase 1", "Clase 2" y "Clase 3":** para saber a qué grupo aprobar y a quién recordarle.
 - **"Acepta mensajes":** solo para quien respondió SÍ a la pregunta de permiso. "Pagó" no es un permiso para escribirle con ofertas (PR #66).
+
+Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de la app se ve una cosa o la otra ([etiquetas](https://faq.whatsapp.com/3398508707096369/?locale=es_LA&cms_platform=android) y [listas](https://faq.whatsapp.com/2861038884085362/?locale=es_LA&cms_platform=android), ayuda de WhatsApp).
 
 ## Bienvenida (automática)
 
@@ -81,7 +90,7 @@ Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más:
 > *Y esta semana, sueltas:* la clase 2 el jueves 5, de 19:00 a 20:30, y la clase 3 el sábado 7, de 9:00 a 10:30. Si arrancás de cero, te conviene la serie del martes 10.
 >
 > 💵 Bs 50 cada clase o Bs 120 las tres.
-> 🔁 ¿Hiciste la clase 1 el martes 3? Completás la serie con las clases 2 y 3 de esta semana por Bs 70.
+> 🔁 ¿Hiciste la clase 1 el martes 3? Completás la serie con las clases 2 y 3 de esta semana por Bs 70. *(Bs 70)*
 > 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
 > 👥 95 cupos por clase.
 > 💻 Necesitás una compu (o el celular con la app de Claude) y una cuenta gratis de Claude. No hace falta programar.
@@ -111,7 +120,8 @@ Va con la imagen del QR. Si la app no deja guardar la imagen en la respuesta rá
 
 **B:**
 > Acá tenés el QR 👆
-> Una clase: Bs 50 · Las tres: Bs 120 · Completar la serie, si hiciste la clase 1: Bs 70
+> Una clase: Bs 50 · Las tres: Bs 120
+> Completar la serie, si hiciste la clase 1: Bs 70 *(Bs 70)*
 >
 > Antes de pagar: no hay devolución. Si no podés conectarte, te queda la grabación. Si la clase no se puede dar por un problema nuestro, pasás a la próxima fecha.
 >
@@ -145,7 +155,7 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 | /pagadojue5 | Clase 2 | Trabajo armado · jueves 5, de 19:00 a 20:30 | A y B |
 | /pagadosab7 | Clase 3 | Conectá Claude a lo que usás · sábado 7, de 9:00 a 10:30 | A y B |
 | /pagadoserie1 | Las tres, Bs 120 | Martes 3, jueves 5 y sábado 7 | A |
-| /pagadocompleta | Clases 2 y 3, Bs 70 | Jueves 5 y sábado 7 | B |
+| /pagadocompleta | Clases 2 y 3, Bs 70 *(Bs 70)* | Jueves 5 y sábado 7 | B |
 | /pagadomar10 | Clase 1 | Claude desde cero · martes 10, de 19:00 a 21:00 | B |
 | /pagadojue12 | Clase 2 | Trabajo armado · jueves 12, de 19:00 a 20:30 | B |
 | /pagadosab14 | Clase 3 | Conectá Claude a lo que usás · sábado 14, de 9:00 a 10:30 | B |
@@ -200,7 +210,7 @@ Va al grupo apenas la grabación está en YouTube.
 
 Después de las clases 1 y 2 suma una línea con la clase que sigue:
 - **A, después de la clase 1:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, escribime por privado."
-- **B, después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, completás la serie con las clases 2 y 3 por Bs 70: escribime por privado."
+- **B, después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, completás la serie con las clases 2 y 3 por Bs 70: escribime por privado." *(Bs 70)* Sin los Bs 70, queda igual que la A.
 - **Después de la clase 2:** "La clase 3 es el sábado {7 o 14}, de 9:00 a 10:30. Si todavía no la tenés, escribime por privado."
 
 ## El aviso de que no hay devolución
@@ -215,4 +225,4 @@ Ya va en "/taller", en "/qr" y en la confirmación, antes de que la persona pagu
   > Te pido disculpas: la clase {número} de hoy no se pudo dar por un problema nuestro. Como te avisé, pasás a la próxima fecha de esa clase: {día y hora}. Tu lugar está guardado y no tenés que pagar nada más.
 - **B:** el mismo texto. La próxima fecha es la de la segunda edición: martes 10, jueves 12 o sábado 14.
 
-Si Sergio Urcullo no elige la segunda edición, a quienes les toque esta reprogramación les da él otra fecha. Ese es el compromiso del plan: "Solo a la próxima fecha".
+Si falla una clase de la segunda edición, la próxima fecha la fija Sergio Urcullo. Es el compromiso del plan: "Solo a la próxima fecha".

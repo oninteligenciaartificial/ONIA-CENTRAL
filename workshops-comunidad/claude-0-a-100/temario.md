@@ -24,7 +24,7 @@ Los nombres de los menús salen de la ayuda en inglés, como "Customize > Skills
 
 ### Las salas de Meet
 
-Meet gratis corta a los 60 minutos las reuniones de 3 o más personas, y deja entrar hasta 100 ([ayuda de Google Meet](https://support.google.com/meet/answer/7317473?hl=es-419)). Por eso cada clase usa varias salas, con un enlace nuevo cada una, y se cambia antes de los 60 minutos:
+Meet gratis corta a los 60 minutos las reuniones de 3 o más personas, avisa a los 50 y deja entrar hasta 100 ([ayuda de Google Meet](https://support.google.com/meet/answer/7317473?hl=es-419)). Por eso cada clase usa varias salas, con un enlace nuevo cada una, y se cambia antes de los 60 minutos:
 
 | Clase | Sala 1 | Sala 2 | Sala 3 |
 |---|---|---|---|
@@ -36,13 +36,13 @@ En cada cambio, el enlace de la sala que sigue va al grupo de la clase (respuest
 
 ### Antes de cada clase (Sergio Urcullo)
 
-- **La víspera:** crear los enlaces de las salas en Meet, uno por sala, y pegar el de la sala 1 en el recordatorio.
+- **La víspera:** crear los enlaces de las salas en Meet, uno por sala, con Nueva reunión > "Crear una reunión para más tarde" ([ayuda de Google Meet](https://support.google.com/meet/answer/9302870?hl=es-419)), y pegar el de la sala 1 en el recordatorio. Los crea Sergio Urcullo con su cuenta: con una cuenta personal, solo quien crea la reunión puede admitir a los que no tienen invitación (misma ayuda).
 - **30 minutos antes:**
   - abrir Claude con la cuenta gratis de prueba, con los dos archivos de práctica a mano;
   - cerrar todo lo que tenga datos de clientes y prender "No molestar" en Windows;
   - Meet en una ventana y Claude en otra, para que la grabación tome solo la de Claude.
-- **18:50 (8:50 el sábado):** abrir la sala 1, compartir la ventana de Claude y empezar a grabar con la Herramienta Recortes solo esa ventana, con el micrófono.
-- **En la sala:** se acepta solo a quien está en la lista de "Pagó". El enlace va solo al grupo de los que pagaron.
+- **18:50 (8:50 el sábado):** abrir la sala 1, compartir la ventana de Claude y empezar a grabar con la Herramienta Recortes (Win + Shift + R) solo esa ventana, con el micrófono prendido y el sonido de la compu apagado.
+- **En la sala:** se acepta solo a quien está en la lista de "Pagó". El enlace va solo al grupo de los que pagaron. Las solicitudes se ven en "Ver a todos", que tiene "Admitir a todos" ([ayuda de Google Meet](https://support.google.com/meet/answer/9303164?hl=es-419)). Desde 2026, Meet separa algunas solicitudes en una segunda lista y propone rechazarlas ([Google](https://workspaceupdates.googleblog.com/2026/02/safeguarded-guest-admit-flow-in-google-meet.html)): esa se mira una por una. Con una cuenta personal no hay coorganizadores ([ayuda de Google Meet](https://support.google.com/meet/answer/10885841?hl=es-419)), así que admite solo Sergio Urcullo, y tiene que seguir en la sala.
 - **Al terminar:** cortar la grabación, subirla a YouTube como no listado y mandar el enlace al grupo con el mensaje de después de la clase ([whatsapp.md](whatsapp.md)).
 
 **La grabación:** se avisa al empezar que se graba solo la pantalla y la voz de Sergio Urcullo. No se graban las caras ni los nombres de los inscriptos, ni el chat de Meet. Las preguntas se leen en voz alta, sin el nombre de quien pregunta.
