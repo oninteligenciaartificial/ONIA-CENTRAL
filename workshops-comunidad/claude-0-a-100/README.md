@@ -16,20 +16,18 @@ El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, e
 
 **Desde el miércoles 4 se venden la segunda edición y las clases sueltas:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del [issue #6 (referentes y workshop)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6) (sin enlace). Es la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Las versiones B de [`whatsapp.md`](whatsapp.md) son para esto.
 
+**Quien hizo la clase 1 completa la serie por Bs 70, hasta el jueves 5:** "Bs 70 hasta el jueves 5 (Recomendado)", elegido con un botón el 30-oct-2026 en la sesión coordinadora ([constancia en el PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6527844776)). Se ofrece al cierre de la clase 1 del martes 3 con "Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100)", y vale hasta que empiece la clase 2, el jueves 5 a las 19:00. Con la clase 1 suma Bs 120, lo mismo que la serie. Va sin contadores ni cupos inventados.
+
 ## Lo que falta decidir
 
-Las decide Sergio Urcullo. La primera opción de cada una es la recomendada.
+Las decide Sergio Urcullo. La primera opción de cada una es la recomendada. La 1, los Bs 70, ya está decidida, arriba: las demás siguen con su número.
 
-1. **¿Cuánto paga quien hizo la clase 1 para completar la serie?**
-   - **Bs 70: con la clase 1 suma Bs 120, lo mismo que la serie (recomendada).**
-   - Bs 100, el precio de las dos clases sueltas.
-   - No se ofrece: compra las clases sueltas o la segunda edición.
 2. **¿Qué tope de gasto lleva "ONIA Ads"?**
    - **US$70, lo de los 7 días a US$10 (recomendada).** Con presupuesto diario, un día puede gastar hasta el 175% del presupuesto. Si el conjunto tiene fecha de fin, el tope es el presupuesto diario por los días que quedan, más hasta un 25% ([ayuda de Meta](https://es-la.facebook.com/business/help/190490051321426)): con US$10 y 7 días, hasta unos US$87,50. El límite de gasto de la cuenta pausa los anuncios al llegar a US$70 ([ayuda de Meta](https://es-la.facebook.com/business/help/141820733085330)).
    - US$100, con margen para seguir unos días si das el sí.
    - Sin tope de cuenta, solo el presupuesto diario.
 3. **¿Se carga la campaña con el conector de Meta?**
-   - **Sí: la carga un agente como borrador, sin gastar, y vos la revisás con captura antes de publicarla (recomendada).**
+   - **Sí: la carga un agente como borrador, sin gastar, y vos la revisás con captura antes de publicarla (recomendada).** La carga como elegiste el 30-oct para el [issue #55 (campañas de Meta en pausa con tope)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55#issuecomment-6527845355), "Sesión con frenos (Recomendado)": una sesión de la app de Claude pregunta antes de cada herramienta, no puede activar ni cambiar nada, y después de cada paso comprueba que quedó en pausa o en borrador.
    - No: la cargás vos a mano con [`anuncio.md`](anuncio.md).
    - Todavía no.
 4. **¿Va "Taller independiente, no oficial de Anthropic"?**

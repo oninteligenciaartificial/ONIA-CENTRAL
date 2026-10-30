@@ -16,7 +16,8 @@ Lo eligió el 29-oct-2026. Estas son sus palabras:
 - **Para qué:** "ahora mismo armemos para tener caja al menos hasta en 7 dias, claude se vence el 3 de noviembre, y codex el 14", y "primero armemos el primer workshop low ticket, pero que sea escalable para luego seguir lanzando las otras cosas".
 - **Estructura:** "3 clases distintas", es decir, una serie por semana, a Bs 50 cada clase o Bs 120 las tres.
 - **Fechas:** martes 3, jueves 5 y sábado 7 de noviembre, con 95 cupos por clase.
-- **Desde el miércoles 4:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del [issue #6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6), la de este plan (sin enlace a la sesión). Desde el 4 se ofrecen la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Los Bs 70 para completar la serie siguen en "Lo que falta".
+- **Desde el miércoles 4:** "2ª edición y sueltas", elegido con un botón el 29-oct-2026 en la sesión del [issue #6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6), la de este plan (sin enlace a la sesión). Desde el 4 se ofrecen la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50.
+- **Completar la serie:** "Bs 70 hasta el jueves 5 (Recomendado)", elegido con un botón el 30-oct-2026 en la sesión coordinadora ([constancia en el PR #41](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6527844776)). Quien hizo la clase 1 completa la serie con las clases 2 y 3 por Bs 70. Se ofrece al cierre de la clase 1 con "Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100)", y vale hasta que empiece la clase 2, el jueves 5, sin contadores ni cupos inventados.
 - **Duración:** "que la primera sea larga para introducir y que haya preguntas y demás, pero las demás, digamos que sea máximo una hora y media de clase". La primera dura "2 horas".
 - **Grabación:** "Incluida en los Bs 50".
 - **Sala:** "Algo free, puede ser meet y de que se venza lo abrimos el nuevo link".
@@ -116,7 +117,7 @@ Del miércoles 4 al viernes 6, los anuncios siguen corriendo y la clase 1 ya pas
 | Combo con la clase 1 grabada | Bs 120 por las clases 2 y 3 en vivo más la clase 1 en grabación | Se vende ya, sin otra fecha | La clase 1, que es la de la base, se ve sin poder preguntar |
 | Otro curso | Un nivel 2 para quien hizo la serie | Más plata por persona | Todavía no existe, y armarlo lleva tiempo |
 
-Quien hizo la clase 1 y quiere seguir puede completar la serie pagando la diferencia del combo: Bs 70 por las clases 2 y 3. Es un precio que ve el cliente, así que lo aprueba Sergio Urcullo.
+Quien hizo la clase 1 y quiere seguir puede completar la serie pagando la diferencia del combo: Bs 70 por las clases 2 y 3, hasta el jueves 5. Lo eligió Sergio Urcullo ("Lo que decidió Sergio Urcullo", arriba).
 
 ## Cuánto hay que vender
 
@@ -227,8 +228,7 @@ Son supuestos a medir: no hay datos propios de costos en Bolivia.
 ## Lo que falta
 
 Decisiones de Sergio Urcullo:
-1. **El precio para completar la serie** si ya hizo la clase 1: Bs 70 (recomendada). Las opciones están en `claude-0-a-100/README.md`.
-2. **Los guiones, el texto, el temario y los mensajes:** los ve antes de grabar y de publicar. Están en `claude-0-a-100/`.
+- **Los guiones, el texto, el temario y los mensajes:** los ve antes de grabar y de publicar. Están en `claude-0-a-100/`, con las preguntas que quedan en `claude-0-a-100/README.md`.
 
 Un dato: **la fecha en que vence Higgsfield.**
 

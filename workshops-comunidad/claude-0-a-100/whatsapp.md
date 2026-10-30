@@ -10,7 +10,7 @@ Cada texto va en dos versiones:
 
 Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al cargar el texto o al mandarlo. Lo que va entre llaves con texto, como `{ gratis}`, entra solo si la prueba del jueves 29 sale bien con una cuenta gratis ([temario](temario.md), al final), igual que en el anuncio. Si no, se borra.
 
-**Los Bs 70 para completar la serie todavía no están decididos** ([README](README.md), pregunta 1). Las líneas marcadas con *(Bs 70)* entran solo si los aprueba. Si no, se borran.
+**Los Bs 70 para completar la serie:** Sergio Urcullo eligió el 30-oct-2026 "Bs 70 hasta el jueves 5 (Recomendado)" ([constancia en el PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6527844776)). Quien hizo la clase 1 del martes 3 completa la serie con las clases 2 y 3 por Bs 70. Se ofrece al cierre de la clase 1 y vale hasta que empiece la clase 2, el jueves 5 a las 19:00. Va sin contadores ni cupos inventados.
 
 **Cómo se cargan,** según la ayuda de WhatsApp leída el 29-oct-2026:
 - Se cargan en el celular: Herramientas > Respuestas rápidas > + ([ayuda de WhatsApp](https://faq.whatsapp.com/1791149784551042/?locale=es_LA&cms_platform=android)). Entran hasta 50, y el atajo empieza con "/", sin espacios, de hasta 25 caracteres.
@@ -90,7 +90,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 > *Y esta semana, sueltas:* la clase 2 el jueves 5, de 19:00 a 20:30, y la clase 3 el sábado 7, de 9:00 a 10:30. Si arrancás de cero, te conviene la serie del martes 10.
 >
 > 💵 Bs 50 cada clase o Bs 120 las tres.
-> 🔁 ¿Hiciste la clase 1 el martes 3? Completás la serie con las clases 2 y 3 de esta semana por Bs 70. *(Bs 70)*
+> 🔁 ¿Hiciste la clase 1 el martes 3? Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2, el jueves 5 a las 19:00.
 > 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
 > 👥 95 cupos por clase.
 > 💻 Necesitás una compu y una cuenta de Claude{ gratis}. No hace falta programar.
@@ -104,7 +104,8 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 Cuando una clase llega a 95, se borra de "/taller" y se escribe "sin cupo" al lado.
 
 **Después de cada clase, se saca de "/taller" y de "/qr" todo lo que la ofrece,** para que nadie pague algo que ya pasó:
-- el jueves 5 a las 20:30: la clase 2 de esta semana y la línea de completar la serie *(Bs 70)*;
+- el jueves 5, antes de abrir la sala de la clase 2: la línea de completar la serie, en "/taller" y en "/qr";
+- el jueves 5 a las 20:30: la clase 2 de esta semana;
 - el sábado 7 a las 10:30: toda la parte "Y esta semana, sueltas";
 - en la segunda edición, lo mismo: después del martes 10 ya no se ofrece la serie completa, y así con cada clase.
 
@@ -126,7 +127,7 @@ Va con la imagen del QR. Si la app no deja guardar la imagen en la respuesta rá
 **B:**
 > Acá tenés el QR 👆
 > Una clase: Bs 50 · Las tres: Bs 120
-> Completar la serie, si hiciste la clase 1: Bs 70 *(Bs 70)*
+> Completar la serie, si hiciste la clase 1: Bs 70, hasta el jueves 5 a las 19:00
 >
 > Antes de pagar: no hay devolución. Si no podés conectarte, te queda la grabación. Si la clase no se puede dar por un problema nuestro, pasás a la próxima fecha.
 >
@@ -160,7 +161,7 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 | /pagadojue5 | Clase 2 | Trabajo armado · jueves 5, de 19:00 a 20:30 | A y B |
 | /pagadosab7 | Clase 3 | Conectá Claude a lo que usás · sábado 7, de 9:00 a 10:30 | A y B |
 | /pagadoserie1 | Las tres, Bs 120 | Martes 3, jueves 5 y sábado 7 | A |
-| /pagadocompleta | Clases 2 y 3, Bs 70 *(Bs 70)* | Jueves 5 y sábado 7 | B |
+| /pagadocompleta | Clases 2 y 3, Bs 70 | Jueves 5 y sábado 7 | B |
 | /pagadomar10 | Clase 1 | Claude desde cero · martes 10, de 19:00 a 21:00 | B |
 | /pagadojue12 | Clase 2 | Trabajo armado · jueves 12, de 19:00 a 20:30 | B |
 | /pagadosab14 | Clase 3 | Conectá Claude a lo que usás · sábado 14, de 9:00 a 10:30 | B |
@@ -214,8 +215,8 @@ Va al grupo apenas la grabación está en YouTube.
 > 💬 Si te sirvió, contame en una frase qué armaste. Y si me dejás compartir tu frase con tu nombre de pila, avisame.
 
 Después de las clases 1 y 2 suma una línea con la clase que sigue:
-- **A, después de la clase 1:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, escribime por privado."
-- **B, después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés, completás la serie con las clases 2 y 3 por Bs 70: escribime por privado." *(Bs 70)* Sin los Bs 70, queda igual que la A.
+- **Después de la clase 1 del martes 3:** "La clase 2 es el jueves 5, de 19:00 a 20:30. Si todavía no la tenés: Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2. Escribime por privado."
+- **Después de la clase 1 del martes 10:** "La clase 2 es el jueves 12, de 19:00 a 20:30. Si todavía no la tenés, escribime por privado."
 - **Después de la clase 2:** "La clase 3 es el sábado {7 o 14}, de 9:00 a 10:30. Si todavía no la tenés, escribime por privado."
 
 ## El aviso de que no hay devolución

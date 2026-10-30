@@ -66,7 +66,7 @@ En cada cambio, el enlace de la sala que sigue va al grupo de la clase (respuest
 | 20:35 | 5 | Aviso de sala | — |
 | 20:40 | 5 | Cambio a la sala 3 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
 | 20:45 | 10 | Preguntas | — |
-| 20:55 | 5 | Cierre | La tarea. La grabación llega al grupo. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve y cómo se paga |
+| 20:55 | 5 | Cierre | La tarea. La grabación llega al grupo. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve y cómo se paga. El martes 3, la oferta: "Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100)", hasta que empiece la clase 2 |
 
 **Las cifras del archivo de práctica,** para comprobar lo que contesta Claude:
 - Del 1 al 28 de octubre se vendieron Bs 17.766.

@@ -52,7 +52,7 @@ Los pasos de cada servicio salen de su ayuda oficial, leída el 29-oct-2026. Los
 ### 4. El QR del banco
 
 1. En la app de tu banco, generá un QR para cobrar:
-   - **sin monto fijo** y para muchos pagos, así sirve para Bs 50 y Bs 120, y para Bs 70 si los aprobás;
+   - **sin monto fijo** y para muchos pagos, así sirve para Bs 50, Bs 70 y Bs 120;
    - que venza después del sábado 14 de noviembre, el final de la segunda edición.
 2. Si tu banco solo da QR con monto, generá uno por monto. Avisá, y un agente parte "/qr".
 3. Guardá la imagen en el celular del número de closer.
@@ -143,7 +143,7 @@ Ya lo decidiste en el [issue #30](https://github.com/oninteligenciaartificial/ON
 
 ### 9. Contestar las preguntas y aprobar los textos
 
-1. Contestá las 5 preguntas de [README.md](README.md), en "Lo que falta decidir".
+1. Contestá las 4 preguntas que quedan en [README.md](README.md), en "Lo que falta decidir", de la 2 a la 5. La 1, los Bs 70, ya la decidiste.
 2. Leé en el PR el temario, los textos de WhatsApp, los guiones y el texto del anuncio. Tu aprobación queda citada en un comentario del PR, con captura.
 
 **Listo cuando:** el PR tiene tu aprobación citada.
@@ -182,7 +182,7 @@ En el celular del número de closer, con los textos aprobados de [whatsapp.md](w
 
 ### 13. La campaña
 
-1. Si dijiste que sí en la pregunta 3, un agente la carga con el conector de Meta como borrador, sin gastar ([anuncio.md](anuncio.md)).
+1. Si dijiste que sí en la pregunta 3, un agente la carga con el conector de Meta como borrador, sin gastar ([anuncio.md](anuncio.md)), con los frenos de "Sesión con frenos" ([issue #55 (campañas de Meta en pausa con tope)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55#issuecomment-6527845355)).
 2. En el borrador, desde el Administrador de anuncios, escribís la plantilla de mensaje de cada anuncio: el saludo y la pregunta sugerida de [anuncio.md](anuncio.md). El conector no la carga.
 3. Revisás la vista previa de los dos anuncios con captura.
 4. Si das el sí, se publica. Meta la revisa, la mayoría en menos de 24 horas, y no arranca antes de la fecha de inicio, el sábado 31 ([ayuda de Meta](https://es-la.facebook.com/business/help/204798856225114)).
