@@ -93,7 +93,7 @@ Hacelo antes de subir la prueba del paso 6: un video de más de 15 minutos subid
    ```
 
 7. Subí la prueba a YouTube y ponela como **no listado**: YouTube Studio > Contenido > Visibilidad > No listado > Guardar ([ayuda de YouTube](https://support.google.com/youtube/answer/157177?hl=es-419)). Abrí el enlace en una ventana privada: tiene que verse solo Claude y oírse tu voz.
-8. **Prueba larga:** cuando no estés en la compu, grabá el mismo rectángulo 55 minutos, con una ventana quieta. ¿Se guardó entero? Mirá cuánto pesa con el comando del paso 5: por dos y medio, es lo que pesaría la clase 1, que se graba de 18:50 a 21:00.
+8. **Prueba larga:** cuando no estés en la compu, grabá el mismo rectángulo 55 minutos, con una ventana quieta. ¿Se guardó entero? Mirá cuánto pesa con el comando del punto 5: por dos y medio, es lo que pesaría la clase 1, que se graba de 18:50 a 21:00.
    - En clase se graba una toma por sala, de menos de una hora ([temario](temario.md)), porque no está probado que Recortes aguante 2 horas seguidas.
    - Lo que va a pesar está sin confirmar. Tus grabaciones de agosto a octubre duran de 9 a 103 segundos y pesan de 0,6 a 1 MB por segundo, unos 2 a 3,7 GB por hora. Grabando solo la ventana de Claude debería pesar menos.
 9. Creá la carpeta de las grabaciones y los videos en E:, y mové ahí las dos pruebas:

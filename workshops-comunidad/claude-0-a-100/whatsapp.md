@@ -22,13 +22,14 @@ Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al
 1. La persona toca el botón del anuncio y la pregunta sugerida, "Hola, quiero info del taller de Claude" ([anuncio.md](anuncio.md)). Le sale la bienvenida automática.
 2. Se le manda "/taller".
 3. Cuando elige, "/qr".
-4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen "Pagó", la de su clase y, si pagó las tres, "Combo".
-5. El día de la clase va el recordatorio al grupo. A quien no está en el grupo, por chat.
+4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen "Pagó", la de su clase, "Combo" si pagó las tres y "Edición 2" si es de la segunda edición.
+5. El día de la clase va el recordatorio al grupo. A quien no está en el grupo, por chat. A quien paga después de que salió el recordatorio, también por chat, junto con el "/pagado", con el enlace de la sala que esté abierta: quien entra a un grupo no ve los mensajes de antes.
 
 ## Etiquetas
 
-Las del plan, "Anuncio", "Pagó" y "Combo", y cuatro más. Quien completa la serie con los Bs 70 también lleva "Combo": con la clase 1, pagó las tres por Bs 120.
+Las del plan, "Anuncio", "Pagó" y "Combo", y cinco más. Quien completa la serie con los Bs 70 también lleva "Combo": con la clase 1, pagó las tres por Bs 120.
 - **"Clase 1", "Clase 2" y "Clase 3":** para saber a qué grupo aprobar y a quién recordarle.
+- **"Edición 2":** junto con la de su clase, para quien pagó la segunda edición. Así "Clase 2" no se confunde entre el jueves 5 y el jueves 12.
 - **"Acepta mensajes":** para quien respondió SÍ a la pregunta de permiso. A quién se le escribe uno a uno con una oferta lo decide Sergio Urcullo ([README](README.md), pregunta 5): el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66) propone que sea solo a quien tiene esta etiqueta, y el plan del taller dice que "Pagó" sirve "para avisarle de la próxima edición".
 
 Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de la app se ve una cosa o la otra ([etiquetas](https://faq.whatsapp.com/3398508707096369/?locale=es_LA&cms_platform=android) y [listas](https://faq.whatsapp.com/2861038884085362/?locale=es_LA&cms_platform=android), ayuda de WhatsApp).
@@ -64,7 +65,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 > Conectores con las apps que ya usás, pedidos que se reusan y tu propia skill. Te vas con un plan para seguir.
 >
 > 💵 Bs 50 cada clase o Bs 120 las tres.
-> 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
+> 🎥 La grabación de cada clase va incluida: si no llegás, o entrás con la clase empezada, la ves después.
 > 👥 95 cupos por clase.
 > 💻 Necesitás una compu y una cuenta de Claude{ gratis}. No hace falta programar.
 >
@@ -91,7 +92,7 @@ Entran hasta 20. WhatsApp las está pasando a "listas", y según la versión de 
 >
 > 💵 Bs 50 cada clase o Bs 120 las tres.
 > 🔁 ¿Hiciste la clase 1 el martes 3? Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2, el jueves 5 a las 19:00.
-> 🎥 La grabación de cada clase va incluida: si no llegás, la ves después.
+> 🎥 La grabación de cada clase va incluida: si no llegás, o entrás con la clase empezada, la ves después.
 > 👥 95 cupos por clase.
 > 💻 Necesitás una compu y una cuenta de Claude{ gratis}. No hace falta programar.
 >
@@ -168,7 +169,7 @@ Se manda después de ver el pago en la app del banco. Hay una por clase, para no
 | /pagadosab14 | Clase 3 | Conectá Claude a lo que usás · sábado 14, de 9:00 a 10:30 | B |
 | /pagadoserie2 | Las tres, Bs 120 | Martes 10, jueves 12 y sábado 14 | B |
 
-Después de cada clase, se borra su /pagado.
+Después de cada clase, se borra su /pagado. "/pagadocompleta" se borra el jueves 5, después de confirmar los pagos que llegaron hasta las 19:00.
 
 **Si los grupos van dentro de su comunidad de WhatsApp** (lo decide el [issue #65 (marca personal y comunidad)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/65)), la confirmación suma este párrafo, que es el del [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66). Si allá cambia, se cambia acá:
 > El grupo de tu clase está dentro de mi comunidad de WhatsApp. Al entrar, recibís sus avisos: una guía por semana y las clases nuevas. Los podés silenciar. En el grupo de tu clase, los demás ven tu número. Si preferís no estar en la comunidad, avisame y te mando el enlace de la clase y la grabación por acá.
@@ -187,6 +188,7 @@ A quien responde SÍ se le pone "Acepta mensajes". Cada mensaje con una oferta c
 2. En "/taller" A se borran la clase 1 (el 1️⃣) y "o Bs 120 las tres". Debajo del 💵 va la línea 🔁 de los Bs 70 de "/taller" B, y la pregunta del final queda "¿Qué clase querés? Te paso el QR."
 3. En "/qr" A, "Una clase: Bs 50 · Las tres: Bs 120" pasa a "Una clase: Bs 50", y debajo va la línea de completar la serie de "/qr" B.
 4. Se borran /pagadomar3 y /pagadoserie1, y se carga /pagadocompleta.
+5. La publicación gratis del viernes ([anuncio.md](anuncio.md), "La publicación gratis del viernes 30") se borra de tu perfil, tus grupos y tu comunidad, o se edita con lo que queda: ofrece el martes 3 y los Bs 120.
 
 **El miércoles 4,** para pasar a la B:
 1. Se crean los 3 grupos de la segunda edición, igual que los de esta semana ([lista](lista-jueves-viernes.md), paso 11). Sus enlaces van en /pagadomar10, /pagadojue12, /pagadosab14 y /pagadoserie2.
@@ -194,7 +196,7 @@ A quien responde SÍ se le pone "Acepta mensajes". Cada mensaje con una oferta c
 
 ## El recordatorio con el enlace de Meet
 
-Va al grupo de la clase el mismo día, a la mañana (el viernes a la noche para la clase del sábado). A quien pidió no estar en el grupo, por chat.
+Va al grupo de la clase el mismo día, a la mañana (el viernes a la noche para la clase del sábado). A quien pidió no estar en el grupo, por chat. A quien paga después de que salió, también por chat, junto con el "/pagado", con el enlace de la sala que esté abierta.
 > ⏰ Hoy es la clase {número} de *Claude de 0 a 100*: {título}.
 > 🕖 De {hora} a {hora}, hora de Bolivia.
 > 👉 Enlace de Meet: {enlace de la sala 1}. Abro la sala 10 minutos antes.
