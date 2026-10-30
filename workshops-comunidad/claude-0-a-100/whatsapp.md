@@ -23,7 +23,7 @@ Lo que va entre llaves, como `{enlace del grupo}`, lo completa Sergio Urcullo al
 2. Se le manda "/taller".
 3. Cuando elige, "/qr".
 4. Manda el comprobante. Se confirma el pago en la app del banco, se le manda el "/pagado" de su clase y la pregunta de permiso, y se le ponen "Pagó", la de su clase, "Combo" si pagó las tres y "Edición 2" si es de la segunda edición.
-5. El día de la clase va el recordatorio al grupo. A quien no está en el grupo, por chat. A quien paga después de que salió el recordatorio, también por chat, junto con el "/pagado", con el enlace de la sala que esté abierta: quien entra a un grupo no ve los mensajes de antes.
+5. El día de la clase va el recordatorio al grupo. A quien no está en el grupo, por chat. A quien paga después de que salió el recordatorio, también por chat, junto con el "/pagado", con el enlace de la sala 1, o el de la sala en curso si la clase ya empezó: quien entra a un grupo no ve los mensajes de antes.
 
 ## Etiquetas
 
@@ -188,15 +188,17 @@ A quien responde SÍ se le pone "Acepta mensajes". Cada mensaje con una oferta c
 2. En "/taller" A se borran la clase 1 (el 1️⃣) y "o Bs 120 las tres". Debajo del 💵 va la línea 🔁 de los Bs 70 de "/taller" B, y la pregunta del final queda "¿Qué clase querés? Te paso el QR."
 3. En "/qr" A, "Una clase: Bs 50 · Las tres: Bs 120" pasa a "Una clase: Bs 50", y debajo va la línea de completar la serie de "/qr" B.
 4. Se borran /pagadomar3 y /pagadoserie1, y se carga /pagadocompleta.
-5. La publicación gratis del viernes ([anuncio.md](anuncio.md), "La publicación gratis del viernes 30") se borra de tu perfil, tus grupos y tu comunidad, o se edita con lo que queda: ofrece el martes 3 y los Bs 120.
+5. La publicación gratis del viernes ([anuncio.md](anuncio.md), "La publicación gratis del viernes 30") se corrige, porque ofrece el martes 3 y los Bs 120. En tu perfil, se borra o se edita. En tus grupos y tu comunidad ya no se puede: WhatsApp deja borrar un mensaje para todos durante dos días, y editarlo durante 15 minutos ([ayuda de WhatsApp](https://faq.whatsapp.com/1370476507114859)). Ahí va un mensaje nuevo:
+   > Ya pasó la clase 1 de *Claude de 0 a 100*. Quedan la clase 2, el jueves 5, de 19:00 a 20:30, y la clase 3, el sábado 7, de 9:00 a 10:30, a Bs 50 cada una. ¿Hiciste la clase 1? Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100). Vale hasta que empiece la clase 2. Escribime: {enlace}
 
 **El miércoles 4,** para pasar a la B:
 1. Se crean los 3 grupos de la segunda edición, igual que los de esta semana ([lista](lista-jueves-viernes.md), paso 11). Sus enlaces van en /pagadomar10, /pagadojue12, /pagadosab14 y /pagadoserie2.
 2. La bienvenida, "/taller" y "/qr" se cambian por la B, y se cargan los /pagado de la segunda edición.
+3. Desde ahora, a quien paga la segunda edición se le pone también "Edición 2" ([lista](lista-jueves-viernes.md), paso 12).
 
 ## El recordatorio con el enlace de Meet
 
-Va al grupo de la clase el mismo día, a la mañana (el viernes a la noche para la clase del sábado). A quien pidió no estar en el grupo, por chat. A quien paga después de que salió, también por chat, junto con el "/pagado", con el enlace de la sala que esté abierta.
+Va al grupo de la clase el mismo día, a la mañana (el viernes a la noche para la clase del sábado). A quien pidió no estar en el grupo, por chat. A quien paga después de que salió, también por chat, junto con el "/pagado", con el enlace de la sala 1, o el de la sala en curso si la clase ya empezó.
 > ⏰ Hoy es la clase {número} de *Claude de 0 a 100*: {título}.
 > 🕖 De {hora} a {hora}, hora de Bolivia.
 > 👉 Enlace de Meet: {enlace de la sala 1}. Abro la sala 10 minutos antes.
@@ -221,6 +223,8 @@ Para la clase del sábado, la primera línea dice "Mañana es la clase 3" en vez
 
 Se manda al grupo en cada cambio, desde el celular, con el enlace pegado al final. Desde la compu no: la grabación está en marcha y podría tomar el chat del grupo, con nombres y números. El enlace de la sala que sigue no va antes: si entran 3 personas antes de tiempo, la sala arranca su cuenta de 60 minutos.
 > 🔁 Cambiamos de sala. Tocá este enlace y volvé a entrar 👉
+
+A quien recibió el recordatorio por chat, "/sala" le va también por chat, porque puede no estar en el grupo.
 
 ## Después de la clase
 

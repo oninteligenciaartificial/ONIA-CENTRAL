@@ -179,7 +179,7 @@ En el celular del número de closer, con los textos aprobados de [whatsapp.md](w
    - "/qr", con la imagen del QR;
    - los "/pagado" de la versión A, con el enlace de cada grupo;
    - "/sala", "/devolucion" y "/reprogramada".
-3. **Las etiquetas:** "Anuncio", "Pagó", "Combo", "Clase 1", "Clase 2", "Clase 3" y "Acepta mensajes". En Android: Chats > ⋮ > Etiquetar chat > nombre > Guardar. Si tu app muestra "Listas" en vez de etiquetas: Herramientas > Listas > Nueva lista ([ayuda de WhatsApp](https://faq.whatsapp.com/3398508707096369/?locale=es_LA&cms_platform=android)).
+3. **Las etiquetas:** "Anuncio", "Pagó", "Combo", "Clase 1", "Clase 2", "Clase 3", "Edición 2", que se usa desde el miércoles 4, y "Acepta mensajes". En Android: Chats > ⋮ > Etiquetar chat > nombre > Guardar. Si tu app muestra "Listas" en vez de etiquetas: Herramientas > Listas > Nueva lista ([ayuda de WhatsApp](https://faq.whatsapp.com/3398508707096369/?locale=es_LA&cms_platform=android)).
 
 **Listo cuando:** desde otro número escribís "Hola, quiero info del taller de Claude", te llega la bienvenida, y "/taller", "/qr" y "/pagado" aparecen al escribir "/".
 
