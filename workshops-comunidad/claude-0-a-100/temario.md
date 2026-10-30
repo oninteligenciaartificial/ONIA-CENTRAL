@@ -32,7 +32,7 @@ Meet gratis corta a los 60 minutos las reuniones de 3 o más personas, avisa a l
 | 2, jueves 5 | 18:50 a 19:45 | 19:45 a 20:30 | — |
 | 3, sábado 7 | 8:50 a 9:45 | 9:45 a 10:30 | — |
 
-En cada cambio, el enlace de la sala que sigue va al grupo de la clase (respuesta rápida "/sala", en [whatsapp.md](whatsapp.md)).
+En cada cambio, el enlace de la sala que sigue va al grupo de la clase, y por chat a quien recibió el recordatorio por chat (respuesta rápida "/sala", en [whatsapp.md](whatsapp.md)).
 
 ### Antes de cada clase (Sergio Urcullo)
 

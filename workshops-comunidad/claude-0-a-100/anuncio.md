@@ -68,7 +68,7 @@ La ayuda de Meta habla de saludo y preguntas sugeridas, no de un texto que llega
 
 ## La publicación gratis del viernes 30
 
-Esta sí lleva fechas, porque la publica Sergio Urcullo y la puede corregir: en su perfil, cuando quiera; en los grupos y la comunidad, WhatsApp deja borrar un mensaje para todos solo durante dos días ([ayuda de WhatsApp](https://faq.whatsapp.com/1370476507114859)). Después de la clase 1 se corrige como dice [whatsapp.md](whatsapp.md), en "Los cambios del martes 3 y del miércoles 4". Va en su perfil, en sus grupos y en su comunidad de WhatsApp, apenas aprueba los textos y tiene el QR. `{enlace}` es `https://wa.me/591{los 8 dígitos del número}?text=Hola%2C%20quiero%20info%20del%20taller%20de%20Claude`, con el número de closer ([ayuda de WhatsApp](https://faq.whatsapp.com/5913398998672934/?locale=es_LA)).
+Esta sí lleva fechas, porque la publica Sergio Urcullo y la puede corregir: en su perfil, cuando quiera; en los grupos y la comunidad, WhatsApp deja borrar un mensaje para todos solo durante dos días ([ayuda de WhatsApp](https://faq.whatsapp.com/1370476507114859), leída el 30-oct-2026). Después de la clase 1 se corrige como dice [whatsapp.md](whatsapp.md), en "Los cambios del martes 3 y del miércoles 4". Va en su perfil, en sus grupos y en su comunidad de WhatsApp, apenas aprueba los textos y tiene el QR. `{enlace}` es `https://wa.me/591{los 8 dígitos del número}?text=Hola%2C%20quiero%20info%20del%20taller%20de%20Claude`, con el número de closer ([ayuda de WhatsApp](https://faq.whatsapp.com/5913398998672934/?locale=es_LA)).
 
 **Perfil y comunidad:**
 > Arranca mi primer taller: *Claude de 0 a 100* 🚀
