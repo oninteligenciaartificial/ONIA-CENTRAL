@@ -55,6 +55,10 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 - Todo lo que escribe en `%LOCALAPPDATA%\hermes` lo hace Sergio Urcullo, desde una PowerShell abierta desde el menú Inicio: instalarlo, actualizarlo, configurarlo (`hermes setup`, `config`, `model`, `auth`, `skills`, o editar `config.yaml`, `SOUL.md` y `.env`) y usarlo. Desde la app de Claude no se corre `hermes` ni se escribe en esa carpeta, porque queda en una copia escondida dentro de la carpeta de la app. Desde Claude se preparan los comandos y se lee el resultado.
 - Cómo se abre y cómo se maneja está en `docs/decisiones/2026-10-28-hermes-oficial.md`.
 
+## Trabajo pesado: Claude Code y Codex
+
+El trabajo pesado (código, análisis de repos, documentos largos) se hace con `onia-llm` en la computadora compartida. Funciona en solo lectura por defecto; `--escritura` solo si hace falta y nunca hace `git push`. Desde el 3 de noviembre de 2026 usa Codex por defecto. Revisa siempre el resultado antes de usarlo y lleva los cambios a un PR sin merge. Detalle en `docs/harness/onia-llm.md`.
+
 ## Qué no entra a Git
 
 - Secretos de ningún tipo: `.env`, claves, tokens, cookies.
