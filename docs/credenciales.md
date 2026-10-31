@@ -1,8 +1,10 @@
 # Credenciales: dónde viven y cómo las usan los agentes
 
+> Nota 31-oct-2026: Hermes fue reemplazado por los agentes Grok Bot. Lo que sigue sobre cargar claves en Hermes no se usa para el equipo nuevo. Queda para saber qué hay en la laptop cuando Sergio Urcullo decida apagar esa instalación. No se tocó el VPS ni ninguna configuración. Decisión: [Hermes reemplazado](decisiones/2026-10-31-hermes-reemplazado.md).
+
 28-oct-2026. Resuelve el [issue #5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/5) y reemplaza la regla de credenciales del `CLAUDE.md` global de Sergio Urcullo. El procedimiento del repo viejo no se usa.
 
-Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afuera.
+Vale para Claude Code y Codex en la laptop. Lo de Hermes queda para la limpieza de esa instalación, cuando Sergio Urcullo la apruebe. El VPS y la nube quedan afuera.
 
 ## La regla
 
@@ -35,7 +37,7 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 | Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador |
 | Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | no tiene |
 
-Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_external_logins: false`. Está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
+Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_external_logins: false`. Está en [Hermes oficial](archivo/hermes/2026-10-28-hermes-oficial.md).
 
 El cofre de Hermes está cifrado, pero su llave (`vault.key`) vive en la misma carpeta (`agent/vault_store.py`). En Windows cualquier programa que corra con el usuario de Sergio Urcullo lo puede abrir, igual que los demás archivos de la tabla.
 
@@ -61,7 +63,7 @@ Siempre igual:
 
 ### Hermes
 
-Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú Inicio. El porqué está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
+Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú Inicio. El porqué está en [Hermes oficial](archivo/hermes/2026-10-28-hermes-oficial.md).
 
 - **Claves de modelos:** `hermes auth add <proveedor> --type api-key`, sin `--api-key`. Así pide "Paste your API key:" con el texto oculto (`hermes_cli/auth_commands.py`). Queda en `auth.json`, y `hermes auth list` confirma que se guardó.
 - **Otras claves (herramientas y plataformas):** van en el `.env` de Hermes. `hermes config env-path` dice dónde está; se abre con el Bloc de notas y se pega el valor. `hermes config set NOMBRE valor` no se usa, porque deja la clave en el historial.

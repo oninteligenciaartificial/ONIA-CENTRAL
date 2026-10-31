@@ -1,3 +1,5 @@
+> Nota 31-oct-2026: este documento queda como historia. Hermes fue reemplazado por los agentes Grok Bot. Las decisiones vigentes están en [taller y agentes](2026-10-31-decisiones-taller-y-agentes.md) y [Hermes reemplazado](2026-10-31-hermes-reemplazado.md).
+
 # Mapa para operar ONIA con agentes
 
 29-oct-2026. Lo pidió Sergio Urcullo esa noche: "quiero que documentes y investigues todo lo que te falta, y yo solo te pongo las cuentas y te digo datos, solo quiero que configures todo, todas las areas de la empresa que necesitemos".

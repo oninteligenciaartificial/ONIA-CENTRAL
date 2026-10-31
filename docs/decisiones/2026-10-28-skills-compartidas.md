@@ -1,3 +1,5 @@
+> Nota 31-oct-2026: este documento queda como historia. Hermes fue reemplazado por los agentes Grok Bot. Las decisiones vigentes están en [taller y agentes](2026-10-31-decisiones-taller-y-agentes.md) y [Hermes reemplazado](2026-10-31-hermes-reemplazado.md).
+
 # Skills de ONIA: una sola carpeta para Hermes, Claude Code y Codex
 
 28-oct-2026. **Sergio Urcullo aprobó las decisiones 1 a 6 del punto 8 el mismo día.** Hasta ese momento no había cambiado nada: ni la configuración de los agentes, ni el `.gitignore`, ni había skills en el repo. **Esa misma noche quedaron aplicadas y probadas: los tres agentes cargan la skill (punto 9).** Se recomienda no aplicar la 7 por ahora; la decide él. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).

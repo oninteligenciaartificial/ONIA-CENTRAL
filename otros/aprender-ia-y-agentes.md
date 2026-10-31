@@ -1,5 +1,7 @@
 # Plan para aprender IA y agentes
 
+> Nota 31-oct-2026: Hermes fue reemplazado por los agentes Grok Bot. Los ejercicios que dicen correr `hermes` no están vigentes. El resto del plan no se reescribió en esta limpieza. Decisiones: [Hermes reemplazado](../docs/decisiones/2026-10-31-hermes-reemplazado.md).
+
 Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/8). Arranca el lunes 2-nov-2026.
 
 **Para qué:** entender qué hacen por dentro Claude Code, Codex y Hermes, y poder hacer a mano lo básico, sin IA: moverte en la terminal, usar git, revisar un PR y leer lo que devuelve una API. No hace falta programar.
@@ -25,7 +27,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 ## Para practicar sin riesgo
 
 - Ningún ejercicio gasta plata ni pide claves nuevas.
-- Los comandos `hermes` se corren en una PowerShell abierta desde el menú Inicio, nunca en la terminal de la app de Claude: desde ahí escriben en una copia escondida.
+- Los ejercicios que decían correr `hermes` no están vigentes: ver la nota del inicio. No se corren.
 - Los ejercicios de git se hacen en una carpeta de práctica, `C:\dev\practica-git`, no en ONIA-CENTRAL. En ONIA-CENTRAL solo se mira.
 - Donde dice "solo mirar", no se cambia nada.
 - Ningún secreto va al chat ni a un archivo, tampoco para practicar.
@@ -133,7 +135,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 1. Corré, de a uno, y anotá qué hace cada uno: `Get-Location`, `Set-Location C:\dev\proyectos\ONIA-CENTRAL`, `Get-ChildItem`, `Get-Content AGENTS.md -TotalCount 10 -Encoding UTF8`, `Get-Command hermes -All` y `$env:PATH -split ';'`.
 2. Probá el `Get-Content` sin `-Encoding UTF8` y mirá cómo salen los acentos. Un archivo es una fila de números, y la codificación dice qué letra es cada uno. PowerShell 5.1 no adivina UTF-8.
 3. Con `Get-Help Get-ChildItem -Online`, abrí la ayuda oficial de un comando sin preguntarle a nadie.
-4. Tomá un comando largo de `docs/decisiones/2026-10-28-hermes-oficial.md` y, sin correrlo, explicá en papel cada parte.
+4. Tomá un comando largo de `docs/archivo/hermes/2026-10-28-hermes-oficial.md` y, sin correrlo, explicá en papel cada parte. Este ejercicio no está vigente: ver la nota del inicio.
 
 **Si te sobra tiempo:**
 - [Sistema de ayuda](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/02-help-system?view=powershell-5.1), el capítulo 2 de PowerShell 101. En esta PC la ayuda local no está instalada: usá `Get-Help <comando> -Online`.
@@ -347,7 +349,7 @@ Sin IA, vas a poder:
 
 ## Cómo lo usan los agentes
 
-El `AGENTS.md` les pide a Claude Code, Codex y Hermes que lean este archivo al empezar cada sesión con Sergio Urcullo y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
+El `AGENTS.md` les pide a Claude Code, Codex y los agentes Grok Bot que lean este archivo al empezar cada sesión con Sergio Urcullo y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
 
 - **Qué tema:** el de "Tema actual", arriba de todo. Antes del 2-nov, el 1. En la semana de repaso, cualquiera del 1 al 3. En las semanas libres, nada nuevo: una idea de lo ya visto. Si Sergio Urcullo dice en la conversación en qué tema está, vale eso para esa sesión.
 - **Otro tema:** si lo que hizo el agente se conecta mejor con un tema anterior, puede usar ese. De un tema que todavía no vio, solo la idea en palabras simples, sin jerga.

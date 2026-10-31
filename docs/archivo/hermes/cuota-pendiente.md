@@ -1,3 +1,5 @@
+> Archivado 31-oct-2026: Hermes fue reemplazado por los agentes Grok Bot. Esto no se aplica: era el pendiente para que Hermes leyera su cuota. No cambia permisos ni configuración.
+
 # Lo que falta afuera para leer la cuota desde Hermes
 
 Esto no está aplicado. Es lo que falta para que Hermes corra `hermes usage --provider openai-codex --json` por su cuenta, en vez de pedirle la salida a Sergio Urcullo, como dice "Freno por cuota" en `SKILL.md`. Tocar `approvals.deny` es cambiar los permisos: lo aprueba Sergio Urcullo, siempre, como dice el `AGENTS.md`.

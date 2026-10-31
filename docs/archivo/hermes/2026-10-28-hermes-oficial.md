@@ -1,3 +1,5 @@
+> Archivado 31-oct-2026: Hermes fue reemplazado por los agentes Grok Bot. El equipo vigente está en `docs/reglas/equipo-grok-bot.md`.
+
 # Hermes oficial: dónde se abre, dónde se maneja y cómo queda uno solo
 
 28-oct-2026. Sale de dos trabajos:

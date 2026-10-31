@@ -1,3 +1,5 @@
+> Nota 31-oct-2026: este documento queda como historia. Hermes fue reemplazado por los agentes Grok Bot. Las decisiones vigentes están en [taller y agentes](2026-10-31-decisiones-taller-y-agentes.md) y [Hermes reemplazado](2026-10-31-hermes-reemplazado.md).
+
 # Plan de arranque de ONIA-CENTRAL
 
 28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges (ajustada después de la revisión del PR para cerrar sus huecos). Quedan abiertos el plan de ChatGPT y lo de Vercel.

@@ -1,3 +1,5 @@
+> Nota 31-oct-2026: este documento queda como historia. Hermes fue reemplazado por los agentes Grok Bot. Las decisiones vigentes están en [taller y agentes](2026-10-31-decisiones-taller-y-agentes.md) y [Hermes reemplazado](2026-10-31-hermes-reemplazado.md).
+
 # Reinicio de Claude y Codex
 
 28-oct-2026. **Aplicado ese mismo día:** 244 entradas (carpetas y archivos) movidas al archivo, sin errores. El script `reinicio.py` (modos mirar, aplicar y revertir) y su manifiesto quedaron en `C:\Users\PC\.claude-archivo-20261028`.

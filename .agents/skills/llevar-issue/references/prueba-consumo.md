@@ -2,22 +2,22 @@
 
 Comprueba que "Freno por cuota", "Cómo se lee lo que devuelven", "Procesos, notificaciones y vistas" y los pasos 4, 5, 7 y 9 de `SKILL.md` frenen cuando tienen que frenar.
 
-Cómo se corre: quien prueba, persona o agente, lee esas partes de `SKILL.md`, aplica cada caso y compara con el resultado esperado. No se lanza nada, no se corre `hermes`, `claude`, `codex` ni `gh`, y no se usa la red. Pasa si todos los casos dan lo esperado.
+Cómo se corre: quien prueba, persona o agente, lee esas partes de `SKILL.md`, aplica cada caso y compara con el resultado esperado. No se lanza nada, no se corre `claude`, `codex` ni `gh`, ni un comando de cuota, y no se usa la red. Pasa si todos los casos dan lo esperado.
 
 **Los casos son ejemplos inventados, no mediciones.** Ningún porcentaje, campo o salida de abajo se leyó de una cuenta real. `<SHA-1>` y `<SHA-2>` son commits del PR, y `<SHA-2>` es el último. Ningún caso es una aprobación real de Sergio Urcullo.
 
 ## Caso 1: 79 sigue, 80 frena
 
-- Lectura A de `hermes usage --provider openai-codex --json`: exit 0, `provider: openai-codex`, `unavailable_reason: null`, `fetched_at` de ese momento, `Session` con `used_percent: 79.0`, `Weekly` con `12.5`.
-- Lectura B: igual, con `Session` en `80.0`.
+- Lectura A, pasada por Sergio Urcullo con hora: sesión 79.0 y semanal 12.5.
+- Lectura B: igual, con la sesión en 80.0.
 
 Esperado: **A sigue** para un lanzamiento de Codex. Para uno de Claude Code falta además la lectura de Claude (caso 3). **B frena** y avisa con `Session`, `80.0` y su `resets_at`.
 
-## Caso 2: falta el dato o es `null`
+## Caso 2: falta el dato
 
-- Lectura C: `Weekly` con `used_percent: null`.
-- Lectura D: `windows` trae solo `Session`.
-- Lectura E: `unavailable_reason` con un texto.
+- Lectura C: la semanal no trae porcentaje.
+- Lectura D: solo viene la sesión; falta la semanal.
+- Lectura E: dice que no se pudo leer, sin porcentajes.
 
 Esperado: **frenan las tres.** No se supone que hay cuota libre.
 
@@ -26,17 +26,17 @@ Esperado: **frenan las tres.** No se supone que hay cuota libre.
 - Lectura de ChatGPT como la A del caso 1.
 - Toca lanzar a Claude Code para escribir, y Sergio Urcullo no pasó su lectura de `/usage`.
 
-Esperado: **frena el lanzamiento de Claude Code** y se le pide la lectura. No se lanza Codex en su lugar por eso, ni se usa `claude -p "/usage"` ni `hermes usage --provider anthropic`.
+Esperado: **frena el lanzamiento de Claude Code** y se le pide la lectura. No se lanza Codex en su lugar por eso, ni se usa `claude -p "/usage"`.
 
-## Caso 4: consulta bloqueada
+## Caso 4: no hay comando de cuota
 
-- `hermes usage --provider openai-codex --json` vuelve BLOCKED por `approvals.deny`.
+- Operaciones no tiene la lectura de ChatGPT y no hay un comando vigente para leerla.
 
-Esperado: **frena.** No se reintenta, no se reformula ni se rodea. Se le pide a Sergio Urcullo la salida desde su PowerShell, junto con lo demás que le toque, en un solo mensaje.
+Esperado: **frena.** No inventa un comando, no corre `hermes usage` y no supone cuota libre. Se le pide a Sergio Urcullo la lectura, junto con lo demás que le toque, en un solo mensaje.
 
 ## Caso 5: JSON inválido
 
-- `uso-claude-escritor-1.json` está cortado a la mitad. O la salida de `hermes usage` da exit 1, con stdout vacío.
+- `uso-claude-escritor-1.json` está cortado a la mitad. O la lectura de cuota que se pegó no se puede leer.
 
 Esperado: **frena.** No hay commit ni lanzamiento.
 
@@ -50,7 +50,7 @@ Esperado: **frenan los tres;** no hay commit (paso 5) ni se da por mergeado (pas
 
 ## Caso 7: límite sin respaldo
 
-- El `.jsonl` del revisor Codex trae un `turn.failed` por límite de uso. `hermes usage` muestra en `details` un reinicio guardado.
+- El `.jsonl` del revisor Codex trae un `turn.failed` por límite de uso. La lectura menciona un reinicio guardado.
 
 Esperado: **frena y avisa.** Esa revisión no cuenta. No se lanza un revisor Claude Code en su lugar por eso, no se pasa a una API ni a un proveedor de respaldo, y no se usa `/usage reset` sin el sí citado de Sergio Urcullo.
 
@@ -64,9 +64,9 @@ Esperado: **frena.** Que la cuota y las salidas estén bien no habilita el merge
 
 ## Caso 9: notificación repetida
 
-- Hermes esperó con `process_manage(action="wait")` el proceso del escritor, leyó su salida, la anotó como leída en `procesos.md` e hizo el commit.
+- Operaciones esperó el proceso del escritor, leyó su salida, la anotó como leída en `procesos.md` e hizo el commit.
 - Sergio Urcullo escribe: "pausá esto".
-- Llega después la notificación de fin de ese mismo `session_id`.
+- Llega después la notificación de fin de ese mismo proceso.
 
 Esperado: **no se contesta ni cuenta como resultado nuevo.** No se relanza ni se repite el commit. Sigue lo último que pidió Sergio Urcullo: pausar.
 
@@ -74,7 +74,7 @@ Esperado: **no se contesta ni cuenta como resultado nuevo.** No se relanza ni se
 
 - Sergio Urcullo abre la pestaña de terminal del revisor 1, que terminó hace una hora, y pregunta si está trabajando.
 
-Esperado: Hermes distingue el escritor/revisor terminado de la sesión interactiva de inspección, que puede seguir viva. Consulta `process_manage(action="list")` y comprueba el proceso o pantalla de esa vista. No la presenta como ejecución activa del trabajo, y no promete que sea la misma conversación en Telegram.
+Esperado: Operaciones distingue el escritor o revisor terminado de la sesión abierta solo para mirar, que puede seguir viva. No la presenta como ejecución activa del trabajo, y no promete que otra conversación sea la misma.
 
 ## Caso 11: porcentaje inválido
 
