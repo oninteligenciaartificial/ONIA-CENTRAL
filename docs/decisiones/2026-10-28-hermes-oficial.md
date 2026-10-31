@@ -148,7 +148,7 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
   - `skills.write_approval: true` y `memory.write_approval: true`.
   - `approvals.mode: manual`.
   - `skills.external_dirs: []`.
-  - `skills.project_discovery: false`, o confiar solo en ONIA-CENTRAL.
+  - `skills.project_discovery: true`, con `skills.trusted_project_dirs` limitado a `C:\dev\proyectos\ONIA-CENTRAL` y nada más. Quedó así con los comandos del punto 3 de [skills-compartidas](2026-10-28-skills-compartidas.md), que corrió Sergio Urcullo (punto 9, [PR #17](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/17)). El 30-oct, Hermes lo volvió a ver en `config.yaml` (líneas 1199 y 1248-1249), sin editarlo.
   - `security.allow_lazy_installs: false`.
   - `terminal.cwd: C:/dev/proyectos/ONIA-CENTRAL`, para que Telegram y el gateway carguen el `AGENTS.md`. La guarda bien, pero el TUI y la versión clásica la ignoran: usan la carpeta desde donde se abren. Con Telegram todavía no se probó.
   - Si se usa la app de escritorio: `desktop.repo_scan_roots: [C:/dev/proyectos/ONIA-CENTRAL]` o `desktop.repo_scan_enabled: false`. Por defecto busca repos en la carpeta de usuario, donde hay espacios de Orca del repo viejo. Se eligió `desktop.repo_scan_enabled: false`.
@@ -159,7 +159,8 @@ Desde la v0.22.3 todas hablan con un único proceso, el gateway:
     - `hermes config set model_catalog.excluded_providers '[copilot, gemini]'` los saca del menú de modelos.
   - **Herramientas.** Se eligieron con `hermes tools`, en CLI.
     - Prendidas: archivos, terminal, visión, skills, navegador ("Local Browser"), control de la computadora (cua-driver), búsqueda web, lista de pasos, preguntas aclaratorias y video.
-    - La búsqueda usa OpenAI Native, incluida en ChatGPT. No quedó guardada: Hermes la elige porque es la única con credencial. OpenAI Native solo busca. Según el código y la guía oficial (`user-guide/features/web-search.md`), mientras no haya `web.extract_backend`, leer una página (`web_extract`) devuelve un error en vez de ir a los planes gratis de Exa, Parallel, Firecrawl o Keenable. No se probó. Para leer páginas queda el navegador.
+    - La búsqueda usa OpenAI Native, incluida en ChatGPT. No quedó guardada: Hermes la elige porque es la única con credencial. OpenAI Native solo busca. Según el código y la guía oficial (`user-guide/features/web-search.md`), mientras no haya `web.extract_backend`, leer una página (`web_extract`) devuelve un error en vez de ir a los planes gratis de Exa, Parallel, Firecrawl o Keenable. El 30-oct, Hermes corrió `web_extract` y recibió un error del backend de búsqueda. Solo se probó esa extracción: ni las búsquedas con Anthropic ni el nivel gratis se probaron. Para leer páginas queda el navegador.
+      - `web.keyless_fallback` queda prendido, como viene por defecto. Es la clave que apaga todo el nivel gratis. `web.keyless_rescue` no es la clave correcta: solo afecta el rescate después de una falla. Lo decidió Sergio Urcullo el 29-oct: "Dejarlo así" ([#21](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/21#issuecomment-6488170391)).
     - Prendidas pero ocultas: X y voz. Hermes no se las muestra al modelo hasta que tengan lo que les falta. X necesita una credencial de xAI ([#6](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6)).
     - La memoria también figura prendida, pero está apagada por dentro: Blank Slate dejó `memory.memory_enabled: false` y `memory.user_profile_enabled: false`.
     - Apagadas: tareas programadas, A2A, ejecución de código, delegación y Kanban.
@@ -249,6 +250,6 @@ Quedó en issues:
 - [Cortar lo que el repo viejo arranca al iniciar sesión](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/2). El 28-oct se sumaron dos cosas: una entrada `ONIA Center Local Stack` en la clave Run del usuario, y un `.vbs` en la carpeta Inicio que levanta un túnel SSH al VPS.
 - [Quitar el permiso sin preguntas guardado para el repo viejo en la app de Claude](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/3)
 - [Desinstalar Orca](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/4)
-- [Claves y cuentas](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/7). En las variables de usuario de Windows hay tres secretos (`GEMINI_API_KEY`, `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`) que puede leer cualquier programa.
+- [Claves y cuentas](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/7). El 28-oct, en las variables de usuario de Windows había tres secretos (`GEMINI_API_KEY`, `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`) que podía leer cualquier programa. Las tres claves están revocadas: el 29-oct, a la pregunta de si las había revocado y había leído [credenciales](../credenciales.md), Sergio Urcullo contestó "Sí, las dos cosas" ([PR #16](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/16#issuecomment-6488055003)). El 30-oct se volvió a comprobar por WMI que ya no están en las variables de usuario: se listaron solo los nombres de `HKCU\Environment`, sin leer valores, y ninguno de los tres aparece.
 - [Skills de ONIA para Hermes, Claude Code y Codex](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10)
 - [Telegram para Hermes con un bot nuevo](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/11)
