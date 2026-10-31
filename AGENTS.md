@@ -57,8 +57,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 
 ## Trabajo pesado: Claude Code y Codex
 
-El trabajo pesado (código, análisis de repos, documentos largos) se hace con `onia-llm` en la computadora compartida. Funciona en solo lectura por defecto; `--escritura` solo si hace falta y nunca hace `git push`. Desde el 3 de noviembre de 2026 usa Codex por defecto. Revisa siempre el resultado antes de usarlo y lleva los cambios a un PR sin merge. Detalle en `docs/harness/onia-llm.md`.
-
+Grok Bot solo coordina y revisa resúmenes. El trabajo pesado (código, análisis de repos, documentos largos) se manda en lote a Claude Code o Codex con `onia-llm` (y su cola) en la computadora compartida; el código va a Codex. Hay tres niveles: pesado (Opus 5.5 / gpt-6-astra), liviano, que es el de por defecto (Sonnet 5.5 / gpt-6.1-sol), y rápido (Haiku 5.5 / gpt-6-luna). Funciona en solo lectura por defecto; `--escritura` solo si hace falta, y nunca hace `git push`. Desde el 3 de noviembre de 2026 usa Codex por defecto. Revisa siempre el resultado antes de usarlo y lleva los cambios a un PR sin merge. Detalle en `docs/harness/onia-llm.md`.
 ## Qué no entra a Git
 
 - Secretos de ningún tipo: `.env`, claves, tokens, cookies.
