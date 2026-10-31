@@ -1,6 +1,6 @@
 # Hermes queda reemplazado por los agentes Grok Bot
 
-Decisión de Sergio Urcullo del 31-oct-2026: los 6 agentes Grok Bot reemplazan a Hermes como orquestador. **Este PR no borra ni cambia nada.** Solo lista lo que nombra a Hermes y propone qué hacer; cada propuesta la aprueba Sergio.
+Decisión de Sergio Urcullo del 31-oct-2026: los 7 agentes Grok Bot (Operaciones, Contenido y Marca, Talleres, Growth y Anuncios, Finanzas y Legal, ONIA Platform, y Ventas y Atención) reemplazan a Hermes como orquestador. **Este PR no borra ni cambia nada.** Solo lista lo que nombra a Hermes y propone qué hacer; cada propuesta la aprueba Sergio.
 
 ## Lo que hay en el repo
 

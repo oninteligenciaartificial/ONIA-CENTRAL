@@ -17,4 +17,5 @@ Pendiente: el plan gratis de Meet corta a los 60 minutos con 3 o más personas (
 
 ## Agentes
 
-- Los 6 agentes Grok Bot (Operaciones, Contenido y Marca, Talleres, Growth y Anuncios, Finanzas y Legal, ONIA Platform) reemplazan a Hermes como orquestador. Sus reglas están en `docs/reglas/equipo-grok-bot.md`, y qué pasa con Hermes en `2026-10-31-hermes-reemplazado.md`.
+- Los 7 agentes Grok Bot (Operaciones, Contenido y Marca, Talleres, Growth y Anuncios, Finanzas y Legal, ONIA Platform, y Ventas y Atención) reemplazan a Hermes como orquestador. Sus reglas están en `docs/reglas/equipo-grok-bot.md`, y qué pasa con Hermes en `2026-10-31-hermes-reemplazado.md`.
+- Ventas y Atención (id Grok Bot `46a91ff0-97e5-495d-970d-9b3c114d31ee`) lleva los leads de WhatsApp (+591 75414930, por ahora asignado a los workshops) y de Instagram, el seguimiento y las inscripciones. Todo queda en borrador y se envía con el sí de Sergio.
