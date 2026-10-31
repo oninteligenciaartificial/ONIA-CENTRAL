@@ -20,3 +20,18 @@ onia-llm --help
 4. **Revisar el resultado antes de usarlo.** Lo que devuelve el motor es un borrador.
 5. Nada de secretos en el prompt: credenciales en la bóveda.
 6. Nada a producción, publicar ni gastar sin el sí de Sergio.
+
+## Reglas de uso de Claude Code y Codex (aprobadas por Sergio Urcullo el 31-oct-2026)
+
+1. Se usan solo a través de `onia-llm` (`/home/box/.local/bin/onia-llm`) y solo para trabajo pesado: código, análisis largos, textos importantes y revisión de PR. Lo simple lo resuelve cada agente solo.
+2. Motor: Claude Code hasta el 3 de noviembre de 2026. Desde esa fecha, solo Codex si no se llegó a la meta de ingresos.
+3. Solo lectura por defecto. Solo editan dentro de una copia del repo en una rama nueva; nunca en `master`/`main` ni en el VPS.
+4. Todo lo que producen lo revisa el agente que pidió el trabajo antes de usarlo. Ningún resultado sale directo.
+5. Los cambios de código van por PR y nunca se mergean sin el sí de Sergio.
+6. No reciben contraseñas, llaves ni datos de clientes. Las llaves se quedan en la bóveda.
+7. Nunca publican, envían mensajes, gastan ni tocan producción.
+8. Antes de trabajar leen `AGENTS.md`, `docs/decisiones/2026-10-29-mapa-operacion-onia.md` y la carpeta del área que corresponda (por ejemplo `marca-personal/` o `workshops-comunidad/`).
+
+## Nivel de autonomía de los agentes
+
+Intermedio, elegido por Sergio el 31-oct-2026. Los agentes hacen solos lo interno y reversible (investigar, borradores, planillas, campañas en pausa, PR sin merge, arreglos menores del servidor con respaldo). Piden el sí para todo lo externo o difícil de revertir: publicar, enviar mensajes a personas (salvo las respuestas del chatbot a leads ya aprobadas), gastar, borrar, cambios en producción y temas legales. Se revisa cada semana para ver si se sube de nivel.
