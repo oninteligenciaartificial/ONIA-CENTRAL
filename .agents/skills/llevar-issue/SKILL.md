@@ -18,6 +18,9 @@ La usa sobre todo Hermes, que orquesta: toma el issue, lanza a quien escribe y a
 - **Un issue, un worktree, una rama.** No se tocan archivos que cambia otro PR abierto.
 - **Pedirle a Hermes que lleve un issue autoriza la rama, su push y el PR,** no el merge de lo reservado. Nunca se hace push a `main`: `main` cambia solo por PR.
 - **Solo ONIA-CENTRAL.** Otro repo sigue su propio `AGENTS.md`. En `onia-platform`, mergear es publicar, porque un cron del VPS publica `master` cada 3 horas: ahí cada merge es producción y lo aprueba Sergio Urcullo.
+- **Sin lectura de cuota válida, no se lanza nada.** Antes de cada lanzamiento se lee la cuota, como dice "Freno por cuota". Si falta el dato, no se supone que hay cuota libre.
+- **Un exit 0 solo no alcanza.** Se lee lo que devolvió cada uno, como dice "Cómo se lee lo que devuelven", antes del commit (paso 5) y antes de dar por hecho el merge (paso 9).
+- **Esta skill no es un sandbox ni un servicio que corre solo.** Los permisos los ponen los comandos de abajo y `approvals.deny`; la skill solo ordena los pasos. Nada de esto amplía herramientas ni permisos.
 
 ## Referencia rápida
 
@@ -27,10 +30,12 @@ La usa sobre todo Hermes, que orquesta: toma el issue, lanza a quien escribe y a
 | Worktree | `C:/dev/worktrees/ONIA-CENTRAL/issue-<N>` |
 | Notas (prompts, revisiones, cuerpo del PR) | `C:/dev/worktrees/ONIA-CENTRAL/issue-<N>-notas/`, fuera del worktree para que no entren al commit |
 | Rama | `issue/<N>-<dos-o-tres-palabras>` |
-| Escribe | Claude Code (`claude -p`). Si no anda o no tiene cuota, Codex. |
+| Escribe | Claude Code (`claude -p`). Si no anda por otra cosa que la cuota, Codex, con su propia lectura de cuota. Si el freno es por cuota o por un límite, se frena y se avisa: no se cambia solo de agente. |
 | Revisa | El otro: Codex si escribió Claude Code, un `claude -p` nuevo si escribió Codex. |
 | Mergea | Claude Code, lanzado por Hermes, solo lo que el `AGENTS.md` deja mergear sin preguntar |
-| Terminal de Hermes | Git Bash: rutas con `/`. `pty=true` va siempre con `background=true`. |
+| Terminal de Hermes | Git Bash: rutas con `/`. `pty=true` va siempre con `background=true`. Una sola terminal de Hermes coordina todos los procesos de Claude Code y Codex. |
+| Procesos | `<notas>/procesos.md`: cada `session_id`, qué es, si sigue corriendo y si su resultado ya se leyó |
+| Consumo | `<notas>/uso-claude-<paso>-<R>.json` y `<notas>/uso-codex-<paso>-<R>.jsonl`. `<paso>` es `escritor` o `merge` en Claude Code, y `escritor` o `revisor` en Codex. `<R>` es el número de vuelta o de intento. |
 
 ### Cómo se lanza a cada uno
 
@@ -38,21 +43,51 @@ Con `workdir` en el worktree y el prompt en un archivo de notas. Los textos larg
 
 ```bash
 # Escribe Claude Code
-claude -p --restricted --strict-mcp-config --permission-mode dontAsk --tools "Read,Edit,Write,Glob,Grep" --allowedTools "Read,Edit,Write,Glob,Grep" --max-turns 30 < <notas>/prompt-escritor.md
+claude -p --restricted --strict-mcp-config --permission-mode dontAsk --tools "Read,Edit,Write,Glob,Grep" --allowedTools "Read,Edit,Write,Glob,Grep" --max-turns 30 --output-format json < <notas>/prompt-escritor.md > <notas>/uso-claude-escritor-<R>.json
 
 # Escribe Codex
-codex exec --sandbox workspace-write - < <notas>/prompt-escritor.md
+codex exec --sandbox workspace-write --json -o <notas>/escritor-<R>.md - < <notas>/prompt-escritor.md > <notas>/uso-codex-escritor-<R>.jsonl
 
 # Revisa Codex
-codex exec --sandbox read-only --ephemeral -o <notas>/revision-<R>.md - < <notas>/prompt-revisor.md
+codex exec --sandbox read-only --ephemeral --json -o <notas>/revision-<R>.md - < <notas>/prompt-revisor.md > <notas>/uso-codex-revisor-<R>.jsonl
 
 # Revisa Claude Code, sin Bash: lee el diff que deja Hermes en <notas>/cambio.diff
 claude -p --restricted --strict-mcp-config --permission-mode dontAsk --no-session-persistence --tools "Read,Glob,Grep" --allowedTools "Read,Glob,Grep" --add-dir <notas> --max-turns 20 < <notas>/prompt-revisor.md > <notas>/revision-<R>.md
 ```
 
-El revisor de Claude Code no lleva Bash porque hasta `git diff` o `git grep` tienen opciones que escriben archivos o corren programas.
+El revisor de Claude Code no lleva Bash porque hasta `git diff` o `git grep` tienen opciones que escriben archivos o corren programas. Sale en texto, para que el archivo sea la revisión tal cual; por eso su consumo queda "sin medir".
+
+`--output-format json` devuelve un solo objeto JSON al terminar ([headless de Claude Code](https://code.claude.com/docs/en/headless)). `codex exec --json` escribe un evento JSON por línea, y `-o` guarda el último mensaje en texto ([modo no interactivo de Codex](https://learn.chatgpt.com/docs/non-interactive-mode)). Estos agregados no cambian herramientas ni permisos. Se ejercitaron en el [PR de documentación #86](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/86): Claude escribió y mergeó con JSON; Codex revisó con `--json`, `-o`, `pty=true` y `background=true`, con salida 0, evento `turn.completed` y revisión no vacía. Eso prueba las salidas, no el nuevo freno por cuota.
 
 El merge tiene su comando en el paso 9.
+
+### Cómo se lee lo que devuelven
+
+Hermes sigue cada proceso con `process_manage` (`reference/tools-reference.md`, línea 204) hasta que termina, y lee su código de salida y sus archivos con `read_file`. Nada de scripts propios para leerlos.
+
+**Claude Code que escribe o mergea**, en `<notas>/uso-claude-<paso>-<R>.json`. Sigue solo si se cumple todo esto:
+- el código de salida es 0;
+- el archivo es un solo objeto JSON válido, con `"type": "result"`;
+- `is_error` es `false`;
+- `subtype` es `success`. Cualquier otro, como `error_max_turns`, frena;
+- `permission_denials` está vacía. Si no, se anota qué se negó y no se amplían permisos;
+- `result`, que es el texto final, no avisa de un límite de uso ni de cuota.
+
+Si falla una, no hay commit (paso 5) ni se da por mergeado (paso 9). Se anota en el PR qué campo falló y con qué valor, y se sigue "Errores comunes". El texto de `result` es lo que contó quien escribió o mergeó.
+
+**Codex**, en `<notas>/uso-codex-<paso>-<R>.jsonl` y el texto de `-o`. Sigue solo si:
+- el código de salida es 0;
+- cada línea del `.jsonl` es un JSON válido;
+- hay al menos un evento `turn.completed` y ninguno `turn.failed` ni `error`;
+- el archivo de `-o` existe y no está vacío.
+
+Si falla una, se trata igual que con Claude Code.
+
+**Qué se anota del consumo**, siempre de la ejecución que lo midió, sin pasárselo a otro autor:
+- **Claude Code:** `num_turns`, `duration_ms`, cada campo de `usage` con su nombre y su valor, y `total_cost_usd`. Ese costo es nominal, a precio de lista: no es lo que se factura con la suscripción Max.
+- **Codex:** los campos de `usage` de cada `turn.completed`, con su nombre, como `input_tokens`, `cached_input_tokens` y `output_tokens`. Si hay más de un `turn.completed`, se suma cada campo por su nombre. `cached_input_tokens` ya está dentro de `input_tokens`: se anota aparte y no se suma. Codex no da dólares y no se calculan.
+- No se arma un total mezclando campos, no se inventa un campo que no vino y no se suma la caché dos veces. Lo que no vino va como "sin medir", con el porqué.
+- **Hermes** no deja un archivo de uso por ejecución: su consumo va "sin medir", y se ve solo en la ventana de ChatGPT, que comparte con Codex.
 
 **Por qué esos permisos de Claude Code.** En esta PC, `~/.claude/settings.json` tiene `defaultMode: auto`, así que un `claude -p` a secas decide solo qué comandos corre, y `--allowedTools` no lo frena.
 - `--restricted` ignora esa configuración y deja afuera Bash, salvo que `--tools` lo nombre.
@@ -74,6 +109,52 @@ Se probó el 29-oct:
 
 Si dicen otra cosa, se frena y se avisa, porque gastaría API.
 
+Los créditos extra de ChatGPT y de Claude están apagados: lo confirmó Sergio Urcullo en el [issue #30](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/30#issuecomment-6538683342). Eso no dice cuánto queda de cada ventana: para eso está "Freno por cuota".
+
+## Freno por cuota
+
+Sergio Urcullo decidió el corte de ChatGPT al 80% y la parada ante límites en los issues [#69](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/69) y [#70](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/70). Aplicar también el umbral del 80% a Claude Max es una propuesta de este PR reservado, no una decisión previa atribuida a él. La lectura vale antes de cada lanzamiento: quien escribe, quien revisa, quien mergea y cada relanzamiento. Una lectura vale para un solo lanzamiento.
+
+**ChatGPT, antes de cualquier lanzamiento.** Hermes y Codex usan la misma cuota de ChatGPT, así que se mira también antes de lanzar a Claude Code, porque Hermes sigue trabajando. Se lee con:
+
+```bash
+hermes usage --provider openai-codex --json
+```
+
+Está en `reference/cli-commands.md`, líneas 702-743, de la documentación instalada. Se sigue solo si:
+- el código de salida es 0 y la salida es un JSON válido;
+- `provider` es `openai-codex` y `unavailable_reason` es `null`;
+- `fetched_at` es de ese momento;
+- `windows` tiene una ventana con `label` `Session` y otra con `Weekly`, y las dos tienen `used_percent` con un número finito, mayor o igual a 0 y menor a 80; booleanos, cadenas y valores fuera de 0 a 100 son inválidos y frenan, sin corregirlos ni convertirlos por su cuenta.
+
+Si una ventana tiene `used_percent` de 80 o más, se frena y se avisa con su `label`, su `used_percent` y su `resets_at`. Si falta una ventana, `used_percent` es `null`, el JSON no se puede leer, el comando da 1 o está bloqueado, no se supone que hay cuota libre: se frena igual.
+
+**Mientras `hermes usage` esté bloqueado por `approvals.deny`,** Hermes no lo rodea ni lo reescribe. Le pide a Sergio Urcullo que lo corra en una PowerShell abierta desde el menú Inicio y pegue la salida entera, y lee esa salida con las mismas reglas. Va junto con lo de Claude, si toca, en un solo mensaje. Qué falta para destrabarlo está en `references/cuota-pendiente.md`.
+
+**Claude Max, antes de lanzar a Claude Code.** No hay un mecanismo probado para leerla desde Hermes:
+- `claude -p "/usage"` no está probado y no se usa como garantía;
+- `hermes usage --provider anthropic` lee la credencial de Anthropic que tenga Hermes, no el login de Claude Code (línea 719), y no se usa.
+
+Hasta que haya un mecanismo probado, la propuesta segura es manual: Sergio Urcullo mira `/usage` en una sesión interactiva de Claude Code, o la pantalla de uso de su cuenta, y pasa cada porcentaje que se ve, con su reinicio y la hora en que lo miró. Este PR propone el mismo umbral de 80, sujeto a su aprobación específica. Si no hay lectura, o falta un porcentaje válido, no se lanza a Claude Code.
+
+**Al llegar a un límite** se frena y se avisa. Sin el sí de Sergio Urcullo citado, no se cambia solo al otro agente, no se pasa a una API ni a un proveedor de respaldo, y no se usa un reinicio guardado (`/usage reset`), aunque `details` lo ofrezca.
+
+## Consumo en el PR y en el cierre
+
+El PR (paso 6) y el cierre (paso 11) llevan una sección "Consumo". Cada revisión (paso 7) suma la línea de su ejecución en su comentario. Cada dato dice su fuente y su fecha; lo que falta va como "sin medir", con el porqué.
+
+```text
+## Consumo
+Antes: lectura previa al primer lanzamiento.
+- ChatGPT (Hermes y Codex): Session <used_percent>% (reinicia <resets_at>), Weekly <used_percent>% (reinicia <resets_at>). Fuente: hermes usage --provider openai-codex --json, corrido por <Hermes | Sergio Urcullo en su PowerShell>, fetched_at <fecha>.
+- Claude Max: <cada porcentaje y su reinicio>. Fuente: /usage visto por Sergio Urcullo, <fecha y hora>. O "sin medir: <por qué>".
+Por ejecución:
+- <paso> <R>, <agente>: <campos y valores, como dice "Cómo se lee lo que devuelven">. Fuente: <archivo>. O "sin medir: <por qué>".
+- Hermes: sin medir, no deja un archivo de uso por ejecución.
+Después: la última lectura, con el mismo formato. Va en el cierre.
+Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cuánto queda de cada ventana.
+```
+
 ## Pasos
 
 1. **Tomar el issue.**
@@ -81,6 +162,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    - Fijá el "hecho cuando". Si el issue no lo tiene, escribí uno razonable y anotalo en el PR.
    - Decidí qué archivos va a tocar y si algo es reservado. Si falta una decisión, un login o un comando que solo tiene Sergio Urcullo, preguntáselo antes de arrancar, con opciones (paso 10).
    - Comprobá los logins de Claude Code y de Codex, como dice "Sin gasto de API".
+   - Leé la cuota, como dice "Freno por cuota", y guardá esa lectura para el "Antes" de la sección "Consumo".
    - Revisá choques con `gh pr list --state open --json number,title,files`. Si otro PR abierto toca los mismos archivos, esperá a que se mergee o tomá otro issue. Lo que tiene abierto una sesión de la app de Claude no se ve desde acá: si Sergio Urcullo nombra sesiones en curso, sus archivos no se tocan.
 2. **Worktree y rama**, desde `main` recién traído:
 
@@ -100,9 +182,15 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    - que no haga commit ni push;
    - que no escriba secretos;
    - si cambia lógica (código, un script, plata o seguridad), que sume una prueba chica y diga cómo se corre;
+   - si escribe Codex: que, si lee un archivo con PowerShell, use `Get-Content -Encoding UTF8`;
    - que al terminar diga qué cambió y qué no pudo hacer.
-4. **Lanzarlo** con su comando, de arriba. Mientras corre, Hermes lo sigue con `process(action="poll")`. Con `/goal`, Hermes espera solo y no gasta turnos.
+4. **Lanzarlo** con su comando, de arriba, después de leer la cuota ("Freno por cuota").
+   - El `terminal` devuelve un `session_id`. Anotalo en `<notas>/procesos.md`.
+   - Seguilo con `process_manage(action="poll", session_id=...)` o esperalo con `process_manage(action="wait", session_id=...)` hasta que termine, y leé su resultado real, como dice "Cómo se lee lo que devuelven". Con `/goal`, el juez estaciona el objetivo mientras el proceso corre y lo retoma cuando termina (`user-guide/features/goals.md`, "Parking on a background process").
+   - Lanzar no es terminar: no se deja un proceso lanzado sin leer su resultado, ni se cuenta como hecho lo que solo quedó en cola o lanzado. Si el turno de Hermes termina antes, dice que sigue corriendo, con su `session_id`.
+   - Cuando lo leíste, anotá en `<notas>/procesos.md` que su resultado ya se leyó.
 5. **Mirar el cambio entero, y commit y push.** Lo hace Hermes:
+   - Antes, leé lo que devolvió quien escribió, como dice "Cómo se lee lo que devuelven". Si no da para seguir, no hay commit.
    - Prepará todo y mirá lo preparado. Así también se ven los archivos nuevos, que `git diff` solo no muestra:
 
      ```bash
@@ -127,6 +215,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
    - quién orquestó, quién escribió y con qué comando;
    - la prueba y su resultado, si hubo;
    - si es reservado, por qué y qué tiene que decidir Sergio Urcullo;
+   - la sección "Consumo", con el "Antes" y la ejecución de quien escribió, como dice "Consumo en el PR y en el cierre";
    - `Closes #<N>`, en inglés: si no, GitHub no cierra el issue.
 
    ```bash
@@ -150,6 +239,7 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
      - si respeta el `AGENTS.md` y `docs/lecciones.md`, que lee del worktree;
      - si algo del resto del repo queda viejo o contradice el cambio, buscándolo en el repo;
      - si toca algo de la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`.
+   - si revisa Codex: que, si lee un archivo con PowerShell, use `Get-Content -Encoding UTF8`;
    - que conteste así:
 
      ```text
@@ -159,13 +249,14 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
      Reservado: no | sí, porque ...
      ```
 
-   Lanzalo con su comando, de arriba. Después, Hermes publica la revisión como comentario del PR, con `gh pr comment <PR> --body-file <notas>/comentario-<R>.md`. El comentario empieza así:
+   Lanzalo con su comando, de arriba, después de leer la cuota, y seguilo como en el paso 4. Si revisa Codex, leé su salida como dice "Cómo se lee lo que devuelven": si no da para seguir, esa revisión no cuenta y se frena. Si revisa Claude Code, que sale en texto, la revisión cuenta solo si el código de salida es 0 y el archivo tiene las líneas `Veredicto:` y `Reservado:`; un aviso de límite o un archivo vacío no es una revisión. Después, Hermes publica la revisión como comentario del PR, con `gh pr comment <PR> --body-file <notas>/comentario-<R>.md`. El comentario empieza así:
 
    ```text
    ## Revisión <R>
    Quién: <Codex con codex exec --sandbox read-only | Claude Code con claude -p>, sin el contexto del autor.
    Commit revisado: <sha completo>
    Qué se corrigió desde la revisión anterior: <lista, o "primera revisión">
+   Consumo: <campos de uso-codex-revisor-<R>.jsonl | sin medir: el revisor de Claude Code sale en texto>
    ```
 
    Abajo va el texto del revisor, tal cual.
@@ -195,16 +286,17 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
          - que sea mergeable;
          - que se vieron todos los comentarios: si falta una revisión numerada o la lista parece cortada, que los relea con `gh pr view <PR> --comments`, y si sigue faltando, que no mergee;
        - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
-     - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA;
+     - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA, enviándolo literalmente: sin anteponer `cd`, ni sumar `&&`, `; echo`, tuberías o sufijos; `workdir` ya fija la carpeta y la herramienta devuelve el código de salida;
      - que, si algo falla, no mergee y diga qué falló.
 
      Los permisos nombran ese PR y ese SHA, y nada más. Así no queda un permiso general para `gh pr merge`, que `docs/decisiones/2026-10-28-plan-arranque.md` no permite:
 
      ```bash
-     claude -p --restricted --strict-mcp-config --permission-mode dontAsk --no-session-persistence --tools "Bash" --allowedTools "Bash(gh pr view <PR> *)" "Bash(gh pr diff <PR>)" "Bash(gh pr merge <PR> --squash --delete-branch --match-head-commit <SHA>)" --max-turns 10 < <notas>/prompt-merge.md
+     claude -p --restricted --strict-mcp-config --permission-mode dontAsk --no-session-persistence --tools "Bash" --allowedTools "Bash(gh pr view <PR> *)" "Bash(gh pr diff <PR>)" "Bash(gh pr merge <PR> --squash --delete-branch --match-head-commit <SHA>)" --max-turns 10 --output-format json < <notas>/prompt-merge.md > <notas>/uso-claude-merge-<R>.json
      ```
 
-     Va con `workdir` en el checkout principal. Si alguien sumó un commit después de la revisión, `--match-head-commit` no deja mergear.
+     Va con `workdir` en el checkout principal. Si alguien sumó un commit después de la revisión, `--match-head-commit` no deja mergear. `--output-format json` solo cambia cómo devuelve el resultado, no los permisos.
+   - Antes de lanzarlo, Hermes lee la cuota ("Freno por cuota"). Al terminar, lee `<notas>/uso-claude-merge-<R>.json` como dice "Cómo se lee lo que devuelven". Que salga 0 no prueba el merge: lo prueba el `MERGED` del paso 11.
 10. **A Sergio Urcullo, solo lo reservado y lo que solo él puede hacer,** como logins, secretos o comandos en su PowerShell. Así lo dice el `AGENTS.md`, en "Los planes no se le preguntan". Lo técnico lo decide el agente. Todo junto, en un solo mensaje corto:
     - qué es y por qué le toca a él, con la regla del `AGENTS.md`;
     - el enlace al PR;
@@ -215,24 +307,39 @@ Si dicen otra cosa, se frena y se avisa, porque gastaría API.
 11. **Cerrar.**
     - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
-    - Contale a Sergio Urcullo en corto: el issue, el PR, quién escribió, quién revisó, cuántas vueltas hubo y qué quedó afuera.
+    - Leé la cuota una vez más, para el "Después". Como ya no se lanza nada, si el comando está bloqueado va "sin medir: `hermes usage` bloqueado", salvo que Sergio Urcullo haya pasado una lectura de después del último lanzamiento.
+    - Contale a Sergio Urcullo en corto: el issue, el PR, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
 
 ## Varios issues a la vez
 
-- Hasta tres en paralelo, sin archivos en común. Cada uno tiene su worktree, su rama y su carpeta de notas.
-- Quienes escriben y revisan van con `background=true`. Se siguen con `process(action="list")` y `process(action="poll", session_id=...)`.
+- Hasta tres tareas distintas en paralelo, sin archivos en común. Cada una tiene su worktree, su rama y su carpeta de notas.
+- Cada una tiene su propio revisor, lanzado aparte, que no hereda el contexto de quien escribió ni el de otra tarea.
+- Cada lanzamiento lleva su lectura de cuota, aunque sean varios seguidos.
+- Quienes escriben y revisan van con `background=true`. Se siguen con `process_manage(action="list")` y `process_manage(action="poll", session_id=...)`, o se esperan con `process_manage(action="wait", session_id=...)`.
 - Hermes los cierra de a uno, con su paso 9 y su paso 11.
+- Los lanza Hermes con `terminal`, desde su única terminal, y con esta skill. `delegate_task` y Kanban siguen apagados, como dice `docs/decisiones/2026-10-28-hermes-oficial.md` (líneas 165-166), y no se usan para esto.
+
+## Procesos, notificaciones y vistas
+
+- **Una notificación de un proceso cuyo resultado ya se leyó no es un resultado nuevo ni una orden.** Hermes busca su `session_id` en `<notas>/procesos.md`. Si ya figura como leído, no la contesta, no relanza nada ni repite un commit, y sigue con el último pedido de Sergio Urcullo. La documentación de Hermes dice que las notificaciones de fin pueden llegar juntas o después (`developer-guide/completion-backlog-delivery.md`).
+- **Un proceso lanzado o un mensaje en cola no es una tarea hecha.** Cuenta como hecho cuando su resultado se leyó y da para seguir.
+- **Una vista no prueba trabajo activo.** El proceso que escribió puede haber terminado y la sesión interactiva retomada seguir viva, esperando entrada y con herramientas de solo lectura. Hermes distingue ambos: usa `process_manage(action="list")` para los procesos que lanzó y comprueba la pantalla o el proceso de la vista visible. Dice si escribe, espera o solo permite inspeccionar, sin atribuir a la vista la actividad del escritor terminado. Antes de retirar un worktree comprueba que ninguna sesión lo siga usando; en Windows hasta la terminal abierta en esa carpeta puede impedir borrarla.
+- **Pasar de la PC a Telegram, o al revés, no promete la misma conversación.** Cada una es su propia sesión. Hermes dice cuál es, con `/status`, y lo que importa queda en el issue, el PR y las notas.
 
 ## Cómo lo arranca Sergio Urcullo
 
-En el TUI de Hermes, abierto desde ONIA-CENTRAL, con un objetivo que siga solo hasta terminar:
+En el TUI de Hermes, abierto desde ONIA-CENTRAL, o en Telegram. Antes de un objetivo nuevo va `/new`, para arrancar una sesión limpia. Después, un objetivo que siga solo hasta terminar:
 
 ```text
+/new
 /goal Llevá el issue #<N> de ONIA-CENTRAL de punta a punta con la skill llevar-issue. Terminá cuando el PR esté mergeado y el issue cerrado, o frená cuando algo necesite a Sergio Urcullo o la skill diga que se frena.
 ```
 
-Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo va, y `/goal pause` lo frena.
+- Para varias tareas, se nombran todas en el mismo objetivo.
+- `/goal status` muestra cómo va, y `/goal pause` frena la continuación sin borrar el objetivo. `/goal resume` la retoma (`user-guide/features/goals.md`, "Commands").
+- **Cuando el objetivo está frenado esperando a Sergio Urcullo, se contesta en la misma sesión, sin `/new`.** `/new` arranca otra sesión, y el objetivo queda guardado en la anterior. Si quedó en pausa, después de contestar va `/goal resume`.
+- `/goal` mantiene el objetivo en esa sesión: no crea trabajadores, no reparte tareas ni toca Kanban (`goals.md`, "Goals vs Kanban"). A Claude Code y a Codex los lanza Hermes, con `terminal` y esta skill.
 
 ## Errores comunes
 
@@ -240,7 +347,11 @@ Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo
 - **Codex se queda esperando:** va con `pty=true` y `background=true`, como dice su skill de fábrica.
 - **Codex con `workspace-write` todavía no se probó en esta PC.** Si falla, no se sube a `danger-full-access`, que además está bloqueado: escribe Claude Code y Codex revisa en solo lectura.
 - **`claude -p` corta por `--max-turns`:** relanzalo con lo que falta, en vez de subir los turnos.
-- **Sin cuota de Claude Code o de Codex:** se frena y se avisa. No se cambia a una API paga sin el sí de Sergio Urcullo.
+- **Sin cuota de Claude Code o de Codex:** se frena y se avisa, como dice "Freno por cuota". No se cambia a una API paga, a otro agente ni a un reinicio guardado sin el sí de Sergio Urcullo.
+- **Un pedido que quedó en cola no confirmada se recupera y se responde por partes, sin contarlo como hecho ni reenviarlo a ciegas.** Porque puede no haber llegado al modelo, o duplicar una acción ya ejecutada; responder otras cosas no resuelve ese pedido.
+- **Una notificación interna repetida no se contesta ni sirve para dejar de lado el último pedido de Sergio Urcullo.** Se mira en `<notas>/procesos.md` si su resultado ya se leyó, porque las notificaciones tardías pueden llegar después de verificar el resultado.
+- **Una sesión abierta para mirar no sustituye al trabajador que pidió Sergio Urcullo.** Se dice si el proceso trabaja, espera o solo permite inspeccionar, porque abrir una pestaña en modo lectura no ejecuta la tarea.
+- **El comando de merge acotado se envía literalmente, sin `cd` ni sufijos para imprimir el exit code.** Porque el permiso se limita a esa cadena y la herramienta ya devuelve la salida; en el [PR #86](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/86#issuecomment-6539096095) el comando compuesto quedó denegado y el literal pasó sin ampliar permisos.
 
 ## Cómo se comprueba
 
@@ -251,4 +362,6 @@ Para varios, se nombran todos en el mismo objetivo. `/goal status` muestra cómo
   - si era reservado o alguna revisión dijo "Reservado: sí", hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras, que cubre todo lo reservado;
   - el PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
 - Si quedó trabado en el paso 8: el PR y el issue siguen abiertos, hay un comentario que dice qué sigue fallando, y se contó en el cierre.
+- El PR y el cierre tienen la sección "Consumo", con fuente y fecha en cada dato, o "sin medir" y el porqué.
 - Cuándo frena el paso 9 por las revisiones se prueba a mano con los casos de `references/prueba-reserva.md`, sin mergear ni usar la red.
+- El freno por cuota, la lectura de lo que devuelven y los procesos se prueban a mano con los casos de `references/prueba-consumo.md`, sin lanzar nada ni usar la red.
