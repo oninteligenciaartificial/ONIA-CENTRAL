@@ -1,0 +1,8 @@
+
+
+ Test Files  17 failed | 933 passed | 2 skipped (952)
+      Tests  169 failed | 15302 passed | 16 skipped (15487)
+     Errors  18 errors
+   Start at  17:17:09
+   Duration  540.96s (transform 14.68s, setup 7.15s, import 90.78s, tests 652.30s, environment 74ms)
+

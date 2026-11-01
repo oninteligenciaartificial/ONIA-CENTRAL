@@ -1,0 +1,61 @@
+{
+  "fecha": "2026-11-01",
+  "repo": {
+    "rama": "feat/agente-robustez",
+    "head": "c0cab99",
+    "npm_build_exit": 1,
+    "next_build_config_local_exit": 0,
+    "typecheck_exit": 0,
+    "lint_exit": 0,
+    "lint_warnings": 104,
+    "diff_check_exit": 0,
+    "suite": {
+      "exit": 1,
+      "files_failed": 16,
+      "files_passed": 949,
+      "files_skipped": 2,
+      "tests_failed": 169,
+      "tests_passed": 15655,
+      "tests_skipped": 16,
+      "errors": 18,
+      "duration_seconds": 540.89
+    }
+  },
+  "rama_panel": {
+    "path": "/workspace/platform/wt-panel",
+    "rama": "feat/panel-interno",
+    "head": "03a326f",
+    "npm_build_exit": 1,
+    "next_build_config_local_exit": 0,
+    "suite": {
+      "exit": 1,
+      "files_failed": 17,
+      "files_passed": 933,
+      "files_skipped": 2,
+      "tests_failed": 169,
+      "tests_passed": 15302,
+      "tests_skipped": 16,
+      "errors": 18,
+      "duration_seconds": 540.96
+    },
+    "correccion_posterior": {
+      "archivo": "app/(dashboard)/panel/page.test.ts",
+      "test_focal_passed": 6,
+      "eslint_exit": 0,
+      "diff_check_exit": 0,
+      "suite_completa_repetida": false
+    }
+  },
+  "focales": {
+    "panel": 124,
+    "costo": 193,
+    "web": 9
+  },
+  "capturas_nuevas": false,
+  "bloqueos": [
+    "EPERM subprocesos y listen",
+    "Chromium Operation not permitted",
+    "Chatwoot sin export local",
+    "Claude CLI sin cota dura verificable"
+  ]
+}

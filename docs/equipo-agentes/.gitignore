@@ -1,0 +1,6 @@
+*.log
+*.jsonl
+*.tgz
+*.bak-*
+capturas/
+.slots/
