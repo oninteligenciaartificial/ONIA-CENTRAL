@@ -1,5 +1,7 @@
 # Reglas del equipo Grok Bot
 
+> **Historia desde el 1-nov-2026.** Grok Bot ya no orquesta: el equipo son sesiones de Claude Code en la PC, como dice la sección "Equipo de agentes" del `AGENTS.md` ([2026-11-01-equipo-claude-code](../decisiones/2026-11-01-equipo-claude-code.md)). El `CLAUDE.md` ya no carga este archivo.
+
 Aprobadas por Sergio Urcullo el 31-oct-2026. Valen para los 7 agentes Grok Bot: Operaciones, Contenido y Marca, Talleres, Growth y Anuncios, Finanzas y Legal, ONIA Platform, y Ventas y Atención. Se suman a `AGENTS.md`; si chocan, manda `AGENTS.md` hasta que Sergio decida.
 
 | Agente | Id Grok Bot | Encargo |
