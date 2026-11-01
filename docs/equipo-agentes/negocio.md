@@ -17,10 +17,10 @@ Actualizado: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcu
 Las tomó en esta sesión, a la noche, con botones. Sus palabras van entre comillas.
 
 - **Precio:** Bs 50. "cuesta 50bs". Reemplaza los Bs 70 desde el 2-nov de `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md`.
-- **Pago:** "workshop pago unico". Se lee como un solo pago de Bs 50 por el taller; los combos y las clases sueltas del plan del 29-oct no se usan. Sobre esas condiciones dijo "no esta definido ningun cambio".
+- **Pago:** a la pregunta de seguir con Bs 120 las tres clases y sin devolución, contestó "no esta definido ningun cambio, workshop pago unico". Qué cubre ese pago único (si los Bs 50 son por las tres clases o por cada una, y si quedan los combos y las clases sueltas del plan del 29-oct) está sin confirmar: se le pregunta.
 - **QR:** "Yolo Pago (Ganadero)". El del BCP queda para ONIA Platform, según la rama. Falta un pago de prueba antes del martes 3.
-- **Salas de Meet:** "Las creo yo". Quedaron creadas el 1-nov en el calendario principal de la cuenta de Google conectada a la app: 6 eventos, 2 por clase (Sala 1 de 19:00 a 20:00 y Sala 2 de 20:00 a 21:00), con Meet, sin invitados y sin avisos. Los enlaces están en esos eventos y no se copian en Git.
-- **Cómo se le presentan las decisiones:** "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion". Esta sesión le presenta solo las de su área; lo de otra área va abajo, "para <área>".
+- **Salas de Meet:** "Las creo yo". Esta sesión las creó el 1-nov con `create_event` de Google Calendar, en el calendario principal de la cuenta de Google conectada a la app: 6 eventos, 2 por clase (Sala 1 de 19:00 a 20:00 y Sala 2 de 20:00 a 21:00, hora de Bolivia), con Meet, sin invitados y con `notificationLevel: NONE`, para que no salga ningún correo. La herramienta devolvió los 6 eventos confirmados. Los enlaces están en esos eventos y no se copian en Git.
+- **Cómo se le presentan las decisiones:** "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion". Se lee como que cada sesión le presenta solo las de su área; lo de otra área va abajo, "para <área>".
 
 ## Decisiones que siguen abiertas
 
@@ -48,18 +48,18 @@ Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. 
 
 ## Conectores de esta sesión
 
-Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar, para leer eventos; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
+Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar: para leer eventos y para crear las 6 salas de Meet; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
 
 ## Pendientes del área
 
 - [ ] Pago de prueba con el QR de Yolo Pago antes del martes 3 (lo hace Sergio Urcullo).
-- [ ] Poner al día los textos de WhatsApp del taller con Bs 50, pago único y el QR de Yolo Pago, en borrador. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar.
+- [ ] Poner al día los textos de WhatsApp del taller con Bs 50 y el QR de Yolo Pago, en borrador, cuando Sergio Urcullo confirme qué cubre el pago único. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar.
 - [ ] Planilla de cobros del taller, sin datos de clientes en Git.
 - [ ] Traer de `/workspace` los borradores de diagnóstico gratis, sin datos de clientes, si Sergio Urcullo los pide.
 
 ## Para otras áreas
 
-- Para Marketing: captions de reels y anuncios con Bs 50, pago único, decidido por Sergio Urcullo el 1-nov (arriba). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
+- Para Marketing: captions de reels y anuncios con Bs 50, decidido por Sergio Urcullo el 1-nov; qué cubre el pago único, sin confirmar (arriba). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
 - Para Marketing: dónde se publica la web de invitación del taller. Vercel u onia.com.bo son producción.
 - Para la sesión coordinadora: `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo Bs 70 desde el 2-nov. Esta área no lo toca, porque no es su archivo.
 - Para ONIA Platform: el cobro con el QR del BCP y los precios de los planes, que siguen como propuesta.
