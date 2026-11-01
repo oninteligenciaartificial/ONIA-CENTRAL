@@ -40,7 +40,9 @@ En `main`:
 En GitHub, sin mergear:
 - [PR que prepara el temario, los textos de WhatsApp, los guiones y la lista para lanzar el taller](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72): `workshops-comunidad/claude-0-a-100/` con `whatsapp.md` (bienvenida, "/taller", "/qr", "/pagado"). Es anterior a la decisión del 31-oct. Sus Bs 70 no son el precio de inscripción: son lo que paga quien hizo la clase 1 para completar las clases 2 y 3, hasta el jueves 5 (su `README.md`, elegido por Sergio Urcullo el 30-oct).
 
-Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. Sergio Urcullo se lo pide a Grok Bot si hace falta:
+En GitHub, en la rama `origin/grokbot/workspace-20261101` (commit `23c342d`, del 1-nov a las 19:10): una copia de parte de `/workspace` que subió Grok Bot, según avisó la sesión coordinadora. Dentro de `grokbot-workspace/` trae, entre otras, `ventas/`, `taller-claude/`, `decisiones/` (con D-009 a D-020) y `manuales/`, con `negocio/` y `finanzas-legal/`. Grok Bot dice que dejó afuera el QR de pago y los logs de ventas, y que los borradores de seguimiento no tienen datos de leads. Esta área todavía no lo comprobó: nada de esa rama pasa a `main` sin revisar antes que no tenga datos de clientes.
+
+Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. Ahora, en parte, también en esa rama. Sergio Urcullo se lo pide a Grok Bot si hace falta:
 - `/workspace/ventas/`: guion de WhatsApp del taller, escalera de oferta y precios, borradores de diagnóstico gratis y funnels.
 - `/workspace/manuales/negocio/` y `/workspace/manuales/finanzas-legal/`: control diario y conciliación de cobros.
 - `/workspace/decisiones/INDICE.md`: el detalle de D-009 a D-020.
