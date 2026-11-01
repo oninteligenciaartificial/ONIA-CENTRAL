@@ -310,3 +310,6 @@ Resumen de `/workspace/platform/aprendizajes.md` (31-oct):
 Formato: `AAAA-MM-DD · bot · qué pasó · regla nueva` (y `→ aplicada en <ruta>` cuando pasa a manual o test). Las líneas hasta el 1-nov 17:40 ya están repartidas por tema arriba.
 
 - 2026-11-01 · Analista · aprendizajes repartidos en 3+ lugares (lecciones.md, APRENDIZAJES.md, aprendizajes de cada área) · un solo archivo, este → aplicada en `docs/equipo-agentes/APRENDIZAJES.md`
+
+- 2026-11-01 · Analista · onia-guard bloquea prompts que solo mencionan "push" o "publicar" aunque sea para prohibirlo · redactar como "subir al remoto"; el guard nunca se esquiva para acciones reales.
+- 2026-11-01 · Analista · Claude con --escritura no puede git commit ni escribir en .claude/ · el bot orquestador hace el commit y esas copias.
