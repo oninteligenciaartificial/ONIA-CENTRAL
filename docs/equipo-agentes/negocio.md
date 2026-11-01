@@ -1,6 +1,6 @@
 # Boss No-Code: estado
 
-Área: ventas, leads de WhatsApp (+591 75414930) y de Instagram, chatbot, diagnóstico gratis, precios, el taller "Claude de 0 a 100" y finanzas. Desde el 1-nov-2026 es una sesión de Claude Code; antes, un bot de Grok Bot (Ventas y Atención, después "Jefe de Negocio"). Lo decidió Sergio Urcullo el 1-nov, con botones, en la sesión coordinadora de Claude Code (sin enlace). Hasta que un PR aparte lo ponga en el `AGENTS.md`, esa decisión vale donde el repo dice que el trabajo pasa por Hermes, Grok Bot u `onia-llm`.
+Área: ventas, leads de WhatsApp (+591 75414930) y de Instagram, chatbot, diagnóstico gratis, precios, el taller "Claude de 0 a 100" y finanzas. Desde el 1-nov-2026 es una sesión de Claude Code; antes, un bot de Grok Bot (Ventas y Atención, después "Jefe de Negocio"). Lo decidió Sergio Urcullo el 1-nov, con botones, en la sesión coordinadora de Claude Code (sin enlace). Quedó en el `AGENTS.md`, sección "Equipo de agentes", y en `docs/decisiones/2026-11-01-equipo-claude-code.md`.
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
 
