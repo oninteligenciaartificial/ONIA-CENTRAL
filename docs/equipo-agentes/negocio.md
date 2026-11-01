@@ -1,6 +1,6 @@
 # Boss No-Code: estado
 
-Área: ventas, leads de WhatsApp (+591 75414930) y de Instagram, chatbot, diagnóstico gratis, precios, el taller "Claude de 0 a 100" y finanzas. Desde el 1-nov-2026 es una sesión de Claude Code; antes, un bot de Grok Bot (Ventas y Atención, después "Jefe de Negocio").
+Área: ventas, leads de WhatsApp (+591 75414930) y de Instagram, chatbot, diagnóstico gratis, precios, el taller "Claude de 0 a 100" y finanzas. Desde el 1-nov-2026 es una sesión de Claude Code; antes, un bot de Grok Bot (Ventas y Atención, después "Jefe de Negocio"). Lo decidió Sergio Urcullo el 1-nov, con botones, en la sesión coordinadora de Claude Code (sin enlace). Hasta que un PR aparte lo ponga en el `AGENTS.md`, esa decisión vale donde el repo dice que el trabajo pasa por Hermes, Grok Bot u `onia-llm`.
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
 
@@ -19,8 +19,8 @@ Comprobadas el 1-nov contra `main` y la rama. Donde no coinciden, se le pregunta
 | # | Tema | Qué dice `main` | Qué dice la rama | Estado |
 |---|---|---|---|---|
 | 1 | Precio desde el 2-nov | Bs 50 hasta el 1-nov y Bs 70 desde el 2-nov (decisión del 31-oct). El plan del 29-oct daba Bs 50 la clase o Bs 120 las tres | "Bs 50 fijo, no sube a 70", del 1-nov a las 17:30, pasado por Grok Bot | No coinciden: se le pregunta |
-| 2 | QR de cobro del taller | Hace falta un QR sin monto fijo que no venza; no dice de qué banco | Antes: QR del BCP (D-019, a verificar). Después: "solo Yolo Pago (Ganadero); el del BCP es para ONIA Platform" | No coinciden y no hay constancia de que se haya probado un pago: se le pregunta |
-| 3 | Salas de Meet | Meet gratis corta a los 60 minutos con 3 o más personas; el enlace siguiente se crea antes de cada clase | 2 salas gratis por clase, 6 en total, las crea Sergio Urcullo (D-008, T-14) | El Google Calendar de la cuenta no tiene eventos del 2 al 8-nov (consultado el 1-nov). Falta crearlas |
+| 2 | QR de cobro del taller | Se confirma cada pago a mano. Hace falta un QR para muchos pagos y sin monto fijo, o uno por cada monto, que no venza antes del final de la segunda edición. No dice de qué banco | Antes: QR del BCP (D-019, a verificar). Después: "solo Yolo Pago (Ganadero); el del BCP es para ONIA Platform" | No coinciden y no hay constancia de que se haya probado un pago: se le pregunta |
+| 3 | Salas de Meet | Meet gratis corta a los 60 minutos con 3 o más personas; el enlace siguiente se crea antes de cada clase | 2 salas gratis por clase, 6 en total, las crea Sergio Urcullo (D-008 en `ESTADO-ACTUAL.md` §3 y §6; T-14 en `tareas.md`, pendiente) | En el calendario principal de la cuenta de Google conectada a la app no hay eventos del 2 al 8-nov (`list_events` de Google Calendar, 1-nov). Eso no prueba que no haya enlaces de Meet creados por fuera del calendario: la creación de las salas queda sin confirmar |
 | 4 | Combos | Bs 120 las tres clases (plan del 29-oct) | D-016 pendiente | Sin decidir con el precio nuevo |
 | 5 | Devolución | Propuesta: sin devolución, dicho antes de pagar, con la grabación incluida | D-013 pendiente | Propuesta, falta su sí |
 | 6 | Mensaje de diagnóstico gratis a los chats en espera | — | Borradores con enlace de Cal.com, solo en `/workspace`; falta su sí (D-012) y el acceso a la bandeja de Chatwoot | Bloqueado: los borradores no están en esta PC |
@@ -34,7 +34,7 @@ En `main`:
 - `workshops-comunidad/plan-meta-ads-borrador.md`: plan del 29-oct, con oferta, cobro, devolución y textos. Las fechas del 17 y 19-nov quedaron reemplazadas por las del 3, 5 y 7-nov.
 
 En GitHub, sin mergear:
-- [PR que prepara el temario, los textos de WhatsApp, los guiones y la lista para lanzar el taller](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72): `workshops-comunidad/claude-0-a-100/` con `whatsapp.md` (bienvenida, "/taller", "/qr", "/pagado"). Es anterior a la decisión del 31-oct y habla de Bs 70 hasta el jueves 5.
+- [PR que prepara el temario, los textos de WhatsApp, los guiones y la lista para lanzar el taller](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72): `workshops-comunidad/claude-0-a-100/` con `whatsapp.md` (bienvenida, "/taller", "/qr", "/pagado"). Es anterior a la decisión del 31-oct. Sus Bs 70 no son el precio de inscripción: son lo que paga quien hizo la clase 1 para completar las clases 2 y 3, hasta el jueves 5 (su `README.md`, elegido por Sergio Urcullo el 30-oct).
 
 Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. Sergio Urcullo se lo pide a Grok Bot si hace falta:
 - `/workspace/ventas/`: guion de WhatsApp del taller, escalera de oferta y precios, borradores de diagnóstico gratis y funnels.
@@ -44,7 +44,7 @@ Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. 
 
 ## Conectores de esta sesión
 
-Consultados el 1-nov, sin leer secretos. Sirven al área: Google Calendar (salas de Meet), Gmail (borradores), Google Drive, Notion y Meta Ads (solo lectura desde esta área). No hay conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
+Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar, para leer eventos; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
 
 ## Pendientes del área
 
@@ -61,4 +61,4 @@ Consultados el 1-nov, sin leer secretos. Sirven al área: Google Calendar (salas
 
 ## Notas
 
-- A Sergio Urcullo se le habla de vos. La regla de tuteo de la rama no vale.
+- A Sergio Urcullo se le habla de vos, como dice su `CLAUDE.md` global y como decidió el 1-nov en la sesión coordinadora (sin enlace). El "tuteo siempre" de `ESTADO-ACTUAL.md` §3, en la rama, choca con eso.
