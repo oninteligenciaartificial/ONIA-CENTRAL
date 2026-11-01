@@ -76,3 +76,6 @@ En TODAS las sesiones y agentes, todo el trabajo lo hacen Claude Code y Codex co
 | Marketing | claude --nivel pesado (opus) para guiones/reels | codex --nivel liviano (gpt-6.1-sol) |
 | Pelau | claude --nivel rapido (haiku) para resumir | sin revisión |
 Regla: empieza en el nivel de la tabla; sube a pesado solo si el revisor rechaza, máximo una vez. Usa siempre --agente con tu nombre exacto.
+
+## Dónde se guarda todo (Sergio, 2026-11-01 17:37)
+Todo el trabajo y el estado se guardan en el repo ONIA-CENTRAL. `/workspace/estado` es un enlace a `/workspace/ONIA-CENTRAL/docs/equipo-agentes`. Al cerrar una tarea, haz commit local de tus cambios en ONIA-CENTRAL (nunca push sin el sí de Sergio). Nada de secretos en el repo.
