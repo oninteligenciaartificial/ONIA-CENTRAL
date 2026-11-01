@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude de 0 a 100 · Workshop en vivo con Sergio Urcullo (OnIA)</title>
+<meta name="description" content="3 clases en vivo por Google Meet para aprender a usar Claude desde cero, con tus propias tareas. Martes 3, jueves 5 y sábado 7 de noviembre, 19:00 (hora de Bolivia).">
+<!--
+  BORRADOR de OnIA — NO PUBLICAR sin el sí de Sergio con captura.
+  Un solo archivo, sin dependencias externas. Todo lo editable está en CONFIG (al final del archivo, en el bloque de JavaScript).
+  Precio: Bs 50 fijo (D-20261101-009 cerrada el 1/11/2026). Cobro solo con QR de Yolo. Pendientes: política de devolución (D-20261101-013),
+  foto de Sergio, y revisión legal del nombre (usa la marca "Claude" y se parece a "Claude desde 0 a 100" de Enrique Rocha).
+-->
+<style>
+  :root{
+    --bg:#0d0f14; --bg2:#151923; --card:#1b2030; --line:#2a3145;
+    --txt:#eef1f7; --muted:#a8b0c3; --acc:#ff7a45; --acc2:#ffb347; --ok:#3ddc97; --wa:#25d366;
+    --r:16px; --max:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+       background:var(--bg);color:var(--txt);line-height:1.55;font-size:17px}
+  a{color:var(--acc2)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .draft{background:#5a1d1d;color:#ffd7d7;text-align:center;font-size:14px;padding:8px 12px}
+  header.top{position:sticky;top:0;z-index:10;background:rgba(13,15,20,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+  .logo{font-weight:800;letter-spacing:.5px}
+  .logo span{color:var(--acc)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+       font:inherit;font-weight:700;text-decoration:none;border-radius:999px;padding:14px 24px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-wa{background:var(--wa);color:#06260f;box-shadow:0 6px 24px rgba(37,211,102,.25)}
+  .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  .btn-sm{padding:9px 16px;font-size:15px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{line-height:1.15;margin:0 0 14px}
+  h1{font-size:clamp(34px,6vw,58px);letter-spacing:-1px}
+  h2{font-size:clamp(26px,4vw,38px)}
+  h3{font-size:20px}
+  .tag{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--acc2);
+       padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+  .muted{color:var(--muted)}
+  .hero{padding:56px 0 64px;background:radial-gradient(1200px 500px at 80% -10%,rgba(255,122,69,.18),transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:36px;align-items:center}
+  .grad{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 26px}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px}
+  .fact b{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+  .avatar{width:100%;aspect-ratio:4/5;border-radius:var(--r);border:1px solid var(--line);
+          background:linear-gradient(160deg,#232a3d,#141824);display:flex;flex-direction:column;align-items:center;justify-content:center;
+          color:var(--muted);text-align:center;padding:20px;font-size:14px}
+  .avatar .ini{font-size:72px;font-weight:800;color:var(--acc);line-height:1}
+  .cd{display:flex;gap:10px;margin-top:6px}
+  .cd div{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:62px;text-align:center}
+  .cd b{display:block;font-size:24px}
+  .cd small{color:var(--muted);font-size:11px;text-transform:uppercase}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .clase .num{color:var(--acc);font-weight:800;font-size:14px;letter-spacing:.5px;text-transform:uppercase}
+  .clase .fecha{color:var(--muted);font-size:14px;margin-bottom:10px}
+  .clase ul{padding-left:18px;margin:8px 0 0}
+  .clase li{margin:4px 0}
+  .sale{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:15px}
+  .sale b{color:var(--ok)}
+  ul.check{list-style:none;padding:0;margin:0}
+  ul.check li{padding-left:30px;position:relative;margin:10px 0}
+  ul.check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:800}
+  ul.no li::before{content:"✕";color:#ff6b6b}
+  .price{text-align:center}
+  .price .big{overflow-wrap:anywhere;font-size:clamp(48px,8vw,72px);font-weight:800;line-height:1}
+  .price .old{color:var(--muted);font-size:18px}
+  .pill{display:inline-block;background:rgba(61,220,151,.12);color:var(--ok);border:1px solid rgba(61,220,151,.35);
+        padding:4px 10px;border-radius:999px;font-size:13px;font-weight:700}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{counter-increment:s;position:relative;padding:0 0 18px 50px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;
+       background:var(--acc);color:#1a0d06;font-weight:800;display:flex;align-items:center;justify-content:center}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0}
+  summary{cursor:pointer;font-weight:700}
+  details p{margin:10px 0 0;color:var(--muted)}
+  footer{padding:36px 0 110px;color:var(--muted);font-size:14px;text-align:center}
+  .float{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px;background:rgba(13,15,20,.95);
+         border-top:1px solid var(--line);display:none;justify-content:center}
+  .closed,[hidden]{display:none!important}
+  :focus-visible{outline:3px solid var(--acc2);outline-offset:4px}
+  section[id]{scroll-margin-top:80px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  @media (max-width:860px){
+    .hero-grid,.grid3,.grid2{grid-template-columns:1fr}
+    .avatar{aspect-ratio:16/10}
+    .float{display:flex}
+    header.top .btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="draft" id="draftBanner">BORRADOR interno de OnIA · no publicar sin el sí de Sergio · CONFIG pendiente: precio · devolución · foto</div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo">On<span>IA</span> · Claude de 0 a 100</div>
+    <a class="btn btn-wa btn-sm js-wa" href="#" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+  </div>
+</header>
+
+<!-- 1. PORTADA: cara + producto + con qué sales (Enrique Rocha: portada con su cara y "con qué salís") -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Workshop en vivo · Edición 1 · Noviembre 2026</span>
+      <h1 style="margin-top:16px">Claude <span class="grad">de 0 a 100</span></h1>
+      <p style="font-size:20px;margin:0 0 6px">Pasa de “no sé qué escribirle” a dejarle trabajo armado a la IA, con <b>tus propias tareas</b>.</p>
+      <p class="muted" style="margin:0">3 clases en vivo por Google Meet, desde cero, en español y con práctica. Te lo enseña Sergio Urcullo, fundador de OnIA (Bolivia).</p>
+
+      <div class="facts">
+        <div class="fact"><b>Fechas</b>Mar 3 · Jue 5 · Sáb 7 de nov</div>
+        <div class="fact"><b>Hora</b>19:00 (hora de Bolivia)</div>
+        <div class="fact"><b>Dónde</b>Google Meet, en vivo</div>
+        <div class="fact"><b>Lugares</b><span class="js-cupos">60</span> en total</div>
+        <div class="fact"><b>Precio</b><span class="js-precio-corto">Precio por confirmar</span> por las 3 clases</div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">💬 Escríbeme “TALLER” por WhatsApp</a>
+        <a class="btn btn-ghost" href="#temario">Ver el temario</a>
+      </div>
+      <p class="muted" style="font-size:14px;margin-top:10px">Te respondo con los detalles y el QR para pagar. Si no puedes a las 19:00, recibes las grabaciones.</p>
+
+      <div id="countdownBox" style="margin-top:18px">
+        <div class="muted" style="font-size:13px" id="countdownLabel">La clase 1 empieza en:</div>
+        <div class="cd" id="countdown">
+          <div><b id="cdD">–</b><small>días</small></div>
+          <div><b id="cdH">–</b><small>horas</small></div>
+          <div><b id="cdM">–</b><small>min</small></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- Foto aprobada: editar CONFIG.fotoSergio. -->
+      <div id="fotoSergio" class="avatar" role="img" aria-label="Foto de Sergio Urcullo (pendiente)">
+        <div class="ini">SU</div>
+        <div style="margin-top:10px">Sergio Urcullo · 16 años<br>Fundador de OnIA</div>
+        <div style="margin-top:8px;font-size:12px;opacity:.7">[CONFIG.fotoSergio: foto aprobada pendiente]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROBLEMA: la culpa no es de la persona (Enrique Rocha) -->
+<section>
+  <div class="wrap">
+    <span class="tag">¿Te pasa esto?</span>
+    <h2 style="margin-top:14px">Abriste la IA, le escribiste algo… y te devolvió cualquier cosa.</h2>
+    <div class="grid2" style="margin-top:20px">
+      <div>
+        <p>No es que no seas “de tecnología”. Es que <b>nadie te enseñó a pedirle bien las cosas</b> para tu trabajo real: correos, resúmenes, mensajes a clientes, informes, archivos.</p>
+        <p class="muted">Si le hablas vago, te responde vago. Si le das rol, contexto, tarea, formato y un ejemplo, te devuelve algo que ya puedes usar. Eso se aprende en una tarde, practicando.</p>
+      </div>
+      <div class="card">
+        <div class="muted" style="font-size:13px;margin-bottom:6px">Antes</div>
+        <div style="font-family:ui-monospace,Consolas,monospace;font-size:15px">“escribe un mensaje para un cliente”</div>
+        <div class="muted" style="font-size:13px;margin:14px 0 6px">Después (lo que practicas en la clase 1)</div>
+        <div style="font-family:ui-monospace,Consolas,monospace;font-size:15px">“Eres dueña de una tienda en Santa Cruz. Un cliente pregunta si hay stock. Respóndele por WhatsApp, cálido, en 3 líneas, con precio y cómo pagar por QR.”</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. TEMARIO con "con qué sales" por clase (Erik Taveras / Santiago Muñoz: vender el resultado, no la clase) -->
+<section id="temario">
+  <div class="wrap">
+    <span class="tag">Temario</span>
+    <h2 style="margin-top:14px">3 clases, cada una con algo hecho al final</h2>
+    <p class="muted">Cada clase dura unas 2 horas: un bloque de explicación, una pausa de 10 minutos y un bloque de práctica.</p>
+    <div class="grid3" style="margin-top:22px">
+      <div class="card clase">
+        <div class="num">Clase 1</div>
+        <div class="fecha">Martes 3 de noviembre · 19:00</div>
+        <h3>Desde cero: hablarle bien a la IA</h3>
+        <ul>
+          <li>Qué es Claude y qué no (vs. Google y ChatGPT)</li>
+          <li>Crear tu cuenta y conocer la interfaz</li>
+          <li>Por qué te da respuestas genéricas</li>
+          <li>La fórmula: rol + contexto + tarea + formato + ejemplo</li>
+          <li>En vivo: un correo, un resumen y un mensaje a un cliente</li>
+        </ul>
+        <div class="sale"><b>Sales con:</b> tu cuenta lista y 3 tareas reales resueltas con la fórmula.</div>
+      </div>
+      <div class="card clase">
+        <div class="num">Clase 2</div>
+        <div class="fecha">Jueves 5 de noviembre · 19:00</div>
+        <h3>Tus archivos y proyectos</h3>
+        <ul>
+          <li>Subir PDF, Excel e imágenes: resumir, extraer y comparar</li>
+          <li>Verificar lo que responde y qué no subir (privacidad)</li>
+          <li>Proyectos: un asistente con tus instrucciones fijas</li>
+          <li>Artifacts: una tabla o documento listo para usar</li>
+        </ul>
+        <div class="sale"><b>Sales con:</b> tu primer Proyecto armado para una tarea que repites.</div>
+      </div>
+      <div class="card clase">
+        <div class="num">Clase 3</div>
+        <div class="fecha">Sábado 7 de noviembre · 19:00</div>
+        <h3>Flujos y siguiente paso</h3>
+        <ul>
+          <li>Tu biblioteca de prompts (plantillas que reutilizas)</li>
+          <li>Flujos: idea → borrador → revisión → versión final</li>
+          <li>Casos: ventas, contenido, estudio y oficina</li>
+          <li>Armas tu flujo en vivo y lo compartes</li>
+          <li>Qué aprender después (conectores, automatización)</li>
+        </ul>
+        <div class="sale"><b>Sales con:</b> tu flujo completo documentado en una página.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PARA QUIÉN / ESTO NO ES (Enrique Rocha: "Esto NO es" desarma objeciones) -->
+<section>
+  <div class="wrap grid2">
+    <div>
+      <span class="tag">Es para ti si…</span>
+      <ul class="check" style="margin-top:16px">
+        <li>Tienes un negocio, emprendimiento o trabajo con tareas que repites cada semana.</li>
+        <li>Probaste ChatGPT o Claude y sentiste que “no te servía”.</li>
+        <li>Eres estudiante y quieres usar la IA para aprender, no para copiar.</li>
+        <li>Nunca la usaste y quieres empezar con alguien que te explique en simple.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="tag">Esto NO es</span>
+      <ul class="check no" style="margin-top:16px">
+        <li>Un webinar pregrabado: es en vivo y practicas en la clase.</li>
+        <li>Una charla con 40 minutos de venta al final.</li>
+        <li>Para programadores: no necesitas saber programar.</li>
+        <li>Una promesa de ganar plata con IA. Es aprender a usarla bien.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5. QUIÉN ES SERGIO (Garry Tan: crudo y real; Erik Taveras: "no soy un gurú"; construir en público) -->
+<section id="sergio">
+  <div class="wrap grid2" style="align-items:center">
+    <div>
+      <span class="tag">Quién te enseña</span>
+      <h2 style="margin-top:14px">Hola, soy Sergio. Tengo 16 años y fundé OnIA.</h2>
+      <p>OnIA es mi startup de inteligencia artificial en Bolivia. La dirijo con agentes de IA que preparan el trabajo, y yo reviso y apruebo todo antes de que salga.</p>
+      <p>No soy un gurú ni te voy a vender humo. Aprendí probando, equivocándome y volviendo a probar, y ahora enseño lo que uso todos los días: cómo pedirle bien las cosas a la IA para que trabaje para ti.</p>
+      <p class="muted">Mientras dure el workshop voy mostrando el detrás de escena en mis redes.</p>
+    </div>
+    <div class="card">
+      <h3>Lo que incluye</h3>
+      <ul class="check">
+        <li>3 clases en vivo por Google Meet (unas 2 horas cada una)</li>
+        <li>Práctica con tus propias tareas, no con ejemplos de libro</li>
+        <li>Grabaciones de las 3 clases con acceso por 30 días, aunque te sumes tarde</li>
+        <li>Prompts y plantillas listos para copiar</li>
+        <li>Grupo de WhatsApp de inscritos para dudas</li>
+        <li>Solo necesitas una cuenta gratis de Claude (la creamos juntos)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PRECIO claro + cómo reservar (Bolivia: WhatsApp + QR; urgencia solo real) -->
+<section id="reservar">
+  <div class="wrap">
+    <div class="card price" style="max-width:640px;margin:0 auto">
+      <span class="tag">Precio por la serie completa (3 clases)</span>
+      <div style="margin:20px 0 6px"><span class="big js-precio">Precio por confirmar</span></div>
+      <div class="old js-precio-nota">CONFIG: definir precio aprobado y fecha de cambio, si aplica.</div>
+      <div style="margin:14px 0"><span class="pill"><span class="js-cupos">60</span> lugares en total</span></div>
+      <p class="muted" style="font-size:15px">Pagas con QR desde la app de tu banco. <span class="js-devolucion">CONFIG: política de devolución por confirmar antes del pago.</span></p>
+      <div id="openBox">
+        <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener" style="margin-top:6px">💬 Reservar mi lugar por WhatsApp</a>
+        <p class="muted" style="font-size:13px;margin-top:10px">Se abre WhatsApp con el mensaje “TALLER” ya escrito. Solo tienes que enviarlo.</p>
+      </div>
+      <div id="closedBox" class="closed">
+        <p><b>Esta edición ya terminó.</b> Escríbeme si quieres enterarte de la próxima.</p>
+        <a class="btn btn-wa js-wa-next" href="#" target="_blank" rel="noopener">💬 Avísame de la próxima</a>
+      </div>
+      <div style="margin-top:14px"><button class="btn btn-ghost btn-sm" id="icsBtn" type="button">📅 Agregar las 3 clases a mi calendario</button></div>
+    </div>
+
+    <h3 style="margin-top:44px;text-align:center">Cómo reservar</h3>
+    <ol class="steps" style="max-width:560px;margin:18px auto 0">
+      <li>Toca el botón y envía “TALLER” por WhatsApp.</li>
+      <li>Te respondo con los detalles y el QR para pagar.</li>
+      <li>Mandas tu comprobante y te sumo al grupo de inscritos.</li>
+      <li>Antes de cada clase te llega el enlace de Meet al grupo.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7. PREGUNTAS FRECUENTES (objeciones del público con sus palabras: Santiago Muñoz / Enrique Rocha "Pero…") -->
+<section>
+  <div class="wrap" style="max-width:760px">
+    <span class="tag">Preguntas frecuentes</span>
+    <h2 style="margin-top:14px">“Pero Sergio…”</h2>
+    <details><summary>¿Necesito saber programar?</summary><p>No. Todo es escribir en español, como le escribirías a una persona. Si sabes usar WhatsApp, puedes seguir el workshop.</p></details>
+    <details><summary>¿Tengo que pagar Claude?</summary><p>No para el workshop. Usamos la cuenta gratis y la creamos juntos en la clase 1. Algunas funciones pueden tener límites en el plan gratis: te muestro cuáles en vivo.</p></details>
+    <details><summary>¿Y si no puedo a las 19:00 o me pierdo una clase?</summary><p>Todos los inscritos, incluso los que se suman tarde, reciben las grabaciones de las 3 clases con acceso por 30 días.</p></details>
+    <details><summary>¿Por qué hay una pausa en cada clase?</summary><p>Cada clase tiene dos bloques en dos salas de Meet seguidas. En la pausa de 10 minutos te paso el enlace del segundo bloque por el chat y por el grupo.</p></details>
+    <details><summary>¿Qué necesito para conectarme?</summary><p>Una computadora o laptop (es más cómodo que el celular), internet estable y un correo para crear tu cuenta de Claude.</p></details>
+    <details><summary>¿Me sirve si ya uso ChatGPT?</summary><p>Sí. Lo que aprendes (cómo pedir, cómo trabajar con archivos y cómo armar flujos) sirve igual. Usamos Claude porque permite armar Proyectos con tus archivos.</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Con QR desde la app de tu banco. Te lo paso por WhatsApp cuando me escribas.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>OnIA</b> · Bolivia · Workshop “Claude de 0 a 100” · Edición 1</p>
+    <p>Claude es un producto de Anthropic. Este workshop es independiente y no está afiliado a Anthropic.</p>
+    <p>No prometemos ingresos ni resultados económicos: enseñamos a usar la herramienta.</p>
+  </div>
+</footer>
+
+<div class="float"><a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener" style="width:100%;max-width:480px">💬 Reservar por WhatsApp</a></div>
+
+<script>
+/* ===================== CONFIG (editar aquí) ===================== */
+const CONFIG = {
+  // Número de WhatsApp de OnIA para talleres (encontrado en /workspace: taller-claude/anuncio-y-combos.md
+  // y ONIA-CENTRAL/docs/reglas/equipo-grok-bot.md). Si cambia, poner solo dígitos con código de país.
+  // Si no hubiera número, dejar "NUMERO_WHATSAPP".
+  whatsapp: "59175414930",
+  // No se encontró enlace de reserva en /workspace. Si existe uno (Luma, formulario), ponerlo aquí y el botón irá ahí.
+  enlaceReserva: "",
+  mensaje: "TALLER",
+  mensajeProxima: "Hola Sergio, avísame de la próxima edición de Claude de 0 a 100",
+  // Precio aprobado por Sergio el 1/11/2026: Bs 50 fijo por las 3 clases.
+  precioLanzamiento: 50,
+  precioRegular: null,
+  // Sin cambio de precio programado (D-20261101-009 cerrada). Dejar en null.
+  cambioPrecio: null,
+  // Escasez real: el cupo lo decidió Sergio (60). No inventar "quedan X".
+  cupos: 60,
+  // PENDIENTE D-20261101-013: política aprobada; vacío muestra el pendiente.
+  devolucion: "",
+  // PENDIENTE: ruta local de la foto aprobada, por ejemplo "sergio.jpg".
+  fotoSergio: "",
+  borrador: true,
+  clases: [
+    { n: 1, titulo: "Claude de 0 a 100 · Clase 1: Desde cero", inicio: "2026-11-03T19:00:00-04:00" },
+    { n: 2, titulo: "Claude de 0 a 100 · Clase 2: Archivos y proyectos", inicio: "2026-11-05T19:00:00-04:00" },
+    { n: 3, titulo: "Claude de 0 a 100 · Clase 3: Flujos y siguiente paso", inicio: "2026-11-07T19:00:00-04:00" }
+  ],
+  duracionMin: 115
+};
+/* ================================================================ */
+
+(function () {
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const now = () => new Date();
+
+  function waUrl(text) {
+    const num = String(CONFIG.whatsapp || "").replace(/\D/g, "");
+    if (!num) return "https://wa.me/NUMERO_WHATSAPP?text=" + encodeURIComponent(text);
+    return "https://wa.me/" + num + "?text=" + encodeURIComponent(text);
+  }
+  const reservaUrl = CONFIG.enlaceReserva ? CONFIG.enlaceReserva : waUrl(CONFIG.mensaje);
+  $$(".js-wa").forEach(a => a.href = reservaUrl);
+  $$(".js-wa-next").forEach(a => a.href = waUrl(CONFIG.mensajeProxima));
+  $$(".js-cupos").forEach(e => e.textContent = CONFIG.cupos);
+
+  const precioValido = p => typeof p === "number" && Number.isFinite(p) && p > 0;
+  const foto = CONFIG.fotoSergio.trim();
+  const fotoLocal = foto && !foto.startsWith("/") && !foto.includes(":") && !foto.includes("..");
+  const pendientes = [];
+  if (!precioValido(CONFIG.precioLanzamiento)) pendientes.push("precio");
+  if (!CONFIG.devolucion.trim()) pendientes.push("devolución");
+  if (!fotoLocal) pendientes.push("foto");
+  if (CONFIG.cambioPrecio && (!Number.isFinite(Date.parse(CONFIG.cambioPrecio)) || !precioValido(CONFIG.precioRegular))) pendientes.push("cambio de precio");
+  const banner = document.getElementById("draftBanner");
+  if (pendientes.length) banner.textContent = "BORRADOR interno · CONFIG pendiente: " + pendientes.join(" · ") + " · no publicar";
+  else if (!CONFIG.borrador) banner.remove();
+  if (fotoLocal) {
+    const img = document.createElement("img");
+    img.src = foto; img.alt = "Sergio Urcullo, fundador de OnIA";
+    img.className = "avatar"; img.style.cssText = "object-fit:cover;padding:0";
+    img.addEventListener("load", () => document.getElementById("fotoSergio").replaceWith(img));
+    img.addEventListener("error", () => {
+      if (!banner.isConnected) document.body.prepend(banner);
+      banner.textContent = "BORRADOR interno · CONFIG.fotoSergio: no se pudo cargar la foto · no publicar";
+    });
+  }
+
+  // Precio: nunca convertir un pendiente en una oferta publicada.
+  const cambio = CONFIG.cambioPrecio ? new Date(CONFIG.cambioPrecio) : null;
+  const regular = cambio && now() >= cambio;
+  const precio = regular ? CONFIG.precioRegular : CONFIG.precioLanzamiento;
+  const precioTexto = precioValido(precio) ? "Bs " + precio : "Precio por confirmar";
+  $$(".js-precio, .js-precio-corto").forEach(e => e.textContent = precioTexto);
+  let nota = "CONFIG: definir precio aprobado y fecha de cambio, si aplica.";
+  if (precioValido(precio)) {
+    nota = "Precio por las 3 clases.";
+    if (regular) nota = "Precio regular por las 3 clases.";
+    else if (cambio && Number.isFinite(cambio.getTime()) && precioValido(CONFIG.precioRegular)) {
+      nota = "Precio de lanzamiento hasta el " + cambio.toLocaleString("es-BO", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "America/La_Paz" }) + " (Bolivia). Después, Bs " + CONFIG.precioRegular + ".";
+    }
+  }
+  $$(".js-precio-nota").forEach(e => e.textContent = nota);
+  $$(".js-devolucion").forEach(e => e.textContent = CONFIG.devolucion.trim() || "CONFIG: política de devolución por confirmar antes del pago.");
+
+  // Cuenta regresiva a la próxima clase; cierre al terminar la clase 3
+  const clases = CONFIG.clases.map(c => ({ ...c, d: new Date(c.inicio) }));
+  const fin = new Date(clases[clases.length - 1].d.getTime() + CONFIG.duracionMin * 60000);
+  function tick() {
+    const t = now();
+    if (t >= fin) {
+      document.getElementById("countdownBox").style.display = "none";
+      document.getElementById("openBox").classList.add("closed");
+      document.getElementById("closedBox").classList.remove("closed");
+      $$(".js-wa").forEach(a => { a.href = waUrl(CONFIG.mensajeProxima); a.textContent = "Avísame de la próxima edición"; });
+      return;
+    }
+    const enCurso = clases.find(c => t >= c.d && t < new Date(c.d.getTime() + CONFIG.duracionMin * 60000));
+    document.getElementById("countdown").hidden = Boolean(enCurso);
+    if (enCurso) {
+      document.getElementById("countdownLabel").textContent = "La clase " + enCurso.n + " está en curso.";
+      return;
+    }
+    const prox = clases.find(c => t < c.d);
+    const label = document.getElementById("countdownLabel");
+    if (!prox) { label.textContent = "La clase 3 está en curso."; return; }
+    label.textContent = prox.n === 1 ? "La clase 1 empieza en:" : "La clase " + prox.n + " empieza en (puedes sumarte y recibes las grabaciones):";
+    let s = Math.max(0, Math.floor((prox.d - t) / 1000));
+    const d = Math.floor(s / 86400); s -= d * 86400;
+    const h = Math.floor(s / 3600); s -= h * 3600;
+    const m = Math.floor(s / 60);
+    document.getElementById("cdD").textContent = d;
+    document.getElementById("cdH").textContent = String(h).padStart(2, "0");
+    document.getElementById("cdM").textContent = String(m).padStart(2, "0");
+  }
+  tick(); setInterval(tick, 30000);
+
+  // Archivo .ics generado en el navegador (sin servicios externos)
+  function icsDate(d) { return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
+  document.getElementById("icsBtn").addEventListener("click", () => {
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//OnIA//Claude de 0 a 100//ES", "CALSCALE:GREGORIAN"];
+    clases.forEach(c => {
+      const end = new Date(c.d.getTime() + CONFIG.duracionMin * 60000);
+      lines.push("BEGIN:VEVENT",
+        "UID:onia-claude-0a100-clase" + c.n + "@onia",
+        "DTSTAMP:" + icsDate(new Date()),
+        "DTSTART:" + icsDate(c.d),
+        "DTEND:" + icsDate(end),
+        "SUMMARY:" + c.titulo,
+        "DESCRIPTION:Google Meet. El enlace llega por el grupo de WhatsApp de inscritos.",
+        "BEGIN:VALARM", "TRIGGER:-PT30M", "ACTION:DISPLAY", "DESCRIPTION:Clase en 30 minutos", "END:VALARM",
+        "END:VEVENT");
+    });
+    lines.push("END:VCALENDAR");
+    const blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "claude-de-0-a-100.ics";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+})();
+</script>
+</body>
+</html>

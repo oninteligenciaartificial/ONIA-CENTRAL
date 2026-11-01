@@ -1,0 +1,1019 @@
+{
+  "schema_version": "1.0.0",
+  "id": "onia-dashboard-contenido",
+  "generado": "2026-10-31",
+  "creador": "Sergio Urcullo (OnIA)",
+  "estado": "borrador_pendiente_aprobacion",
+  "idioma": "es",
+  "registro": "tuteo",
+  "fuentes_internas": [
+    "aprendizajes-referentes.md",
+    "sistema-salida.md",
+    "transcripciones/<referente>/<video_id>.txt"
+  ],
+  "fuentes_ausentes": [
+    "analisis-guiones.md (no existe al 2026-10-31)"
+  ],
+  "reglas": [
+    "Nada se publica sin el sí de Sergio con captura.",
+    "No se prometen ingresos ni se muestran ingresos de Sergio o de su familia.",
+    "Nada de ganchos que ataquen inseguridades ni de escasez falsa.",
+    "Cada dato que se diga en cámara lleva su fuente; si no hay fuente, no se dice.",
+    "Las duraciones para Sergio son propuestas, no cifras de referentes.",
+    "Sin compañeros, profes, clientes ni claves en cámara sin permiso.",
+    "Los ejemplos con [CORCHETES] se completan con datos reales antes de grabar."
+  ],
+  "tipos": [
+    { "id": "noticia", "nombre": "Noticia de IA del día", "duracion_propuesta_s": { "min": 30, "max": 45 } },
+    { "id": "lifestyle", "nombre": "Lifestyle semi-guionado", "duracion_propuesta_s": { "min": 20, "max": 40 } },
+    { "id": "educativo", "nombre": "Educativo", "duracion_propuesta_s": { "min": 30, "max": 60 } },
+    { "id": "startup", "nombre": "La startup (construir en público)", "duracion_propuesta_s": { "min": 30, "max": 45 } },
+    { "id": "tendencia", "nombre": "Tendencias del momento", "duracion_propuesta_s": { "min": 15, "max": 30 } }
+  ],
+  "pilares": [
+    "IA explicada",
+    "Vibe coding / demos",
+    "Founder de 16",
+    "Aprendizaje",
+    "Taller"
+  ],
+  "ctas": [
+    {
+      "id": "cta_guia",
+      "texto": "Comenta CLAUDE y te mando la guía gratis.",
+      "patron_origen": "«comenta [frase] y te la paso» (Enrique Rocha, Erik Taveras)",
+      "condicion": "La guía tiene que existir antes de publicar.",
+      "vigente_hasta": null
+    },
+    {
+      "id": "cta_taller",
+      "texto": "Escríbeme TALLER por WhatsApp, el link está en mi bio. Es el 3, 5 y 7 de noviembre a las 19:00 y cuesta Bs 50.",
+      "patron_origen": "aprendizajes-referentes.md §4 (pilar Taller)",
+      "condicion": "Solo mientras el taller esté abierto. Sin «quedan pocos lugares» salvo que sea cierto y demostrable.",
+      "vigente_hasta": "2026-11-07"
+    },
+    {
+      "id": "cta_pregunta",
+      "texto": "¿Tú qué harías con esto? Te leo en comentarios.",
+      "patron_origen": "«¿qué harías tú con ella?» (Erik Taveras, 5v4_KCv0UX0)",
+      "condicion": null,
+      "vigente_hasta": null
+    },
+    {
+      "id": "cta_perfil",
+      "texto": "El tutorial completo está en el link de mi perfil.",
+      "patron_origen": "«Si quieres ver el tutorial, ve al enlace en mi perfil» (Santiago Muñoz, dm1GrkfQ3kM)",
+      "condicion": "El tutorial tiene que estar publicado.",
+      "vigente_hasta": null
+    },
+    {
+      "id": "cta_colabora",
+      "texto": "Comenta [DATO ESPECÍFICO]. Con lo que me escribas armo [PROYECTO] y lo comparto gratis.",
+      "patron_origen": "crowdsourcing en comentarios (Santiago Muñoz, 8cVNW2b4gqE)",
+      "condicion": "Solo si de verdad se va a construir y publicar; poner fecha.",
+      "vigente_hasta": null
+    },
+    {
+      "id": "cta_noticia",
+      "texto": "¿Lo probamos mañana? Comenta.",
+      "patron_origen": "sistema-salida.md §1",
+      "condicion": "Si se promete, al día siguiente sale el video.",
+      "vigente_hasta": null
+    },
+    {
+      "id": "cta_suscribir",
+      "texto": "Si te sirvió, suscríbete. Así le dices al algoritmo que quieres más videos como este.",
+      "patron_origen": "pedido de like y suscripción (BenCorde, 4dM3N43_xAI)",
+      "condicion": "Solo para YouTube largo.",
+      "vigente_hasta": null
+    }
+  ],
+  "plantillas": [
+    {
+      "id": "T01",
+      "slug": "contraintuitivo-con-prueba",
+      "nombre": "Lo contrario de lo que todos hacen, con prueba",
+      "tipo": "educativo",
+      "pilar": "IA explicada",
+      "formato": "Vertical 9:16, cara a cámara + pantalla",
+      "duracion_propuesta_s": { "min": 40, "max": 50 },
+      "gancho": {
+        "patron": "Muestro algo mío + digo una acción contraintuitiva + el resultado sorprende + me adelanto a la objeción.",
+        "citas_originales": [
+          { "t": "0.0-2.6", "texto": "Esto es mi carpeta de skills de Cloud Code." },
+          { "t": "5.9-9.8", "texto": "La junté durante 6 meses y acabo de borrar casi todas." },
+          { "t": "9.8-13.8", "texto": "Y Cloud no se puso más tonto, de hecho al contrario se puso más inteligente." },
+          { "t": "13.8-17.4", "texto": "Y antes de que pienses que perdí la cabeza por favor mira esto." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 9.8, "que_pasa": "Muestra su carpeta y dice que borró casi todo." },
+        { "desde_s": 9.8, "hasta_s": 17.4, "que_pasa": "Resultado inesperado y se adelanta a la objeción." },
+        { "desde_s": 17.4, "hasta_s": 45.4, "que_pasa": "Prueba de autoridad: el creador de la herramienta y un cambio de la propia empresa." },
+        { "desde_s": 45.4, "hasta_s": 89.0, "que_pasa": "Admite que contradice un video suyo anterior y deja un bonus para el final." },
+        { "desde_s": 89.0, "hasta_s": 111.5, "que_pasa": "Pide like y suscripción." },
+        { "desde_s": 112.5, "hasta_s": 135.5, "que_pasa": "Define el concepto base con una analogía (receta de cocina)." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 3, "bloque": "gancho", "instruccion": "Muestra el objeto y la acción contraintuitiva." },
+        { "desde_s": 3, "hasta_s": 8, "bloque": "giro", "instruccion": "Resultado inesperado + «antes de que pienses que…»." },
+        { "desde_s": 8, "hasta_s": 20, "bloque": "prueba", "instruccion": "Fuente verificable en pantalla (documentación oficial, post del creador). Sin cifras sin fuente." },
+        { "desde_s": 20, "hasta_s": 35, "bloque": "concepto", "instruccion": "Explica la idea con una analogía cotidiana." },
+        { "desde_s": 35, "hasta_s": 45, "bloque": "aplicacion", "instruccion": "Qué puede hacer hoy quien mira." },
+        { "desde_s": 45, "hasta_s": 50, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "Pedido de like y suscripción (89.0-111.5 s)." },
+      "referente_origen": [
+        { "referente": "bencorde", "video_id": "4dM3N43_xAI", "url": "https://www.youtube.com/watch?v=4dM3N43_xAI", "titulo": "El creador de Claude Code dice que borres tus skills", "vistas": 197846, "vistas_al": "2026-10-31", "duracion_s": 1957, "transcripcion_parcial_s": 180 }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 3, "texto": "Esta es mi lista de prompts guardados. Eran [N] y hoy borré casi todos." },
+          { "desde_s": 3, "hasta_s": 8, "texto": "Y Claude no me responde peor. Antes de que pienses que me volví loco, mira esto." },
+          { "desde_s": 8, "hasta_s": 20, "texto": "[FUENTE OFICIAL EN PANTALLA + URL]. Esto no es una opinión mía: lo dice [QUIÉN]." },
+          { "desde_s": 20, "hasta_s": 35, "texto": "Piénsalo así: un prompt guardado es como una receta. Si la receta es más larga que la comida, algo está mal." },
+          { "desde_s": 35, "hasta_s": 45, "texto": "Abre tus prompts, quédate con los que usas cada semana y prueba el resto sin ellos." },
+          { "desde_s": 45, "hasta_s": 50, "texto": "Comenta CLAUDE y te mando la guía gratis." }
+        ]
+      },
+      "campos_variables": ["objeto_mostrado", "accion_contraintuitiva", "fuente_url", "quien_lo_dice", "analogia"],
+      "no_copiar": ["Porcentajes que el referente dice sin fuente visible (por ejemplo el «80%»)."]
+    },
+    {
+      "id": "T02",
+      "slug": "integracion-nueva-demo-rapida",
+      "nombre": "Integración nueva + 3 demos rápidas",
+      "tipo": "noticia",
+      "pilar": "Vibe coding / demos",
+      "formato": "Vertical 9:16, grabación de pantalla con voz",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "«[X] acaba de llegar a [Y]» + lista de lo que vas a poder hacer.",
+        "citas_originales": [
+          { "t": "0.0-5.4", "texto": "Canva acaba de ser integrado en chat gpt, te muestro como crear publicaciones, logos," },
+          { "t": "5.4-8.0", "texto": "banners y más usando canva en chat gpt." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 8.0, "que_pasa": "Noticia + promesa con lista de resultados." },
+        { "desde_s": 8.0, "hasta_s": 13.5, "que_pasa": "Paso de instalación." },
+        { "desde_s": 13.5, "hasta_s": 27.9, "que_pasa": "Demo 1 y resultado." },
+        { "desde_s": 27.9, "hasta_s": 37.1, "que_pasa": "Demo 2 con remate «BOOM»." },
+        { "desde_s": 37.1, "hasta_s": 51.8, "que_pasa": "Demo 3: el primer resultado no sirve, corrige el pedido y funciona." },
+        { "desde_s": 51.8, "hasta_s": 58.8, "que_pasa": "Cierre honesto: se puede mejorar, pero sirve para empezar." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "Qué se conectó con qué + 3 cosas que vas a mostrar." },
+        { "desde_s": 4, "hasta_s": 10, "bloque": "paso", "instruccion": "Cómo activarlo, en pantalla." },
+        { "desde_s": 10, "hasta_s": 25, "bloque": "demo", "instruccion": "Demo 1 y demo 2, cortes rápidos." },
+        { "desde_s": 25, "hasta_s": 45, "bloque": "demo_fallo", "instruccion": "Demo 3 donde algo sale mal y se corrige. Mostrarlo es parte del valor." },
+        { "desde_s": 45, "hasta_s": 55, "bloque": "cierre", "instruccion": "Límite honesto en 1 frase + CTA." }
+      ],
+      "cta": { "id": "cta_noticia", "cta_original": "Sin CTA verbal en la transcripción." },
+      "referente_origen": [
+        { "referente": "bencorde", "video_id": "KxNADsod-D0", "url": "https://www.youtube.com/watch?v=KxNADsod-D0", "titulo": "Canva fue integrado en ChatGPT y es realmente potente 🔥 #ia #chatgpt #diseñografico", "vistas": 554939, "vistas_al": "2026-10-31", "duracion_s": 59, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "[HERRAMIENTA] acaba de conectarse con Claude. Te muestro cómo hacer [COSA 1], [COSA 2] y [COSA 3]." },
+          { "desde_s": 4, "hasta_s": 10, "texto": "Primero entras a [LUGAR] y activas [OPCIÓN]." },
+          { "desde_s": 10, "hasta_s": 25, "texto": "Le pido [PEDIDO 1]… y listo. Ahora [PEDIDO 2]." },
+          { "desde_s": 25, "hasta_s": 45, "texto": "Le pedí [PEDIDO 3] y me dio esto, que no sirve. Le explico mejor lo que quiero… y ahora sí." },
+          { "desde_s": 45, "hasta_s": 55, "texto": "No es perfecto, pero para empezar gratis está muy bien. ¿Lo probamos mañana con algo tuyo? Comenta." }
+        ]
+      },
+      "campos_variables": ["herramienta", "integracion_con", "url_anuncio_oficial", "pedido_1", "pedido_2", "pedido_3"],
+      "no_copiar": ["«No necesitaste cientos de dólares»: no comparar con el sueldo de otra persona sin dato."]
+    },
+    {
+      "id": "T03",
+      "slug": "lo-viral-probado-y-desmitificado",
+      "nombre": "Probé lo viral y la mayoría lo explica mal",
+      "tipo": "educativo",
+      "pilar": "Vibe coding / demos",
+      "formato": "Vertical 9:16 o corte de YouTube largo",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "Nombre de lo viral + qué hacen otros con eso + lo probé yo + me sorprendió.",
+        "citas_originales": [
+          { "t": "11.3-16.6", "texto": "Se llama REA, reverse engineer anything, explotando en redes sociales en github" },
+          { "t": "44.9-49.7", "texto": "actualmente todos los días, una de dictado de voz y otra de pantallazos y realmente" },
+          { "t": "49.7-53.9", "texto": "me impresionó y hizo un muy buen trabajo, de hecho me dejó hasta un poco incómodo" },
+          { "t": "82.4-87.5", "texto": "porque la mayoría de las publicaciones que veo lo está explicando mal" }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 11.3, "que_pasa": "Qué hace la herramienta." },
+        { "desde_s": 11.3, "hasta_s": 26.0, "que_pasa": "Nombre y que está viral." },
+        { "desde_s": 26.0, "hasta_s": 40.9, "que_pasa": "Prueba social: lo que construyeron otras personas." },
+        { "desde_s": 40.9, "hasta_s": 59.0, "que_pasa": "Lo probó con apps que usa y cuenta su reacción." },
+        { "desde_s": 59.0, "hasta_s": 68.3, "que_pasa": "Promesa del video: cómo funciona, con y sin, y qué viene." },
+        { "desde_s": 68.3, "hasta_s": 82.4, "que_pasa": "Dónde encontrarlo." },
+        { "desde_s": 82.4, "hasta_s": 130.1, "que_pasa": "«La mayoría lo explica mal» y lo desmitifica con una analogía (un MCP es un enchufe)." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "Nombre + «está en todos lados» + «lo probé»." },
+        { "desde_s": 4, "hasta_s": 15, "bloque": "prueba_social", "instruccion": "1 o 2 cosas que hicieron otros, con link en pantalla." },
+        { "desde_s": 15, "hasta_s": 30, "bloque": "mi_prueba", "instruccion": "Lo que pasó cuando lo probé, incluido lo que no funcionó." },
+        { "desde_s": 30, "hasta_s": 50, "bloque": "desmitificar", "instruccion": "«La mayoría lo explica mal»: qué es de verdad, con una analogía." },
+        { "desde_s": 50, "hasta_s": 58, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "No aparece en los primeros 180 s transcritos." },
+      "referente_origen": [
+        { "referente": "bencorde", "video_id": "NzXzcCVv5FI", "url": "https://www.youtube.com/watch?v=NzXzcCVv5FI", "titulo": "Probé el repo viral para recrear apps (y da miedo)", "vistas": 207670, "vistas_al": "2026-10-31", "duracion_s": 804, "transcripcion_parcial_s": 180 }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Se llama [REPO], está en todos lados y lo probé." },
+          { "desde_s": 4, "hasta_s": 15, "texto": "[PERSONA] lo usó para [CASO] y [PERSONA 2] para [CASO 2]." },
+          { "desde_s": 15, "hasta_s": 30, "texto": "Yo lo probé con [PROYECTO DE OnIA]. Esto salió bien… y esto no." },
+          { "desde_s": 30, "hasta_s": 50, "texto": "Casi todos lo explican mal: no es magia nueva. Es como un enchufe que le da a Claude herramientas que ya existían." },
+          { "desde_s": 50, "hasta_s": 58, "texto": "Comenta CLAUDE y te mando la guía para instalarlo." }
+        ]
+      },
+      "campos_variables": ["nombre_repo", "url_repo", "casos_terceros", "mi_resultado", "analogia"],
+      "no_copiar": ["Probar con apps pagas de terceros en cámara sin revisar sus términos de uso."]
+    },
+    {
+      "id": "T04",
+      "slug": "titular-con-opinion",
+      "nombre": "Titular con opinión y qué significa para ti",
+      "tipo": "noticia",
+      "pilar": "IA explicada",
+      "formato": "Vertical 9:16, cara a cámara",
+      "duracion_propuesta_s": { "min": 30, "max": 45 },
+      "gancho": {
+        "patron": "Opinión fuerte en una frase, antes del dato.",
+        "citas_originales": [
+          { "t": "0.0-5.4", "texto": "Google, la verdad, va atrás en la carrera." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 5.4, "que_pasa": "Opinión fuerte." },
+        { "desde_s": 5.4, "hasta_s": 17.2, "que_pasa": "Qué presentó la empresa." },
+        { "desde_s": 17.2, "hasta_s": 44.4, "que_pasa": "Contexto de competencia; la propia empresa lo reconoce en su anuncio." },
+        { "desde_s": 44.4, "hasta_s": 52.6, "que_pasa": "Matiz: tiene un ecosistema sólido, pero…" },
+        { "desde_s": 53.0, "hasta_s": 84.0, "que_pasa": "Qué significa para el empresario y conclusión." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 3, "bloque": "gancho", "instruccion": "Tu opinión en 1 frase." },
+        { "desde_s": 3, "hasta_s": 15, "bloque": "que_paso", "instruccion": "Qué anunciaron, con 1 dato y su fuente en pantalla." },
+        { "desde_s": 15, "hasta_s": 22, "bloque": "matiz", "instruccion": "Lo bueno que sí tiene. Evita sonar a hater." },
+        { "desde_s": 22, "hasta_s": 38, "bloque": "para_ti", "instruccion": "Qué cambia para un estudiante o negocio en Bolivia." },
+        { "desde_s": 38, "hasta_s": 42, "bloque": "cta", "instruccion": "CTA suave de noticia." }
+      ],
+      "cta": { "id": "cta_noticia", "cta_original": "Sin CTA verbal en la transcripción." },
+      "referente_origen": [
+        { "referente": "eduardo-vazquez", "video_id": "ZuHXKE6eMv8", "url": "https://www.youtube.com/watch?v=ZuHXKE6eMv8", "titulo": "Los nuevos modelos de GEMINI se están quedando atrás #gemini #google #ia", "vistas": 1305, "vistas_al": "2026-10-31", "duracion_s": 85, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 3, "texto": "[EMPRESA] sacó [PRODUCTO] y, la verdad, [OPINIÓN EN 1 FRASE]." },
+          { "desde_s": 3, "hasta_s": 15, "texto": "Hoy anunciaron [QUÉ]. El dato: [DATO], lo dice su blog oficial." },
+          { "desde_s": 15, "hasta_s": 22, "texto": "Ojo, en [COSA] sí está muy bien." },
+          { "desde_s": 22, "hasta_s": 38, "texto": "¿Y a ti qué te cambia? Si estudias o tienes un negocio en Bolivia, [IMPACTO CONCRETO]." },
+          { "desde_s": 38, "hasta_s": 42, "texto": "¿Lo probamos mañana? Comenta." }
+        ]
+      },
+      "campos_variables": ["empresa", "producto", "opinion", "dato_verificado", "url_fuente", "impacto_bolivia"],
+      "no_copiar": ["Comparar modelos con cifras de benchmark que no se pueden enlazar."]
+    },
+    {
+      "id": "T05",
+      "slug": "resumen-semanal-con-intriga",
+      "nombre": "Resumen de la semana con pregunta y escalada",
+      "tipo": "noticia",
+      "pilar": "IA explicada",
+      "formato": "Vertical 9:16, cara a cámara + capturas",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "Suceso que parece de película + «¿Y sabes quién…?» + «ni siquiera es lo más importante».",
+        "citas_originales": [
+          { "t": "0.0-6.9", "texto": "La semana pasada, una inteligencia artificial se salió sola de la caja donde la estaban probando." },
+          { "t": "12.8-15.6", "texto": "¿Y sabes quién terminó atrapándola?" },
+          { "t": "21.3-27.0", "texto": "Y esa, créeme, ni siquiera es la noticia más importante de la semana." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 6.9, "que_pasa": "Suceso llamativo." },
+        { "desde_s": 6.9, "hasta_s": 12.8, "que_pasa": "Detalle del suceso." },
+        { "desde_s": 12.8, "hasta_s": 21.3, "que_pasa": "Pregunta al público y giro." },
+        { "desde_s": 21.3, "hasta_s": 27.0, "que_pasa": "Escalada: «ni siquiera es la más importante»." },
+        { "desde_s": 27.0, "hasta_s": 57.0, "que_pasa": "Noticias 2 y 3 (la transcripción de 36-57 s está dañada)." },
+        { "desde_s": 57.0, "hasta_s": 62.1, "que_pasa": "Relevancia para América Latina + «¿Están listos?»." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 5, "bloque": "gancho", "instruccion": "Noticia 1 contada como historia." },
+        { "desde_s": 5, "hasta_s": 15, "bloque": "giro", "instruccion": "«¿Y sabes qué…?» y la respuesta." },
+        { "desde_s": 15, "hasta_s": 20, "bloque": "escalada", "instruccion": "«Y eso no es lo más importante de la semana»." },
+        { "desde_s": 20, "hasta_s": 45, "bloque": "noticias_2_3", "instruccion": "2 noticias más, cada una con su fuente en pantalla." },
+        { "desde_s": 45, "hasta_s": 55, "bloque": "cta", "instruccion": "Qué significa para Bolivia + pregunta." }
+      ],
+      "cta": { "id": "cta_pregunta", "cta_original": "«¿Están listos?» (61.1-62.1 s)." },
+      "referente_origen": [
+        { "referente": "eduardo-vazquez", "video_id": "vWzICFZhDM8", "url": "https://www.youtube.com/watch?v=vWzICFZhDM8", "titulo": "Las tres notas que sacudieron esta semana a la IA #noticiasia #chatgpt #claude", "vistas": 1388, "vistas_al": "2026-10-31", "duracion_s": 63, "transcripcion_parcial_s": null },
+        { "referente": "eduardo-vazquez", "video_id": "aQ2ZNdAzxrw", "url": "https://www.youtube.com/watch?v=aQ2ZNdAzxrw", "titulo": "La IA que escapó de su Jaula #chatgpt #openai #ia #inteligenciaartificial", "vistas": 726, "vistas_al": "2026-10-31", "duracion_s": 88, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 5, "texto": "Esta semana, [SUCESO 1 CONTADO COMO HISTORIA]." },
+          { "desde_s": 5, "hasta_s": 15, "texto": "¿Y sabes quién [GIRO]? [RESPUESTA]." },
+          { "desde_s": 15, "hasta_s": 20, "texto": "Y créeme, eso ni siquiera es lo más importante de la semana." },
+          { "desde_s": 20, "hasta_s": 45, "texto": "Porque además [NOTICIA 2] y [NOTICIA 3]." },
+          { "desde_s": 45, "hasta_s": 55, "texto": "Para ti, en Bolivia, esto significa [IMPACTO]. ¿Cuál te parece más importante? Te leo en comentarios." }
+        ]
+      },
+      "campos_variables": ["noticia_1", "giro", "noticia_2", "noticia_3", "urls_fuente", "impacto_bolivia"],
+      "no_copiar": ["Dramatizar un suceso más allá de lo que dice la fuente."]
+    },
+    {
+      "id": "T06",
+      "slug": "el-creador-ya-no-lo-hace-asi",
+      "nombre": "El creador de la herramienta ya no la usa así",
+      "tipo": "educativo",
+      "pilar": "IA explicada",
+      "formato": "Vertical 9:16, cara a cámara + pantalla",
+      "duracion_propuesta_s": { "min": 40, "max": 60 },
+      "gancho": {
+        "patron": "Lo que haces tú vs lo que hace el creador + pregunta del público en voz alta + analogía jefe/empleado.",
+        "citas_originales": [
+          { "t": "0.0-22.8", "texto": "tú le escribes a cloud cada cosa que quieres, una por una, el creador de cloud code ya ni le habla" },
+          { "t": "0.0-22.8", "texto": "cloud es tu empleado y tú eres el jefe" }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 22.8, "que_pasa": "Contraste tú/creador, pregunta del público («pero Enrique, ¿qué es un loop?»), analogía y «es solo una línea». Es un solo segmento, sin cortes internos." },
+        { "desde_s": 22.8, "hasta_s": 60.0, "que_pasa": "Pasos (hueco en la transcripción)." },
+        { "desde_s": 60.0, "hasta_s": 65.0, "que_pasa": "Cómo pararlo." },
+        { "desde_s": 65.0, "hasta_s": 77.5, "que_pasa": "Caso avanzado: con la computadora apagada." },
+        { "desde_s": 77.5, "hasta_s": 83.5, "que_pasa": "CTA: comenta qué te gustaría programar y te la paso." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "«Tú haces X. El creador de [herramienta] ya no»." },
+        { "desde_s": 4, "hasta_s": 8, "bloque": "pregunta", "instruccion": "La duda del público en voz alta: «Sergio, ¿qué es eso?»." },
+        { "desde_s": 8, "hasta_s": 15, "bloque": "analogia", "instruccion": "Analogía cotidiana en 1 frase." },
+        { "desde_s": 15, "hasta_s": 40, "bloque": "pasos", "instruccion": "Pasos en pantalla, probados antes de grabar." },
+        { "desde_s": 40, "hasta_s": 48, "bloque": "como_parar", "instruccion": "Cómo se detiene o se deshace." },
+        { "desde_s": 48, "hasta_s": 55, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "«comenta, que te gustaría programar con cloud, que haga todos los días o cada minuto y te la paso» (77.5-83.5 s)." },
+      "referente_origen": [
+        { "referente": "enrique-rocha", "video_id": "LS4N4WfWuGc", "url": "https://www.youtube.com/watch?v=LS4N4WfWuGc", "titulo": "Cómo hacer que Claude trabaje en automático con Loops", "vistas": 1802, "vistas_al": "2026-10-31", "duracion_s": 86, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Tú le pides a Claude cada cosa, una por una. El creador de Claude Code ya no trabaja así." },
+          { "desde_s": 4, "hasta_s": 8, "texto": "«Sergio, ¿y cómo trabaja?»" },
+          { "desde_s": 8, "hasta_s": 15, "texto": "Piénsalo así: Claude es tu equipo y tú eres el jefe. A tu equipo no le repites la tarea cada cinco minutos." },
+          { "desde_s": 15, "hasta_s": 40, "texto": "Abres Claude Code y escribes [COMANDO VERIFICADO EN LA VERSIÓN ACTUAL], cada cuánto y qué tarea. Por ejemplo: [TAREA DE OnIA]." },
+          { "desde_s": 40, "hasta_s": 48, "texto": "Y si quieres pararlo, [CÓMO SE DETIENE]." },
+          { "desde_s": 48, "hasta_s": 55, "texto": "Comenta CLAUDE y te mando la guía gratis." }
+        ]
+      },
+      "campos_variables": ["herramienta", "practica_del_creador", "url_fuente_creador", "comando", "tarea_ejemplo"],
+      "no_copiar": ["Atribuir frases al creador sin enlazar dónde las dijo."]
+    },
+    {
+      "id": "T07",
+      "slug": "todos-sacan-lo-mismo-top5",
+      "nombre": "Todos sacan lo mismo: 5 herramientas para salir de eso",
+      "tipo": "educativo",
+      "pilar": "Vibe coding / demos",
+      "formato": "Vertical 9:16, pantalla con ejemplos",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "Problema que todos notan + «¿sabes a cuál me refiero?» + lista con el favorito al final.",
+        "citas_originales": [
+          { "t": "0.0-2.6", "texto": "Todos los que diseñamos con Cloud literalmente sacamos lo mismo." },
+          { "t": "8.6-9.7", "texto": "Y sabes a cual me refiero?" },
+          { "t": "85.4-87.9", "texto": "Y ojo, el quinto es mi favorito, pero no diseña." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 9.7, "que_pasa": "Problema común y pregunta al público." },
+        { "desde_s": 9.7, "hasta_s": 49.1, "que_pasa": "Herramientas 1 y 2 (una es «de mis favoritas»)." },
+        { "desde_s": 49.2, "hasta_s": 64.5, "que_pasa": "Herramienta 3 y cómo se combina con la 2." },
+        { "desde_s": 64.5, "hasta_s": 85.4, "que_pasa": "Herramienta 4." },
+        { "desde_s": 85.4, "hasta_s": 99.3, "que_pasa": "Giro: «el quinto es mi favorito, pero no diseña»." },
+        { "desde_s": 99.3, "hasta_s": 113.0, "que_pasa": "Resumen + CTA: comenta y te paso la guía." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "El problema que todos ven + «¿sabes cuál?» con un ejemplo en pantalla." },
+        { "desde_s": 4, "hasta_s": 40, "bloque": "lista", "instruccion": "4 herramientas, unos 8 s cada una: qué hace + antes/después." },
+        { "desde_s": 40, "hasta_s": 50, "bloque": "giro", "instruccion": "La quinta es tu favorita y rompe el patrón." },
+        { "desde_s": 50, "hasta_s": 58, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "«Y si quieres una guía más detallada… comenta. Quieres comenzar a diseñar y te la paso.» (103.5-110.7 s)." },
+      "referente_origen": [
+        { "referente": "enrique-rocha", "video_id": "Px54-q5hbtI", "url": "https://www.youtube.com/watch?v=Px54-q5hbtI", "titulo": "Las mejores skills de Claude para diseñar mejor", "vistas": 1021, "vistas_al": "2026-10-31", "duracion_s": 113, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Todos los que hacemos webs con Claude terminamos con la misma web. ¿Sabes cuál? Esta." },
+          { "desde_s": 4, "hasta_s": 40, "texto": "Uno: [HERRAMIENTA 1], que [QUÉ HACE]. Dos: [HERRAMIENTA 2]… Tres… Cuatro…" },
+          { "desde_s": 40, "hasta_s": 50, "texto": "Y la quinta es mi favorita, aunque no diseña: [HERRAMIENTA 5], que revisa todo antes de publicar." },
+          { "desde_s": 50, "hasta_s": 58, "texto": "Comenta CLAUDE y te mando la guía con las cinco." }
+        ]
+      },
+      "campos_variables": ["problema_comun", "herramientas_1_a_5", "urls_herramientas", "ejemplo_antes_despues"],
+      "no_copiar": ["Repetir cantidades («67 estilos», «161 paletas») sin revisar la fuente oficial."]
+    },
+    {
+      "id": "T08",
+      "slug": "objeto-en-mano-numerado",
+      "nombre": "Objeto en la mano + explicación numerada + mi error",
+      "tipo": "educativo",
+      "pilar": "Aprendizaje",
+      "formato": "Vertical 9:16, cara a cámara con objeto físico",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "Objeto físico en la mano + comparación sorprendente + promesa que incluye «el error que cometí».",
+        "citas_originales": [
+          { "t": "0.0-3.6", "texto": "Esto que tengo en mis manos cuesta 120 dólares, y hace casi lo mismo que mi home lab." },
+          { "t": "11.6-14.6", "texto": "En este vídeo te voy a explicar cómo comenzar, para qué sirve, cómo lo sacas a internet" },
+          { "t": "14.6-17.6", "texto": "y el error que yo mismo cometí al principio cuando comenzé a este mundo." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 3.6, "que_pasa": "Objeto, precio y comparación." },
+        { "desde_s": 3.6, "hasta_s": 11.6, "que_pasa": "Definición simple del concepto." },
+        { "desde_s": 11.6, "hasta_s": 17.6, "que_pasa": "Índice del video, incluido su error." },
+        { "desde_s": 17.6, "hasta_s": 49.4, "que_pasa": "Punto 1: tres escalones para empezar." },
+        { "desde_s": 49.4, "hasta_s": 97.2, "que_pasa": "Punto 2: el propósito (es un laboratorio)." },
+        { "desde_s": 97.2, "hasta_s": 122.3, "que_pasa": "Punto 3: cómo se conecta." },
+        { "desde_s": 122.3, "hasta_s": 141.6, "que_pasa": "Punto 4: el error que cometió." },
+        { "desde_s": 142.6, "hasta_s": 153.9, "que_pasa": "CTA: comenta la frase y te mando la lista." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 3, "bloque": "gancho", "instruccion": "Objeto en la mano + comparación." },
+        { "desde_s": 3, "hasta_s": 8, "bloque": "definicion", "instruccion": "Qué es, en 1 frase." },
+        { "desde_s": 8, "hasta_s": 12, "bloque": "indice", "instruccion": "«Te cuento 3 cosas y el error que cometí»." },
+        { "desde_s": 12, "hasta_s": 40, "bloque": "puntos", "instruccion": "Puntos numerados, en pantalla «1, 2, 3»." },
+        { "desde_s": 40, "hasta_s": 50, "bloque": "mi_error", "instruccion": "El error real y qué cambiaste." },
+        { "desde_s": 50, "hasta_s": 56, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "«si comentas la frase de Servidor Loca, te mando una lista de compra…» (145.2-153.9 s)." },
+      "referente_origen": [
+        { "referente": "erik-taveras", "video_id": "O4M92mAQW98", "url": "https://www.youtube.com/watch?v=O4M92mAQW98", "titulo": "Comenzar con tu homelab", "vistas": 14305, "vistas_al": "2026-10-31", "duracion_s": 154, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 3, "texto": "Esto que tengo en la mano es mi celular, y con él grabo todos mis reels." },
+          { "desde_s": 3, "hasta_s": 8, "texto": "No tengo cámara ni estudio: grabo, y la IA me ayuda con los cortes y los subtítulos." },
+          { "desde_s": 8, "hasta_s": 12, "texto": "Te cuento cómo lo hago en 3 pasos y el error que cometí al principio." },
+          { "desde_s": 12, "hasta_s": 40, "texto": "Uno: [PASO 1]. Dos: [PASO 2]. Tres: [PASO 3]." },
+          { "desde_s": 40, "hasta_s": 50, "texto": "Mi error: [ERROR REAL]. Ahora [QUÉ CAMBIÉ]." },
+          { "desde_s": 50, "hasta_s": 56, "texto": "Comenta CLAUDE y te mando la guía con todo el flujo." }
+        ]
+      },
+      "campos_variables": ["objeto", "comparacion", "pasos_1_a_3", "error_real", "que_cambie"],
+      "no_copiar": ["Mostrar precios de equipos sin fuente o con fecha vieja."]
+    },
+    {
+      "id": "T09",
+      "slug": "mi-sistema-mientras-no-estoy",
+      "nombre": "Mi sistema trabajando mientras no estoy",
+      "tipo": "startup",
+      "pilar": "Founder de 16",
+      "formato": "Vertical 9:16, pantalla del panel + cara a cámara",
+      "duracion_propuesta_s": { "min": 40, "max": 55 },
+      "gancho": {
+        "patron": "«Te muestro cómo uso yo…» + recorrido por roles + horario + reporte de la mañana.",
+        "citas_originales": [
+          { "t": "0.0-2.8", "texto": "En este video te voy a mostrar cómo utilizo yo la inteligencia artificial local," },
+          { "t": "123.0-127.4", "texto": "permisos definidos y a las 7 ya recibo un reporte de todo lo que hizo y de los pendientes" },
+          { "t": "0.0-1.9", "texto": "¿Se acuerdan de la pantallita de 19 dólares?" }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 2.8, "que_pasa": "Promesa (el título dice «4 modelos trabajando mientras duermo»)." },
+        { "desde_s": 2.8, "hasta_s": 27.6, "que_pasa": "Inventario de lo que usa." },
+        { "desde_s": 27.6, "hasta_s": 64.0, "que_pasa": "Rol 1, «el cerebro», y sus tareas." },
+        { "desde_s": 64.0, "hasta_s": 106.6, "que_pasa": "Roles 2 a 4: clasificar, portero de seguridad, memoria, transcripción." },
+        { "desde_s": 106.6, "hasta_s": 127.4, "que_pasa": "Horario nocturno, permisos por perfil y reporte a las 7." },
+        { "desde_s": 127.4, "hasta_s": 136.2, "que_pasa": "«Un reel no me da para explicar todo» + CTA." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 3, "bloque": "gancho", "instruccion": "«Así trabaja OnIA mientras estoy en el colegio»." },
+        { "desde_s": 3, "hasta_s": 25, "bloque": "roles", "instruccion": "2 o 3 agentes, cada uno con una tarea concreta." },
+        { "desde_s": 25, "hasta_s": 35, "bloque": "control", "instruccion": "Permisos + «yo apruebo todo antes de que salga»." },
+        { "desde_s": 35, "hasta_s": 45, "bloque": "reporte", "instruccion": "El reporte que recibes y qué decides con él." },
+        { "desde_s": 45, "hasta_s": 52, "bloque": "cta", "instruccion": "Pregunta al público o CTA de guía." }
+      ],
+      "cta": { "id": "cta_pregunta", "cta_original": "«como un ril no me da para explicar todo esto si quieres el mapa de montaje… y con gusto el envío» (127.4-136.2 s)." },
+      "referente_origen": [
+        { "referente": "erik-taveras", "video_id": "m39RZLNxBds", "url": "https://www.youtube.com/watch?v=m39RZLNxBds", "titulo": "Mi IA local: 4 modelos trabajando mientras duermo (sin nube)", "vistas": 39630, "vistas_al": "2026-10-31", "duracion_s": 140, "transcripcion_parcial_s": null },
+        { "referente": "erik-taveras", "video_id": "5v4_KCv0UX0", "url": "https://www.youtube.com/watch?v=5v4_KCv0UX0", "titulo": "mi Hermes corre en el homelab y la placa me enseña lo que hace sin abrir la computadora.", "vistas": 5233, "vistas_al": "2026-10-31", "duracion_s": 64, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 3, "texto": "Así trabaja OnIA mientras yo estoy en el colegio." },
+          { "desde_s": 3, "hasta_s": 25, "texto": "Este agente [TAREA 1]. Este otro [TAREA 2]. Y este [TAREA 3]." },
+          { "desde_s": 25, "hasta_s": 35, "texto": "Ninguno publica ni manda nada solo: todo me llega para que yo lo apruebe." },
+          { "desde_s": 35, "hasta_s": 45, "texto": "Cuando salgo, tengo un resumen: qué hicieron y qué tengo que decidir yo." },
+          { "desde_s": 45, "hasta_s": 52, "texto": "¿Tú qué le pondrías a hacer a un agente? Te leo en comentarios." }
+        ]
+      },
+      "campos_variables": ["agentes_y_tareas", "permisos", "contenido_del_reporte"],
+      "no_copiar": ["Mostrar claves, datos de clientes o ingresos en pantalla.", "Presentar a los agentes como si decidieran solos."]
+    },
+    {
+      "id": "T10",
+      "slug": "dos-personas-misma-herramienta",
+      "nombre": "Dos personas, la misma herramienta, resultados distintos",
+      "tipo": "educativo",
+      "pilar": "Aprendizaje",
+      "formato": "Vertical 9:16, cara a cámara + texto en pantalla",
+      "duracion_propuesta_s": { "min": 35, "max": 50 },
+      "gancho": {
+        "patron": "Dos personajes con nombre y la misma herramienta: uno la usa como buscador y el otro la aprovecha.",
+        "citas_originales": [
+          { "t": "0.0-3.0", "texto": "Give the exact same $20 dollar to two people." },
+          { "t": "3.0-5.0", "texto": "Let's call them Dave and Marcus." },
+          { "t": "5.0-8.0", "texto": "Dave types questions into Claude like it's a fancier version of Google." },
+          { "t": "24.0-26.3", "texto": "And here's the thing, Marcus is not smarter than you." }
+        ],
+        "idioma_original": "en",
+        "traduccion": "Dale exactamente los mismos 20 dólares a dos personas. Llamémoslas Dave y Marcus. Dave le escribe preguntas a Claude como si fuera un Google más elegante. […] Y lo importante: Marcus no es más listo que tú."
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 5.0, "que_pasa": "Planteo: dos personajes con nombre." },
+        { "desde_s": 5.0, "hasta_s": 18.4, "que_pasa": "Contraste de usos." },
+        { "desde_s": 18.4, "hasta_s": 24.0, "que_pasa": "Remate: misma app, mismo precio." },
+        { "desde_s": 24.0, "hasta_s": 29.9, "que_pasa": "«No es más listo que tú»: le saca la culpa al público." },
+        { "desde_s": 29.9, "hasta_s": 42.4, "que_pasa": "Promesa: la escalera de principiante a experto." },
+        { "desde_s": 42.4, "hasta_s": 63.6, "que_pasa": "Autoridad con dinero + regalo de su setup. Esto no se copia." },
+        { "desde_s": 64.4, "hasta_s": 88.9, "que_pasa": "Concepto base: conocimiento + herramientas." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "Dos personajes inventados (avísalo), misma herramienta." },
+        { "desde_s": 4, "hasta_s": 15, "bloque": "contraste", "instruccion": "Uso básico vs uso bueno, con ejemplos concretos." },
+        { "desde_s": 15, "hasta_s": 20, "bloque": "sin_culpa", "instruccion": "«No es más inteligente que tú, solo sabe esto»." },
+        { "desde_s": 20, "hasta_s": 38, "bloque": "primer_paso", "instruccion": "El primer escalón, mostrado en pantalla." },
+        { "desde_s": 38, "hasta_s": 45, "bloque": "cta", "instruccion": "CTA de taller (hasta el 7-nov) o de guía." }
+      ],
+      "cta": { "id": "cta_taller", "cta_original": "Regalo de su setup «gratis, listo para descargar» (58.9-61.3 s)." },
+      "referente_origen": [
+        { "referente": "liam-ottley", "video_id": "ulJqlCPNGKI", "url": "https://www.youtube.com/watch?v=ulJqlCPNGKI", "titulo": "Give Me 22 minutes, I'll Give You 10,000 hours of Claude Knowledge", "vistas": 56086, "vistas_al": "2026-10-31", "duracion_s": 1361, "transcripcion_parcial_s": 180 }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Dos compañeros tienen el mismo Claude gratis. Les pongo nombres inventados: Ana y Diego." },
+          { "desde_s": 4, "hasta_s": 15, "texto": "Ana le pregunta cosas como si fuera Google. Diego le pasa sus apuntes y le pide que le tome examen antes de la prueba." },
+          { "desde_s": 15, "hasta_s": 20, "texto": "Diego no es más inteligente que Ana. Solo sabe usarlo distinto." },
+          { "desde_s": 20, "hasta_s": 38, "texto": "El primer paso: [PASO CONCRETO EN PANTALLA]." },
+          { "desde_s": 38, "hasta_s": 45, "texto": "En el taller lo hacemos juntos. Escríbeme TALLER por WhatsApp, el link está en mi bio." }
+        ]
+      },
+      "campos_variables": ["personaje_a", "personaje_b", "uso_basico", "uso_bueno", "primer_paso"],
+      "no_copiar": ["«I've made more money with Claude than with anything else» (47.2-50.8 s).", "«business owners pay me tens of thousands of dollars» (56.8-58.9 s).", "«better than 99% of people»: porcentaje sin fuente."]
+    },
+    {
+      "id": "T11",
+      "slug": "reto-en-negocio-real",
+      "nombre": "Reto: voy a un negocio real y le resuelvo algo con IA",
+      "tipo": "startup",
+      "pilar": "Vibe coding / demos",
+      "formato": "Vertical 9:16, cámara en el local + pantalla",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "Llego a un negocio, presento a la persona, cuento sus 2 problemas y los resuelvo con Claude Code.",
+        "citas_originales": [
+          { "t": "0.3-10.2", "texto": "me llamo Santiago y ando implementando inteligencia" },
+          { "t": "65.9-71.2", "texto": "qué se podía automatizar, implementar, hacer en su negocio. Básicamente, su problema eran dos." },
+          { "t": "44.1-49.1", "texto": "So I've flown to Marbella to see if I can automate the most boring job in his business in four days." },
+          { "t": "49.1-52.1", "texto": "Oh yeah, and I've never worked a day of accounting in my life." }
+        ],
+        "idioma_original": "es/en",
+        "traduccion": "(Liam) Volé a Marbella para ver si puedo automatizar el trabajo más aburrido de su negocio en cuatro días. Ah, y nunca trabajé un día en contabilidad."
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 26.5, "que_pasa": "(Santiago) Se presenta en el local y ofrece ayuda." },
+        { "desde_s": 26.5, "hasta_s": 48.6, "que_pasa": "Explica qué hace en lenguaje simple." },
+        { "desde_s": 48.6, "hasta_s": 78.6, "que_pasa": "Presenta a la dueña y sus 2 problemas." },
+        { "desde_s": 78.6, "hasta_s": 104.6, "que_pasa": "Solución 1 y solución 2 con Claude Code." },
+        { "desde_s": 104.6, "hasta_s": 120.9, "que_pasa": "Un extra + CTA al link del perfil." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "«Fui a [negocio] y le pregunté qué le quita más tiempo»." },
+        { "desde_s": 4, "hasta_s": 12, "bloque": "problema", "instruccion": "La persona cuenta su problema con sus palabras (con permiso)." },
+        { "desde_s": 12, "hasta_s": 35, "bloque": "solucion", "instruccion": "Claude Code en pantalla, cortes rápidos, resultado real." },
+        { "desde_s": 35, "hasta_s": 45, "bloque": "reaccion", "instruccion": "La reacción de la persona y lo que todavía falta." },
+        { "desde_s": 45, "hasta_s": 52, "bloque": "cta", "instruccion": "CTA al tutorial completo o pregunta «¿qué negocio sigue?»." }
+      ],
+      "cta": { "id": "cta_perfil", "cta_original": "«Si quieren ver el tutorial completo, así como la reacción de Itzel, te lo dejo en el enlace en mi perfil» (104.6-119.8 s)." },
+      "referente_origen": [
+        { "referente": "santiago-munoz", "video_id": "e12dyuugo-Y", "url": "https://www.youtube.com/watch?v=e12dyuugo-Y", "titulo": "Que negocio les gustaria que guera el siguiente? #ia #claudecode", "vistas": 7247, "vistas_al": "2026-10-31", "duracion_s": 121, "transcripcion_parcial_s": null },
+        { "referente": "liam-ottley", "video_id": "IXDYEF22CG8", "url": "https://www.youtube.com/watch?v=IXDYEF22CG8", "titulo": "I Rebuilt This 46-Person Accounting Firm With AI (in 4 Days)", "vistas": 101641, "vistas_al": "2026-10-31", "duracion_s": 1060, "transcripcion_parcial_s": 180 }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Fui a [NEGOCIO] de mi barrio y le pregunté a [NOMBRE, CON PERMISO]: ¿qué es lo que más tiempo te quita?" },
+          { "desde_s": 4, "hasta_s": 12, "texto": "[LA PERSONA EXPLICA SU PROBLEMA]." },
+          { "desde_s": 12, "hasta_s": 35, "texto": "Abrí Claude Code y en [TIEMPO REAL MEDIDO] le armé [SOLUCIÓN]." },
+          { "desde_s": 35, "hasta_s": 45, "texto": "[REACCIÓN]. Todavía falta [LO QUE NO QUEDÓ], y eso lo hacemos la próxima." },
+          { "desde_s": 45, "hasta_s": 52, "texto": "¿Qué negocio voy a ver la próxima? Te leo en comentarios." }
+        ]
+      },
+      "campos_variables": ["negocio", "persona_y_permiso", "problema", "solucion", "tiempo_medido", "pendiente"],
+      "no_copiar": ["Groserías del original de Liam (6.9-8.2 s).", "Grabar sin permiso escrito del dueño o mostrar clientes del local.", "Ir solo: siempre con un adulto de OnIA."]
+    },
+    {
+      "id": "T12",
+      "slug": "construyamos-juntos",
+      "nombre": "Esto no funciona: ¿y si lo construimos nosotros?",
+      "tipo": "tendencia",
+      "pilar": "Vibe coding / demos",
+      "formato": "Vertical 9:16, cara a cámara + captura del fallo",
+      "duracion_propuesta_s": { "min": 30, "max": 45 },
+      "gancho": {
+        "patron": "Algo local que se lanzó y falla en la prueba más simple + «¿y si lo hacemos nosotros?» + pedir comentarios específicos.",
+        "citas_originales": [
+          { "t": "0.0-4.2", "texto": "México acaba de anunciar su nuevo chatbot para ayudar a turistas en el mundial." },
+          { "t": "4.2-7.5", "texto": "Le pregunté cuáles eran los mejores tacos de la ciudad y se rompió." },
+          { "t": "17.2-19.7", "texto": "¿Qué tal si nosotros hacemos el chatbot?" },
+          { "t": "57.7-61.4", "texto": "Dime exactamente a dónde, qué pedir y a qué hora." }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 7.5, "que_pasa": "Noticia local + prueba que falla." },
+        { "desde_s": 7.5, "hasta_s": 15.7, "que_pasa": "Por qué importa." },
+        { "desde_s": 15.7, "hasta_s": 28.0, "que_pasa": "La idea: lo hacemos nosotros, y por qué será mejor." },
+        { "desde_s": 28.0, "hasta_s": 61.4, "que_pasa": "Qué tienen que comentar, con ejemplos y con «mientras más específico, mejor»." },
+        { "desde_s": 61.4, "hasta_s": 76.3, "que_pasa": "Qué hará con eso (publicarlo gratis)." },
+        { "desde_s": 76.3, "hasta_s": 78.6, "que_pasa": "Invitación a ser parte." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 5, "bloque": "gancho", "instruccion": "Le pregunté a [X] algo simple y falló (captura real)." },
+        { "desde_s": 5, "hasta_s": 12, "bloque": "por_que", "instruccion": "Por qué importa para la gente de aquí." },
+        { "desde_s": 12, "hasta_s": 18, "bloque": "idea", "instruccion": "«¿Y si lo armamos nosotros?»." },
+        { "desde_s": 18, "hasta_s": 32, "bloque": "instrucciones", "instruccion": "Qué comentar, con 1 ejemplo bueno y 1 malo." },
+        { "desde_s": 32, "hasta_s": 40, "bloque": "cta", "instruccion": "Qué harás con eso y para cuándo." }
+      ],
+      "cta": { "id": "cta_colabora", "cta_original": "«Si te interesa ser parte de toda esta aventura,» (76.3-78.6 s)." },
+      "referente_origen": [
+        { "referente": "santiago-munoz", "video_id": "8cVNW2b4gqE", "url": "https://www.youtube.com/watch?v=8cVNW2b4gqE", "titulo": "Voy a tratar de hacer el mejor chatbot para el mundial y ocupo su ayuda #ia", "vistas": 9439, "vistas_al": "2026-10-31", "duracion_s": 83, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 5, "texto": "Le pregunté a [SERVICIO/CHATBOT] [PREGUNTA LOCAL SIMPLE] y no supo responder." },
+          { "desde_s": 5, "hasta_s": 12, "texto": "Y eso lo preguntamos todos los días en Bolivia." },
+          { "desde_s": 12, "hasta_s": 18, "texto": "¿Y si armamos nosotros el mejor bot para [TEMA LOCAL]?" },
+          { "desde_s": 18, "hasta_s": 32, "texto": "Comenta tu dato. Pero no me digas «hay buena comida». Dime dónde, qué pedir y a qué hora." },
+          { "desde_s": 32, "hasta_s": 40, "texto": "Con lo que me escribas lo armo con Claude y el [FECHA] lo comparto gratis." }
+        ]
+      },
+      "campos_variables": ["servicio_que_falla", "pregunta_local", "tema_local", "fecha_entrega"],
+      "no_copiar": ["Prometer publicar algo que no se va a terminar.", "Pedir datos personales en comentarios."]
+    },
+    {
+      "id": "T13",
+      "slug": "dolor-local-paso-a-paso",
+      "nombre": "Si eres de Bolivia y te pasa esto: paso a paso",
+      "tipo": "educativo",
+      "pilar": "Aprendizaje",
+      "formato": "Vertical 9:16 (corte) o YouTube largo 16:9 en modo tutorial",
+      "duracion_propuesta_s": { "min": 45, "max": 60 },
+      "gancho": {
+        "patron": "«Si eres [persona] en Bolivia, sabes que [X] es un dolor de cabeza» + qué preparar + demo continua con verificación final.",
+        "citas_originales": [
+          { "t": "0.0-5.0", "texto": "Si eres freelancer boliviano o un emprendedor que quiere cobrar a tus clientes que están en otros países" },
+          { "t": "5.0-9.8", "texto": "y tú estás en Bolivia sabrás que es un gran dolor de cabeza hacer eso, es muy difícil, es muy complicado" },
+          { "t": "110.5-114.9", "texto": "habilitados para esta función, efectivamente mi amigo ya lo recibió y él no tuvo que" }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 9.8, "que_pasa": "(u95zqgEvE20) Identifica al público y su dolor." },
+        { "desde_s": 9.8, "hasta_s": 26.7, "que_pasa": "Hay soluciones, y para quién." },
+        { "desde_s": 26.7, "hasta_s": 31.7, "que_pasa": "Pedido temprano de suscripción." },
+        { "desde_s": 31.7, "hasta_s": 52.7, "que_pasa": "Qué tener a mano antes de empezar." },
+        { "desde_s": 52.7, "hasta_s": 62.7, "que_pasa": "Aviso de patrocinio (transparencia)." },
+        { "desde_s": 62.7, "hasta_s": 150.4, "que_pasa": "Segmenta los dos tipos de público." },
+        { "desde_s": 150.4, "hasta_s": 179.4, "que_pasa": "Empieza el paso a paso." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 5, "bloque": "gancho", "instruccion": "Identificación + dolor local." },
+        { "desde_s": 5, "hasta_s": 10, "bloque": "preparacion", "instruccion": "Qué necesitas tener abierto o a mano." },
+        { "desde_s": 10, "hasta_s": 45, "bloque": "demo", "instruccion": "Paso a paso en pantalla, sin saltos." },
+        { "desde_s": 45, "hasta_s": 52, "bloque": "verificacion", "instruccion": "Muestra que funcionó de verdad." },
+        { "desde_s": 52, "hasta_s": 58, "bloque": "cta", "instruccion": "CTA de guía o de taller." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "«no te olvides darle click a la campanita, suscribirte» (26.7-31.7 s)." },
+      "referente_origen": [
+        { "referente": "academi365", "video_id": "u95zqgEvE20", "url": "https://www.youtube.com/watch?v=u95zqgEvE20", "titulo": "Cobra a otros países desde Bolivia: Hotmart + Payoneer + Airtm (explicado paso a paso 2026)", "vistas": 410, "vistas_al": "2026-10-31", "duracion_s": 1742, "transcripcion_parcial_s": 180 },
+        { "referente": "academi365", "video_id": "GhkDgkktsXQ", "url": "https://www.youtube.com/watch?v=GhkDgkktsXQ", "titulo": "Envía y recibe dinero con EL DORADO. Tutorial completo", "vistas": 5170, "vistas_al": "2026-10-31", "duracion_s": 126, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 5, "texto": "Si estudias en Bolivia y quieres usar IA para estudiar pero todo está en inglés, sabes que es un dolor de cabeza." },
+          { "desde_s": 5, "hasta_s": 10, "texto": "Ten a mano tus apuntes en foto o PDF y abre Claude." },
+          { "desde_s": 10, "hasta_s": 45, "texto": "Subes el archivo, le escribes [PROMPT EXACTO PROBADO] y mira lo que hace." },
+          { "desde_s": 45, "hasta_s": 52, "texto": "Lo probé con mis apuntes de [MATERIA] y este es el resultado." },
+          { "desde_s": 52, "hasta_s": 58, "texto": "Comenta CLAUDE y te mando el prompt." }
+        ]
+      },
+      "campos_variables": ["publico_local", "dolor", "requisitos", "prompt_exacto", "prueba_final"],
+      "no_copiar": ["Cerrar un patrocinio sin el sí de Sergio y de un adulto responsable. Si hay patrocinio, se dice en cámara."]
+    },
+    {
+      "id": "T14",
+      "slug": "para-la-ia-eres-un-desconocido",
+      "nombre": "Para la IA eres un desconocido (y cómo cambiarlo)",
+      "tipo": "educativo",
+      "pilar": "IA explicada",
+      "formato": "Vertical 9:16, cara a cámara + pantalla de ajustes",
+      "duracion_propuesta_s": { "min": 40, "max": 55 },
+      "gancho": {
+        "patron": "Verdad simple que nadie te dijo + analogía del asistente que olvida todo + recurso gratis que te entrevista.",
+        "citas_originales": [
+          { "t": "55.2-61.4", "texto": "Every single time you open up chat and you ask for something, you're literally a stranger." },
+          { "t": "76.2-79.9", "texto": "And they can help you with almost anything but every morning they wake up" },
+          { "t": "149.2-154.6", "texto": "It interviews you one question at a time and it actually hands you back exactly what to paste" }
+        ],
+        "idioma_original": "en",
+        "traduccion": "Cada vez que abres el chat y le pides algo, eres literalmente un desconocido. […] Te pueden ayudar con casi todo, pero cada mañana se despiertan [sin recordar nada]. […] Te entrevista de a una pregunta y te devuelve exactamente lo que tienes que pegar."
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 29.9, "que_pasa": "Gancho que ataca al público («si eres feliz con tareas aburridas, vete»). Esto no se copia." },
+        { "desde_s": 51.6, "hasta_s": 71.8, "que_pasa": "Verdad simple: para el chat eres un desconocido." },
+        { "desde_s": 71.8, "hasta_s": 109.9, "que_pasa": "Analogía: un asistente brillante que cada mañana olvida todo." },
+        { "desde_s": 109.9, "hasta_s": 138.2, "que_pasa": "Dónde está el ajuste y qué escribir." },
+        { "desde_s": 138.2, "hasta_s": 165.5, "que_pasa": "Lead magnet: su prompt que te entrevista, en la descripción." },
+        { "desde_s": 165.5, "hasta_s": 179.9, "que_pasa": "Puente a la segunda capa." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 4, "bloque": "gancho", "instruccion": "La verdad simple, sin atacar a nadie." },
+        { "desde_s": 4, "hasta_s": 15, "bloque": "analogia", "instruccion": "El asistente que olvida todo cada mañana." },
+        { "desde_s": 15, "hasta_s": 38, "bloque": "como", "instruccion": "Dónde está el ajuste en la versión actual y qué escribir ahí." },
+        { "desde_s": 38, "hasta_s": 45, "bloque": "recurso", "instruccion": "«Te armé un prompt que te hace las preguntas por ti»." },
+        { "desde_s": 45, "hasta_s": 50, "bloque": "cta", "instruccion": "CTA de guía." }
+      ],
+      "cta": { "id": "cta_guia", "cta_original": "Prompt en la descripción del video (142.5-158.7 s)." },
+      "referente_origen": [
+        { "referente": "iman-gadzhi", "video_id": "w-lkP9XcZfg", "url": "https://www.youtube.com/watch?v=w-lkP9XcZfg", "titulo": "Give Me 28 Minutes, I’ll Give You 10,000 Hours of ChatGPT Knowledge", "vistas": 753647, "vistas_al": "2026-10-31", "duracion_s": 1661, "transcripcion_parcial_s": 180 }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 4, "texto": "Cada vez que abres un chat nuevo con la IA, para ella eres un desconocido." },
+          { "desde_s": 4, "hasta_s": 15, "texto": "Es como tener al asistente más inteligente del mundo, pero que cada mañana se olvida de quién eres." },
+          { "desde_s": 15, "hasta_s": 38, "texto": "En Claude vas a [RUTA DEL AJUSTE VERIFICADA] y le cuentas quién eres, qué estudias y cómo quieres que te responda." },
+          { "desde_s": 38, "hasta_s": 45, "texto": "Sé que escribir todo eso da flojera, así que armé un prompt que te hace las preguntas por ti." },
+          { "desde_s": 45, "hasta_s": 50, "texto": "Comenta CLAUDE y te lo mando gratis." }
+        ]
+      },
+      "campos_variables": ["ruta_ajuste", "que_escribir", "prompt_entrevista"],
+      "no_copiar": ["«if you're happy doing the same boring repetitive tasks… you can click off right now» (0.0-11.0 s): ataca inseguridades.", "«you're using about 2% of what it can actually do» (20.8-26.2 s): porcentaje sin fuente.", "Burlarse de quien usa la IA «de terapeuta» o con «doom scrolling»."]
+    },
+    {
+      "id": "T15",
+      "slug": "asi-automatice-x",
+      "nombre": "Así automaticé [tarea] y sigue sin mí",
+      "tipo": "startup",
+      "pilar": "Founder de 16",
+      "formato": "Vertical 9:16, pantalla + cara a cámara",
+      "duracion_propuesta_s": { "min": 30, "max": 45 },
+      "gancho": {
+        "patron": "Resultado en primera persona («automaticé / lo dejé prendido y me fui») + analogía + situación extrema + link al tutorial.",
+        "citas_originales": [
+          { "t": "0.0-3.0", "texto": "Y como automatice todas mis cotizaciones con GROCKBOT" },
+          { "t": "29.0-32.0", "texto": "Imagínate como si le dieras una mac mini" },
+          { "t": "0.0-4.8", "texto": "Dejen mi comput-dora prendida con CloudCode y me fui" }
+        ],
+        "idioma_original": "es",
+        "traduccion": null
+      },
+      "estructura_referente": [
+        { "desde_s": 0, "hasta_s": 3.0, "que_pasa": "(dm1GrkfQ3kM) Resultado en primera persona." },
+        { "desde_s": 3.0, "hasta_s": 9.0, "que_pasa": "Qué es la herramienta." },
+        { "desde_s": 9.0, "hasta_s": 20.0, "que_pasa": "Pasos mínimos." },
+        { "desde_s": 20.0, "hasta_s": 39.0, "que_pasa": "Ventaja explicada con analogía (una Mac mini que no tienes que comprar)." },
+        { "desde_s": 39.0, "hasta_s": 48.0, "que_pasa": "Situación extrema: «en la cima de una montaña» y sigue trabajando." },
+        { "desde_s": 48.0, "hasta_s": 52.0, "que_pasa": "CTA al link del perfil." }
+      ],
+      "estructura": [
+        { "desde_s": 0, "hasta_s": 3, "bloque": "gancho", "instruccion": "«Así automaticé [tarea real de OnIA]»." },
+        { "desde_s": 3, "hasta_s": 10, "bloque": "que_es", "instruccion": "La herramienta en 1 frase." },
+        { "desde_s": 10, "hasta_s": 25, "bloque": "pasos", "instruccion": "Pasos mínimos en pantalla." },
+        { "desde_s": 25, "hasta_s": 35, "bloque": "analogia_y_limite", "instruccion": "Analogía + «y yo reviso antes de que salga»." },
+        { "desde_s": 35, "hasta_s": 40, "bloque": "cta", "instruccion": "CTA al tutorial o pregunta." }
+      ],
+      "cta": { "id": "cta_perfil", "cta_original": "«Si quieres ver el tutorial, ve al enlace en mi perfil» (48.0-52.0 s)." },
+      "referente_origen": [
+        { "referente": "santiago-munoz", "video_id": "dm1GrkfQ3kM", "url": "https://www.youtube.com/watch?v=dm1GrkfQ3kM", "titulo": "Automatiza con GrokBot #ia", "vistas": 3351, "vistas_al": "2026-10-31", "duracion_s": 52, "transcripcion_parcial_s": null },
+        { "referente": "enrique-rocha", "video_id": "UfmH4HKQUSk", "url": "https://www.youtube.com/watch?v=UfmH4HKQUSk", "titulo": "Controla todo con Claude Code desde tu teléfono", "vistas": 670, "vistas_al": "2026-10-31", "duracion_s": 106, "transcripcion_parcial_s": null }
+      ],
+      "ejemplo_sergio": {
+        "guion": [
+          { "desde_s": 0, "hasta_s": 3, "texto": "Así automaticé los subtítulos de todos mis reels." },
+          { "desde_s": 3, "hasta_s": 10, "texto": "Uso [HERRAMIENTA], que [QUÉ HACE EN 1 FRASE]." },
+          { "desde_s": 10, "hasta_s": 25, "texto": "Grabo, subo el video a [CARPETA] y [PASOS REALES DEL FLUJO]." },
+          { "desde_s": 25, "hasta_s": 35, "texto": "Es como tener un editor que no se cansa. Pero nada sale sin que yo lo vea." },
+          { "desde_s": 35, "hasta_s": 40, "texto": "El tutorial completo está en el link de mi perfil." }
+        ]
+      },
+      "campos_variables": ["tarea", "herramienta", "pasos", "analogia"],
+      "no_copiar": ["«Puedo cerrar mi computadora y seguir trabajando» si implica que nadie supervisa."]
+    }
+  ],
+  "excluidos": [
+    { "referente": "iman-gadzhi", "video_id": "YZ6OyZKrRh8", "motivo": "Promesa de ingresos: «I'm about to show you three ways to make money with AI» (111.5-115.7 s). Solo sirve como ejemplo de qué no copiar." },
+    { "referente": "iman-gadzhi", "video_id": "WO-Gl6-6gLE", "motivo": "La transcripción tiene solo 2 frases sueltas en 180 s. No alcanza para derivar una estructura." },
+    { "referente": "liam-ottley", "video_id": "T2v2pf_uypE", "motivo": "Whisper lo detectó como portugués y el texto no sirve." }
+  ],
+  "no_copiar_global": [
+    "Promesas de ingresos («make money with AI», «gana $X»).",
+    "Mostrar ingresos propios o de la familia.",
+    "Ganchos que atacan inseguridades o se burlan del público.",
+    "Porcentajes o cifras dichas sin fuente visible.",
+    "Escasez falsa.",
+    "Groserías."
+  ],
+  "limitaciones": [
+    "De los videos largos solo están transcritos los primeros 180 s; la estructura del resto no se conoce.",
+    "Faltan 4 videos que no se descargaron (3 TikTok de Enrique Rocha y 1 de Academi365).",
+    "Las transcripciones son automáticas (Whisper small) y tienen errores, por ejemplo «Cloud» por «Claude». Las citas se copian tal como están.",
+    "Las vistas vienen del encabezado de cada transcripción, al 31-oct-2026. No son métricas de Sergio ni metas.",
+    "Las vistas no prueban qué gancho funciona mejor: los canales tienen tamaños distintos.",
+    "No hay métricas propias de Sergio todavía; los campos de métricas empiezan en null."
+  ],
+  "metricas_por_publicacion": {
+    "descripcion": "Para completar después de publicar. Sin metas numéricas hasta tener línea base (aprendizajes-referentes.md §4).",
+    "campos": ["plantilla_id", "plataforma", "fecha_publicacion", "retencion_3s_pct", "retencion_completa_pct", "guardados", "compartidos", "comentarios_palabra_clave", "mensajes_whatsapp_taller"],
+    "registros": []
+  },
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "onia-dashboard-contenido/1.0.0",
+    "title": "Biblioteca de plantillas de guion — ONIA Platform",
+    "type": "object",
+    "required": ["schema_version", "id", "generado", "estado", "tipos", "ctas", "plantillas", "limitaciones"],
+    "properties": {
+      "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+      "id": { "type": "string" },
+      "generado": { "type": "string", "format": "date" },
+      "estado": { "enum": ["borrador_pendiente_aprobacion", "aprobado", "archivado"] },
+      "tipos": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "nombre", "duracion_propuesta_s"],
+          "properties": {
+            "id": { "enum": ["noticia", "lifestyle", "educativo", "startup", "tendencia"] },
+            "nombre": { "type": "string" },
+            "duracion_propuesta_s": { "$ref": "#/$defs/rango" }
+          }
+        }
+      },
+      "ctas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "texto", "patron_origen"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^cta_[a-z_]+$" },
+            "texto": { "type": "string" },
+            "patron_origen": { "type": "string" },
+            "condicion": { "type": ["string", "null"] },
+            "vigente_hasta": { "type": ["string", "null"], "format": "date" }
+          }
+        }
+      },
+      "plantillas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "slug", "nombre", "tipo", "pilar", "formato", "duracion_propuesta_s", "gancho", "estructura_referente", "estructura", "cta", "referente_origen", "ejemplo_sergio", "campos_variables", "no_copiar"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^T\\d{2}$" },
+            "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+            "nombre": { "type": "string" },
+            "tipo": { "enum": ["noticia", "lifestyle", "educativo", "startup", "tendencia"] },
+            "pilar": { "enum": ["IA explicada", "Vibe coding / demos", "Founder de 16", "Aprendizaje", "Taller"] },
+            "formato": { "type": "string" },
+            "duracion_propuesta_s": { "$ref": "#/$defs/rango" },
+            "gancho": {
+              "type": "object",
+              "required": ["patron", "citas_originales", "idioma_original"],
+              "properties": {
+                "patron": { "type": "string" },
+                "citas_originales": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["t", "texto"],
+                    "properties": {
+                      "t": { "type": "string", "description": "Rango del segmento de Whisper donde está la cita, en segundos." },
+                      "texto": { "type": "string", "description": "Textual de la transcripción, con sus errores." }
+                    }
+                  }
+                },
+                "idioma_original": { "type": "string" },
+                "traduccion": { "type": ["string", "null"] }
+              }
+            },
+            "estructura_referente": { "type": "array", "items": { "$ref": "#/$defs/tramo_referente" } },
+            "estructura": { "type": "array", "items": { "$ref": "#/$defs/tramo" } },
+            "cta": {
+              "type": "object",
+              "required": ["id", "cta_original"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^cta_[a-z_]+$" },
+                "cta_original": { "type": "string" }
+              }
+            },
+            "referente_origen": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["referente", "video_id", "url", "titulo", "vistas", "vistas_al", "duracion_s"],
+                "properties": {
+                  "referente": { "type": "string" },
+                  "video_id": { "type": "string" },
+                  "url": { "type": "string", "format": "uri" },
+                  "titulo": { "type": "string" },
+                  "vistas": { "type": ["integer", "null"] },
+                  "vistas_al": { "type": "string", "format": "date" },
+                  "duracion_s": { "type": ["integer", "null"] },
+                  "transcripcion_parcial_s": { "type": ["integer", "null"] }
+                }
+              }
+            },
+            "ejemplo_sergio": {
+              "type": "object",
+              "required": ["guion"],
+              "properties": {
+                "guion": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["desde_s", "hasta_s", "texto"],
+                    "properties": {
+                      "desde_s": { "type": "number" },
+                      "hasta_s": { "type": "number" },
+                      "texto": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            },
+            "campos_variables": { "type": "array", "items": { "type": "string" } },
+            "no_copiar": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "excluidos": { "type": "array" },
+      "limitaciones": { "type": "array", "items": { "type": "string" } },
+      "metricas_por_publicacion": { "type": "object" }
+    },
+    "$defs": {
+      "rango": {
+        "type": "object",
+        "required": ["min", "max"],
+        "properties": { "min": { "type": "number" }, "max": { "type": "number" } }
+      },
+      "tramo": {
+        "type": "object",
+        "required": ["desde_s", "hasta_s", "bloque", "instruccion"],
+        "properties": {
+          "desde_s": { "type": "number" },
+          "hasta_s": { "type": "number" },
+          "bloque": { "type": "string" },
+          "instruccion": { "type": "string" }
+        }
+      },
+      "tramo_referente": {
+        "type": "object",
+        "required": ["desde_s", "hasta_s", "que_pasa"],
+        "properties": {
+          "desde_s": { "type": "number" },
+          "hasta_s": { "type": "number" },
+          "que_pasa": { "type": "string" }
+        }
+      }
+    }
+  }
+}

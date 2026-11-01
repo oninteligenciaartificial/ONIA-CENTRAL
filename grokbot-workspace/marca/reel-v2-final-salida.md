@@ -1,0 +1,3 @@
+Creé `/workspace/marca/reel-campana-v2-final.md` con la tabla de 4 tomas, las indicaciones de grabación con celular, el estilo de subtítulos con Montserrat ExtraBold y una variante de b-roll con IA. El texto hablado quedó literal, con tuteo y sin precio.
+Hay una discrepancia de duración que no resolví: el texto dura unos 25 s, así que grabando en bruto con pausas y varias tomas llegas a 35–45 s, pero el video editado queda en unos 25–30 s. Para que el reel final dure de verdad 35–45 s, tendrías que añadir texto hablado o una tarjeta final sin voz de 8–10 s.
+No lancé ninguna generación de IA, porque gasta créditos, y el QR del b-roll es genérico y no escaneable. Solo edité ese archivo y no hice ningún push.

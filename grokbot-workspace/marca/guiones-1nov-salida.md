@@ -1,0 +1,4 @@
+Escribí los 3 guiones en `/workspace/marca/guiones-1nov.md`, con tuteo, sin precios, sin cifras inventadas y sin promesas de ingresos. No toqué ningún otro archivo.
+1. **Reel 1 (startup, 35 s), Reel 2 (taller, 35 s) y Reel 3 (tarea con IA, 40 s):** son los temas del lunes 2-nov (R1, R2 y R3 del calendario) y tienen gancho, desarrollo, CTA ("Escríbeme por WhatsApp") y texto en pantalla. El reel 2 sigue el tono de `guion-reel-campana-final.md` y va sin precio.
+2. **Voseo:** el calendario dice "voseo", pero seguí tu indicación de tuteo, así que cambié los ganchos del calendario, por ejemplo "Escribime" por "Escríbeme" y "Mirá" por "Mira".
+3. **Pendiente de Sergio:** confirmar que "las clases quedan grabadas" sigue vigente antes de publicar el reel 2. Tampoco se publica nada sin su sí con captura.

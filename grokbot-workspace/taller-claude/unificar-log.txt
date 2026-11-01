@@ -1,0 +1,18 @@
+Terminé la unificación. Los datos de «Claude de 0 a 100» quedan así: 3 clases a las 19:00 (hora de Bolivia), el martes 3/11, el jueves 5/11 y el sábado 7/11. Son 60 cupos, a Bs 50 hasta el domingo 1/11 o hasta llenar los 60 cupos, y después Bs 70.
+
+Revisé las coincidencias con búsquedas, pero no releí cada archivo completo. Al final comprobé que no queda "por la serie completa" sin la etiqueta `[PENDIENTE DE CONFIRMAR por Sergio]`, ni voseo en los tres archivos que lo tenían.
+
+Cambié estos archivos (el detalle por archivo está en `cambios-unificacion.md`):
+- **`comunidad.md`:** datos y precio unificados, y voseo pasado a tuteo.
+- **`anuncio-y-combos.md`:** datos y precio en las tres versiones, que antes no mencionaban los 60 cupos ni el precio completo. También pasé el voseo a tuteo.
+- **`aprendizajes-venta.md`:** "~50 cupos" ahora es "60 cupos", con el precio de Bs 70 después. También pasé el voseo a tuteo.
+- **`temario.md`:** agregué una línea con horario, cupos y precio, que antes no traía.
+- **`plan-comunidad.md`:** precio y cupos en los datos base y en el calendario del 1/11.
+- **`kit-alumno.md`, `clase1-material.md`, `clase1-diapositivas.md` y `clase1-diapositivas.html`:** quité los "[HORA, por confirmar]" y "[confirma hora]" de la clase 2. Ahora dicen jueves 5/11 a las 19:00.
+
+Los tres archivos que podía estar escribiendo otro proceso (`clase1-diapositivas.html`, `clase2-ejercicios.md` y `clase2-plantilla-proyecto.md`) existen, así que los revisé. Solo el `.html` necesitó un cambio. No encontré ninguna clase a las 09:00. El "9:00 a 19:00" que aparece es el horario de una tienda ficticia en un ejemplo.
+
+Hay tres cosas para decidir:
+- **Etiqueta de la serie completa:** ningún archivo tenía antes la frase "por la serie completa", así que la agregué yo en las líneas de precio, en 5 archivos. Si prefieres otra redacción, hay que cambiarla en esos 5.
+- **Combos #2 y #4 de `anuncio-y-combos.md`:** los precios (Bs 90, Bs 120 y Bs 130) no cuadran con Bs 50/70. No los recalculé; los marqué como "propuesta, no aprobada".
+- **Nivel 2 y ofertas:** no toqué sus precios ni fechas (Bs 90/70, Bs 350/380/1.500, 17/19/21 de noviembre), porque son otro producto y siguen como estimaciones o propuestas.

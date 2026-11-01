@@ -1,0 +1,86 @@
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (deploy, push).
+onia-guard: bloqueado; requiere aprobación vigente de Sergio (push).
+OK 01 onia-llm (copia preparada): rechaza push: código 3
+OK 02 onia-llm (copia preparada): rechaza deploy: código 3
+OK 03 onia-llm (copia preparada): rechaza pago: código 3
+OK 04 onia-llm (copia preparada): rechaza publicar: código 3
+OK 05 onia-llm (copia preparada): rechaza mensaje-cliente: código 3
+OK 06 onia-llm (copia preparada): permite git status: código 0
+OK 07 onia-central: rechaza push: código 3
+OK 08 onia-central: rechaza deploy: código 3
+OK 09 onia-central: rechaza pago: código 3
+OK 10 onia-central: rechaza publicar: código 3
+OK 11 onia-central: rechaza mensaje-cliente: código 3
+OK 12 onia-central: permite git status: código 0
+OK 13 onia-loop: rechaza push: código 3
+OK 14 onia-loop: rechaza deploy: código 3
+OK 15 onia-loop: rechaza pago: código 3
+OK 16 onia-loop: rechaza publicar: código 3
+OK 17 onia-loop: rechaza mensaje-cliente: código 3
+OK 18 onia-loop: permite git status: código 0
+OK 19 guard: variante bloqueada: código 3
+OK 20 guard: variante bloqueada: código 3
+OK 21 guard: variante bloqueada: código 3
+OK 22 guard: variante bloqueada: código 3
+OK 23 guard: variante bloqueada: código 3
+OK 24 guard: variante bloqueada: código 3
+OK 25 guard: variante bloqueada: código 3
+OK 26 guard: variante bloqueada: código 3
+OK 27 guard: variante bloqueada: código 3
+OK 28 guard: variante bloqueada: código 3
+OK 29 guard: variante bloqueada: código 3
+OK 30 guard: variante bloqueada: código 3
+OK 31 guard: variante bloqueada: código 3
+OK 32 guard: variante bloqueada: código 3
+OK 33 guard: variante bloqueada: código 3
+OK 34 guard: variante bloqueada: código 3
+OK 35 guard: variante bloqueada: código 3
+OK 36 guard: variante bloqueada: código 3
+OK 37 guard: variante bloqueada: código 3
+OK 38 guard: variante bloqueada: código 3
+OK 39 guard: variante bloqueada: código 3
+OK 40 loop: rechaza fuera de lista: código 3
+OK 41 loop: rechaza fuera de lista: código 3
+OK 42 loop: rechaza fuera de lista: código 3
+OK 43 loop: rechaza fuera de lista: código 3
+OK 44 loop: rechaza fuera de lista: código 3
+OK 45 loop: comando permitido sin ejecutarlo: código 0
+OK 46 loop: comando permitido sin ejecutarlo: código 0
+OK 47 loop: comando permitido sin ejecutarlo: código 0
+OK 48 llm: negación inequívoca permitida: código 0
+OK 49 llm: negación seguida de petición rechazada: código 3
+OK 50 llm: stdin bloqueado antes del motor: código 3
+OK 51 llm: petición normal bloqueada sin modo de prueba: código 3
+OK 52 central: orden bloqueada antes del despacho: código 3
+OK 53 loop: argumentos bloqueados antes de resolver agente: código 3
+OK 54 hook: Bash bloqueado: código 2
+OK 55 hook: Bash permitido: código 0
+OK 56 llm: no permite disfrazar peticiones como negaciones: código 3
+OK 57 llm: no permite disfrazar peticiones como negaciones: código 3
+OK 58 llm: no permite disfrazar peticiones como negaciones: código 3
+OK 59 hook loop: lista cerrada efectiva
+OK 60 loop: sus prohibiciones fijas no son órdenes: código 0
+OK 61 aprobación aislada: vigente y alcance exacto
+OK 62 aprobación aislada: expirada
+OK 63 aprobación aislada: otro aprobador
+OK 64 aprobación aislada: otro alcance
+OK 65 aprobación aislada: comodín no autorizado
+OK 66 aprobación aislada: otra acción
+OK 67 aprobación aislada: fecha sin zona
+OK 68 aprobación aislada: fecha futura
+OK 69 aprobación aislada: sin identificador
+OK 70 aprobación aislada: acción adicional no cubierta
+OK 71 registro inválido: cierre seguro
+OK 72 bloqueos sin texto de entrada ni secretos
+OK 73 sintaxis Bash: test-guard.sh: código 0
+OK 74 sintaxis Bash: onia-llm.preparado: código 0
+OK 75 sintaxis Bash: onia-loop: código 0
+RESULTADO: 75 comprobaciones correctas. Sin acciones externas ni motores. onia-llm probado en copia preparada; instalación pendiente.

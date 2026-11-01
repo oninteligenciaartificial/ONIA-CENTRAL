@@ -1,0 +1,18 @@
+Terminé las dos tareas. Solo toqué archivos dentro de la carpeta de trabajo, y no hice push ni envié nada.
+
+**1. `temario-nivel2.md`**
+- Quité la frase de la línea 3, la que decía que el archivo estaba vacío y que se trabajó en solo lectura.
+- Quité el punto 10, el del archivo vacío, y renumeré el punto 11 como 10.
+- Busqué voseo con `grep` y no quedó ninguno. Ya estaba pasado a tuteo en una pasada anterior, según `tuteo-log.txt`.
+
+**2. `plan-comunidad.md`**
+- Incluye el calendario día por día del 1 al 14/11 con quién hace cada cosa, y cómo entra cada inscrito: pago verificado por Sergio y luego link.
+- También cubre las reglas, la participación y las tareas, la encuesta y el pedido de testimonio solo con permiso escrito.
+- Cierra con el paso a «Claude nivel 2» y a las ofertas (llamada de Bs 350, combo de Bs 380, consultoría de Bs 1500), y con la lista de lo que falta decidir.
+- Los mensajes de `comunidad.md` y del anuncio venían en voseo y van en tuteo. Todo es borrador y nada sale sin el sí de Sergio.
+
+Hay cuatro cosas que conviene que revises:
+- **Combo de Bs 380:** los archivos no dicen qué incluye. Quedó como pendiente de Sergio. Lo mismo vale para el alcance de la llamada y de la consultoría.
+- **Nivel 2:** las fechas (17, 19 y 21/11) y el precio (Bs 90 y Bs 70) siguen siendo propuestas. El plan no los comunica hasta que Sergio los confirme.
+- **Sugerencias mías:** las horas de los recordatorios (17:00 y 18:55) y la regla de no reenviar grabaciones. Las marqué como por confirmar.
+- **Cifras:** el plan no inventa ninguna. La encuesta solo se publica con datos reales.

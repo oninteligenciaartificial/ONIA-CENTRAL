@@ -1,0 +1,20 @@
+Creé `/workspace/taller-claude/clase2-material.md`, en español neutro con tuteo. Busqué formas de voseo con una lista de palabras y no apareció ninguna. No hice push ni toqué nada fuera de la carpeta.
+
+**Qué incluye**
+- **Guion para Sergio:** una tabla por bloque con minutos, qué dice y qué muestra. Cada bloque va en su propia sala de Meet, como en la clase 1. Los dos bloques suman 50 min cada uno, con 10 min de pausa.
+- **Revisión de la tarea de la clase 1:** 12 minutos, con 3 o 4 voluntarios que muestran su mejor y su peor respuesta.
+- **Demos en vivo:**
+  - PDF: un contrato de alquiler ficticio al que le falta una cláusula a propósito.
+  - Proyecto: el asistente de Marisol, la tienda de ropa de Santa Cruz que ya apareció en la clase 1.
+  - Artifact: una tabla de respuestas rápidas.
+- **3 ejercicios con prompts para copiar:** comparar dos cotizaciones (taller de costura, La Paz), preguntarle a una hoja de ventas (panadería, Sucre) y armar un Proyecto propio con una plantilla de instrucciones de 6 partes.
+- **Resto del material:** límites y privacidad, 12 errores comunes, los momentos para preguntas, la tarea de la clase 2 y un checklist técnico.
+- **Anexo con el cierre de la clase 3:** recapitulación, encuesta de 3 preguntas, testimonio solo con permiso y presentación de «Claude nivel 2» y de las ofertas, sin presión.
+
+**Tenlo en cuenta**
+- **Datos ficticios:** todos los números de los ejemplos son inventados y lo digo en el archivo. Calculé a mano las respuestas correctas de las cotizaciones (A = Bs 1.460, B = Bs 1.370) y de la hoja de ventas (total Bs 2.766). Compruébalas con tu propia cuenta antes de la clase.
+- **No afirmé cifras de Claude:** no puse límites ni formatos de archivos ni precios de los planes. Pido verificarlos el mismo día. Sí cité, con su fecha de verificación (31/10), que los Proyectos (máximo 5) y los Artifacts están en el plan gratis, según `temario-nivel2.md`.
+- **Ofertas sin detalle:** solo figuran los precios aprobados (Bs 350, Bs 380 y Bs 1.500). Qué incluye cada una quedó como campo para que Sergio lo complete, porque no está en ningún archivo. Tampoco usé las fechas ni los precios borrador del nivel 2.
+- **Conflicto con `plan-comunidad.md`:** ese plan dice que en la clase 3 "no se vende nada" y que las ofertas van en privado el 13/11. Seguí tu pedido de presentarlas en la clase, y lo señalé en el anexo para que Sergio elija una de las dos versiones.
+- **Clase 3:** interpreté que el cierre de la clase 3 va como anexo en este mismo archivo. El resto de esa clase necesitará su propio material.
+- **Pregunta de precio:** la encuesta mantiene la pregunta de precio de `temario-nivel2.md` dentro de las 3 preguntas, así que la pregunta 3 quedó doble (interés y precio).

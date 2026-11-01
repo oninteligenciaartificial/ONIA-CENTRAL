@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OnIA · Clase 1 · Hablarle bien a la IA</title>
+<!-- Fuente de contenido: clase1-diapositivas.md.
+Paleta OnIA encontrada en /workspace/platform/repo/app/globals.css:
+primario #027650, tinta #12100E, fondo #F9FBFA, señal #00D26A.
+Fuentes del sistema para mantener este archivo autónomo y sin solicitudes externas. -->
+<style>
+:root{--green:#027650;--ink:#12100e;--paper:#f9fbfa;--signal:#00d26a;--soft:#d5f4e3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer;border:1px solid #b9bfbc;border-radius:9px;padding:10px 16px;background:white;color:var(--ink)}button:hover{background:var(--soft)}button:focus-visible,pre:focus-visible{outline:3px solid var(--green);outline-offset:4px}button:disabled{opacity:.35;cursor:default}.slide{height:calc(100dvh - 94px);padding:32px clamp(24px,6vw,110px);overflow:auto}.slide[hidden]{display:none}.eyebrow{font-size:16px;font-weight:600;letter-spacing:.1em;color:var(--green);display:flex;align-items:center;gap:14px}.eyebrow:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--signal)}.eyebrow span{font-size:11px;color:#424a46;letter-spacing:.12em}.content{max-width:1200px;margin:clamp(24px,6vh,65px) auto 24px}h1{font-weight:600;letter-spacing:-.035em;font-size:clamp(32px,4.4vw,68px);line-height:1.12;margin:0 0 32px}h2{color:var(--green);font-weight:500;letter-spacing:-.02em;font-size:clamp(24px,3vw,44px);line-height:1.3}p,li{font-size:clamp(21px,2.4vw,34px);line-height:1.5}p{margin:18px 0}ul{padding-left:1.1em;margin:26px 0}li{padding-left:10px;margin:14px 0}li::marker{color:var(--green)}.pausa,.preguntas,.tarea{background:var(--soft)}.pausa .content,.preguntas .content,.tarea .content{max-width:1100px;margin-top:clamp(45px,12vh,130px)}.pausa h1,.preguntas h1,.tarea h1{color:#013925}.prompt{border:1px solid #b9bfbc;border-radius:14px;overflow:hidden;background:#fff;margin:22px 0}.prompt-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:#eaf5ef;color:#016141;font-size:11px;letter-spacing:.08em}.copy{font-size:13px;letter-spacing:0;padding:7px 12px;flex-shrink:0}pre{margin:0;padding:20px 24px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.42;font-size:clamp(16px,1.6vw,23px);font-family:ui-monospace,Consolas,monospace}.codigo .content{margin-top:22px}.codigo h1{font-size:clamp(30px,3.4vw,48px);margin-bottom:16px}.codigo p,.codigo li{font-size:clamp(19px,2vw,27px)}.codigo pre{font-size:clamp(15px,1.35vw,20px);line-height:1.38}footer{height:90px;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(20px,4vw,65px);border-top:1px solid #d4d9d6;gap:20px;background:var(--paper)}.footer-brand{font-size:12px;color:#424a46;line-height:1.7}.controls{display:flex;align-items:center;gap:10px}#counter{min-width:65px;text-align:center;font-variant-numeric:tabular-nums;font-size:14px}#progress{height:4px;background:var(--green);transition:width .2s}#status{position:fixed;bottom:104px;right:24px;background:var(--ink);color:white;border-radius:8px;padding:10px 18px;font-size:14px}#status:empty{display:none}@media(max-width:640px){.eyebrow span{font-size:9px}.slide{padding:24px 20px;height:calc(100dvh - 114px)}footer{height:110px;flex-wrap:wrap;gap:5px;padding:8px 16px}.footer-brand{font-size:10px}.controls{gap:5px}button{padding:8px 10px}#fullscreen{font-size:12px}.prompt-bar{padding:10px;font-size:9px}pre{padding:16px}.content{margin-top:32px}}@media print{.slide,.slide[hidden]{display:block;height:auto;min-height:95vh;overflow:visible;break-after:page}footer,#progress,#status,.copy{display:none}.content{margin-top:35px}.prompt{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main aria-label="Presentación de la clase 1">
+<section class="slide pausa" aria-label="Diapositiva 1"><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Claude de 0 a 100</h1><h2>Clase 1 · Hablarle bien a la IA</h2><p>OnIA · Martes 3/11/2026 · 19:00 (hora de Bolivia)</p><p>WhatsApp +591 75414930</p></div><!--
+NOTAS PARA SERGIO
+- La clase se graba. Cada bloque va en su propia sala de Meet (dos enlaces, dos grabaciones).
+- Antes de empezar: pestaña limpia, zoom 125–150 %, comparte "una pestaña", no toda la pantalla.
+- Di una sola idea de bienvenida: hoy no necesitas saber nada de tecnología.
+--></section>
+<section class="slide " aria-label="Diapositiva 2" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Qué haremos hoy</h1><ul><li>Bloque 1: qué es Claude y por qué a veces responde genérico</li><li>Pausa de 10 minutos</li><li>Bloque 2: una fórmula de pedido, practicada en vivo</li><li>Al final: tarea corta para la semana</li></ul></div><!--
+Min 0–5 del Bloque 1. Explica el plan en 3 líneas.
+Objetivo de la clase: que cada persona se vaya con su cuenta creada, entienda por qué la IA responde genérico y tenga una fórmula que ya usó en tres tareas.
+No se promete: ingresos, resultados garantizados ni "que la IA lo hace todo sola". Se promete práctica y algo hecho al terminar.
+--></section>
+<section class="slide " aria-label="Diapositiva 3" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Acuerdos de la clase</h1><ul><li>La clase se graba: todos los inscritos, incluso los que se sumen tarde, reciben la grabación con acceso por 30 días</li><li>Usa el chat para dudas cortas</li><li>Pararemos para preguntas en momentos marcados</li><li>No pegues datos sensibles de nadie en el chat</li></ul></div><!--
+Di en voz alta: "Hoy no necesitas saber nada de tecnología".
+Min 8: pregunta "¿Alguien ya usó una IA antes? Cuéntame en el chat" (2 min) para medir el nivel.
+Pide que abran Claude en otra pestaña. Si no tienen cuenta, la crean contigo en unos minutos.
+--></section>
+<section class="slide " aria-label="Diapositiva 4" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Qué es Claude</h1><ul><li>Un asistente de IA conversacional hecho por Anthropic</li><li>Le escribes en lenguaje normal y te responde</li><li>Redacta, resume, reorganiza y explica</li><li>Puede equivocarse, aunque suene muy seguro</li></ul></div><!--
+Min 8–18. Claude no es un buscador, no es una persona y no es infalible.
+Ejemplo opcional: busca "carta de renuncia" en Google y pídela a Claude para mostrar la diferencia.
+--></section>
+<section class="slide " aria-label="Diapositiva 5" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Google, Claude y ChatGPT</h1><ul><li>Google: te lleva a páginas y fuentes</li><li>Claude: redacta una respuesta para ti</li><li>ChatGPT: herramienta del mismo tipo, de otra empresa</li><li>Se aprende igual: lo que veas hoy te sirve en las dos</li></ul></div><!--
+No hables mal de ninguna herramienta. Una línea por columna, sin comparaciones agresivas.
+--></section>
+<section class="slide " aria-label="Diapositiva 6" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Crea tu cuenta</h1><ul><li>Entra a claude.ai</li><li>Regístrate con tu correo o tu cuenta de Google</li><li>Verifica tu correo</li><li>Escribe &quot;listo&quot; en el chat cuando termines</li></ul></div><!--
+Min 18–28. Ve a tu ritmo y espera. Registra una cuenta de prueba tuya en pantalla y tapa tu correo.
+Min 28: pausa de preguntas, 3–4 min: "¿Quién tuvo problemas con el registro? Resolvemos ahora".
+--></section>
+<section class="slide " aria-label="Diapositiva 7" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Plan gratis y planes de pago</h1><ul><li>Hay un plan gratis y hay planes de pago</li><li>El gratis alcanza para aprender hoy [confirma con tu cuenta]</li><li>Límites y precios cambian: mira la página oficial</li><li>No necesitas pagar para este taller</li></ul></div><!--
+Min 28–36. Abre la página oficial de precios ESE MISMO DÍA. No pronuncies cifras que no verificaste.
+No recomiendes pagar nada. Confirma que lo del plan gratis es cierto en tu cuenta antes de decirlo.
+--></section>
+<section class="slide " aria-label="Diapositiva 8" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Recorrido por la interfaz</h1><ul><li>Cuadro de mensaje</li><li>Botón de nuevo chat e historial</li><li>Selector de modelo y adjuntar archivos</li><li>Un tema, un chat: si cambias de tema, abre uno nuevo</li></ul></div><!--
+Min 36–44. Navega en vivo, despacio, con el cursor grande. Adjuntar archivos se usa en la clase 2.
+Min 44: preguntas sobre la interfaz o los planes (3 min).
+Si vas atrasado, recorta este tour a lo esencial.
+--></section>
+<section class="slide " aria-label="Diapositiva 9" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Por qué responde genérico</h1><ul><li>Claude no sabe quién eres</li><li>Tampoco sabe a quién le escribes ni para qué</li><li>Sin ese contexto, rellena con lo más promedio</li><li>La solución no es un truco: es dar contexto</li></ul></div><!--
+Min 44–50. Anuncia que en el Bloque 2 verán un antes y un después.
+--></section>
+<section class="slide " aria-label="Diapositiva 10" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Pedido flojo, respuesta promedio</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Escríbeme un mensaje para un cliente.</code></pre></div><ul><li>¿Qué le faltó saber?</li></ul></div><!--
+Deja 10 segundos de silencio después de la pregunta.
+Esta diapositiva cierra el Bloque 1. Haz la prueba tú antes de la clase y guarda una captura de respaldo.
+--></section>
+<section class="slide pausa" aria-label="Diapositiva 11" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Pausa de 10 minutos</h1><p>Volvemos con el enlace del Bloque 2 en el chat</p><p>Si aún no creaste tu cuenta, hazlo ahora</p></div><!--
+Detén la grabación del Bloque 1 y confirma que se guardó.
+Pega el enlace del Bloque 2 en el chat, abre la nueva sala e inicia la grabación del Bloque 2.
+Pon un contador visible.
+--></section>
+<section class="slide " aria-label="Diapositiva 12" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>La fórmula de pedido</h1><h2>Rol + Contexto + Tarea + Formato + Ejemplo</h2><ul><li>No siempre hacen falta las cinco</li><li>Cuantas más tengas, menos adivina Claude</li></ul></div><!--
+Bloque 2, min 0–3. "Ahora todo es práctica. Ten tu Claude abierto y copia los prompts del chat."
+Pega en el chat el enlace de la plantilla de la fórmula (prepárala antes, sin datos reales de nadie).
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 13" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Antes: el pedido flojo</h1><p>Caso: Marisol tiene una tienda de ropa en Santa Cruz y un cliente pregunta por un pedido retrasado.</p><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Escríbeme un mensaje para un cliente.</code></pre></div><ul><li>Pregunta al grupo: ¿esto lo mandarías?</li></ul></div><!--
+Min 3–15 del Bloque 2. Lee la respuesta en voz alta. Es normal que salga genérica o con corchetes vacíos: esa es la lección.
+Las respuestas varían cada vez; no prometas el texto exacto. Ten una captura de respaldo.
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 14" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Después: con la fórmula</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Eres una persona con experiencia en atención al cliente de tiendas
+pequeñas de ropa.
+
+Contexto: tengo una tienda de ropa femenina en Santa Cruz de la Sierra
+que vende por WhatsApp e Instagram. Una clienta, Daniela, compró 3
+blusas hace 6 días. Le dije que llegarían en 3 días y todavía no las
+despacho porque el proveedor se retrasó. Nuevo plazo: el viernes.
+Quiero que siga confiando en mí.
+
+Tarea: escribe el mensaje de WhatsApp para avisarle del retraso y pedir
+disculpas sin dar excusas largas.
+
+Formato: máximo 5 líneas, tono cercano y respetuoso, tuteo, como mucho
+1 emoji.
+
+Ejemplo de estilo: &quot;Hola Carla, te escribo para contarte que tu pedido
+sale mañana. Gracias por la paciencia, cualquier duda me dices.&quot;</code></pre></div></div><!--
+Los datos son inventados. Pregunta: "¿Qué notaron entre el antes y el después?" (2 min).
+Comparar: ¿sabe a quién escribe? ¿se puede copiar con retoques mínimos? ¿suena a tu negocio?
+Aviso: más largo no siempre es mejor. Cada pieza responde algo que Claude no podía adivinar.
+Hábito desde hoy: nunca pegar carnets, cuentas bancarias ni contraseñas.
+--></section>
+<section class="slide " aria-label="Diapositiva 15" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Las cinco piezas</h1><ul><li>Rol: ¿quién sería la persona ideal para esto?</li><li>Contexto: ¿qué sé yo que Claude no sabe?</li><li>Tarea y formato: ¿qué debe producir y cómo lo quiero?</li><li>Ejemplo: ¿tengo un texto mío con el estilo que busco?</li></ul></div><!--
+Min 15–20. Una frase por pieza.
+Ejemplos cortos: Rol "Eres un contador que explica con palabras simples". Contexto "Vendo repostería por encargo en Cochabamba". Tarea: escribe, resume, compara, ordena. Formato "Máximo 5 líneas, tuteo, sin emojis".
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 16" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Ejercicio 1: un correo</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Eres un asistente administrativo con experiencia en empresas de turismo.
+
+Contexto: trabajo en una agencia pequeña de turismo en La Paz.
+Organizamos una salida a Copacabana y la Isla del Sol para un grupo de
+18 personas, el sábado 14 de noviembre. Necesitamos transporte ida y
+vuelta desde La Paz. Es el primer contacto con la empresa.
+
+Tarea: redacta un correo pidiendo una cotización.
+
+Formato: asunto claro, saludo formal pero amable, 3 párrafos cortos
+como máximo, lista con los datos del viaje y cierre pidiendo respuesta
+antes del jueves.</code></pre></div></div><!--
+Min 20–28. Tú lo haces en vivo; el grupo lo adapta a su caso (3 min) y compara (2 min).
+Versión floja para contraste: "Escribe un correo pidiendo una cotización."
+Otros negocios: taller mecánico que pide repuestos, estudiante que pide cita a un docente, panadería que escribe a un banco.
+Pregunta: "¿Qué le agregaste a la fórmula que yo no puse?" Datos inventados: que los reemplacen con los suyos.
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 17" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Ejercicio 2: un resumen</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Eres una persona que explica temas administrativos con palabras
+simples a alguien que no es especialista.
+
+Contexto: soy dueña de un pequeño local de comida en El Alto y recibí
+este comunicado sobre trámites del negocio. No tengo mucho tiempo.
+
+Tarea: resume el texto y dime qué debo hacer yo.
+
+Formato: 1) resumen en 3 líneas. 2) lista de lo que tengo que hacer,
+con fecha si aparece. 3) &quot;Dudas&quot;: lo que no quedó claro.
+Si algo no está en el texto, no lo inventes.
+
+TEXTO:
+[pega aquí el texto]</code></pre></div></div><!--
+Min 28–36. Usa un texto NO confidencial (artículo público o uno escrito por ti).
+Punto clave en voz alta: "no lo inventes" y "Dudas" reducen que Claude rellene huecos. Aun así, se revisan fechas y montos contra el original.
+Un voluntario comparte (2 min).
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 18" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Ejercicio 3: mensaje a un cliente</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Eres una persona con experiencia en atención al cliente en una
+pastelería artesanal.
+
+Contexto: tengo una pastelería pequeña en Cochabamba. Un cliente,
+Marcelo, pidió una torta de chocolate para 20 personas para el sábado.
+Hoy es jueves y me escribe para cambiarla a frutilla. Los cambios de
+sabor se aceptan hasta 48 horas antes: todavía puedo hacerlo. Quiero
+confirmar el cambio y recordarle que el saldo se paga al recoger.
+
+Tarea: escribe la respuesta de WhatsApp.
+
+Formato: máximo 4 líneas, tono cálido, tuteo, 1 emoji como máximo.</code></pre></div></div><!--
+Min 36–44 (puede ser más corto si vas justo de tiempo; recorta aquí antes que la demo).
+Otros negocios: peluquería que reprograma una cita, librería, delivery que responde una queja, emprendedor que cobra un saldo con respeto.
+--></section>
+<section class="slide codigo" aria-label="Diapositiva 19" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Iterar: la primera respuesta es un borrador</h1><div class="prompt"><div class="prompt-bar"><span>PROMPT · PRUÉBALO EN CLAUDE</span><button type="button" class="copy">Copiar prompt</button></div><pre tabindex="0"><code>Más corto. Máximo 3 líneas.
+Hazlo más cálido y menos formal.
+Dame 2 versiones con diferente cierre.</code></pre></div><ul><li>Se mejora en el mismo chat, no empezando de cero</li><li>Di qué quieres mejorar: &quot;mejóralo&quot; a secas es vago</li><li>Si tras 3 o 4 ajustes no mejora, abre un chat nuevo</li></ul></div><!--
+Min 44–48. Demo de 2 minutos sobre el Ejercicio 3: "Más corto" → "Más cálido" → "Dame 2 versiones".
+Otros ajustes: "Cambia el plazo a viernes 6 de noviembre", "Explícame por qué elegiste esa frase", "Quita el emoji y el segundo párrafo".
+--></section>
+<section class="slide " aria-label="Diapositiva 20" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Errores comunes</h1><ul><li>Pedido demasiado corto o sin decir para quién es</li><li>Creer todo sin revisar datos, fechas y precios</li><li>Pegar datos sensibles o copiar sin leer</li><li>Abandonar tras una mala respuesta: suele faltar contexto</li></ul></div><!--
+Min 48–52. Resumen de los principales. Otros de la lista: muchas tareas en un solo mensaje, mezclar temas en un chat, creer que existe un "prompt mágico", no iterar.
+Si preguntan por dinero ("¿cuánto puedo ganar?"): "No puedo prometer ingresos. Lo que hacemos es aprender a usar la herramienta para ahorrar tiempo y mejorar lo que ya haces."
+--></section>
+<section class="slide preguntas" aria-label="Diapositiva 21" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Preguntas</h1><p>Dudas sobre la clase, la fórmula o la tarea</p><p>WhatsApp +591 75414930</p></div><!--
+Min 48: preguntas abiertas y dudas sobre la tarea (3–4 min). Nombra el momento en voz alta: "Pausa para preguntas".
+Si es muy específica de un negocio, responde breve y propón verla en la clase 3. Si no sabes algo: "Lo reviso y lo confirmo en la clase 2".
+Soporte urgente (cuenta, enlaces): por el chat o por WhatsApp [confirma el canal].
+--></section>
+<section class="slide tarea" aria-label="Diapositiva 22" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Tarea de la semana</h1><p>Usa Claude en 3 tareas reales tuyas</p><ul><li>Usa la fórmula e itera al menos una vez</li><li>Guarda la mejor y la peor respuesta</li><li>Anota: ¿qué le faltó a mi pedido?</li><li>Borra los datos privados antes de compartir</li></ul></div><!--
+Pega el texto de la tarea en el chat o en el grupo.
+Por qué la peor también: se aprende más de lo que falló, y normaliza que la IA no acierta siempre.
+Ideas si no saben qué usar: contestar un mensaje pendiente, ordenar una lista de pendientes, resumir un texto largo, preparar un anuncio de una promoción.
+--></section>
+<section class="slide pausa" aria-label="Diapositiva 23" hidden><div class="eyebrow">ONIA <span> / CLAUDE DE 0 A 100 · CLASE 01</span></div><div class="content"><h1>Hoy ya hiciste tres cosas con Claude</h1><p>Próxima clase: jueves 5/11 · 19:00 · Archivos y Proyectos</p><p>Trae tu mejor y tu peor respuesta</p><p>OnIA · WhatsApp +591 75414930</p></div><!--
+La clase 2 es el jueves 5/11 a las 19:00 (hora de Bolivia).
+Al terminar: detén la grabación, envía a los inscritos la grabación (todos, incluso los que se sumen tarde, la reciben con acceso por 30 días), la plantilla de la fórmula, la tarea y los datos de la clase 2. Anota qué preguntas se repitieron.
+--></section>
+</main>
+<div id="progress" aria-hidden="true"></div>
+<footer><div class="footer-brand">OnIA · Claude de 0 a 100<br>WhatsApp +591 75414930 · Usa ← → para navegar · F: pantalla completa</div><nav class="controls" aria-label="Controles de presentación"><button id="previous" aria-label="Diapositiva anterior">←</button><span id="counter" aria-live="polite"></span><button id="next" aria-label="Diapositiva siguiente">→</button><button id="fullscreen">Pantalla completa</button></nav></footer>
+<div id="status" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const slides=[...document.querySelectorAll('.slide')];
+const previous=document.getElementById('previous'),next=document.getElementById('next'),fullscreen=document.getElementById('fullscreen');
+let current=0,timer;
+function message(text){document.getElementById('status').textContent=text;clearTimeout(timer);timer=setTimeout(()=>document.getElementById('status').textContent='',3500)}
+function show(index){current=Math.max(0,Math.min(index,slides.length-1));slides.forEach((slide,i)=>{slide.hidden=i!==current});document.getElementById('counter').textContent=`${current+1} / ${slides.length}`;previous.disabled=current===0;next.disabled=current===slides.length-1;document.getElementById('progress').style.width=`${(current+1)/slides.length*100}%`;document.title=`${current+1}/${slides.length} · OnIA · Clase 1`;history.replaceState(null,'',`#${current+1}`)}
+async function toggleFullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{message('No se pudo activar la pantalla completa. Usa F11 en tu navegador.')}}
+previous.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));fullscreen.addEventListener('click',toggleFullscreen);
+document.addEventListener('fullscreenchange',()=>fullscreen.textContent=document.fullscreenElement?'Salir de pantalla completa':'Pantalla completa');
+document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target.matches('input,textarea,select,[contenteditable="true"]'))return;if(['ArrowRight','ArrowDown','PageDown'].includes(e.key)){e.preventDefault();show(current+1)}else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}else if(e.key==='Home'){e.preventDefault();show(0)}else if(e.key==='End'){e.preventDefault();show(slides.length-1)}else if(e.key.toLowerCase()==='f'){e.preventDefault();toggleFullscreen()}});
+document.querySelectorAll('.copy').forEach(button=>button.addEventListener('click',async()=>{const text=button.closest('.prompt').querySelector('code').textContent;try{try{await navigator.clipboard.writeText(text)}catch{const field=document.createElement('textarea');field.value=text;field.style.cssText='position:fixed;opacity:0';document.body.append(field);field.select();const copied=document.execCommand('copy');field.remove();button.focus();if(!copied)throw Error('copy')}button.textContent='¡Copiado!';setTimeout(()=>button.textContent='Copiar prompt',2000)}catch{message('Selecciona el texto del prompt y cópialo con Ctrl+C o ⌘C.')}}));
+window.addEventListener('hashchange',()=>show((parseInt(location.hash.slice(1),10)||1)-1));
+show((parseInt(location.hash.slice(1),10)||1)-1);
+</script>
+</body>
+</html>

@@ -1,0 +1,640 @@
+#!/usr/bin/env bash
+# onia-llm: lanza Claude Code o Codex CLI para trabajo pesado de OnIA.
+set -uo pipefail
+# >>> onia-central (bus y orquestador) >>>
+# Solo con la forma exacta, para no robar prompts que empiezan con estas palabras.
+ONIA_CENTRAL_BIN="${ONIA_CENTRAL_BIN:-/workspace/onia-central-sistema/bin/onia-central}"
+case "${1:-}" in
+  msg)            [ $# -ge 4 ] && exec python3 "$ONIA_CENTRAL_BIN" "$@";;
+  buzon|decidir)  [ $# -le 4 ] && exec python3 "$ONIA_CENTRAL_BIN" "$@";;
+  orquestar)      ok=1; for a in "${@:2}"; do case "$a" in --seco|--forzar|--solo|--tope|--copia|[a-z0-9.-]*) ;; *) ok=0;; esac; done
+                  [ $ok = 1 ] && [ $# -le 6 ] && exec python3 "$ONIA_CENTRAL_BIN" "$@";;
+  reporte-equipo) shift; exec python3 "$ONIA_CENTRAL_BIN" reporte "$@";;
+  ritmo|gastos)   [ $# -le 3 ] && exec python3 "$ONIA_CENTRAL_BIN" "$@";;
+esac
+# <<< onia-central <<<
+
+# ---------------------------------------------------------------------------
+# Modo cola (desde 2026-10-31). Solo se activa si el primer argumento es "cola".
+# Para mandar un prompt que empiece con la palabra "cola": onia-llm -- "cola ..."
+#   Carpeta raíz: $ONIA_COLA_DIR (por defecto /workspace/onia-cola)
+#   <raiz>/<agente>/X.md               -> pendiente
+#   <raiz>/<agente>/en-curso/X.md      -> en curso
+#   <raiz>/<agente>/hecho/X.md (+ X.resultado.md, X.resumen.md)
+#   <raiz>/<agente>/error/X.md (+ X.resultado.md, X.resumen.md)
+# Frontmatter opcional en X.md:
+#   ---
+#   motor: claude|codex|auto      (por defecto auto)
+#   nivel: pesado|liviano|rapido|codigo   (por defecto liviano; codigo = pesado)
+#   prioridad: 1-9 | alta|media|baja   (1/alta = primero; por defecto 5)
+#   modo: lectura|escritura       (por defecto lectura)
+#   dir: /ruta/de/trabajo         (por defecto la carpeta del agente)
+#   tarea: texto corto para uso.jsonl
+#   ---
+# ---------------------------------------------------------------------------
+COLA_RAIZ="${ONIA_COLA_DIR:-/workspace/onia-cola}"
+SELF="$(readlink -f "$0")"
+TRAB_RAIZ="${ONIA_LLM_TRABAJOS_DIR:-$HOME/.local/state/onia-llm/trabajos}"
+
+cola_ayuda() { cat <<'H'
+onia-llm cola - cola de tareas para Claude Code / Codex (OnIA)
+
+  onia-llm cola encolar <agente> <archivo.md|->   agrega una tarea (con "-" la lee de stdin)
+  onia-llm cola procesar [--agente X] [--primer-plano]
+        procesa las pendientes UNA A LA VEZ, en segundo plano (nohup). Si ya hay
+        un procesador corriendo, no lanza otro (lock). Log: <raiz>/.procesar.log
+  onia-llm cola estado [agente]                    muestra pendientes / en curso / hechas / con error
+
+Tareas: <raiz>/<agente>/*.md (raiz = $ONIA_COLA_DIR o /workspace/onia-cola).
+Frontmatter opcional: motor (claude|codex|auto), nivel (pesado|liviano|rapido|codigo),
+prioridad (1-9 o alta|media|baja), modo (lectura|escritura), dir, tarea,
+subagentes (si|no).
+Por defecto: auto, liviano, 5, lectura, carpeta del agente.
+Respeta el límite de paralelos por agente (ONIA_LLM_MAX_PARALELO, defecto 3)
+compartido con los trabajos --fondo.
+Por cada X.md quedan X.resultado.md y X.resumen.md (máx 5 líneas) en hecho/ o error/.
+Cada ejecución se registra en ~/.local/state/onia-llm/uso.jsonl como siempre.
+H
+}
+
+cola_slug() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[áàä]/a/g;s/[éèë]/e/g;s/[íìï]/i/g;s/[óòö]/o/g;s/[úùü]/u/g;s/ñ/n/g;s/[^a-z0-9._-]+/-/g;s/^-+|-+$//g'; }
+
+# fm <archivo> <clave>: valor del frontmatter (vacío si no hay)
+cola_fm() {
+  awk -v k="$2" 'NR==1 && $0!="---" {exit} NR==1 {next} $0=="---" {exit}
+    { i=index($0,":"); if(i){ kk=substr($0,1,i-1); gsub(/[ \t]/,"",kk);
+      if(tolower(kk)==k){ v=substr($0,i+1); sub(/^[ \t]+/,"",v); sub(/[ \t\r]+$/,"",v);
+        gsub(/^["'\'']|["'\'']$/,"",v); print v; exit } } }' "$1"
+}
+# cuerpo sin frontmatter
+cola_cuerpo() {
+  awk 'NR==1 && $0=="---" {fm=1; next} fm && $0=="---" {fm=0; next} !fm {print}' "$1"
+}
+cola_prio() {
+  local p; p="$(cola_fm "$1" prioridad | tr '[:upper:]' '[:lower:]')"
+  case "$p" in alta|urgente) echo 1;; media|"") echo 5;; baja) echo 9;;
+    *[!0-9]*) echo 5;; *) echo "$p";; esac
+}
+
+cola_encolar() {
+  local ag="${1:-}" src="${2:-}"
+  [ -n "$ag" ] && [ -n "$src" ] || { echo "uso: onia-llm cola encolar <agente> <archivo.md|->" >&2; return 2; }
+  local slug; slug="$(cola_slug "$ag")"; [ -n "$slug" ] || { echo "onia-llm cola: nombre de agente inválido" >&2; return 2; }
+  local d="$COLA_RAIZ/$slug"; mkdir -p "$d" || return 1
+  local base
+  if [ "$src" = - ]; then base="tarea"; else
+    [ -f "$src" ] || { echo "onia-llm cola: no existe $src" >&2; return 2; }
+    base="$(cola_slug "$(basename "$src" .md)")"; [ -n "$base" ] || base=tarea
+  fi
+  local dst="$d/$(date +%Y%m%d-%H%M%S)-$base.md" n=1
+  while [ -e "$dst" ]; do dst="$d/$(date +%Y%m%d-%H%M%S)-$base-$n.md"; n=$((n+1)); done
+  if [ "$src" = - ]; then cat >"$dst.tmp"; else cat "$src" >"$dst.tmp"; fi
+  [ -s "$dst.tmp" ] || { rm -f "$dst.tmp"; echo "onia-llm cola: la tarea está vacía" >&2; return 2; }
+  mv "$dst.tmp" "$dst"   # mv atómico: el procesador nunca ve un archivo a medias
+  echo "encolada: $dst"
+}
+
+# lista pendientes "prio<TAB>mtime<TAB>ruta", ordenadas
+cola_pendientes() { # [slug]
+  local f d dirs=()
+  if [ -n "${1:-}" ]; then dirs=("$COLA_RAIZ/$1"); else
+    for f in "$COLA_RAIZ"/*/; do [ -d "$f" ] && dirs+=("${f%/}"); done; fi
+  for d in "${dirs[@]}"; do
+    for f in "$d"/*.md; do
+      [ -f "$f" ] || continue
+      case "$f" in *.resultado.md|*.resumen.md) continue;; esac
+      printf '%s\t%s\t%s\n' "$(cola_prio "$f")" "$(stat -c %Y "$f")" "$f"
+    done
+  done | sort -t $'\t' -k1,1n -k2,2n
+}
+
+cola_resumen_auto() { # estado archivo_tarea resultado dir rc motor -> 5 líneas máx
+  printf -- '- Estado: %s (código %s, motor %s).\n' "$1" "$5" "$6"
+  printf -- '- Tarea: %s\n' "$(cola_cuerpo "$2" | grep -m1 -v '^[[:space:]]*$' | cut -c1-150)"
+  printf -- '- Dónde: resultado en %s (carpeta de trabajo %s).\n' "$3" "$4"
+  printf -- '- Falta decidir: revisar el resultado; el motor no dejó sección RESUMEN.\n'
+}
+
+cola_ejecutar_una() { # ruta pendiente
+  local f="$1" d ag nombre base
+  d="$(dirname "$f")"; ag="$(basename "$d")"; nombre="$(basename "$f")"; base="${nombre%.md}"
+  mkdir -p "$d/en-curso" "$d/hecho" "$d/error"
+  mv "$f" "$d/en-curso/$nombre" 2>/dev/null || return 0   # otro la tomó
+  f="$d/en-curso/$nombre"
+  local motor modo wdir tarea
+  motor="$(cola_fm "$f" motor)"; motor="${motor:-auto}"
+  case "$motor" in claude|codex|auto) ;; *) motor=auto;; esac
+  local nivel; nivel="$(cola_fm "$f" nivel | tr '[:upper:]' '[:lower:]')"
+  case "$nivel" in pesado|liviano|rapido|rápido|codigo|código) ;; *) nivel=liviano;; esac
+  modo="$(cola_fm "$f" modo)"; wdir="$(cola_fm "$f" dir)"; wdir="${wdir:-$d}"
+  [ -d "$wdir" ] || wdir="$d"
+  tarea="$(cola_fm "$f" tarea)"; tarea="cola:$ag/$base${tarea:+ $tarea}"
+  local args=(--motor "$motor" --nivel "$nivel" --agente "$ag" --tarea "$tarea" --dir "$wdir")
+  [ "$modo" = escritura ] && args+=(--escritura)
+  case "$(cola_fm "$f" subagentes | tr '[:upper:]' '[:lower:]')" in si|sí|true|1) args+=(--subagentes);; esac
+  local res="$d/en-curso/$base.resultado.md" resu="$d/en-curso/$base.resumen.md"
+  tomar_turno "$ag"   # comparte el límite de paralelos por agente con los trabajos --fondo
+  echo "$(date '+%F %T') inicio $ag/$nombre motor=$motor nivel=$nivel modo=${modo:-lectura} dir=$wdir"
+  { cola_cuerpo "$f"
+    printf '\n\n---\nInstrucción de la cola OnIA: al final de tu respuesta agrega una sección con el título exacto "## RESUMEN" de máximo 5 líneas, en español: qué se hizo, dónde (rutas) y qué falta decidir.\n'
+  } | "$SELF" "${args[@]}" >"$res.tmp" 2>"$res.err"
+  local rc=$?
+  soltar_turno
+  { printf '# Resultado: %s\n\n- agente: %s\n- motor pedido: %s\n- nivel: %s\n- modo: %s\n- dir: %s\n- código: %s\n- fecha: %s\n\n' \
+      "$nombre" "$ag" "$motor" "$nivel" "${modo:-lectura}" "$wdir" "$rc" "$(date '+%F %T %z')"
+    cat "$res.tmp"
+    if [ -s "$res.err" ]; then printf '\n\n## Avisos (stderr)\n\n```\n'; cat "$res.err"; printf '```\n'; fi
+  } >"$res"; rm -f "$res.tmp" "$res.err"
+  local estado=hecho; [ $rc -ne 0 ] && estado=error
+  # extraer la sección RESUMEN (última aparición), máx 5 líneas no vacías
+  awk '{ t=toupper($0) } t ~ /^(#+[ \t]*)?\**RESUMEN\**:?\**[ \t]*$/ {buf=""; on=1; next}
+       on && /^#+[ \t]/ {on=0} on && NF {buf=buf $0 "\n"} END {printf "%s", buf}' "$res" | head -n 5 >"$resu"
+  if [ $rc -ne 0 ] || [ ! -s "$resu" ]; then
+    cola_resumen_auto "$estado" "$f" "$d/$estado/$base.resultado.md" "$wdir" "$rc" "$motor" | head -n 5 >"$resu"
+  fi
+  mv "$f" "$res" "$resu" "$d/$estado/"
+  echo "$(date '+%F %T') fin    $ag/$nombre -> $estado (código $rc)"
+}
+
+cola_worker() { # agente obligatorio
+  local ag="${1:-}"
+  [[ "$ag" =~ ^[a-zA-Z0-9][a-zA-Z0-9._-]*$ ]] && [ "$ag" != desconocido ] || return 2
+  exec 9>"$COLA_RAIZ/$ag/.procesar.lock"
+  flock -n 9 || { echo "$(date '+%F %T') ya hay un procesador corriendo; salgo."; return 0; }
+  echo "pid $$ desde $(date '+%F %T')" >"$COLA_RAIZ/$ag/.procesar.pid"
+  # tareas que quedaron "en curso" de un procesador muerto -> error (no se reintentan solas)
+  local f
+  for f in "$COLA_RAIZ"/${1:-*}/en-curso/*.md; do
+    [ -f "$f" ] || continue
+    case "$f" in *.resultado.md|*.resumen.md) continue;; esac
+    local d; d="$(dirname "$(dirname "$f")")"; local b; b="$(basename "$f" .md)"
+    mkdir -p "$d/error"
+    printf -- '- Estado: error (interrumpida: el procesador anterior se cortó).\n- Dónde: %s\n- Falta decidir: volver a encolarla si sigue haciendo falta.\n' "$d/error/$b.md" >"$d/en-curso/$b.resumen.md"
+    mv "$d/en-curso/$b".* "$d/error/" 2>/dev/null
+    echo "$(date '+%F %T') recuperada como error: $f"
+  done
+  local linea
+  while linea="$(cola_pendientes "${1:-}" | head -n 1)"; [ -n "$linea" ]; do
+    f="$(printf '%s' "$linea" | cut -f3-)"
+    cola_ejecutar_una "$f"
+    [ -e "$f" ] && { echo "$(date '+%F %T') no pude mover $f; me detengo para no repetir."; break; }
+  done
+  rm -f "$COLA_RAIZ/$ag/.procesar.pid"
+  echo "$(date '+%F %T') cola vacía; termino."
+}
+
+cola_procesar() {
+  local ag="${ONIA_AGENTE:-}" fg=0
+  while [ $# -gt 0 ]; do case "$1" in
+    --agente) [ $# -ge 2 ] && [ -n "$2" ] || return 2; ag="$2"; shift 2;;
+    --agente=*) ag="${1#*=}"; shift;;
+    --primer-plano) fg=1; shift;;
+    *) echo "onia-llm cola procesar: opción desconocida $1" >&2; return 2;; esac; done
+  [[ "$ag" =~ ^[a-zA-Z0-9][a-zA-Z0-9._-]*$ ]] && [ "$ag" != desconocido ] || { echo "onia-llm cola: especifica --agente o ONIA_AGENTE válido" >&2; return 2; }
+  mkdir -p "$COLA_RAIZ" || return 1
+  if [ -n "$ag" ] && [ ! -d "$COLA_RAIZ/$ag" ]; then echo "onia-llm cola: no hay carpeta para el agente '$ag'" >&2; return 2; fi
+  if ! flock -n "$COLA_RAIZ/$ag/.procesar.lock" true; then
+    echo "Ya hay un procesador para $ag (lock $COLA_RAIZ/$ag/.procesar.lock)."
+    return 0
+  fi
+  local n; n="$(cola_pendientes "$ag" | wc -l)"
+  [ "$n" -eq 0 ] && { echo "No hay tareas pendientes${ag:+ para $ag}."; return 0; }
+  if [ $fg = 1 ]; then cola_worker "$ag" 2>&1 | tee -a "$COLA_RAIZ/.procesar.log"; return 0; fi
+  local sid=(); command -v setsid >/dev/null && sid=(setsid)   # se desprende de la sesión del agente
+  ONIA_COLA_DIR="$COLA_RAIZ" nohup "${sid[@]}" "$SELF" cola _worker "$ag" >>"$COLA_RAIZ/.procesar.log" 2>&1 </dev/null &
+  echo "Procesando $n tarea(s) en segundo plano (pid $!). Log: $COLA_RAIZ/.procesar.log"
+  echo "Mira el avance con: onia-llm cola estado${ag:+ $ag}"
+}
+
+cola_estado() {
+  local filtro="${1:+$(cola_slug "$1")}" d ag f c
+  [ -d "$COLA_RAIZ" ] || { echo "No existe la cola ($COLA_RAIZ)."; return 0; }
+  for d in "$COLA_RAIZ"/${filtro:-*}/; do
+    [ -d "$d" ] || continue; ag="$(basename "$d")"
+  if [ -f "$COLA_RAIZ/$ag/.procesar.pid" ] && ! flock -n "$COLA_RAIZ/$ag/.procesar.lock" true; then
+    echo "Procesador: CORRIENDO ($(cat "$COLA_RAIZ/$ag/.procesar.pid"))"; else echo "Procesador: detenido"; fi
+    local np ne nh nr
+    np="$(cola_pendientes "$ag" | wc -l)"
+    ne="$(ls "$d"en-curso/*.md 2>/dev/null | grep -cvE '\.(resultado|resumen)\.md$')"
+    nh="$(ls "$d"hecho/*.md 2>/dev/null | grep -cvE '\.(resultado|resumen)\.md$')"
+    nr="$(ls "$d"error/*.md 2>/dev/null | grep -cvE '\.(resultado|resumen)\.md$')"
+    echo; echo "== $ag: pendiente $np | en-curso $ne | hecho $nh | error $nr"
+    cola_pendientes "$ag" | while IFS=$'\t' read -r p _ f; do echo "  [pendiente p$p] $(basename "$f")"; done
+    for c in en-curso error hecho; do
+      ls -t "$d$c"/*.md 2>/dev/null | grep -vE '\.(resultado|resumen)\.md$' | head -n 3 | while read -r f; do
+        echo "  [$c] $(basename "$f")"
+        [ -f "${f%.md}.resumen.md" ] && sed 's/^/      /' "${f%.md}.resumen.md"
+      done
+    done
+  done
+}
+
+# ---------------------------------------------------------------------------
+# Trabajos en segundo plano (--fondo) y turnos por agente (desde 2026-10-31)
+#   $TRAB_RAIZ/<id>/  prompt.md  args  meta  estado  salida.md  resumen.md  stderr.log  runner.log
+#   estado: en-cola | corriendo | hecho | error   ("muerto" = el proceso desapareció sin terminar)
+#   Turnos: como máximo $ONIA_LLM_MAX_PARALELO (defecto 3) ejecuciones a la vez POR AGENTE,
+#   compartidos entre --fondo y la cola (flock en $TRAB_RAIZ/.turnos/<agente>.<n>.lock).
+#   Si no hay turno libre, el trabajo queda "en-cola" y arranca solo cuando se libera uno.
+# ---------------------------------------------------------------------------
+INSTR_RESUMEN='al final de tu respuesta agrega una sección con el título exacto "## RESUMEN" de máximo 5 líneas, en español: qué se hizo, dónde (rutas) y qué falta decidir.'
+TURNO_FD=""
+
+tomar_turno() { # agente -> espera hasta tener turno; deja TURNO_FD abierto (lo heredan los hijos)
+  local ag; ag="$(cola_slug "${1:-desconocido}")"; ag="${ag:-desconocido}"
+  local max="${ONIA_LLM_MAX_PARALELO:-3}" i f avisado=0
+  case "$max" in ''|*[!0-9]*|0) max=3;; esac
+  mkdir -p "$TRAB_RAIZ/.turnos" 2>/dev/null || return 0   # sin carpeta: sin límite, pero no se bloquea
+  while :; do
+    for ((i=1; i<=max; i++)); do
+      f="$TRAB_RAIZ/.turnos/$ag.$i.lock"
+      exec {TURNO_FD}>>"$f" || continue
+      flock -n "$TURNO_FD" && return 0
+      exec {TURNO_FD}>&-
+    done
+    [ $avisado = 0 ] && { echo "$(date '+%F %T') $ag: ya hay $max en paralelo; espero turno." >&2; avisado=1; }
+    sleep 5
+  done
+}
+soltar_turno() { if [ -n "$TURNO_FD" ]; then exec {TURNO_FD}>&-; fi; TURNO_FD=""; }
+
+extraer_resumen() { # archivo -> sección RESUMEN (última aparición), máx 5 líneas no vacías
+  awk '{ t=toupper($0) } t ~ /^(#+[ \t]*)?\**RESUMEN\**:?\**[ \t]*$/ {buf=""; on=1; next}
+       on && /^#+[ \t]/ {on=0} on && NF {buf=buf $0 "\n"} END {printf "%s", buf}' "$1" | head -n 5
+}
+trab_meta() { [ -f "$1/meta" ] && sed -n "s/^$2=//p" "$1/meta" | tail -n 1; }
+es_id_trabajo() { [[ "${1:-}" =~ ^(ultimo|último|[0-9]{8}-[0-9]{4,6}(-[0-9a-f]{0,4})?)$ ]]; }
+trab_dir() { # id | prefijo único | ultimo -> ruta
+  local id="${1:-}" m c
+  [ -n "$id" ] || return 1
+  if [ "$id" = ultimo ] || [ "$id" = último ]; then
+    m="$(ls -1dt "$TRAB_RAIZ"/2*/ 2>/dev/null | head -n 1)"; [ -n "$m" ] || return 1
+    printf '%s' "${m%/}"; return 0
+  fi
+  case "$id" in */*|.*) return 1;; esac
+  [ -d "$TRAB_RAIZ/$id" ] && { printf '%s' "$TRAB_RAIZ/$id"; return 0; }
+  c=("$TRAB_RAIZ/$id"*/)
+  [ ${#c[@]} -eq 1 ] && [ -d "${c[0]}" ] && { printf '%s' "${c[0]%/}"; return 0; }
+  return 1
+}
+trab_estado() { # dir -> en-cola|corriendo|hecho|error|muerto
+  local e pid; e="$(head -n 1 "$1/estado" 2>/dev/null)"; e="${e:-desconocido}"
+  case "$e" in en-cola|corriendo)
+    pid="$(trab_meta "$1" pid)"
+    if [ -n "$pid" ] && ! kill -0 "$pid" 2>/dev/null \
+       && [ $(( $(date +%s) - $(stat -c %Y "$1/estado" 2>/dev/null || date +%s) )) -gt 10 ]; then e=muerto; fi;;
+  esac
+  printf '%s' "$e"
+}
+
+trabajo_lanzar() { # usa las variables ya parseadas del modo directo; imprime el id y sale
+  mkdir -p "$TRAB_RAIZ" || { echo "onia-llm: no pude crear $TRAB_RAIZ" >&2; exit 1; }
+  local id d n=0
+  while :; do
+    id="$(date +%Y%m%d-%H%M%S)-$(printf '%04x' "$RANDOM")"; d="$TRAB_RAIZ/$id"
+    mkdir "$d" 2>/dev/null && break
+    n=$((n+1)); [ $n -gt 20 ] && { echo "onia-llm: no pude crear la carpeta del trabajo" >&2; exit 1; }
+  done
+  local ta="${TAREA:-$(printf '%s' "$PROMPT" | tr '\n\r\t' '   ' | cut -c1-80)}"
+  printf '%s\n\n---\nInstrucción OnIA (trabajo en segundo plano): %s\n' "$PROMPT" "$INSTR_RESUMEN" >"$d/prompt.md"
+  local a=(--motor "$MOTOR" --nivel "$NIVEL" --agente "$AGENTE" --tarea "$ta" --dir "$DIR")
+  [ "$MODO" = escritura ] && a+=(--escritura)
+  [ "$SUBAG" = 1 ] && a+=(--subagentes)
+  printf '%s\0' "${a[@]}" >"$d/args"
+  { echo "agente=$(printf '%s' "$AGENTE" | tr '\n\r' '  ')"; echo "motor=$MOTOR"; echo "nivel=$NIVEL"
+    echo "modo=$MODO"; echo "subagentes=$SUBAG"; echo "dir=$DIR"
+    echo "tarea=$(printf '%s' "$ta" | tr '\n\r' '  ')"; echo "creado=$(date '+%F %T')"; } >"$d/meta"
+  echo en-cola >"$d/estado"
+  local sid=(); command -v setsid >/dev/null && sid=(setsid)   # se desprende de la sesión del agente
+  nohup "${sid[@]}" "$SELF" _trabajo "$id" >>"$d/runner.log" 2>&1 </dev/null &
+  echo "pid=$!" >>"$d/meta"
+  echo "$id"
+  echo "onia-llm: trabajo $id en segundo plano. Ver: onia-llm ver $id  |  onia-llm trabajos" >&2
+  exit 0
+}
+
+trabajo_correr() { # id  (proceso en segundo plano)
+  local id="${1:-}" d; d="$TRAB_RAIZ/$id"
+  [ -n "$id" ] && [ -f "$d/args" ] || { echo "onia-llm: no existe el trabajo '$id'" >&2; return 2; }
+  echo "pid=$$" >>"$d/meta"
+  tomar_turno "$(trab_meta "$d" agente)"
+  echo "inicio=$(date '+%F %T')" >>"$d/meta"; echo corriendo >"$d/estado"
+  local a=(); mapfile -d '' a <"$d/args"
+  ONIA_LLM_TRABAJO="$id" "$SELF" "${a[@]}" <"$d/prompt.md" >"$d/salida.md.tmp" 2>"$d/stderr.log"
+  local rc=$?
+  soltar_turno
+  mv -f "$d/salida.md.tmp" "$d/salida.md"
+  local e=hecho; [ $rc -ne 0 ] && e=error
+  extraer_resumen "$d/salida.md" >"$d/resumen.md.tmp"
+  if [ $rc -ne 0 ] || [ ! -s "$d/resumen.md.tmp" ]; then
+    { printf -- '- Estado: %s (código %s, motor %s, nivel %s).\n' "$e" "$rc" "$(trab_meta "$d" motor)" "$(trab_meta "$d" nivel)"
+      printf -- '- Tarea: %s\n' "$(trab_meta "$d" tarea | cut -c1-150)"
+      printf -- '- Dónde: salida en %s (carpeta %s).\n' "$d/salida.md" "$(trab_meta "$d" dir)"
+      [ -s "$d/stderr.log" ] && printf -- '- Aviso: %s\n' "$(grep -v '^[[:space:]]*$' "$d/stderr.log" | tail -n 1 | cut -c1-150)"
+      if [ $rc -ne 0 ]; then printf -- '- Falta decidir: revisar %s y reintentar si hace falta.\n' "$d/stderr.log"
+      else printf -- '- Falta decidir: revisar la salida; el motor no dejó sección RESUMEN.\n'; fi
+    } | head -n 5 >"$d/resumen.md.tmp"
+  fi
+  mv -f "$d/resumen.md.tmp" "$d/resumen.md"
+  { echo "fin=$(date '+%F %T')"; echo "codigo=$rc"; } >>"$d/meta"
+  echo "$e" >"$d/estado"   # lo último: quien espera ya encuentra salida y resumen escritos
+  return 0
+}
+
+trabajos_listar() { # [agente]
+  local filtro=""; [ -n "${1:-}" ] && filtro="$(cola_slug "$1")"
+  [ -d "$TRAB_RAIZ" ] || { echo "No hay trabajos todavía ($TRAB_RAIZ)."; return 0; }
+  local d n=0 e ag mn mx="${ONIA_LLM_LISTAR:-20}"
+  printf '%-20s  %-9s  %-18s  %-17s  %s\n' ID ESTADO AGENTE MOTOR/NIVEL TAREA
+  while read -r d; do
+    [ -f "$d/meta" ] || continue
+    ag="$(trab_meta "$d" agente)"
+    [ -n "$filtro" ] && [ "$(cola_slug "$ag")" != "$filtro" ] && continue
+    e="$(trab_estado "$d")"
+    mn="$(trab_meta "$d" motor)/$(trab_meta "$d" nivel)"
+    [ "$(trab_meta "$d" modo)" = escritura ] && mn="$mn+w"
+    [ "$(trab_meta "$d" subagentes)" = 1 ] && mn="$mn+sub"
+    printf '%-20s  %-9s  %-18s  %-17s  %s\n' "$(basename "$d")" "$e" "$(printf '%s' "$ag" | cut -c1-18)" "$mn" "$(trab_meta "$d" tarea | cut -c1-60)"
+    n=$((n+1)); [ "$n" -ge "$mx" ] && break
+  done < <(ls -1dt "$TRAB_RAIZ"/2*/ 2>/dev/null | sed 's#/$##')
+  [ $n -eq 0 ] && echo "(ninguno${filtro:+ para $filtro})"
+  return 0
+}
+
+trabajo_ver() { # id
+  local d e; d="$(trab_dir "${1:-}")" || { echo "onia-llm ver: no encuentro el trabajo '${1:-}' (usa: onia-llm trabajos)" >&2; return 2; }
+  e="$(trab_estado "$d")"
+  echo "== $(basename "$d") | $e | $(trab_meta "$d" agente) | $(trab_meta "$d" motor)/$(trab_meta "$d" nivel)"
+  if [ -s "$d/resumen.md" ]; then head -n 5 "$d/resumen.md"; else
+    case "$e" in
+      en-cola)   echo "- Esperando turno (máx ${ONIA_LLM_MAX_PARALELO:-3} en paralelo por agente).";;
+      corriendo) echo "- Corriendo desde $(trab_meta "$d" inicio).";;
+      muerto)    echo "- El proceso se cortó sin terminar. Revisa $d/runner.log y $d/stderr.log.";;
+      *)         echo "- Sin resumen.";;
+    esac
+  fi
+  echo "(salida completa: $d/salida.md)"
+}
+
+trabajos_esperar() { # [--max SEG] id...   -> 0 todo hecho, 3 alguno con error/muerto, 1 timeout
+  local max=1800 ds=() d
+  while [ $# -gt 0 ]; do case "$1" in
+    --max) max="${2:-1800}"; shift 2;;
+    *) d="$(trab_dir "$1")" || { echo "onia-llm esperar: no encuentro '$1'" >&2; return 2; }; ds+=("$d"); shift;;
+  esac; done
+  [ ${#ds[@]} -gt 0 ] || { echo "uso: onia-llm esperar [--max SEG] <id>..." >&2; return 2; }
+  case "$max" in ''|*[!0-9]*) max=1800;; esac
+  local t0=$SECONDS p malos
+  while :; do
+    p=0; malos=0
+    for d in "${ds[@]}"; do case "$(trab_estado "$d")" in
+      en-cola|corriendo) p=$((p+1));; error|muerto|desconocido) malos=$((malos+1));; esac; done
+    if [ $p -eq 0 ]; then [ $malos -gt 0 ] && return 3; return 0; fi
+    [ $((SECONDS-t0)) -ge "$max" ] && { echo "onia-llm esperar: siguen $p sin terminar tras ${max}s" >&2; return 1; }
+    sleep 5
+  done
+}
+
+# Modo loop (2026-11-01): onia-llm loop <agente> encender|apagar|estado|correr [--ciclos N] [--seco]
+# Solo con la forma exacta "loop"; para un prompt que empiece con esa palabra: onia-llm -- "loop ..."
+if [ "${1:-}" = loop ]; then shift; exec bash "${ONIA_LOOP_BIN:-/workspace/harness/bin/onia-loop}" "$@"; fi
+
+# Subcomandos de trabajos. Para no romper prompts que empiezan con estas palabras
+# ("ver el archivo..."), solo se activan con la forma exacta; si no, usa: onia-llm -- "ver ..."
+case "${1:-}" in
+  trabajos) if [ $# -le 2 ]; then shift; trabajos_listar "$@"; exit $?; fi;;
+  ver)      if [ $# -eq 2 ] && es_id_trabajo "$2"; then trabajo_ver "$2"; exit $?; fi;;
+  esperar)  if [ $# -ge 2 ] && { [ "$2" = --max ] || es_id_trabajo "$2"; }; then shift; trabajos_esperar "$@"; exit $?; fi;;
+  _trabajo) shift; trabajo_correr "${1:-}"; exit $?;;
+esac
+
+if [ "${1:-}" = cola ]; then
+  shift
+  case "${1:-}" in
+    encolar) shift; cola_encolar "$@"; exit $?;;
+    procesar) shift; cola_procesar "$@"; exit $?;;
+    estado) shift; cola_estado "$@"; exit $?;;
+    _worker) shift; cola_worker "${1:-}"; exit $?;;
+    -h|--help|ayuda|"") cola_ayuda; exit 0;;
+    *) echo "onia-llm cola: subcomando desconocido '$1' (usa: onia-llm cola --help)" >&2; exit 2;;
+  esac
+fi
+
+MOTOR=auto; MODO=lectura; DIR="$PWD"; PROMPT=""; AGENTE="${ONIA_AGENTE:-desconocido}"; TAREA=""; NIVEL="${ONIA_LLM_NIVEL:-liviano}"; MODELO=""; FONDO=0; SUBAG=0
+
+# Modelo fijo por motor y nivel (revisado 2026-10-31). Para cambiar uno sin editar
+# el script: ONIA_LLM_MODELO_<MOTOR>_<NIVEL>, p. ej. ONIA_LLM_MODELO_CODEX_PESADO=gpt-6.1-terra
+modelo_de() { # motor nivel
+  local v="ONIA_LLM_MODELO_${1^^}_${2^^}"
+  [ -n "${!v:-}" ] && { printf '%s' "${!v}"; return; }
+  case "$1:$2" in
+    claude:pesado)  echo claude-opus-5-5;;
+    claude:liviano) echo claude-sonnet-5-5;;
+    claude:rapido)  echo claude-haiku-5-5;;
+    codex:pesado)   echo gpt-6-astra;;    # "Frontier intelligence for the most demanding work"
+    codex:liviano)  echo gpt-6.1-sol;;    # "Latest workhorse model for coding and everyday work"
+    codex:rapido)   echo gpt-6-luna;;     # "Fast and affordable model for easier tasks"
+  esac
+}
+
+ayuda() { cat <<'H'
+onia-llm - trabajo pesado con Claude Code o Codex (OnIA)
+
+Uso:
+  onia-llm [--motor claude|codex|auto] [--nivel pesado|liviano|rapido] [--escritura] [--dir RUTA]
+           [--agente NOMBRE] [--tarea TEXTO] [--fondo] [--subagentes] "prompt"
+  echo "prompt" | onia-llm [opciones]
+  onia-llm cola encolar|procesar|estado ...   (cola de tareas; ver: onia-llm cola --help)
+  onia-llm trabajos [agente]                  lista los trabajos --fondo (últimos 20)
+  onia-llm ver <id|ultimo>                    estado + resumen de 5 líneas de un trabajo
+  onia-llm esperar [--max SEG] <id>...        espera a que terminen (0 ok, 3 alguno falló, 1 timeout)
+
+Opciones:
+  --motor M     claude, codex o auto (por defecto auto).
+                auto: claude hasta 2026-11-02; desde 2026-11-03 codex,
+                salvo que exista ~/.config/onia-llm/claude-activo o ONIA_LLM_CLAUDE=1.
+  --nivel N     pesado, liviano o rapido (por defecto liviano; "codigo" = pesado).
+                  claude: pesado=claude-opus-5-5  liviano=claude-sonnet-5-5  rapido=claude-haiku-5-5
+                  codex:  pesado=gpt-6-astra      liviano=gpt-6.1-sol        rapido=gpt-6-luna
+                Cambiar uno: ONIA_LLM_MODELO_<MOTOR>_<NIVEL>=id (ej. ONIA_LLM_MODELO_CODEX_RAPIDO=...).
+  --escritura   Permite editar archivos en --dir. NUNCA hace git push.
+                  claude: acceptEdits + lista fija de comandos permitidos (git status/diff/log/
+                          add/commit/switch/checkout/init, npm, npx, node, python3, pytest, ls,
+                          cat, rg, mkdir) y prohibidos (git push, ssh, scp, docker, sudo, rm -rf,
+                          curl). Sin TTY no hay a quién pedir permiso: lo que no está en la
+                          lista se rechaza en vez de quedar esperando.
+                  codex:  exec --sandbox workspace-write -c approval_policy="never".
+  --fondo       Lanza en segundo plano (nohup) y devuelve un id al instante. Salida en
+                ~/.local/state/onia-llm/trabajos/<id>/{salida.md,resumen.md,estado}.
+                Máximo ONIA_LLM_MAX_PARALELO (defecto 3) a la vez por agente; el resto espera turno.
+  --subagentes  Pide a Claude usar la herramienta Task (subagentes) para dividir trabajo grande.
+  --dir RUTA    Carpeta de trabajo (por defecto la actual).
+  --agente N    Agente que llama (por defecto $ONIA_AGENTE o 'desconocido').
+  --tarea T     Tarea corta para el registro (por defecto: 80 primeros caracteres del prompt).
+  -h, --help    Muestra esta ayuda.
+
+Por defecto es SOLO LECTURA. Si el motor elegido falla o no está, prueba el otro
+y lo avisa. Log: ~/.local/state/onia-llm/AAAA-MM-DD.log y uso.jsonl (agente, tokens, costo; sin secretos).
+Revisa siempre el resultado antes de usarlo.
+H
+}
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --motor) MOTOR="${2:-}"; shift 2;;
+    --motor=*) MOTOR="${1#*=}"; shift;;
+    --guard-seco) GUARD_SECO=1; shift;;
+    --escritura) MODO=escritura; shift;;
+    --fondo) FONDO=1; shift;;
+    --subagentes) SUBAG=1; shift;;
+    --nivel) NIVEL="${2:-}"; shift 2;;
+    --nivel=*) NIVEL="${1#*=}"; shift;;
+    --dir) DIR="${2:-}"; shift 2;;
+    --dir=*) DIR="${1#*=}"; shift;;
+    --agente) AGENTE="${2:-}"; shift 2;;
+    --agente=*) AGENTE="${1#*=}"; shift;;
+    --tarea) TAREA="${2:-}"; shift 2;;
+    --tarea=*) TAREA="${1#*=}"; shift;;
+    -h|--help) ayuda; exit 0;;
+    --) shift; PROMPT="$*"; break;;
+    -*) echo "onia-llm: opción desconocida: $1 (usa --help)" >&2; exit 2;;
+    *) PROMPT="${PROMPT:+$PROMPT }$1"; shift;;
+  esac
+done
+case "$MOTOR" in claude|codex|auto) ;; *) echo "onia-llm: --motor debe ser claude, codex o auto" >&2; exit 2;; esac
+NIVEL="$(printf '%s' "$NIVEL" | tr '[:upper:]' '[:lower:]')"
+case "$NIVEL" in
+  pesado|codigo|código) NIVEL=pesado;; liviano|"") NIVEL=liviano;; rapido|rápido) NIVEL=rapido;;
+  *) echo "onia-llm: --nivel debe ser pesado, liviano, rapido o codigo" >&2; exit 2;;
+esac
+[ -z "$PROMPT" ] && [ ! -t 0 ] && PROMPT="$(cat)"
+[ -z "$PROMPT" ] && { echo "onia-llm: falta el prompt (usa --help)" >&2; exit 2; }
+# Guard fijo: antes de lanzar trabajos, motores o escribir registros del prompt.
+/workspace/orquestacion/guard/onia-guard check onia-llm "$PROMPT" || exit 3
+if [ "$MODO" = escritura ]; then
+  echo "onia-llm: acciones prohibidas requieren aprobación registrada y vigente de Sergio." >&2
+fi
+[ "${GUARD_SECO:-0}" = 1 ] && exit 0
+
+[ -d "$DIR" ] || { echo "onia-llm: no existe la carpeta $DIR" >&2; exit 2; }
+DIR="$(cd "$DIR" && pwd)"
+
+[ "$FONDO" = 1 ] && trabajo_lanzar   # imprime el id y sale; el trabajo corre aparte
+
+if [ "$MOTOR" = auto ]; then
+  if [ "$(date +%Y%m%d)" -le 20261102 ] || [ -f "$HOME/.config/onia-llm/claude-activo" ] || [ "${ONIA_LLM_CLAUDE:-}" = 1 ]; then
+    MOTOR=claude; else MOTOR=codex; fi
+fi
+
+REGLAS="Reglas OnIA: responde en español. NUNCA ejecutes git push, ni publiques, gastes, borres fuera de la carpeta o toques producción. No muestres secretos."
+[ "$MODO" = lectura ] && REGLAS="$REGLAS Modo SOLO LECTURA: no modifiques ningún archivo." \
+  || REGLAS="$REGLAS Puedes editar archivos dentro de la carpeta de trabajo, sin push."
+FULL=""
+armar_full() { # motor -> FULL (reglas + instrucción de subagentes según el motor + prompt)
+  local extra=""
+  if [ "$SUBAG" = 1 ]; then
+    if [ "$1" = claude ]; then
+      extra="Subagentes: si el trabajo es grande o tiene partes independientes, usa la herramienta Task de Claude Code (en versiones nuevas se llama Agent) para dividirlo en subagentes que trabajen en paralelo, cada uno con un encargo claro y acotado y estas mismas reglas; nunca dos subagentes editando el mismo archivo. Al final integra y revisa lo que devuelvan. Si la tarea es chica, hazla tú directo."
+    else
+      extra="Si el trabajo es grande, divídelo en pasos cortos y verifica cada uno antes de seguir."
+    fi
+  fi
+  FULL="$REGLAS${extra:+ $extra}
+
+$PROMPT"
+}
+
+# Permisos de Claude en --escritura. En -p (sin TTY) nadie puede aprobar un permiso:
+# lo que no esté permitido acá se rechaza (antes quedaba "esperando un permiso que nunca llega").
+# La lista prohibida gana siempre sobre la permitida.
+CLAUDE_PERMITIDAS=('WebSearch' 'WebFetch' 'Bash(git status:*)' 'Bash(git diff:*)' 'Bash(git log:*)' 'Bash(git add:*)'
+  'Bash(git commit:*)' 'Bash(git switch:*)' 'Bash(git checkout:*)' 'Bash(git init:*)'
+  'Bash(npm:*)' 'Bash(npx:*)' 'Bash(node:*)' 'Bash(python3:*)' 'Bash(pytest:*)'
+  'Bash(ls:*)' 'Bash(cat:*)' 'Bash(rg:*)' 'Bash(mkdir:*)'
+  Read Edit Write Glob Grep Task Agent)
+CLAUDE_PROHIBIDAS=('Bash(git push:*)' 'Bash(git push)' 'Bash(ssh:*)' 'Bash(scp:*)' 'Bash(docker:*)'
+  'Bash(sudo:*)' 'Bash(rm -rf:*)' 'Bash(curl:*)')
+# D-20261101-001 A: lista CERRADA para los loops (onia-loop exporta ONIA_LLM_SOLO_BORRADORES=1).
+# Solo esto queda permitido; todo lo demás se rechaza (en -p no hay a quién pedir permiso).
+if [ "${ONIA_LLM_SOLO_BORRADORES:-}" = 1 ]; then   # loops: solo borradores, nada que ejecute código
+  CLAUDE_PERMITIDAS=(WebSearch Read Edit Write Glob Grep 'Bash(ls:*)' 'Bash(mkdir:*)' 'Bash(git status:*)' 'Bash(git diff:*)' 'Bash(git log:*)' Task Agent)
+  CLAUDE_PROHIBIDAS+=('Bash(npm:*)' 'Bash(npx:*)' 'Bash(node:*)' 'Bash(python3:*)' 'Bash(python:*)' 'Bash(pytest:*)'
+    'Bash(git checkout:*)' 'Bash(git commit:*)' 'Bash(git add:*)' 'Bash(bash:*)' 'Bash(sh:*)' WebFetch)
+fi
+
+correr() { # $1 motor  (usa $MODELO y $FULL)
+  cd "$DIR" || return 99
+  if [ "$1" = claude ]; then
+    command -v claude >/dev/null || return 127
+    if [ "$MODO" = lectura ]; then
+      local perm=(Read Grep Glob WebSearch WebFetch); [ "$SUBAG" = 1 ] && perm+=(Task Agent)
+      claude --settings /workspace/orquestacion/guard/claude-settings.json -p --model "$MODELO" --output-format json --permission-mode plan --allowedTools "${perm[@]}" \
+        --disallowedTools Edit Write NotebookEdit Bash -- "$FULL" </dev/null >"$RAW"
+    else
+      claude --settings /workspace/orquestacion/guard/claude-settings.json -p --model "$MODELO" --output-format json --permission-mode acceptEdits \
+        --allowedTools "${CLAUDE_PERMITIDAS[@]}" --disallowedTools "${CLAUDE_PROHIBIDAS[@]}" \
+        -- "$FULL" </dev/null >"$RAW"
+    fi
+  else
+    if [ "${ONIA_LLM_SOLO_BORRADORES:-}" = 1 ]; then
+      echo "onia-guard: loop Codex bloqueado: falta intercepción por comando." >&2
+      return 3
+    fi
+    command -v codex >/dev/null || return 127
+    local sb=read-only; [ "$MODO" = escritura ] && sb=workspace-write
+    codex exec -c tools.web_search=true -m "$MODELO" --json -o "$LAST" --sandbox "$sb" -c 'approval_policy="never"' \
+      --skip-git-repo-check -C "$DIR" -- "$FULL" </dev/null >"$RAW"
+  fi
+}
+
+LOGD="$HOME/.local/state/onia-llm"; mkdir -p "$LOGD"
+registrar() { # motor codigo dur
+  local p; p="$(printf '%s' "$PROMPT" | tr '\n\r\t' '   ' | cut -c1-200 \
+    | sed -E 's/(sk-|ghp_|gho_|github_pat_|xox[bap]-|AIza|AKIA)[A-Za-z0-9_-]+/[OCULTO]/g; s/((pass(word)?|token|secret|key|clave)[=: ]+)[^ ]+/\1[OCULTO]/Ig')"
+  printf '%s\tmotor=%s\tnivel=%s\tmodelo=%s\tmodo=%s\tdir=%s\tsalida=%s\tdur=%ss\tprompt=%s\n' \
+    "$(date '+%F %T %z')" "$1" "$NIVEL" "$MODELO" "$MODO" "$DIR" "$2" "$3" "$p	agente=$AGENTE" >> "$LOGD/$(date +%F).log"
+}
+TMPD="$(mktemp -d)"; trap 'rm -rf "$TMPD"' EXIT; RAW="$TMPD/raw"; LAST="$TMPD/last"
+[ -z "$TAREA" ] && TAREA="$(printf '%s' "$PROMPT" | tr '\n\r\t' '   ' | cut -c1-80)"
+uso() { # motor codigo dur -> imprime resultado y agrega linea a uso.jsonl
+  ONIA_LLM_SUBAG="$SUBAG" python3 - "$1" "$2" "$3" "$RAW" "$LAST" "$AGENTE" "$TAREA" "$MODO" "$DIR" "$LOGD/uso.jsonl" "$NIVEL" "$MODELO" <<'PY' || cat "$RAW" 2>/dev/null
+import json,sys,re,datetime,os
+m,rc,dur,raw,last,ag,ta,modo,d,out,nivel,pedido=sys.argv[1:]
+txt=open(raw,errors='replace').read() if os.path.exists(raw) else ''
+tok=None;cost=None;res=None;model=None
+if m=='claude':
+    try:
+        j=json.loads(txt);res=j.get('result');cost=j.get('total_cost_usd');u=j.get('usage') or {}
+        tok={k:u.get(k) for k in('input_tokens','cache_creation_input_tokens','cache_read_input_tokens','output_tokens')}
+        model=','.join((j.get('modelUsage') or {}).keys()) or None
+    except Exception: res=txt
+else:
+    t={}
+    for l in txt.splitlines():
+        try: e=json.loads(l)
+        except Exception: continue
+        if e.get('type')=='turn.completed':
+            for k,v in (e.get('usage') or {}).items():
+                if isinstance(v,int): t[k]=t.get(k,0)+v
+    tok=t or None
+    res=open(last,errors='replace').read() if os.path.exists(last) else None
+if res: sys.stdout.write(res if res.endswith('\n') else res+'\n')
+sec=lambda x: re.sub(r'(sk-|ghp_|gho_|github_pat_|xox[bap]-|AIza|AKIA)[A-Za-z0-9_-]+','[OCULTO]',x or '')
+# modelo = el que se pidió con --model/-m; modelos_reportados = lo que dice el motor (Claude puede sumar Haiku interno)
+rec=dict(ts=datetime.datetime.now().astimezone().isoformat(timespec='seconds'),agente=ag,motor=m,nivel=nivel,modelo=pedido,
+         modelos_reportados=model,tarea=sec(ta),modo=modo,dir=d,duracion_s=int(dur),exit_code=int(rc),tokens=tok,costo_usd=cost)
+# campos nuevos solo cuando aplican (las líneas de siempre quedan iguales)
+if os.environ.get('ONIA_LLM_TRABAJO'): rec['trabajo']=os.environ['ONIA_LLM_TRABAJO']
+if os.environ.get('ONIA_LLM_SUBAG')=='1': rec['subagentes']=True
+open(out,'a').write(json.dumps(rec,ensure_ascii=False)+'\n')
+PY
+}
+ejecutar() { local t=$SECONDS; : >"$RAW"; rm -f "$LAST"; MODELO="$(modelo_de "$1" "$NIVEL")"; armar_full "$1"; correr "$1"; local rc=$?; local d=$((SECONDS-t)); registrar "$1" "$rc" "$d"; uso "$1" "$rc" "$d"; return $rc; }
+
+ejecutar "$MOTOR"; RC=$?
+if [ $RC -ne 0 ] && [ $RC -ne 3 ]; then
+  OTRO=codex; [ "$MOTOR" = codex ] && OTRO=claude
+  echo "onia-llm: AVISO: $MOTOR falló (código $RC); pruebo con $OTRO." >&2
+  ejecutar "$OTRO"; RC=$?
+  [ $RC -ne 0 ] && echo "onia-llm: $OTRO también falló (código $RC)." >&2
+fi
+exit $RC

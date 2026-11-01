@@ -1,0 +1,490 @@
+{
+  "semana": "2026-11-02/2026-11-08",
+  "bloques": [
+    {
+      "id": "B1",
+      "locacion": "Escritorio de trabajo con luz de ventana al frente, celular en trípode VERTICAL (9:16)",
+      "vestuario": "Remera lisa oscura (A), sin logos de terceros",
+      "guiones": [
+        "L1",
+        "L2",
+        "L5",
+        "L7",
+        "L11",
+        "L15",
+        "L17"
+      ]
+    },
+    {
+      "id": "B2",
+      "locacion": "Mismo escritorio, celular/cámara en trípode HORIZONTAL (16:9), un poco más lejos para ver escritorio y laptop",
+      "vestuario": "Remera lisa oscura (A), igual que B1 (no cambies nada, solo gira el celular)",
+      "guiones": [
+        "L9",
+        "L16",
+        "L21"
+      ]
+    },
+    {
+      "id": "B3",
+      "locacion": "Mismo escritorio, grabación de pantalla (OBS o grabador del celular) + voz en off, sin cara",
+      "vestuario": "No aplica (no sales en cámara); puedes dejar la remera A",
+      "guiones": [
+        "L3",
+        "L6",
+        "L12",
+        "L13",
+        "L18"
+      ]
+    },
+    {
+      "id": "B4",
+      "locacion": "Sala o rincón de estudio con libreta o pizarra detrás, luz natural de lado, VERTICAL",
+      "vestuario": "Camisa o buzo claro (B): cambia aquí para que parezca otro día",
+      "guiones": [
+        "L8",
+        "L10",
+        "L20"
+      ]
+    },
+    {
+      "id": "B5",
+      "locacion": "Exterior: puerta de casa, patio o calle tranquila (sin compañeros, profes ni gente reconocible), VERTICAL",
+      "vestuario": "Ropa casual o deportiva (C): cambia al final",
+      "guiones": [
+        "L4",
+        "L14",
+        "L19"
+      ]
+    }
+  ],
+  "guiones": [
+    {
+      "id": "L1",
+      "dia": "2026-11-02",
+      "dia_nombre": "lunes",
+      "orden": 1,
+      "formato": "vertical",
+      "tema": "startup",
+      "titulo": "Tengo 16 años y esta es mi startup",
+      "gancho": "Tengo 16 años, fundé OnIA y no empecé con inversión ni con un título.",
+      "texto": "Tengo 16 años, fundé OnIA y no empecé con inversión ni con un título. Empecé con una pregunta: ¿qué puedo construir si le explico bien las cosas a una IA? Aprendí por mi cuenta, probando, equivocándome y volviendo a probar. Hoy ayudo a negocios a entender la IA, y enseño lo que voy aprendiendo. No te digo que sea fácil. Te digo que se puede empezar hoy, con lo que tienes. Sígueme si quieres ver el proceso completo.",
+      "tomas": [
+        "Plano medio a cámara en el escritorio, luz de ventana",
+        "Corte a laptop con la pantalla de un chat con IA (de ejemplo)",
+        "Clip de libreta con ideas escritas a mano"
+      ],
+      "cta": "Sígueme para ver el proceso completo.",
+      "duracion_s": 30,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L2",
+      "dia": "2026-11-02",
+      "dia_nombre": "lunes",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "taller",
+      "titulo": "Mañana a las 19:00 empieza Claude de 0 a 100",
+      "gancho": "Mañana a las 19:00 te enseño Claude de 0 a 100.",
+      "texto": "Mañana a las 19:00 te enseño Claude de 0 a 100. No es una charla para escuchar: es para que lo uses. En tres clases en vivo por Meet armamos proyectos, subimos archivos y le dejamos tareas reales a Claude. Martes 3, jueves 5 y sábado 7, siempre a las 19:00. Y esta semana el precio de lanzamiento es Bs 50. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Tarjeta animada con las 3 fechas: Mar 3, Jue 5, Sáb 7 · 19:00",
+        "Captura de ejemplo de una pantalla de Meet (sin personas)",
+        "Ícono de WhatsApp y un QR genérico no escaneable"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 30,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L3",
+      "dia": "2026-11-02",
+      "dia_nombre": "lunes",
+      "orden": 3,
+      "formato": "vertical",
+      "tema": "aprendizaje",
+      "titulo": "Cómo uso Claude para la tarea sin hacer trampa",
+      "gancho": "Así uso Claude para la tarea sin hacer trampa.",
+      "texto": "Así uso Claude para la tarea sin hacer trampa. Primero, no le pido que la haga. Le escribo: explícame este tema como si tuviera diez años. Después: hazme tres preguntas para ver si lo entendí. Si fallo, me corrige y me lo explica de otra forma. La tarea la escribo yo, con mis palabras. Así la IA es mi profesor particular, no mi copiona. Con la primera aprendes; con la segunda solo entregas algo que no entiendes. Guarda este video y pruébalo con tu próxima tarea.",
+      "tomas": [
+        "Grabación de pantalla vertical: el prompt «Explícame… y hazme 3 preguntas»",
+        "Zoom a la respuesta de Claude con las preguntas (conversación real, tema genérico)",
+        "Texto en pantalla: «Profesor, no copiona»"
+      ],
+      "cta": "Guarda el video, pruébalo y cuéntame en comentarios cómo te fue.",
+      "duracion_s": 35,
+      "bloque": "B3",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L4",
+      "dia": "2026-11-03",
+      "dia_nombre": "martes",
+      "orden": 1,
+      "formato": "vertical",
+      "tema": "lifestyle",
+      "titulo": "Un día de founder de 16 años (parte 1)",
+      "gancho": "Martes de founder de 16 años: te llevo a mi día.",
+      "texto": "Martes de founder de 16 años: te llevo a mi día. Empiezo revisando qué dejaron listo mis agentes de IA y decido qué se aprueba. Colegio de ocho a doce. Después, clases hasta las seis. Y la startup se queda para la noche. No es glamuroso: es ordenar el tiempo. Hoy además empieza mi taller de IA a las 19:00. Sígueme y te sigo mostrando cómo se ve esto de verdad.",
+      "tomas": [
+        "Clip caminando con la mochila (sin compañeros ni gente reconocible)",
+        "Clip de laptop abierta con la lista de pendientes",
+        "Clip de libreta con la agenda del día",
+        "Clip de taza o desayuno sobre el escritorio"
+      ],
+      "cta": "Sígueme para ver la parte 2.",
+      "duracion_s": 25,
+      "bloque": "B5",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L5",
+      "dia": "2026-11-03",
+      "dia_nombre": "martes",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "taller",
+      "titulo": "Hoy 19:00 empieza el taller",
+      "gancho": "Hoy a las 19:00 empieza Claude de 0 a 100.",
+      "texto": "Hoy a las 19:00 empieza Claude de 0 a 100. Si estabas esperando el momento para aprender a usar Claude de verdad, es este. Son tres clases en vivo por Meet: hoy, el jueves 5 y el sábado 7, siempre a las 19:00. Trabajamos con proyectos, archivos y tareas reales. Precio de lanzamiento: Bs 50. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Tarjeta animada «HOY 19:00»",
+        "Captura de ejemplo de un proyecto de Claude con archivos",
+        "Ícono de WhatsApp y QR genérico no escaneable"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 25,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L6",
+      "dia": "2026-11-03",
+      "dia_nombre": "martes",
+      "orden": 3,
+      "formato": "horizontal",
+      "tema": "IA",
+      "titulo": "3 cosas que Claude hace con un archivo tuyo",
+      "gancho": "Esto es lo que más me gusta de Claude: puedes darle un archivo tuyo y trabajar sobre él.",
+      "texto": "Esto es lo que más me gusta de Claude: puedes darle un archivo tuyo y trabajar sobre él. Primero, un resumen: le paso un documento largo y le pido las ideas principales en cinco líneas. Segundo, orden: le paso notas sueltas y le pido que las convierta en una lista de tareas. Tercero, respuestas: le paso las preguntas frecuentes de un negocio de ejemplo y le pido que redacte la respuesta para un cliente. Eso sí: siempre reviso lo que escribe antes de usarlo. La IA propone, tú apruebas. En el taller armamos esto paso a paso. Quedan las clases del jueves 5 y del sábado 7, a las 19:00. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Grabación de pantalla horizontal 16:9: subir un documento de ejemplo a un proyecto",
+        "Resumen en cinco líneas apareciendo",
+        "Notas sueltas que se convierten en lista de tareas",
+        "Respuesta a un cliente de ejemplo con rótulo «Revisar antes de enviar»"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 45,
+      "bloque": "B3",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L7",
+      "dia": "2026-11-04",
+      "dia_nombre": "miércoles",
+      "orden": 1,
+      "formato": "vertical",
+      "tema": "IA",
+      "titulo": "¿Claude o ChatGPT? Lo que yo uso",
+      "gancho": "¿Claude o ChatGPT? Te cuento en 30 segundos qué uso yo.",
+      "texto": "¿Claude o ChatGPT? Te cuento en treinta segundos qué uso yo. Las dos son buenas y las dos se equivocan, así que siempre hay que revisar. Yo trabajo sobre todo con Claude porque me deja armar proyectos con mis archivos y volver a ellos como a una carpeta de trabajo. Pero lo importante no es la marca: es saber pedir. Una IA a la que le hablas vago te responde vago. Eso es lo que enseño en el taller Claude de 0 a 100: quedan el jueves 5 y el sábado 7, a las 19:00. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Plano a cámara con gesto de comparar con las dos manos",
+        "Pantalla de un proyecto con archivos (de ejemplo)",
+        "Rótulo «No es la marca: es saber pedir»"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 40,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L8",
+      "dia": "2026-11-04",
+      "dia_nombre": "miércoles",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "emprendimiento",
+      "titulo": "Lo que nadie te dice de emprender en el colegio",
+      "gancho": "Lo que nadie te dice de emprender en el colegio.",
+      "texto": "Lo que nadie te dice de emprender en el colegio. Uno: cuéntales a tus papás lo que haces; su apoyo y su criterio suman. Dos: tu tiempo es tu recurso más escaso, así que aprende a decir que no. Tres: empieza chico y real, con un solo problema de una sola persona. Cuatro: al principio casi nadie te va a aplaudir, y está bien. Lo importante es avanzar un poco cada día. ¿Y tú, qué te gustaría crear? Cuéntamelo en comentarios.",
+      "tomas": [
+        "Plano a cámara en la sala con libreta detrás",
+        "Rótulos numerados 1, 2, 3, 4 entrando uno por uno",
+        "Clip de libreta con una lista a mano"
+      ],
+      "cta": "Cuéntame en comentarios qué te gustaría crear.",
+      "duracion_s": 30,
+      "bloque": "B4",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L9",
+      "dia": "2026-11-04",
+      "dia_nombre": "miércoles",
+      "orden": 3,
+      "formato": "horizontal",
+      "tema": "startup",
+      "titulo": "Diagnóstico de IA gratis para tu negocio",
+      "gancho": "¿Tienes un negocio y no sabes por dónde empezar con la IA? Te hago un diagnóstico gratis.",
+      "texto": "¿Tienes un negocio y no sabes por dónde empezar con la IA? Te hago un diagnóstico gratis. Es una llamada de veinte a treinta minutos por Meet. Antes me cuentas, en un formulario de tres preguntas, qué negocio tienes y qué quieres resolver primero: responder mensajes de WhatsApp, agendar citas, controlar inventario o cobros. En la llamada escucho cómo trabajas hoy y te digo qué te conviene automatizar primero, aunque sea sin nosotros. No te prometo ventas ni milagros: te doy un camino claro. Y si encaja con tu negocio, te muestro ONIA Platform: un agente de WhatsApp con agenda o inventario, cobros con QR y un panel para ver tu día. Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "tomas": [
+        "Plano horizontal a cámara en el escritorio",
+        "Tarjeta con los 3 pasos: Formulario → Llamada de 20–30 min → Plan claro",
+        "Ícono de WhatsApp y de calendario",
+        "Cierre con rótulo «ONIA Platform» (sin precio)"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 50,
+      "bloque": "B2",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L10",
+      "dia": "2026-11-05",
+      "dia_nombre": "jueves",
+      "orden": 1,
+      "formato": "vertical",
+      "tema": "IA",
+      "titulo": "¿Necesito saber programar para usar IA?",
+      "gancho": "Pero Sergio, ¿no necesito saber programar para usar IA?",
+      "texto": "Pero Sergio, ¿no necesito saber programar para usar IA? No. Yo empecé sin saber programar. Lo que necesitas es saber qué quieres lograr y explicarlo con claridad: quién es el cliente, qué problema tiene y cómo debería verse el resultado. Si puedes explicarle una tarea a un compañero, puedes explicársela a Claude. Es una habilidad que se practica, como escribir. Hoy a las 19:00 es la clase dos del taller, y el sábado, la tres. Con Bs 50 todavía puedes entrar. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Plano a cámara con libreta detrás",
+        "Pantalla de un prompt claro escrito en lenguaje normal",
+        "Tarjeta «Hoy 19:00 · Clase 2»"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 35,
+      "bloque": "B4",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L11",
+      "dia": "2026-11-05",
+      "dia_nombre": "jueves",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "taller",
+      "titulo": "Hoy 19:00 clase 2: todavía puedes entrar",
+      "gancho": "Hoy a las 19:00 es la clase dos de Claude de 0 a 100.",
+      "texto": "Hoy a las 19:00 es la clase dos de Claude de 0 a 100. Seguimos con proyectos, archivos y tareas reales, en vivo por Meet. Si no entraste a la primera clase, todavía puedes sumarte: la clase tres es el sábado 7. Precio de lanzamiento, Bs 50. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Tarjeta animada «HOY 19:00 · Clase 2»",
+        "Captura de ejemplo de un proyecto de Claude",
+        "Ícono de WhatsApp y QR genérico no escaneable"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 25,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L12",
+      "dia": "2026-11-05",
+      "dia_nombre": "jueves",
+      "orden": 3,
+      "formato": "vertical",
+      "tema": "aprendizaje",
+      "titulo": "5 cosas que aprendí armando mi startup con IA",
+      "gancho": "Cinco cosas que aprendí armando mi startup con IA.",
+      "texto": "Cinco cosas que aprendí armando mi startup con IA. Una: empieza por un problema chico y real, no por una gran idea. Dos: la IA propone y tú apruebas; el criterio es tuyo. Tres: lo que no escribes con claridad, la IA no lo adivina. Cuatro: revisa todo antes de usarlo, porque se equivoca con mucha seguridad. Y cinco: un paso a la vez, aunque sea pequeño. Guarda este video para acordarte. Y si tienes un negocio y quieres ver por dónde empezar, escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "tomas": [
+        "Slideshow vertical (Canva): una tarjeta por cada lección, números grandes",
+        "Fondo con clips de escritorio y laptop",
+        "Tarjeta final con ícono de WhatsApp"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 35,
+      "bloque": "B3",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L13",
+      "dia": "2026-11-06",
+      "dia_nombre": "viernes",
+      "orden": 1,
+      "formato": "horizontal",
+      "tema": "startup",
+      "titulo": "Así dirijo mi empresa con agentes de IA",
+      "gancho": "Así dirijo mi empresa con agentes de IA, y yo apruebo todo.",
+      "texto": "Así dirijo mi empresa con agentes de IA, y yo apruebo todo. Tengo seis agentes, cada uno con su área: operaciones, contenido y marca, talleres, anuncios, finanzas y la plataforma de ONIA. Cada uno tiene su carpeta y sus reglas. Preparan borradores, ordenan tareas y revisan cosas. Pero hay límites claros: ninguno publica, ninguno gasta dinero y ninguno toca producción sin mi sí. Yo leo lo que dejan, corrijo y decido. No es magia: es dividir el trabajo y poner reglas. Si quieres aprender a armar algo así, mañana es la última clase del taller Claude de 0 a 100, a las 19:00. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Grabación de pantalla horizontal: lista de las seis carpetas de agentes (sin claves ni datos privados visibles)",
+        "Zoom a un archivo de reglas (revisar que no muestre secretos)",
+        "Rótulo «La IA propone, yo apruebo»"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 45,
+      "bloque": "B3",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L14",
+      "dia": "2026-11-06",
+      "dia_nombre": "viernes",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "lifestyle",
+      "titulo": "Colegio, clases y startup: mi semana",
+      "gancho": "Mi semana de founder de 16 años, sin filtro.",
+      "texto": "Mi semana de founder de 16 años, sin filtro. Colegio de ocho a doce. Después, clases hasta las seis. Y la startup, de noche, cuando se puede. Esta semana además estoy dando mi primer taller de IA. ¿Cómo lo hago? Con una regla: lo que se repite, lo delego a un agente; lo que necesita criterio, lo hago yo. Y descanso, porque sin descanso nada de esto dura. Mañana, sábado, es la última clase del taller a las 19:00. Bs 50. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Clip caminando (sin compañeros ni profes)",
+        "Clip de laptop con agenda semanal",
+        "Tarjeta con 3 bloques: Colegio · Clases · Startup"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 35,
+      "bloque": "B5",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L15",
+      "dia": "2026-11-06",
+      "dia_nombre": "viernes",
+      "orden": 3,
+      "formato": "vertical",
+      "tema": "IA",
+      "titulo": "El error al escribirle a la IA",
+      "gancho": "El error que comete muchísima gente al escribirle a la IA: pedir poco y esperar mucho.",
+      "texto": "El error que comete muchísima gente al escribirle a la IA: pedir poco y esperar mucho. Por ejemplo: hazme un post. Eso es vago. Mejor: imagina que tengo una cafetería, quiero un post para la promoción del fin de semana, tono cercano, máximo cinco líneas. ¿Ves la diferencia? Le diste quién eres, qué quieres y cómo lo quieres. Claude no adivina: tú le explicas. Eso se llama contexto. Mañana a las 19:00 es la última clase del taller Claude de 0 a 100. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Plano a cámara con gesto de «poco» y «mucho» con las manos",
+        "Pantalla dividida: prompt vago vs. prompt con contexto (de ejemplo)",
+        "Rótulo «Quién eres · Qué quieres · Cómo lo quieres»"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 35,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L16",
+      "dia": "2026-11-07",
+      "dia_nombre": "sábado",
+      "orden": 1,
+      "formato": "horizontal",
+      "tema": "emprendimiento",
+      "titulo": "Por qué empecé OnIA a los 16 (versión larga)",
+      "gancho": "Hoy te cuento por qué empecé OnIA a los dieciséis años.",
+      "texto": "Hoy te cuento por qué empecé OnIA a los dieciséis años. Todo empezó con una pregunta: ¿qué puedo construir si le explico bien las cosas a una IA? Quería entender qué podía hacer la inteligencia artificial de verdad, más allá de las noticias. Empecé a probar herramientas, primero para aprender y después para construir cosas. Y vi que muchos negocios manejan su atención por WhatsApp a mano y no tienen tiempo de aprender IA. De ahí salieron dos caminos: enseñar, con talleres como Claude de 0 a 100, y construir, con ONIA Platform. No sé todo, me equivoco seguido y estoy aprendiendo en público. Pero creo que la mejor forma de aprender es hacer algo real y mostrar el proceso. Hoy a las 19:00 es la última clase del taller. Y si tienes un negocio, escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis. Si encaja, te muestro ONIA Platform.",
+      "tomas": [
+        "Plano horizontal a cámara en el escritorio",
+        "Clips de laptop y libreta (b-roll de escritorio)",
+        "Rótulos: «Enseñar: talleres» y «Construir: ONIA Platform»",
+        "Cierre a cámara con sonrisa"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 60,
+      "bloque": "B2",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L17",
+      "dia": "2026-11-07",
+      "dia_nombre": "sábado",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "taller",
+      "titulo": "Hoy cierra la primera edición del taller",
+      "gancho": "Hoy a las 19:00 cierra la primera edición de Claude de 0 a 100.",
+      "texto": "Hoy a las 19:00 es la última clase de Claude de 0 a 100, y con ella cierra esta primera edición. Si quieres entrar, hoy es el día. Son clases en vivo por Meet donde trabajamos proyectos, archivos y tareas reales con Claude. Precio de lanzamiento, Bs 50. Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "tomas": [
+        "Tarjeta animada «HOY 19:00 · Última clase»",
+        "Captura de ejemplo de un proyecto de Claude",
+        "Ícono de WhatsApp y QR genérico no escaneable"
+      ],
+      "cta": "Escríbeme TALLER por WhatsApp y te paso el QR (link en bio).",
+      "duracion_s": 25,
+      "bloque": "B1",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L18",
+      "dia": "2026-11-07",
+      "dia_nombre": "sábado",
+      "orden": 3,
+      "formato": "horizontal",
+      "tema": "IA",
+      "titulo": "3 cosas que le pido a Claude todos los días",
+      "gancho": "Tres cosas que le pido a Claude casi todos los días.",
+      "texto": "Tres cosas que le pido a Claude casi todos los días. Una: que me explique algo difícil con un ejemplo simple. Dos: que ordene mis ideas sueltas en una lista de pasos. Tres: que revise mi texto y me diga qué está confuso, sin reescribirlo todo. Fíjate que en ninguna le pido que piense por mí; le pido ayuda para pensar mejor. Si tienes un negocio y quieres saber qué partes de tu día podría hacer la IA, escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "tomas": [
+        "Grabación de pantalla horizontal: pedir una explicación con ejemplo simple",
+        "Ideas sueltas que se ordenan en pasos",
+        "Texto con comentario de qué está confuso",
+        "Rótulos numerados 1, 2, 3"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 35,
+      "bloque": "B3",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L19",
+      "dia": "2026-11-08",
+      "dia_nombre": "domingo",
+      "orden": 1,
+      "formato": "vertical",
+      "tema": "lifestyle",
+      "titulo": "Un día de founder de 16 años (parte 2): domingo",
+      "gancho": "Parte dos: así planeo mi semana un domingo.",
+      "texto": "Parte dos: así planeo mi semana un domingo. El domingo no es solo para dormir; bueno, un poco sí. Es para planear. Reviso qué salió bien y qué no, miro mi lista de pendientes y elijo tres cosas importantes para la semana: solo tres. Después grabo contenido, estudio algo nuevo de IA y descanso. Lo que me funciona es poco y constante, no hacerlo todo. ¿Y tú, cómo planeas tu semana? Cuéntame en comentarios.",
+      "tomas": [
+        "Clip saliendo de casa (sin gente reconocible)",
+        "Clip de libreta con tres prioridades",
+        "Clip de laptop con calendario",
+        "Clip de descanso: música o café"
+      ],
+      "cta": "Cuéntame en comentarios cómo planeas tu semana.",
+      "duracion_s": 30,
+      "bloque": "B5",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L20",
+      "dia": "2026-11-08",
+      "dia_nombre": "domingo",
+      "orden": 2,
+      "formato": "vertical",
+      "tema": "IA",
+      "titulo": "¿Qué es un agente de IA? Explicado para tu abuela",
+      "gancho": "¿Qué es un agente de IA? Te lo explico como si fuera para tu abuela.",
+      "texto": "¿Qué es un agente de IA? Te lo explico como si fuera para tu abuela. Un chat normal solo responde cuando le escribes. Un agente, además, puede hacer varios pasos por sí solo: leer el mensaje de un cliente, buscar la información, preparar la respuesta y avisarte si necesita a una persona. Pero ojo: un buen agente tiene límites. Hace lo que le dejaste hacer y te consulta lo importante. Si tienes un negocio y quieres ver qué podría hacer un agente por ti, escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis. Si encaja, te muestro ONIA Platform.",
+      "tomas": [
+        "Plano a cámara en la sala con libreta o pizarra",
+        "Dibujo en la libreta: mensaje → agente → respuesta → «te aviso si hace falta una persona»",
+        "Rótulo «Un agente tiene límites»"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 40,
+      "bloque": "B4",
+      "estado": "por_grabar"
+    },
+    {
+      "id": "L21",
+      "dia": "2026-11-08",
+      "dia_nombre": "domingo",
+      "orden": 3,
+      "formato": "horizontal",
+      "tema": "startup",
+      "titulo": "Del diagnóstico a ONIA Platform: cómo funciona",
+      "gancho": "Esta semana te hablé de un diagnóstico gratis. Hoy te cuento qué viene después.",
+      "texto": "Esta semana te hablé de un diagnóstico gratis. Hoy te cuento qué viene después. ONIA Platform es nuestro producto para negocios: un agente de WhatsApp conectado a la API oficial, con agenda o inventario, cobros con QR y un panel para ver tu día. Hoy tiene plantillas para consultorios de salud y para comercios. El proceso es simple. Uno: llenas un formulario corto. Dos: hacemos una llamada de veinte a treinta minutos y te digo qué te conviene automatizar primero. Tres: si encaja, puedes probar ONIA Platform siete días gratis, y si no te sirve, no pagas. No te prometo ventas ni resultados: te prometo claridad. Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "tomas": [
+        "Plano horizontal a cámara en el escritorio",
+        "Tarjeta de 3 pasos: Formulario → Llamada → Prueba de 7 días",
+        "Pantalla de ejemplo del panel de ONIA Platform (datos ficticios)",
+        "Ícono de WhatsApp"
+      ],
+      "cta": "Escríbeme DIAGNÓSTICO por WhatsApp (link en bio) y coordinamos tu diagnóstico de IA gratis.",
+      "duracion_s": 45,
+      "bloque": "B2",
+      "estado": "por_grabar"
+    }
+  ]
+}

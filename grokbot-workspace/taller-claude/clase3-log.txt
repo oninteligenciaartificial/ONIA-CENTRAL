@@ -1,0 +1,17 @@
+Creé `clase3-material.md` en `/workspace/taller-claude/`. Busqué voseo con una lista de formas verbales y no apareció ninguno. Solo toqué archivos de la carpeta de trabajo; no hice push ni publiqué nada.
+
+Está basado en la clase 3 de `temario.md` y en las clases 1 y 2. Incluye:
+- **Guion para Sergio:** dos bloques con minutos, lo que dice y lo que muestra. El Bloque 1 va de 0 a 50 min, luego hay 10 min de pausa. El Bloque 2 también va de 0 a 50 min.
+- **Revisión de la tarea de la clase 2:** una dinámica de 10 minutos con 3 voluntarios.
+- **Demos en vivo:** convertir un prompt en plantilla, un flujo de 4 pasos (idea, borrador, revisión, versión final) y un ejemplo por área (ventas, contenido, estudio, oficina).
+- **3 ejercicios:** cada uno trae su prompt listo para copiar, con negocios de Bolivia como ejemplo (peluquería en Tarija, repostería en Cochabamba, un flujo propio con ejemplos de El Alto, Oruro, Sucre, La Paz y Trinidad).
+- **Errores comunes, momentos para preguntas, tarea y checklist técnico:** el checklist cubre desde 48 h antes hasta el cierre, y la pausa entre bloques.
+- **Cierre de la clase 3:** la encuesta de 3 preguntas, el pedido de testimonio solo con permiso escrito y la presentación de «Claude nivel 2» y de las tres ofertas, sin presión.
+
+Hay cosas que Sergio debe definir antes de la clase, y quedaron como `[Sergio completa]` en el archivo:
+- **Contenido de las ofertas:** no encontré en los archivos qué incluyen la llamada de Bs 350, el combo de Bs 380 y la consultoría de Bs 1500. No inventé nada, y el guion dice que no se mencione lo que no esté confirmado.
+- **Nivel 2:** las fechas (17, 19 y 21/11) y el precio (Bs 90 y Bs 70) siguen siendo propuestas. El guion indica no decirlos hasta que Sergio los confirme.
+- **Choque con `plan-comunidad.md`:** ese plan dice que el 7/11 no se vende nada y deja las ofertas para el viernes 13/11, en privado. Seguí tu pedido y las puse al final de la clase. Sergio debe decidir si mantiene ambas.
+- **Encuesta:** ese plan proponía 6 preguntas y aquí son 3. La tercera pregunta mezcla el interés en el nivel 2 con el precio razonable, para no perder esa validación.
+
+El Bloque 2 cuadra justo en 50 min. Si se alarga, el archivo indica qué recortar primero y qué no tocar: la encuesta y la despedida.

@@ -1,0 +1,34 @@
+Creé los dos archivos en `/workspace/taller-claude/`. No hice push ni toqué nada fuera de esa carpeta.
+
+**`clase2-ejercicios.md`**
+- Tiene un aviso inicial de que todo es ficticio y la regla "Claude resume, tú verificas".
+- Incluye tres archivos de ejemplo, todos marcados FICTICIOS:
+  - un PDF de contrato de alquiler, con una cláusula omitida a propósito;
+  - un Excel de ventas de una panadería;
+  - una imagen: una nota de venta de ferretería que el alumno fotografía.
+- Los ejercicios 1 a 3 son paso a paso: subir el archivo, pedido con fórmula, verificación con casillas y respuestas correctas.
+- La nota de venta trae un error a propósito: el total escrito es Bs 215 y la suma correcta es Bs 225. Sirve para practicar la verificación.
+- El ejercicio 4 es con un archivo propio del alumno, y al final hay una lista de verificación, qué no subir y errores comunes.
+
+**`clase2-plantilla-proyecto.md`**
+- La plantilla cubre nombre, instrucciones fijas (6 partes), qué archivos subir, 5 prompts de uso, pruebas y revisión.
+- Los tres ejemplos rellenos, todos ficticios y para Bolivia, son:
+  - una tienda de abarrotes en Cochabamba;
+  - un salón de belleza en Sucre;
+  - un electricista independiente en El Alto, como negocio de servicios.
+- Cada ejemplo trae sus reglas de "no inventes", "avísame qué faltó" y "yo reviso antes de enviar".
+
+**Cifras:** reutilicé los datos ficticios de `clase2-material.md`. Recalculé las sumas del Excel y las de la nota de venta, y coinciden. No incluí promesas de ingresos, ahorros con cifras ni testimonios. Los ejemplos de la plantilla no llevan precios; solo describen qué contiene cada archivo.
+
+**Antes de la clase:** la nota de venta es una imagen que el alumno debe crear. Si quieres, puedo generarte el archivo de imagen.
+Creé los dos archivos en `/workspace/taller-claude/`. No hice push ni envié nada.
+
+- **`clase3-biblioteca-prompts.md`**: 120 prompts, 30 por área (ventas, contenido, oficina y estudio). Tienen la fórmula Rol + Contexto + Tarea + Formato, huecos en [CORCHETES] y una línea "Verifica" con lo que debe revisar el alumno. El archivo trae también una guía de uso, el flujo de 4 pasos y un esqueleto para que cada alumno arme su propia biblioteca.
+- **`kit-alumno.md`**: una hoja por clase con la idea clave, la fórmula o el flujo, los atajos y la tarea. Está marcado como borrador sin enviar. Al final tiene una lista de notas para quien lo envía, que hay que borrar antes de mandarlo.
+
+Tres cosas a tener en cuenta:
+- **Interpretación de "30 por área":** la tomé de forma literal, así que son 120 en total. Si querías 30 en total, repartidos entre las cuatro áreas, dímelo y lo recorto.
+- **La hoja de la clase 2 está incompleta:** me pediste usar solo los materiales de las clases 1 y 3, y el de la clase 2 no estaba entre ellos. Armé esa hoja con lo que la clase 3 menciona de ella (tema, tarea, recordatorios) y dejé corchetes para los atajos y la fórmula. Hay que completarla con `clase2-material.md`.
+- **Datos por confirmar:** horas, enlaces de grabación, canal de soporte y enlace de la encuesta quedan como [corchetes].
+
+La hoja 3 no menciona el nivel 2 ni las ofertas. Según el material de la clase 3, eso solo se escribe en privado a quien preguntó o mostró interés. Tampoco incluí precios ni cifras de resultados, y el español usa tuteo.

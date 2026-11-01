@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""Guard fijo OnIA. 0 permite; 3 bloquea. Nunca ejecuta el texto revisado."""
+import datetime as dt
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import sys
+import unicodedata
+
+APROBACIONES = Path('/workspace/decisiones/aprobaciones.jsonl')
+BLOQUEOS = Path('/workspace/orquestacion/guard/bloqueos.jsonl')
+REGLAS = {
+    'push': r'\bgit\b[^\n;|&]*\bpush\b|\b(?:haz|hacer|ejecuta|ejecutar)\s+(?:un\s+)?push\b',
+    'deploy': r'\b(?:vercel|netlify|fly|flyctl|railway)\b[^\n;|&]*\bdeploy\b|\bkubectl\b[^\n;|&]*\bapply\b|\bdocker\b[^\n;|&]*\bpush\b|\bnpm\b[^\n;|&]*\bpublish\b|\bdeploy(?:ar|s)?\b|\bdespliega\b',
+    'pago': r'\b(?:stripe|paypal|transfer(?:ir|encia)?|pago|pagar|paga)\b|\bqr\s+bcp\b',
+    'publicar': r'\b(?:publicar|publica|publiques|tweet|tuitear)\b|\bpost\s+(?:a|en|to)\s+(?:x|tiktok|meta)\b|\bupload\s+(?:a\s+)?(?:redes|x|tiktok|meta|instagram|facebook)\b',
+    'mensaje-cliente': r'\b(?:whatsapp|chatwoot)\b[^\n;|&]*\bsend\b|\benviar\s+(?:un\s+)?mensaje\b|\benvia\s+(?:un\s+)?mensaje\b|\b(?:email|correo)\s+(?:a|al|para)\s+(?:el\s+|un\s+)?cliente\b|\bmensaje\s+(?:a|al)\s+(?:un\s+)?cliente\b',
+}
+
+IMP = r'(?:haz|hace|hacer|ejecuta|ejecutar|ejecutalo|lanza|lanzar|corre|correr|realiza|realizar|procede a|ahora)'
+# En prompts solo cuentan ORDENES (imperativo o comando real); las menciones ("plan de deploy",
+# "log del deploy", "revisa los pagos") pasan. Los comandos reales siguen con REGLAS estrictas.
+REGLAS_PROMPT = {
+    'push': REGLAS['push'],
+    'deploy': r'\b(?:vercel|netlify|fly|flyctl|railway)\b[^\n;|&]*\bdeploy\b|\bvercel\b[^\n;|&]*--prod\b|\bkubectl\b[^\n;|&]*\bapply\b|\bdocker\b[^\n;|&]*\bpush\b|\b(?:npm|yarn|pnpm)\b[^\n;|&]*\b(?:publish|deploy)\b|\./deploy\S*|\b' + IMP + r'\s+(?:el\s+|un\s+|una\s+|la\s+)?(?:deploy|despliegue)\b|\b(?:deploya|deployea|despliega|despliegalo|desplegalo)\b|\b(?:sube|subi|subelo)\s+(?:a|en)\s+(?:produccion|prod)\b|\b(?:desplegar|deployar)\b',
+    'pago': r'\b(?:paga|pagale|transfiere|transferi|cobra)\b|\b' + IMP + r'\s+(?:el\s+|un\s+|una\s+|la\s+)?(?:pago|transferencia|cobro)\b|\b(?:stripe|paypal)\b[^\n;|&]*\b(?:create|transfers?|charges?|payouts?|send)\b|api\.stripe\.com|\b(?:pagar|transferir|cobrar)\b',
+    'publicar': r'\bpublicar\s+(?:un\s+|el\s+|este\s+)?(?:post|video|tweet|reel)\s+(?:a|en|to)\s+(?:x|tiktok|meta|instagram|facebook|redes)\b|\b(?:publica|publicalo|publicala|tuitea|postea|postealo)\b|\b' + IMP + r'\s+(?:la\s+|el\s+|un\s+|una\s+)?(?:publicacion|post|tweet|anuncio)\b|\b(?:publicar|tuitear|tweet)\b|\bpost\s+(?:a|en|to)\s+(?:x|tiktok|meta)\b',
+    'mensaje-cliente': r'\b(?:whatsapp|chatwoot)\b[^\n;|&]*\bsend\b|\b(?:envia|enviale|manda|mandale|escribele)\s+(?:un\s+|el\s+|este\s+)?(?:mensaje|whatsapp|correo|email|dm)\b|\b' + IMP + r'\s+(?:el\s+)?envio\b|\b(?:enviar|mandar|enviarle|mandarle|envies|mandes)\s+(?:un\s+|el\s+|este\s+)?(?:mensaje|whatsapp|correo|email|dm)\b',
+}
+
+def normalizar(texto):
+    return ''.join(c for c in unicodedata.normalize('NFKD', texto.casefold()) if not unicodedata.combining(c))
+
+
+def categorias(texto, prompt=False):
+    texto = normalizar(texto).replace('\\\n', '')
+    # Quitar comillas y escapes impide evadir con git 'push' o g\\it push.
+    texto = re.sub(r"[\"'`\\]", '', texto)
+    # Una negación solo alcanza su cláusula. Las conjunciones con un nuevo
+    # imperativo reinician el alcance; una lista de infinitivos lo conserva.
+    partes = re.split(r'[\n;]|[.!](?=\s)|\b(?:pero|luego|despues|sin embargo)\b|[, :]?\s+\by\s+(?=(?:haz|ejecuta|publica|paga|envia|git|despliega)\b)', texto)
+    encontradas = set()
+    lista_negada = False
+    for parte in partes:
+        limpia = re.sub(r'^\s*(?:[-*]|\d+[.)])?\s*', '', parte)
+        if prompt:
+            if re.fullmatch(r'(?:reglas?[: ]+)?(?:prohibido|prohibiciones|no permitido|nunca)\s*:', limpia):
+                lista_negada = True
+                continue
+            if lista_negada and re.match(r'^\s*(?:[-*]|\d+[.)])\s+', parte):
+                continue
+            if limpia.strip():
+                lista_negada = False
+            neg = r'(?:(?:reglas?|solo lectura)\s*:\s*)?(?:(?:no|nunca|jamas)\s+(?:(?:hagas|hacer|ejecutes|ejecutar|uses|usar)\s+)?|(?:prohibido|prohibida|sin|nada de)\s+)'
+            mneg = re.match(neg, limpia)
+            if mneg:
+                resto = limpia[mneg.end():]
+                # No confundir "sin aprobación haz..." ni "no necesitas...".
+                acciones = r'(?:git|push|deploy|desplegar|despliegues|publicar|publiques|enviar|envies|mandar|mandes|pagar|pagues|pago|pagos|transferir|gastar|gastes|borrar|borres|editar|edites|tocar|toques|npm|docker|kubectl|vercel|stripe|paypal|whatsapp|chatwoot)\b'
+                if re.match(acciones, resto) and not re.search(r'[:,]\s*(?:haz|ejecuta|publica|paga|envia|git)\b', resto):
+                    continue
+        for categoria, patron in (REGLAS_PROMPT if prompt else REGLAS).items():
+            for m in re.finditer(patron, parte):
+                # En prompts, ignorar menciones negadas: "NO git push", "sin pagos", "nada de publicar".
+                previo = parte[max(0, m.start() - 20):m.start()]
+                if prompt and re.search(r'\b(?:no|nunca|jamas|sin|nada de|prohibido|prohibida|prohibe)\b\s+(?:\S+\s+)?$', previo) and not re.search(r'\bsin\s+duda\b|[,:]\s*\S*\s*$', previo):
+                    continue
+                if prompt and re.match(r'(?:desplegar|deployar|pagar|transferir|cobrar|publicar|tuitear|enviar|mandar|enviarle|mandarle)\b', m.group(0)) \
+                        and re.search(r'\b(?:para|de|del|antes de|despues de|como|sobre|plan|al|sin)\s+(?:\S+\s+)?$', previo):
+                    continue
+                encontradas.add(categoria)
+                break
+    return encontradas
+
+
+def fecha(valor):
+    if not isinstance(valor, str):
+        raise ValueError('fecha inválida')
+    f = dt.datetime.fromisoformat(valor.replace('Z', '+00:00'))
+    if f.tzinfo is None:
+        raise ValueError('fecha sin zona horaria')
+    return f
+
+
+def aprobadas(accion, texto, ahora):
+    resultado = set()
+    try:
+        with APROBACIONES.open(encoding='utf-8') as archivo:
+            for linea in archivo:
+                try:
+                    a = json.loads(linea)
+                    if (not isinstance(a, dict) or not isinstance(a.get('id'), str) or not a['id'].strip()
+                            or a.get('aprobado_por') != 'Sergio'
+                            or a.get('alcance') != texto.strip()
+                            or not fecha(a['ts']) <= ahora < fecha(a['expira'])):
+                        continue
+                    if a.get('accion') in REGLAS:
+                        resultado.add(a['accion'])
+                    elif a.get('accion') == accion:
+                        resultado.update(REGLAS)
+                except (ValueError, TypeError, KeyError):
+                    continue
+    except (OSError, UnicodeError):
+        return set()
+    return resultado
+
+
+def bloquear(accion, texto, motivos):
+    evento = {'ts': dt.datetime.now(dt.timezone.utc).isoformat(),
+              'accion': accion if accion in {'onia-llm', 'onia-llm-comando', 'onia-central', 'onia-central-prompt', 'onia-loop', 'onia-loop-prompt', *REGLAS} else 'otra',
+              'categorias': sorted(motivos), 'texto_sha256': hashlib.sha256(texto.encode()).hexdigest(),
+              'resultado': 'bloqueado'}
+    try:
+        fd = os.open(BLOQUEOS, os.O_WRONLY | os.O_CREAT | os.O_APPEND | os.O_NOFOLLOW, 0o600)
+        with os.fdopen(fd, 'a', encoding='utf-8') as archivo:
+            fcntl.flock(archivo, fcntl.LOCK_EX)
+            archivo.write(json.dumps(evento, ensure_ascii=False) + '\n')
+            archivo.flush()
+    except OSError:
+        print('onia-guard: no se pudo registrar el bloqueo; se mantiene bloqueado.', file=sys.stderr)
+    print('onia-guard: bloqueado; requiere aprobación vigente de Sergio (' + ', '.join(sorted(motivos)) + ').', file=sys.stderr)
+    return 3
+
+
+def check(accion, texto):
+    detectadas = categorias(texto, prompt=accion in {'onia-llm', 'onia-central-prompt', 'onia-loop-prompt'})
+    if accion in REGLAS:
+        detectadas.add(accion)
+    faltantes = detectadas - aprobadas(accion, texto, dt.datetime.now(dt.timezone.utc))
+    return bloquear(accion, texto, faltantes) if faltantes else 0
+
+
+def main():
+    if len(sys.argv) != 4 or sys.argv[1] != 'check':
+        print('Uso: onia-guard check <accion> <texto-comando>', file=sys.stderr)
+        return 3
+    return check(sys.argv[2], sys.argv[3])
+
+if __name__ == '__main__':
+    sys.exit(main())

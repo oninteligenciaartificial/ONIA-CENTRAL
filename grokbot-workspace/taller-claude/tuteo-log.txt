@@ -1,0 +1,18 @@
+Listo: pasé `temario-nivel2.md` a tuteo neutro y lo guardé sobre el mismo archivo. El contenido no cambió. Hice 7 cambios:
+
+| Línea | Antes | Ahora |
+|---|---|---|
+| 9 | Armás | Armas |
+| 40 | Traé | Trae |
+| 60 | Traé | Trae |
+| 98 | recuperás | recuperas |
+| 150 | ¿Vos vas a hacer…? | ¿Tú vas a hacer…? |
+| 153 | pedís | pides |
+| 154 | pedís | pides |
+
+Después busqué en todo el archivo formas de voseo que hubieran quedado, y no encontré ninguna.
+
+Dos cosas que conviene que sepas:
+
+- **El archivo cambió mientras trabajaba.** La primera vez que lo abrí estaba vacío, y segundos después ya tenía el borrador. Parece que otra sesión o proceso lo escribió en ese momento. Si algo lo vuelve a sobrescribir, se pierden estos cambios.
+- **Hay dos frases desactualizadas que no toqué**, porque me pediste no cambiar el contenido. La línea 3 dice que `temario-nivel2.md` "está vacío, y no lo toqué", y el punto 10 (línea 154) dice que está vacío y propone copiar el borrador ahí. Las dos ya no son ciertas. Si quieres, las ajusto o las borro.

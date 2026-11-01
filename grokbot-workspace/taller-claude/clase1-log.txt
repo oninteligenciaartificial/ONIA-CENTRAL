@@ -1,0 +1,15 @@
+Creé `/workspace/taller-claude/clase1-material.md`, en español neutro con tuteo. Busqué formas de voseo con una lista de palabras y no apareció ninguna. No ejecuté nada fuera de la carpeta ni hice push.
+
+Se basa en `temario.md` e incluye todo lo que pediste:
+- **Guion para Sergio:** una tabla por bloque con minutos, lo que dice y lo que muestra en pantalla. El Bloque 1 va de 0 a 50 min, luego hay 10 min de pausa. El Bloque 2 también va de 0 a 55 min.
+- **Demo antes y después:** el pedido flojo ("Escríbeme un mensaje para un cliente") contra la fórmula completa, con un caso de tienda de ropa en Santa Cruz. Incluye una tabla de las cinco piezas.
+- **3 ejercicios con prompts para copiar:** un correo (agencia de turismo en La Paz), un resumen (local de comida en El Alto) y un mensaje a un cliente (pastelería en Cochabamba). Cada uno trae otros negocios para adaptar.
+- **Cómo iterar, errores comunes y momentos para preguntas:** una tabla de pedidos de ajuste ("más corto", "mejóralo: más cálido"), 10 errores y una tabla de pausas con cómo responder si preguntan por ingresos.
+- **Tarea de la semana y checklist técnico:** una hora de 48 h a 24 h antes, otra de 2 h, de 10 min antes, la pausa entre bloques y el cierre.
+
+Ten en cuenta estos puntos:
+- **Tiempo del Bloque 2:** el guion suma unos 55 min. Para que la sala quede bajo 60 min, hay que recortar o guardar margen. El archivo lo avisa y sugiere acortar el ejercicio 3.
+- **Sin cifras inventadas:** no puse precios ni límites de los planes de Claude. El guion pide mostrar la página oficial el mismo día.
+- **Sin testimonios ni ingresos:** el archivo no los incluye ni los promete.
+- **Respuestas de Claude:** no copié ninguna como "resultado esperado", porque varían cada vez. Recomiendo hacer los prompts antes y guardar capturas de respaldo.
+- **Pendientes para Sergio:** quedaron marcados en la sección 9. Son la hora de la clase 2 (el temario no la trae), el canal de soporte, dónde se aloja la grabación y la verificación de que Meet pueda grabar.

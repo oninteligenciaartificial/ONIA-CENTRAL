@@ -1,0 +1,38 @@
+{
+ "nota": "USD por token. Entrada cacheada se cobra a tarifa normal (conservador).",
+ "max_output_tokens": 1024,
+ "seleccion": {
+  "codex": "gpt-6.1-sol",
+  "claude": "claude-sonnet-5-5"
+ },
+ "modelos": {
+  "codex-desconocido": {
+   "estado": "desconocido",
+   "input_usd_por_token": null,
+   "output_usd_por_token": null,
+   "fuente": null,
+   "fecha": "2026-11-01"
+  },
+  "claude-desconocido": {
+   "estado": "desconocido",
+   "input_usd_por_token": null,
+   "output_usd_por_token": null,
+   "fuente": null,
+   "fecha": "2026-11-01"
+  },
+  "claude-sonnet-5-5": {
+   "estado": "verificado",
+   "input_usd_por_token": "0.000002",
+   "output_usd_por_token": "0.00001",
+   "fuente": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "fecha": "2026-11-01"
+  },
+  "gpt-6.1-sol": {
+   "estado": "verificado",
+   "input_usd_por_token": "0.000002",
+   "output_usd_por_token": "0.00001",
+   "fuente": "https://developers.openai.com/api/docs/models/gpt-6.1-sol (<=272K entrada)",
+   "fecha": "2026-11-01"
+  }
+ }
+}

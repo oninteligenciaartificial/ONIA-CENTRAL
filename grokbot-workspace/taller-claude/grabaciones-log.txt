@@ -1,0 +1,18 @@
+Listo. Actualicé los archivos del taller para dejar claro que todos los inscritos, incluso los que se sumen tarde, reciben las grabaciones de «Claude de 0 a 100» con acceso por 30 días. También quité las marcas de pendiente sobre las grabaciones y sobre el precio por serie. No hice push ni publiqué nada.
+
+**Qué cambió**
+- **Acceso de 30 días:** agregado en `comunidad.md`, `plan-comunidad.md`, `anuncio-y-combos.md`, `kit-alumno.md`, `aprendizajes-venta.md`, en el material y las diapositivas de las clases 1 a 3 (`.md` y `.html`), y en los cierres de clase.
+- **Precio por serie:** quité «[PENDIENTE DE CONFIRMAR por Sergio]» de todos los archivos de «Claude de 0 a 100». Queda «Bs 50 hasta el domingo 1/11 o hasta llenar los 60 cupos, y después Bs 70, por la serie completa».
+- **Pendientes de grabaciones cerrados:** quité las preguntas sobre dónde se publican y quién las ve, de los checklists y de `plan-comunidad.md` (sección 9, ahora con 13 puntos).
+- **Registro:** `cambios-unificacion.md` tiene una sección nueva «Segunda pasada» al final con el detalle por archivo. En el historial anterior reemplacé la marca original por «[marca pendiente, ya quitada]».
+
+**Decisiones que tomé (revísalas)**
+1. **Canal de entrega:** el grupo de WhatsApp, solo para inscritos. Lo tomé de `comunidad.md`, que ya decía que las grabaciones se comparten ahí.
+2. **Viñeta nueva** «Grabaciones» en la sección 0 de `plan-comunidad.md`, para que la regla quede visible en un solo lugar.
+3. **Frases habladas** como «La clase se graba» también llevan la frase de 30 días, porque hablan de las grabaciones que reciben los alumnos.
+
+**Lo que no toqué**
+- **`temario-nivel2.md`:** sigue con «Grabaciones: dónde se entregan y por cuánto tiempo» como pendiente. Es el nivel 2, otro producto, y no sé si la política de 30 días aplica también. Si aplica, dime y lo cierro igual.
+- **Nivel 2 y ofertas** (Bs 90/70, Bs 350, 380 y 1.500): sin cambios, siguen como estimaciones o propuestas.
+- **`aprendizajes-y-nuevos-talleres.md` y los `*-log.txt`:** fuera de la regla.
+- **Enlaces que faltan** (`[ENLACE A LAS GRABACIONES…]`, `[ENLACE]`): son placeholders de links reales, no pendientes de decisión, así que los dejé.

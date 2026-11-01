@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""Adaptador cerrado por defecto. Sin fallback, logs sin prompts ni respuestas.
+Claude bloqueado: el límite nativo no ofrece cota dura comprobada.
+Codex conserva su política previa de corte por medición, no una cota dura.
+Precios USD/token; input_tokens incluye caché (tarifa normal conservadora).
+"""
+import argparse
+from decimal import Decimal, InvalidOperation
+import fcntl
+import json
+import os
+from pathlib import Path
+import selectors
+import signal
+import subprocess
+import sys
+import time
+import uuid
+
+BASE = Path('/workspace/orquestacion')
+
+def dinero(x):
+    n = Decimal(str(x))
+    if not n.is_finite() or n < 0:
+        raise ValueError('cantidad inválida')
+    return n
+
+def tokens(x):
+    if type(x) is not int or x < 0:
+        raise ValueError('tokens inválidos')
+    return x
+
+def registro(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('a') as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        f.write(json.dumps(data) + '\n'); f.flush(); os.fsync(f.fileno())
+
+def main():
+    a = argparse.ArgumentParser()
+    a.add_argument('--motor', choices=['claude', 'codex'], required=True)
+    for key in ['nivel', 'agente', 'tarea']:
+        a.add_argument('--'+key, default='')
+    a.add_argument('--dir', required=True)
+    a.add_argument('--max-cost-usd', required=True)
+    a.add_argument('--escritura', action='store_true')
+    a.add_argument('prompt')
+    args = a.parse_args()
+    # Incidente comprobado: Claude CLI consumió US$3.4995 con límite US$0.50.
+    # El flag nativo y matar al recibir el resultado NO son una cota dura.
+    # No iniciar ni siquiera --help: ninguna inferencia con garantía desconocida.
+    if args.motor == 'claude':
+        print('onia-costo: revisión Claude bloqueada antes de inferencia; '
+              'CLI sin garantía de tope duro.', file=sys.stderr)
+        return 75
+    cap = dinero(args.max_cost_usd)
+    if cap <= 0: raise ValueError('tope inválido')
+    cfg = json.loads(Path(os.environ.get('ONIA_PRECIOS', BASE/'precios.json')).read_text())
+    model = cfg['seleccion'][args.motor]
+    rate = cfg['modelos'][model]
+    if rate['estado'] != 'verificado' or not rate.get('fuente') or not rate.get('fecha'):
+        raise ValueError('precio desconocido')
+    inp, out = dinero(rate['input_usd_por_token']), dinero(rate['output_usd_por_token'])
+    if inp <= 0 or out <= 0: raise ValueError('precio inválido')
+    limit = tokens(cfg['max_output_tokens'])
+    if not limit: raise ValueError('tope de salida ausente')
+    # Un byte por token como estimación conservadora del prompt, no del contexto
+    # oculto/herramientas: estos requieren además un límite nativo de gasto.
+    estimate = len(args.prompt.encode('utf-8')) * inp + limit * out
+    if estimate > cap: raise ValueError('estimación supera el tope')
+    binary = os.environ.get('ONIA_COSTO_'+args.motor.upper(), args.motor)
+    # Codex conserva el adaptador previo; no se presenta como tope duro.
+    subprocess.run([binary, 'exec', '--help'], capture_output=True, text=True,
+                   timeout=10, check=True)
+    command = [binary, 'exec', '--json', '--skip-git-repo-check', '--model', model,
+               '--sandbox', 'workspace-write' if args.escritura else 'read-only']
+    command += ['--', args.prompt]
+    log = Path(os.environ.get('ONIA_COSTO_LOG', '/workspace/estado/onia-costo.jsonl'))
+    call = uuid.uuid4().hex
+    def record(**kw): registro(log, dict(id=call, motor=args.motor, **kw))
+    # Reservar el máximo completo cubre contexto interno y múltiples turnos.
+    record(estado='reserva', estimado_usd=str(estimate), reserva_usd=str(cap),
+           prompt_tokens_estimados=len(args.prompt.encode()), max_output_tokens=limit)
+    env = dict(os.environ, CLAUDE_CODE_MAX_OUTPUT_TOKENS=str(limit))
+    process = subprocess.Popen(command, cwd=args.dir, env=env, stdout=subprocess.PIPE,
+                               stderr=subprocess.DEVNULL, start_new_session=True)
+    measured = None; answer = ''; success = False; buf = b''
+    deadline = time.monotonic() + min(1500, float(os.environ.get('ONIA_COSTO_TIMEOUT', '1500')))
+    sel = selectors.DefaultSelector(); sel.register(process.stdout, selectors.EVENT_READ)
+    def event(raw):
+        nonlocal measured, answer, success
+        obj = json.loads(raw)
+        if args.motor == 'codex':
+            payload = obj.get('payload', obj)
+            if payload.get('type') == 'token_count':
+                u = payload['info']['total_token_usage']
+                value = tokens(u['input_tokens']) * inp + tokens(u['output_tokens']) * out
+                if measured is not None and value < measured: raise ValueError('contador retrocede')
+                measured = value
+            if obj.get('type') == 'item.completed' and obj.get('item', {}).get('type') == 'agent_message':
+                answer = obj['item']['text']
+            if obj.get('type') == 'turn.completed':
+                success = True
+                u = obj.get('usage')
+                if u is not None:  # formato real de codex-cli 0.166: uso por turno
+                    turno = (tokens(u['input_tokens']) * inp +
+                             (tokens(u['output_tokens']) + tokens(u.get('reasoning_output_tokens', 0))) * out)
+                    measured = (measured or 0) + turno
+        if measured is not None and measured > cap: raise ValueError('costo corriente excede tope')
+    try:
+        while sel.get_map():
+            if time.monotonic() >= deadline: raise ValueError('timeout de medición')
+            for key, _ in sel.select(0.1):
+                data = os.read(key.fd, 65536)
+                if not data:
+                    sel.unregister(key.fileobj)
+                    if buf.strip(): event(buf)
+                    break
+                buf += data
+                if len(buf) > 8_000_000: raise ValueError('salida demasiado grande')
+                while b'\n' in buf:
+                    line, buf = buf.split(b'\n', 1)
+                    if line.strip(): event(line)
+        rc = process.wait(timeout=max(0.01, deadline-time.monotonic()))
+        if measured is None or not success or rc: raise ValueError('medición o resultado incompleto')
+        record(estado='fin', costo_real_usd=str(measured), codigo=rc)
+        print(answer)
+        return 0
+    except BaseException:
+        try: os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError: pass
+        process.wait()
+        record(estado='bloqueado', costo_observado_usd=None if measured is None else str(measured), reserva_conservada=True)
+        raise
+    finally:
+        sel.close()
+
+if __name__ == '__main__':
+    try: sys.exit(main())
+    except (ValueError, KeyError, TypeError, OSError, InvalidOperation, subprocess.SubprocessError):
+        print('onia-costo: bloqueado; precio, límite nativo o medición no verificable.', file=sys.stderr)
+        sys.exit(75)

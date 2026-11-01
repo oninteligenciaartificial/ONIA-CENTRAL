@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Lista cerrada del loop: ejecución sin shell y comprobación previa obligatoria."""
+import os
+from pathlib import Path
+import runpy
+import shlex
+import subprocess
+import sys
+
+guard = runpy.run_path('/workspace/orquestacion/guard/onia-guard')
+
+def comprobar(texto):
+    rc = guard['check']('onia-loop', texto)
+    if rc:
+        return rc, []
+    try:
+        args = shlex.split(texto)
+    except ValueError:
+        args = []
+    valido = bool(args) and not any(c in texto for c in '\n\r;|&><`$\\')
+    if valido and args[0] in ('ls', 'mkdir'):
+        # Solo rutas locales; no opciones que lean contexto externo.
+        permitido = {'-l', '-a', '-la', '-al', '-h', '-lh', '--'} if args[0] == 'ls' else {'-p', '--'}
+        for arg in args[1:]:
+            if arg.startswith('-'):
+                valido = valido and arg in permitido
+            else:
+                valido = valido and Path(arg).resolve().is_relative_to('/workspace')
+        valido = valido and Path.cwd().resolve().is_relative_to('/workspace')
+    elif valido and len(args) >= 2 and args[:2] in (['git', 'status'], ['git', 'diff'], ['git', 'log']):
+        # Opciones expresamente seguras; sin paginadores, helpers ni salida a archivos.
+        valido = Path.cwd().resolve().is_relative_to('/workspace') and all(
+            a in {'--short', '--stat', '--oneline', '--name-only', '--cached', '--staged', '--porcelain'}
+            or (a.startswith('-') and a[1:].isdigit()) for a in args[2:])
+        if valido:
+            args = ['/usr/bin/git', '--no-pager', '-c', 'core.fsmonitor=false', *args[1:]]
+            if 'diff' in args or 'log' in args:
+                args += ['--no-ext-diff', '--no-textconv']
+    else:
+        valido = False
+    if not valido:
+        return guard['bloquear']('onia-loop', texto, {'fuera-lista-permitida'}), []
+    if args[0] in ('ls', 'mkdir'):
+        args[0] = '/usr/bin/' + args[0]
+    return 0, args
+
+if __name__ == '__main__':
+    args = sys.argv[1:]
+    seco = bool(args and args[0] == '--seco')
+    if seco:
+        args.pop(0)
+    if len(args) != 1:
+        sys.exit(3)
+    rc, comando = comprobar(args[0])
+    if rc or seco:
+        sys.exit(rc)
+    sys.exit(subprocess.run(comando, env={k: v for k, v in os.environ.items() if not k.startswith('GIT_')}).returncode)

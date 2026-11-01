@@ -1,0 +1,9 @@
+Reading additional input from stdin...
+Creé [clase1-diapositivas.html](/workspace/taller-claude/clase1-diapositivas.html) con:
+
+- 23 diapositivas y paleta OnIA encontrada localmente.
+- Navegación con flechas, contador y pantalla completa.
+- 7 prompts con botón para copiar.
+- Sin dependencias externas.
+
+Validé la estructura y la sintaxis JavaScript. La prueba en navegador quedó limitada por restricciones del entorno.
