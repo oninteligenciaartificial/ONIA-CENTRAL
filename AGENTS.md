@@ -34,7 +34,8 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 - Una sesión, un objetivo, con su "hecho cuando" definido al empezar. Lo que aparece fuera de ese objetivo va a un issue.
 - **Un agente por tarea.** Una sesión no toca archivos que tiene abiertos otra. Si dos necesitan el mismo, quien coordina el trabajo ordena quién va primero.
 - Skills y herramientas: primero las oficiales (Anthropic o el proveedor de la herramienta). Instalar algo pide el OK de Sergio Urcullo.
-- **La automatización y los scripts los arma Hermes,** con su flujo oficial y leyendo su documentación. Nada de scripts propios. El código de cada producto, scripts incluidos, va en su repo y por PR.
+- **La automatización y los scripts los arma Operaciones** (el agente del equipo Grok Bot), con `onia-llm` y `onia-central`. Nada de scripts sueltos. El código de cada producto, scripts incluidos, va en su repo y por PR.
+  - Excepción aprobada por Sergio Urcullo el 1-nov-2026 (decisión D-20261101-003, opción A): `onia-loop` (modo loop por agente, `/workspace/harness/bin/onia-loop`) se usa como está, junto con `onia-central`, con un candado por agente para que nunca corran a la vez sobre el mismo agente (D-20261101-002).
 - Cada respuesta a Sergio Urcullo cierra con un bloque corto, "Para aprender". Al empezar cada sesión con Sergio Urcullo, el agente lee `otros/aprender-ia-y-agentes.md`, que dice qué tema le toca y cómo armar ese bloque.
 
 ## Errores y lecciones
