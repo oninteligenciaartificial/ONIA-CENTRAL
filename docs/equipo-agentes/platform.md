@@ -21,7 +21,7 @@ Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov. Lo que está s
 | [#140](https://github.com/oninteligenciaartificial/onia-platform/pull/140) | Widget de chat propio (W1 a W1e) | Pasa | No |
 | [#124](https://github.com/oninteligenciaartificial/onia-platform/pull/124) | Aceptación de términos en el alta | Cancelada (después del merge de `master` del 31-oct) | Sí |
 | [#113](https://github.com/oninteligenciaartificial/onia-platform/pull/113) | Gracia de 7 días y dejar de renovar | Pasa | No |
-| [#70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) | Runbook de correos: dice que ya está aplicado | Pasa | No |
+| [#70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) | Runbook de correos: dice que ya está aplicado | No corrió (solo el control de secretos) | No |
 
 La columna de migración cuenta archivos de `supabase/` o con "migration" en la ruta.
 
