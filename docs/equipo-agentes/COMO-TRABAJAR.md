@@ -1,5 +1,6 @@
 # Cómo trabajan los bots de OnIA (Pelau, ONIA Platform, Boss Code, Boss No-Code, Marketing; Analista audita)
-Base: `/workspace/investigacion/orquestacion-agentes.md`. La cuota de Grok es escasa.
+**Fuente única de reglas del equipo de agentes** desde el 1-nov-2026 (reemplaza a `docs/reglas/equipo-grok-bot.md`). Se suma a `AGENTS.md`; si chocan, manda `AGENTS.md` hasta que Sergio decida. Los aprendizajes están en [`APRENDIZAJES.md`](APRENDIZAJES.md): léelo al iniciar.
+Base: `/workspace/investigacion/orquestacion-agentes.md` (copia en `analista/orquestacion-agentes.md`). La cuota de Grok es escasa.
 
 ## Reglas
 1. **Grok solo enruta, prioriza y resume.** No escribe código, guiones ni análisis largos.
@@ -13,6 +14,16 @@ Base: `/workspace/investigacion/orquestacion-agentes.md`. La cuota de Grok es es
 9. Sin secretos ni datos personales en prompts, archivos de estado ni resúmenes. No leer `.env`.
 10. Chat largo → abrir uno nuevo con ESTADO-ACTUAL.md como resumen.
 11. Revisa el resultado (`*.resumen.md`) antes de pasarlo: datos, secretos, reglas.
+
+## Reglas aprobadas por Sergio el 31-oct (antes en `docs/reglas/equipo-grok-bot.md`, siguen vigentes)
+12. Nada se publica, envía, gasta, borra ni toca producción sin su sí. **Siempre borrador primero.**
+13. Lo que le toca decidir a Sergio (lo reservado en `AGENTS.md`) se le presenta con 2-3 opciones más "otro", con la recomendada marcada. Los planes técnicos no se le preguntan: el agente decide y ejecuta con revisión independiente.
+14. Los cambios al repo van por PR con revisión. Nunca merge a `master` de `onia-platform` sin su sí.
+15. Nada de contraseñas, claves ni datos de clientes en Git o en el chat: se usa la bóveda.
+16. En español, corto y tuteando. Cada bot cierra con qué hizo y qué tiene que decidir Sergio.
+17. Uso cuidadoso de Claude Code y Codex CLI (computadora compartida, con sus suscripciones).
+18. Las reglas, las decisiones importantes y el resumen semanal de cada bot se guardan en ONIA-CENTRAL. El resumen semanal usa `docs/plantillas/resumen-semanal-agente.md`.
+19. Leads de WhatsApp (+591 75414930, asignado a los workshops) e Instagram: seguimiento e inscripciones quedan en borrador y se envían con el sí de Sergio. Hoy los lleva Boss No-Code (`negocio.md`, ex Ventas y Atención según `ESTADO-ACTUAL.md` §2).
 
 ## Comandos onia-llm (verificados con `onia-llm --help` el 1 nov)
 ```bash
@@ -54,8 +65,8 @@ En TODAS las sesiones y agentes, todo el trabajo lo hacen Claude Code y Codex co
 - Analista audita a pedido de Sergio: uso de Claude/Codex, cuota, área y estado.
 
 ## Aprendizajes y automejora (obligatorio)
-- Fuente única: `/workspace/estado/APRENDIZAJES.md`. Léelo al iniciar cada sesión.
-- Al cerrar una tarea, si algo falló, se corrigió o Sergio te corrigió, agrega 1 línea: `fecha · bot · qué pasó · regla nueva`.
+- Fuente única: `/workspace/estado/APRENDIZAJES.md` (= `docs/equipo-agentes/APRENDIZAJES.md`). Léelo al iniciar cada sesión.
+- Al cerrar una tarea, si algo falló, se corrigió o Sergio te corrigió, agrega 1 línea en su sección "Bitácora": `fecha · bot · qué pasó · regla nueva`.
 - Si una lección se repite 2 veces, conviértela en regla del manual en `/workspace/manuales/` o en un test/guard; luego márcala como `→ aplicada en <ruta>`.
 - Los encargos a Claude/Codex incluyen las lecciones relevantes del área.
 - Nunca guardes secretos ni datos de clientes ahí.

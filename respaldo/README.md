@@ -1,5 +1,7 @@
 # Respaldo de los agentes de OnIA
 
+> Historia. Desde el 1-nov-2026 las reglas vigentes están en `docs/equipo-agentes/COMO-TRABAJAR.md` y los aprendizajes en `docs/equipo-agentes/APRENDIZAJES.md`.
+
 Hola, Sergio. Esta carpeta es el **plan B** por si Grok Bot deja de andar o lo quieres cambiar. Aquí está escrito qué hace cada agente, para que Claude Code o Codex puedan seguir el trabajo con esas mismas reglas.
 
 ## Qué hay aquí
