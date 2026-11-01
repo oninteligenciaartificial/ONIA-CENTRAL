@@ -1,5 +1,7 @@
 # onia-llm: trabajo pesado con Claude Code y Codex
 
+> **Propio de Grok Bot, historia desde el 1-nov-2026.** Describe un script de la computadora de Grok Bot en la nube (`/home/box/...`), que no vive en ningún repo. No se usa desde la PC de Sergio Urcullo: el equipo son sesiones de Claude Code, como dice la sección "Equipo de agentes" del `AGENTS.md` ([2026-11-01-equipo-claude-code](../decisiones/2026-11-01-equipo-claude-code.md)). Si choca con el `AGENTS.md`, manda el `AGENTS.md`.
+
 ## Qué es
 `onia-llm` es un script en la computadora compartida (`/home/box/.local/bin/onia-llm`) que usan los agentes de OnIA para mandar trabajo pesado (código, análisis de repos, documentos largos) a Claude Code o Codex CLI, con las suscripciones de Sergio.
 
@@ -34,4 +36,4 @@ onia-llm --help
 
 ## Nivel de autonomía de los agentes
 
-Intermedio, elegido por Sergio el 31-oct-2026. Los agentes hacen solos lo interno y reversible (investigar, borradores, planillas, campañas en pausa, PR sin merge, arreglos menores del servidor con respaldo). Piden el sí para todo lo externo o difícil de revertir: publicar, enviar mensajes a personas (salvo las respuestas del chatbot a leads ya aprobadas), gastar, borrar, cambios en producción y temas legales. Se revisa cada semana para ver si se sube de nivel.
+Intermedio, elegido por Sergio el 31-oct-2026. Los agentes hacen solos lo interno y reversible (investigar, borradores, planillas, campañas en pausa, PR sin merge). Piden el sí para todo lo externo o difícil de revertir: publicar, enviar mensajes a personas (salvo las respuestas del chatbot a leads ya aprobadas), gastar, borrar, cambios en producción y temas legales. Se revisa cada semana para ver si se sube de nivel.
