@@ -360,3 +360,18 @@ El último mensaje de cada bot tiene que tener: **qué se hizo**, **dónde qued�
 3. El resultado completo, en `analista.md`. El Analista **solo escribe `analista.md` y la Bitácora de `APRENDIZAJES.md`**; nunca el archivo de estado de otro bot.
 4. La parte de cada bot queda en `analista.md`, en una sección "para <bot>" (por ejemplo "para Marketing"): qué falló y qué tiene que corregir. Cada bot la lee al empezar su sesión y la pasa a su propio archivo de estado (`platform.md`, `producto.md`, `negocio.md`, `marketing.md`, `secretario.md`).
 5. Commit local con la identidad del Analista (lección 1.6 de `APRENDIZAJES.md`). Nada se sube al remoto sin el sí de Sergio.
+
+## Memoria compartida entre sesiones y límite de contexto
+
+**En Grok Bot** cada bot tiene memoria propia (perfil y diario) más una memoria compartida entre todos los bots (nombre de Sergio, reglas, metas, equipo). Además el chat se resume solo cuando se llena, para no perder el hilo.
+
+**En Claude no hay memoria compartida automática entre sesiones.** Cada sesión nueva empieza vacía. El reemplazo es el repo:
+- Memoria compartida de todos = `COMO-TRABAJAR.md` (reglas) + `APRENDIZAJES.md` (lecciones) + `ESTADO-ACTUAL.md` (situación del equipo), que `CLAUDE.md` carga con `@`.
+- Memoria de cada bot = su archivo `docs/equipo-agentes/<área>.md` (hecho, pendiente, decisiones). `/empezar` lo lee y `/cerrar` lo actualiza.
+- Datos fijos de Sergio y de OnIA (quién es, metas, reglas duras): ponlos en `ESTADO-ACTUAL.md` o en `CLAUDE.md`, no en la memoria automática de Claude (`~/.claude`), que es solo de tu laptop y no se comparte ni queda en el repo.
+- Regla: si no está escrito en el repo, no existe para la próxima sesión.
+
+**Límite de contexto.** Todo modelo tiene un límite. Cuando una sesión de Claude Code se llena, se compacta (`/compact`) y pierde detalle. Por eso:
+- Una sesión por tarea, corta; cierra con `/cerrar` y abre otra con `/empezar`.
+- Nunca un chat gigante (eso hundió a SUM: 2.700+ mensajes).
+- Mantén `APRENDIZAJES.md` y los archivos de estado cortos: resume o archiva lo viejo cuando crezcan, porque se cargan en cada sesión.
