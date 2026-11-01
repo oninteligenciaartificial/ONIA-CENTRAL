@@ -17,11 +17,11 @@ Las referencias al repo corresponden a `origin/main`, commit `c19cdec`. Los dato
 | Claude: 45% de cuota semanal usada; renovación el 5-nov; uso extra apagado | No prueba agotamiento inmediato. La cuenta termina antes de la renovación, según Sergio. |
 | Todas las sesiones en Opus 5.5; áreas en `high`, coordinadora en `max` | Se usa el mismo modelo caro para tareas de distinta dificultad. |
 | Coordinadora: 441.636 tokens; áreas: 189.314–219.834 | Se acumula contexto incluso después de terminar objetivos. |
-| Codex: 13 revisiones en seis PRs; seis pidieron cambios | La revisión encuentra problemas. No quedaron modelo ni consumo anotados en esos PRs. |
+| Codex: 14 revisiones escritas en los PRs #97, #98, #99, #102, #103 y #104, entre las 19:07 y las 19:21 de Bolivia; 6 dicen "Veredicto: cambios" y 8 "Veredicto: aprobar" | La revisión encuentra problemas. No quedaron modelo ni consumo anotados en esos PRs. |
 | Dos revisiones procesaron 585.173 y 825.108 tokens de entrada | Es entrada acumulada durante las corridas, **no ocupación de una ventana**. |
 | Cuota disponible de Codex | **Sin comprobar.** No se puede prometer cuánto trabajo aguanta. |
 
-Fuentes: los [datos del día](2026-11-01-plan-equipo-datos.md), secciones de cuota y Codex; las lecturas del 1-nov, informe de datos, hallazgos «Rondas de Codex por PR», «Consumo anotado» y «Contexto de una revisión».
+Fuentes: los [datos del día](2026-11-01-plan-equipo-datos.md), secciones de cuota y Codex; las líneas `Veredicto:` de los comentarios de esos seis PRs, contadas el 1-nov con `gh pr view --json comments`.
 
 **Qué cambia:** modelos por tarea, sesiones por objetivo, relevo por contexto y revisiones posteriores centradas en los arreglos y sus efectos. Se registra modelo, esfuerzo y consumo disponible. No se busca gastar una cuota por gastarla. [Claude: costos y contexto](https://code.claude.com/docs/en/costs), [Codex: medición de corridas](https://learn.chatgpt.com/docs/non-interactive-mode).
 
@@ -257,7 +257,7 @@ Base del rescate: rama `onia-loop-excepcion-d003`, `docs/equipo-agentes/REPLICAR
 
 No se rescatan la bitácora duplicada, identidades de commit inventadas, dependencias de `onia-llm`, el requisito de dos familias de modelos ni instalaciones de auditoría innecesarias.
 
-Grok Bot queda sin tareas y sin renovación. Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
+Grok Bot queda sin tareas. Si se renueva o no lo decide Sergio: el 1-nov lo planteó como posibilidad ("asi ya no pagariamos grokbot", en el [issue #96](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96)), no como decisión. Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
 
 La idea del navegador en WSL sigue aparte, en el [issue del navegador que reemplazaría a Grok Bot](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96). No bloquea este cambio de motor.
 
@@ -273,7 +273,8 @@ Las decisiones nuevas se presentan con el cambio concreto y su revisión. Esta l
 | Configuración compartida | **A. Una responsable que prepara los cambios, con la aprobación de Sergio para permisos y reglas — recomendada.** B. Que Sergio prepare y aplique toda la configuración. | Pendiente. Incluye memoria automática y bloqueos concretos, una vez preparados. |
 | Rondas de revisión | **A. Mantener las necesarias hasta aprobar — recomendada.** B. Tras dos rondas fallidas, pausar para decidir alcance o prioridad; después revisar cualquier arreglo. | A conserva la regla vigente. B no habilita merge con errores. |
 | Merge desde el 3-nov | **A. Lo hace Sergio; Codex prepara y revisa — recomendada.** B. Proponer después una delegación acotada mediante otro cambio de reglas. | A conserva la prohibición vigente para Codex. |
-| Retiro técnico de Grok | **A. Rescate local revisado y retiro de accesos específicos después de comprobar dependencias — recomendada.** B. Rescatar además un faltante concreto antes del retiro, sin renovar. | No renovar ya está decidido. Apagar servicios o tocar producción requiere autorización específica. |
+| Retiro técnico de Grok | **A. Rescate local revisado y retiro de accesos específicos después de comprobar dependencias — recomendada.** B. Rescatar además un faltante concreto antes del retiro. | Pendiente. Apagar servicios o tocar producción requiere autorización específica. |
+| Renovar Grok Bot | **A. No renovarlo cuando venza: el equipo ya trabaja en la PC — recomendada.** B. Mantenerlo hasta que esté el navegador en WSL del issue #96. | Pendiente. Es gasto. |
 | Cambio mínimo de `AGENTS.md` | **A. Aprobar el cambio de este PR — recomendada.** B. Pedir una corrección concreta antes de aplicarlo. | Pendiente. No se aplicó. |
 
 Fuentes: `AGENTS.md:20–33,62–63`; `docs/lecciones.md:114`; el pedido de Sergio y los [datos del día](2026-11-01-plan-equipo-datos.md).
