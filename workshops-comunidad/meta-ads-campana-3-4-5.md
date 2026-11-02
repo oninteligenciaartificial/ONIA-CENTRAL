@@ -9,7 +9,7 @@
 Con botones, en la sesión Marketing (sin enlace):
 
 - **Presupuesto:** "US$10/día hasta el 5-nov (Recomendada)", elegido cuando las clases eran 3-4-5. Son unos US$30 en 3 días (3, 4 y 5-nov), si arranca el 3-nov. Con las clases del 4 al 6, el 2-nov lo confirmó: "Empecemos hasta el 5 de noviembre".
-- **Fechas (2-nov, después):** clases miércoles 4, jueves 5 y viernes 6, a las 19:00. La campaña arranca el 3-nov, un día antes de la primera clase.
+- **Fechas (2-nov, después):** clases miércoles 4, jueves 5 y viernes 6, a las 19:00. La campaña arranca el martes 3-nov a la mañana, un día antes de la primera clase: "La campaña la lanzamos mañana en la mañana" (Sergio Urcullo, 2-nov, sesión Marketing).
 - **Creativos:** "Grabás 2 videos con los guiones del plan (Recomendada)". Los graba él; los guiones son los de abajo.
 - **Nombre:** "claude de 0 a 100 y no es ilegal, no creo que este registrado, solo fue usado una vez, no habra problemas". Queda ese nombre, **sin confirmar con un abogado** (`docs/lecciones.md`). El anuncio dice "Taller independiente, no oficial de Anthropic" y no usa el logo de Claude.
 - **PR de estado de Marketing (#102):** "Actualizarlo".
@@ -39,7 +39,7 @@ Para anunciar con una página hay que asociarla a la cuenta, y no se comprobó s
 
 ### Texto principal
 
-> ¿Usás la IA solo para hacerle preguntas? "Claude de 0 a 100" son 3 clases en vivo esta semana, por Meet, para usar Claude con tus archivos y tus proyectos, y dejarle trabajo armado. Sin programar {y con la cuenta gratis}.
+> ¿Usás la IA solo para hacerle preguntas? "Claude de 0 a 100" son 3 clases en vivo esta semana, por Meet, para aprender a usar Claude con tus archivos y tus proyectos. Sin programar.
 > 🎥 Grabaciones incluidas
 > 💵 Un solo pago de Bs 50 por las 3 clases
 > Taller independiente, no oficial de Anthropic.
@@ -51,11 +51,12 @@ Título: "Claude de 0 a 100 · 3 clases en vivo".
 
 Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72) (`anuncio.md`), con estos cambios en el cierre.
 
+- **Video 1, el contraste, 12 a 25 s:** "En 3 clases en vivo te enseño a usar Claude con tus archivos y tus proyectos. Sin programar." Sin "{y con la cuenta gratis}" ni la lista de trabajos armados.
 - **Video 1, el contraste, 25 a 35 s:** "En vivo, con grabaciones. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
-- **Video 2, la demo, 20 a 35 s:** "Esto lo armás vos en Claude de 0 a 100: 3 clases en vivo, con grabaciones, por Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
+- **Video 2, la demo, 20 a 35 s:** "Esto lo practicamos en vivo en Claude de 0 a 100: 3 clases, con grabaciones, por Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
 - **Datos de la demo:** `ventas-octubre-ejemplo.csv` del PR #72 (panadería inventada), sin datos de clientes.
-- **"Esto lo armás vos" y "dejarle trabajo armado"** vienen del plan y no tienen una demo probada citada: Sergio Urcullo prueba la demo antes de grabar.
-- **"Con la cuenta gratis"** va solo si el temario se probó con una cuenta gratis (`docs/lecciones.md`, "Datos y fuentes"). Hoy no hay constancia de esa prueba en `main`.
+- **La demo:** el anuncio no promete resultados; el Video 2 muestra la demo real, grabada por Sergio Urcullo. Si la toma no sale con las cifras correctas (PR #72), no se usa.
+- **"Con la cuenta gratis"** no va: no hay constancia en `main` de que el temario se haya probado con una cuenta gratis (`docs/lecciones.md`, "Datos y fuentes"). Si Sergio Urcullo lo prueba, se puede sumar después.
 
 ## Texto que llega al chat (coincide con el llamado a la acción)
 
