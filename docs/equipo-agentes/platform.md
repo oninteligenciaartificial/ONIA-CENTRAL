@@ -1,8 +1,18 @@
 # ONIA Platform: estado del área
 
-Al día el 1-nov-2026, a la noche (Bolivia). Lo lleva la sesión de Claude Code del área, que reemplaza al bot "ONIA Platform" de Grok Bot. El código vive en el repo `onia-platform`; las decisiones, en `plataforma/`.
+Al día el 2-nov-2026 (Bolivia). Lo lleva la sesión de Claude Code del área, que reemplaza al bot "ONIA Platform" de Grok Bot. Desde el 3-nov la retoma Codex. El código vive en el repo `onia-platform`; las decisiones, en `plataforma/`.
 
-Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov. Lo que está solo en `/workspace` de Grok Bot no se ve desde acá y no se da por disponible.
+Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov, y se volvió a comprobar el 2-nov: nada cambió. Lo que está solo en `/workspace` de Grok Bot no se ve desde acá y no se da por disponible.
+
+## Objetivo actual
+
+Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Oferta a inscriptos (Recomendada)".
+
+**Objetivo:** definir qué de ONIA Platform se les ofrece a los inscriptos del taller desde el miércoles 4, sin prometer lo que no está probado.
+
+**Hecho cuando:**
+- el texto de la oferta está en `plataforma/`, aprobado por Sergio Urcullo con sus palabras citadas en el PR y mergeado;
+- Boss No-Code lo recibió para la respuesta automática del 4-nov, con copia en el [tablero de mensajes entre áreas (#111)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
 ## Comprobado hoy
 
@@ -44,7 +54,7 @@ La columna de migración cuenta archivos de `supabase/` o con "migration" en la 
 
 ## Solo en `/workspace` de Grok Bot
 
-Esta PC no lo ve. Si hace falta, Sergio Urcullo se lo pide a Grok Bot. Según el estado que dejó el bot (`platform.md` y `ESTADO-ACTUAL.md` de la rama `onia-loop-excepcion-d003`), sin comprobar:
+Esta PC no lo ve. El 2-nov se buscó en las ramas `onia-loop-excepcion-d003` y `grokbot/workspace-20261101` de ONIA-CENTRAL: no están los parches, el informe de los 10 PRs, la auditoría ni los precios de la competencia. Si hace falta, Sergio Urcullo se lo pide a Grok Bot. Según el estado que dejó el bot (`platform.md` y `ESTADO-ACTUAL.md` de la rama `onia-loop-excepcion-d003`), sin comprobar:
 - `platform/estado-v1.md` y parches validados en local, sin push: inventario único, webhook de la API de WhatsApp Cloud, evals 38/38, robustez, plantillas por rubro, automatizaciones, límite y prueba de 7 días, panel interno y guard de tuteo.
 - `platform/decision-prs-20261101.md`: informe de Codex sobre los 10 PRs. Recomendaba mergear solo la plantilla mínima por rubro ([#185](https://github.com/oninteligenciaartificial/onia-platform/pull/185)) y aprobar o pedir ajustes desde Mi web ([#168](https://github.com/oninteligenciaartificial/onia-platform/pull/168)), y arreglar el resto.
 - `platform/auditoria-app-20261101.md`: la app comparada con la competencia (precios viejos en el código, sin créditos, alta cerrada, voz mezclada, "24/7").
@@ -60,5 +70,6 @@ Esta PC no lo ve. Si hace falta, Sergio Urcullo se lo pide a Grok Bot. Según el
 
 ## Para otras áreas
 
+- **Para Marketing:** `workshops-comunidad/plan-meta-ads-borrador.md` sigue con el calendario de clases del 3, 5 y 7-nov, y su sección "Qué se vende desde el miércoles 4", con combos y clases sueltas. Las dos cosas las reemplazó la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md). Avisado el 2-nov por el tablero #111.
 - **Para la coordinación:** el `COMO-TRABAJAR.md` de la rama de Grok Bot pide tuteo, y la regla vigente es el voseo.
 - **Para la coordinación:** según el `ESTADO-ACTUAL.md` de Grok Bot, el respaldo semanal del VPS era una rutina del agente Operaciones. Hay que confirmar que sigue corriendo antes de borrar ese agente.
