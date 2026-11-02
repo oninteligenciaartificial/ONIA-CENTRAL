@@ -27,7 +27,7 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 ## 3. QR
 
-"¡Genial! Te paso el QR de pago de *Bs 50* (Yolo Pago, Banco Ganadero). Cuando pagues, mándame por aquí la foto del comprobante con tu nombre completo. Al pagar te va a salir el nombre de [TITULAR], es nuestra cuenta de cobro."
+"¡Genial! Te paso el QR de pago de *Bs 50* por las 3 clases (Yolo Pago, Banco Ganadero). Antes de pagar, ten en cuenta que no hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. Cuando pagues, mándame por aquí la foto del comprobante con tu nombre completo. Al pagar te va a salir el nombre de [TITULAR], es nuestra cuenta de cobro."
 
 - Se adjunta la imagen del QR de Yolo Pago. La imagen no va en Git.
 - Antes de usarlo: el pago de prueba con ese QR, que hace Sergio Urcullo.
