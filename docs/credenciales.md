@@ -33,7 +33,7 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 |---|---|---|---|
 | Hermes | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, y `browser-profile\` si se usa el perfil real |
 | Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador, y el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md) |
-| Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md), compartido con Claude Code |
+| Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | un perfil por área del navegador de WSL ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)) |
 
 Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_external_logins: false`. Está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
 
@@ -145,16 +145,16 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 - Los agentes usan sesiones que ya están abiertas. El login, la verificación en dos pasos, el consentimiento de Google y las sesiones vencidas los resuelve Sergio Urcullo en su pantalla.
 - Ningún agente escribe una contraseña en un formulario. La excepción es Hermes con su cofre, que no se la muestra al modelo.
 - Los perfiles de navegador que se armen a mano para un agente van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, y nunca dentro de un repo. La copia que hace Hermes de un perfil real queda en su carpeta, que maneja él.
-  - La excepción es el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md). Vive dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/equipo`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También queda fuera de todo repo.
+  - La excepción son los perfiles del navegador de WSL: `equipo` ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)) y uno por área ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Viven dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También queda fuera de todo repo.
 - Cada perfil lo usa un agente a la vez. No se copian cookies entre worktrees.
 - El puerto de control del navegador (CDP) nunca se abre a Internet.
 
 **Claude Code:**
 - El navegador de la app guarda sus propias sesiones, separadas de Chrome.
 - Claude en Chrome usa el Chrome de Sergio Urcullo, con sus sesiones.
-- El navegador de WSL, con el perfil `equipo`, es compartido con Codex.
+- El navegador de WSL usa el perfil `equipo`. Desde el 2-nov, Codex ya no lo usa ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)).
 
-**Codex** usa el navegador de WSL, con el perfil `equipo`. Se armó el 1-nov-2026, y Sergio Urcullo eligió dejarlo "Todo libre" ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)).
+**Codex** usa el navegador de WSL, con un perfil por área desde el 2-nov ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Se armó el 1-nov-2026, y Sergio Urcullo eligió dejarlo "Todo libre" ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)).
 - Las sesiones las abre él en la ventana visible, como dice ese documento.
 - Entrar a una cuenta sigue sin dar más permisos.
 
