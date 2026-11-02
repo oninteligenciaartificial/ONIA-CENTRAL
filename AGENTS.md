@@ -35,6 +35,8 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 - **Un agente por tarea.** Una sesión no toca archivos que tiene abiertos otra. Si dos necesitan el mismo, quien coordina el trabajo ordena quién va primero.
 - Skills y herramientas: primero las oficiales (Anthropic o el proveedor de la herramienta). Instalar algo pide el OK de Sergio Urcullo.
 - **La automatización y los scripts los arma la sesión del área,** con el flujo oficial de la herramienta y leyendo su documentación. El código de cada producto, scripts incluidos, va en su repo y por PR: nada vive solo en una computadora.
+- **Antes de usar un script, el agente le avisa a Sergio Urcullo y le explica qué hace.** Nada de scripts raros sin que él sepa.
+- **Navegador de Ubuntu:** se le pide a una sesión con algo como "usá el navegador de Ubuntu para abrir <url> y …". Usa las herramientas `playwright` en Claude Code y en Codex. Lo usa una sola sesión a la vez, porque el perfil `equipo` es uno. Sergio Urcullo carga las cuentas. Entrar a una cuenta no da permisos: nada se publica, se envía ni se compra sin su sí. El detalle está en [navegador-wsl](docs/decisiones/2026-11-01-navegador-wsl.md).
 - A Sergio Urcullo se le habla de vos.
 - Cada respuesta a Sergio Urcullo cierra con un bloque corto, "Para aprender". Al empezar cada sesión con Sergio Urcullo, el agente lee `otros/aprender-ia-y-agentes.md`, que dice qué tema le toca y cómo armar ese bloque.
 
