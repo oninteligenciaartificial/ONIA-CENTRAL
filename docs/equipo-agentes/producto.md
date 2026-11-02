@@ -1,4 +1,6 @@
-# Boss Code: estado
+# Desarrollo (antes Boss Code): estado
+
+> Desde el 3-nov-2026, esta área es **Desarrollo**, y suma la infraestructura del equipo que hacía el Administrador ([README](README.md)).
 
 Área: el servidor (VPS), Chatwoot, n8n, Cal.com y la web del taller. Desde el 1-nov-2026 es una sesión de Claude Code en esta PC; antes era un bot de Grok Bot. Lo decidió Sergio Urcullo ese día, en la sesión coordinadora (sin enlace). El VPS y lo publicado son producción, y valen los "Frenos" del `AGENTS.md`.
 
@@ -6,7 +8,9 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 ## Ahora
 
-Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C:\dev\worktrees\ONIA-CENTRAL\boss-code` con `codex -p boss-code`, que ya trae el modelo, el esfuerzo y un navegador propio, sin cuentas (lo armó el Administrador el 2-nov). La rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; cómo se abre, en Claude o en Codex, está en el [README](README.md). En la PC, la rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+
+**Objetivo y hecho cuando:** los dos datos del VPS que pide ONIA Platform quedan en el #111 (pasos 1 y 2 de "VPS", abajo), y el inventario, en un issue (paso 3). **Próximo paso:** que Sergio Urcullo cargue la clave; sin ella, el VPS no se puede mirar.
 
 - **Web del taller:** publicada. El 2-nov, Boss No-Code pasó "Bs 50, precio de esta edición" y el texto de después del inicio ("El taller ya empezó: escribinos y te pasamos las clases grabadas."). Están en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. No hay cierre de inscripción: se vende hasta el viernes 6, con las clases grabadas, como dice el borrador de WhatsApp (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`), y no hay límite de personas. Después del 6-nov, la página se baja o se cambia, también con su sí.
 - **VPS:** todo espera la clave, que se le pidió a Sergio Urcullo el 2-nov a la noche. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en el orden que pidió el Administrador el 2-nov, por un pedido de Sergio Urcullo ("Primero lo de onia, necesitamos tener todo listo hasta hoy", [constancia en el #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6587567915)):
@@ -26,6 +30,8 @@ Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C
   - pasar el servidor y el usuario, que no son secretos.
 
   No se sabe si la clave pública está autorizada en el VPS.
+- **Heredado del Administrador (3-nov):** preparar la configuración del equipo (perfiles y permisos de Codex, Notion y Drive del [#128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128), la matriz de autonomía y las memorias del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)), poner al día los datos del panel de dirección (`otros/panel-direccion/datos.json`) y pedirle a Sergio Urcullo lo suyo en la PC. El detalle está en `coordinacion.md`, "Pendiente", "Lo que le toca a Sergio" y "Para después". Los permisos y las reglas los aprueba él.
+- **Auditoría semanal:** cada sábado, con un agente nuevo en solo lectura; la primera, el 7-nov, cubre desde el 2-nov (`AGENTS.md`, "Equipo de agentes").
 - **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
 
 ## Correcciones de Sergio
@@ -82,7 +88,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 ## Pendiente
 
 - Bajar o cambiar `/taller` después del 6-nov. Cambiarla es publicar, así que va con el sí de Sergio Urcullo.
-- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Boss No-Code, como ordenó el Administrador el 2-nov, y recién después del taller, que termina el 6-nov, porque el 2-nov Sergio Urcullo eligió "Después del taller" ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6584713207)). Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
+- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Marketing y ventas (antes Boss No-Code), como ordenó el Administrador el 2-nov, y recién después del taller, que termina el 6-nov, porque el 2-nov Sergio Urcullo eligió "Después del taller" ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6584713207)). Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
 - El VPS: ver "Ahora", arriba.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).

@@ -1,5 +1,7 @@
 # Boss No-Code: estado
 
+> Desde el 3-nov-2026, esta área la lleva **Marketing y ventas**, que lee también el "Ahora" de [`marketing.md`](marketing.md) ([README](README.md)).
+
 Área: ventas, leads de WhatsApp (+591 75414930) y de Instagram, chatbot, diagnóstico gratis, precios, el taller "Claude de 0 a 100" y finanzas. Desde el 1-nov-2026 es una sesión de Claude Code; antes, un bot de Grok Bot (Ventas y Atención, después "Jefe de Negocio"). Lo decidió Sergio Urcullo el 1-nov, con botones, en la sesión coordinadora de Claude Code (sin enlace). Quedó en el `AGENTS.md`, sección "Equipo de agentes", y en `docs/decisiones/2026-11-01-equipo-claude-code.md`.
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
@@ -8,7 +10,9 @@ Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisi�
 
 ## Ahora
 
-Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRAL\boss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
+Escrito el 2-nov-2026 a la noche (Bolivia). Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en Claude o en Codex, está en el [README](README.md). La carpeta `boss-no-code` y el perfil `boss-no-code` ya no se usan. Los mensajes entre proyectos van al tablero del issue #111.
+
+**Objetivo:** Bs 3.000 cobrados al 6-nov. El "hecho cuando" de cada paso está en la tabla de "Objetivo", abajo.
 
 **En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel; el [PR de la página](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) del repo del sitio se mergeó el 2-nov a las 12:24 (Bolivia). Que ya se vea publicada en el sitio, sin confirmar desde esta área: lo ve Boss Code, que es quien publica.
 
@@ -115,7 +119,7 @@ Consultados el 1-nov con `session_connectors_status` de la app, sin leer secreto
 
 - Para Marketing: captions de reels y anuncios con la oferta del 1-nov (4, 5 y 6-nov desde el 2-nov, Bs 50 por las tres clases, con grabaciones). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
 - Para Marketing: dónde se publica la web de invitación del taller. Vercel u onia.com.bo son producción.
-- Para la sesión coordinadora: `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo 3, 5 y 7-nov y Bs 70 desde el 2-nov. Lo reemplaza `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`; esta área no toca el archivo viejo, porque no es suyo.
+- Para la sesión coordinadora, que desde el 3-nov no existe (lo toma Marketing y ventas, que lleva el taller): `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo 3, 5 y 7-nov y Bs 70 desde el 2-nov. Lo reemplaza `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`.
 - Para ONIA Platform: el cobro con el QR del BCP y los precios de los planes, que siguen como propuesta.
 
 ## Qué toco y qué no
@@ -130,7 +134,7 @@ Definido el 2-nov-2026 por pedido de Sergio Urcullo, vía la sesión Administrad
   - Marketing: el llamado a la acción de los anuncios tiene que coincidir con el texto que llega al chat. Marketing escribe los anuncios; yo, los textos de WhatsApp.
   - Boss Code: las ramas de Grok Bot con datos de un lead (issue #113) y todo lo que corre en el VPS, Chatwoot o n8n. Lo suyo lo hace Boss Code.
   - ONIA Platform: no va en los mensajes a inscriptos esta semana (lo decidió Sergio Urcullo).
-- **No hago:** publicar anuncios o contenido, tocar producción (VPS, base de datos, Vercel), gastar, cambiar lo legal, guardar datos de clientes en Git ni editar archivos de otra área. Si dos áreas chocan en un archivo, lo ordena el Administrador.
+- **No hago:** publicar anuncios o contenido, tocar producción (VPS, base de datos, Vercel), gastar, cambiar lo legal, guardar datos de clientes en Git ni editar archivos de otra área. Si dos proyectos necesitan el mismo archivo, va primero el que ya tiene el PR abierto (`AGENTS.md`, "Un agente por tarea").
 
 ## Notas
 

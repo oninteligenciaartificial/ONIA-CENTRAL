@@ -54,21 +54,24 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 
 ## Equipo de agentes
 
-Desde el 3-nov-2026, por decisión de Sergio Urcullo, el equipo son **tres proyectos**, cada uno en su propia sesión de Codex, y no hay coordinador. Las sesiones de Codex reemplazan a las de Claude Code, cuya cuenta no se renueva. Cómo se abre cada proyecto y qué lee al arrancar está en [`docs/equipo-agentes/README.md`](docs/equipo-agentes/README.md). Lo anterior, con ocho sesiones, queda como historia en [2026-11-01-plan-equipo-y-paso-a-codex](docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md).
+Desde el 3-nov-2026, el equipo son **tres proyectos, y cada uno es su propio jefe**: no hay un jefe general. Lo pidió Sergio Urcullo el 2-nov; qué se sumó a su pedido y quién se encarga de cada cosa está en [un jefe por área](docs/decisiones/2026-11-02-tres-proyectos.md). Mientras dure la cuenta de Claude, cada jefe es un proyecto de Claude; después, una sesión de Codex, porque el 1-nov se decidió no renovar Claude ([plan del 1-nov](docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), "Ya decidido"). Cómo se abre cada uno, en los dos, está en [`docs/equipo-agentes/README.md`](docs/equipo-agentes/README.md). Lo anterior, con ocho sesiones, queda como historia en el plan del 1-nov.
 
-- **Marketing y ventas:** contenido, marca, anuncios y la venta de talleres y comunidad.
-- **Desarrollo:** VPS, Chatwoot, n8n, Cal.com y las webs.
+- **Marketing y ventas:** contenido, marca, anuncios, la venta de talleres y comunidad, y los archivos y videos que manda Sergio Urcullo. Antes eran Marketing, Boss No-Code y Recepción.
+- **Desarrollo:** VPS, Chatwoot, n8n, Cal.com, las webs y la infraestructura del equipo: configuración de Codex, conectores, la PC y la auditoría semanal. Antes eran Boss Code y la parte de infraestructura del Administrador. Los permisos y las reglas los sigue aprobando Sergio Urcullo.
 - **ONIA Platform:** la startup y el producto. El código vive en el repo `onia-platform`.
 
 Reglas del equipo:
 
-- **Cada proyecto lee al arrancar solo esto:** este archivo, el "Núcleo" de `docs/lecciones.md` y su estado en `docs/equipo-agentes/`. El resto se lee cuando la tarea lo pide. Lo de un proyecto no se copia en lo común.
-- **Cada estado empieza con "Ahora":** objetivo, "hecho cuando", próximo paso, qué espera a Sergio Urcullo y sus decisiones vigentes, en 30 líneas como mucho. La historia va debajo o a `docs/equipo-agentes/historial/`. Lo que ya no vale se borra, no se tacha.
-- **Las tareas largas se pueden encargar** a un Codex nuevo con la skill [`encargar`](.agents/skills/encargar/SKILL.md), para que la sesión no se llene.
+- **Cada jefe lee al arrancar solo esto:** este archivo, el "Núcleo" de `docs/lecciones.md`, la sección "Ahora" de su estado en `docs/equipo-agentes/` y, para el bloque "Para aprender", el tema actual del plan (ver "Cómo se trabaja"). El resto se lee cuando la tarea lo pide. Lo de un proyecto no se copia en lo común.
+- **El jefe pasa cada tarea larga, como investigar o escribir varios archivos, a un agente con el contexto limpio,** para que su sesión no se llene. En Claude, a un hilo del proyecto. En Codex, a un subagente ([guía de Codex](https://learn.chatgpt.com/docs/agent-configuration/subagents.md)) o a un Codex nuevo con la skill [`encargar`](.agents/skills/encargar/SKILL.md).
+- **Cada área tiene un solo jefe a la vez:** su proyecto de Claude o su sesión de Codex, no los dos.
+- **Cada estado empieza con "Ahora":** objetivo, "hecho cuando", próximo paso, qué espera a Sergio Urcullo y sus decisiones vigentes, en 30 líneas como mucho. Lo que ya está en otra sección del mismo estado se nombra, no se copia. La historia va debajo, y lo que ya no vale se borra, no se tacha.
 - **Una sesión, un objetivo.** Al cumplirlo, la sesión deja su estado al día y se abre otra limpia, en vez de seguir días en la misma.
-- **Entre proyectos** se avisan por el tablero del [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111) y por los estados. No hay mensajes directos entre sesiones de Codex.
-- **El resumen para Sergio Urcullo** lo da cada proyecto al cerrar su trabajo, en su sesión.
-- Codex hace el trabajo y lo revisa, en solo lectura, otro Codex nuevo que no comparte el contexto del autor (`codex exec --sandbox read-only`). La revisión queda escrita en el PR, como dice "Cómo se trabaja".
+- **Cada tarea que escribe usa su propio worktree y su rama,** y entra por PR.
+- **Entre proyectos** se avisan por el tablero del [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111) y por los estados, para que quede escrito.
+- **El resumen para Sergio Urcullo** lo da cada jefe al cerrar su trabajo, en su sesión.
+- **Auditoría semanal:** cada sábado, Desarrollo encarga una auditoría en solo lectura de los PRs mergeados en la semana: revisión escrita, veredicto, y la aprobación de Sergio Urcullo citada cuando hacía falta. El informe queda en un issue. La primera, el 7-nov, cubre desde el 2-nov.
+- **Cada trabajo lo revisa, en solo lectura, un agente nuevo que no comparte el contexto del autor.** En Codex, con `codex exec --sandbox read-only`. La revisión queda escrita en el PR, como dice "Cómo se trabaja".
 - **Codex mergea solo lo que deja "Lo mergea Claude sin preguntar",** con la última revisión en "aprobar", y nunca hace push a `main` ni a `master`. Lo aceptó Sergio Urcullo el 2-nov, con botones (sesión del Administrador). El cambio de equipo no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
 
 ## Hermes y Grok Bot: historia

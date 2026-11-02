@@ -11,17 +11,17 @@ Se lee siempre, al arrancar. Cada línea remite a su lección completa, con el p
 1. A Sergio Urcullo: corto, 3 opciones con la recomendada primero y "Para aprender". Para que decida: "Sergio, tenés este cambio: … ¿Lo aceptás?", sin números de PR ("Trabajo con Sergio Urcullo").
 2. Lo que él todavía no decidió va como opción, nunca como decidido ("Trabajo con Sergio Urcullo").
 3. Cuando la revisión da "aprobar", lo que falta de él se le pregunta enseguida, y apenas contesta se mergea o se cierra en ese turno ("Trabajo con Sergio Urcullo").
-4. Antes de darle pasos, se comprueba que lo necesario esté armado, y cada paso sale de una documentación oficial citada ("Trabajo con Sergio Urcullo").
+4. Antes de darle pasos para lanzar o usar algo, se comprueba ese día que lo que necesita esté armado y se le muestra qué falta. Cada paso sale de una documentación oficial citada ("Trabajo con Sergio Urcullo").
 5. La memoria de un agente no reemplaza al repo: una corrección suya se anota en el repo en el mismo turno ("Trabajo con Sergio Urcullo").
 6. Un dato dice solo lo que muestra su fuente, y cada cifra dice qué se contó, en qué unidad, de dónde sale y de qué fecha ("Datos y fuentes").
 7. Lo que ONIA tiene o hace se escribe según su estado comprobado ("Datos y fuentes").
 8. Una herramienta que cobra por uso se marca como gasto ("Plata y gasto").
-9. Antes de mergear, se trae `main` y se busca con `git grep` lo que el cambio deja viejo, y que existan las secciones y archivos que se nombran ("Git y GitHub", "PRs y revisiones").
+9. Antes de mergear, se trae `main` y se busca con `git grep` lo que el cambio deja viejo; si está en un archivo de otra tarea, va a un issue. Si un texto nombra una sección, un archivo o una lista de otro lugar del repo, se busca con `git grep` que exista con ese nombre ("Git y GitHub", "PRs y revisiones").
 10. Si un PR no cierra un issue, ni la descripción ni los commits dicen `Closes #N`: se escribe `Parte de #N` ("Git y GitHub").
 11. Después de cada arreglo se ponen al día el título y la descripción del PR ("PRs y revisiones").
 12. Si dos revisiones se contradicen, gana la evidencia más directa ("PRs y revisiones").
 13. Una skill no copia reglas ni listas del `AGENTS.md`: remite a ellas ("Skills").
-14. Un comando de PowerShell que se le deja a Sergio Urcullo se prueba antes, o al menos se lee con `ParseInput` ("PowerShell 5.1").
+14. Un comando de PowerShell que se le deja a Sergio Urcullo se corre antes en la PC si se puede deshacer y no toca `AppData` (salvo `%TEMP%`), el registro del usuario, logins, secretos, producción, gasto ni envíos. Si no, solo se lee con `ParseInput`, sin correrlo ("PowerShell 5.1").
 15. Borrar una clave no la revoca ("Credenciales").
 16. Cuando una prueba pasa, sigue un trabajo real, no otra prueba ("Pruebas").
 
@@ -157,7 +157,7 @@ Se lee siempre, al arrancar. Cada línea remite a su lección completa, con el p
   - Por qué: el 30-oct dijo, en la sesión coordinadora: "recorda que no te inventes pasos propios, todo oficial y agentico para llegar a la autonomia" (sin enlace). La lección de la sección "Hermes" sobre buscar en la documentación cubre solo los comandos y las claves de configuración de Hermes.
 - **La memoria de un agente no reemplaza a este archivo.** Una corrección de Sergio Urcullo que quedó en la memoria de Claude Code se pasa al repo en el mismo turno, como dice "Errores y lecciones", del `AGENTS.md`.
   - Por qué: Codex y Hermes no leen la memoria de Claude Code. La corrección de la lección anterior quedó el 30-oct solo en esa memoria. Ese mismo día, Sergio Urcullo dijo en la sesión coordinadora: "Vamos preguntando lo mismo y lo mismo y hasta ahora no lo aprendes todos esos errores van a tusa documentos y autolearning" (sin enlace).
-- **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo. Desde el 3-nov no hay Administrador, y vale para cada proyecto: lo de otro proyecto no se le pide a Sergio Urcullo desde el propio.
+- **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo.
   - Por qué: el 2-nov, en la sesión del Administrador, se le cerraron varias respuestas con lo que tenía que contestar en cada sesión y en qué orden. Contestó: "VOS NO ME DECIS QUE DEBE HACER CADA SESION, SOLO TE ENCARGAS QUE TODO FUNCIONE BIEN, NO ME DIGAS AQUI QUE HACER EN CADA MOMENTO, VOS ENCARGATE DE LA INFRAESTRUCTURA Y QUE TODO FUNCIONE CORRECTAMENTE. TE AVISO SI ESTA ALGO MAL" (sin enlace).
 
 ## Plata y gasto
