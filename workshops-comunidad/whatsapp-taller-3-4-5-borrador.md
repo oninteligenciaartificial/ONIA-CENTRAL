@@ -23,7 +23,7 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 "¡Buenísimo! En las clases practicamos con tareas reales del día a día. Es un solo pago de *Bs 50* por las 3 clases, con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?"
 
-- Si pregunta el precio sin decir para qué la quiere: "Es un solo pago de *Bs 50* por las 3 clases en vivo (3, 4 y 5 de noviembre), con las grabaciones incluidas. ¿Te reservo el lugar?"
+- Si pregunta el precio sin decir para qué la quiere: "Es un solo pago de *Bs 50* por las 3 clases en vivo (3, 4 y 5 de noviembre), con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?"
 
 ## 3. QR
 
@@ -57,7 +57,7 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 Una sola vez, unas 20 horas después de su último mensaje, y solo si nadie más escribió en ese chat:
 
 - Antes de las 19:00 del 3-nov: "¡Hola! Te escribo para recordarte que todavía puedes sumarte a *Claude de 0 a 100*: arranca el martes 3 a las 19:00 y es un solo pago de Bs 50 por las 3 clases. ¿Te paso el QR?"
-- Del 3-nov a las 21:00 al 4-nov a las 19:00, y del 4-nov a las 21:00 al 5-nov a las 19:00: "¡Hola! Todavía puedes sumarte a *Claude de 0 a 100*: es un solo pago de Bs 50 por las 3 clases, y las que ya pasaron te las paso grabadas. ¿Te paso el QR?"
+- Del 3-nov a las 21:00 al 4-nov a las 19:00, y del 4-nov a las 21:00 al 5-nov a las 19:00: "¡Hola! Todavía puedes sumarte a *Claude de 0 a 100*: es un solo pago de Bs 50 por las 3 clases, y las que ya pasaron te las paso grabadas el jueves 5, al terminar la última clase. ¿Te paso el QR?"
 - Mientras hay una clase en curso (19:00 a 21:00 del 3, 4 o 5-nov) y desde las 19:00 del 5-nov: no se manda.
 
 ## 7. Preguntas frecuentes
