@@ -17,7 +17,7 @@ Sale del [análisis del 28-oct](2026-10-28-seguir-con-onia-platform.md) y del [e
 - **Un precio.** La escalera del código y la propuesta de Grok Bot están sin decidir (estado, "Le falta decidir").
 - **Una fecha** de apertura o de prueba.
 - **El chatbot de WhatsApp, la facturación SIAT ni atención "24/7".** El chatbot depende del repo viejo, SIAT no está cerrado (análisis, puntos 1 y 4), y el PR que saca "24/7" del texto del chatbot ([onia-platform #188](https://github.com/oninteligenciaartificial/onia-platform/pull/188)) sigue abierto.
-- **Que en el taller se arme algo con la plataforma.** El taller enseña Claude; no lleva a la plataforma ([plan de Meta Ads](../workshops-comunidad/plan-meta-ads-borrador.md), "Por qué este tema sirve para escalar").
+- **Que en el taller se use o se arme algo con la plataforma.** El taller enseña Claude. El plan deja que un negocio pase después a la implementación con ONIA Platform, pero dice que hoy no está lista para clientes ([plan de Meta Ads](../workshops-comunidad/plan-meta-ads-borrador.md), "Por qué este tema sirve para escalar").
 
 ## Opciones para Sergio Urcullo
 
