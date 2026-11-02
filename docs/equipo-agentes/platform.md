@@ -4,6 +4,26 @@ Al día el 2-nov-2026 (Bolivia). Lo lleva la sesión de Claude Code del área, q
 
 Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov, y se volvió a comprobar el 2-nov: nada cambió. Lo que está solo en `/workspace` de Grok Bot no se ve desde acá y no se da por disponible.
 
+## Para seguir en Codex
+
+Al cierre del 2-nov. Desde el 3-nov, el área sigue en Codex.
+
+**Cómo se arranca:** en `C:\dev\worktrees\ONIA-CENTRAL\onia-platform`, con `codex -p onia-platform`. Ese perfil ya tiene el modelo, el esfuerzo y el navegador del área, sin cuentas esta semana ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)). Los mensajes entre áreas van al [tablero #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+
+**En qué estoy:**
+- **Los 10 PRs de `onia-platform`** ([issue #25](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/25)): la recomendación y el orden están en [`plataforma/2026-11-02-decision-10-prs.md`](../../plataforma/2026-11-02-decision-10-prs.md). No hay nada mergeado.
+- **El panel interno que armó Grok Bot** (`/panel`, rama `feat/panel-interno`, commit `edef74d`): está solo en su `/workspace`, no en GitHub. El Administrador lo está replicando como página local en ONIA-CENTRAL, porque Sergio Urcullo lo pidió para el 2-nov. Subir la rama de Grok Bot a `onia-platform` queda para cuando él lo decida. Si la sube, se revisa antes de armar el PR: según el plan de Grok Bot, en el servidor mostraría los datos del día en que se arma, no en vivo, y trae una página sin login para usar desde la propia PC.
+
+**Qué sigue:**
+1. Leer en el #111 lo que encontró Boss Code en el VPS: qué IP le llega a la app y la propuesta de la QA aparte.
+2. Con eso, probar el #154 de `onia-platform` y llevarle a Sergio Urcullo el merge, con la evidencia.
+3. Seguir el orden de la recomendación: #168, #185, #184 y #70, y después los cinco para arreglar, cada uno en su rama.
+
+**Lo que espera a Sergio Urcullo:**
+- cargar la clave del VPS en esta PC, para que entre Boss Code;
+- aprobar cada merge en `onia-platform`;
+- decidir si Grok Bot sube la rama del panel a `onia-platform`.
+
 ## Objetivo actual
 
 Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Decidir los 10 PRs" ([issue #25](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/25)).
@@ -17,8 +37,6 @@ Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Decidir los 1
 - "QA aparte en el VPS": la base de prueba la arma Boss Code, separada de la de producción.
 
 **Dónde quedó, al cierre del 2-nov:** Boss Code va a revisar en el VPS, sin cambiar nada, qué IP le llega a la app para el #154, y después propone la QA aparte. Espera que Sergio Urcullo cargue la clave del VPS en esta PC. El pedido y su respuesta están en el [tablero #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111). Nada de `onia-platform` está mergeado.
-
-**Para retomar (Codex, desde el 3-nov):** arranca con `codex -p onia-platform`, el perfil con el navegador del área, sin cuentas esta semana ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)). Primero lee la respuesta de Boss Code en el #111. Con eso, prueba el #154 y le lleva a Sergio Urcullo el merge, con la evidencia.
 
 ## Objetivo anterior, cerrado el 2-nov
 
