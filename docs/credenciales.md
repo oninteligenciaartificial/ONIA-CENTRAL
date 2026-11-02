@@ -32,8 +32,8 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 | Agente | Su login | Otras claves | Logins de sitios |
 |---|---|---|---|
 | Hermes | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, y `browser-profile\` si se usa el perfil real |
-| Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador |
-| Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | no tiene |
+| Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador, y el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md) |
+| Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md), compartido con Claude Code |
 
 Hermes no lee los logins de Claude Code ni de Codex, porque tiene `auth.adopt_external_logins: false`. Está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
 
