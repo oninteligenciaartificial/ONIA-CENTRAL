@@ -1,5 +1,46 @@
 # Estado de la coordinación (Administrador)
 
+## Para abrir las áreas en la app de Codex (3-nov)
+
+Lo pidió Sergio el 2-nov: abrir cada área en la app de escritorio de Codex con su carpeta, su modelo y su navegador (sesión del Administrador, sin enlace). Las líneas de PowerShell de la sección siguiente siguen valiendo para el CLI.
+
+**Por qué hace falta algo más que en el CLI:** los perfiles `-p` son solo del CLI ([configuración avanzada](https://learn.chatgpt.com/docs/config-file/config-advanced), "Profiles"). La app descubre el `config.toml` de la carpeta principal del proyecto ([proyectos](https://learn.chatgpt.com/docs/projects)), y Codex carga el `.codex/config.toml` de un proyecto de confianza, también con sus servidores MCP ([MCP](https://learn.chatgpt.com/docs/extend/mcp)). Por eso, desde el 2-nov, cada carpeta de área tiene `.codex\config.toml`, copia de su perfil: modelo, esfuerzo y, en las cinco áreas con navegador, su `playwright`. `.codex/` está en `.git\info\exclude`, para que no entre a Git. En workspace-write, el agente no lo puede cambiar: `.codex` queda de solo lectura ([aprobaciones y seguridad](https://developers.openai.com/codex/agent-approvals-security)).
+
+**Pasos:**
+1. Antes de abrir la app, en una PowerShell, se trae `main` a las ocho carpetas:
+   ```powershell
+   foreach ($a in 'boss-no-code','marketing','boss-code','onia-platform','recepcion','administrador','pelau','analista') { git -C "C:\dev\worktrees\ONIA-CENTRAL\$a" pull --ff-only origin main }
+   ```
+2. En la app, en Codex, Ctrl+O ("Open folder") y la carpeta del área, de la tabla de abajo ([atajos](https://learn.chatgpt.com/docs/reference/commands)). Si pregunta si se confía en la carpeta, sí.
+3. Chat nuevo en esa carpeta, sin elegir "Worktree": eso crea otra carpeta en `$CODEX_HOME/worktrees` ([worktrees](https://learn.chatgpt.com/docs/environments/git-worktrees)).
+4. Con Ctrl+Shift+M se abre el selector de modelo: tiene que mostrar el de la tabla. Si no, se elige ahí.
+5. Permisos: los de siempre, no "Full access" ([sandbox](https://learn.chatgpt.com/docs/sandboxing)).
+6. Primer mensaje: el encargo del área, el texto entre comillas de su línea en la sección siguiente.
+7. Para ver si cargó su navegador, `/mcp` en el composer muestra los servidores conectados ([MCP](https://learn.chatgpt.com/docs/extend/mcp)).
+
+Se abren de a una, como en el CLI: cada perfil del navegador lo usa una sola sesión a la vez.
+
+| Área | Carpeta en `C:\dev\worktrees\ONIA-CENTRAL\` | Modelo · esfuerzo | Navegador |
+|---|---|---|---|
+| Boss No-Code | `boss-no-code` | `gpt-6.1-sol` · `medium` | perfil `boss-no-code` |
+| Marketing | `marketing` | `gpt-6.1-sol` · `medium` | perfil `marketing` |
+| Boss Code | `boss-code` | `gpt-6.1-terra` · `high` | perfil `boss-code` |
+| ONIA Platform | `onia-platform` | `gpt-6.1-terra` · `high` | perfil `onia-platform` |
+| Recepción | `recepcion` | `gpt-6.1-sol` · `medium` | perfil `recepcion` |
+| Administrador | `administrador` | `gpt-6.1-sol` · `medium` | sin cuentas (`--isolated`) |
+| Pelau | `pelau` | `gpt-6-luna` · `medium` | sin cuentas (`--isolated`) |
+| Analista | `analista` | `gpt-6.1-sol` · `high` | sin cuentas (`--isolated`) |
+
+**El navegador propio de la app** tiene su propio perfil, aparte del navegador de Sergio ([navegador](https://learn.chatgpt.com/docs/browser)). Si ese perfil se separa por chat o por proyecto, la documentación no lo dice: sin confirmar. Hasta saberlo, Sergio no inicia sesión en cuentas ahí. Las cuentas de cada área van en su perfil de Ubuntu, como dice [navegador por área](../decisiones/2026-11-02-navegador-por-area.md).
+
+**Probado el 2-nov, con el CLI, que lee las mismas capas:**
+- `codex mcp get playwright`, desde cada carpeta y sin `-p`, da el perfil de su área, o `--isolated` en las tres sin navegador.
+- Una sesión real, `codex exec --sandbox read-only` en `boss-code` y sin `-p`, arrancó con `gpt-6.1-terra` · `high` (registro de la sesión) y abrió `https://example.com` con el perfil `boss-code`. En la primera prueba no vio `playwright`: buscó la herramienta 13 segundos después de arrancar. Con una espera de 40 segundos, sí.
+- Las carpetas cargaron su `.codex` sin pedir confianza. En `config.toml` es de confianza el checkout principal; que eso alcance a sus worktrees no lo dice la documentación.
+- **Sin probar en la app:** que tome el modelo y el navegador de la carpeta. Por eso los pasos 4 y 7.
+
+**Cómo se vuelve atrás:** se borra `.codex\` de cada carpeta y la línea `.codex/` de `C:\dev\proyectos\ONIA-CENTRAL\.git\info\exclude`.
+
 ## Para abrir las sesiones en Codex (3-nov)
 
 Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él siguiente puente es codex desde mañana dejalo todo listo para el que sea solo abrir sesiones" (sesión del Administrador, sin enlace).
@@ -58,7 +99,9 @@ La sesión de Claude es `local_23a5279d-9550-4284-828e-bf8bef1d59c2`. Coordina a
 **Hecho el 2-nov:** el navegador por área, las reglas para hablarle a Sergio con autonomía mediana, el stack de cada área ([`stack.md`](stack.md)), los relevos para Codex de Boss No-Code, ONIA Platform, Boss Code y Recepción, los perfiles y las carpetas de Codex, y el ensayo.
 
 **Pendiente:**
-- **Marketing:** su estado, `marketing.md`, tiene que estar en `main`. Está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), y se le pidió mergearlo el 2-nov.
+- **Colas del 2-nov a la noche:** Sergio pidió darle tarea a cada sesión "hasta obtener un resultado y ahí siguiente", mientras graba, con "autonomía y decisión" (sesión del Administrador, sin enlace). El Administrador les mandó por `SendMessage` una cola a ONIA Platform, Boss No-Code, Boss Code, Marketing y Recepción. Cada una la trabaja en orden, sin `/loop`, deja lo de Sergio junto en un solo mensaje y pasa lo que quede a "Para seguir en Codex" de su estado. Pelau sigue a pedido.
+- **Marketing:** su estado entró a `main` el 2-nov a la noche, en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102).
+- **Panel de dirección:** Sergio pidió, para después, un calendario grande y sacar la columna de decisiones ([issue #158](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/158)).
 - **Campaña de Meta Ads:** el [PR de la campaña con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) sigue abierto. Meta todavía no tiene página ni tarjeta: según Marketing, el 2-nov, eso lo hace Sergio (sin enlace). Lo lleva Marketing con él.
 - **Ramas de Grok con datos de un lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): quedan como están hasta después del taller. Sergio eligió, con botones, "Después del taller" (2-nov, sesión del Administrador). Después, alguien tiene que pedirle a Boss No-Code que las borre, con el sí de Sergio citado.
 - **Herramientas de Codex** ([issue #128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128)): Higgsfield, Vercel y Gmail quedan con la regla de no usarlas sin su sí, como eligió Sergio. Para Notion y Drive, que se apagaron el 28-oct y figuran prendidos con otro nombre, Sergio eligió "Sí, apagarlos (Recomendada)" (2-nov). Se probó `[plugins."…@openai-curated-remote"]` con `enabled = false` y Codex los siguió viendo, así que se volvió atrás. La [referencia oficial de configuración de Codex](https://learn.chatgpt.com/docs/config-file/config-reference) documenta `apps.<id>.enabled` para apagar una app o un conector por su id; falta probarlo. Que vengan de su cuenta de ChatGPT está sin confirmar; si `apps.<id>.enabled` no alcanza, se buscan los pasos oficiales para apagarlos ahí.
