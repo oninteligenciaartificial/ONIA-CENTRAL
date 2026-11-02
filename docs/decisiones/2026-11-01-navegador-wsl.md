@@ -2,6 +2,8 @@
 
 1-nov-2026, a la noche. Lo armó la sesión del Administrador. Es parte del [issue #96 (bot propio en lugar de Grok Bot)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96).
 
+**2-nov-2026:** en Codex, cada área tiene ahora su propio perfil, y el perfil único `equipo` ya no se usa ahí: ver [un navegador por área](2026-11-02-navegador-por-area.md). Lo de abajo sigue valiendo para Claude Code.
+
 ## Qué decidió Sergio Urcullo
 
 - La idea es suya, del 1-nov: "podemos armar el browser de grok con wsl linux un browser, asi ya no pagariamos grokbot". Esa noche pidió: "Quiero que veamos el browser linux".
@@ -100,7 +102,7 @@ Qué cuentas se cargan lo decide él. El agente nunca escribe una contraseña ([
 ## Cómo se vuelve atrás
 
 1. **Cerrar las sesiones de Codex y de Claude Code que ya cargaron el navegador.** Sacar la configuración no corta un servidor ya cargado: cada sesión lo carga al arrancar.
-2. **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml` ([referencia de configuración](https://learn.chatgpt.com/docs/config-file/config-reference)), o restaurar la copia del respaldo.
+2. **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml` ([referencia de configuración](https://learn.chatgpt.com/docs/config-file/config-reference)), o restaurar la copia del respaldo. En los dos casos, borrar también los cinco `<área>.config.toml` del [navegador por área](2026-11-02-navegador-por-area.md): sin la sección base, `codex -p <área>` no arranca ("invalid transport in `mcp_servers.playwright`", revisión 1 del PR #133).
 3. **Claude Code:**
    - `claude mcp remove -s user playwright` ([MCP en Claude Code](https://code.claude.com/docs/en/mcp));
    - sacar `mcp__playwright` de `permissions.allow`, o restaurar la copia de `settings.json`.

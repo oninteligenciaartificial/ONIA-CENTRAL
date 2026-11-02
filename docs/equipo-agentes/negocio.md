@@ -4,7 +4,7 @@
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
 
-Actualizado: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
+Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Lo de abajo que dice martes 3, miércoles 4 y jueves 5 está reemplazado por esa decisión. Texto del 1-nov: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
 
 ## Objetivo: Bs 3.000 cobrados al 5-nov
 
@@ -42,8 +42,8 @@ Las tomó a la noche, con botones: las cuatro primeras en esta sesión y las de 
 
 | # | Tema | Estado |
 |---|---|---|
-| 1 | Devolución | `main` propone sin devolución, dicho antes de pagar, con la grabación incluida (plan del 29-oct). La rama la tenía pendiente (D-013). Sin decidir |
-| 1b | Cómo se graba y hasta cuándo quedan las grabaciones | Meet gratis no graba (arriba). El guion de Grok Bot decía hasta el 7-dic, con la clase 3 el 7-nov. Sin decidir |
+| 1 | Devolución | `main` propone sin devolución, dicho antes de pagar, con la grabación incluida (plan del 29-oct). La rama la tenía pendiente (D-013). Decidido el 2-nov: sin devolución, salvo que ONIA no dé la clase (se pasa a otra fecha) |
+| 1b | Cómo se graba y dónde se comparten las grabaciones | Meet gratis no graba (arriba). El guion de Grok Bot decía hasta el 7-dic, con la clase 3 el 7-nov. Decidido el 2-nov: se entregan al terminar la última clase (viernes 6-nov) y quedan para siempre. Sin decidir: cómo se graba (OBS o Recortes) y dónde se comparten |
 | 2 | Mensaje de diagnóstico gratis a los chats en espera | Borradores con enlace de Cal.com, solo en `/workspace`; falta su sí (D-012) y el acceso a la bandeja de Chatwoot. Bloqueado: los borradores no están en esta PC |
 | 3 | Plantillas de WhatsApp (D-015) y migración de WhatsApp (D-018) | Pendientes, detalle solo en `/workspace/decisiones/` |
 | 4 | Nombre "Claude de 0 a 100" | Usa una marca ajena en algo pago: a confirmar con un abogado (`docs/lecciones.md`) |
@@ -79,10 +79,24 @@ Consultados el 1-nov con `session_connectors_status` de la app, sin leer secreto
 
 ## Para otras áreas
 
-- Para Marketing: captions de reels y anuncios con la oferta del 1-nov (3, 4 y 5-nov, Bs 50 por las tres clases, con grabaciones). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
+- Para Marketing: captions de reels y anuncios con la oferta del 1-nov (4, 5 y 6-nov desde el 2-nov, Bs 50 por las tres clases, con grabaciones). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
 - Para Marketing: dónde se publica la web de invitación del taller. Vercel u onia.com.bo son producción.
 - Para la sesión coordinadora: `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo 3, 5 y 7-nov y Bs 70 desde el 2-nov. Lo reemplaza `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`; esta área no toca el archivo viejo, porque no es suyo.
 - Para ONIA Platform: el cobro con el QR del BCP y los precios de los planes, que siguen como propuesta.
+
+## Qué toco y qué no
+
+Definido el 2-nov-2026 por pedido de Sergio Urcullo, vía la sesión Administrador.
+
+- **Escribo:** este archivo; `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md` y `workshops-comunidad/claude-0-a-100/` (todavía no está en `main`: vive en el PR de materiales del taller, abierto y con precios viejos); `docs/decisiones/` solo para decisiones de ventas, cobro y finanzas.
+- **Solo leo:** `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y el resto de `docs/decisiones/`, `workshops-comunidad/plan-meta-ads-borrador.md`, `marca-personal/`, `plataforma/` y los estados de las otras áreas.
+- **Servicios:** WhatsApp +591 75414930, Instagram, Yolo Pago (QR), el banco para conciliar, Google Calendar (salas de Meet) y Chatwoot para leer chats. Los cobros y los chats no se ven desde esta PC: lo que hace falta de ahí lo trae Sergio Urcullo. Ningún mensaje sale a un lead sin su sí con captura.
+- **Navegador de Ubuntu:** solo para revisar el QR de Yolo Pago y la bandeja de WhatsApp o Chatwoot cuando Sergio Urcullo cargue la cuenta; una sesión a la vez, y sin enviar, publicar ni comprar.
+- **Cruces:**
+  - Marketing: el llamado a la acción de los anuncios tiene que coincidir con el texto que llega al chat. Marketing escribe los anuncios; yo, los textos de WhatsApp.
+  - Boss Code: las ramas de Grok Bot con datos de un lead (issue #113) y todo lo que corre en el VPS, Chatwoot o n8n. Lo suyo lo hace Boss Code.
+  - ONIA Platform: no va en los mensajes a inscriptos esta semana (lo decidió Sergio Urcullo).
+- **No hago:** publicar anuncios o contenido, tocar producción (VPS, base de datos, Vercel), gastar, cambiar lo legal, guardar datos de clientes en Git ni editar archivos de otra área. Si dos áreas chocan en un archivo, lo ordena el Administrador.
 
 ## Notas
 

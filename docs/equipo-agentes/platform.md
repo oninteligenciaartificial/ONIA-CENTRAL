@@ -6,13 +6,43 @@ Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov, y se volvió a
 
 ## Objetivo actual
 
-Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Oferta a inscriptos (Recomendada)".
+Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Decidir los 10 PRs" ([issue #25](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/25)).
 
-**Objetivo:** definir qué de ONIA Platform se les ofrece a los inscriptos del taller desde el miércoles 4, sin prometer lo que no está probado.
+**Hecho cuando:** ningún PR abierto de `onia-platform` queda sin decidir. Cada uno está mergeado con el sí de Sergio Urcullo citado en el PR, cerrado con su rama guardada en GitHub, o con su arreglo en curso anotado acá (paso 3 del [análisis del 28-oct](../../plataforma/2026-10-28-seguir-con-onia-platform.md)).
 
-**Hecho cuando:**
-- el texto de la oferta está en `plataforma/`, aprobado por Sergio Urcullo con sus palabras citadas en el PR y mergeado;
-- Boss No-Code lo recibió para la respuesta automática del 4-nov, con copia en el [tablero de mensajes entre áreas (#111)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+**Primer paso, hecho el 2-nov:** la recomendación de cada PR, revisada por Codex en solo lectura, en [`plataforma/2026-11-02-decision-10-prs.md`](../../plataforma/2026-11-02-decision-10-prs.md). Sigue que Sergio Urcullo elija el orden y apruebe cada merge.
+
+**Lo que eligió Sergio Urcullo el 2-nov,** con botones, en esta sesión ([constancia](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/137)):
+- "Ya, con merges": se empieza por el #154 de `onia-platform`, sin esperar al 6-nov;
+- "QA aparte en el VPS": la base de prueba la arma Boss Code, separada de la de producción.
+
+**Dónde quedó, al cierre del 2-nov:** Boss Code va a revisar en el VPS, sin cambiar nada, qué IP le llega a la app para el #154, y después propone la QA aparte. Espera que Sergio Urcullo cargue la clave del VPS en esta PC. El pedido y su respuesta están en el [tablero #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111). Nada de `onia-platform` está mergeado.
+
+**Para retomar (Codex, desde el 3-nov):** arranca con `codex -p onia-platform`, el perfil con el navegador del área, sin cuentas esta semana ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)). Primero lee la respuesta de Boss Code en el #111. Con eso, prueba el #154 y le lleva a Sergio Urcullo el merge, con la evidencia.
+
+## Objetivo anterior, cerrado el 2-nov
+
+**Objetivo:** definir qué de ONIA Platform se les ofrece a los inscriptos del taller desde el miércoles 4, sin prometer lo que no está probado. Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Oferta a inscriptos (Recomendada)".
+
+**Cómo terminó:** la propuesta fue una línea para anotarse como interesados, sin precio ni fecha, con 3 opciones. Pasó la revisión de Codex en "aprobar" ([PR #119](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/119)). Sergio Urcullo eligió "Nada esta semana": la plataforma no se nombra en el taller esta semana. El PR se cerró sin mergear, con su decisión citada, y Boss No-Code quedó avisado, con copia en el [tablero #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+
+## Qué toco y qué no
+
+Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada sesion que se defina para no chocar" (sesión del Administrador, sin enlace).
+
+- **Escribo en ONIA-CENTRAL:** este archivo, `plataforma/` y una decisión de mi área en `docs/decisiones/` cuando haga falta. Siempre por PR.
+- **Solo leo:** el `AGENTS.md`, `docs/lecciones.md`, el resto de `docs/decisiones/`, los estados de las otras áreas, `workshops-comunidad/` y `marca-personal/`.
+- **Repos y servicios:**
+  - el repo `onia-platform`: escribo en ramas y por PR. Mergear a `master` publica en producción: un cron del VPS lo publica cada 3 horas ([análisis del 28-oct](../../plataforma/2026-10-28-seguir-con-onia-platform.md), punto 1). Por eso cada merge es de lo que aprueba Sergio Urcullo, según el `AGENTS.md`. El checkout `C:\dev\proyectos\onia-platform` no se toca hasta el [issue #24](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/24);
+  - el VPS donde corre la plataforma, su base de datos (un Supabase propio) y sus crons: son producción, con los frenos del `AGENTS.md` y el acceso que dice `docs/credenciales.md`. Nunca entré;
+  - Vercel y el conector de Supabase de la app: solo leer, y hoy no los uso. Que el conector llegue a la base del VPS está sin confirmar;
+  - Codex, en solo lectura, para leer el repo y revisar.
+- **Navegador de Ubuntu:** esta semana no lo necesito. Para probar la plataforma como cliente haría falta una cuenta de prueba de la propia plataforma, sin datos de clientes, que carga Sergio Urcullo. Su uso sigue el `AGENTS.md`.
+- **Cruces con otras áreas:**
+  - Boss Code: el VPS es de su área. Mudar el despliegue y los crons de la plataforma ([issue #26](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/26)), el chatbot de WhatsApp y la web de venta, onia.com.bo, tocan las dos áreas. Quién va primero lo ordena el Administrador;
+  - Boss No-Code: la plataforma no va en los mensajes a inscriptos esta semana (lo decidió Sergio Urcullo). El cobro de la plataforma ([issue #28](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/28)) es aparte del cobro del taller;
+  - Marketing: un anuncio no promete lo que no está probado (`docs/lecciones.md`, "Datos y fuentes"), y hoy la plataforma no está lista para clientes ([plan de Meta Ads](../../workshops-comunidad/plan-meta-ads-borrador.md), "Por qué este tema sirve para escalar").
+- **No hago:** mensajes a clientes, anuncios ni la campaña, lo del VPS que es de Boss Code ni archivos de otra área. Lo reservado a Sergio Urcullo y lo que no entra a Git sigue el `AGENTS.md`.
 
 ## Comprobado hoy
 
@@ -29,7 +59,7 @@ Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Oferta a insc
 | [#168](https://github.com/oninteligenciaartificial/onia-platform/pull/168) | Mi web: aprobar o pedir ajustes | Pasa | No |
 | [#154](https://github.com/oninteligenciaartificial/onia-platform/pull/154) | Seguridad: la IP del cliente solo desde Cloudflare | Pasa | No |
 | [#140](https://github.com/oninteligenciaartificial/onia-platform/pull/140) | Widget de chat propio (W1 a W1e) | Pasa | No |
-| [#124](https://github.com/oninteligenciaartificial/onia-platform/pull/124) | Aceptación de términos en el alta | Cancelada (después del merge de `master` del 31-oct) | Sí |
+| [#124](https://github.com/oninteligenciaartificial/onia-platform/pull/124) | Aceptación de términos en el alta | Falla, también el control de secretos (2-nov; el 1-nov figuraba cancelada) | Sí |
 | [#113](https://github.com/oninteligenciaartificial/onia-platform/pull/113) | Gracia de 7 días y dejar de renovar | Pasa | No |
 | [#70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) | Runbook de correos: dice que ya está aplicado | No corrió (solo el control de secretos) | No |
 
@@ -64,12 +94,12 @@ Esta PC no lo ve. El 2-nov se buscó en las ramas `onia-loop-excepcion-d003` y `
 ## Le falta decidir a Sergio Urcullo
 
 1. Si se le piden a Grok Bot los archivos de `/workspace/platform` o se rehace lo necesario desde acá.
-2. Qué se hace con cada uno de los 10 PRs ([#25](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/25)). Cada merge publica en producción.
+2. Qué se hace con cada uno de los 10 PRs ([#25](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/25)). Cada merge publica en producción. La recomendación está en [`plataforma/2026-11-02-decision-10-prs.md`](../../plataforma/2026-11-02-decision-10-prs.md).
 3. Los precios de la plataforma: la escalera del código o la propuesta de Grok Bot.
 4. Verificar el QR del BCP para el cobro (D-019 de Grok Bot, sin comprobar; el cobro es el [#28](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/28)).
 
 ## Para otras áreas
 
-- **Para Marketing:** `workshops-comunidad/plan-meta-ads-borrador.md` sigue con el calendario de clases del 3, 5 y 7-nov, y su sección "Qué se vende desde el miércoles 4", con combos y clases sueltas. Las dos cosas las reemplazó la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md). Avisado el 2-nov por el tablero #111.
+- **Para Marketing:** `workshops-comunidad/plan-meta-ads-borrador.md` sigue con el calendario de clases del 3, 5 y 7-nov, y su sección "Qué se vende desde el miércoles 4", con combos y clases sueltas. Las dos cosas las reemplazó la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md). Avisado el 2-nov por el tablero #111. Sigue pendiente: el [PR #120 de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120), abierto, suma la campaña 3-4-5 en otro archivo y no cambia el plan.
 - **Para la coordinación:** el `COMO-TRABAJAR.md` de la rama de Grok Bot pide tuteo, y la regla vigente es el voseo.
 - **Para la coordinación:** según el `ESTADO-ACTUAL.md` de Grok Bot, el respaldo semanal del VPS era una rutina del agente Operaciones. Hay que confirmar que sigue corriendo antes de borrar ese agente.
