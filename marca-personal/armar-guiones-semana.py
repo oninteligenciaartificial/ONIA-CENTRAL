@@ -27,7 +27,7 @@ def gb(lid, dia, fr, cta):
     t = re.sub(r'\s+', ' ', t).strip()
     t = re.sub(r'(¿Y tú[^?]*\?\s*)?(Sígueme|Cuéntamelo|Cuéntame)[^.]*\.$', '', t).strip() + ' ' + cta
     add(lid, dia, fr, 'marca', g['formato'], g['titulo'], g['gancho'], t,
-        ' · '.join(x for x in g.get('tomas', []) if 'Clase' not in x and '19:00' not in x), cta,
+        ' · '.join(x for x in g.get('tomas', []) if 'Clase' not in x and '19:00' not in x and (cta == CTA_T or 'WhatsApp' not in x)), cta,
         'Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)' + (' · Confirmar que querés decir tu edad' if '16' in t + g['titulo'] else ''),
         'falta_dato' if '16' in t + g['titulo'] else 'revisar')
 
