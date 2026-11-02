@@ -1,6 +1,6 @@
 # Estado de la coordinación (Pelau)
 
-Relevo del 1-nov-2026, a las 20:45 de Bolivia. Lo escribió la sesión coordinadora de Claude Code cuando llegó al 63% de su contexto, según `get_usage` de la app de Claude a las 20:40. El tope para la coordinadora es 20% ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La sigue una sesión coordinadora nueva.
+Relevo del 1-nov-2026, a las 20:45 de Bolivia. Lo escribió la sesión coordinadora de Claude Code cuando llegó al 63% de su contexto, según `get_usage` de la app de Claude a las 20:40: 625.909 tokens usados de 1.000.000. El tope para la coordinadora es 20% ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La sigue una sesión coordinadora nueva.
 
 ## Objetivo de la próxima coordinadora
 

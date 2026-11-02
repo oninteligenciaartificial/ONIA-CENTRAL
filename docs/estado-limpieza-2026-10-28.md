@@ -10,11 +10,17 @@ Orca se volvió a instalar el 31-oct ([#91](https://github.com/oninteligenciaart
 - Sergio desinstaló Orca, Antigravity y Antigravity IDE desde Configuración y movió sus restos de AppData con una PowerShell abierta desde el menú Inicio.
 - La sesión coordinadora sacó de `C:\Users\PC\.claude\settings.json` los hooks, la barra de estado y `skipDangerousModePermissionPrompt`. También apartó el `hooks.json` de Codex y los restos que Orca dejó en el perfil, en `%TEMP%`, y en Pi, OpenCode, `.cursor` y `.gemini`. Apartó además los datos de Antigravity en `.gemini`, sus instaladores, 21 carpetas con copias de un paquete de skills para herramientas que no están instaladas y una bóveda vacía de Obsidian que estaba dentro del checkout de ONIA-CENTRAL.
 - No se borró nada. Todo está en `C:\Users\PC\.limpieza-archivo-20261101`, con `MANIFIESTO.md` (qué hay y cómo volver atrás) y `movidos.txt` (origen y destino de cada cosa).
-- Lo verificó un flujo de 71 agentes en solo lectura: seis buscaron restos, otro agente intentó refutar cada hallazgo y un crítico buscó lo que faltaba (sesión coordinadora, sin enlace). Lo que encontraron se apartó en una segunda pasada.
+- Lo verificó un flujo de agentes en solo lectura: seis buscaron restos, otro agente intentó refutar cada hallazgo, y un crítico buscó lo que faltaba, que se miró en una segunda ronda. Según el resumen del flujo, fueron 71 agentes y ninguno terminó con error (sesión coordinadora, sin enlace). Lo que encontraron se apartó en una segunda pasada.
 - El Hermes de Windows ya no está: `%LOCALAPPDATA%\hermes` no existe (por WMI) y `hermes` no está en el PATH. La evidencia está en las revisiones 3 y 4 del [PR #105](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/105).
 
 **Falta:**
-- Lo corre Sergio, en una PowerShell de administrador abierta desde Inicio. Se comprobó el 1-nov a las 20:30, desde la app y solo leyendo, con `Get-NetFirewallApplicationFilter`, `cmdkey /list`, `Win32_Environment` y la carpeta del menú Inicio: desactivar 6 reglas del firewall que dejan entrar conexiones a los exe de Orca y Antigravity, que ya no existen; quitar la credencial `gemini:antigravity`; sacar `Antigravity\bin` del PATH; y apartar el acceso directo y la carpeta vacía de Antigravity.
+- Lo corre Sergio, en una PowerShell de administrador abierta desde Inicio. Se comprobó el 1-nov a las 20:30, desde la app y solo leyendo, con `Get-NetFirewallApplicationFilter`, `cmdkey /list`, `Win32_Environment` y la carpeta del menú Inicio. Dieron:
+  - 6 reglas activas, de entrada, que permiten conexiones en redes públicas: Antigravity (2), Antigravity IDE (2) y orca.exe (2);
+  - la credencial `LegacyGeneric:target=gemini:antigravity`, de la que solo se vio el nombre;
+  - `C:\Users\PC\AppData\Local\Programs\Antigravity\bin` en el PATH del usuario;
+  - el acceso directo `Start Menu\Programs\Antigravity\Antigravity.lnk`, en `%APPDATA%`.
+
+  Lo que hay que hacer: desactivar 6 reglas del firewall que dejan entrar conexiones a los exe de Orca y Antigravity, que ya no existen; quitar la credencial `gemini:antigravity`; sacar `Antigravity\bin` del PATH; y apartar el acceso directo y la carpeta vacía de Antigravity.
 - Queda en su lugar, a propósito, `C:\Users\PC\orca\workspaces\onia-platform`: es un worktree de onia-platform, y lo decide esa área ([#63](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/63)).
 - Codex: memorias en `false` y el estado de la app, con la app cerrada ([#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)).
 - Los decide Sergio. Salen de la verificación del 1-nov y no se volvieron a comprobar:
