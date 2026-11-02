@@ -62,7 +62,8 @@ Desde el 1-nov-2026, por decisión de Sergio Urcullo ([2026-11-01-equipo-claude-
 
 ## Hermes y Grok Bot: historia
 
-- **Hermes y Grok Bot no orquestan ni tienen trabajo asignado.** Lo que los describe queda como historia: `docs/decisiones/2026-10-28-hermes-oficial.md` para Hermes; `docs/reglas/equipo-grok-bot.md` y `docs/harness/onia-llm.md` para Grok Bot.
+- **Hermes y Grok Bot no orquestan.** Lo que los describe queda como historia: `docs/decisiones/2026-10-28-hermes-oficial.md` para Hermes; `docs/reglas/equipo-grok-bot.md` y `docs/harness/onia-llm.md` para Grok Bot.
+- **Grok Bot sigue para investigar en X y auditar,** por decisión de Sergio Urcullo del 2-nov. Lo que propone entra al repo por un PR revisado, como cualquier cambio. Que no se renueve sigue igual hasta que él decida otra cosa.
 - El Hermes de Windows ya no está en la PC: el 1-nov-2026, `%LOCALAPPDATA%\hermes` no existía (por WMI) y `hermes` no estaba en el PATH. El Hermes viejo del VPS sigue instalado hasta que Sergio Urcullo decida apagarlo, y está en producción.
 
 ## Qué no entra a Git

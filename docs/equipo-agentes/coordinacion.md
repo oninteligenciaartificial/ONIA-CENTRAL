@@ -65,6 +65,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - Cada respuesta a Sergio, de cualquier sesión, es corta y le da 3 opciones, con la recomendada primero ([PR #114](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/114)).
 - La rama `onia-loop-excepcion-d003` de Grok Bot no se mergea: se rescata en PRs chicos, sin datos de clientes. Su material está en la rama `grokbot/workspace-20261101`.
 - Grok Bot no se renueva.
+- Grok Bot sigue para investigar en X y auditar. Sergio le escribió el 2-nov: "quiero mas investigacion y quiero que le digas a claude que en el futuro te usaremos a ti tambien que quede anotado", y después eligió con botones "Para investigar en X (Recomendada)" (sesión del Administrador, sin enlace). Lo que propone entra por PR revisado.
 - La Analista trabaja por auditoría: el Administrador la abre una vez al día, al cerrar la tanda de PRs, y la archiva cuando termina ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4).
 - El navegador de Ubuntu queda "todo libre" para las áreas ([PR #116](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/116)).
 - El 12-nov, Sergio decide si renueva ChatGPT, que vence el 14-nov.
