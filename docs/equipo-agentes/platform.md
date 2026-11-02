@@ -70,6 +70,6 @@ Esta PC no lo ve. El 2-nov se buscó en las ramas `onia-loop-excepcion-d003` y `
 
 ## Para otras áreas
 
-- **Para Marketing:** la sección "Qué se vende desde el miércoles 4" de `workshops-comunidad/plan-meta-ads-borrador.md` sigue con las fechas 3, 5 y 7-nov y con combos y clases sueltas, que reemplazó la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md). Avisado el 2-nov por el tablero #111.
+- **Para Marketing:** `workshops-comunidad/plan-meta-ads-borrador.md` sigue con el calendario de clases del 3, 5 y 7-nov, y su sección "Qué se vende desde el miércoles 4", con combos y clases sueltas. Las dos cosas las reemplazó la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md). Avisado el 2-nov por el tablero #111.
 - **Para la coordinación:** el `COMO-TRABAJAR.md` de la rama de Grok Bot pide tuteo, y la regla vigente es el voseo.
 - **Para la coordinación:** según el `ESTADO-ACTUAL.md` de Grok Bot, el respaldo semanal del VPS era una rutina del agente Operaciones. Hay que confirmar que sigue corriendo antes de borrar ese agente.
