@@ -52,14 +52,15 @@ El trabajo se cuenta desde B:
 |---|---:|---:|---:|
 | Área, objetivo normal | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
 | Administrador (coordina) | 120.000 | ≈ 240.000 (24%) | B + 80.000 |
-| Pelau (solo resúmenes cortos) | 60.000 | ≈ 180.000 (18%) | B + 40.000 |
+| Pelau (solo resúmenes cortos) | 60.000 | ≈ 180.000 (18%) | B + 40.000, también en Luna |
 | Analista, por auditoría | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
 | Revisión independiente | una revisión | sesión nueva cada vez | sesión nueva cada vez |
 | Trabajo largo, por hitos | 400.000 | ≈ 520.000 (52%) | B + 200.000 |
 
 - **Son presupuestos propuestos,** salvo A, que está medido. El de área sale de lo observado (abajo). El del Administrador, el de Pelau, el del trabajo largo y los de Codex son proporcionales a ese, según cuánto lee y escribe cada tipo de sesión, y se ajustan con las mediciones.
+- **Rige lo que llegue primero:** B más el trabajo, o el techo.
 - **Techo propuesto:** ninguna sesión pasa del 60% de su ventana: 600.000 tokens en Claude, 300.000 en Codex Sol y Terra, y 163.200 en Astra y Luna. Deja margen lejos de la compactación automática, que en Claude salta al 97%, y del contexto largo, que según Anthropic se aprovecha peor ([ingeniería de contexto](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)).
-- **De dónde sale el trabajo de 200.000:** el 1-nov, las sesiones de área pasaron de unos 96.000 tokens al abrir a entre 168.000 y 220.000 al terminar su primer objetivo (`get_usage`). Son entre 72.000 y 124.000 tokens, contando la lectura del relevo. Boss No-Code, la de 220.000, ya llevaba dos PRs. 200.000 son unos dos objetivos como esos.
+- **De dónde sale el trabajo de 200.000:** el 1-nov, las sesiones de área pasaron de unos 96.000 tokens al abrir a entre 168.000 y 220.000 hacia las 19:30 (`get_usage`), después de su primer trabajo del día. Son entre 72.000 y 124.000 tokens, contando la lectura del relevo. Boss No-Code, la de 220.000, ya llevaba dos PRs. Los 200.000 son una estimación: unas dos veces ese trabajo.
 - **En Codex,** A y B no están medidos. Se miden el 3-nov con `/status` en la primera sesión de cada área, y se ajustan acá los números.
 - **Cómo bajar B:**
   - `docs/lecciones.md` pesa unos 11.200 tokens y se carga en cada sesión;
@@ -135,7 +136,7 @@ Los subagentes se usan para subtareas acotadas que justifiquen separarse. No se 
 | 1–2 nov | `claude-sonnet-5-5` · `medium` | `claude-haiku-5-5` · `medium` | `gpt-6.1-sol` · `high` |
 | Desde 3 nov | `gpt-6.1-sol` · `medium` | `gpt-6-luna` · `medium` | Otro `gpt-6.1-sol` · `high` |
 
-**Pelau — solo resúmenes cortos.** Lee los estados de `docs/equipo-agentes/` y los PRs abiertos, y le da a Sergio un resumen corto. No hace trabajo de las áreas ni cambia archivos, así que no lleva revisión. Del 1 al 2-nov usa `claude-haiku-5-5` con esfuerzo `medium`, y desde el 3-nov `gpt-6-luna` con esfuerzo `medium`. Propuesto.
+**Pelau — solo resúmenes cortos.** Lee los estados de `docs/equipo-agentes/` y los PRs abiertos, y le da a Sergio un resumen corto. No hace trabajo de las áreas ni cambia archivos, así que no lleva revisión. Tampoco tiene archivo de estado propio: cada resumen sale de leer de nuevo los estados de las áreas, y su relevo es una sesión nueva. Lo que haya que anotar de Pelau lo anota el Administrador en `coordinacion.md`. Del 1 al 2-nov usa `claude-haiku-5-5` con esfuerzo `medium`, y desde el 3-nov `gpt-6-luna` con esfuerzo `medium`. Propuesto.
 
 **Analista — auditoría de entregables, fuentes, revisiones y consumo.** Función ya observada en los [datos del día](2026-11-01-plan-equipo-datos.md); incorporación al equipo propuesta.
 
