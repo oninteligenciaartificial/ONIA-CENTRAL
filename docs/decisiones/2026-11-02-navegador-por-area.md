@@ -12,6 +12,7 @@
 - **Sin perfil:** en `C:\Users\PC\.codex\config.toml`, el navegador va con `--isolated`, sin cuentas guardadas. Lo usa toda sesión que arranca con `codex` a secas, como las revisiones.
 - **Un archivo por área** en `C:\Users\PC\.codex\`, `<área>.config.toml`. Repite el servidor `playwright` entero (`command`, `args`, `startup_timeout_sec` y `default_tools_approval_mode`), con `--user-data-dir /home/pc-linux-sergio/.onia-browser/<área>` y `--output-dir /home/pc-linux-sergio/.onia-browser/salida/<área>`. Con solo `args`, `codex -p <área> mcp get playwright` lo mostraba bien, pero una sesión real no vio el navegador (prueba del 2-nov, abajo). Codex lo suma al arrancar con `codex -p <área>` ("Layer $CODEX_HOME/<name>.config.toml on top of the base user config", `codex --help`, codex-cli 0.166.0).
 - **Cada área arranca** desde su worktree con `codex -p <área>`. Así quedó en el punto 3 de "Pasos del corte", en la sección 9 del [plan del paso a Codex](2026-11-01-plan-equipo-y-paso-a-codex.md).
+- **En la app de Codex,** que no usa los perfiles `-p`, cada carpeta de área lleva `.codex\config.toml` con lo mismo que su perfil. Cómo y qué se probó está en [coordinación](../equipo-agentes/coordinacion.md), "Para abrir las áreas en la app de Codex".
 - **Cada perfil lo usa una sola sesión a la vez,** por la misma nota del README: dos sesiones de la misma área no navegan juntas.
 - **Respaldo** de `config.toml` antes del cambio: `C:\Users\PC\.respaldos-config\20261102-navegador-por-area\`.
 
