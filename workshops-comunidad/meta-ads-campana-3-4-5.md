@@ -39,20 +39,22 @@ Para anunciar con una página hay que asociarla a la cuenta, y no se comprobó s
 
 ### Texto principal
 
-> ¿Usás la IA solo para hacerle preguntas? "Claude de 0 a 100" son 3 clases en vivo esta semana, por Meet, para aprender a usar Claude con tus archivos y tus proyectos. Sin programar.
-> 🎥 Grabaciones incluidas
+> ¿Usás la IA solo para hacerle preguntas? "Claude de 0 a 100" son 3 clases por Meet, en vivo y grabadas, para aprender a usar Claude con tus archivos y tus proyectos. Sin programar.
+> 🎥 Si te sumás tarde, las clases que ya pasaron te quedan grabadas
 > 💵 Un solo pago de Bs 50 por las 3 clases
 > Taller independiente, no oficial de Anthropic.
 > Tocá el botón y escribime: te paso las fechas, el temario y el QR.
 
-Título: "Claude de 0 a 100 · 3 clases en vivo".
+Título: "Claude de 0 a 100 · en vivo y grabado".
+
+La campaña sigue el 5-nov, después de la primera clase: por eso el texto no promete las 3 clases en vivo, y el saludo de WhatsApp dice qué clases quedan en vivo según el día.
 
 ### Videos
 
 Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72) (`anuncio.md`), con estos cambios en el cierre.
 
-- **Video 1, el contraste, 12 a 25 s:** "En 3 clases en vivo te enseño a usar Claude con tus archivos y tus proyectos. Sin programar." Sin "{y con la cuenta gratis}" ni la lista de trabajos armados.
-- **Video 1, el contraste, 25 a 35 s:** "En vivo, con grabaciones. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
+- **Video 1, el contraste, 12 a 25 s:** "En 3 clases te enseño a usar Claude con tus archivos y tus proyectos. Sin programar." Sin "{y con la cuenta gratis}" ni la lista de trabajos armados.
+- **Video 1, el contraste, 25 a 35 s:** "En vivo y grabadas. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
 - **Video 2, la demo, 20 a 35 s:** "Esto lo practicamos en vivo en Claude de 0 a 100: 3 clases, con grabaciones, por Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
 - **Datos de la demo:** `ventas-octubre-ejemplo.csv` del PR #72 (panadería inventada), sin datos de clientes.
 - **La demo:** el anuncio no promete resultados; el Video 2 muestra la demo real, grabada por Sergio Urcullo. Si la toma no sale con las cifras correctas (PR #72), no se usa.
