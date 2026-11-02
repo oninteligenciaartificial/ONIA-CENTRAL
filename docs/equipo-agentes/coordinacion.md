@@ -1,5 +1,65 @@
 # Estado de la coordinación (Administrador)
 
+## Para abrir las sesiones en Codex (3-nov)
+
+Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él siguiente puente es codex desde mañana dejalo todo listo para el que sea solo abrir sesiones" (sesión del Administrador, sin enlace).
+
+- **Cada sesión tiene su carpeta fija,** en `C:\dev\worktrees\ONIA-CENTRAL\<sesión>`, fuera de las de Claude, para que no se borre al archivarlas.
+- **Cada sesión tiene su perfil de Codex,** en `C:\Users\PC\.codex\<sesión>.config.toml`, con el modelo y el esfuerzo del [plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4. Recepción no está en el plan: va con `gpt-6.1-sol` y `medium`, como propuesta del Administrador. Las áreas traen también su propio navegador ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
+- **Se abren de a una,** con unos segundos entre una y otra. En el ensayo, las dos que arrancaron primero y juntas no vieron el navegador; Boss Code, abierto solo después, sí.
+- **La primera vez,** Codex puede preguntar si se confía en la carpeta. Se contesta que sí, una vez por carpeta.
+
+Una línea por sesión, para pegar en PowerShell:
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-no-code; git pull --ff-only origin main; codex -p boss-no-code "Sos Boss No-Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/negocio.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\marketing; git pull --ff-only origin main; codex -p marketing "Sos Marketing de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/marketing.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-code; git pull --ff-only origin main; codex -p boss-code "Sos Boss Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/producto.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\onia-platform; git pull --ff-only origin main; codex -p onia-platform "Sos ONIA Platform. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/platform.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\recepcion; git pull --ff-only origin main; codex -p recepcion "Sos Recepción de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/recepcion.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\administrador; git pull --ff-only origin main; codex -p administrador "Sos el Administrador de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/coordinacion.md, y seguí con el Relevo del Administrador."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\pelau; git pull --ff-only origin main; codex -p pelau "Sos Pelau de ONIA: solo das resúmenes cortos. Leé el AGENTS.md y los estados de docs/equipo-agentes/, y dale a Sergio un resumen corto de cómo están las áreas."
+```
+
+```powershell
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\analista; git pull --ff-only origin main; codex -p analista "Sos la Analista de ONIA. Leé el AGENTS.md y docs/lecciones.md, y auditá los PRs mergeados el 2-nov: revisión escrita, veredicto y aprobación de Sergio citada cuando hacía falta. Dejá tu informe en un issue nuevo."
+```
+
+**Ensayo del 2-nov,** con `codex -p <sesión> exec --sandbox read-only` en cada carpeta: las ocho arrancaron con su modelo y su esfuerzo, y contestaron empezando con "Sergio Urcullo,", señal de que cargaron sus instrucciones. Leyeron su estado; Marketing lo encontró solo porque se le nombró su PR abierto. El navegador anduvo en Boss No-Code, Marketing y Recepción. En Boss Code y ONIA Platform, que arrancaron primero, no apareció; Boss Code, solo y después, sí. Sin probar: el modo interactivo.
+
+## Relevo del Administrador (2-nov, a la tarde)
+
+La sesión de Claude es `local_23a5279d-9550-4284-828e-bf8bef1d59c2`. Coordina a todas las sesiones, como un jefe, y no hace el trabajo de un área (`AGENTS.md`). Mañana sigue en Codex, con la línea de arriba.
+
+**Hecho el 2-nov:** el navegador por área, las reglas para hablarle a Sergio con autonomía mediana, el stack de cada área ([`stack.md`](stack.md)), los relevos para Codex de Boss No-Code, ONIA Platform, Boss Code y Recepción, los perfiles y las carpetas de Codex, y el ensayo.
+
+**Pendiente:**
+- **Marketing:** su estado, `marketing.md`, tiene que estar en `main`. Estaba en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), y se le pidió mergearlo el 2-nov.
+- **Ramas de Grok con datos de un lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): nadie tiene asignado borrarlas. Sergio ya eligió borrarlas después del rescate, pero asignárselo a Boss No-Code lo frenó la app, por irreversible. Falta que Sergio diga quién se lo pide.
+- **Herramientas de Codex** ([issue #128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128)): Higgsfield, Vercel y Gmail quedan con la regla de no usarlas sin su sí, como eligió Sergio. Notion y Drive, que se apagaron el 28-oct, figuran prendidos con otro nombre; falta preguntarle.
+- **Boss Code:** el inventario del VPS, cuando Sergio cargue la clave.
+- **Analista:** auditar los PRs del 2-nov, en su primera sesión en Codex.
+
+## Relevo del 2-nov, a la madrugada
+
 Relevo del 2-nov-2026, cerca de las 2:40 de Bolivia. Lo escribió la sesión del Administrador cuando Sergio Urcullo pidió archivarla: "necesito que tambien administrador se archive" (sin enlace). Después no se archivó: ver la actualización de abajo.
 
 Según `get_usage` de la app de Claude, la sesión tenía 415.051 tokens usados de 1.000.000 (42%). Eso está arriba del tope del Administrador, de unos 240.000 en total en Claude ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La cuota semanal de Claude iba en 50% y se renueva el 5-nov.
@@ -8,7 +68,7 @@ Según `get_usage` de la app de Claude, la sesión tenía 415.051 tokens usados 
 
 Sergio pidió "crea nueva sesion administrador" (sin enlace). Esta actualización la escribe la sesión nueva, que reemplaza al Administrador que dejó el relevo de arriba; la de arriba ya no rige donde diga "este Administrador" o "se archiva". Qué pasó con la sesión vieja, comprobado en `list_sessions`:
 - `local_b6a36bc7-c263-4551-8a70-0d2980e34ab4` ("Administrador") **no está archivada: sigue en marcha** y es la que lanzó a la sesión nueva. Según el encargo, sigue con una sola cosa: rehacer en versión mínima la propuesta de hooks de Grok Bot (rama `claude/hooks-contexto-20261102`), en un PR propio que aprueba Sergio porque toca permisos. No se pudo comprobar esa rama desde acá.
-- El encargo nombraba como anterior a `local_0bd325bb-aa02-4e38-91a9-d3ea2901b21f`, que no figura. La sesión nueva tampoco aparece en `list_sessions`: su id queda sin confirmar.
+- El encargo nombraba como anterior a `local_0bd325bb-aa02-4e38-91a9-d3ea2901b21f`, que no figura. La sesión nueva tampoco aparece en `list_sessions`. Después, `get_session` dio su id: `local_23a5279d-9550-4284-828e-bf8bef1d59c2`.
 
 Lo comprobado ese día con `list_sessions` y `gh pr list`:
 - **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` entraron ese día por el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), ya mergeado.
