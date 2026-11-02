@@ -19,7 +19,7 @@ Lo comprobado ese día con `list_sessions` y `gh pr list`:
   - esperan revisión escrita: el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120), que en `gh` no tiene comentarios, el PR de Recepción, arriba, y el que cambia este archivo.
 - **ONIA Platform:** el [PR de la propuesta de ONIA Platform a los inscriptos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/119) se cerró sin mergear. Sergio eligió "Nada esta semana" (comentario del PR): la plataforma no se nombra en el taller esta semana. La rama `claude/platform-oferta-inscriptos` queda en GitHub.
 - **Cuotas** (según el encargo y el mod "Uso de Codex", sin comprobar en el repo): Claude va en 51% de la semana y se renueva el 5-nov a las 04:00 de Bolivia. Codex va en 35% y se renueva el 4-nov a las 02:59.
-- **Navegador de Ubuntu:** configurado en Codex (`~/.codex/config.toml`) y en Claude Code (`~/.claude.json`). Sergio lo tenía abierto para cargar cuentas, y mientras esa ventana siga abierta ninguna sesión puede usar el perfil `equipo`. Sin probar: que los logins queden guardados y varias sesiones a la vez.
+- **Navegador de Ubuntu:** configurado en Codex (`~/.codex/config.toml`) y en Claude Code (`~/.claude.json`). Sergio lo tenía abierto para cargar cuentas, y mientras esa ventana siga abierta ninguna sesión puede usar el perfil `equipo`. Sin probar: que los logins queden guardados y varias sesiones a la vez. Esa tarde, en Codex, cada área pasó a tener su propio perfil ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)); el perfil `equipo` queda para Claude Code.
 - **Checkout principal:** al día con `main` (`7971f86`).
 
 ## Objetivo del próximo Administrador
@@ -70,7 +70,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
   - la ventana visible;
   - varias sesiones juntas.
 
-  Lo que sí se sabe: el perfil compartido lo usa un solo navegador a la vez, así que las áreas se turnan hasta probar otra solución. Las cuentas las carga Sergio cuando un área las necesite.
+  Lo que sí se sabe: el perfil compartido lo usa un solo navegador a la vez, así que las áreas se turnan hasta probar otra solución. Las cuentas las carga Sergio cuando un área las necesite. El 2-nov, la solución en Codex fue un perfil por área ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
 - **Memoria compartida:** es el repo: `AGENTS.md`, `docs/lecciones.md`, el plan, los estados de esta carpeta, los PRs y el tablero del issue #111. La memoria de Claude Code no la leen Codex ni las otras sesiones (`docs/lecciones.md`). En Codex, la función `memories` figura en `false` (`codex features list`, 2-nov). Lo que falta del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38) sigue abierto.
 - **Mensajes entre sesiones:**
   - **Del Administrador a las áreas, en Claude:** anda. El 1-nov, el Administrador les mandó con `SendMessage` la regla de las respuestas cortas a las cinco sesiones de ese día. En las transcripciones de Marketing, Boss Code y ONIA Platform se ve el mensaje recibido, y Boss No-Code y Boss Code contestaron que tomaban la regla (`list_events`, 2-nov). La de la Analista no se miró.
@@ -96,7 +96,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - Correr una PowerShell de administrador para lo que quedó de Orca y Antigravity: el firewall, una credencial, el PATH y un acceso directo. Está en `docs/estado-limpieza-2026-10-28.md`, "Actualización del 1-nov-2026". No se comprobó si ya la corrió.
 - Pasar a la bóveda los dos archivos de accesos que hay en `C:\Users\PC\.onia`, si son claves (`docs/credenciales.md`). Nadie los abrió.
 - Decidir qué hacer con las claves en texto plano de `C:\Users\PC\.claude.json`.
-- Iniciar sesión en el navegador de Ubuntu en las cuentas que un área pida, como dice [navegador de WSL](../decisiones/2026-11-01-navegador-wsl.md).
+- Iniciar sesión en el navegador de Ubuntu en las cuentas que un área pida, en el perfil de esa área, como dice [navegador por área](../decisiones/2026-11-02-navegador-por-area.md).
 
 ## Para después
 
@@ -105,4 +105,4 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - Skills comunes `/empezar`, `/cerrar` y `/auditar` en `.agents/skills` (plan, punto 10).
 - Codex: memorias en `false` y estado de la app, con la app cerrada ([#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)).
 - Medir A y B de Codex el 3-nov, con `/status` (plan, punto 2).
-- Probar un mensaje directo de un área a otra, y el navegador con varias sesiones a la vez.
+- Probar una sesión de Codex real navegando con el perfil de su área. Los mensajes directos entre áreas ya andan: el 2-nov, ONIA Platform le escribió a Marketing y le llegó (transcripción de Marketing, `list_events`).
