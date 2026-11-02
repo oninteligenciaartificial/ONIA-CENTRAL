@@ -37,7 +37,7 @@ Vistos el 1-nov con el estado de conectores de la sesión, sin leer secretos ni 
 
 ## Pendiente de Sergio Urcullo
 
-Al 2-nov a la tarde. Lo ya resuelto: Bs 50 por las 3 clases y clases 4, 5 y 6-nov ([decisión del 2-nov](../decisiones/2026-11-02-taller-4-5-6.md)). En la sesión Marketing, el 2-nov, Sergio Urcullo eligió "US$10/día hasta el 5-nov (Recomendada)" y lo confirmó con "Empecemos hasta el 5 de noviembre"; el inicio, con "La campaña la lanzamos mañana en la mañana" (el 3-nov); y el nombre, con "claude de 0 a 100 y no es ilegal […] no habra problemas", sin confirmar con un abogado. Están citados en `workshops-comunidad/meta-ads-campana-3-4-5.md` (el nombre del archivo es histórico: el contenido es de las clases 4, 5 y 6).
+Al 2-nov a la noche. Lo ya resuelto ([decisión del 2-nov](../decisiones/2026-11-02-taller-4-5-6.md)): clases miércoles 4, jueves 5 y viernes 6-nov a las 19:00, hora de Bolivia, por Google Meet; un solo pago de Bs 50 por las 3 clases; grabaciones entregadas al terminar la última clase, el viernes 6, que quedan para siempre; sin devolución, y si ONIA no da una clase, se pasa a otra fecha. En la sesión Marketing, el 2-nov, Sergio Urcullo eligió "US$10/día hasta el 5-nov (Recomendada)" y lo confirmó con "Empecemos hasta el 5 de noviembre"; el inicio, con "La campaña la lanzamos mañana en la mañana" (el 3-nov); y el nombre, con "claude de 0 a 100 y no es ilegal […] no habra problemas", sin confirmar con un abogado. Están citados en `workshops-comunidad/meta-ads-campana-3-4-5.md` (el nombre del archivo es histórico: el contenido es de las clases 4, 5 y 6).
 
 1. Aprobar los textos del anuncio y grabar los 2 videos.
 2. Probar cómo se graban las clases antes de activar el anuncio: Meet gratis no graba.
