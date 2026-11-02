@@ -11,12 +11,12 @@ Sergio pidió "crea nueva sesion administrador" (sin enlace). Esta actualizació
 - El encargo nombraba como anterior a `local_0bd325bb-aa02-4e38-91a9-d3ea2901b21f`, que no figura. La sesión nueva tampoco aparece en `list_sessions`: su id queda sin confirmar.
 
 Lo comprobado ese día con `list_sessions` y `gh pr list`:
-- **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` están en el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), abierto.
+- **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` entraron ese día por el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), ya mergeado.
 - **Áreas** (Pelau, Boss No-Code, Marketing, Boss Code y ONIA Platform): quietas. Sergio las reanuda contestando el QA de cada una.
 - **PRs abiertos:**
   - espera el sí de Sergio: el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), con revisión en "aprobar" (según el encargo, con captura);
   - espera arreglo de Marketing y nueva revisión: el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102). Su última revisión, en "aprobar", es de la versión vieja;
-  - esperan revisión escrita: el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120), que en `gh` no tiene comentarios, el PR de Recepción, arriba, y el que cambia este archivo.
+  - esperan revisión escrita: el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120), que en `gh` no tiene comentarios, el PR de Recepción, arriba (se mergeó a las 10:04), y el que cambia este archivo.
 - **ONIA Platform:** el [PR de la propuesta de ONIA Platform a los inscriptos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/119) se cerró sin mergear. Sergio eligió "Nada esta semana" (comentario del PR): la plataforma no se nombra en el taller esta semana. La rama `claude/platform-oferta-inscriptos` queda en GitHub.
 - **Cuotas** (según el encargo y el mod "Uso de Codex", sin comprobar en el repo): Claude va en 51% de la semana y se renueva el 5-nov a las 04:00 de Bolivia. Codex va en 35% y se renueva el 4-nov a las 02:59.
 - **Navegador de Ubuntu:** configurado en Codex (`~/.codex/config.toml`) y en Claude Code (`~/.claude.json`). Sergio lo tenía abierto para cargar cuentas, y mientras esa ventana siga abierta ninguna sesión puede usar el perfil `equipo`. Sin probar: que los logins queden guardados y varias sesiones a la vez. Más tarde ese día, cerca de las 11:30, en Codex cada área pasó a tener su propio perfil ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)); el perfil `equipo` queda para Claude Code.
@@ -46,7 +46,7 @@ Las lanzó el Administrador el 2-nov, cerca de las 2:20 de Bolivia, por pedido d
 | Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, todavía no está en `main`: está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, que su auditoría pidió poner al día con la oferta y las fechas nuevas y volver a revisar |
 | Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y qué hacer con las ramas de Grok que tienen datos de un lead | Espera que Sergio conteste su QA |
 | ONIA Platform | `local_3542ddf0-d533-4ca5-9227-d8ae370ce11b` | Opus, `high` | Su próximo objetivo, con la recomendada ligada a vender esta semana | Espera que Sergio conteste su QA |
-| Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su [PR de la skill ver-video](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124) está abierto |
+| Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su [PR de la skill ver-video](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124) ya está mergeado |
 | Analista | ninguna | — | Se abre al cerrar la tanda de PRs del día | — |
 
 Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion" (`negocio.md`).
@@ -70,7 +70,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
   - la ventana visible;
   - varias sesiones juntas.
 
-  Lo que sí se sabe: el perfil compartido lo usa un solo navegador a la vez, así que las áreas se turnan hasta probar otra solución. Las cuentas las carga Sergio cuando un área las necesite. El 2-nov, en Codex se pasó a un perfil por área ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)), sin probar todavía con una sesión real.
+  Lo que sí se sabe: el perfil compartido lo usa un solo navegador a la vez, así que las áreas se turnan hasta probar otra solución. Las cuentas las carga Sergio cuando un área las necesite. El 2-nov, en Codex se pasó a un perfil por área ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)), y ese día se probó con una sesión real.
 - **Memoria compartida:** es el repo: `AGENTS.md`, `docs/lecciones.md`, el plan, los estados de esta carpeta, los PRs y el tablero del issue #111. La memoria de Claude Code no la leen Codex ni las otras sesiones (`docs/lecciones.md`). En Codex, la función `memories` figura en `false` (`codex features list`, 2-nov). Lo que falta del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38) sigue abierto.
 - **Mensajes entre sesiones:**
   - **Del Administrador a las áreas, en Claude:** anda. El 1-nov, el Administrador les mandó con `SendMessage` la regla de las respuestas cortas a las cinco sesiones de ese día. En las transcripciones de Marketing, Boss Code y ONIA Platform se ve el mensaje recibido, y Boss No-Code y Boss Code contestaron que tomaban la regla (`list_events`, 2-nov). La de la Analista no se miró.
@@ -105,4 +105,4 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - Skills comunes `/empezar`, `/cerrar` y `/auditar` en `.agents/skills` (plan, punto 10).
 - Codex: memorias en `false` y estado de la app, con la app cerrada ([#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)).
 - Medir A y B de Codex el 3-nov, con `/status` (plan, punto 2).
-- Probar un mensaje directo de un área a otra, y una sesión de Codex real navegando con el perfil de su área.
+- Probar un mensaje directo de un área a otra. La sesión de Codex real con el perfil de su área ya se probó el 2-nov ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
