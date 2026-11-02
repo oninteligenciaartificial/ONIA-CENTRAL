@@ -6,7 +6,7 @@
 
 ## De dónde sale
 
-- **El taller:** clases el miércoles 4, el jueves 5 y el viernes 6-nov a las 19:00 (hora de Bolivia), por Meet. Un solo pago de Bs 50 por las 3 clases, con las grabaciones, que se entregan el viernes 6 y quedan para siempre. Sin devolución, salvo que ONIA no dé una clase ([decisión del 2-nov](../docs/decisiones/2026-11-02-taller-4-5-6.md) y [oferta del 1-nov](../docs/decisiones/2026-11-01-oferta-taller-3-4-5.md)).
+- **El taller:** clases el miércoles 4, el jueves 5 y el viernes 6-nov a las 19:00 (hora de Bolivia), por Meet. Un solo pago de Bs 50 por las 3 clases, con las grabaciones, que se entregan el viernes 6 y quedan para siempre. Sin devolución; si ONIA no da una clase, se pasa a otra fecha ([decisión del 2-nov](../docs/decisiones/2026-11-02-taller-4-5-6.md) y [oferta del 1-nov](../docs/decisiones/2026-11-01-oferta-taller-3-4-5.md)).
 - **La forma del guion:** gancho, la objeción del público con sus palabras, los pasos concretos y el cierre, como en los reels de Enrique Rocha y Santiago Muñoz ([resumen de referentes](referentes/resumen-2026-10-29.md), "Tipos de video, guiones y edición").
 - **Los temas:** Claude en el trabajo, y el detrás de escena de cómo dirige ONIA con agentes, como propone el [plan de marca personal](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66) (borrador, sección "Posicionamiento").
 
