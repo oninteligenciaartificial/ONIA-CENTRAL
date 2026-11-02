@@ -17,7 +17,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 ## Cómo se trabaja
 
 - `main` cambia solo por PR. Un PR es un cambio chico, con un título que dice qué hace.
-- **Lo mergea Claude sin preguntar** solo si el PR toca nada más que documentos internos de `docs/`, la estructura de carpetas, skills escritas en este repo que no hacen nada de la lista de abajo, o pruebas. Antes tiene que pasar una revisión con veredicto "aprobar" y sin cambios pendientes, hecha por un agente que no comparte el contexto del autor: un agente nuevo, o Codex si lo escribió Claude. Codex no mergea.
+- **Lo mergea Claude sin preguntar** (y, desde el 3-nov-2026, Codex) solo si el PR toca nada más que documentos internos de `docs/`, la estructura de carpetas, skills escritas en este repo que no hacen nada de la lista de abajo, o pruebas. Antes tiene que pasar una revisión con veredicto "aprobar" y sin cambios pendientes, hecha por un agente que no comparte el contexto del autor: un agente nuevo, o Codex si lo escribió Claude, u otro Codex nuevo si lo escribió Codex.
 - **Lo aprueba Sergio Urcullo, siempre:**
   - lo que se publica o ve un cliente, incluidos los guiones, páginas y mensajes de `marca-personal/` y `workshops-comunidad/`;
   - el gasto;
@@ -61,7 +61,7 @@ Desde el 1-nov-2026, por decisión de Sergio Urcullo ([2026-11-01-equipo-claude-
 - **Pelau** solo le da a Sergio Urcullo resúmenes cortos de lo que hicieron las áreas.
 - **La Analista** audita el trabajo y las revisiones. No corrige los archivos que audita ni cambia permisos.
 - El 1 y el 2-nov, Claude Code hace el trabajo del área y Codex revisa en solo lectura. Desde el 3-nov, Codex hace también el trabajo del área, incluido el pesado. Lo revisa, en solo lectura, otro Codex nuevo que no comparte el contexto del autor, o una sesión nueva. En el CLI se usa `codex exec --sandbox read-only`. La revisión queda escrita en el PR, como dice "Cómo se trabaja".
-- **Codex no mergea.** El paso de motor no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
+- **Codex mergea solo lo que deja "Lo mergea Claude sin preguntar",** con la última revisión en "aprobar", y nunca hace push a `main` ni a `master`. Lo aceptó Sergio Urcullo el 2-nov, con botones (sesión del Administrador). El paso de motor no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
 
 ## Hermes y Grok Bot: historia
 

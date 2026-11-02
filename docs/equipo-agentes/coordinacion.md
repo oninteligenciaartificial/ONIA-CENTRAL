@@ -88,7 +88,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - La Analista trabaja por auditoría: el Administrador la abre una vez al día, al cerrar la tanda de PRs, y la archiva cuando termina ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4).
 - El navegador de Ubuntu queda "todo libre" para las áreas ([PR #116](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/116)).
 - El 12-nov, Sergio decide si renueva ChatGPT, que vence el 14-nov.
-- Sobre el merge, Sergio eligió "Delegarlo después": se propone más adelante un cambio de reglas que lo delegue en Codex ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)), y él decide si lo aprueba. Hasta entonces, Codex no mergea.
+- Sobre el merge, Sergio eligió "Delegarlo después": se propone más adelante un cambio de reglas que lo delegue en Codex ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)), y él decide si lo aprueba. El 2-nov lo aprobó: Codex mergea solo lo que deja "Lo mergea Claude sin preguntar" ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)).
 
 ## Lo que le toca a Sergio
 

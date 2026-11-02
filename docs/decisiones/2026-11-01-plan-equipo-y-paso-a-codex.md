@@ -211,7 +211,7 @@ Cada área presenta **sus propias decisiones**, con dos o tres opciones cortas y
 
 Si dos áreas necesitan el mismo archivo, la coordinadora ordena quién va primero. Si discrepan sobre un hecho, gana la evidencia más directa y se revisa ese punto. Si la diferencia es comercial, de gasto o de alcance reservado, decide Sergio. `AGENTS.md:21–35`; `docs/lecciones.md:82`.
 
-El `AGENTS.md` global de Codex (`C:\Users\PC\.codex\AGENTS.md`) pide el OK explícito de Sergio para push, merge y deploy, y el `AGENTS.md` del repo dice que Codex no mergea (`AGENTS.md:20`). Desde el 3-nov, entonces, **Codex prepara y revisa, y el merge lo hace Sergio**, salvo que decida delegarlo con otro cambio de reglas.
+El `AGENTS.md` global de Codex (`C:\Users\PC\.codex\AGENTS.md`) pide el OK explícito de Sergio para push, merge y deploy, y el `AGENTS.md` del repo dice que Codex no mergea (`AGENTS.md:20`). Desde el 3-nov, entonces, **Codex prepara y revisa, y el merge lo hace Sergio**, salvo que decida delegarlo con otro cambio de reglas. **Lo delegó el 2-nov:** Codex sube sus ramas y mergea solo lo que deja "Lo mergea Claude sin preguntar", del `AGENTS.md`, y nunca hace push a `main` ni a `master`. Se cambiaron el `AGENTS.md` y la línea 9 del `AGENTS.md` global de Codex.
 
 ## 9. Paso a Codex el 3-nov
 
