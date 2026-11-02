@@ -56,7 +56,7 @@ Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONI
 
 ## Texto que llega al chat (coincide con el llamado a la acción)
 
-El llamado del anuncio es "Tocá el botón y escribime", y el mensaje sugerido de la plantilla es **"Hola, quiero info del taller de Claude"**. La respuesta es el saludo del [PR #110 (textos de WhatsApp)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), sección 1, que da las fechas 3, 4 y 5, el pago único y las grabaciones. Está **sin comprobar** que ese saludo se dispare con esa frase: lo confirma Boss No-Code. Los reels usan "escribí TALLER" por WhatsApp; ese es otro canal y no se mezcla con el anuncio.
+El llamado del anuncio es "Tocá el botón y escribime", y el mensaje sugerido de la plantilla es **"Hola, quiero info del taller de Claude"**. La respuesta es el saludo del [PR #110 (textos de WhatsApp)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), sección 1, que da las fechas 3, 4 y 5, el pago único y las grabaciones. Boss No-Code confirmó el 2-nov que ese saludo contesta a esa frase con las fechas y las grabaciones, pero que hoy el precio sale recién en el mensaje siguiente (sección 2). Le pedí que ponga los Bs 50 ya en el saludo, porque el anuncio promete ese precio; hasta que lo cambie en el #110, el anuncio y el primer mensaje no coinciden. Los reels usan "escribí TALLER" por WhatsApp; ese es otro canal y no se mezcla con el anuncio.
 
 ## Campaña (a cargar en pausa cuando haya página)
 
