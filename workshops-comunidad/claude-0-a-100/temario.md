@@ -63,7 +63,7 @@ En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien 
 | 20:00 | 10 | Búsqueda web y memoria | Cuándo prender la búsqueda web y pedirle las fuentes. La memoria: qué recuerda de un chat a otro, dónde se ve y cómo se borra. El chat de incógnito, para lo que no querés que recuerde |
 | 20:10 | 20 | Tu primer proyecto | Demo: proyecto "Panadería La Esquina", con instrucciones y los dos archivos de práctica. Pedido: "Un cliente pide una torta para mañana a las 10. Contestale". Claude debería decir que hacen falta 48 horas, porque está en las instrucciones. **Ejercicio de la clase,** 10 minutos (abajo) |
 | 20:30 | 20 | Preguntas | — |
-| 20:50 | 10 | Cierre | La tarea. La grabación llega al grupo. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
+| 20:50 | 10 | Cierre | La tarea. Las grabaciones llegan el jueves 5, al terminar la última clase. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
 
 **Las cifras del archivo de práctica,** para comprobar lo que contesta Claude:
 - Del 1 al 28 de octubre se vendieron Bs 17.766.
@@ -95,7 +95,7 @@ Lo tenés cuando Claude te contesta usando tus documentos, sin que se los expliq
 | 20:00 | 10 | Skills que ya vienen | Una skill es un paquete de instrucciones que Claude usa solo cuando hace falta. Ya vienen las de Excel, Word, PowerPoint y PDF, y Claude las usa solo ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)). Dónde se ven y se prenden. En la clase 3 armás la tuya |
 | 20:10 | 20 | Ejercicio de la clase | Abajo |
 | 20:30 | 20 | Preguntas | — |
-| 20:50 | 10 | Cierre | La tarea, la grabación, el testimonio y la clase 3 |
+| 20:50 | 10 | Cierre | La tarea, el testimonio y la clase 3 |
 
 **Ejercicio de la clase: de un archivo a tres entregas.** Con un archivo tuyo, o con el de práctica:
 1. un artefacto: una tabla o un tablero;
@@ -119,7 +119,7 @@ Lo tenés cuando bajaste el documento y la presentación, y después de revisarl
 | 19:55 | 5 | Aviso y cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
 | 20:00 | 20 | Tu propia skill | Demo: la skill "respuestas de la panadería". Se le pide a Claude que la escriba como una carpeta con un `SKILL.md`, comprimida en .zip. Se sube en Customize > Skills, con "+", "Create skill" y "Upload a skill" ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)), y se prueba en un chat nuevo. **Ejercicio de la clase** (abajo) |
 | 20:20 | 15 | Tu plan para seguir | Elegí 3 tareas de tu semana y a dónde va cada una: un proyecto, una skill o un conector. Cuándo conviene un plan pago: más uso y programar tareas. El Pro cuesta US$20 por mes, o US$17 por mes pagando el año ([precios de Claude](https://claude.com/pricing), 29-oct-2026). {Con el gratis se hace todo lo de esta serie}, si la prueba dla prueba lo confirma |
-| 20:35 | 25 | Preguntas y cierre | El testimonio, la grabación y cómo seguir |
+| 20:35 | 25 | Preguntas y cierre | El testimonio, la entrega de las grabaciones y cómo seguir |
 
 **Ejercicio de la clase: tu skill.**
 1. Elegí una tarea que repetís cada semana, por ejemplo contestar un tipo de consulta o armar un informe.
