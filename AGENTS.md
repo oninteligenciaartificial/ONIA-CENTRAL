@@ -50,17 +50,18 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 
 ## Equipo de agentes
 
-Desde el 1-nov-2026, por decisión de Sergio Urcullo ([2026-11-01-equipo-claude-code](docs/decisiones/2026-11-01-equipo-claude-code.md)):
+Desde el 1-nov-2026, por decisión de Sergio Urcullo ([2026-11-01-equipo-claude-code](docs/decisiones/2026-11-01-equipo-claude-code.md)), el equipo trabaja en esta PC. Sergio pidió después pasar entero a Codex cuando termine la cuenta de Claude: desde el 3-nov-2026, todas las sesiones usan Codex, sin condición de ingresos. Cómo se mide el contexto, cuándo se releva una sesión, qué modelo usa cada una y cómo es el paso a Codex está en [2026-11-01-plan-equipo-y-paso-a-codex](docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md).
 
-- El equipo son sesiones de Claude Code en esta PC, una por área: **Boss No-Code, Marketing, Boss Code y ONIA Platform.** Cada una trabaja en su worktree, abre sus PRs y lleva su archivo de estado en `docs/equipo-agentes/`.
+- El equipo tiene una sesión por área (**Boss No-Code, Marketing, Boss Code y ONIA Platform**), más **la coordinadora y la Analista**. Cada sesión lleva su estado en `docs/equipo-agentes/`. Las tareas que escriben usan su propio worktree y entran por PR.
 - **La sesión coordinadora** reparte el trabajo, ordena quién va primero cuando dos sesiones necesitan el mismo archivo y le resume a Sergio Urcullo lo que hicieron las áreas.
-- **Codex revisa en solo lectura,** como revisor independiente de lo que escribe Claude, con `codex exec --sandbox read-only`. No escribe en el repo ni mergea.
-- El trabajo pesado (código, análisis de repos, documentos largos) lo hace la sesión del área, en su worktree. El motor desde el 3-nov sigue abierto en el [issue #100](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/100).
+- **La Analista** audita el trabajo y las revisiones. No corrige los archivos que audita ni cambia permisos.
+- El 1 y el 2-nov, Claude Code hace el trabajo del área y Codex revisa en solo lectura. Desde el 3-nov, Codex hace también el trabajo del área, incluido el pesado. Lo revisa, en solo lectura, otro Codex nuevo que no comparte el contexto del autor, o una sesión nueva. En el CLI se usa `codex exec --sandbox read-only`. La revisión queda escrita en el PR, como dice "Cómo se trabaja".
+- **Codex no mergea.** El paso de motor no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
 
 ## Hermes y Grok Bot: historia
 
 - **Hermes y Grok Bot no orquestan ni tienen trabajo asignado.** Lo que los describe queda como historia: `docs/decisiones/2026-10-28-hermes-oficial.md` para Hermes; `docs/reglas/equipo-grok-bot.md` y `docs/harness/onia-llm.md` para Grok Bot.
-- El Hermes de Windows (`%LOCALAPPDATA%\hermes`) y el Hermes viejo del VPS siguen instalados hasta que Sergio Urcullo decida apagarlos. El del VPS está en producción. Desde la app de Claude no se corre `hermes` ni se escribe en esa carpeta.
+- El Hermes de Windows ya no está en la PC: el 1-nov-2026, `%LOCALAPPDATA%\hermes` no existía (por WMI) y `hermes` no estaba en el PATH. El Hermes viejo del VPS sigue instalado hasta que Sergio Urcullo decida apagarlo, y está en producción.
 
 ## Qué no entra a Git
 
