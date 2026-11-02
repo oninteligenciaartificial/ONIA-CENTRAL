@@ -11,10 +11,18 @@
       "Bash(git push * main *)",
       "Bash(git push *:main)",
       "Bash(git push *:main *)",
+      "Bash(git push *refs/heads/main)",
+      "Bash(git push *refs/heads/main *)",
+      "Bash(git push *+main)",
+      "Bash(git push *+main *)",
       "PowerShell(git push * main)",
       "PowerShell(git push * main *)",
       "PowerShell(git push *:main)",
-      "PowerShell(git push *:main *)"
+      "PowerShell(git push *:main *)",
+      "PowerShell(git push *refs/heads/main)",
+      "PowerShell(git push *refs/heads/main *)",
+      "PowerShell(git push *+main)",
+      "PowerShell(git push *+main *)"
     ],
     "ask": [
       "Bash(vercel *)",

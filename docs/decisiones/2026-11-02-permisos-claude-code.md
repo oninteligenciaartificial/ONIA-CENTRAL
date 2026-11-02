@@ -7,14 +7,14 @@
 `.claude/settings.json`, con reglas de permisos oficiales de Claude Code. Corren en toda sesión de Claude Code abierta en este repo o en uno de sus worktrees. Hoy, todas las áreas trabajan en worktrees de ONIA-CENTRAL (`list_sessions`, 2-nov).
 
 - **Se niega leer secretos:** cualquier `.env` o `.env.*` del disco, `~/.ssh`, `~/.aws` y `~/.onia`, donde hay dos archivos de accesos que nadie abrió (`docs/equipo-agentes/coordinacion.md`). Vale para la herramienta Read y para `cat`, `head`, `sed` y las redirecciones de Bash.
-- **Se niega `git push` a `main`:** en Bash y en PowerShell, con `main` como destino (`origin main`, `-u origin main`, `HEAD:main`). El push de las demás ramas y el merge de PRs siguen como dice el `AGENTS.md`.
+- **Se niega `git push` a `main`:** en Bash y en PowerShell, con `main` como destino (`origin main`, `-u origin main`, `HEAD:main`, `HEAD:refs/heads/main`, `+main`). El push de las demás ramas y el merge de PRs siguen como dice el `AGENTS.md`. En PowerShell, las reglas no distinguen mayúsculas ("Matching is case-insensitive", [PowerShell](https://code.claude.com/docs/en/permissions#powershell)), así que también niegan `MAIN`. No hay ninguna rama con ese nombre.
 - **Se pregunta antes de tocar producción:** `vercel`, `npx vercel`, `ssh` y `scp` piden el sí en la app, también en modo auto. Sin nadie que conteste, como con `claude -p`, no corren.
 
 La documentación oficial dice: "Rules are evaluated in order: deny, then ask, then allow", y que una regla deny o ask vale aunque el comando venga encadenado: "An ask rule like `Bash(git clean *)` still prompts you for `cd /tmp && git clean -f` [...] even in auto mode" ([permisos](https://code.claude.com/docs/en/permissions#manage-permissions), [comandos compuestos](https://code.claude.com/docs/en/permissions#compound-commands)).
 
 ## Qué se deja afuera de la propuesta de Grok, y por qué
 
-- **Los scripts del guard (`guard.sh`, `guard.ps1`) y la instalación de `jq`.** El `AGENTS.md` dice "Nada de scripts propios", e instalar pide el OK de Sergio. Las reglas de permisos hacen lo mismo sin script.
+- **Los scripts del guard (`guard.sh`, `guard.ps1`) y la instalación de `jq`.** Sergio lo pidió el 2-nov, en la sesión del Administrador: "no quiero que usemos scripts raros, si los vas a uasr avisame y explicame" (sin enlace). Además, instalar pide su OK. Las reglas de permisos cubren sin script los casos de arriba. El guard frenaba también otros deploys (`netlify`, `firebase`, `wrangler`), `npm publish`, `docker` y los borrados de carpetas enteras. Los deploys y `npm publish` quedan para cuando un área los use. Borrar carpetas es parte del trabajo normal, como limpiar worktrees o pruebas en `%TEMP%`, y en modo auto lo revisa el clasificador.
 - **Negar todo push y todo merge.** Frena el flujo de PRs que el `AGENTS.md` permite.
 - **Recargar reglas después de compactar.** No hace falta: "Project-root CLAUDE.md survives compaction" ([memoria](https://code.claude.com/docs/en/memory#instructions-seem-lost-after-compact)).
 - **Achicar `CLAUDE.md`.** La guía oficial recomienda "target under 200 lines per CLAUDE.md file", pero no lo exige ([memoria](https://code.claude.com/docs/en/memory#write-effective-instructions)). Sacar la lectura de `docs/lecciones.md` choca con las reglas vigentes.
@@ -23,9 +23,11 @@ La documentación oficial dice: "Rules are evaluated in order: deny, then ask, t
 
 ## Pruebas del 2-nov
 
-Con `claude -p` en el worktree de esta rama, `claude-haiku-5-5`, dejando permitidos `Bash(git push *)`, `Bash(cat *)`, `Bash(ssh *)` y `Read`:
+Las corrió el autor, con Claude Code 2.1.288 en el worktree de esta rama: `claude -p "<lista de llamadas>" --model claude-haiku-5-5 --output-format json --allowedTools ...`. Para la columna "sin este archivo" se sumó `--setting-sources user`, que no lee la configuración del proyecto. Lo que dice la tabla sale del campo `permission_denials` de la salida. Las salidas quedaron en la carpeta temporal de la sesión, fuera del repo.
 
-| Llamada | Con este archivo | Sin este archivo (`--setting-sources user`) |
+Primera tanda, dejando permitidos `Bash(git push *)`, `Bash(cat *)`, `Bash(ssh *)` y `Read`:
+
+| Llamada | Con este archivo | Sin este archivo |
 |---|---|---|
 | `git push --dry-run origin HEAD:main` | negada | corrió |
 | `git push --dry-run -u origin main` | negada | no se probó |
@@ -35,17 +37,27 @@ Con `claude -p` en el worktree de esta rama, `claude-haiku-5-5`, dejando permiti
 | `cat` de un `.txt` en la misma carpeta | corrió | no se probó |
 | `ssh -V` | no corrió: pidió permiso | corrió |
 
-El `.env` de prueba tenía solo `PRUEBA=valor-de-prueba`. Los push llevaban `--dry-run` y no subieron nada.
+Segunda tanda, después de la revisión 1, dejando permitidos `Bash(git push *)`, `Bash(cd *)` y `PowerShell(git push *)`:
+
+| Llamada | Con este archivo |
+|---|---|
+| `git push --dry-run origin HEAD:refs/heads/main` | negada |
+| `git push --dry-run origin +main` | negada |
+| PowerShell: `git push --dry-run origin main` | negada |
+| `cd . && git push --dry-run origin main` | negada |
+| `git push --dry-run origin HEAD:refs/heads/claude/domain` | corrió |
+
+El `.env` de prueba tenía solo `PRUEBA=valor-de-prueba`. Los push llevaban `--dry-run` y no subieron nada. No se probó en modo auto ni en una sesión de la app: que una regla ask pregunte también en modo auto sale de la documentación.
 
 ## Límites
 
 - **No es una barrera de seguridad.** La documentación lo dice así: una regla de Bash "isn't a security boundary around the program". Por ejemplo, `Bash(git push *)` no frena `git -C . push origin main` ([lo que una regla no cubre](https://code.claude.com/docs/en/permissions#what-a-bash-rule-doesnt-match)). Tampoco frena un script de Python o Node que abre el archivo por su cuenta ([Read y Edit](https://code.claude.com/docs/en/permissions#read-and-edit)).
 - **Sin sandbox en Windows.** "On native Windows, Claude Code runs commands unsandboxed" ([sandbox](https://code.claude.com/docs/en/sandboxing)).
-- **Sin protección de `main` en GitHub.** El repo es privado y la cuenta no tiene GitHub Pro: GitHub contestó "Upgrade to GitHub Pro or make this repository public to enable this feature" al pedir las reglas de `main` (2-nov).
+- **Sin protección de `main` en GitHub.** El repo es privado y la cuenta no tiene GitHub Pro: GitHub contestó "Upgrade to GitHub Pro or make this repository public to enable this feature" a `gh api repos/oninteligenciaartificial/ONIA-CENTRAL/rules/branches/main` (2-nov).
 - **Solo Claude Code.** Codex no lee este archivo. Desde el 3-nov, Codex es el agente por defecto.
 - **No cubre las herramientas MCP de producción,** como las de Vercel o Supabase conectadas a la app.
 - **Las sesiones ya abiertas lo toman cuando su rama lo trae.** Las sesiones nuevas, que salen de `main`, lo tienen desde el arranque.
-- **También queda negado `.env.example`.** Una regla deny no admite excepciones con allow.
+- **También queda negado `.env.example`, aunque es una plantilla sin secretos.** Una regla deny no admite excepciones con allow ("An allow rule can't carve an exception out of a deny rule", [permisos](https://code.claude.com/docs/en/permissions#manage-permissions)). Se prefirió negar de más antes que nombrar una por una las variantes de `.env` y dejar afuera alguna, como `.env.staging`. Si un área necesita la plantilla, se la pide a Sergio.
 
 ## Cómo se deshace
 
