@@ -104,7 +104,7 @@ Qué cuentas se cargan lo decide él. El agente nunca escribe una contraseña ([
 3. **Claude Code:**
    - `claude mcp remove -s user playwright` ([MCP en Claude Code](https://code.claude.com/docs/en/mcp));
    - sacar `mcp__playwright` de `permissions.allow`, o restaurar la copia de `settings.json`.
-4. **Ubuntu:**
-   - **Paquetes:** los instalaron dos transacciones del 1-nov, a las 23:32:00 (`nodejs` y `npm`) y a las 23:35:08 (las dependencias del navegador). Su lista exacta está en `/var/log/apt/history.log`, y esos paquetes se sacan con `apt-get remove` ([manual de apt-get](https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html)).
-   - **Navegadores:** con `npx playwright uninstall --all` ([Playwright](https://playwright.dev/docs/browsers#uninstall-browsers)). Antes del 1-nov no había ningún navegador de Playwright en esa carpeta: `~/.cache/ms-playwright` no existía.
-   - **Perfiles y salidas:** borrar `~/.onia-browser`, que se creó para esto.
+4. **Ubuntu,** en este orden, porque el primer paso necesita `npx`:
+   1. **Navegadores:** con `npx playwright uninstall --all` ([Playwright](https://playwright.dev/docs/browsers#uninstall-browsers)). Antes de la instalación del 1-nov no había ningún navegador de Playwright: `~/.cache/ms-playwright` no existía.
+   2. **Perfiles y salidas:** borrar `~/.onia-browser`, que se creó para esto.
+   3. **Paquetes:** los instalaron dos transacciones del 1-nov, a las 23:32:00 (`nodejs` y `npm`) y a las 23:35:08 (las dependencias del navegador). Su lista exacta está en `/var/log/apt/history.log`, y esos paquetes se sacan con `apt-get remove` ([manual de apt-get](https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html)).
