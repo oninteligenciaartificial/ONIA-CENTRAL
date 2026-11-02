@@ -72,7 +72,7 @@ Se publica después de la clase, a las 21:30 o más tarde.
 
 ### Reel 6 · noche · "Lo que pasó en la clase 1"
 
-Solo si hay material de la clase 1 que no muestre a nadie. Si no, va este otro: "Hoy es la clase dos de Claude de 0 a 100, a las siete de la noche, hora de Bolivia. Pero Sergio, me perdí la primera. Te queda grabada y te la paso el viernes con las otras dos. Bs 50 por las tres. Link en la bio."
+Solo si hay material de la clase 1 que no muestre a nadie. Si no, va este otro: "Mañana es la última clase de Claude de 0 a 100, a las siete de la noche, hora de Bolivia. Pero Sergio, me perdí las dos primeras. Te quedan grabadas y te las paso el viernes. Bs 50 por las tres. Link en la bio."
 
 - **Gancho (0-3 s):** "Ayer di mi primera clase de Claude."
 - **Cuerpo (3-25 s):** qué se hizo y la pregunta que más se repitió, contada por Sergio Urcullo, sin nombres.

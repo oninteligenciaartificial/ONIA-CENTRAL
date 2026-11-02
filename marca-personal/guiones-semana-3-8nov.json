@@ -99,7 +99,7 @@
   "titulo": "¿Necesito saber programar para usar IA?",
   "gancho": "Pero Sergio, ¿no necesito saber programar para usar IA?",
   "guion": "Pero Sergio, ¿no necesito saber programar para usar IA? No. Yo empecé sin saber programar. Lo que necesitas es saber qué quieres lograr y explicarlo con claridad: quién es el cliente, qué problema tiene y cómo debería verse el resultado. Si puedes explicarle una tarea a un compañero, puedes explicársela a Claude. Es una habilidad que se practica, como escribir. Si querés aprenderlo en vivo, tocá el link de mi bio y escribime.",
-  "tomas": "Plano a cámara con libreta detrás · Pantalla de un prompt claro escrito en lenguaje normal · Tarjeta «Hoy 19:00 · Clase 2»",
+  "tomas": "Plano a cámara con libreta detrás · Pantalla de un prompt claro escrito en lenguaje normal",
   "cta": "Si querés aprenderlo en vivo, tocá el link de mi bio y escribime.",
   "origen": "Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)",
   "estado": "revisar"
@@ -144,7 +144,7 @@
   "titulo": "Colegio, clases y startup: mi semana",
   "gancho": "Mi semana de founder de 16 años, sin filtro.",
   "guion": "Mi semana de founder de 16 años, sin filtro. Colegio de ocho a doce. Después, clases hasta las seis. Y la startup, de noche, cuando se puede. ¿Cómo lo hago? Con una regla: lo que se repite, lo delego a un agente; lo que necesita criterio, lo hago yo. Y descanso, porque sin descanso nada de esto dura. Seguime para ver más.",
-  "tomas": "Clip caminando (sin compañeros ni profes) · Clip de laptop con agenda semanal · Tarjeta con 3 bloques: Colegio · Clases · Startup",
+  "tomas": "Clip caminando (sin compañeros ni profes) · Clip de laptop con agenda semanal",
   "cta": "Seguime para ver más.",
   "origen": "Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos) · Confirmar que querés decir tu edad",
   "estado": "falta_dato"
@@ -438,7 +438,7 @@
   "id": "W4",
   "dia": "2026-11-04",
   "franja": "TR3",
-  "hora": "20:30",
+  "hora": "21:30",
   "linea": "taller",
   "formato": "vertical",
   "titulo": "Así dirijo ONIA con agentes",
@@ -474,7 +474,7 @@
   "titulo": "Lo que pasó en la clase 1",
   "gancho": "Ayer di mi primera clase de Claude.",
   "guion": "Ayer di mi primera clase de Claude. [Completar con Sergio: qué se hizo y la pregunta que más se repitió, sin nombres]. Mañana es la última, y si te sumás ahora te quedan las grabaciones de las tres. Link en la bio.",
-  "tomas": "Pantalla de la clase o a cámara, sin caras, nombres ni chat de Meet",
+  "tomas": "Pantalla de la clase o a cámara, sin caras, nombres ni chat de Meet. Si no hay material, va este otro: \"Mañana es la última clase de Claude de 0 a 100, a las siete de la noche, hora de Bolivia. Pero Sergio, me perdí las dos primeras. Te quedan grabadas y te las paso el viernes. Bs 50 por las tres. Link en la bio.\"",
   "cta": "Tocá el link de mi bio y escribime.",
   "origen": "Marketing, PR #139 (de vos)",
   "estado": "falta_dato"
@@ -505,7 +505,7 @@
   "gancho": "Le paso a Claude las ventas de un mes y le pido tres cosas.",
   "guion": "Le paso a Claude las ventas de un mes y le pido tres cosas: un resumen en tres líneas, una tabla por producto y un mensaje para el equipo. Si querés enterarte del próximo taller, seguime.",
   "tomas": "Pantalla grabada con archivo de ejemplo (\"Datos de ejemplo\") · Revisar cifras antes de usar",
-  "cta": "Tocá el link de mi bio y escribime.",
+  "cta": "Seguime para el próximo taller.",
   "origen": "Marketing, PR #139 (de vos)",
   "estado": "revisar"
  }

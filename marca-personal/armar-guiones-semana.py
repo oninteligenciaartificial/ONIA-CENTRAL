@@ -26,7 +26,7 @@ def gb(lid, dia, fr, cta):
         t = 'Cada área de ONIA tiene su agente: ventas, marketing, código y la plataforma, y uno que coordina. ' + t
     t = re.sub(r'\s+', ' ', t).strip() + ' ' + cta
     add(lid, dia, fr, 'marca', g['formato'], g['titulo'], g['gancho'], t,
-        ' · '.join(g.get('tomas', [])), cta,
+        ' · '.join(x for x in g.get('tomas', []) if 'Clase' not in x and '19:00' not in x), cta,
         'Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)' + (' · Confirmar que querés decir tu edad' if '16' in t + g['titulo'] else ''),
         'falta_dato' if '16' in t + g['titulo'] else 'revisar')
 
@@ -110,7 +110,7 @@ W = [
     ('W5', '2026-11-05', 'R1', 'La fórmula para pedirle bien', 'Si la respuesta de la IA no te sirve, probá mejorar el pedido.',
      'Si la respuesta de la IA no te sirve, probá mejorar el pedido. Pero Sergio, yo le escribo clarito. Probá con cuatro partes. Quién sos y para qué es. Qué querés exactamente. Cómo lo querés: tabla, lista o mensaje. Y un ejemplo de cómo te gusta. Guardalo. Y si querés practicarlo en vivo, hoy a las siete, hora de Bolivia, es la clase dos. Link en la bio.', 'A cámara con tarjetas 1 a 4'),
     ('W6', '2026-11-05', 'R3', 'Lo que pasó en la clase 1', 'Ayer di mi primera clase de Claude.',
-     'Ayer di mi primera clase de Claude. [Completar con Sergio: qué se hizo y la pregunta que más se repitió, sin nombres]. Mañana es la última, y si te sumás ahora te quedan las grabaciones de las tres. Link en la bio.', 'Pantalla de la clase o a cámara, sin caras, nombres ni chat de Meet'),
+     'Ayer di mi primera clase de Claude. [Completar con Sergio: qué se hizo y la pregunta que más se repitió, sin nombres]. Mañana es la última, y si te sumás ahora te quedan las grabaciones de las tres. Link en la bio.', 'Pantalla de la clase o a cámara, sin caras, nombres ni chat de Meet. Si no hay material, va este otro: "Mañana es la última clase de Claude de 0 a 100, a las siete de la noche, hora de Bolivia. Pero Sergio, me perdí las dos primeras. Te quedan grabadas y te las paso el viernes. Bs 50 por las tres. Link en la bio."'),
     ('W7', '2026-11-06', 'R1', 'Última clase', 'Hoy es la última clase de Claude de 0 a 100.',
      'Hoy es la última clase de Claude de 0 a 100. Pero Sergio, me perdí las dos primeras. No pasa nada: te sumás hoy en vivo y esta noche te llegan las grabaciones de las tres. Bs 50. Tocá el link de mi bio y escribime antes de las siete de la noche, hora de Bolivia.', 'A cámara'),
     ('W8', '2026-11-06', 'R3', 'Tres cosas que Claude hace con un archivo tuyo', 'Le paso a Claude las ventas de un mes y le pido tres cosas.',
@@ -118,7 +118,9 @@ W = [
 ]
 for w in W:
     add(w[0], w[1], 'T' + w[2], 'taller', 'vertical', w[3], w[4], w[5], w[6],
-        'Tocá el link de mi bio y escribime.', T, 'falta_dato' if '[' in w[5] else 'revisar')
+        'Seguime para el próximo taller.' if w[0] == 'W8' else 'Tocá el link de mi bio y escribime.', T, 'falta_dato' if '[' in w[5] else 'revisar')
+    if w[0] == 'W4':
+        rows[-1]['hora'] = '21:30'
 
 json.dump(rows, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(len(rows), Counter((r['dia'], r['linea'], r['formato']) for r in rows))
