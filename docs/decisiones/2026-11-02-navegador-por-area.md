@@ -10,7 +10,7 @@
 ## Cómo quedó en Codex
 
 - **Sin perfil:** en `C:\Users\PC\.codex\config.toml`, el navegador va con `--isolated`, sin cuentas guardadas. Lo usa toda sesión que arranca con `codex` a secas, como las revisiones.
-- **Un archivo por área** en `C:\Users\PC\.codex\`, `<área>.config.toml`. Solo cambia los `args` del servidor `playwright`: `--user-data-dir /home/pc-linux-sergio/.onia-browser/<área>` y `--output-dir /home/pc-linux-sergio/.onia-browser/salida/<área>`. Codex lo suma al arrancar con `codex -p <área>` ("Layer $CODEX_HOME/<name>.config.toml on top of the base user config", `codex --help`, codex-cli 0.166.0).
+- **Un archivo por área** en `C:\Users\PC\.codex\`, `<área>.config.toml`. Repite el servidor `playwright` entero (`command`, `args`, `startup_timeout_sec` y `default_tools_approval_mode`), con `--user-data-dir /home/pc-linux-sergio/.onia-browser/<área>` y `--output-dir /home/pc-linux-sergio/.onia-browser/salida/<área>`. Con solo `args`, `codex -p <área> mcp get playwright` lo mostraba bien, pero una sesión real no vio el navegador (prueba del 2-nov, abajo). Codex lo suma al arrancar con `codex -p <área>` ("Layer $CODEX_HOME/<name>.config.toml on top of the base user config", `codex --help`, codex-cli 0.166.0).
 - **Cada área arranca** desde su worktree con `codex -p <área>`. Así quedó en el punto 3 de "Pasos del corte", en la sección 9 del [plan del paso a Codex](2026-11-01-plan-equipo-y-paso-a-codex.md).
 - **Cada perfil lo usa una sola sesión a la vez,** por la misma nota del README: dos sesiones de la misma área no navegan juntas.
 - **Respaldo** de `config.toml` antes del cambio: `C:\Users\PC\.respaldos-config\20261102-navegador-por-area\`.
@@ -44,13 +44,14 @@ Ese ejemplo es el de Marketing; para otra área se cambia `marketing` por su nom
 
 - `codex mcp get playwright` da `--isolated`, y `codex -p <área> mcp get playwright` da el `--user-data-dir` y el `--output-dir` de cada una de las cinco áreas.
 - Dos navegadores a la vez, con los perfiles `boss-code` y `recepcion`, abrieron `https://example.com` sin chocar. Se probó con el mismo Chrome que lanza el MCP (`chromium-1252`), abierto directo y sin el MCP.
-- **Sin probar:** una sesión de Codex real navegando con su perfil, y que los logins queden guardados al cerrar la ventana.
+- Una sesión real, `codex exec -p boss-code --sandbox read-only`, abrió `https://example.com` con el navegador de su perfil, cerca de las 12:40. Con el archivo de solo `args` no lo veía: contestó que la herramienta no estaba disponible.
+- **Sin probar:** que los logins queden guardados al cerrar la ventana.
 
 ## Lo que falta
 
 - **El perfil `equipo`:** Sergio avisó el 2-nov "ya cargue mi cuenta" (pedido que pasó el Administrador anterior, sin enlace), y la carpeta cambió ese día a las 10:12. No se sabe qué cuenta es. Pasa a la carpeta del área que corresponda cuando él lo diga. Hasta entonces, en Codex no lo usa nadie.
 - **Claude Code no cambió:** sus sesiones siguen con el perfil `equipo` y con los conectores de la app, como Meta Ads. Hasta el paso a Codex, las áreas no usan el navegador de Ubuntu (pedido del Administrador a las áreas, 2-nov).
-- **Otras herramientas de Codex, sin revisar:** el perfil por área separa solo el navegador de Ubuntu. `codex mcp list` muestra prendidos `cua_repl`, `node_repl` y `playwright`, y `codex_app` apagado. En `config.toml` están prendidos, entre otros, los plugins `chrome@openai-bundled`, `browser@openai-bundled`, `computer-use@openai-bundled`, `unified-computer-use@openai-bundled` y `codex-app-tools@openai-bundled`, y los perfiles por área no los cambian. Qué exponen no se miró: si alguno llega al Chrome de Sergio o al escritorio, un área podría entrar a una cuenta que no es suya. Sigue en el [issue de frenos en Codex](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128).
+- **Otras herramientas de Codex, sin revisar:** el perfil por área separa solo el navegador de Ubuntu. `codex mcp list` muestra prendidos `cua_repl`, `node_repl` y `playwright`, y `codex_app` apagado. En `config.toml` están prendidos, entre otros, los plugins `chrome@openai-bundled`, `browser@openai-bundled`, `computer-use@openai-bundled`, `unified-computer-use@openai-bundled` y `codex-app-tools@openai-bundled`, y los perfiles por área no los cambian. Qué exponen no se miró: si alguno llega al Chrome de Sergio o al escritorio, un área podría entrar a una cuenta que no es suya. En las pruebas del 2-nov, Codex contestó que ve herramientas de Higgsfield, de Vercel y de Gmail, con perfil y sin perfil, aunque esos plugins figuran apagados en `config.toml`. Es su respuesta: no se miró de dónde salen. Sigue en el [issue de frenos en Codex](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128).
 
 ## Cómo se vuelve atrás
 

@@ -2,7 +2,7 @@
 
 2-nov-2026. Lo armó el Administrador por pedido de Sergio Urcullo: "necesito que definas stack de cada cosa que usa, su VPS, Linux, yo que sé, cuentas, skills, tareas, todo eso. Ve definiéndolo por cada área" (sesión del Administrador, sin enlace).
 
-Sale del "Qué toco y qué no" de [`negocio.md`](negocio.md), [`producto.md`](producto.md), [`platform.md`](platform.md) y [`recepcion.md`](recepcion.md), y del de Marketing, en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto. Lo del Administrador y la Analista sale de [`coordinacion.md`](coordinacion.md) y del `AGENTS.md`, "Equipo de agentes". Lo que dice "por mensaje" salió de mensajes de las sesiones al Administrador del 2-nov (sin enlace). Si algo cambia, el área lo cambia en su estado y le avisa al Administrador.
+Sale del "Qué toco y qué no" de [`negocio.md`](negocio.md), [`producto.md`](producto.md), [`platform.md`](platform.md) y [`recepcion.md`](recepcion.md), y del de Marketing, en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto. Lo del Administrador y la Analista sale de [`coordinacion.md`](coordinacion.md) y del `AGENTS.md`, "Equipo de agentes". Lo de Pelau sale de la sección 4 del [plan del paso a Codex](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), que dice que no cambia archivos ni tiene estado propio. Lo que dice "por mensaje" salió de mensajes de las sesiones al Administrador del 2-nov (sin enlace). Si algo cambia, el área lo cambia en su estado y le avisa al Administrador.
 
 ## Lo que comparten todas
 

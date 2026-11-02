@@ -11,7 +11,7 @@ Sergio pidió "crea nueva sesion administrador" (sin enlace). Esta actualizació
 - El encargo nombraba como anterior a `local_0bd325bb-aa02-4e38-91a9-d3ea2901b21f`, que no figura. La sesión nueva tampoco aparece en `list_sessions`: su id queda sin confirmar.
 
 Lo comprobado ese día con `list_sessions` y `gh pr list`:
-- **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` están en el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), abierto.
+- **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` entraron ese día por el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), ya mergeado.
 - **Áreas** (Pelau, Boss No-Code, Marketing, Boss Code y ONIA Platform): quietas. Sergio las reanuda contestando el QA de cada una.
 - **PRs abiertos:**
   - espera el sí de Sergio: el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), con revisión en "aprobar" (según el encargo, con captura);
@@ -46,7 +46,7 @@ Las lanzó el Administrador el 2-nov, cerca de las 2:20 de Bolivia, por pedido d
 | Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, todavía no está en `main`: está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, que su auditoría pidió poner al día con la oferta y las fechas nuevas y volver a revisar |
 | Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y qué hacer con las ramas de Grok que tienen datos de un lead | Espera que Sergio conteste su QA |
 | ONIA Platform | `local_3542ddf0-d533-4ca5-9227-d8ae370ce11b` | Opus, `high` | Su próximo objetivo, con la recomendada ligada a vender esta semana | Espera que Sergio conteste su QA |
-| Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su [PR de la skill ver-video](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124) está abierto |
+| Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su [PR de la skill ver-video](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124) ya está mergeado |
 | Analista | ninguna | — | Se abre al cerrar la tanda de PRs del día | — |
 
 Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion" (`negocio.md`).
@@ -105,4 +105,4 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 - Skills comunes `/empezar`, `/cerrar` y `/auditar` en `.agents/skills` (plan, punto 10).
 - Codex: memorias en `false` y estado de la app, con la app cerrada ([#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)).
 - Medir A y B de Codex el 3-nov, con `/status` (plan, punto 2).
-- Probar un mensaje directo de un área a otra, y una sesión de Codex real navegando con el perfil de su área.
+- Probar un mensaje directo de un área a otra. La sesión de Codex real con el perfil de su área ya se probó el 2-nov ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
