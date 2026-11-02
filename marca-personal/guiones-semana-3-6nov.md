@@ -102,3 +102,11 @@ Se publica después de la clase. Ya no vende este taller: suma audiencia para el
 2. Grabar el lote el lunes 2 a la noche, con los videos del anuncio.
 3. Poner en su bio el link de WhatsApp de arriba.
 4. Vos o tú en los reels.
+
+## El panel
+
+Desde el 2-nov, los guiones de la semana están en el panel privado de Sergio Urcullo en claude.ai: https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr. Ahí se ven 3 verticales y 1 horizontal por día de marca personal, del 3 al 8-nov, y aparte el taller y los 2 videos del anuncio.
+
+- Los datos del panel son `guiones-semana-3-8nov.json`, que arma `armar-guiones-semana.py` desde los 21 guiones de Grok Bot (rama `grokbot/workspace-20261101`, sin datos de clientes) más los nuevos de esta sesión.
+- De Grok Bot se sacaron las frases con fechas viejas, precios y el llamado "DIAGNÓSTICO", porque el diagnóstico gratis no está decidido. Siguen en tú y hablan de su edad, como los escribió Grok Bot.
+- Faltan las métricas: la campaña de Meta todavía no está cargada.
