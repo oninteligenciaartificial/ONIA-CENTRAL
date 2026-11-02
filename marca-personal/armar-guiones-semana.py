@@ -24,7 +24,8 @@ def gb(lid, dia, fr, cta):
     if lid == 'L13':
         t = re.sub(r'Tengo seis agentes[^.]*\.', '', t)
         t = 'Cada área de ONIA tiene su agente: ventas, marketing, código y la plataforma, y uno que coordina. ' + t
-    t = re.sub(r'\s+', ' ', t).strip() + ' ' + cta
+    t = re.sub(r'\s+', ' ', t).strip()
+    t = re.sub(r'(¿Y tú[^?]*\?\s*)?(Sígueme|Cuéntamelo|Cuéntame)[^.]*\.$', '', t).strip() + ' ' + cta
     add(lid, dia, fr, 'marca', g['formato'], g['titulo'], g['gancho'], t,
         ' · '.join(x for x in g.get('tomas', []) if 'Clase' not in x and '19:00' not in x), cta,
         'Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)' + (' · Confirmar que querés decir tu edad' if '16' in t + g['titulo'] else ''),
