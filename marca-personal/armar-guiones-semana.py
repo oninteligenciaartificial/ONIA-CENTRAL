@@ -90,11 +90,11 @@ for n in nuevos[7:]:
 A = 'Marketing, PR #120 (de vos)'
 add('A1', '2026-11-02', 'Anuncio', 'taller', 'vertical', 'Anuncio · Video 1, el contraste',
     'Si a la IA solo le hacés preguntas, la estás usando a medias.',
-    'Si a la IA solo le hacés preguntas, la estás usando a medias. Le preguntás algo, copiás, pegás… y la próxima vez le volvés a explicar todo de cero. En 3 clases te enseño a usar Claude con tus archivos y tus proyectos. Sin programar. En vivo y grabadas. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime.',
+    'Si a la IA solo le hacés preguntas, la estás usando a medias. Le preguntás algo, copiás, pegás… y la próxima vez le volvés a explicar todo de cero. En 3 clases te enseño a usar Claude con tus archivos y tus proyectos. Sin programar. En vivo y grabadas: si te sumás tarde, te quedan las que ya pasaron. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime.',
     'A cámara, vertical, unos 35 s, subtítulos grandes', 'Tocá el botón y escribime.', A, 'revisar')
 add('A2', '2026-11-02', 'Anuncio', 'taller', 'vertical', 'Anuncio · Video 2, la demo',
     'Mirá lo que le pido a Claude un lunes a la mañana.',
-    'Mirá lo que le pido a Claude un lunes a la mañana. Le subo las ventas del mes y le pido tres cosas: un resumen, una tabla por producto y un mensaje para mi equipo. Y lo tengo listo. Esto lo practicamos en vivo en Claude de 0 a 100: 3 clases, con grabaciones, por Bs 50 en total. Tocá el botón y escribime.',
+    'Mirá lo que le pido a Claude un lunes a la mañana. Le subo las ventas del mes y le pido tres cosas: un resumen, una tabla por producto y un mensaje para mi equipo. Y lo tengo listo. Esto lo practicamos en Claude de 0 a 100: 3 clases en vivo y grabadas, y si te sumás tarde te quedan las que ya pasaron. Bs 50 en total. Tocá el botón y escribime.',
     'Pantalla del celular con el archivo de ejemplo ("Datos de ejemplo"), después a cámara', 'Tocá el botón y escribime.', A, 'revisar')
 
 T = 'Marketing, PR #139 (de vos)'
