@@ -26,3 +26,10 @@
 - Nada se publica, comenta, sigue ni envía desde esas cuentas, ni se gasta, sin su sí.
 - Videos ni transcripciones privadas en Git, ni datos de clientes.
 - El navegador compartido de Ubuntu mientras lo use otra sesión.
+
+## Para seguir en Codex
+
+- **Cómo se abre:** en `C:\dev\worktrees\ONIA-CENTRAL\recepcion`, con `codex -p recepcion` (modelo, esfuerzo y navegador del perfil `recepcion` ya puestos). Los mensajes entre áreas pasan al tablero del [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+- **En qué estoy:** la skill `ver-video` está mergeada y probada solo con un video sin voz. `ffmpeg` y `faster-whisper` siguen en Ubuntu, igual que hoy.
+- **Qué sigue:** probar `ver-video` con un video real con voz y empezar a mirar redes con las cuentas secundarias, resumiendo para Marketing y las otras áreas.
+- **Espera a Sergio Urcullo:** crear un correo nuevo y las cuentas secundarias de Instagram y TikTok (Facebook si hace falta) con datos reales, y cargarlas a mano en el perfil `recepcion`. Conviene dejarlas unos días con uso normal antes de que Recepción las use. Los términos de Instagram no permiten el acceso automatizado, y la cuenta se puede bloquear.
