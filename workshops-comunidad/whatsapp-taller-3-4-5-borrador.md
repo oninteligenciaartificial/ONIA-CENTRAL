@@ -10,6 +10,8 @@ Qué cambia frente a ese guion:
 - Sin plazo de las grabaciones, porque no está decidido.
 - El nombre de la titular de la cuenta del QR no va en Git: va `[TITULAR]`, que completa Sergio Urcullo.
 
+Antes de usar estos textos: el nombre "Claude de 0 a 100" usa una marca ajena en algo pago y está a confirmar con un abogado (`docs/lecciones.md`). Lo decide Sergio Urcullo.
+
 Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completarlo. Se habla de tú, como en el guion de Grok Bot. Frase para derivar: "Le paso tu consulta a Sergio y te responde lo antes posible."
 
 ## 1. Saludo
@@ -40,17 +42,22 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 "¡Listo, ya tienes tu lugar en *Claude de 0 a 100*! 🎉 Te sumo al grupo de WhatsApp del taller, donde pasamos el link de Meet antes de cada clase. [FRASE DE CLASE]"
 
-[FRASE DE CLASE], según cuándo se verifica el pago (hora de Bolivia):
+[FRASE DE CLASE], según cuándo se verifica el pago (hora de Bolivia). Cada clase va de 19:00 a 21:00, en dos salas:
 - Antes de las 19:00 del 3-nov: "La primera clase es este martes 3 a las 19:00."
-- Del 3-nov a las 19:00 al 4-nov a las 19:00: "La próxima clase es el miércoles 4 a las 19:00. La que ya pasó te la comparto grabada."
-- Del 4-nov a las 19:00 al 5-nov a las 19:00: "La última clase es el jueves 5 a las 19:00. Las que ya pasaron te las comparto grabadas."
-- Después: "Las 3 clases ya pasaron: te comparto las grabaciones."
+- Del 3-nov a las 19:00 al 3-nov a las 21:00: "La clase 1 está en curso: te paso el link para que entres ya. La grabación te la comparto cuando esté lista."
+- Del 3-nov a las 21:00 al 4-nov a las 19:00: "La próxima clase es el miércoles 4 a las 19:00. La que ya pasó te la comparto grabada cuando esté lista."
+- Del 4-nov a las 19:00 al 4-nov a las 21:00: "La clase 2 está en curso: te paso el link para que entres ya. Las grabaciones te las comparto cuando estén listas."
+- Del 4-nov a las 21:00 al 5-nov a las 19:00: "La última clase es el jueves 5 a las 19:00. Las que ya pasaron te las comparto grabadas cuando estén listas."
+- Del 5-nov a las 19:00 al 5-nov a las 21:00: "La clase 3 está en curso: te paso el link para que entres ya. Las grabaciones te las comparto cuando estén listas."
+- Desde el 5-nov a las 21:00: "Las 3 clases ya pasaron: te comparto las grabaciones cuando estén listas."
 
 ## 6. Recordatorio a quien no pagó
 
 Una sola vez, unas 20 horas después de su último mensaje, y solo si nadie más escribió en ese chat:
 
-"¡Hola! Te escribo para recordarte que todavía puedes sumarte a *Claude de 0 a 100*: arranca el martes 3 a las 19:00 y es un solo pago de Bs 50 por las 3 clases. ¿Te paso el QR?"
+- Antes de las 19:00 del 3-nov: "¡Hola! Te escribo para recordarte que todavía puedes sumarte a *Claude de 0 a 100*: arranca el martes 3 a las 19:00 y es un solo pago de Bs 50 por las 3 clases. ¿Te paso el QR?"
+- Desde las 21:00 del 3-nov y antes de las 19:00 del 5-nov: "¡Hola! Todavía puedes sumarte a *Claude de 0 a 100*: es un solo pago de Bs 50 por las 3 clases, y las que ya pasaron te las comparto grabadas. ¿Te paso el QR?"
+- Mientras hay una clase en curso (19:00 a 21:00 del 3, 4 o 5-nov) y desde las 19:00 del 5-nov: no se manda.
 
 ## 7. Preguntas frecuentes
 
