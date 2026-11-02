@@ -22,7 +22,7 @@ Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el 
 
 ## Registro privado
 
-- Vive en `E:\ONIA\privado	aller-claude-0-a-100\`, fuera de Git porque tiene datos de clientes. Es un archivo local que Codex lee y escribe, porque Drive y Notion quedan apagados (#128).
+- Vive en `E:\ONIA\privado\taller-claude-0-a-100\`, fuera de Git porque tiene datos de clientes. Es un archivo local que Codex lee y escribe, porque Drive y Notion quedan apagados (#128).
 - `registro.csv` (UTF-8): una fila por persona. Columnas: `id`, `fecha_consulta`, `nombre`, `whatsapp`, `estado`, `monto_bs`, `fecha_pago`, `referencia_comprobante`, `conciliado_banco`, `notas`.
 - `estado` toma uno de: `consulta`, `qr_enviado`, `comprobante_recibido`, `pagado`. `conciliado_banco` es `si` o `no`: `si` solo cuando el pago se vio en el extracto del banco.
 - `comprobantes\` guarda las capturas, con el nombre `<id>.<extensión>`.
