@@ -7,26 +7,26 @@ Origen: se rescató la lógica de `grokbot-workspace/ventas/seguimientos-leads.m
 ## Reglas
 
 1. **Silencio si Sergio u otra persona ya escribió en el chat.** Se revisa justo antes de enviar, no al programar.
-2. **Como máximo, un mensaje libre por persona.** Se manda unas horas después de su último mensaje y siempre dentro de las 24 h desde que escribió. Si no responde, no se insiste.
+2. **Como máximo, un mensaje libre por persona, y ese máximo se comparte con el recordatorio del §6 de [whatsapp-taller-3-4-5-borrador.md](whatsapp-taller-3-4-5-borrador.md): si ya se mandó uno, no se manda el otro.** Se manda unas 20 horas después de su último mensaje, dentro de las 24 h desde que escribió. Si no responde, no se insiste.
 3. **Corte inmediato** si dice "no", "ahora no" o "BAJA".
 4. **Sin presión falsa:** nada de "últimos cupos", cuántos lugares quedan, "solo hoy" ni descuentos. Hoy no hay límite de personas. La única urgencia real es el inicio de la clase 1 (miércoles 4 a las 19:00, hora Bolivia).
 5. **Nunca se confirma un lugar ni un pago.** Solo Sergio ve el pago en el banco. El texto no dice "recibí tu pago" ni "ya estás inscripto".
-6. **Después de que empieza la clase 1 (miércoles 4, 19:00), no se hacen seguimientos de venta.** Si alguien quiere entrar tarde, lo decide Sergio.
+6. **Ventanas, igual que el §6 del documento principal:** no se manda mientras hay una clase en curso (19:00 a 21:00 del 4, 5 o 6-nov) ni desde las 19:00 del viernes 6. Entre clases sí, y entonces el texto dice que las clases que ya pasaron se entregan grabadas el viernes 6, al terminar la última. Si alguien quiere entrar tarde, lo decide Sergio.
 7. **Plantillas de Meta (fuera de las 24 h):** cobran por mensaje, son gasto y la decisión D-015 sigue abierta. No se usa ninguna hasta que Sergio las apruebe aparte.
 
 ## Textos
 
 **1. Preguntó y no respondió** (aún no pidió el QR)
-> ¡Hola! ¿Pudiste ver lo del taller *Claude de 0 a 100*? Son 3 clases en vivo por Google Meet (miércoles 4, jueves 5 y viernes 6, a las 19:00 hora Bolivia) con las grabaciones incluidas. Es un solo pago de *Bs 50*. Si querés, te paso el QR 🙌
+> ¡Hola! ¿Pudiste ver lo del taller *Claude de 0 a 100*? Son 3 clases en vivo por Google Meet (miércoles 4, jueves 5 y viernes 6, a las 19:00 hora Bolivia) con las grabaciones incluidas. Es un solo pago de *Bs 50*. Si quieres, te paso el QR 🙌
 
 **2. Pidió el QR y no pagó**
-> ¡Hola! Te escribo por si te quedó alguna duda para pagar. Cuando lo hagas, mandame por acá la foto del comprobante con tu nombre completo y Sergio lo verifica. Tu lugar queda confirmado cuando se ve el pago. ¿Te ayudo con algo?
+> ¡Hola! Te escribo por si te quedó alguna duda para pagar. Cuando lo hagas, mándame por acá la foto del comprobante con tu nombre completo y Sergio lo verifica. Tu lugar queda confirmado cuando se ve el pago. ¿Te ayudo con algo?
 
 **3. Dijo que pagó y no mandó el comprobante**
-> ¡Hola! Para que Sergio pueda verificar tu pago, mandame por acá la foto del comprobante con tu nombre completo. Si tuviste algún problema al pagar, contame y te ayudo.
+> ¡Hola! Para que Sergio pueda verificar tu pago, mándame por acá la foto del comprobante con tu nombre completo. Si tuviste algún problema al pagar, cuéntame y te ayudo.
 
 **4. Dijo "lo veo después" o "lo voy a pensar"**
-> ¡Hola! Te dejo el dato por si lo retomás: *Claude de 0 a 100* es el miércoles 4, jueves 5 y viernes 6 a las 19:00 (hora Bolivia), por Google Meet, con las grabaciones incluidas. Si hay algo puntual que quieras aclarar, decime.
+> ¡Hola! Te dejo el dato por si lo retomas: *Claude de 0 a 100* es el miércoles 4, jueves 5 y viernes 6 a las 19:00 (hora Bolivia), por Google Meet, con las grabaciones incluidas. Si hay algo puntual que quieras aclarar, dime.
 
 ## No hacer
 
@@ -40,5 +40,5 @@ Origen: se rescató la lógica de `grokbot-workspace/ventas/seguimientos-leads.m
 ## Sin confirmar, para Sergio Urcullo
 
 - **Hasta cuándo se inscribe la gente.** Recomendado: hasta el miércoles 4 a las 19:00. Cuando lo decida, se suma una línea a los textos 1 y 4.
-- **Horario de envío:** unas horas después puede caer de madrugada. Sergio decide si se respeta una franja; no se inventó una.
+- **Horario de envío:** unas 20 horas después puede caer de madrugada. Sergio decide si se respeta una franja; no se inventó una.
 - **Plantillas de Meta** para después de las 24 h: se redactan solo si Sergio aprueba el gasto.
