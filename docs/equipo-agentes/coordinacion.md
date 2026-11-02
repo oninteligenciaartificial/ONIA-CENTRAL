@@ -23,7 +23,7 @@ Las sesiones del 1-nov, que se pueden archivar cuando Sergio diga:
 - Marketing: `local_1d0928f0-e5f5-4b9d-99c5-06be74fa7f3b`;
 - Boss Code: `local_c596ac4e-89a6-4007-834c-3e384a963d11`;
 - ONIA Platform: `local_ac777672-bb2f-438f-857b-0b68586fff8d`;
-- Analista: `local_afc6e729-031a-4328-b946-faf392bc9fd2`;
+- Analista: `local_afc6e729-031a-4328-b946-faf392bc9fd2`. Esta no espera a Sergio: como trabaja por auditoría, se archiva al terminar la del 1-nov (ver "Decidido el 1-nov");
 - la que mergeó el equipo nuevo (PR #103): `local_334f327b-cabf-43ab-bde8-943045a3aa0a`.
 
 ## Decidido el 1-nov
@@ -32,6 +32,7 @@ Las sesiones del 1-nov, que se pueden archivar cuando Sergio diga:
 - A Sergio se le habla de vos.
 - La rama `onia-loop-excepcion-d003` de Grok Bot no se mergea: se rescata en PRs chicos, sin datos de clientes. Su material está en la rama `grokbot/workspace-20261101`.
 - Grok Bot no se renueva.
+- La Analista trabaja por auditoría: el Administrador la abre una vez al día, al cerrar la tanda de PRs, y la archiva cuando termina ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4).
 - El 12-nov, Sergio decide si renueva ChatGPT, que vence el 14-nov.
 - Sobre el merge, Sergio eligió "Delegarlo después": se propone más adelante un cambio de reglas que lo delegue en Codex ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)), y él decide si lo aprueba. Hasta entonces, Codex no mergea.
 

@@ -138,7 +138,7 @@ Los subagentes se usan para subtareas acotadas que justifiquen separarse. No se 
 
 **Pelau — solo resúmenes cortos.** Lee los estados de `docs/equipo-agentes/` y los PRs abiertos, y le da a Sergio un resumen corto. No hace trabajo de las áreas ni cambia archivos, así que no lleva revisión. Tampoco tiene archivo de estado propio: cada resumen sale de leer de nuevo los estados de las áreas, y su relevo es una sesión nueva. Lo que haya que anotar de Pelau lo anota el Administrador en `coordinacion.md`. Del 1 al 2-nov usa `claude-haiku-5-5` con esfuerzo `medium`, y desde el 3-nov `gpt-6-luna` con esfuerzo `medium`. Propuesto.
 
-**Analista — auditoría de entregables, fuentes, revisiones y consumo.** Función ya observada en los [datos del día](2026-11-01-plan-equipo-datos.md); incorporación al equipo propuesta.
+**Analista — auditoría de entregables, fuentes, revisiones y consumo.** Función ya observada en los [datos del día](2026-11-01-plan-equipo-datos.md). Queda en el equipo y trabaja por auditoría: el Administrador la abre una vez al día, al cerrar la tanda de PRs, y la archiva cuando termina. Lo eligió Sergio el 1-nov, con botones, frente a dejarla fija o sacarla: "Por auditoría (Recomendada)" (sesión del Administrador, sin enlace).
 
 | Etapa | Sesión | Subagentes de lectura | Revisión de sus informes |
 |---|---|---|---|
@@ -280,7 +280,7 @@ La idea del navegador en WSL sigue aparte, en el [issue del navegador que reempl
 
 ## 11. Decisiones de Sergio
 
-Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el plan. Sus respuestas, tal cual, están en este PR (#105).
+Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el plan. Sus respuestas, tal cual, están en este PR (#105). La fila de la Analista es posterior: la contestó ese mismo día en la sesión del Administrador (sin enlace).
 
 | Tema | Opciones | Estado |
 |---|---|---|
@@ -292,6 +292,7 @@ Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el
 | Merge desde el 3-nov | **A. Lo hace Sergio; Codex prepara y revisa — recomendada.** B. Proponer después una delegación acotada mediante otro cambio de reglas. | Elegida B por Sergio el 1-nov: "Delegarlo después". Hasta ese cambio de reglas, Codex no mergea y el merge lo hace Sergio. |
 | Retiro técnico de Grok | **A. Rescate local revisado y retiro de accesos específicos después de comprobar dependencias — recomendada.** B. Rescatar además un faltante concreto antes del retiro. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". Apagar servicios o tocar producción sigue pidiendo su autorización. |
 | Renovar Grok Bot | **A. No renovarlo cuando venza: el equipo ya trabaja en la PC — recomendada.** B. Mantenerlo hasta que esté el navegador en WSL del issue #96. | Elegida A por Sergio el 1-nov: "No renovarlo (Recomendada)". |
+| Analista | **A. Por auditoría: se abre una vez al día, al cerrar la tanda de PRs, y se archiva — recomendada.** B. Fija, como las áreas. C. Sacarla y quedarse con las revisiones de cada PR. | Elegida A por Sergio el 1-nov: "Por auditoría (Recomendada)". Detalle en el punto 4. |
 | Cambio mínimo de `AGENTS.md` | **A. Aprobar el cambio de este PR — recomendada.** B. Pedir una corrección concreta antes de aplicarlo. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
 
 Fuentes: `AGENTS.md:20–33,62–63`; `docs/lecciones.md:114`; el pedido de Sergio y los [datos del día](2026-11-01-plan-equipo-datos.md).
