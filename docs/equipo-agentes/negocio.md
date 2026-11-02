@@ -87,7 +87,7 @@ Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA
 **Qué sigue (lo hace esta área):**
 1. Usar el registro privado (sección "Registro privado"): anotar cada consulta y pago, y conciliar con el banco al 6-nov.
 2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller (#113).
-3. El texto de `/taller` (inscripción hasta el miércoles 4 a las 19:00, sin límite, "precio de esta edición") se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
+3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (inscripción hasta el miércoles 4 a las 19:00, sin límite, "precio de esta edición"), se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
 4. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
 5. Conciliar los pagos con el banco al 6-nov.
 
