@@ -18,21 +18,22 @@ Con botones, en la sesión Marketing (sin enlace):
 | Qué | Resultado |
 |---|---|
 | Cuentas publicitarias | Dos, activas y en USD. "ONIA Ads" (1073680778314945, negocio OniaAgency): **sin método de pago**. Otra, sin nombre (679613631427810, sin negocio): **con método de pago** |
-| Páginas de Facebook | **Ninguna** en las dos cuentas (`ads_get_ad_account_pages`) |
+| Páginas de Facebook | **Ninguna** asociada a las dos cuentas (`ads_get_ad_account_pages`). Sí hay una página "Onia" (1140384625819526) entre las del usuario (`ads_get_user_pages`), que no es la página con su nombre que pidió el plan |
 | Cuentas de Instagram | **Ninguna** en las dos (`ads_get_ig_accounts`) |
 | Campañas | Nada creado |
 
-Sin una página no se puede crear el anuncio de mensajes a WhatsApp, así que **todavía no hay nada cargado**. Lo que sigue lo hace Sergio Urcullo, porque son sus logins y sus pagos:
+Para anunciar con una página hay que asociarla a la cuenta, y la página "Onia" no tiene el WhatsApp del taller conectado (sin comprobar). Por eso **todavía no hay nada cargado**. Lo que sigue lo hace Sergio Urcullo, porque son sus logins y sus pagos:
 
-1. Crear la página con su nombre y conectarle el WhatsApp del taller (+591 75414930), y dejarla disponible en la cuenta que se use ([ayuda de Meta](https://www.facebook.com/business/help/1583303048513172)).
+1. Decidir si se usa la página "Onia" o una con su nombre, conectarle el WhatsApp del taller (+591 75414930) y dejarla disponible en la cuenta que se use ([ayuda de Meta](https://www.facebook.com/business/help/1583303048513172)).
 2. Elegir la cuenta: "ONIA Ads" (hay que cargarle la tarjeta) o la que ya tiene método de pago.
 3. Grabar los 2 videos (1080 × 1920, .mp4 o .mov) y dejarlos en E: o Drive.
 
 ## Cambios al anuncio
 
 - **Fechas fuera del anuncio**, como dice el plan: la campaña corre hasta el 5-nov y un anuncio con "martes 3" quedaría viejo el 4. Las fechas van en el saludo de WhatsApp.
-- **Un solo precio:** "Un solo pago de Bs 50 por las 3 clases". Sin Bs 120 ni cupos (decisión del 1-nov).
+- **Un solo precio:** "Un solo pago de Bs 50 por las 3 clases". Sin Bs 120 (decisión del 1-nov). Los cupos: el [PR #110](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) no los usa y la decisión del 1-nov no dice nada; sin decidir, por eso el anuncio no los nombra.
 - **Grabaciones:** "grabaciones incluidas", sin plazo, porque hasta cuándo y dónde no está decidido.
+- **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo antes del martes 3.
 - **Nada de "devolución"** ni certificado en el anuncio: no están decididos.
 
 ### Texto principal
@@ -52,6 +53,7 @@ Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONI
 - **Video 1, el contraste, 25 a 35 s:** "En vivo, con grabaciones. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
 - **Video 2, la demo, 20 a 35 s:** "Esto lo armás vos en Claude de 0 a 100: 3 clases en vivo, con grabaciones, por Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
 - **Datos de la demo:** `ventas-octubre-ejemplo.csv` del PR #72 (panadería inventada), sin datos de clientes.
+- **"Esto lo armás vos" y "dejarle trabajo armado"** vienen del plan y no tienen una demo probada citada: Sergio Urcullo prueba la demo antes de grabar.
 - **"Con la cuenta gratis"** va solo si el temario se probó con una cuenta gratis (`docs/lecciones.md`, "Datos y fuentes"). Hoy no hay constancia de esa prueba en `main`.
 
 ## Texto que llega al chat (coincide con el llamado a la acción)
