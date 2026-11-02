@@ -10,7 +10,7 @@ Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él
 - **Se abren de a una,** con unos segundos entre una y otra, por precaución. En el ensayo, Boss Code y ONIA Platform, las dos primeras con navegador propio, no lo vieron; abiertas solas, después, sí. Recepción tampoco lo vio en su primera búsqueda, y sí en la segunda. La causa no está confirmada: puede ser que la herramienta tarde en aparecer, o el arranque a la vez. Por eso cada encargo dice que, si no aparece, espere y la busque de nuevo.
 - **La primera vez,** Codex puede preguntar si se confía en la carpeta. Se contesta que sí, una vez por carpeta.
 - **Si `git pull` falla,** Codex no se abre, y la sesión sigue en su rama sin traer `main`.
-- **Las tareas largas se encargan.** Cada área pasa lo que se puede describir entero en una ficha a un Codex nuevo, con la skill [`encargar`](../../.agents/skills/encargar/SKILL.md), en vez de hacerlo en su chat. Así su sesión no se llena y cada tarea arranca con el contexto limpio.
+- **Las tareas largas se pueden encargar.** Un área puede pasar lo que se describe entero en una ficha a un Codex nuevo, con la skill [`encargar`](../../.agents/skills/encargar/SKILL.md), en vez de hacerlo en su chat. Así su sesión no se llena. Está sin probar en la PC: la primera área que la use anota cómo le fue en la skill.
 
 Una línea por sesión, para pegar en PowerShell:
 

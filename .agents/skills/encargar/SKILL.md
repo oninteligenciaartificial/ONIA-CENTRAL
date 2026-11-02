@@ -34,21 +34,16 @@ Para llevar un issue de GitHub de punta a punta, hasta el PR y el merge, se usa 
    - leer y devolver un texto: `--sandbox read-only`, que es el modo por defecto de `codex exec`;
    - cambiar archivos del worktree: `--sandbox workspace-write`.
 
-   Desde Git Bash:
+   Se lanza desde Git Bash, como en `llevar-issue`:
 
    ```bash
    codex exec --sandbox read-only --ephemeral --json -o <notas>/resultado.md - < <notas>/ficha.md > <notas>/uso.jsonl
    ```
 
-   En PowerShell, `<` no sirve para redirigir la entrada, así que el archivo se pasa por tubería. Va sin `--json`, porque en PowerShell 5.1 `>` guarda en UTF-16:
+   No se lanza desde PowerShell 5.1: `<` no redirige la entrada, `>` guarda en UTF-16 y, por tubería, las tildes de la ficha le llegarían a Codex como `?`.
 
-   ```powershell
-   Get-Content -Raw -Encoding UTF8 '<notas>\ficha.md' | codex exec --sandbox read-only --ephemeral -o '<notas>\resultado.md' -
-   $LASTEXITCODE
-   ```
-
-   Fuente de las opciones `--sandbox`, `--json`, `-o`, `--ephemeral` y `-`: [modo no interactivo de Codex](https://learn.chatgpt.com/docs/non-interactive-mode). Para usar el modelo y el navegador del perfil del área, se suma `-p <área>` antes de `exec`, como en el ensayo del 2-nov (`docs/equipo-agentes/coordinacion.md`).
-4. **Leer lo que devolvió,** con los controles de "Cómo se lee lo que devuelven", de `llevar-issue`: código de salida 0 y `resultado.md` no vacío; con `--json`, además, al menos un `turn.completed` y ningún `turn.failed` ni `error` en `uso.jsonl`. Con `workspace-write`, además, `git diff` en el worktree: tiene que tocar solo los archivos de la ficha.
+   Fuente de las opciones `--sandbox`, `--json`, `-o`, `--ephemeral` y `-`: [modo no interactivo de Codex](https://learn.chatgpt.com/docs/non-interactive-mode). Va sin `-p <área>`: ese perfil trae el navegador del área, que ya usa la sesión, y cada perfil lo usa una sola sesión a la vez (`AGENTS.md`). El encargo no usa el navegador.
+4. **Leer lo que devolvió,** con los controles de "Cómo se lee lo que devuelven", de `llevar-issue`: código de salida 0 y `resultado.md` no vacío; con `--json`, además, al menos un `turn.completed` y ningún `turn.failed` ni `error` en `uso.jsonl`. Con `workspace-write`, además, `git status --porcelain` en el worktree, que muestra también los archivos nuevos: tiene que tocar solo los de la ficha.
 5. **Revisar contra la ficha:** se cumple cada punto de "Terminado cuando", los datos tienen fuente y no aparecen secretos ni datos de clientes. Si falta algo, se lanza un encargo nuevo con una ficha corregida que dice qué faltó. No se sigue la conversación del encargo anterior.
 6. **Revisión independiente,** si el resultado va a un PR: la pide el `AGENTS.md`, y la hace otro Codex nuevo en solo lectura, con una ficha de revisión que lleva el encargo, el cambio y la evidencia, sin el razonamiento del autor.
 7. **Anotar en el estado del área** qué se encargó, dónde quedó el resultado y qué sigue. Si Sergio Urcullo corrigió algo durante la tarea, la corrección se anota en el estado en ese mismo momento, para que el próximo encargo la lleve.
@@ -92,5 +87,5 @@ Al final, una sección "No pude comprobar" con lo que quedó sin verificar.
 Esto quedó sin comprobar al escribir la skill, el 2-nov. La primera sesión que lo pruebe lo anota acá, por PR:
 
 - lanzar `codex exec` desde dentro de una sesión de Codex abierta con `codex -p <área>`. Puede necesitar el permiso de Codex para correr el comando;
-- la línea de PowerShell de arriba, porque no se pudo correr en el PowerShell 5.1 de la PC. Antes de usarla, se lee con `[System.Management.Automation.Language.Parser]::ParseInput`, como dice `docs/lecciones.md`;
+- que esa sesión, abierta desde PowerShell, pueda correr el comando en Git Bash;
 - `codex exec --sandbox workspace-write` en la PC de ONIA, que `llevar-issue` también marca como no probado.
