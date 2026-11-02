@@ -35,8 +35,12 @@ wsl.exe -d Ubuntu -- npx -y @playwright/mcp@0.0.84 --headless --browser chromium
 
 - **Codex:** en `C:\Users\PC\.codex\config.toml`, sección `[mcp_servers.playwright]`. Lleva `startup_timeout_sec = 60` y `default_tools_approval_mode = "approve"`.
   - Con `approve` no pide aprobación para ninguna herramienta del servidor.
-  - En el modo por defecto, `auto`, pide aprobación todo lo que el servidor no marca como de solo lectura.
-  - Sale del código oficial: `requires_mcp_tool_approval_for_mode`, en `codex-rs/core/src/mcp_tool_call.rs` de `openai/codex`, commit `a098129`.
+  - En el modo por defecto, `auto`, mira las marcas de cada herramienta:
+    - pide aprobación si la herramienta se marca como destructiva;
+    - no la pide si se marca como de solo lectura;
+    - en los demás casos, la pide salvo que la herramienta diga que no es destructiva y que no sale a Internet.
+  - Con las marcas de Playwright MCP 0.0.84, en `auto` corren sin aprobación las 7 de solo lectura: `browser_snapshot`, `browser_take_screenshot`, `browser_find`, `browser_console_messages`, `browser_network_requests`, `browser_network_request` y `browser_wait_for`. Las otras 18, incluidas `browser_navigate` y `browser_click`, se marcan como destructivas.
+  - Sale del código oficial: `requires_mcp_tool_approval` y `requires_mcp_tool_approval_for_mode`, en `codex-rs/core/src/mcp_tool_call.rs` de `openai/codex`, commit `a098129`. Las marcas se leyeron con `tools/list` del propio servidor.
 - **Claude Code:**
   - el servidor se agregó con `claude mcp add -s user playwright -- <comando>` y quedó en `C:\Users\PC\.claude.json`;
   - el permiso es `mcp__playwright` en `permissions.allow` de `C:\Users\PC\.claude\settings.json`, que habilita todas las herramientas de ese servidor.
@@ -49,6 +53,14 @@ wsl.exe -d Ubuntu -- npx -y @playwright/mcp@0.0.84 --headless --browser chromium
 - **`--output-dir`:** sin la opción, el MCP guarda sus capturas en la carpeta desde donde lo lanzan. En la prueba dejó `.playwright-mcp/` dentro de un worktree del repo.
 - **`--headless`:** las áreas navegan sin abrir ventanas en la pantalla de Sergio.
 - **Un solo perfil, `equipo`:** los logins quedan compartidos, como en la computadora de Grok Bot.
+- **El perfil vive en Ubuntu y no en `C:\Users\PC\BovedaPrivada\BrowserProfiles`,** que es donde `docs/credenciales.md` pone los perfiles armados para un agente. Microsoft recomienda guardar los archivos en el sistema de archivos de WSL cuando se usan desde Linux, por velocidad ([WSL, sistemas de archivos](https://learn.microsoft.com/windows/wsl/filesystems#file-storage-and-performance-across-file-systems)). Igual queda fuera de todo repo. La excepción está anotada en `docs/credenciales.md`.
+
+## Riesgos del "todo libre"
+
+- **El MCP no es una barrera de seguridad.** Lo dice su README: "Playwright MCP is not a security boundary" ([README de la 0.0.84](https://github.com/microsoft/playwright-mcp/blob/v0.0.84/README.md)).
+- **Una página puede traer instrucciones escondidas.** Si el agente las sigue, puede usar cualquier cuenta abierta en el perfil `equipo`, sin que nada técnico lo frene. Por eso conviene cargar en ese perfil solo las cuentas que las áreas necesitan. Cuáles se cargan lo decide Sergio.
+- **Lo que el agente lee puede salir:** el texto de una página o una captura quedan en el chat del agente y en los archivos de salida.
+- **Los archivos con nombre elegido no van a `--output-dir`.** Según el README, `--output-dir` vale solo para los archivos con nombre automático, y los que el agente nombra se guardan relativos a la carpeta de trabajo. Esa carpeta puede ser un worktree del repo, así que se mira `git status` antes de cada commit.
 
 ## Qué se probó
 
@@ -87,10 +99,12 @@ Qué cuentas se cargan lo decide él. El agente nunca escribe una contraseña ([
 
 ## Cómo se vuelve atrás
 
-- **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml`, o restaurar la copia del respaldo.
-- **Claude Code:**
-  - `claude mcp remove -s user playwright`;
-  - sacar `mcp__playwright` de `permissions.allow`, o restaurar la copia de `settings.json`.
-- **Ubuntu:**
-  - `npm`, `nodejs` y las dependencias se sacan con `apt-get remove`;
-  - los navegadores y los perfiles, borrando `~/.cache/ms-playwright` y `~/.onia-browser`.
+1. **Cerrar las sesiones de Codex y de Claude Code que ya cargaron el navegador.** Sacar la configuración no corta un servidor ya cargado: cada sesión lo carga al arrancar.
+2. **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml` ([referencia de configuración](https://learn.chatgpt.com/docs/config-file/config-reference)), o restaurar la copia del respaldo.
+3. **Claude Code:**
+   - `claude mcp remove -s user playwright` ([MCP en Claude Code](https://code.claude.com/docs/en/mcp));
+   - sacar `mcp__playwright` de `permissions.allow`, o restaurar la copia de `settings.json`.
+4. **Ubuntu:**
+   - **Paquetes:** los instalaron dos transacciones del 1-nov, a las 23:32:00 (`nodejs` y `npm`) y a las 23:35:08 (las dependencias del navegador). Su lista exacta está en `/var/log/apt/history.log`, y esos paquetes se sacan con `apt-get remove` ([manual de apt-get](https://manpages.ubuntu.com/manpages/noble/man8/apt-get.8.html)).
+   - **Navegadores:** con `npx playwright uninstall --all` ([Playwright](https://playwright.dev/docs/browsers#uninstall-browsers)). Antes del 1-nov no había ningún navegador de Playwright en esa carpeta: `~/.cache/ms-playwright` no existía.
+   - **Perfiles y salidas:** borrar `~/.onia-browser`, que se creó para esto.

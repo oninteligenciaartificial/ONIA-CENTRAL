@@ -145,14 +145,18 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 - Los agentes usan sesiones que ya están abiertas. El login, la verificación en dos pasos, el consentimiento de Google y las sesiones vencidas los resuelve Sergio Urcullo en su pantalla.
 - Ningún agente escribe una contraseña en un formulario. La excepción es Hermes con su cofre, que no se la muestra al modelo.
 - Los perfiles de navegador que se armen a mano para un agente van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, y nunca dentro de un repo. La copia que hace Hermes de un perfil real queda en su carpeta, que maneja él.
+  - La excepción es el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md). Vive dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/equipo`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También queda fuera de todo repo.
 - Cada perfil lo usa un agente a la vez. No se copian cookies entre worktrees.
 - El puerto de control del navegador (CDP) nunca se abre a Internet.
 
 **Claude Code:**
 - El navegador de la app guarda sus propias sesiones, separadas de Chrome.
 - Claude en Chrome usa el Chrome de Sergio Urcullo, con sus sesiones.
+- El navegador de WSL, con el perfil `equipo`, es compartido con Codex.
 
-**Codex** no tiene un navegador con sesión armado. Si hace falta, se decide aparte.
+**Codex** usa el navegador de WSL, con el perfil `equipo`. Se armó el 1-nov-2026, y Sergio Urcullo eligió dejarlo "Todo libre" ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)).
+- Las sesiones las abre él en la ventana visible, como dice ese documento.
+- Entrar a una cuenta sigue sin dar más permisos.
 
 **Hermes** ([detalle en su documentación](https://hermes-agent.nousresearch.com/docs), `user-guide/features/browser.md`):
 - Por defecto abre un Chromium limpio, sin sesiones.
