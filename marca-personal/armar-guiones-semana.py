@@ -20,7 +20,7 @@ def add(id, dia, fr, linea, formato, titulo, gancho, guion, tomas, cta, origen, 
 
 def gb(lid, dia, fr, cta):
     g = G[lid]
-    t = pat.sub('', g['texto'])
+    t = pat.sub('', g['texto'].replace(g.get('cta', ''), ''))
     if lid == 'L13':
         t = re.sub(r'Tengo seis agentes[^.]*\.', '', t)
         t = 'Cada área de ONIA tiene su agente: ventas, marketing, código y la plataforma, y uno que coordina. ' + t
