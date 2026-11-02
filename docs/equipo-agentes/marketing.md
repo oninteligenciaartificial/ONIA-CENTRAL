@@ -35,19 +35,15 @@ Vistos el 1-nov con el estado de conectores de la sesión, sin leer secretos ni 
 - **Búsqueda:** Exa.
 - No hay un conector para publicar en Instagram o TikTok de forma orgánica. Publicar siempre pide el sí de Sergio Urcullo.
 
-## Choques entre fuentes
-
-- **Precio del taller.** La [decisión del 31-oct](../decisiones/2026-10-31-decisiones-taller-y-agentes.md) dice Bs 50 hasta el domingo 1-nov y Bs 70 desde el lunes 2-nov. El estado del bot viejo dice "Bs 50 confirmado" el 1-nov a las 17:02, y su propio `ESTADO-ACTUAL.md` sigue dándolo como pendiente (D-009). El PR #72 dice Bs 50 por clase o Bs 120 las tres. En el repo no hay constancia de que Sergio Urcullo lo haya cambiado. Los reels que nombran precio no salen hasta que lo decida.
-- **Presupuesto de anuncios.** La [decisión del 31-oct](../decisiones/2026-10-31-decisiones-taller-y-agentes.md), en "Anuncios", fija Meta Ads a US$10 por día, en pausa. El estado del bot viejo dice US$5 por día y a la vez lo da como pendiente, "US$5 vs US$10". Vale el del repo hasta que Sergio Urcullo diga otra cosa. Para TikTok no hay presupuesto decidido.
-- **Tuteo o voseo.** La rama tenía la regla "tuteo siempre". Si los textos de `/workspace` la siguieron está sin comprobar, porque no se ven desde acá. El 1-nov, Sergio Urcullo decidió en la sesión coordinadora que se le hable de vos (sin enlace; el PR que lo pone en el `AGENTS.md` va aparte), y los textos del PR #72 están en voseo ("Tocá el botón y escribime"). Para el público lo decide él.
-
 ## Pendiente de Sergio Urcullo
 
-1. Pedirle a Grok Bot el texto de `entregables-workshop/reels-dias1-3.md` y de `marca/guiones-semana-2-8nov.md`, o elegir que esta sesión escriba los reels del lunes de nuevo, con lo que hay en el PR #72.
-2. El precio desde el lunes 2-nov.
-3. Tuteo o voseo en los reels y anuncios.
-4. Grabar el lote.
-5. Del estado del bot viejo, sin constancia en el repo: la historia de los reels L1 y L16 y "no sé programar" (D-010) y el permiso para las fotos de Higgsfield (D-011).
+Al 2-nov a la tarde. Lo ya resuelto ese día: Bs 50 por las 3 clases, clases 4, 5 y 6-nov ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)), US$10 por día del 3 al 5-nov y el nombre "Claude de 0 a 100", sin confirmar con un abogado.
+
+1. Aprobar los textos del anuncio y grabar los 2 videos.
+2. Probar cómo se graban las clases antes de activar el anuncio: Meet gratis no graba.
+3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Hoy ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta.
+4. Pasar el panel de contenido a Notion: prender Notion en Codex y conectar su cuenta.
+5. Vos o tú en los guiones, y si quiere decir su edad.
 6. El presupuesto de TikTok, si se pauta ahí.
 
 ## Qué toco y qué no
@@ -65,6 +61,17 @@ Vistos el 1-nov con el estado de conectores de la sesión, sin leer secretos ni 
 ## Para otras áreas
 
 - **Para quien lleve el taller:** el PR #72 vive en `workshops-comunidad/` y no es de Marketing. El precio de los reels y el de la respuesta de WhatsApp tienen que coincidir.
+
+## Para seguir en Codex
+
+Desde el 3-nov, Marketing sigue en Codex: `codex -p marketing` en `C:\dev\worktrees\ONIA-CENTRAL\marketing`, con su navegador propio. Los mensajes entre áreas van al tablero del issue #111.
+
+- **En qué estoy:**
+  - la campaña de Meta Ads del taller, en borrador, en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) (`workshops-comunidad/meta-ads-campana-3-4-5.md`). La revisión dio "aprobar"; falta el sí de Sergio Urcullo con captura. No hay nada cargado en Meta;
+  - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles.
+- **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo (probado el 2-nov). Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. La salida que recomiendo es pasarlo a Notion, que necesita lo del punto 4 de "Pendiente".
+- **Meta Ads en Codex:** Codex no tiene el conector de Meta Ads. Se hace con el navegador, cuando Sergio Urcullo cargue su cuenta en el perfil de Marketing.
+- **Qué sigue:** cerrar las revisiones de los PR #120 y #139; cargar la campaña en pausa cuando estén la página y la tarjeta; corregir la oferta vieja en `plan-meta-ads-borrador.md`; sumar las métricas al panel; y la ficha de chase.h.ai con la skill `investigar-referente`.
 
 ## Próximo
 
