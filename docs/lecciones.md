@@ -136,6 +136,8 @@ Cada lección es una regla y su porqué, con la fecha y de dónde sale.
   - Por qué: el 30-oct dijo, en la sesión coordinadora: "recorda que no te inventes pasos propios, todo oficial y agentico para llegar a la autonomia" (sin enlace). La lección de la sección "Hermes" sobre buscar en la documentación cubre solo los comandos y las claves de configuración de Hermes.
 - **La memoria de un agente no reemplaza a este archivo.** Una corrección de Sergio Urcullo que quedó en la memoria de Claude Code se pasa al repo en el mismo turno, como dice "Errores y lecciones", del `AGENTS.md`.
   - Por qué: Codex y Hermes no leen la memoria de Claude Code. La corrección de la lección anterior quedó el 30-oct solo en esa memoria. Ese mismo día, Sergio Urcullo dijo en la sesión coordinadora: "Vamos preguntando lo mismo y lo mismo y hasta ahora no lo aprendes todos esos errores van a tusa documentos y autolearning" (sin enlace).
+- **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo.
+  - Por qué: el 2-nov, en la sesión del Administrador, se le cerraron varias respuestas con lo que tenía que contestar en cada sesión y en qué orden. Contestó: "VOS NO ME DECIS QUE DEBE HACER CADA SESION, SOLO TE ENCARGAS QUE TODO FUNCIONE BIEN, NO ME DIGAS AQUI QUE HACER EN CADA MOMENTO, VOS ENCARGATE DE LA INFRAESTRUCTURA Y QUE TODO FUNCIONE CORRECTAMENTE. TE AVISO SI ESTA ALGO MAL" (sin enlace).
 
 ## Plata y gasto
 
