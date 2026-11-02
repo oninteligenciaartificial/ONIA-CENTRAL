@@ -2,6 +2,33 @@
 
 Qué ya quedó como nuevo y qué falta para volver a empezar. Está medido: no son suposiciones.
 
+## Actualización del 1-nov-2026: Orca y Antigravity
+
+Orca se volvió a instalar el 31-oct ([#91](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/91), por la fecha de las carpetas), y quién lo hizo sigue sin confirmar. Al arrancar, volvió a escribir sus hooks en Claude Code (15 eventos y la barra de estado) y en Codex (9 eventos). Además abría Claude Code con `--dangerously-skip-permissions`. Sergio Urcullo pidió el 1-nov: "elimina orca nomas". A la pregunta de si se sacaba también Antigravity, contestó con un botón: "Sí, sacalo" (sesión coordinadora, sin enlace).
+
+**Listo:**
+- Sergio desinstaló Orca, Antigravity y Antigravity IDE desde Configuración y movió sus restos de AppData con una PowerShell abierta desde el menú Inicio.
+- La sesión coordinadora sacó de `C:\Users\PC\.claude\settings.json` los hooks, la barra de estado y `skipDangerousModePermissionPrompt`. También apartó el `hooks.json` de Codex y los restos que Orca dejó en el perfil, en `%TEMP%`, y en Pi, OpenCode, `.cursor` y `.gemini`. Apartó además los datos de Antigravity en `.gemini`, sus instaladores, 21 carpetas con copias de un paquete de skills para herramientas que no están instaladas y una bóveda vacía de Obsidian que estaba dentro del checkout de ONIA-CENTRAL.
+- No se borró nada. Todo está en `C:\Users\PC\.limpieza-archivo-20261101`, con `MANIFIESTO.md` (qué hay y cómo volver atrás) y `movidos.txt` (origen y destino de cada cosa).
+- Lo verificó un flujo de agentes en solo lectura: seis buscaron restos, otro agente intentó refutar cada hallazgo, y un crítico buscó lo que faltaba, que se miró en una segunda ronda. Según el resumen del flujo, fueron 71 agentes y ninguno terminó con error (sesión coordinadora, sin enlace). Lo que encontraron se apartó en una segunda pasada.
+- El Hermes de Windows ya no está: `%LOCALAPPDATA%\hermes` no existe (por WMI) y `hermes` no está en el PATH. La evidencia está en las revisiones 3 y 4 del [PR #105](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/105).
+
+**Falta:**
+- Lo corre Sergio, en una PowerShell de administrador abierta desde Inicio. Se comprobó el 1-nov a las 20:30, desde la app y solo leyendo, con `Get-NetFirewallApplicationFilter`, `cmdkey /list`, `Win32_Environment` y la carpeta del menú Inicio. Dieron:
+  - 6 reglas activas, de entrada, que permiten conexiones en redes públicas: Antigravity (2), Antigravity IDE (2) y orca.exe (2);
+  - la credencial `LegacyGeneric:target=gemini:antigravity`, de la que solo se vio el nombre;
+  - `C:\Users\PC\AppData\Local\Programs\Antigravity\bin` en el PATH del usuario;
+  - el acceso directo `Start Menu\Programs\Antigravity\Antigravity.lnk`, en `%APPDATA%`.
+
+  Lo que hay que hacer: desactivar 6 reglas del firewall que dejan entrar conexiones a los exe de Orca y Antigravity, que ya no existen; quitar la credencial `gemini:antigravity`; sacar `Antigravity\bin` del PATH; y apartar el acceso directo y la carpeta vacía de Antigravity.
+- Queda en su lugar, a propósito, `C:\Users\PC\orca\workspaces\onia-platform`: es un worktree de onia-platform, y lo decide esa área ([#63](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/63)).
+- Codex: memorias en `false` y el estado de la app, con la app cerrada ([#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)).
+- Los decide Sergio. Salen de la verificación del 1-nov y no se volvieron a comprobar:
+  - `C:\Users\PC\.claude.json` y sus copias guardan claves en texto plano;
+  - los protocolos `orca://` y `antigravity://` siguen registrados en HKCU, apuntando a exe que no existen;
+  - Avast tiene dos excepciones para Antigravity;
+  - el proyecto Gestios prende plugins de la comunidad y deja hacer `git push` sin preguntar.
+
 ## 1. Configuración de Claude (`C:\Users\PC\.claude`)
 
 **Listo:**
@@ -80,7 +107,7 @@ De lo viejo no se usó nada: lo nuevo lleva credenciales nuevas.
 - Respaldos en `E:\respaldos`.
 - Lo archivado en `C:\Users\PC\.claude-archivo-20261028` y `C:\Users\PC\.codex-archivo-20261028`.
 - Nada del repo viejo arranca con Windows. Se apartaron la entrada Run, el `.vbs` de Inicio y la tarea `\ONIA Orquesta`, y se cortó el túnel al VPS del puerto 3108, que nada actual usaba (issue #2).
-- Orca, desinstalada con su desinstalador oficial (issue #4).
+- Orca, desinstalada con su desinstalador oficial (issue #4). Se reinstaló el 31-oct y se volvió a desinstalar el 1-nov: ver "Actualización del 1-nov-2026".
 - Lo apartado de esos dos issues está en `C:\Users\PC\.arranque-archivo-20261028`, con lo necesario para revertirlo.
 
 **Falta:**
