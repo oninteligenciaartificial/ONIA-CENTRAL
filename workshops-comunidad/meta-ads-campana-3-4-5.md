@@ -34,7 +34,7 @@ Para anunciar con una página hay que asociarla a la cuenta, y no se comprobó s
 - **Fechas fuera del anuncio**, como dice el plan: la campaña corre varios días y un anuncio con "miércoles 4" quedaría viejo el 5. Las fechas van en el saludo de WhatsApp.
 - **Un solo precio:** "Un solo pago de Bs 50 por las 3 clases". Sin Bs 120 (decisión del 1-nov). Los cupos: el [PR #110](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) no los usa y la decisión del 1-nov no dice nada; sin decidir, por eso el anuncio no los nombra.
 - **Grabaciones:** "grabaciones incluidas". Quedan para siempre (decisión del 2-nov); dónde se comparten sigue sin decidir.
-- **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo antes del miércoles 4. Las grabaciones se entregan el viernes 6, al terminar la última clase (decisión del 2-nov).
+- **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo y probarlo antes del martes 3 a la mañana, cuando arranca el anuncio; si no, el anuncio no se activa. Las grabaciones se entregan el viernes 6, al terminar la última clase (decisión del 2-nov).
 - **Devolución:** ninguna, salvo que ONIA no dé una clase, que se pasa a otra fecha (decisión del 2-nov). No va en el anuncio: la dicen el saludo de WhatsApp y la web. El certificado no está decidido y no se nombra.
 
 ### Texto principal
@@ -54,8 +54,8 @@ La campaña sigue el 5-nov, después de la primera clase: por eso el texto no pr
 Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72) (`anuncio.md`), con estos cambios en el cierre.
 
 - **Video 1, el contraste, 12 a 25 s:** "En 3 clases te enseño a usar Claude con tus archivos y tus proyectos. Sin programar." Sin "{y con la cuenta gratis}" ni la lista de trabajos armados.
-- **Video 1, el contraste, 25 a 35 s:** "En vivo y grabadas. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
-- **Video 2, la demo, 20 a 35 s:** "Esto lo practicamos en vivo en Claude de 0 a 100: 3 clases, con grabaciones, por Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
+- **Video 1, el contraste, 25 a 35 s:** "En vivo y grabadas: si te sumás tarde, te quedan las que ya pasaron. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime." Texto en pantalla: "Bs 50 · 3 clases · Grabaciones incluidas".
+- **Video 2, la demo, 20 a 35 s:** "Esto lo practicamos en Claude de 0 a 100: 3 clases en vivo y grabadas, y si te sumás tarde te quedan las que ya pasaron. Bs 50 en total. Tocá el botón y escribime." Texto en pantalla: "Claude de 0 a 100 · Bs 50 las 3 clases".
 - **Datos de la demo:** `ventas-octubre-ejemplo.csv` del PR #72 (panadería inventada), sin datos de clientes.
 - **La demo:** el anuncio no promete resultados; el Video 2 muestra la demo real, grabada por Sergio Urcullo. Si la toma no sale con las cifras correctas (PR #72), no se usa.
 - **"Con la cuenta gratis"** no va: no hay constancia en `main` de que el temario se haya probado con una cuenta gratis (`docs/lecciones.md`, "Datos y fuentes"). Si Sergio Urcullo lo prueba, se puede sumar después.
