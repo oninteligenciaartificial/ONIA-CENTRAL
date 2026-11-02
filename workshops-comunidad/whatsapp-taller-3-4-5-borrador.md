@@ -2,12 +2,12 @@
 
 Borrador para el +591 75414930. No se manda, no se carga en un bot ni se sube a Meta sin el sí de Sergio Urcullo con captura.
 
-Sale de la oferta del 1-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`): martes 3, miércoles 4 y jueves 5-nov a las 19:00 (hora de Bolivia), por Google Meet, un solo pago de Bs 50 por las tres clases, con grabaciones. Reemplaza los textos del guion de Grok Bot (`grokbot-workspace/ventas/guion-whatsapp-claude-0-100.md` y `plantillas-whatsapp.md`, en la rama `grokbot/workspace-20261101`), que dicen 3, 5 y 7-nov, Bs 70 desde el 2-nov, 60 cupos y que el QR de Bs 50 no se manda desde el 2-nov.
+Sale de la oferta del 1-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`): miércoles 4, jueves 5 y viernes 6-nov a las 19:00 (hora de Bolivia), por Google Meet, un solo pago de Bs 50 por las tres clases, con grabaciones. Reemplaza los textos del guion de Grok Bot (`grokbot-workspace/ventas/guion-whatsapp-claude-0-100.md` y `plantillas-whatsapp.md`, en la rama `grokbot/workspace-20261101`), que dicen 3, 5 y 7-nov, Bs 70 desde el 2-nov, 60 cupos y que el QR de Bs 50 no se manda desde el 2-nov.
 
 Qué cambia frente a ese guion:
 - Un solo precio, Bs 50 por las tres clases, sin corte por fecha ni cupos. El QR de Yolo Pago se manda siempre.
-- Fechas 3, 4 y 5-nov.
-- Grabaciones: se entregan el jueves 5-nov, al terminar la última clase, y quedan para siempre. Lo decidió Sergio Urcullo el 2-nov.
+- Fechas 4, 5 y 6-nov.
+- Grabaciones: se entregan el viernes 6-nov, al terminar la última clase, y quedan para siempre. Lo decidió Sergio Urcullo el 2-nov.
 - Devolución: sin devolución, salvo que ONIA no dé una clase (se pasa a otra fecha). Decidido el 2-nov y dicho antes de pagar.
 - El nombre de la titular de la cuenta del QR no va en Git: va `[TITULAR]`, que completa Sergio Urcullo.
 
@@ -17,13 +17,13 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 ## 1. Saludo
 
-"¡Hola! 👋 Qué bueno que escribiste. *Claude de 0 a 100* son 3 clases en vivo por Google Meet, el martes 3, el miércoles 4 y el jueves 5 de noviembre a las 19:00 (hora Bolivia), con un solo pago de *Bs 50* por las 3 clases y las grabaciones incluidas. Arrancamos desde cero, practicamos con tareas que hoy te llevan mucho tiempo. ¿Para qué te gustaría usarla: trabajo, estudios o tu negocio?"
+"¡Hola! 👋 Qué bueno que escribiste. *Claude de 0 a 100* son 3 clases en vivo por Google Meet, el miércoles 4, el jueves 5 y el viernes 6 de noviembre a las 19:00 (hora Bolivia), con un solo pago de *Bs 50* por las 3 clases y las grabaciones incluidas. Arrancamos desde cero, practicamos con tareas que hoy te llevan mucho tiempo. ¿Para qué te gustaría usarla: trabajo, estudios o tu negocio?"
 
 ## 2. Precio
 
 "¡Buenísimo! En las clases practicamos con tareas reales del día a día. Es un solo pago de *Bs 50* por las 3 clases, con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?"
 
-- Si pregunta el precio sin decir para qué la quiere: "Es un solo pago de *Bs 50* por las 3 clases en vivo (3, 4 y 5 de noviembre), con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?"
+- Si pregunta el precio sin decir para qué la quiere: "Es un solo pago de *Bs 50* por las 3 clases en vivo (4, 5 y 6 de noviembre), con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?"
 
 ## 3. QR
 
@@ -41,29 +41,33 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 ## 5. Confirmación (solo con el pago verificado)
 
+En los tramos de abajo, la hora de inicio entra y la de fin no: a las 21:00 en punto rige el tramo que empieza a las 21:00.
+
 "¡Listo, ya tienes tu lugar en *Claude de 0 a 100*! 🎉 Te sumo al grupo de WhatsApp del taller, donde pasamos el link de Meet antes de cada clase. [FRASE DE CLASE]"
 
 [FRASE DE CLASE], según cuándo se verifica el pago (hora de Bolivia). Cada clase va de 19:00 a 21:00, en dos salas:
-- Antes de las 19:00 del 3-nov: "La primera clase es este martes 3 a las 19:00."
-- Del 3-nov a las 19:00 al 3-nov a las 21:00: "La clase 1 está en curso: te paso el link para que entres ya. Las grabaciones te las paso el jueves 5, al terminar la última clase."
-- Del 3-nov a las 21:00 al 4-nov a las 19:00: "La próxima clase es el miércoles 4 a las 19:00. La que ya pasó te la paso grabada el jueves 5, al terminar la última clase."
-- Del 4-nov a las 19:00 al 4-nov a las 21:00: "La clase 2 está en curso: te paso el link para que entres ya. Las grabaciones te las paso el jueves 5, al terminar la última clase."
-- Del 4-nov a las 21:00 al 5-nov a las 19:00: "La última clase es el jueves 5 a las 19:00. Las que ya pasaron te las paso grabadas el jueves 5, al terminar la última clase."
-- Del 5-nov a las 19:00 al 5-nov a las 21:00: "La clase 3 está en curso: te paso el link para que entres ya. Las grabaciones te las paso hoy, al terminar esta clase."
-- Desde el 5-nov a las 21:00: "Las 3 clases ya pasaron: te paso las grabaciones enseguida."
+- Antes de las 19:00 del 4-nov: "La primera clase es este miércoles 4 a las 19:00."
+- Del 4-nov a las 19:00 al 4-nov a las 21:00: "La clase 1 está en curso: te paso el link para que entres ya. Las grabaciones te las paso el viernes 6, al terminar la última clase."
+- Del 4-nov a las 21:00 al 5-nov a las 19:00: "La próxima clase es el jueves 5 a las 19:00. La que ya pasó te la paso grabada el viernes 6, al terminar la última clase."
+- Del 5-nov a las 19:00 al 5-nov a las 21:00: "La clase 2 está en curso: te paso el link para que entres ya. Las grabaciones te las paso el viernes 6, al terminar la última clase."
+- Del 5-nov a las 21:00 al 6-nov a las 19:00: "La última clase es el viernes 6 a las 19:00. Las que ya pasaron te las paso grabadas el viernes 6, al terminar la última clase."
+- Del 6-nov a las 19:00 al 6-nov a las 21:00: "La clase 3 está en curso: te paso el link para que entres ya. Las grabaciones te las paso hoy, al terminar esta clase."
+- Desde el 6-nov a las 21:00: "Las 3 clases ya pasaron: te paso las grabaciones enseguida."
 
 ## 6. Recordatorio a quien no pagó
 
+Igual que arriba: la hora de inicio entra y la de fin no.
+
 Una sola vez, unas 20 horas después de su último mensaje, y solo si nadie más escribió en ese chat:
 
-- Antes de las 19:00 del 3-nov: "¡Hola! Te escribo para recordarte que todavía puedes sumarte a *Claude de 0 a 100*: arranca el martes 3 a las 19:00 y es un solo pago de Bs 50 por las 3 clases. ¿Te paso el QR?"
-- Del 3-nov a las 21:00 al 4-nov a las 19:00, y del 4-nov a las 21:00 al 5-nov a las 19:00: "¡Hola! Todavía puedes sumarte a *Claude de 0 a 100*: es un solo pago de Bs 50 por las 3 clases, y las que ya pasaron te las paso grabadas el jueves 5, al terminar la última clase. ¿Te paso el QR?"
-- Mientras hay una clase en curso (19:00 a 21:00 del 3, 4 o 5-nov) y desde las 19:00 del 5-nov: no se manda.
+- Antes de las 19:00 del 4-nov: "¡Hola! Te escribo para recordarte que todavía puedes sumarte a *Claude de 0 a 100*: arranca el miércoles 4 a las 19:00 y es un solo pago de Bs 50 por las 3 clases. ¿Te paso el QR?"
+- Del 4-nov a las 21:00 al 5-nov a las 19:00, y del 5-nov a las 21:00 al 6-nov a las 19:00: "¡Hola! Todavía puedes sumarte a *Claude de 0 a 100*: es un solo pago de Bs 50 por las 3 clases, y las que ya pasaron te las paso grabadas el viernes 6, al terminar la última clase. ¿Te paso el QR?"
+- Mientras hay una clase en curso (19:00 a 21:00 del 4, 5 o 6-nov) y desde las 19:00 del 6-nov: no se manda.
 
 ## 7. Preguntas frecuentes
 
 - ¿Tengo que saber algo antes? "No, arrancamos desde cero. Si sabes mandar un WhatsApp, puedes hacerlo."
-- ¿Queda grabado? "Sí, el jueves 5, al terminar la última clase, te paso las grabaciones de las 3 y son tuyas para siempre, así que no te pierdes nada si faltas." [Dónde se comparten: pendiente, depende de cómo se graba.]
+- ¿Queda grabado? "Sí, el viernes 6, al terminar la última clase, te paso las grabaciones de las 3 y son tuyas para siempre, así que no te pierdes nada si faltas." [Dónde se comparten: pendiente, depende de cómo se graba.]
 - ¿Es por clase? "No, es un solo pago de Bs 50 por las 3 clases."
 - ¿Hay devolución? "No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha."
 - ¿Hay descuento o cuotas? "No tenemos descuentos ni cuotas: son Bs 50 por las 3 clases."
@@ -76,6 +80,6 @@ Límites: no prometer resultados ni ingresos, no inventar descuentos ni cupos y 
 
 Solo si Sergio Urcullo decide subirlas: es la decisión abierta D-015. Cada mensaje de plantilla entregado tiene costo en la API de WhatsApp: es gasto.
 
-- `recordatorio_clase` (Utilidad): "Hola {{1}} 👋 Hoy a las 19:00 (hora Bolivia) es la clase {{2}} de "Claude de 0 a 100". Entras por este link de Meet: {{3}}. Si no llegas, el jueves 5, al terminar la última clase, te pasamos las grabaciones."
+- `recordatorio_clase` (Utilidad): "Hola {{1}} 👋 Hoy a las 19:00 (hora Bolivia) es la clase {{2}} de "Claude de 0 a 100". Entras por este link de Meet: {{3}}. Si no llegas, el viernes 6, al terminar la última clase, te pasamos las grabaciones."
 - `pago_pendiente` (Utilidad): "Hola {{1}}, tu lugar en "Claude de 0 a 100" todavía no está confirmado porque falta el pago. Si ya pagaste, mándame el comprobante por aquí y lo confirmo."
-- `seguimiento` (Marketing): "Hola {{1}}, soy de OnIA. Hace poco preguntaste por "Claude de 0 a 100": son 3 clases en vivo el 3, 4 y 5 de noviembre a las 19:00, con grabaciones. ¿Te reservo un lugar? Si no quieres más mensajes, responde BAJA."
+- `seguimiento` (Marketing): "Hola {{1}}, soy de OnIA. Hace poco preguntaste por "Claude de 0 a 100": son 3 clases en vivo el 4, 5 y 6 de noviembre a las 19:00, con grabaciones. ¿Te reservo un lugar? Si no quieres más mensajes, responde BAJA."
