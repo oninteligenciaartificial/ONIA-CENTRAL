@@ -263,18 +263,18 @@ La idea del navegador en WSL sigue aparte, en el [issue del navegador que reempl
 
 ## 11. Decisiones de Sergio
 
-Las decisiones nuevas se presentan con el cambio concreto y su revisión. Esta lista no autoriza aplicarlas.
+Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el plan. Sus respuestas, tal cual, están en el PR que lo mergeó.
 
 | Tema | Opciones | Estado |
 |---|---|---|
 | Motor desde el 3-nov, issue #100 | **A. Todo el equipo a Codex — recomendada y elegida.** B. Renovar Claude. C. Pasar solo trabajo pesado, condicionado a ingresos. | Resuelto por su pedido. B y C quedan descartadas; no se vuelve a preguntar. |
-| Motor desde el 14-nov, cuando vence Codex | **A. Decidirlo antes del 12-nov con lo que haya vendido el taller — recomendada.** B. Renovar ChatGPT desde ya. C. Quedarse sin motor desde el 14-nov. | Pendiente. Es gasto. |
-| Topes y relevo | **A. Adoptar el protocolo propuesto y validar los topes con mediciones — recomendada.** B. Mantener un objetivo por sesión y fijar los números después de medir Codex. | Pendiente: cambia la forma de trabajar. |
-| Configuración compartida | **A. Una responsable que prepara los cambios, con la aprobación de Sergio para permisos y reglas — recomendada.** B. Que Sergio prepare y aplique toda la configuración. | Pendiente. Incluye memoria automática y bloqueos concretos, una vez preparados. |
-| Rondas de revisión | **A. Mantener las necesarias hasta aprobar — recomendada.** B. Tras dos rondas fallidas, pausar para decidir alcance o prioridad; después revisar cualquier arreglo. | A conserva la regla vigente. B no habilita merge con errores. |
-| Merge desde el 3-nov | **A. Lo hace Sergio; Codex prepara y revisa — recomendada.** B. Proponer después una delegación acotada mediante otro cambio de reglas. | A conserva la prohibición vigente para Codex. |
-| Retiro técnico de Grok | **A. Rescate local revisado y retiro de accesos específicos después de comprobar dependencias — recomendada.** B. Rescatar además un faltante concreto antes del retiro. | Pendiente. Apagar servicios o tocar producción requiere autorización específica. |
-| Renovar Grok Bot | **A. No renovarlo cuando venza: el equipo ya trabaja en la PC — recomendada.** B. Mantenerlo hasta que esté el navegador en WSL del issue #96. | Pendiente. Es gasto. |
-| Cambio mínimo de `AGENTS.md` | **A. Aprobar el cambio de este PR — recomendada.** B. Pedir una corrección concreta antes de aplicarlo. | Pendiente. No se aplicó. |
+| Motor desde el 14-nov, cuando vence Codex | **A. Decidirlo antes del 12-nov con lo que haya vendido el taller — recomendada.** B. Renovar ChatGPT desde ya. C. Quedarse sin motor desde el 14-nov. | Elegida A por Sergio el 1-nov: "Decidir el 12-nov (Recomendada)". |
+| Topes y relevo | **A. Adoptar el protocolo propuesto y validar los topes con mediciones — recomendada.** B. Mantener un objetivo por sesión y fijar los números después de medir Codex. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
+| Configuración compartida | **A. Una responsable que prepara los cambios, con la aprobación de Sergio para permisos y reglas — recomendada.** B. Que Sergio prepare y aplique toda la configuración. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
+| Rondas de revisión | **A. Mantener las necesarias hasta aprobar — recomendada.** B. Tras dos rondas fallidas, pausar para decidir alcance o prioridad; después revisar cualquier arreglo. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
+| Merge desde el 3-nov | **A. Lo hace Sergio; Codex prepara y revisa — recomendada.** B. Proponer después una delegación acotada mediante otro cambio de reglas. | Elegida B por Sergio el 1-nov: "Delegarlo después". Hasta ese cambio de reglas, Codex no mergea y el merge lo hace Sergio. |
+| Retiro técnico de Grok | **A. Rescate local revisado y retiro de accesos específicos después de comprobar dependencias — recomendada.** B. Rescatar además un faltante concreto antes del retiro. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". Apagar servicios o tocar producción sigue pidiendo su autorización. |
+| Renovar Grok Bot | **A. No renovarlo cuando venza: el equipo ya trabaja en la PC — recomendada.** B. Mantenerlo hasta que esté el navegador en WSL del issue #96. | Elegida A por Sergio el 1-nov: "No renovarlo (Recomendada)". |
+| Cambio mínimo de `AGENTS.md` | **A. Aprobar el cambio de este PR — recomendada.** B. Pedir una corrección concreta antes de aplicarlo. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
 
 Fuentes: `AGENTS.md:20–33,62–63`; `docs/lecciones.md:114`; el pedido de Sergio y los [datos del día](2026-11-01-plan-equipo-datos.md).
