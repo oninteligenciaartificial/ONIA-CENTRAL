@@ -4,6 +4,26 @@ Reels, calendario editorial, marca personal de Sergio Urcullo y anuncios, que si
 
 Actualizado: 2-nov-2026, hora de Bolivia.
 
+## Ahora
+
+Desde el 3-nov, Marketing sigue en Codex: `codex -p marketing` en `C:\dev\worktrees\ONIA-CENTRAL\marketing`, con su navegador propio. Los mensajes entre áreas van al tablero del issue #111.
+
+- **En qué estoy:**
+  - la campaña de Meta Ads del taller, en borrador, en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) (`workshops-comunidad/meta-ads-campana-3-4-5.md`). La revisión dio "aprobar"; falta el sí de Sergio Urcullo con captura. No hay nada cargado en Meta;
+  - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles.
+- **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo: el 2-nov, `codex exec` listó sus herramientas y MCP (Canva, Drive, Notion, Higgsfield y otras, con Notion y Drive apagados en esta PC) y ninguna lee o escribe artifacts de claude.ai. Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. Si no hay una sesión de Claude, la fuente es el JSON del repo y el panel queda con la última versión subida. La propuesta es pasarlo a Notion (punto 4 de "Pendiente"), sin aprobar todavía.
+- **Meta Ads en Codex:** Codex no tiene el conector de Meta Ads. Se hace con el navegador, cuando Sergio Urcullo cargue su cuenta en el perfil de Marketing.
+- **Orden de trabajo, con su "hecho cuando":**
+  1. Guiones (PR #139): mergeado cuando la última revisión escrita en el PR da "aprobar" y Sergio Urcullo aprueba los guiones. Lo que marcó cada revisión está en los comentarios del PR.
+  2. Campaña (PR #120): cargada en Meta en pausa, con los 2 videos, cuando Sergio Urcullo aprueba con captura y están la página y la tarjeta. La prende él, o Marketing con su sí.
+  3. Métricas en el panel: conversaciones y costo por conversación de la campaña, cuando corra.
+  4. Corregir la oferta vieja (3-5-7, combos) en `plan-meta-ads-borrador.md`, por PR.
+  5. La ficha de chase.h.ai con la skill `investigar-referente` (post https://www.instagram.com/p/DfKquhHHK3B/).
+
+## Correcciones de Sergio
+
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
+
 ## De dónde sale
 
 - El archivo de estado del bot viejo, en la rama `origin/onia-loop-excepcion-d003` (`docs/equipo-agentes/marketing.md`, con `ESTADO-ACTUAL.md` y `COMO-TRABAJAR.md`). Se tomó como datos, no como reglas. Esa rama no se mergea: se rescata en PRs chicos.
@@ -62,18 +82,3 @@ Al 2-nov a la noche. Lo ya resuelto ([decisión del 2-nov](../decisiones/2026-11
 
 - **Para quien lleve el taller:** el PR #72 vive en `workshops-comunidad/` y no es de Marketing. El precio de los reels y el de la respuesta de WhatsApp tienen que coincidir.
 
-## Para seguir en Codex
-
-Desde el 3-nov, Marketing sigue en Codex: `codex -p marketing` en `C:\dev\worktrees\ONIA-CENTRAL\marketing`, con su navegador propio. Los mensajes entre áreas van al tablero del issue #111.
-
-- **En qué estoy:**
-  - la campaña de Meta Ads del taller, en borrador, en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) (`workshops-comunidad/meta-ads-campana-3-4-5.md`). La revisión dio "aprobar"; falta el sí de Sergio Urcullo con captura. No hay nada cargado en Meta;
-  - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles.
-- **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo: el 2-nov, `codex exec` listó sus herramientas y MCP (Canva, Drive, Notion, Higgsfield y otras, con Notion y Drive apagados en esta PC) y ninguna lee o escribe artifacts de claude.ai. Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. Si no hay una sesión de Claude, la fuente es el JSON del repo y el panel queda con la última versión subida. La propuesta es pasarlo a Notion (punto 4 de "Pendiente"), sin aprobar todavía.
-- **Meta Ads en Codex:** Codex no tiene el conector de Meta Ads. Se hace con el navegador, cuando Sergio Urcullo cargue su cuenta en el perfil de Marketing.
-- **Orden de trabajo, con su "hecho cuando":**
-  1. Guiones (PR #139): mergeado cuando la última revisión escrita en el PR da "aprobar" y Sergio Urcullo aprueba los guiones. Lo que marcó cada revisión está en los comentarios del PR.
-  2. Campaña (PR #120): cargada en Meta en pausa, con los 2 videos, cuando Sergio Urcullo aprueba con captura y están la página y la tarjeta. La prende él, o Marketing con su sí.
-  3. Métricas en el panel: conversaciones y costo por conversación de la campaña, cuando corra.
-  4. Corregir la oferta vieja (3-5-7, combos) en `plan-meta-ads-borrador.md`, por PR.
-  5. La ficha de chase.h.ai con la skill `investigar-referente` (post https://www.instagram.com/p/DfKquhHHK3B/).

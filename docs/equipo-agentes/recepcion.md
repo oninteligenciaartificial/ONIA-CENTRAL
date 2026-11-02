@@ -1,5 +1,7 @@
 # Estado de Recepción
 
+> **Historia desde el 3-nov-2026.** El equipo son tres proyectos, sin Recepción: ver [README](README.md).
+
 2-nov-2026. Recepción es la sesión a la que Sergio Urcullo le manda imágenes, PDF, enlaces y videos. Dice qué hay, con un resumen corto, y pasa lo útil a la sesión del área con `SendMessage`, con copia en el tablero del [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111). No hace el trabajo de las áreas.
 
 ## Cómo mandarle cosas

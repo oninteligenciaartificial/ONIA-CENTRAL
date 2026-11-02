@@ -6,6 +6,31 @@ Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de ot
 
 Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Lo de abajo que dice martes 3, miércoles 4 y jueves 5 está reemplazado por esa decisión. Texto del 1-nov: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
 
+## Ahora
+
+Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRAL\boss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
+
+**En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel; el [PR de la página](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) del repo del sitio se mergeó el 2-nov a las 12:24 (Bolivia). Que ya se vea publicada en el sitio, sin confirmar desde esta área: lo ve Boss Code, que es quien publica.
+
+**Qué sigue (lo hace esta área):**
+1. Usar el registro privado (sección "Registro privado"): anotar cada consulta y pago, y conciliar con el banco al 6-nov.
+2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller (#113).
+3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (sin fecha de cierre fija, porque los textos de WhatsApp aprobados siguen vendiendo con las clases en curso y después con grabaciones; cuenta regresiva hasta el inicio de la clase 1; sin límite; "precio de esta edición"). Una fecha tope, si Sergio Urcullo la quiere, queda como propuesta pendiente, se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
+4. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
+5. Conciliar los pagos con el banco al 6-nov.
+
+**Qué espera a Sergio Urcullo:**
+- Hacer el pago de prueba con el QR de Yolo Pago.
+- Probar OBS con audio para grabar las clases, y elegir dónde se comparten las grabaciones.
+- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: sin cierre fijo, como los textos de WhatsApp aprobados, sin límite, y sí; el miércoles 4 a las 19:00 es solo la cuenta regresiva).
+- Mandar su video de repos para definir temario y skills a regalar.
+- El nombre "Claude de 0 a 100", a confirmar con un abogado.
+- Aprobar el análisis de los referentes (`marca-personal/referentes/funnel-fomo-2026-11-02.md`, PR abierto).
+
+## Correcciones de Sergio
+
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
+
 ## Objetivo: Bs 3.000 cobrados al 6-nov (antes 5-nov; Sergio lo confirmó el 2-nov)
 
 Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`); el 2-nov confirmó que el corte pasa al 6-nov. Los impuestos los ve él con el contador.
@@ -77,27 +102,6 @@ Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. 
 ## Conectores de esta sesión
 
 Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar: para leer eventos y para crear las 6 salas de Meet; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
-
-## Para seguir en Codex
-
-Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRAL\boss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
-
-**En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel; el [PR de la página](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) del repo del sitio se mergeó el 2-nov a las 12:24 (Bolivia). Que ya se vea publicada en el sitio, sin confirmar desde esta área: lo ve Boss Code, que es quien publica.
-
-**Qué sigue (lo hace esta área):**
-1. Usar el registro privado (sección "Registro privado"): anotar cada consulta y pago, y conciliar con el banco al 6-nov.
-2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller (#113).
-3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (sin fecha de cierre fija, porque los textos de WhatsApp aprobados siguen vendiendo con las clases en curso y después con grabaciones; cuenta regresiva hasta el inicio de la clase 1; sin límite; "precio de esta edición"). Una fecha tope, si Sergio Urcullo la quiere, queda como propuesta pendiente, se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
-4. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
-5. Conciliar los pagos con el banco al 6-nov.
-
-**Qué espera a Sergio Urcullo:**
-- Hacer el pago de prueba con el QR de Yolo Pago.
-- Probar OBS con audio para grabar las clases, y elegir dónde se comparten las grabaciones.
-- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: sin cierre fijo, como los textos de WhatsApp aprobados, sin límite, y sí; el miércoles 4 a las 19:00 es solo la cuenta regresiva).
-- Mandar su video de repos para definir temario y skills a regalar.
-- El nombre "Claude de 0 a 100", a confirmar con un abogado.
-- Aprobar el análisis de los referentes (`marca-personal/referentes/funnel-fomo-2026-11-02.md`, PR abierto).
 
 ## Pendientes del área
 

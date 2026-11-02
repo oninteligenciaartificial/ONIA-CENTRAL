@@ -4,7 +4,7 @@ Al día el 2-nov-2026 (Bolivia). Lo lleva la sesión de Claude Code del área, q
 
 Lo de "comprobado hoy" se vio desde esta PC o en GitHub el 1-nov, y se volvió a comprobar el 2-nov: nada cambió. Lo que está solo en `/workspace` de Grok Bot no se ve desde acá y no se da por disponible.
 
-## Para seguir en Codex
+## Ahora
 
 Al cierre del 2-nov. Desde el 3-nov, el área sigue en Codex.
 
@@ -23,6 +23,10 @@ Al cierre del 2-nov. Desde el 3-nov, el área sigue en Codex.
 - cargar la clave del VPS en esta PC, para que entre Boss Code;
 - aprobar cada merge en `onia-platform`;
 - decidir si Grok Bot sube la rama del panel a `onia-platform`.
+
+## Correcciones de Sergio
+
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
 
 ## Objetivo actual
 

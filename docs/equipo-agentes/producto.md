@@ -4,7 +4,7 @@
 
 Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cómo se comprobó cada cosa está al final. El estado que dejó el bot de Grok está en la rama `origin/onia-loop-excepcion-d003` (commit `c2796fa`), en este mismo archivo. Se tomó como dato, no como regla, y no se copia acá.
 
-## Para seguir en Codex
+## Ahora
 
 Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C:\dev\worktrees\ONIA-CENTRAL\boss-code` con `codex -p boss-code`, que ya trae el modelo, el esfuerzo y un navegador propio, sin cuentas (lo armó el Administrador el 2-nov). La rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
@@ -27,6 +27,10 @@ Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C
 
   No se sabe si la clave pública está autorizada en el VPS.
 - **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
+
+## Correcciones de Sergio
+
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
 
 ## Qué hay y dónde
 
@@ -79,7 +83,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 
 - Bajar o cambiar `/taller` después del 6-nov. Cambiarla es publicar, así que va con el sí de Sergio Urcullo.
 - Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Boss No-Code, como ordenó el Administrador el 2-nov, y recién después del taller, que termina el 6-nov, porque el 2-nov Sergio Urcullo eligió "Después del taller" ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6584713207)). Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
-- El VPS: ver "Para seguir en Codex", arriba.
+- El VPS: ver "Ahora", arriba.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).
 - Las 11 mejoras de seguridad del harness que propuso el bot quedaron evaluadas en el [issue de qué mejoras de Grok sirven hoy](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/160). Esperan la decisión de Sergio Urcullo en A, B y C.
