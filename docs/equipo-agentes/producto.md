@@ -8,15 +8,25 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C:\dev\worktrees\ONIA-CENTRAL\boss-code` con `codex -p boss-code`, que ya trae el modelo, el esfuerzo y un navegador propio, sin cuentas (lo armó el Administrador el 2-nov). La rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
-- **Web del taller:** publicada, no hay nada que hacer hasta el 6-nov. Si Sergio Urcullo decide algo de lo que la página no dice, Boss No-Code pasa el texto y se suma por PR, con su sí antes de publicar. Después del 6-nov, se baja o se cambia, también con su sí.
-- **VPS:** todo espera la clave. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en este orden:
-  1. el inventario que pidió Sergio Urcullo el 2-nov, por el Administrador ("limpia el vps ordenalo o eso dejaselo a la sesion que le toque"): contenedores, servicios, tareas programadas, memoria, disco y CPU, qué sobra, el Hermes viejo, y si entra el navegador de Linux de las áreas, que hoy usa unos 3,4 GB de la PC;
-  2. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
-  3. si sigue corriendo el respaldo semanal.
+- **Web del taller:** publicada. El 2-nov, Boss No-Code pasó "Bs 50, precio de esta edición" y el texto de después del inicio ("El taller ya empezó: escribinos y te pasamos las clases grabadas."). Están en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. No hay cierre de inscripción: se vende hasta el viernes 6, con las clases grabadas, como dice el borrador de WhatsApp (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`), y no hay límite de personas. Después del 6-nov, la página se baja o se cambia, también con su sí.
+- **VPS:** todo espera la clave, que se le pidió a Sergio Urcullo el 2-nov a la noche. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en el orden que pidió el Administrador el 2-nov, por un pedido de Sergio Urcullo ("Primero lo de onia, necesitamos tener todo listo hasta hoy", [constancia en el #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6587567915)):
+  1. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
+  2. para ONIA Platform: si el runbook de correos del [onia-platform #70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) está aplicado en el VPS, como dice ese PR.
+
+  Los dos se dejan en el #111 y se le avisan a ONIA Platform. Después:
+  3. el inventario que pidió Sergio Urcullo el 2-nov, por el Administrador ("limpia el vps ordenalo o eso dejaselo a la sesion que le toque"): contenedores, servicios, tareas programadas, memoria, disco y CPU, qué sobra, el Hermes viejo, y si entra el navegador de Linux de las áreas, que hoy usa unos 3,4 GB de la PC;
+  4. si sigue corriendo el respaldo semanal.
 
   Después van la lista de qué limpiar y la base de QA sin datos de clientes, que Sergio Urcullo pidió el 2-nov ("Hoy, mirar y armar la QA"). Cada cambio se le pregunta así: "Sergio, tenés este cambio: … ¿Lo aceptás?".
-- **La clave:** Sergio Urcullo eligió el 2-nov la de la bóveda, `claude-cloud-vps-20260930`. Él guarda el adjunto en `C:\Users\PC\.ssh\`, como dice la [guía de KeePassXC](https://keepassxc.org/docs/KeePassXC_UserGuide) en "Advanced Entry Handling". Después, en una PowerShell como administrador, pone `ssh-agent` en automático y lo arranca. Carga la clave con `ssh-add` y borra el archivo, como dice la [guía de Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement). Por último pasa el servidor y el usuario, que no son secretos. El 2-nov, `ssh-agent` estaba en `Disabled` y `Stopped`.
-- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; cada cambio en el VPS; cualquier cambio en `/taller`.
+- **Mejoras de seguridad de Grok:** quedaron evaluadas en el [issue de qué mejoras de Grok sirven hoy](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/160), con la revisión 3 en "aprobar". Esperan la decisión de Sergio Urcullo en A, B y C, que tocan permisos o cómo se revisa. El punto D se comprueba en el primer trabajo real en Codex.
+- **La clave:** Sergio Urcullo eligió el 2-nov la de la bóveda, `claude-cloud-vps-20260930`. Esa noche avisó que la bóveda no estaba creada: `C:\Users\PC\BovedaPrivada\Agentes.kdbx` no existía, y la clave seguía suelta en `C:\Users\PC\BovedaPrivada\`, como dice [credenciales](../credenciales.md) (de esa carpeta se miraron solo los nombres de los archivos). Se le pasaron estos pasos:
+  - crear la bóveda, como dice [credenciales](../credenciales.md);
+  - guardar la clave como adjunto de una entrada (en "Advanced Entry Handling" de la [guía de KeePassXC](https://keepassxc.org/docs/KeePassXC_UserGuide));
+  - en una PowerShell como administrador, poner `ssh-agent` en automático, arrancarlo, cargar la clave suelta con `ssh-add` y borrarla, como dice la [guía de Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement);
+  - pasar el servidor y el usuario, que no son secretos.
+
+  No se sabe si la clave pública está autorizada en el VPS.
+- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
 
 ## Qué hay y dónde
 
@@ -61,7 +71,7 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
 Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta de preguntas (sin enlace): "Web corta antes del 3" y "sergiourcullo.vercel.app/taller (Recomendada)". Sobre las ramas de Grok Bot con datos de un lead, eligió "Borrar después del rescate (Recomendada)", y quedó en el [issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6570861813).
 
 - **Qué tiene:** lo pedido en la sección 5 del análisis de funnel de Boss No-Code ([PR #141](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/141)): barra fija arriba, cuenta regresiva real al miércoles 4 a las 19:00, qué te llevás, temario previsto, "esto no es", para quién es, qué incluye, quién lo da, preguntas frecuentes y 4 botones a WhatsApp con "vengo de la web" ya escrito. El precio sale de la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md), y las fechas, la devolución y las grabaciones, de la decisión del 2-nov ([PR #136](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136)).
-- **Qué no dice, porque no está decidido:** lo legal del nombre, hasta cuándo se inscribe la gente, si hay un límite de personas, si Bs 50 es "precio de esta edición" y qué plan de Claude hace falta. Si Sergio Urcullo lo decide, Boss No-Code pasa el texto y Boss Code lo suma por PR, con su sí antes de publicar.
+- **Lo que pasó Boss No-Code el 2-nov:** se vende hasta el viernes 6, y quien entra tarde recibe las clases grabadas. No hay límite de personas, y el precio va como "Bs 50, precio de esta edición". Esto último está en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo. **Sigue sin decidir:** lo legal del nombre y qué plan de Claude hace falta. Si Sergio Urcullo lo decide, Boss No-Code pasa el texto y Boss Code lo suma por PR, con su sí antes de publicar.
 - **Publicada el 2-nov:** Sergio Urcullo vio las capturas en el celular y contestó "publicala". Su sí está citado en el PR.
 - **Después del 6-nov:** la página queda con fechas pasadas. Se baja o se cambia para la próxima edición.
 
@@ -72,7 +82,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 - El VPS: ver "Para seguir en Codex", arriba.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).
-- Revisar las 11 mejoras de seguridad del harness que propuso el bot. Están en esa rama, en `docs/equipo-agentes/analista/comparativa-harness-20261101.md`.
+- Las 11 mejoras de seguridad del harness que propuso el bot quedaron evaluadas en el [issue de qué mejoras de Grok sirven hoy](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/160). Esperan la decisión de Sergio Urcullo en A, B y C.
 
 ## Para otras áreas
 
