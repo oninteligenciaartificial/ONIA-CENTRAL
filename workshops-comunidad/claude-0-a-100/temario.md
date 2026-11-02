@@ -2,7 +2,7 @@
 
 29-oct-2026, por Claude Code. Sale del [plan del taller](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41), que trae las decisiones de Sergio Urcullo.
 
-**Estado: borrador, rescatado del PR #72 el 2-nov-2026 y adaptado a la oferta del 1-nov (3, 4 y 5-nov, Bs 50 por las tres clases, con grabaciones; `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`).** Lo que dicen las clases lo aprueba Sergio Urcullo, porque lo ve un cliente. Las tablas de horas van de 19:00 a 21:00, con cambio de sala a las 20:00. **Pendiente:** la lista de pruebas con cuenta gratis (al final) sigue sin hacerse. Hasta entonces, "con la cuenta gratis" no se dice en ningún anuncio.
+**Estado: borrador, rescatado del PR #72 el 2-nov-2026 y adaptado a la oferta del 1-nov (4, 5 y 6-nov, Bs 50 por las tres clases, con grabaciones; `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y `docs/decisiones/2026-11-02-taller-4-5-6.md` (PR de las fechas)).** Lo que dicen las clases lo aprueba Sergio Urcullo, porque lo ve un cliente. Las tablas de horas van de 19:00 a 21:00, con cambio de sala a las 20:00. **Pendiente:** la lista de pruebas con cuenta gratis (al final) sigue sin hacerse. Hasta entonces, "con la cuenta gratis" no se dice en ningún anuncio.
 
 ## Lo que trae el plan gratis
 
@@ -28,9 +28,9 @@ Meet gratis corta a los 60 minutos las reuniones de 3 o más personas, avisa a l
 
 | Clase | Sala 1 | Sala 2 |
 |---|---|---|
-| 1, martes 3 | 19:00 a 20:00 | 20:00 a 21:00 |
-| 2, miércoles 4 | 19:00 a 20:00 | 20:00 a 21:00 |
-| 3, jueves 5 | 19:00 a 20:00 | 20:00 a 21:00 |
+| 1, miércoles 4 | 19:00 a 20:00 | 20:00 a 21:00 |
+| 2, jueves 5 | 19:00 a 20:00 | 20:00 a 21:00 |
+| 3, viernes 6 | 19:00 a 20:00 | 20:00 a 21:00 |
 
 En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien no está en el grupo.
 
@@ -42,15 +42,15 @@ En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien 
   - cerrar todo lo que tenga datos de clientes y prender "No molestar" en Windows;
   - Meet en una ventana y Claude en otra, para que la grabación tome solo la de Claude;
   - WhatsApp Web cerrado: "/sala" y los avisos salen del celular. Recortes graba un rectángulo de la pantalla, y si algo queda encima de Claude, se graba.
-- **18:50:** abrir la sala 1, compartir la ventana de Claude y empezar a grabar solo esa ventana (cómo se graba, OBS o la Herramienta Recortes, está sin decidir; se prueba antes del martes 3), con el micrófono prendido y el sonido de la compu apagado. Se graba una toma por sala: se corta en cada cambio y se arranca otra, así ningún archivo pasa de una hora. Que Recortes aguante 2 horas seguidas no está probado.
+- **18:50:** abrir la sala 1, compartir la ventana de Claude y empezar a grabar solo esa ventana (cómo se graba, OBS o la Herramienta Recortes, está sin decidir; se prueba antes del miércoles 4), con el micrófono prendido y el sonido de la compu apagado. Se graba una toma por sala: se corta en cada cambio y se arranca otra, así ningún archivo pasa de una hora. Que Recortes aguante 2 horas seguidas no está probado.
 - **En la sala:** se acepta solo a quien está en la lista de "Pagó". El enlace va solo al grupo de los que pagaron. Las solicitudes se ven en "Ver a todos", que tiene "Admitir a todos" ([ayuda de Google Meet](https://support.google.com/meet/answer/9303164?hl=es-419)). Desde 2026, Meet separa algunas solicitudes en una segunda lista y propone rechazarlas ([Google](https://workspaceupdates.googleblog.com/2026/02/safeguarded-guest-admit-flow-in-google-meet.html)): esa se mira una por una. Con una cuenta personal no hay coorganizadores ([ayuda de Google Meet](https://support.google.com/meet/answer/10885841?hl=es-419)), así que admite solo Sergio Urcullo, y tiene que seguir en la sala.
-- **Al terminar:** cortar la grabación y guardar las tomas. Las grabaciones se entregan el jueves 5, al terminar la última clase; dónde se comparten está sin decidir.
+- **Al terminar:** cortar la grabación y guardar las tomas. Las grabaciones se entregan el viernes 6, al terminar la última clase; dónde se comparten está sin decidir.
 
 **La grabación:** se avisa al empezar que se graba solo la pantalla y la voz de Sergio Urcullo. No se graban las caras ni los nombres de los inscriptos, ni el chat de Meet. Las preguntas se leen en voz alta, sin el nombre de quien pregunta.
 
 ## Clase 1: Claude desde cero
 
-**Martes 3 de noviembre, de 19:00 a 21:00.** Al final, cada uno tiene su primer proyecto con sus documentos.
+**Miércoles 4 de noviembre, de 19:00 a 21:00.** Al final, cada uno tiene su primer proyecto con sus documentos.
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
@@ -63,7 +63,7 @@ En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien 
 | 20:00 | 10 | Búsqueda web y memoria | Cuándo prender la búsqueda web y pedirle las fuentes. La memoria: qué recuerda de un chat a otro, dónde se ve y cómo se borra. El chat de incógnito, para lo que no querés que recuerde |
 | 20:10 | 20 | Tu primer proyecto | Demo: proyecto "Panadería La Esquina", con instrucciones y los dos archivos de práctica. Pedido: "Un cliente pide una torta para mañana a las 10. Contestale". Claude debería decir que hacen falta 48 horas, porque está en las instrucciones. **Ejercicio de la clase,** 10 minutos (abajo) |
 | 20:30 | 20 | Preguntas | — |
-| 20:50 | 10 | Cierre | La tarea. Las grabaciones llegan el jueves 5, al terminar la última clase. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
+| 20:50 | 10 | Cierre | La tarea. Las grabaciones llegan el viernes 6, al terminar la última clase. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
 
 **Las cifras del archivo de práctica,** para comprobar lo que contesta Claude:
 - Del 1 al 28 de octubre se vendieron Bs 17.766.
@@ -82,7 +82,7 @@ Lo tenés cuando Claude te contesta usando tus documentos, sin que se los expliq
 
 ## Clase 2: Trabajo armado
 
-**Miércoles 4 de noviembre, de 19:00 a 21:00.** Al final, de un archivo salen un artefacto, un documento y una presentación.
+**Jueves 5 de noviembre, de 19:00 a 21:00.** Al final, de un archivo salen un artefacto, un documento y una presentación.
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
@@ -108,7 +108,7 @@ Lo tenés cuando bajaste el documento y la presentación, y después de revisarl
 
 ## Clase 3: Conectá Claude a lo que usás
 
-**Jueves 5 de noviembre, de 19:00 a 21:00.** Al final, Claude trabaja con una app tuya y con una skill propia.
+**Viernes 6 de noviembre, de 19:00 a 21:00.** Al final, Claude trabaja con una app tuya y con una skill propia.
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
