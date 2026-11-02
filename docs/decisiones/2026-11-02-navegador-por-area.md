@@ -26,7 +26,7 @@ Sale de la sección "Qué toco y qué no" de [`negocio.md`](../equipo-agentes/ne
 | Boss Code | `codex -p boss-code` | Ninguna: solo páginas publicadas, sin login (`producto.md`) |
 | ONIA Platform | `codex -p onia-platform` | Ninguna esta semana. Para probar la plataforma como cliente, una cuenta de prueba de la propia plataforma, sin datos de clientes (`platform.md`) |
 | Recepción | `codex -p recepcion` | Cuentas secundarias para investigar redes: Instagram y TikTok, Facebook si hace falta, con un correo nuevo. Las pidió Sergio el 2-nov, según el mensaje de Recepción al Administrador (sin enlace). Las crea y las carga él (`recepcion.md`) |
-| Administrador, Pelau, Analista y revisiones | `codex` | Ninguna (`--isolated`). Pelau dijo que no usa navegador (mensaje al Administrador, 2-nov, sin enlace) |
+| Administrador, Pelau, Analista y revisiones | `codex -p administrador`, `-p pelau` o `-p analista`, que solo fijan modelo y esfuerzo; las revisiones, `codex` | Ninguna: usan el de la base (`--isolated`). Pelau dijo que no usa navegador (mensaje al Administrador, 2-nov, sin enlace) |
 
 Ninguna área entra a una cuenta que Sergio no decidió ni cargó en su perfil. Entrar a una cuenta no da permisos: nada se publica, se envía ni se compra sin el sí de Sergio (`AGENTS.md`, "Frenos").
 
@@ -55,4 +55,4 @@ Ese ejemplo es el de Marketing; para otra área se cambia `marketing` por su nom
 
 ## Cómo se vuelve atrás
 
-Restaurar `config.toml` desde el respaldo y borrar los cinco `<área>.config.toml` de `C:\Users\PC\.codex\`. Las carpetas de los perfiles, en `/home/pc-linux-sergio/.onia-browser/`, se pueden borrar después.
+Restaurar `config.toml` desde el respaldo y borrar los ocho `<sesión>.config.toml` de `C:\Users\PC\.codex\`: los cinco de las áreas y los de Administrador, Pelau y Analista. Las carpetas de los perfiles, en `/home/pc-linux-sergio/.onia-browser/`, se pueden borrar después.

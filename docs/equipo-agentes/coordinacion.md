@@ -6,44 +6,50 @@ Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él
 
 - **Cada sesión tiene su carpeta fija,** en `C:\dev\worktrees\ONIA-CENTRAL\<sesión>`, fuera de las de Claude, para que no se borre al archivarlas.
 - **Cada sesión tiene su perfil de Codex,** en `C:\Users\PC\.codex\<sesión>.config.toml`, con el modelo y el esfuerzo del [plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4. Recepción no está en el plan: va con `gpt-6.1-sol` y `medium`, como propuesta del Administrador. Las áreas traen también su propio navegador ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
-- **Se abren de a una,** con unos segundos entre una y otra. En el ensayo, las dos que arrancaron primero y juntas no vieron el navegador; Boss Code, abierto solo después, sí.
+- **Cada línea va en su propia ventana de PowerShell,** porque Codex ocupa la ventana.
+- **Se abren de a una,** con unos segundos entre una y otra, por precaución. En el ensayo, Boss Code y ONIA Platform, las dos primeras con navegador, arrancaron con un segundo de diferencia y no lo vieron. Abiertas solas, después, sí. La causa no está confirmada.
 - **La primera vez,** Codex puede preguntar si se confía en la carpeta. Se contesta que sí, una vez por carpeta.
+- **Si `git pull` falla,** Codex no se abre, y la sesión sigue en su rama sin traer `main`.
 
 Una línea por sesión, para pegar en PowerShell:
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-no-code; git pull --ff-only origin main; codex -p boss-no-code "Sos Boss No-Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/negocio.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-no-code; git pull --ff-only origin main; if ($?) { codex -p boss-no-code "Sos Boss No-Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/negocio.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\marketing; git pull --ff-only origin main; codex -p marketing "Sos Marketing de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/marketing.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\marketing; git pull --ff-only origin main; if ($?) { codex -p marketing "Sos Marketing de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/marketing.md (si todavía no está en main, está en el PR 102), y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-code; git pull --ff-only origin main; codex -p boss-code "Sos Boss Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/producto.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-code; git pull --ff-only origin main; if ($?) { codex -p boss-code "Sos Boss Code de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/producto.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\onia-platform; git pull --ff-only origin main; codex -p onia-platform "Sos ONIA Platform. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/platform.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\onia-platform; git pull --ff-only origin main; if ($?) { codex -p onia-platform "Sos ONIA Platform. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/platform.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\recepcion; git pull --ff-only origin main; codex -p recepcion "Sos Recepción de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/recepcion.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\recepcion; git pull --ff-only origin main; if ($?) { codex -p recepcion "Sos Recepción de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/recepcion.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\administrador; git pull --ff-only origin main; codex -p administrador "Sos el Administrador de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/coordinacion.md, y seguí con el Relevo del Administrador."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\administrador; git pull --ff-only origin main; if ($?) { codex -p administrador "Sos el Administrador de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/coordinacion.md, y seguí con el Relevo del Administrador." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\pelau; git pull --ff-only origin main; codex -p pelau "Sos Pelau de ONIA: solo das resúmenes cortos. Leé el AGENTS.md y los estados de docs/equipo-agentes/, y dale a Sergio un resumen corto de cómo están las áreas."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\pelau; git pull --ff-only origin main; if ($?) { codex -p pelau "Sos Pelau de ONIA: solo das resúmenes cortos. Leé el AGENTS.md, docs/lecciones.md y los estados de docs/equipo-agentes/, y dale a Sergio un resumen corto de cómo están las áreas." }
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\analista; git pull --ff-only origin main; codex -p analista "Sos la Analista de ONIA. Leé el AGENTS.md y docs/lecciones.md, y auditá los PRs mergeados el 2-nov: revisión escrita, veredicto y aprobación de Sergio citada cuando hacía falta. Dejá tu informe en un issue nuevo."
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\analista; git pull --ff-only origin main; if ($?) { codex -p analista "Sos la Analista de ONIA. Leé el AGENTS.md y docs/lecciones.md, y auditá los PRs mergeados el 2-nov: revisión escrita, veredicto y aprobación de Sergio citada cuando hacía falta. Dejá tu informe en un issue nuevo." }
 ```
 
-**Ensayo del 2-nov,** con `codex -p <sesión> exec --sandbox read-only` en cada carpeta: las ocho arrancaron con su modelo y su esfuerzo, y contestaron empezando con "Sergio Urcullo,", señal de que cargaron sus instrucciones. Leyeron su estado; Marketing lo encontró solo porque se le nombró su PR abierto. El navegador anduvo en Boss No-Code, Marketing y Recepción. En Boss Code y ONIA Platform, que arrancaron primero, no apareció; Boss Code, solo y después, sí. Sin probar: el modo interactivo.
+**Ensayo del 2-nov,** con `codex -p <sesión> exec --sandbox read-only` en cada carpeta, entre las 13:15 y las 13:16. Los registros están en `C:\Users\PC\.codex\sessions\2026\11\02\`.
+- Las ocho arrancaron con su modelo y su esfuerzo, y contestaron empezando con "Sergio Urcullo,". Eso muestra que cargaron el `AGENTS.md` global de Codex (`C:\Users\PC\.codex\AGENTS.md`), donde está ese saludo.
+- Leyeron su estado. Marketing lo encontró solo porque se le nombró su PR abierto.
+- El navegador anduvo en Recepción, Marketing y Boss No-Code. En Boss Code (13:15:37) y ONIA Platform (13:15:38) no apareció. Abiertas solas, después, sí: Boss Code a las 13:24 y ONIA Platform a las 13:40.
+- **Sin probar:** el modo interactivo.
 
 ## Relevo del Administrador (2-nov, a la tarde)
 
@@ -52,7 +58,8 @@ La sesión de Claude es `local_23a5279d-9550-4284-828e-bf8bef1d59c2`. Coordina a
 **Hecho el 2-nov:** el navegador por área, las reglas para hablarle a Sergio con autonomía mediana, el stack de cada área ([`stack.md`](stack.md)), los relevos para Codex de Boss No-Code, ONIA Platform, Boss Code y Recepción, los perfiles y las carpetas de Codex, y el ensayo.
 
 **Pendiente:**
-- **Marketing:** su estado, `marketing.md`, tiene que estar en `main`. Estaba en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), y se le pidió mergearlo el 2-nov.
+- **Marketing:** su estado, `marketing.md`, tiene que estar en `main`. Está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), y se le pidió mergearlo el 2-nov.
+- **Campaña de Meta Ads:** el [PR de la campaña con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) sigue abierto. Meta todavía no tiene página ni tarjeta: según Marketing, el 2-nov, eso lo hace Sergio (sin enlace). Lo lleva Marketing con él.
 - **Ramas de Grok con datos de un lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): nadie tiene asignado borrarlas. Sergio ya eligió borrarlas después del rescate, pero asignárselo a Boss No-Code lo frenó la app, por irreversible. Falta que Sergio diga quién se lo pide.
 - **Herramientas de Codex** ([issue #128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128)): Higgsfield, Vercel y Gmail quedan con la regla de no usarlas sin su sí, como eligió Sergio. Notion y Drive, que se apagaron el 28-oct, figuran prendidos con otro nombre; falta preguntarle.
 - **Boss Code:** el inventario del VPS, cuando Sergio cargue la clave.
