@@ -302,12 +302,12 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
     - dos o tres opciones cortas, con la recomendada marcada "(recomendada)";
     - si es algo que se publica o se ve, la captura.
 
-    Cuando contesta, Hermes deja un comentario en el PR que cita sus palabras textuales y la fecha, porque la cuenta de GitHub es compartida. Recién ahí vuelve al paso 9.
+    Cuando contesta, Hermes deja un comentario en el PR con la pregunta tal como se le hizo, sus palabras textuales y la fecha, como dice "Aprobaciones rápidas", del `AGENTS.md`, porque la cuenta de GitHub es compartida. Recién ahí vuelve al paso 9.
 11. **Cerrar.**
     - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
     - Leé la cuota una vez más, para el "Después". Como ya no se lanza nada, si el comando está bloqueado va "sin medir: `hermes usage` bloqueado", salvo que Sergio Urcullo haya pasado una lectura de después del último lanzamiento.
-    - Contale a Sergio Urcullo en corto, sin números ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
+    - Contale a Sergio Urcullo en corto, sin números de PR o de issue ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
 
 ## Varios issues a la vez
