@@ -298,8 +298,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
      Va con `workdir` en el checkout principal. Si alguien sumó un commit después de la revisión, `--match-head-commit` no deja mergear. `--output-format json` solo cambia cómo devuelve el resultado, no los permisos.
    - Antes de lanzarlo, Hermes lee la cuota ("Freno por cuota"). Al terminar, lee `<notas>/uso-claude-merge-<R>.json` como dice "Cómo se lee lo que devuelven". Que salga 0 no prueba el merge: lo prueba el `MERGED` del paso 11.
 10. **A Sergio Urcullo, solo lo reservado y lo que solo él puede hacer,** como logins, secretos o comandos en su PowerShell. Así lo dice el `AGENTS.md`, en "Los planes no se le preguntan". Lo técnico lo decide el agente. Todo junto, en un solo mensaje corto:
-    - qué es y por qué le toca a él, con la regla del `AGENTS.md`;
-    - el enlace al PR;
+    - qué cambia y para qué, en una o dos líneas, y por qué le toca a él, con la regla del `AGENTS.md`. Sin números de PR ni enlaces para leer ("Aprobaciones rápidas", del `AGENTS.md`);
     - dos o tres opciones cortas, con la recomendada marcada "(recomendada)";
     - si es algo que se publica o se ve, la captura.
 
@@ -308,7 +307,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
     - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
     - Leé la cuota una vez más, para el "Después". Como ya no se lanza nada, si el comando está bloqueado va "sin medir: `hermes usage` bloqueado", salvo que Sergio Urcullo haya pasado una lectura de después del último lanzamiento.
-    - Contale a Sergio Urcullo en corto: el issue, el PR, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
+    - Contale a Sergio Urcullo en corto, sin números ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
 
 ## Varios issues a la vez
