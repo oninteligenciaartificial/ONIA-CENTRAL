@@ -1,6 +1,6 @@
-# Campaña de Meta Ads del taller 3-4-5-nov: qué cambia y qué falta
+# Campaña de Meta Ads del taller (clases 4-5-6-nov): qué cambia y qué falta
 
-2-nov-2026, por la sesión Marketing (Claude Code). Parte de la oferta de `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y corrige, para la campaña, el [plan de Meta Ads](plan-meta-ads-borrador.md) (secciones "Estructura de la campaña", "Mensaje" y "Creativos con su cara") y el texto del anuncio del [PR #72 (temario, WhatsApp y guiones)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72), que siguen con 3 clases a Bs 50 o Bs 120 y fechas del 3, 5 y 7.
+2-nov-2026, por la sesión Marketing (Claude Code). Parte de la oferta de `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y de la [decisión del 2-nov que pasa las clases al miércoles 4, jueves 5 y viernes 6, a las 19:00](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136) (precio, grabaciones y devolución no cambian). Corrige, para la campaña, el [plan de Meta Ads](plan-meta-ads-borrador.md) (secciones "Estructura de la campaña", "Mensaje" y "Creativos con su cara") y el texto del anuncio del [PR #72 (temario, WhatsApp y guiones)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72), que siguen con Bs 50 o Bs 120 y fechas del 3, 5 y 7.
 
 **Estado: borrador.** Lo ve un cliente y es gasto: Sergio Urcullo aprueba los textos y los creativos con captura, y la campaña queda en pausa hasta su sí.
 
@@ -8,7 +8,8 @@
 
 Con botones, en la sesión Marketing (sin enlace):
 
-- **Presupuesto:** "US$10/día hasta el 5-nov (Recomendada)". Son unos US$30 en 3 días (3, 4 y 5-nov), si arranca el 3-nov.
+- **Presupuesto:** "US$10/día hasta el 5-nov (Recomendada)", elegido cuando las clases eran 3-4-5. Son unos US$30 en 3 días (3, 4 y 5-nov), si arranca el 3-nov. Con las clases del 4 al 6, si sigue hasta el 6-nov son US$40: **sin decidir**, lo decide Sergio Urcullo.
+- **Fechas (2-nov, después):** clases miércoles 4, jueves 5 y viernes 6, a las 19:00. La campaña arranca el 3-nov, un día antes de la primera clase.
 - **Creativos:** "Grabás 2 videos con los guiones del plan (Recomendada)". Los graba él; los guiones son los de abajo.
 - **Nombre:** "claude de 0 a 100 y no es ilegal, no creo que este registrado, solo fue usado una vez, no habra problemas". Queda ese nombre, **sin confirmar con un abogado** (`docs/lecciones.md`). El anuncio dice "Taller independiente, no oficial de Anthropic" y no usa el logo de Claude.
 - **PR de estado de Marketing (#102):** "Actualizarlo".
@@ -30,10 +31,10 @@ Para anunciar con una página hay que asociarla a la cuenta, y la página "Onia"
 
 ## Cambios al anuncio
 
-- **Fechas fuera del anuncio**, como dice el plan: la campaña corre hasta el 5-nov y un anuncio con "martes 3" quedaría viejo el 4. Las fechas van en el saludo de WhatsApp.
+- **Fechas fuera del anuncio**, como dice el plan: la campaña corre varios días y un anuncio con "miércoles 4" quedaría viejo el 5. Las fechas van en el saludo de WhatsApp.
 - **Un solo precio:** "Un solo pago de Bs 50 por las 3 clases". Sin Bs 120 (decisión del 1-nov). Los cupos: el [PR #110](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) no los usa y la decisión del 1-nov no dice nada; sin decidir, por eso el anuncio no los nombra.
 - **Grabaciones:** "grabaciones incluidas", sin plazo, porque hasta cuándo y dónde no está decidido.
-- **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo antes del martes 3.
+- **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo antes del miércoles 4. Las grabaciones se entregan el viernes 6, al terminar la última clase (decisión del 2-nov).
 - **Nada de "devolución"** ni certificado en el anuncio: no están decididos.
 
 ### Texto principal
@@ -58,7 +59,7 @@ Los guiones son los del [PR #72](https://github.com/oninteligenciaartificial/ONI
 
 ## Texto que llega al chat (coincide con el llamado a la acción)
 
-El llamado del anuncio es "Tocá el botón y escribime", y el mensaje sugerido de la plantilla es **"Hola, quiero info del taller de Claude"**. La respuesta es el saludo del [PR #110 (textos de WhatsApp)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), sección 1, que da las fechas 3, 4 y 5, el pago único y las grabaciones. Boss No-Code confirmó el 2-nov que ese saludo contesta a esa frase y, tras pedírselo, ahora dice "un solo pago de Bs 50 por las 3 clases y las grabaciones incluidas", igual que el anuncio. Falta su revisión de Codex y el sí de Sergio Urcullo con captura. Los reels usan "escribí TALLER" por WhatsApp; ese es otro canal y no se mezcla con el anuncio.
+El llamado del anuncio es "Tocá el botón y escribime", y el mensaje sugerido de la plantilla es **"Hola, quiero info del taller de Claude"**. La respuesta es el saludo del [PR #110 (textos de WhatsApp)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), sección 1, que da las fechas 4, 5 y 6 (Boss No-Code las actualizó el 2-nov), el pago único y las grabaciones. Boss No-Code confirmó el 2-nov que ese saludo contesta a esa frase y, tras pedírselo, ahora dice "un solo pago de Bs 50 por las 3 clases y las grabaciones incluidas", igual que el anuncio. Falta su revisión de Codex y el sí de Sergio Urcullo con captura. Los reels usan "escribí TALLER" por WhatsApp; ese es otro canal y no se mezcla con el anuncio.
 
 ## Campaña (a cargar en pausa cuando haya página)
 
@@ -67,7 +68,7 @@ Sigue la estructura del plan (ayuda de Meta: [anuncios a WhatsApp](https://www.f
 | Nivel | Valor |
 |---|---|
 | Campaña | "Claude 0 a 100 · V1 · WhatsApp". Interacción, destino WhatsApp |
-| Conjunto | Toda Bolivia, 18 años o más, sin intereses, ubicaciones automáticas. Presupuesto diario US$10. Inicio martes 3-nov, fin jueves 5-nov. Hora de inicio y zona horaria de la cuenta: **sin confirmar** (Bolivia es UTC−4) |
+| Conjunto | Toda Bolivia, 18 años o más, sin intereses, ubicaciones automáticas. Presupuesto diario US$10. Inicio martes 3-nov. Fin: jueves 5-nov (lo elegido) o viernes 6-nov: sin decidir. Hora de inicio y zona horaria de la cuenta: **sin confirmar** (Bolivia es UTC−4) |
 | Anuncios | "Video 1 · contraste" y "Video 2 · demo", con el texto de arriba |
 | Estado | Borrador o en pausa. Publicar es activar (`ads_activate_entity`): solo con el sí de Sergio Urcullo con captura |
 
@@ -75,7 +76,7 @@ La plantilla de mensaje no la carga el conector (PR #72); la escribe Sergio Urcu
 
 ## Cuándo se pausa
 
-Como el plan, acortado a 3 días: el 4-nov se pausa el video con menos conversaciones por dólar. Seguir después del 5-nov, o subir el presupuesto, pide otro sí de Sergio Urcullo.
+Como el plan, acortado: el 4-nov se pausa el video con menos conversaciones por dólar. Seguir después de la fecha de fin, o subir el presupuesto, pide otro sí de Sergio Urcullo.
 
 ## Avisos
 
