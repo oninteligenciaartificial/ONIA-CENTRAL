@@ -71,7 +71,7 @@ Consultados el 1-nov con `session_connectors_status` de la app, sin leer secreto
 
 ## Para seguir en Codex
 
-Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRALoss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
+Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRAL\boss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
 
 **En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel; el [PR de la página](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) del repo del sitio se mergeó el 2-nov a las 12:24 (Bolivia). Que ya se vea publicada en el sitio, sin confirmar desde esta área: lo ve Boss Code, que es quien publica.
 
