@@ -1,8 +1,29 @@
 # Lecciones
 
-Lo que ya salió mal y cómo no repetirlo. Lo leen Claude Code, Codex y Hermes antes de empezar. Cómo se suma una lección está en el `AGENTS.md`, en "Errores y lecciones". Las de una sola tarea van en la skill de esa tarea.
+Lo que ya salió mal y cómo no repetirlo. Cada agente lee el "Núcleo" antes de empezar, y la sección de un tema cuando la tarea lo toca. Cómo se suma una lección está en el `AGENTS.md`, en "Errores y lecciones". Las de una sola tarea van en la skill de esa tarea.
 
 Cada lección es una regla y su porqué, con la fecha y de dónde sale.
+
+## Núcleo
+
+Se lee siempre, al arrancar. Cada línea remite a su lección completa, con el porqué, más abajo. Las secciones de un tema se leen solo cuando la tarea lo toca.
+
+1. A Sergio Urcullo: corto, 3 opciones con la recomendada primero y "Para aprender". Para que decida: "Sergio, tenés este cambio: … ¿Lo aceptás?", sin números de PR ("Trabajo con Sergio Urcullo").
+2. Lo que él todavía no decidió va como opción, nunca como decidido ("Trabajo con Sergio Urcullo").
+3. Cuando la revisión da "aprobar", lo que falta de él se le pregunta enseguida, y apenas contesta se mergea o se cierra en ese turno ("Trabajo con Sergio Urcullo").
+4. Antes de darle pasos para lanzar o usar algo, se comprueba ese día que lo que necesita esté armado y se le muestra qué falta. Si él da un orden de pasos, se sigue; lo que no depende del paso anterior se le propone, sin lanzarlo. Cada paso sale de una documentación oficial citada ("Trabajo con Sergio Urcullo").
+5. La memoria de un agente no reemplaza al repo: una corrección suya se anota en el repo en el mismo turno ("Trabajo con Sergio Urcullo").
+6. Un dato dice solo lo que muestra su fuente, y cada cifra dice qué se contó, en qué unidad, de dónde sale y de qué fecha ("Datos y fuentes").
+7. Lo que ONIA tiene o hace se escribe según su estado comprobado ("Datos y fuentes").
+8. Una herramienta que cobra por uso se marca como gasto ("Plata y gasto").
+9. Antes de mergear, se trae `main` y se busca con `git grep` lo que el cambio deja viejo; si está en un archivo de otra tarea, va a un issue. Si un texto nombra una sección, un archivo o una lista de otro lugar del repo, se busca con `git grep` que exista con ese nombre ("Git y GitHub", "PRs y revisiones").
+10. Si un PR no cierra un issue, ni la descripción ni los commits dicen `Closes #N`: se escribe `Parte de #N` ("Git y GitHub").
+11. Después de cada arreglo se ponen al día el título y la descripción del PR ("PRs y revisiones").
+12. Si dos revisiones se contradicen, gana la evidencia más directa ("PRs y revisiones").
+13. Una skill no copia reglas ni listas del `AGENTS.md`: remite a ellas ("Skills").
+14. Un comando de PowerShell que se le deja a Sergio Urcullo se corre antes en la PC si se puede deshacer y no toca `AppData` (salvo `%TEMP%`), el registro del usuario, logins, secretos, producción, gasto ni envíos. Si no, solo se lee con `ParseInput`, sin correrlo ("PowerShell 5.1").
+15. Borrar una clave no la revoca ("Credenciales").
+16. Cuando pasa la prueba de un agente o del harness, sigue un trabajo real de ONIA, no otra prueba; cada cambio se sigue comprobando ("Pruebas").
 
 ## PowerShell 5.1
 
@@ -113,7 +134,7 @@ Cada lección es una regla y su porqué, con la fecha y de dónde sale.
 
 - **Cada respuesta a Sergio Urcullo, de cualquier sesión, es corta y enfocada, y antes del bloque "Para aprender" le da 3 opciones para contestar, con la recomendada primera y marcada.** Si van con la herramienta de preguntas, ella suma el "Otro". Cómo se le preguntan las decisiones sigue en "Aprobaciones rápidas", del `AGENTS.md`.
   - Por qué: el 1-nov lo pidió él, en la sesión coordinadora: "dame siempre las respuestas con 3 recomendadas y nombra las sesiones como en grokbot" (sin enlace). Esa noche lo amplió a todas las sesiones: "Ahora necesito que me respondan mas /focus y que siempre den opciones para responderte y ver tus recomendaciones" (sin enlace).
-- **Cada sesión se titula con el nombre de su área, como en Grok Bot:** Administrador (coordina a todas las sesiones, como un jefe, y revisa la infraestructura y las reglas), Pelau (solo da resúmenes cortos), Boss No-Code, Boss Code, Marketing, ONIA Platform y Analista.
+- **Cada sesión se titula con el nombre de su área, como en Grok Bot:** Administrador (coordina a todas las sesiones, como un jefe, y revisa la infraestructura y las reglas), Pelau (solo da resúmenes cortos), Boss No-Code, Boss Code, Marketing, ONIA Platform y Analista. Desde el 3-nov, las áreas son los tres proyectos del `AGENTS.md`, "Equipo de agentes".
   - Por qué: es el mismo pedido del 1-nov, en la sesión coordinadora (sin enlace). Así las reconoce por el nombre que ya usaba con los bots. Ese día también aclaró: "Recorda que pelau solo da resumenes, dejemos esta como “administrador” y crea un “pelau” que solo de resumenes cortos".
 - **Un tope de contexto se cuenta desde lo que la sesión ya cargó al arrancar, no desde cero.** Se mide al abrir y después de leer el relevo, y el trabajo se cuenta desde ahí.
   - Por qué: el plan del 1-nov fijó el relevo al 20% de la ventana, y una sesión de Claude ya está en el 12% antes de trabajar. Sergio lo marcó ese día: "¿Cómo vas a archivar las sesiones o hacer relevo a partir del 20% si ese es literalmente el inicio de cada sesión?" (sesión coordinadora, sin enlace). Se corrigió en el punto 2 del [plan del equipo](decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md).
@@ -123,7 +144,7 @@ Cada lección es una regla y su porqué, con la fecha y de dónde sale.
   - Por qué: el 29-oct lo pidió él, en la sesión coordinadora: "en lugar de ponerme #pr, porque no lo leo" (sin enlace). Hasta entonces, lo del nombre estaba solo en el `CLAUDE.md` global de Claude Code. El 2-nov, en la sesión ONIA Platform, se le preguntó si aprobaba mergear "la recomendación de los 10 PRs (PR #137)", sin decirle qué era ni para qué servía subirlo, y contestó: "Mostrame que es ese pr". Después pidió: "decime para qué sirve y por qué lo tenemos que subir y qué es ese PR. O sea, no me digas PR tanto porque no voy a entrar y lo voy a leer todo. Dame un mini resumen" (sin enlace). Ese mismo día, en la sesión del Administrador, lo dejó así: "necesito que simplemente me digan, Sergio, tenés este cambio, ¿lo aceptás? Nada más. Tampoco PR así tanto, porque tengo que entrar a la página y leerlo" (sin enlace).
 - **Cuando la última revisión de un PR da "aprobar", lo que falta de Sergio Urcullo se le pregunta enseguida. Apenas contesta, el PR se mergea o se cierra en ese mismo turno.** Cómo se le pregunta está en "Aprobaciones rápidas" y "Los planes no se le preguntan", del `AGENTS.md`. Lo reservado sigue necesitando su aprobación citada.
   - Por qué: el 29-oct dijo, en la sesión coordinadora: "los prs dan vueltas en temas en lugar de cerrarlas y ya lanzar trabajos" (sin enlace). Ese día, el [PR #40 (referentes)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/40#issuecomment-6488623372) y el [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6488683280) seguían abiertos desde la madrugada, con la última revisión en "aprobar".
-- **Antes de darle a Sergio Urcullo los pasos para lanzar o usar algo, se comprueba que lo que eso necesita esté armado, con evidencia de ese día, y se le muestra qué falta.** Si él da un orden de pasos, se sigue ese orden, y lo que no depende del paso anterior se le propone en el mismo mensaje. Que lo suyo vaya todo junto lo dice "Los planes no se le preguntan", del `AGENTS.md`.
+- **Antes de darle a Sergio Urcullo los pasos para lanzar o usar algo, se comprueba que lo que eso necesita esté armado, con evidencia de ese día, y se le muestra qué falta.** Si él da un orden de pasos, se sigue ese orden. Lo que no depende del paso anterior se le propone en el mismo mensaje, y no se lanza si él no lo pide. Que lo suyo vaya todo junto lo dice "Los planes no se le preguntan", del `AGENTS.md`.
   - Por qué: el 30-oct, en la sesión coordinadora, preguntó si se lanzaba un loop y después avisó que no tenía Telegram en el celular. Las dos veces se le pasaron pasos para lanzar Hermes sin comprobar antes todo lo que el lanzamiento necesitaba. Contestó: "no estas entendiendo, ahora necesito que verefiques que ya la orquestación las cuentas y el harness este armado, necesito que primero eso y despues armemos el uso en celular y despues ya lanzamos todo" (sin enlace). La [verificación del #7](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/7#issuecomment-6535535791) encontró, entre otras cosas:
     - que el merge de `llevar-issue` nunca había corrido;
     - que no había constancia de que los créditos de ChatGPT y de Claude estuvieran apagados;
@@ -132,11 +153,13 @@ Cada lección es una regla y su porqué, con la fecha y de dónde sale.
     Nada de eso estaba en los pasos que se le habían pasado.
 
     Ese mensaje seguía: "y despues usamos a Hermes de una vez con sus tareas y sus logins, browsers y demas". Siguiendo al pie de la letra ese orden, en el que los logins iban después del lanzamiento, no se le propuso en el mismo mensaje cargar las cuentas en Hermes, aunque no dependía de los pasos anteriores. Preguntó: "¿Por qué no me pedís que le configure las credenciales para las cuentas?" (sesión coordinadora, 30-oct, sin enlace).
+
+    El 2-nov, en el proyecto Onia de claude.ai, dijo que al día siguiente tenían que correr los anuncios del taller, y el hilo del armado del equipo pidió abrir enseguida un hilo para lanzarlos. Lo corrigió: "No dije que lances, primero esperamos que terminamos y ahi armaos los proyects" (sin enlace). El hilo de los anuncios se cerró.
 - **Cada paso que se le da a Sergio Urcullo, incluso una prueba, sale de una documentación oficial y se cita con su URL, o con su ruta y línea.** Qué pasos le tocan a él lo dice "Los planes no se le preguntan", del `AGENTS.md`.
   - Por qué: el 30-oct dijo, en la sesión coordinadora: "recorda que no te inventes pasos propios, todo oficial y agentico para llegar a la autonomia" (sin enlace). La lección de la sección "Hermes" sobre buscar en la documentación cubre solo los comandos y las claves de configuración de Hermes.
 - **La memoria de un agente no reemplaza a este archivo.** Una corrección de Sergio Urcullo que quedó en la memoria de Claude Code se pasa al repo en el mismo turno, como dice "Errores y lecciones", del `AGENTS.md`.
   - Por qué: Codex y Hermes no leen la memoria de Claude Code. La corrección de la lección anterior quedó el 30-oct solo en esa memoria. Ese mismo día, Sergio Urcullo dijo en la sesión coordinadora: "Vamos preguntando lo mismo y lo mismo y hasta ahora no lo aprendes todos esos errores van a tusa documentos y autolearning" (sin enlace).
-- **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo.
+- **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo. Desde el 3-nov no hay Administrador ni jefe general, y la infraestructura es de Desarrollo (`AGENTS.md`, "Equipo de agentes").
   - Por qué: el 2-nov, en la sesión del Administrador, se le cerraron varias respuestas con lo que tenía que contestar en cada sesión y en qué orden. Contestó: "VOS NO ME DECIS QUE DEBE HACER CADA SESION, SOLO TE ENCARGAS QUE TODO FUNCIONE BIEN, NO ME DIGAS AQUI QUE HACER EN CADA MOMENTO, VOS ENCARGATE DE LA INFRAESTRUCTURA Y QUE TODO FUNCIONE CORRECTAMENTE. TE AVISO SI ESTA ALGO MAL" (sin enlace).
 
 ## Plata y gasto

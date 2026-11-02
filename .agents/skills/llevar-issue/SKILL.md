@@ -178,7 +178,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
    - el número, el título y el texto del issue;
    - el "hecho cuando";
    - los archivos que puede tocar, y que no toque otros;
-   - que lea el `AGENTS.md`, y `docs/lecciones.md` si existe;
+   - que lea el `AGENTS.md` y el "Núcleo" de `docs/lecciones.md`, más las secciones de los temas que toca;
    - que no haga commit ni push;
    - que no escriba secretos;
    - si cambia lógica (código, un script, plata o seguridad), que sume una prueba chica y diga cómo se corre;
@@ -236,7 +236,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
    - qué revisar:
      - si cumple el "hecho cuando";
      - si toca solo lo necesario, sin secretos ni datos personales;
-     - si respeta el `AGENTS.md` y `docs/lecciones.md`, que lee del worktree;
+     - si respeta el `AGENTS.md` y las lecciones de `docs/lecciones.md` que tocan el cambio, que lee del worktree;
      - si algo del resto del repo queda viejo o contradice el cambio, buscándolo en el repo;
      - si toca algo de la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`.
    - si revisa Codex: que, si lee un archivo con PowerShell, use `Get-Content -Encoding UTF8`;

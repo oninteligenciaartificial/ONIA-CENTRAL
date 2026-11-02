@@ -5,7 +5,7 @@ description: Mira un video que Sergio Urcullo deja en E:\ONIA\recepcion\ (o cuya
 
 # Ver un video
 
-Lo usa Recepción. Todo corre en Ubuntu (WSL), sin APIs ni gasto.
+Lo usa el proyecto al que Sergio Urcullo le manda el video; si no está claro, Marketing y ventas (`AGENTS.md`, "Equipo de agentes"). Todo corre en Ubuntu (WSL), sin APIs ni gasto.
 
 ## Frenos
 
@@ -36,7 +36,7 @@ Lo usa Recepción. Todo corre en Ubuntu (WSL), sin APIs ni gasto.
    ```
 6. Mirá los cuadros con la herramienta de lectura de imágenes (no hace falta verlos todos en videos largos: elegí los de cada cambio de escena) y leé la transcripción.
 7. Armá el resumen corto: de qué trata, qué se dice y qué se ve, con tiempos. Si hay poco audio o la transcripción sale vacía, decilo y apoyate en los cuadros.
-8. Lo que le sirve a un área se lo pasás con `SendMessage` a su sesión, con copia en el tablero del issue #111.
+8. Lo que le sirve a otro proyecto se le avisa por el tablero del issue #111, como dice el `AGENTS.md`, "Equipo de agentes".
 
 ## Errores comunes
 

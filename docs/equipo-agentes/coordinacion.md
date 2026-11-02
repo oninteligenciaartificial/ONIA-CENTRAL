@@ -1,5 +1,7 @@
 # Estado de la coordinación (Administrador)
 
+> **Historia desde el 3-nov-2026.** El equipo son tres proyectos, sin el Administrador: ver [README](README.md). Sus pendientes pasaron a los proyectos, como dice [tres proyectos](../decisiones/2026-11-02-tres-proyectos.md), "Quién se encarga de qué".
+
 ## Para abrir las sesiones en Codex (3-nov)
 
 Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él siguiente puente es codex desde mañana dejalo todo listo para el que sea solo abrir sesiones" (sesión del Administrador, sin enlace).
