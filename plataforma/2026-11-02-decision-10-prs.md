@@ -10,9 +10,9 @@
 
 | PR | Qué hace | CI el 2-nov | Recomendación | Antes de mergear |
 |---|---|---|---|---|
-| [#154](https://github.com/oninteligenciaartificial/onia-platform/pull/154) | La IP del cliente solo se toma de Cloudflare, para los límites, el bloqueo de login y la auditoría | Pasa | **Mergear primero,** después de comprobar el proxy | Que las cabeceras reales del VPS (Traefik) traigan la IP como supone el cambio. Lo comprueba Boss Code. Si no, puede juntar visitantes o dejar falsificar la IP |
+| [#154](https://github.com/oninteligenciaartificial/onia-platform/pull/154) | Cambia de dónde se toma la IP del cliente para los límites, el bloqueo de login y la auditoría: acepta las cabeceras de Cloudflare solo desde sus rangos, y si no, usa la última IP de `X-Forwarded-For` | Pasa | **Mergear primero,** después de comprobar el proxy | Que las cabeceras reales del VPS (Traefik) traigan la IP como supone el cambio. Lo comprueba Boss Code. Si no, puede juntar visitantes o dejar falsificar la IP |
 | [#168](https://github.com/oninteligenciaartificial/onia-platform/pull/168) | Mi web: el cliente aprueba o pide ajustes. Aprobar no publica | Pasa | **Mergear,** antes que #170 | Probar con una base real: aprobación guardada, otra organización y operador al mismo tiempo |
-| [#185](https://github.com/oninteligenciaartificial/onia-platform/pull/185) | Datos de ejemplo por rubro en el alta (estética, importadora, comercio, servicios) | Pasa | **Mergear,** después de probar el alta | Probar alta y onboarding con una base real. Estética crea tratamientos a precio 0, y un código `EJEMPLO-*` puede chocar con uno del cliente. Choca en archivos con #124 |
+| [#185](https://github.com/oninteligenciaartificial/onia-platform/pull/185) | Datos de ejemplo por rubro en el alta (estética, importadora, comercio, servicios) | Pasa | **Mergear,** después de probar el alta | Probar alta y onboarding con una base real. Estética crea tratamientos a precio 0, y un código `EJEMPLO-*` puede chocar con uno del cliente. Comparte archivos con #124 |
 | [#184](https://github.com/oninteligenciaartificial/onia-platform/pull/184) | Pulido 13: ayuda por rubro, reserva y panel con teclado, errores internos ocultos. 76 archivos | Pasa | **Mergear,** después de probarlo | Probar la reserva con teclado y los canales. Comparte archivos con #140 |
 | [#70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) | Solo documentación: el runbook de correos dice que ya están aplicados | No corre por ser documentación; secretos pasa | **Mergear,** con la evidencia | Que Boss Code confirme en el VPS que el estado es el que dice. No toca código |
 | [#188](https://github.com/oninteligenciaartificial/onia-platform/pull/188) | Saca "24/7" de dos textos del chatbot | Falla | **Arreglar** | Ver por qué falla la CI: el diff no lo explica. Quedan "al instante" y "a cualquier hora", que prometen lo mismo |
@@ -26,7 +26,7 @@ Ninguno se recomienda cerrar.
 ## Orden propuesto
 
 1. #154, porque #140 y #124 dependen de él.
-2. #168, #185, #184 y #70, que tienen CI verde y no traen migración. Cada uno, con su prueba.
+2. #168, #185 y #184, con CI verde, y #70, que es solo documentación. Ninguno trae migración. Cada uno, con su prueba.
 3. Los cinco para arreglar, cada uno en su rama: #188, #113, #140, #124 y #170. #124 y #170 traen cambios de base, y van después del respaldo probado (análisis, paso 5).
 
 ## Qué falta para probar
