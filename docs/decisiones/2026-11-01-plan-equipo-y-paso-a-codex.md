@@ -185,6 +185,8 @@ Para ambos motores, el mensaje duradero es el estado del área, el issue o el PR
 
 Entre sesiones Codex separadas, la comunicación automática persistente está **sin comprobar**. Hasta comprobar una vía estable, la coordinadora consolida los estados y el encargo se entrega explícitamente a la sesión destinataria. El plan no depende de encender funciones experimentales.
 
+**Mensajes directos entre áreas, a la vista de todas.** Desde el 1-nov, por pedido de Sergio: "si marketing quiere hablar con no Code que lo puede hacer, pero igual que todas las otras sesiones lo sepan" (sesión Administrador, sin enlace). Un área le puede escribir directo a otra. En Claude, `SendMessage` llega a otras sesiones de esta PC según la descripción de esa herramienta en la app (1-nov), pero entre áreas **no está probado**: solo se vio de la coordinadora a las sesiones que lanzó. Por eso cada uno de esos mensajes se deja también como comentario en el [tablero de mensajes entre áreas](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111), que no se cierra. Así lo saben las demás sesiones, Pelau lo suma a sus resúmenes, y en Codex se lee y se escribe con `gh`. El formato y lo que no va ahí están en el tablero.
+
 ## 7. Configuración
 
 **Propuesta:** la coordinadora es la única responsable de preparar cambios de configuración compartida. Sergio aprueba los cambios de permisos y reglas, y carga logins y secretos. Las áreas trabajan con la configuración aprobada; pueden elegir el modelo y esfuerzo de su sesión dentro del reparto técnico. La Analista audita, no cambia permisos. `AGENTS.md:21–28,33`; `docs/credenciales.md:9–13`.
