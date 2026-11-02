@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel de dirección · ONIA</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="pagina">
+    <header class="cabecera">
+      <div class="cabecera__fila">
+        <p class="marca">ONIA / DIRECCIÓN</p>
+        <span class="pastilla">Acceso interno</span>
+      </div>
+      <h1 class="titulo">Toda la empresa, de un vistazo.</h1>
+      <p class="bajada">Panel interno de Sergio · Datos de origen, sin estimaciones de ingresos.</p>
+    </header>
+
+    <div class="pestanas" role="tablist" aria-label="Secciones del panel">
+      <button class="pestana" type="button" role="tab" id="pestana-tablero" aria-controls="vista-tablero" aria-selected="true">Tablero</button>
+      <button class="pestana" type="button" role="tab" id="pestana-resumen" aria-controls="vista-resumen" aria-selected="false">Resumen</button>
+      <button class="pestana" type="button" role="tab" id="pestana-uso_ia" aria-controls="vista-uso_ia" aria-selected="false">Uso de IA</button>
+      <button class="pestana" type="button" role="tab" id="pestana-orquestacion" aria-controls="vista-orquestacion" aria-selected="false">Orquestación</button>
+      <button class="pestana" type="button" role="tab" id="pestana-equipo" aria-controls="vista-equipo" aria-selected="false">Equipo</button>
+      <button class="pestana" type="button" role="tab" id="pestana-grabacion" aria-controls="vista-grabacion" aria-selected="false">Grabación</button>
+      <button class="pestana" type="button" role="tab" id="pestana-contenido" aria-controls="vista-contenido" aria-selected="false">Contenido</button>
+      <button class="pestana" type="button" role="tab" id="pestana-fuentes" aria-controls="vista-fuentes" aria-selected="false">Fuentes</button>
+    </div>
+
+    <main>
+      <section class="vista" id="vista-tablero" role="tabpanel" aria-labelledby="pestana-tablero">
+        <div class="tarjetas">
+          <article class="tarjeta tarjeta--crema tarjeta--taller">
+            <div class="tarjeta__cabecera">
+              <h2 class="tarjeta__titulo" data-campo="tarjetas.taller.titulo"></h2>
+              <span class="pastilla" data-campo="tarjetas.taller.conexion" data-conexion data-pastilla></span>
+            </div>
+            <p class="etiqueta separada">Cobrado en bolivianos</p>
+            <p class="cifra cifra--grande" data-campo="tarjetas.taller.cobrado"></p>
+            <p class="atenuado" data-campo="tarjetas.taller.meta"></p>
+            <div class="par divisor">
+              <div class="dato">
+                <p class="cifra" data-campo="tarjetas.taller.inscritos"></p>
+                <p class="etiqueta">Inscritos confirmados</p>
+              </div>
+              <div class="dato">
+                <p class="cifra" data-campo="tarjetas.taller.inicio"></p>
+                <p class="etiqueta">Inicio del taller</p>
+              </div>
+            </div>
+            <div class="tarjeta__pie">
+              <p class="nota" data-campo="tarjetas.taller.nota" data-opcional hidden></p>
+              <p class="nota">Fuente: <span data-campo="tarjetas.taller.fuente" data-fuente></span></p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__cabecera">
+              <h2 class="tarjeta__titulo" data-campo="tarjetas.conversaciones.titulo"></h2>
+              <span class="pastilla" data-campo="tarjetas.conversaciones.conexion" data-conexion data-pastilla></span>
+            </div>
+            <p class="atenuado" data-campo="tarjetas.conversaciones.canales"></p>
+            <div class="dato separada">
+              <p class="cifra cifra--grande" data-campo="tarjetas.conversaciones.abiertas"></p>
+              <p class="etiqueta">Abiertas</p>
+            </div>
+            <div class="dato divisor">
+              <p class="cifra" data-campo="tarjetas.conversaciones.pendientes"></p>
+              <p class="etiqueta">Pendientes</p>
+            </div>
+            <div class="tarjeta__pie">
+              <p class="nota" data-campo="tarjetas.conversaciones.nota" data-opcional hidden></p>
+              <p class="nota">Fuente: <span data-campo="tarjetas.conversaciones.fuente" data-fuente></span></p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <p class="sobretitulo" data-campo="tarjetas.norte.etiqueta"></p>
+            <h2 class="tarjeta__titulo" data-campo="tarjetas.norte.titulo"></h2>
+            <p class="cifra cifra--enorme separada" data-campo="tarjetas.norte.valor"></p>
+            <p class="atenuado" data-campo="tarjetas.norte.meta"></p>
+            <p class="fila-pastilla"><span class="pastilla" data-campo="tarjetas.norte.avance" data-pastilla></span></p>
+            <div class="tarjeta__pie">
+              <p class="nota" data-campo="tarjetas.norte.nota" data-opcional hidden></p>
+              <p class="nota">Fuente: <span data-campo="tarjetas.norte.fuente" data-fuente></span></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="seccion-cabecera">
+          <div>
+            <h2 class="seccion-titulo">Tablero</h2>
+            <p class="atenuado">Sergio, estas son tus decisiones y las tareas del equipo.</p>
+          </div>
+          <p class="atenuado">Actualizado: <span data-campo="actualizado"></span></p>
+        </div>
+
+        <div class="columnas">
+          <section class="columna" aria-labelledby="titulo-decidir">
+            <h3 class="columna__titulo" id="titulo-decidir">Te toca decidir <span class="contador" data-cuenta="decidir">0</span></h3>
+            <div class="columna__lista" data-tablero="decidir"></div>
+          </section>
+          <section class="columna" aria-labelledby="titulo-hacer">
+            <h3 class="columna__titulo" id="titulo-hacer">Te toca hacer <span class="contador" data-cuenta="hacer">0</span></h3>
+            <div class="columna__lista" data-tablero="hacer"></div>
+          </section>
+          <section class="columna" aria-labelledby="titulo-agentes">
+            <h3 class="columna__titulo" id="titulo-agentes">Lo hacen los agentes <span class="contador" data-cuenta="agentes">0</span></h3>
+            <div class="columna__lista" data-tablero="agentes"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="vista" id="vista-resumen" role="tabpanel" aria-labelledby="pestana-resumen" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Resumen</h2></div>
+        <div class="lista" data-seccion="resumen"></div>
+      </section>
+
+      <section class="vista" id="vista-uso_ia" role="tabpanel" aria-labelledby="pestana-uso_ia" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Uso de IA</h2></div>
+        <div class="lista" data-seccion="uso_ia"></div>
+      </section>
+
+      <section class="vista" id="vista-orquestacion" role="tabpanel" aria-labelledby="pestana-orquestacion" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Orquestación</h2></div>
+        <div class="lista" data-seccion="orquestacion"></div>
+      </section>
+
+      <section class="vista" id="vista-equipo" role="tabpanel" aria-labelledby="pestana-equipo" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Equipo</h2></div>
+        <div class="lista" data-seccion="equipo"></div>
+      </section>
+
+      <section class="vista" id="vista-grabacion" role="tabpanel" aria-labelledby="pestana-grabacion" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Grabación</h2></div>
+        <div class="lista" data-seccion="grabacion"></div>
+      </section>
+
+      <section class="vista" id="vista-contenido" role="tabpanel" aria-labelledby="pestana-contenido" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Contenido</h2></div>
+        <div class="lista" data-seccion="contenido"></div>
+      </section>
+
+      <section class="vista" id="vista-fuentes" role="tabpanel" aria-labelledby="pestana-fuentes" hidden>
+        <div class="seccion-cabecera"><h2 class="seccion-titulo">Fuentes</h2></div>
+        <div class="lista" data-seccion="fuentes"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
