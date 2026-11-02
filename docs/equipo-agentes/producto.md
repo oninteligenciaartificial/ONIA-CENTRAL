@@ -8,15 +8,19 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C:\dev\worktrees\ONIA-CENTRAL\boss-code` con `codex -p boss-code`, que ya trae el modelo, el esfuerzo y un navegador propio, sin cuentas (lo armó el Administrador el 2-nov). La rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
-- **Web del taller:** publicada, no hay nada que hacer hasta el 6-nov. Si Sergio Urcullo decide algo de lo que la página no dice, Boss No-Code pasa el texto y se suma por PR, con su sí antes de publicar. Después del 6-nov, se baja o se cambia, también con su sí.
-- **VPS:** todo espera la clave. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en este orden:
-  1. el inventario que pidió Sergio Urcullo el 2-nov, por el Administrador ("limpia el vps ordenalo o eso dejaselo a la sesion que le toque"): contenedores, servicios, tareas programadas, memoria, disco y CPU, qué sobra, el Hermes viejo, y si entra el navegador de Linux de las áreas, que hoy usa unos 3,4 GB de la PC;
-  2. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
-  3. si sigue corriendo el respaldo semanal.
+- **Web del taller:** publicada. El 2-nov, Boss No-Code pasó el cierre de inscripción (miércoles 4 a las 19:00), "Bs 50, precio de esta edición" y "sin límite de personas". Están en el [PR del sitio que suma el cierre y el precio](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. Falta que Boss No-Code diga qué muestra la página después de las 19:00 del 4: hoy dice "El taller ya empezó: escribinos por la grabación.", y su borrador de WhatsApp sigue vendiendo hasta el 6-nov. Después del 6-nov, la página se baja o se cambia, también con su sí.
+- **VPS:** todo espera la clave, que se le pidió a Sergio Urcullo el 2-nov a la noche. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en el orden que pidió el Administrador el 2-nov ("Primero lo de onia"):
+  1. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
+  2. para ONIA Platform: si el runbook de correos del [onia-platform #70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) está aplicado en el VPS, como dice ese PR.
+
+  Los dos se dejan en el #111 y se le avisan a ONIA Platform. Después:
+  3. el inventario que pidió Sergio Urcullo el 2-nov, por el Administrador ("limpia el vps ordenalo o eso dejaselo a la sesion que le toque"): contenedores, servicios, tareas programadas, memoria, disco y CPU, qué sobra, el Hermes viejo, y si entra el navegador de Linux de las áreas, que hoy usa unos 3,4 GB de la PC;
+  4. si sigue corriendo el respaldo semanal.
 
   Después van la lista de qué limpiar y la base de QA sin datos de clientes, que Sergio Urcullo pidió el 2-nov ("Hoy, mirar y armar la QA"). Cada cambio se le pregunta así: "Sergio, tenés este cambio: … ¿Lo aceptás?".
+- **Mejoras de seguridad de Grok:** quedaron evaluadas en el [issue de qué mejoras de Grok sirven hoy](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/160), con la revisión 3 en "aprobar". Esperan la decisión de Sergio Urcullo en A, B y C, que tocan permisos o cómo se revisa. El punto D se comprueba en el primer trabajo real en Codex.
 - **La clave:** Sergio Urcullo eligió el 2-nov la de la bóveda, `claude-cloud-vps-20260930`. Él guarda el adjunto en `C:\Users\PC\.ssh\`, como dice la [guía de KeePassXC](https://keepassxc.org/docs/KeePassXC_UserGuide) en "Advanced Entry Handling". Después, en una PowerShell como administrador, pone `ssh-agent` en automático y lo arranca. Carga la clave con `ssh-add` y borra el archivo, como dice la [guía de Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement). Por último pasa el servidor y el usuario, que no son secretos. El 2-nov, `ssh-agent` estaba en `Disabled` y `Stopped`.
-- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; cada cambio en el VPS; cualquier cambio en `/taller`.
+- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
 
 ## Qué hay y dónde
 
