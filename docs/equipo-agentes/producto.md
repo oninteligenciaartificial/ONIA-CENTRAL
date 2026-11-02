@@ -8,8 +8,8 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 | Cosa | Dónde está | Comprobación y fecha |
 |---|---|---|
-| Sitio personal `sergiourcullo.vercel.app` | Repo privado `oninteligenciaartificial/sergiourcullo`, copia local en `C:\dev\proyectos\sergiourcullo-deploy`, al día con `origin/main` | El sitio responde 200. Último commit `7412814`, del 19-sep. Cada commit a `main` lo publica Vercel solo, en Production (deployments de `vercel[bot]` en GitHub). Mergear a `main` de ese repo es publicar. |
-| Web del taller | [PR del sitio que agrega `/taller`](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1), rama `taller-3-4-5` | 2-nov: rehecha corta desde la web de Grok, con la revisión 2 de Codex en "aprobar". Sin publicar: espera el sí de Sergio Urcullo. La web original de Grok está en la rama `grokbot/workspace-20261101` de ONIA-CENTRAL, en `grokbot-workspace/entregables-workshop/`. |
+| Sitio personal `sergiourcullo.vercel.app` | Repo privado `oninteligenciaartificial/sergiourcullo`, copia local en `C:\dev\proyectos\sergiourcullo-deploy`, al día con `origin/main` | El sitio responde 200. Último commit `e72690b`, del 2-nov (la página del taller); la copia local quedó al día ese día. Cada commit a `main` lo publica Vercel solo, en Production (deployments de `vercel[bot]` en GitHub). Mergear a `main` de ese repo es publicar. |
+| Web del taller | `sergiourcullo.vercel.app/taller`, publicada desde el [PR del sitio que agrega `/taller`](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) (merge `e72690b`) | 2-nov: publicada con el sí de Sergio Urcullo ("publicala"), citado en el PR. Sin login, la página da 200, la cuenta regresiva corre y los 4 botones abren el chat de "Onia" con "vengo de la web" ya escrito. |
 | WhatsApp del taller, +591 75414930 | `wa.me/59175414930?text=TALLER` | 2-nov: sin login, el enlace abre el chat de la cuenta "Onia" con "TALLER" ya escrito. No se mandó nada. |
 | Cal.com | `/llamada` del sitio redirige a `cal.com/sergiourcullo/20min` (`vercel.json`) | La redirección da 307 y la página de Cal.com da 200. |
 | VPS, Chatwoot y n8n de producción | En el VPS | No se probó el acceso: no se entró al VPS ni se usó ninguna clave. No hay conector de la app para Chatwoot, n8n ni Cal.com. |
@@ -46,14 +46,14 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
 
 Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta de preguntas (sin enlace): "Web corta antes del 3" y "sergiourcullo.vercel.app/taller (Recomendada)". Sobre las ramas de Grok Bot con datos de un lead, eligió "Borrar después del rescate (Recomendada)", y quedó en el [issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6570861813).
 
-- **Qué tiene:** el precio de la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md), y las fechas, la devolución y las grabaciones de la decisión del 2-nov que movió el taller al 4, 5 y 6-nov ([PR #136](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136), sin mergear el 2-nov), el temario "previsto" del plan de Meta Ads y dos botones a WhatsApp con "vengo de la web" ya escrito, para distinguir esos chats.
-- **Qué no dice, porque no está decidido:** lo legal del nombre.
-- **Para publicarla:** Sergio Urcullo mira la captura o la vista previa de Vercel, que pide su login, y da el sí. Con su sí citado en el PR, se mergea, y Vercel la publica. Después se comprueba `sergiourcullo.vercel.app/taller` sin login.
+- **Qué tiene:** lo pedido en la sección 5 del análisis de funnel de Boss No-Code ([PR #141](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/141)): barra fija arriba, cuenta regresiva real al miércoles 4 a las 19:00, qué te llevás, temario previsto, "esto no es", para quién es, qué incluye, quién lo da, preguntas frecuentes y 4 botones a WhatsApp con "vengo de la web" ya escrito. El precio sale de la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md), y las fechas, la devolución y las grabaciones, de la decisión del 2-nov ([PR #136](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136)).
+- **Qué no dice, porque no está decidido:** lo legal del nombre, hasta cuándo se inscribe la gente, si hay un límite de personas, si Bs 50 es "precio de esta edición" y qué plan de Claude hace falta. Si Sergio Urcullo lo decide, Boss No-Code pasa el texto y Boss Code lo suma por PR, con su sí antes de publicar.
+- **Publicada el 2-nov:** Sergio Urcullo vio las capturas en el celular y contestó "publicala". Su sí está citado en el PR.
 - **Después del 6-nov:** la página queda con fechas pasadas. Se baja o se cambia para la próxima edición.
 
 ## Pendiente
 
-- Publicar la web del taller, con el sí de Sergio Urcullo. Las clases son el miércoles 4, el jueves 5 y el viernes 6-nov.
+- Bajar o cambiar `/taller` después del 6-nov. Cambiarla es publicar, así que va con el sí de Sergio Urcullo.
 - Compartido, sin quién lo haga: borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113. Quién lo hace lo ordena el Administrador, y se coordina por el tablero (#111). Boss Code no lo hace si no se lo asignan.
 - Comprobar el acceso al VPS sin cambiar nada, cuando Sergio Urcullo lo autorice y la clave esté en la bóveda.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
@@ -64,7 +64,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 
 - **Para ONIA Platform:** el panel interno, el tope de costo de `onia-tarea`, los 10 PRs de la plataforma, el cobro con QR del BCP y la migración a la API de WhatsApp Cloud. El bot de Grok los tenía acá, y los parches siguen solo en `/workspace/platform/`.
 - **Para Boss No-Code:** qué recursos y skills gratis van en la sección de recursos del sitio, y la llamada a la acción de venta.
-- **Para Marketing:** los textos y la marca de la web del taller, cuando llegue.
+- **Para Marketing:** `sergiourcullo.vercel.app/taller` ya se puede usar en anuncios o publicaciones.
 
 ## Cómo se comprobó (1-nov)
 
@@ -78,4 +78,4 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 
 - WhatsApp: el enlace `wa.me/59175414930?text=TALLER`, abierto sin login en el navegador de la app de Claude.
 - Web: la página servida en local, vista a 375 px y en escritorio, sin scroll horizontal. La vista previa de Vercel de la rama dio `success` (`gh api .../deployments`) y pide login de Vercel.
-- Revisión: dos rondas de `codex exec --sandbox read-only`, escritas en el PR.
+- Revisión: siete rondas de `codex exec --sandbox read-only`, escritas en el PR; la última, en "aprobar".
