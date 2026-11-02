@@ -1,6 +1,6 @@
 # Estado de la coordinación (Administrador)
 
-Relevo del 2-nov-2026, cerca de las 2:40 de Bolivia. Lo escribió la sesión del Administrador antes de que Sergio Urcullo la archivara, cuando él lo pidió: "necesito que tambien administrador se archive" (sin enlace).
+Relevo del 2-nov-2026, cerca de las 2:40 de Bolivia. Lo escribió la sesión del Administrador cuando Sergio Urcullo pidió archivarla: "necesito que tambien administrador se archive" (sin enlace). Después no se archivó: ver la actualización de abajo.
 
 Según `get_usage` de la app de Claude, la sesión tenía 415.051 tokens usados de 1.000.000 (42%). Eso está arriba del tope del Administrador, de unos 240.000 en total en Claude ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La cuota semanal de Claude iba en 50% y se renueva el 5-nov.
 
@@ -14,9 +14,9 @@ Lo comprobado ese día con `list_sessions` y `gh pr list`:
 - **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` están en el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), abierto.
 - **Áreas** (Pelau, Boss No-Code, Marketing, Boss Code y ONIA Platform): quietas. Sergio las reanuda contestando el QA de cada una.
 - **PRs abiertos:**
-  - esperan el sí de Sergio: el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) y el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) (según el encargo, con captura);
-  - espera arreglo de Marketing y nueva revisión: el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), como dice la tabla de abajo;
-  - esperan revisión: el PR de Recepción, arriba, y el que cambia este archivo.
+  - espera el sí de Sergio: el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110), con revisión en "aprobar" (según el encargo, con captura);
+  - espera arreglo de Marketing y nueva revisión: el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102). Su última revisión, en "aprobar", es de la versión vieja;
+  - esperan revisión escrita: el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120), que en `gh` no tiene comentarios, el PR de Recepción, arriba, y el que cambia este archivo.
 - **ONIA Platform:** el [PR de la propuesta de ONIA Platform a los inscriptos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/119) se cerró sin mergear. Sergio eligió "Nada esta semana" (comentario del PR): la plataforma no se nombra en el taller esta semana. La rama `claude/platform-oferta-inscriptos` queda en GitHub.
 - **Cuotas** (según el encargo y el mod "Uso de Codex", sin comprobar en el repo): Claude va en 51% de la semana y se renueva el 5-nov a las 04:00 de Bolivia. Codex va en 35% y se renueva el 4-nov a las 02:59.
 - **Navegador de Ubuntu:** configurado en Codex (`~/.codex/config.toml`) y en Claude Code (`~/.claude.json`). Sergio lo tenía abierto para cargar cuentas, y mientras esa ventana siga abierta ninguna sesión puede usar el perfil `equipo`. Sin probar: que los logins queden guardados y varias sesiones a la vez.
