@@ -4,6 +4,19 @@ Relevo del 2-nov-2026, cerca de las 2:40 de Bolivia. Lo escribió la sesión del
 
 Según `get_usage` de la app de Claude, la sesión tenía 415.051 tokens usados de 1.000.000 (42%). Eso está arriba del tope del Administrador, de unos 240.000 en total en Claude ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La cuota semanal de Claude iba en 50% y se renueva el 5-nov.
 
+## Actualización del 2-nov, cerca de las 10:00 de Bolivia
+
+Sergio pidió "crea nueva sesion administrador". La sesión nueva reemplaza a la anterior, que ya tiene mucho contexto. La anterior sigue con una sola cosa: rehacer en versión mínima la propuesta de hooks de Grok Bot (rama `claude/hooks-contexto-20261102`), en un PR propio que aprueba Sergio porque toca permisos.
+
+Lo comprobado ese día con `list_sessions` y `gh pr list`:
+- **Administrador:** esta sesión no aparece en `list_sessions`, y la que figura como "Administrador" es `local_b6a36bc7-c263-4551-8a70-0d2980e34ab4`. El encargo nombraba a `local_0bd325bb-aa02-4e38-91a9-d3ea2901b21f` como la anterior, que tampoco figura. Id de la sesión nueva sin confirmar.
+- **Recepción** (`local_7ff35d0c-df2a-4fb9-ac34-78287c2df625`): sesión nueva, en marcha. Recibe archivos y videos en `E:\ONIA\recepcion\`, con ffmpeg y faster-whisper en Ubuntu, y pasa lo útil a cada área. Su estado y la skill `ver-video` están en el [PR de la skill ver-video y el estado de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124), abierto.
+- **Áreas** (Pelau, Boss No-Code, Marketing, Boss Code y ONIA Platform): quietas. Sergio las reanuda contestando el QA de cada una.
+- **PRs abiertos que esperan a Sergio:** el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) (su sí con captura), el [PR de la campaña de Meta Ads con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) y el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102). El PR de la propuesta de ONIA Platform a los inscriptos (#119) figura cerrado, no mergeado.
+- **Cuotas:** Claude va en 51% de la semana y se renueva el 5-nov a las 04:00 de Bolivia. Codex va en 35% y se renueva el 4-nov a las 02:59 (`/uso-codex`).
+- **Navegador de Ubuntu:** configurado en Codex (`~/.codex/config.toml`) y en Claude Code (`~/.claude.json`). Sergio lo tenía abierto para cargar cuentas, y mientras esa ventana siga abierta ninguna sesión puede usar el perfil `equipo`. Sin probar: que los logins queden guardados y varias sesiones a la vez.
+- **Checkout principal:** al día con `main` (`7971f86`).
+
 ## Objetivo del próximo Administrador
 
 Coordinar el lanzamiento de la campaña del taller el 3-nov y el paso del equipo a Codex ese mismo día. El Administrador lee lo necesario y delega cada tarea en la sesión de su área, sin hacer el trabajo de un área, y revisa que la infraestructura y las reglas estén en orden (`AGENTS.md`, "Equipo de agentes").
@@ -28,6 +41,7 @@ Las lanzó el Administrador el 2-nov, cerca de las 2:20 de Bolivia, por pedido d
 | Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, todavía no está en `main`: está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, que su auditoría pidió poner al día con la oferta y las fechas nuevas y volver a revisar |
 | Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y qué hacer con las ramas de Grok que tienen datos de un lead | Espera que Sergio conteste su QA |
 | ONIA Platform | `local_3542ddf0-d533-4ca5-9227-d8ae370ce11b` | Opus, `high` | Su próximo objetivo, con la recomendada ligada a vender esta semana | Espera que Sergio conteste su QA |
+| Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su PR, el #124, está abierto |
 | Analista | ninguna | — | Se abre al cerrar la tanda de PRs del día | — |
 
 Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion" (`negocio.md`).
