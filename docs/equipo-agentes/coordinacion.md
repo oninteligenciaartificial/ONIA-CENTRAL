@@ -31,7 +31,7 @@ Se abren de a una, como en el CLI: cada perfil del navegador lo usa una sola ses
 | Pelau | `pelau` | `gpt-6-luna` · `medium` | sin cuentas (`--isolated`) |
 | Analista | `analista` | `gpt-6.1-sol` · `high` | sin cuentas (`--isolated`) |
 
-**El navegador propio de la app** usa un solo perfil para todos los chats, aparte del navegador de Sergio ([navegador](https://learn.chatgpt.com/docs/browser)). No separa por área: Sergio no inicia sesión en cuentas ahí. Las cuentas de cada área van en su perfil de Ubuntu, como dice [navegador por área](../decisiones/2026-11-02-navegador-por-area.md).
+**El navegador propio de la app** tiene su propio perfil, aparte del navegador de Sergio ([navegador](https://learn.chatgpt.com/docs/browser)). Si ese perfil se separa por chat o por proyecto, la documentación no lo dice: sin confirmar. Hasta saberlo, Sergio no inicia sesión en cuentas ahí. Las cuentas de cada área van en su perfil de Ubuntu, como dice [navegador por área](../decisiones/2026-11-02-navegador-por-area.md).
 
 **Probado el 2-nov, con el CLI, que lee las mismas capas:**
 - `codex mcp get playwright`, desde cada carpeta y sin `-p`, da el perfil de su área, o `--isolated` en las tres sin navegador.
