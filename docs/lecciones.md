@@ -111,8 +111,8 @@ Cada lección es una regla y su porqué, con la fecha y de dónde sale.
 
 ## Trabajo con Sergio Urcullo
 
-- **Cada pregunta a Sergio Urcullo lleva 3 opciones, con la recomendada primera y marcada.** El "Otro" lo suma la herramienta de preguntas. Cómo se le preguntan las decisiones sigue en "Aprobaciones rápidas", del `AGENTS.md`.
-  - Por qué: el 1-nov lo pidió él, en la sesión coordinadora: "dame siempre las respuestas con 3 recomendadas y nombra las sesiones como en grokbot" (sin enlace).
+- **Cada respuesta a Sergio Urcullo, de cualquier sesión, es corta y enfocada, y antes del bloque "Para aprender" le da 3 opciones para contestar, con la recomendada primera y marcada.** Si van con la herramienta de preguntas, ella suma el "Otro". Cómo se le preguntan las decisiones sigue en "Aprobaciones rápidas", del `AGENTS.md`.
+  - Por qué: el 1-nov lo pidió él, en la sesión coordinadora: "dame siempre las respuestas con 3 recomendadas y nombra las sesiones como en grokbot" (sin enlace). Esa noche lo amplió a todas las sesiones: "Ahora necesito que me respondan mas /focus y que siempre den opciones para responderte y ver tus recomendaciones" (sin enlace).
 - **Cada sesión se titula con el nombre de su área, como en Grok Bot:** Administrador (coordina), Pelau (solo da resúmenes cortos), Boss No-Code, Boss Code, Marketing, ONIA Platform y Analista.
   - Por qué: es el mismo pedido del 1-nov, en la sesión coordinadora (sin enlace). Así las reconoce por el nombre que ya usaba con los bots. Ese día también aclaró: "Recorda que pelau solo da resumenes, dejemos esta como “administrador” y crea un “pelau” que solo de resumenes cortos".
 - **Un tope de contexto se cuenta desde lo que la sesión ya cargó al arrancar, no desde cero.** Se mide al abrir y después de leer el relevo, y el trabajo se cuenta desde ahí.
