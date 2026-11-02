@@ -22,7 +22,7 @@
 
 **No toco:**
 - Los archivos de las áreas. En particular, los referentes de `marca-personal/` los escribe Marketing: yo miro y resumo, y le paso lo útil por mensaje.
-- Cuentas: no creo cuentas ni escribo contraseñas. Las secundarias para investigar redes las crea y las carga Sergio Urcullo en el perfil `recepcion` del navegador ([credenciales](../credenciales.md)).
+- Cuentas: no creo cuentas ni escribo contraseñas. Las secundarias para investigar redes las crea y las carga Sergio Urcullo en el perfil del navegador que dice el `AGENTS.md` ("Navegador de Ubuntu"; [credenciales](../credenciales.md)).
 - Nada se publica, comenta, sigue ni envía desde esas cuentas, ni se gasta, sin su sí.
 - Videos ni transcripciones privadas en Git, ni datos de clientes.
 - El navegador compartido de Ubuntu mientras lo use otra sesión.
