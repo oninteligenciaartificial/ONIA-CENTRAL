@@ -87,14 +87,14 @@ Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA
 **Qué sigue (lo hace esta área):**
 1. Usar el registro privado (sección "Registro privado"): anotar cada consulta y pago, y conciliar con el banco al 6-nov.
 2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller (#113).
-3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (inscripción abierta hasta el viernes 6, como en los textos de WhatsApp aprobados, con cuenta regresiva hasta el inicio de la clase 1; sin límite; "precio de esta edición"), se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
+3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (sin fecha de cierre fija, porque los textos de WhatsApp aprobados siguen vendiendo con las clases en curso y después con grabaciones; cuenta regresiva hasta el inicio de la clase 1; sin límite; "precio de esta edición"). Una fecha tope, si Sergio Urcullo la quiere, queda como propuesta pendiente, se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
 4. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
 5. Conciliar los pagos con el banco al 6-nov.
 
 **Qué espera a Sergio Urcullo:**
 - Hacer el pago de prueba con el QR de Yolo Pago.
 - Probar OBS con audio para grabar las clases, y elegir dónde se comparten las grabaciones.
-- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: hasta el viernes 6, igual que los textos de WhatsApp aprobados, sin límite, y sí; el miércoles 4 a las 19:00 es solo la cuenta regresiva).
+- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: sin cierre fijo, como los textos de WhatsApp aprobados, sin límite, y sí; el miércoles 4 a las 19:00 es solo la cuenta regresiva).
 - Mandar su video de repos para definir temario y skills a regalar.
 - El nombre "Claude de 0 a 100", a confirmar con un abogado.
 - Aprobar el análisis de los referentes (`marca-personal/referentes/funnel-fomo-2026-11-02.md`, PR abierto).
