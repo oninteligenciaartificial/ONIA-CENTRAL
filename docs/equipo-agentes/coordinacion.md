@@ -10,6 +10,7 @@ Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él
 - **Se abren de a una,** con unos segundos entre una y otra, por precaución. En el ensayo, Boss Code y ONIA Platform, las dos primeras con navegador propio, no lo vieron; abiertas solas, después, sí. Recepción tampoco lo vio en su primera búsqueda, y sí en la segunda. La causa no está confirmada: puede ser que la herramienta tarde en aparecer, o el arranque a la vez. Por eso cada encargo dice que, si no aparece, espere y la busque de nuevo.
 - **La primera vez,** Codex puede preguntar si se confía en la carpeta. Se contesta que sí, una vez por carpeta.
 - **Si `git pull` falla,** Codex no se abre, y la sesión sigue en su rama sin traer `main`.
+- **Las tareas largas se encargan.** Cada área pasa lo que se puede describir entero en una ficha a un Codex nuevo, con la skill [`encargar`](../../.agents/skills/encargar/SKILL.md), en vez de hacerlo en su chat. Así su sesión no se llena y cada tarea arranca con el contexto limpio.
 
 Una línea por sesión, para pegar en PowerShell:
 
@@ -18,7 +19,7 @@ Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-no-code; git pull --ff-only orig
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\marketing; git pull --ff-only origin main; if ($?) { codex -p marketing "Sos Marketing de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/marketing.md (si todavía no está en main, está en el PR 102), y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\marketing; git pull --ff-only origin main; if ($?) { codex -p marketing "Sos Marketing de ONIA. Leé el AGENTS.md, docs/lecciones.md y docs/equipo-agentes/marketing.md, y seguí con lo que dice Para seguir en Codex. Si la herramienta playwright no aparece, esperá unos segundos y buscala de nuevo." }
 ```
 
 ```powershell
@@ -112,7 +113,7 @@ Las lanzó el Administrador el 2-nov, cerca de las 2:20 de Bolivia, por pedido d
 |---|---|---|---|---|
 | Pelau | `local_dcf76b4f-5a6e-4d16-af1c-d84513c5e5c4` | Haiku, `medium` | Resúmenes cortos | Dio el primer resumen y espera |
 | Boss No-Code | `local_813868ac-94a1-493d-8343-a3de32f590af` | Sonnet, `medium` | Que el 3-nov se pueda inscribir y pagar por WhatsApp | Espera que Sergio conteste su QA |
-| Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, todavía no está en `main`: está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, que su auditoría pidió poner al día con la oferta y las fechas nuevas y volver a revisar |
+| Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, entró a `main` el 2-nov ([PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102)) |
 | Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y qué hacer con las ramas de Grok que tienen datos de un lead | Espera que Sergio conteste su QA |
 | ONIA Platform | `local_3542ddf0-d533-4ca5-9227-d8ae370ce11b` | Opus, `high` | Su próximo objetivo, con la recomendada ligada a vender esta semana | Espera que Sergio conteste su QA |
 | Recepción | `local_7ff35d0c-df2a-4fb9-ac34-78287c2df625` | Sonnet | Recibir archivos y videos de Sergio y pasarlos a las áreas | En marcha; su [PR de la skill ver-video](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/124) ya está mergeado |
