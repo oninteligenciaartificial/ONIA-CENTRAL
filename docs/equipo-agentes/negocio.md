@@ -4,7 +4,7 @@
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
 
-Actualizado: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
+Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Lo de abajo que dice martes 3, miércoles 4 y jueves 5 está reemplazado por esa decisión. Texto del 1-nov: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
 
 ## Objetivo: Bs 3.000 cobrados al 5-nov
 
