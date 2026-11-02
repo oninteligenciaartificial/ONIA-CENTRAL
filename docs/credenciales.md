@@ -145,7 +145,7 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 - Los agentes usan sesiones que ya están abiertas. El login, la verificación en dos pasos, el consentimiento de Google y las sesiones vencidas los resuelve Sergio Urcullo en su pantalla.
 - Ningún agente escribe una contraseña en un formulario. La excepción es Hermes con su cofre, que no se la muestra al modelo.
 - Los perfiles de navegador que se armen a mano para un agente van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, y nunca dentro de un repo. La copia que hace Hermes de un perfil real queda en su carpeta, que maneja él.
-  - La excepción son los perfiles del navegador de WSL: `equipo` ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)) y uno por área ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Viven dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También queda fuera de todo repo.
+  - La excepción son los perfiles del navegador de WSL: `equipo` ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)) y uno por área ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Viven dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También quedan fuera de todo repo.
 - Cada perfil lo usa un agente a la vez. No se copian cookies entre worktrees.
 - El puerto de control del navegador (CDP) nunca se abre a Internet.
 
@@ -155,7 +155,7 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 - El navegador de WSL usa el perfil `equipo`. Desde el 2-nov, Codex ya no lo usa ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)).
 
 **Codex** usa el navegador de WSL, con un perfil por área desde el 2-nov ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Se armó el 1-nov-2026, y Sergio Urcullo eligió dejarlo "Todo libre" ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)).
-- Las sesiones las abre él en la ventana visible, como dice ese documento.
+- Las sesiones las abre él en la ventana visible, como dicen el [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md) y, para el perfil de cada área, el [navegador por área](decisiones/2026-11-02-navegador-por-area.md).
 - Entrar a una cuenta sigue sin dar más permisos.
 
 **Hermes** ([detalle en su documentación](https://hermes-agent.nousresearch.com/docs), `user-guide/features/browser.md`):

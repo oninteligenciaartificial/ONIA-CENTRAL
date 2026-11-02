@@ -102,7 +102,7 @@ Qué cuentas se cargan lo decide él. El agente nunca escribe una contraseña ([
 ## Cómo se vuelve atrás
 
 1. **Cerrar las sesiones de Codex y de Claude Code que ya cargaron el navegador.** Sacar la configuración no corta un servidor ya cargado: cada sesión lo carga al arrancar.
-2. **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml` ([referencia de configuración](https://learn.chatgpt.com/docs/config-file/config-reference)), o restaurar la copia del respaldo.
+2. **Codex:** borrar la sección `[mcp_servers.playwright]` de `config.toml` ([referencia de configuración](https://learn.chatgpt.com/docs/config-file/config-reference)), o restaurar la copia del respaldo. En los dos casos, borrar también los cinco `<área>.config.toml` del [navegador por área](2026-11-02-navegador-por-area.md): sin la sección base, `codex -p <área>` no arranca ("invalid transport in `mcp_servers.playwright`", revisión 1 del PR #133).
 3. **Claude Code:**
    - `claude mcp remove -s user playwright` ([MCP en Claude Code](https://code.claude.com/docs/en/mcp));
    - sacar `mcp__playwright` de `permissions.allow`, o restaurar la copia de `settings.json`.
