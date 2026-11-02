@@ -90,3 +90,6 @@ Regla: empieza en el nivel de la tabla; sube a pesado solo si el revisor rechaza
 
 ## Dónde se guarda todo (Sergio, 2026-11-01 17:37)
 Todo el trabajo y el estado se guardan en el repo ONIA-CENTRAL. `/workspace/estado` es un enlace a `/workspace/ONIA-CENTRAL/docs/equipo-agentes`. Al cerrar una tarea, haz commit local de tus cambios en ONIA-CENTRAL (nunca push sin el sí de Sergio). Nada de secretos en el repo.
+
+## Claude y Grok Bot (Sergio, 2026-11-02)
+- Grok Bot sigue en el equipo (Analista: auditorías e investigación en X; bots de Grok: tareas siempre encendidas, conectores, navegador). Se coordinan solo por archivos en `docs/equipo-agentes/`, `git pull` antes de empezar, y nunca se trabaja el repo en dos lados a la vez.

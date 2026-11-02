@@ -375,3 +375,16 @@ El último mensaje de cada bot tiene que tener: **qué se hizo**, **dónde qued�
 - Una sesión por tarea, corta; cierra con `/cerrar` y abre otra con `/empezar`.
 - Nunca un chat gigante (eso hundió a SUM: 2.700+ mensajes).
 - Mantén `APRENDIZAJES.md` y los archivos de estado cortos: resume o archiva lo viejo cuando crezcan, porque se cargan en cada sesión.
+
+## Grok Bot sigue en el equipo
+
+Claude (app o Claude Code) es la base diaria, pero a futuro **también se usará Grok Bot**:
+- **Analista (Grok Bot):** auditorías del equipo, investigación en X y en la web, y revisión de que se cumplan las reglas.
+- **Bots de Grok:** tareas siempre encendidas (rutinas, monitoreo, webhooks), conectores (Gmail, Drive, Calendar, X, TikTok, Meta) y navegador con sesiones guardadas.
+
+Cómo se coordinan Claude y Grok:
+1. La única fuente de verdad es ONIA-CENTRAL. Se comunican por archivos en `docs/equipo-agentes/`: estado, tareas, informes del Analista en `docs/equipo-agentes/analista/` y APRENDIZAJES.
+2. Siempre `git pull` antes de empezar y commit al terminar cada tarea.
+3. Nunca se trabaja el repo en dos lados a la vez: si Grok está trabajando en el box, Claude no edita en el PC, y al revés. Para trabajar en paralelo, cada uno usa su rama o su worktree.
+4. Si Claude necesita algo que solo Grok puede hacer (conector, navegador, algo siempre encendido, búsqueda en X), lo deja anotado en `docs/equipo-agentes/tareas.md` para Grok, y viceversa.
+5. Las reglas son las mismas para los dos: nada se sube al remoto, se publica, se paga ni se toca en producción sin el sí de Sergio, y nada de secretos en git.
