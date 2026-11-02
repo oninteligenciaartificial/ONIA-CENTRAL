@@ -307,7 +307,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
     - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
     - Leé la cuota una vez más, para el "Después". Como ya no se lanza nada, si el comando está bloqueado va "sin medir: `hermes usage` bloqueado", salvo que Sergio Urcullo haya pasado una lectura de después del último lanzamiento.
-    - Contale a Sergio Urcullo en corto, sin números de PR o de issue ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después".
+    - Contale a Sergio Urcullo en corto, sin números de PR o de issue ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después". En ese mensaje, la línea "Créditos extra" va sin el número ni el enlace del issue: "según lo confirmó Sergio Urcullo". En el PR queda completa.
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
 
 ## Varios issues a la vez
