@@ -8,7 +8,7 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 | Cosa | Dónde está | Comprobación y fecha |
 |---|---|---|
-| Sitio personal `sergiourcullo.vercel.app` | Repo privado `oninteligenciaartificial/sergiourcullo`, copia local en `C:\dev\proyectos\sergiourcullo-deploy`, al día con `origin/main` | El sitio responde 200. Último commit `7412814`, del 19-sep. Cada commit a `main` lo publica Vercel solo, en Production (deployments de `vercel[bot]` en GitHub). Mergear a `main` de ese repo es publicar. |
+| Sitio personal `sergiourcullo.vercel.app` | Repo privado `oninteligenciaartificial/sergiourcullo`, copia local en `C:\dev\proyectos\sergiourcullo-deploy`, al día con `origin/main` | El sitio responde 200. Último commit `e72690b`, del 2-nov (la página del taller); la copia local quedó al día ese día. Cada commit a `main` lo publica Vercel solo, en Production (deployments de `vercel[bot]` en GitHub). Mergear a `main` de ese repo es publicar. |
 | Web del taller | `sergiourcullo.vercel.app/taller`, publicada desde el [PR del sitio que agrega `/taller`](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) (merge `e72690b`) | 2-nov: publicada con el sí de Sergio Urcullo ("publicala"), citado en el PR. Sin login, la página da 200, la cuenta regresiva corre y los 4 botones abren el chat de "Onia" con "vengo de la web" ya escrito. |
 | WhatsApp del taller, +591 75414930 | `wa.me/59175414930?text=TALLER` | 2-nov: sin login, el enlace abre el chat de la cuenta "Onia" con "TALLER" ya escrito. No se mandó nada. |
 | Cal.com | `/llamada` del sitio redirige a `cal.com/sergiourcullo/20min` (`vercel.json`) | La redirección da 307 y la página de Cal.com da 200. |
@@ -78,4 +78,4 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 
 - WhatsApp: el enlace `wa.me/59175414930?text=TALLER`, abierto sin login en el navegador de la app de Claude.
 - Web: la página servida en local, vista a 375 px y en escritorio, sin scroll horizontal. La vista previa de Vercel de la rama dio `success` (`gh api .../deployments`) y pide login de Vercel.
-- Revisión: dos rondas de `codex exec --sandbox read-only`, escritas en el PR.
+- Revisión: siete rondas de `codex exec --sandbox read-only`, escritas en el PR; la última, en "aprobar".
