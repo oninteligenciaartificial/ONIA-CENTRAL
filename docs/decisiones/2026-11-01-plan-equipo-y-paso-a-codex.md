@@ -257,18 +257,18 @@ Base del rescate: rama `onia-loop-excepcion-d003`, `docs/equipo-agentes/REPLICAR
 
 No se rescatan la bitácora duplicada, identidades de commit inventadas, dependencias de `onia-llm`, el requisito de dos familias de modelos ni instalaciones de auditoría innecesarias.
 
-Grok Bot queda sin tareas. Si se renueva o no lo decide Sergio: el 1-nov lo planteó como posibilidad ("asi ya no pagariamos grokbot", en el [issue #96](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96)), no como decisión. Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
+Grok Bot queda sin tareas, y Sergio decidió el 1-nov no renovarlo: "No renovarlo (Recomendada)" (punto 11). Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
 
 La idea del navegador en WSL sigue aparte, en el [issue del navegador que reemplazaría a Grok Bot](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96). No bloquea este cambio de motor.
 
 ## 11. Decisiones de Sergio
 
-Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el plan. Sus respuestas, tal cual, están en el PR que lo mergeó.
+Sergio contestó con botones el 1-nov, después de que la revisión 2 aprobó el plan. Sus respuestas, tal cual, están en este PR (#105).
 
 | Tema | Opciones | Estado |
 |---|---|---|
 | Motor desde el 3-nov, issue #100 | **A. Todo el equipo a Codex — recomendada y elegida.** B. Renovar Claude. C. Pasar solo trabajo pesado, condicionado a ingresos. | Resuelto por su pedido. B y C quedan descartadas; no se vuelve a preguntar. |
-| Motor desde el 14-nov, cuando vence Codex | **A. Decidirlo antes del 12-nov con lo que haya vendido el taller — recomendada.** B. Renovar ChatGPT desde ya. C. Quedarse sin motor desde el 14-nov. | Elegida A por Sergio el 1-nov: "Decidir el 12-nov (Recomendada)". |
+| Motor desde el 14-nov, cuando vence Codex | **A. Decidir el 12-nov si se renueva ChatGPT. La opción decía: "Con lo que haya vendido el taller, decidís si renovás ChatGPT" — recomendada.** B. Renovar ChatGPT desde ya. C. Quedarse sin motor desde el 14-nov. | Elegida A por Sergio el 1-nov: "Decidir el 12-nov (Recomendada)". |
 | Topes y relevo | **A. Adoptar el protocolo propuesto y validar los topes con mediciones — recomendada.** B. Mantener un objetivo por sesión y fijar los números después de medir Codex. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
 | Configuración compartida | **A. Una responsable que prepara los cambios, con la aprobación de Sergio para permisos y reglas — recomendada.** B. Que Sergio prepare y aplique toda la configuración. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
 | Rondas de revisión | **A. Mantener las necesarias hasta aprobar — recomendada.** B. Tras dos rondas fallidas, pausar para decidir alcance o prioridad; después revisar cualquier arreglo. | Elegida A por Sergio el 1-nov, al aprobar el plan: "Sí, mergealo (Recomendada)". |
