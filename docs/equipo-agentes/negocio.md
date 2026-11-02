@@ -10,15 +10,17 @@ Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisi�
 
 ## Ahora
 
-Escrito el 2-nov-2026 a la noche (Bolivia). Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en Claude o en Codex, está en el [README](README.md). La carpeta `boss-no-code` y el perfil `boss-no-code` ya no se usan. Los mensajes entre proyectos van al tablero del issue #111.
+Escrito el 2-nov-2026 a la noche (Bolivia). Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en Claude o en Codex, está en el [README](README.md). La carpeta `boss-no-code` ya no se usa; qué pasa con su perfil de navegador lo decide Sergio Urcullo ([README](README.md), "En Codex, después"). Los mensajes entre proyectos van al tablero del issue #111.
 
 **Objetivo:** Bs 3.000 cobrados al 6-nov. El "hecho cuando" de cada paso está en la tabla de "Objetivo", abajo.
+
+**Decisiones vigentes de Sergio Urcullo:** las de "Decisiones de Sergio Urcullo del 1-nov" y "Decisiones que siguen abiertas", abajo, que se leen antes de escribirle a un inscripto. Y una de ONIA Platform: la plataforma no se nombra en el taller esta semana ("Nada esta semana", en [`platform.md`](platform.md)).
 
 **En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel; el [PR de la página](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) del repo del sitio se mergeó el 2-nov a las 12:24 (Bolivia). Que ya se vea publicada en el sitio, sin confirmar desde esta área: lo ve Boss Code, que es quien publica.
 
 **Qué sigue (lo hace esta área):**
 1. Usar el registro privado (sección "Registro privado"): anotar cada consulta y pago, y conciliar con el banco al 6-nov.
-2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller (#113).
+2. Seguimientos por estado del lead: borrador en el [PR de seguimientos](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/162), abierto hasta el sí de Sergio Urcullo con captura (lo ve un cliente). Rescatado de la rama `origin/grokbot/workspace-20261101` (#101); el resto de esa rama es de otras áreas o de la oferta vieja, y las ramas no se borran hasta después del taller; después las borra esta área, con el sí de Sergio Urcullo (#113).
 3. El texto de `/taller`, con estos valores propuestos por esta área y sin decidir por Sergio Urcullo (sin fecha de cierre fija, porque los textos de WhatsApp aprobados siguen vendiendo con las clases en curso y después con grabaciones; cuenta regresiva hasta el inicio de la clase 1; sin límite; "precio de esta edición"). Una fecha tope, si Sergio Urcullo la quiere, queda como propuesta pendiente, se le pasó a Boss Code el 2-nov; falta el sí de Sergio Urcullo con captura antes de publicar.
 4. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
 5. Conciliar los pagos con el banco al 6-nov.
@@ -132,7 +134,7 @@ Definido el 2-nov-2026 por pedido de Sergio Urcullo, vía la sesión Administrad
 - **Navegador de Ubuntu:** solo para revisar el QR de Yolo Pago y la bandeja de WhatsApp o Chatwoot cuando Sergio Urcullo cargue la cuenta; una sesión a la vez, y sin enviar, publicar ni comprar.
 - **Cruces:**
   - Marketing: el llamado a la acción de los anuncios tiene que coincidir con el texto que llega al chat. Marketing escribe los anuncios; yo, los textos de WhatsApp.
-  - Boss Code: las ramas de Grok Bot con datos de un lead (issue #113) y todo lo que corre en el VPS, Chatwoot o n8n. Lo suyo lo hace Boss Code.
+  - Desarrollo (antes Boss Code): todo lo que corre en el VPS, Chatwoot o n8n. Lo suyo lo hace Desarrollo. Las ramas de Grok Bot con datos de un lead (issue #113) las borra esta área, después del taller y con el sí de Sergio Urcullo.
   - ONIA Platform: no va en los mensajes a inscriptos esta semana (lo decidió Sergio Urcullo).
 - **No hago:** publicar anuncios o contenido, tocar producción (VPS, base de datos, Vercel), gastar, cambiar lo legal, guardar datos de clientes en Git ni editar archivos de otra área. Si dos proyectos necesitan el mismo archivo, va primero el que ya tiene el PR abierto (`AGENTS.md`, "Un agente por tarea").
 

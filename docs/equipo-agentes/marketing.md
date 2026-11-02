@@ -10,7 +10,7 @@ Actualizado: 2-nov-2026, hora de Bolivia.
 
 Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en Claude o en Codex, está en el [README](README.md). Los mensajes entre proyectos van al tablero del issue #111.
 
-**Objetivo:** que la campaña de Meta Ads y los guiones del taller salgan con el sí de Sergio Urcullo, para llegar a los Bs 3.000 cobrados al 6-nov de [`negocio.md`](negocio.md). El "hecho cuando" de cada paso está en "Orden de trabajo", abajo.
+**Objetivo, hecho cuando y próximo paso:** los de "Orden de trabajo", abajo, que sirven a la meta de ventas de [`negocio.md`](negocio.md), "Objetivo: Bs 3.000 cobrados al 6-nov".
 
 **Qué espera a Sergio Urcullo y sus decisiones vigentes:** en "Pendiente de Sergio Urcullo", abajo.
 
@@ -76,12 +76,12 @@ Al 2-nov a la noche. Lo ya resuelto ([decisión del 2-nov](../decisiones/2026-11
 ## Qué toco y qué no
 
 - **Escribo (por PR):** `marca-personal/` (contenido, referentes, guías), `workshops-comunidad/meta-ads-campana-3-4-5.md` y `workshops-comunidad/plan-meta-ads-borrador.md`, y este archivo. Todo lo que ve un cliente lo aprueba Sergio Urcullo.
-- **Solo leo:** `docs/decisiones/`, `docs/lecciones.md`, `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md` (de Boss No-Code), y la web y el VPS (de Boss Code).
+- **Solo leo:** `docs/decisiones/`, `docs/lecciones.md`, y la web y el VPS (de Desarrollo). El borrador de WhatsApp (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`) lo escribe esta misma área, desde [`negocio.md`](negocio.md).
 - **Servicios:** Meta Ads por el conector de la app, siempre en borrador o pausa. Instagram y TikTok no: no hay conector para publicar. Higgsfield, nada sin el sí de Sergio Urcullo.
 - **Navegador de Ubuntu:** solo si hace falta ver una pantalla de Meta o una referencia, de a una sesión a la vez y sin loguearme: las cuentas las carga Sergio Urcullo.
 - **Cruces:**
   - llamado a la acción del anuncio con el texto que llega a WhatsApp: Boss No-Code escribe los textos (PR #110) y confirma; yo escribo el anuncio;
-  - textos de la web del taller: Boss Code la arma; yo paso el copy, sin tocar su repo;
+  - textos de la web del taller: Desarrollo la arma; yo paso el copy, sin tocar su repo;
   - la oferta vieja (3-5-7, combos y clases sueltas) en `plan-meta-ads-borrador.md` ("Qué se vende desde el miércoles 4") y en el PR #72, avisada por ONIA Platform: la corrijo yo; el PR #72 es de Boss No-Code, que desde el 3-nov también es Marketing y ventas.
 - **No hago:** activar campañas ni gastar sin su sí, crear cuentas o cargar tarjetas, publicar, mandar mensajes a clientes, tocar archivos de otra área ni copiar datos de clientes de las ramas de Grok Bot (issue #113).
 

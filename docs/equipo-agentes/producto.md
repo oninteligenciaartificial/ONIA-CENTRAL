@@ -10,9 +10,11 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; cómo se abre, en Claude o en Codex, está en el [README](README.md). En la PC, la rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
-**Objetivo y hecho cuando:** los dos datos del VPS que pide ONIA Platform quedan en el #111 (pasos 1 y 2 de "VPS", abajo), y el inventario, en un issue (paso 3). **Próximo paso:** que Sergio Urcullo cargue la clave; sin ella, el VPS no se puede mirar.
+**Objetivo y hecho cuando:** los del orden de "VPS", abajo, que pidió Sergio Urcullo el 2-nov. **Próximo paso:** que él cargue la clave, porque sin ella el VPS no se puede mirar.
 
-- **Web del taller:** publicada. El 2-nov, Boss No-Code pasó "Bs 50, precio de esta edición" y el texto de después del inicio ("El taller ya empezó: escribinos y te pasamos las clases grabadas."). Están en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. No hay cierre de inscripción: se vende hasta el viernes 6, con las clases grabadas, como dice el borrador de WhatsApp (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`), y no hay límite de personas. Después del 6-nov, la página se baja o se cambia, también con su sí.
+**Decisiones vigentes de Sergio Urcullo:** van citadas en cada punto de abajo; lo que espera su decisión, en el último.
+
+- **Web del taller:** publicada. El 2-nov, Boss No-Code pasó "Bs 50, precio de esta edición" y el texto de después del inicio ("El taller ya empezó: escribinos y te pasamos las clases grabadas."). Están en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. Que no haya cierre de inscripción (se vendería hasta el viernes 6, con las clases grabadas, como dice el borrador de WhatsApp, `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`) ni límite de personas es la propuesta de Boss No-Code: lo decide Sergio Urcullo ([`negocio.md`](negocio.md), "Qué espera a Sergio Urcullo"). Después del 6-nov, la página se baja o se cambia, también con su sí.
 - **VPS:** todo espera la clave, que se le pidió a Sergio Urcullo el 2-nov a la noche. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en el orden que pidió el Administrador el 2-nov, por un pedido de Sergio Urcullo ("Primero lo de onia, necesitamos tener todo listo hasta hoy", [constancia en el #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6587567915)):
   1. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
   2. para ONIA Platform: si el runbook de correos del [onia-platform #70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) está aplicado en el VPS, como dice ese PR.
@@ -30,13 +32,31 @@ Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; c�
   - pasar el servidor y el usuario, que no son secretos.
 
   No se sabe si la clave pública está autorizada en el VPS.
-- **Heredado del Administrador (3-nov):** preparar la configuración del equipo (perfiles y permisos de Codex, Notion y Drive del [#128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128), la matriz de autonomía y las memorias del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38)), poner al día los datos del panel de dirección (`otros/panel-direccion/datos.json`) y pedirle a Sergio Urcullo lo suyo en la PC. El detalle está en `coordinacion.md`, "Pendiente", "Lo que le toca a Sergio" y "Para después". Los permisos y las reglas los aprueba él.
+- **Heredado del Administrador (3-nov):** la lista está en "Heredado del Administrador", abajo.
 - **Auditoría semanal:** cada sábado, con un agente nuevo en solo lectura; la primera, el 7-nov, cubre desde el 2-nov (`AGENTS.md`, "Equipo de agentes").
 - **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
 
 ## Correcciones de Sergio
 
-Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones").
+
+- 2-nov: Sergio Urcullo dijo que al día siguiente tenían que correr los anuncios, y el hilo del armado del equipo pidió abrir ya un hilo para lanzarlos. Él quería primero terminar el armado y crear los proyectos ("No dije que lances, primero esperamos que terminamos y ahi armaos los proyects"). Regla: se sigue su orden de pasos, y lo demás se le propone sin lanzarlo. Ya era lección ("Trabajo con Sergio Urcullo"), y pasó al Núcleo.
+
+## Heredado del Administrador
+
+Desde el 3-nov, Desarrollo hace lo que hacía el Administrador con la infraestructura del equipo ([un jefe por área](../decisiones/2026-11-02-tres-proyectos.md), "Quién se encarga de qué"):
+
+- cuidar que las reglas y el repo no se contradigan;
+- preparar la configuración del equipo: perfiles y permisos de Codex, Notion y Drive del [#128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128), la matriz de autonomía y las memorias del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38);
+- poner al día los datos del panel de dirección (`otros/panel-direccion/datos.json`);
+- medir A y B de Codex con `/status` en su primera sesión ([plan del 1-nov](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2);
+- pedirle a Sergio Urcullo, todo junto, lo suyo en la PC: Orca y Antigravity, los accesos de `.onia` y las claves de `.claude.json`;
+- la propuesta mínima de hooks de Grok Bot (rama `claude/hooks-contexto-20261102`), en un PR propio que aprueba Sergio Urcullo porque toca permisos;
+- comprobar con Sergio Urcullo que quedaron archivadas las sesiones viejas de Claude Code ([README](README.md), "Qué pasó con las otras sesiones");
+- lo que ONIA Platform dejó para la coordinación (`platform.md`, "Para otras áreas"): el `COMO-TRABAJAR.md` de la rama de Grok Bot pide tuteo, y la regla es el voseo. El respaldo del VPS ya está en el orden de "VPS", arriba;
+- para después: el bot en la nube del [#96](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96), comprobar que nada dependa de Grok Bot antes de retirarlo, y las skills `/empezar`, `/cerrar` y `/auditar`.
+
+El detalle está en `coordinacion.md`, "Relevo del Administrador (2-nov, a la tarde)", "Lo que le toca a Sergio" y "Para después". De ahí, el estado de Marketing en `main` (PR #102) y el panel (PR #155) ya están mergeados, y "probar un mensaje directo de un área a otra" ya no va, porque entre proyectos se usa el tablero. Los permisos y las reglas los aprueba él.
 
 ## Qué hay y dónde
 
@@ -54,8 +74,8 @@ El bot de Grok dejó escrito que no encontró el código del sitio personal y qu
 
 Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada sesion que se defina para no chocar" (sesión del Administrador, sin enlace).
 
-- **Escribo en ONIA-CENTRAL:** este archivo, que es el estado de Boss Code, y una decisión de mi área en `docs/decisiones/` cuando haga falta. Siempre por PR.
-- **Solo leo:** el `AGENTS.md`, `docs/lecciones.md`, los estados de las otras áreas, `workshops-comunidad/`, `marca-personal/` y las ramas de Grok Bot.
+- **Escribo en ONIA-CENTRAL:** este archivo, que es el estado de Desarrollo (antes Boss Code); una decisión de mi área en `docs/decisiones/` cuando haga falta; y lo que heredé del Administrador: los documentos del equipo en `docs/equipo-agentes/` (el README y `stack.md`), los datos del panel (`otros/panel-direccion/datos.json`) y los cambios al `AGENTS.md`, a `docs/lecciones.md` y a la configuración del equipo, que se mergean como dice la regla de merges del `AGENTS.md`. Siempre por PR.
+- **Solo leo:** los estados de las otras áreas, `workshops-comunidad/`, `marca-personal/` y las ramas de Grok Bot.
 - **Repos y servicios:**
   - el repo del sitio personal, `oninteligenciaartificial/sergiourcullo`: escribo en ramas y por PR. Mergear publica, así que se mergea solo con el sí de Sergio Urcullo;
   - Vercel: leo los despliegues. No despliego: `vercel` pide el sí en la app ([permisos](../decisiones/2026-11-02-permisos-claude-code.md));
