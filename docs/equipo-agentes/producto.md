@@ -44,7 +44,7 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
   - el repo `onia-platform`: no lo toco. Es de ONIA Platform.
 - **Navegador de Ubuntu:** solo para comprobar sin login páginas publicadas, como el sitio, el enlace de WhatsApp o Cal.com, cuando no alcanza el navegador de la app de Claude. Lo usa una sola sesión a la vez, como dice el `AGENTS.md`. El 2-nov no lo usé.
 - **Cruces con otras áreas:**
-  - las ramas de Grok Bot con datos de un lead ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): Boss No-Code las revisa y rescata lo útil (#101). Boss Code solo tomó de ahí la web del taller. Las ramas las borra Boss No-Code, después del rescate, como ordenó el Administrador el 2-nov;
+  - las ramas de Grok Bot con datos de un lead ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): Boss No-Code las revisa y rescata lo útil (#101). Boss Code solo tomó de ahí la web del taller. Las ramas las borra Boss No-Code, después del rescate, como ordenó el Administrador el 2-nov, y quedan como están hasta después del taller (6-nov), como eligió Sergio Urcullo ese día ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6584713207));
   - la web del taller: los textos y la marca son de Marketing. El código, el PR y la publicación, de Boss Code. Si Marketing cambia un texto, me lo pasa y lo cambio en el PR;
   - el WhatsApp +591 75414930: lo atiende Boss No-Code. Boss Code solo comprueba que el enlace abra.
 - **No hago:** mensajes a clientes, respuestas en WhatsApp, anuncios ni la campaña, código de ONIA Platform, borrar ramas sin que me lo asignen, ni nada en producción sin el sí de Sergio Urcullo.
@@ -68,7 +68,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 ## Pendiente
 
 - Bajar o cambiar `/taller` después del 6-nov. Cambiarla es publicar, así que va con el sí de Sergio Urcullo.
-- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Boss No-Code, como ordenó el Administrador el 2-nov. Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
+- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Boss No-Code, como ordenó el Administrador el 2-nov, y recién después del taller, que termina el 6-nov, porque el 2-nov Sergio Urcullo eligió "Después del taller" ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6584713207)). Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
 - El VPS: ver "Para seguir en Codex", arriba.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).
