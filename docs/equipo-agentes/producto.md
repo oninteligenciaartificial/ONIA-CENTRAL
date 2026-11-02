@@ -16,6 +16,25 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 El bot de Grok dejó escrito que no encontró el código del sitio personal y que el sitio no respondía. Desde esta PC están las dos cosas.
 
+## Qué toco y qué no
+
+Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada sesion que se defina para no chocar" (sesión del Administrador, sin enlace).
+
+- **Escribo en ONIA-CENTRAL:** este archivo, que es el estado de Boss Code, y una decisión de mi área en `docs/decisiones/` cuando haga falta. Siempre por PR.
+- **Solo leo:** el `AGENTS.md`, `docs/lecciones.md`, los estados de las otras áreas, `workshops-comunidad/`, `marca-personal/` y las ramas de Grok Bot.
+- **Repos y servicios:**
+  - el repo del sitio personal, `oninteligenciaartificial/sergiourcullo`: escribo en ramas y por PR. Mergear publica, así que se mergea solo con el sí de Sergio Urcullo;
+  - Vercel: leo los despliegues. No despliego: `vercel` pide el sí en la app ([permisos](../decisiones/2026-11-02-permisos-claude-code.md));
+  - Cal.com: solo compruebo que `/llamada` responda;
+  - el VPS, Chatwoot y n8n de producción: son del área, pero hoy no los toco. Nunca entré. Hace falta el sí de Sergio Urcullo y la clave en la bóveda, como dice `docs/credenciales.md`;
+  - el repo `onia-platform`: no lo toco. Es de ONIA Platform.
+- **Navegador de Ubuntu:** solo para comprobar sin login páginas publicadas, como el sitio, el enlace de WhatsApp o Cal.com, cuando no alcanza el navegador de la app de Claude. Lo usa una sola sesión a la vez, como dice el `AGENTS.md`. El 2-nov no lo usé.
+- **Cruces con otras áreas:**
+  - las ramas de Grok Bot con datos de un lead ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): Boss No-Code las revisa y rescata lo útil (#101). Boss Code solo tomó de ahí la web del taller. Quién borra las ramas, después del rescate, lo ordena el Administrador;
+  - la web del taller: los textos y la marca son de Marketing. El código, el PR y la publicación, de Boss Code. Si Marketing cambia un texto, me lo pasa y lo cambio en el PR;
+  - el WhatsApp +591 75414930: lo atiende Boss No-Code. Boss Code solo comprueba que el enlace abra.
+- **No hago:** mensajes a clientes, respuestas en WhatsApp, anuncios ni la campaña, código de ONIA Platform, borrar ramas sin que me lo asignen, ni nada en producción sin el sí de Sergio Urcullo.
+
 ## Accesos desde esta PC
 
 - **GitHub:** `gh` con la cuenta `oninteligenciaartificial`.
@@ -35,7 +54,7 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 ## Pendiente
 
 - Publicar la web del taller, con el sí de Sergio Urcullo. Las clases son el martes 3, el miércoles 4 y el jueves 5-nov.
-- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113.
+- Compartido, sin quién lo haga: borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113. Quién lo hace lo ordena el Administrador, y se coordina por el tablero (#111). Boss Code no lo hace si no se lo asignan.
 - Comprobar el acceso al VPS sin cambiar nada, cuando Sergio Urcullo lo autorice y la clave esté en la bóveda.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).
