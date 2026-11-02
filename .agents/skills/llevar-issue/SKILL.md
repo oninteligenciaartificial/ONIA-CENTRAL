@@ -10,7 +10,7 @@ La usa sobre todo Hermes, que orquesta: toma el issue, lanza a quien escribe y a
 ## Frenos
 
 - **Lo reservado no se mergea sin Sergio Urcullo.** Reservado es lo que entra en la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`. La lista se lee ahí cada vez y no se copia en esta skill, para que no quede atrás. Si un PR entra en esa lista y también en "Lo mergea Claude sin preguntar", o hay duda, es reservado. También lo es si alguna revisión dijo "Reservado: sí", aunque una posterior diga "no" (paso 9).
-- **Hermes no mergea.** El merge lo hace Claude Code o, desde el 3-nov, Codex, solo en lo que deja "Lo mergea Claude sin preguntar", del `AGENTS.md`. Acá lo lanza Hermes (paso 9).
+- **Hermes no mergea.** El merge lo hace Claude Code y, desde el 3-nov, también Codex, este solo en lo que deja "Lo mergea Claude sin preguntar", del `AGENTS.md`. Acá lo lanza Hermes (paso 9).
 - **Nada de modos sin permisos:** nunca `--dangerously-skip-permissions`, `bypassPermissions`, `--dangerously-bypass-approvals-and-sandbox`, `--yolo` ni `danger-full-access`. Hermes además los frena en `approvals.deny`.
 - **A una aprobación de Hermes se contesta "once", nunca "always".**
 - **Sin secretos** en prompts, commits, PRs ni comentarios. Si el issue necesita una clave o un login, se frena y se le pide a Sergio Urcullo, como dice `docs/credenciales.md`.
