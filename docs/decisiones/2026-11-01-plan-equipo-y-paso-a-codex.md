@@ -274,7 +274,7 @@ Base del rescate: rama `onia-loop-excepcion-d003`, `docs/equipo-agentes/REPLICAR
 
 No se rescatan la bitácora duplicada, identidades de commit inventadas, dependencias de `onia-llm`, el requisito de dos familias de modelos ni instalaciones de auditoría innecesarias.
 
-Grok Bot queda sin tareas, y Sergio decidió el 1-nov no renovarlo: "No renovarlo (Recomendada)" (punto 11). Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
+Grok Bot no orquesta, y Sergio decidió el 1-nov no renovarlo: "No renovarlo (Recomendada)" (punto 11). El 2-nov eligió que siga para investigar en X y auditar: "Para investigar en X (Recomendada)" (sesión del Administrador, sin enlace). Lo que propone entra por PR revisado. Antes de retirar automatizaciones o accesos se comprueba si queda alguna dependencia, especialmente el respaldo del VPS, hoy **sin comprobar**. No se apaga producción como efecto lateral. `AGENTS.md:62–63`; `docs/equipo-agentes/producto.md:40`.
 
 La idea del navegador en WSL sigue aparte, en el [issue del navegador que reemplazaría a Grok Bot](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96). No bloquea este cambio de motor.
 
