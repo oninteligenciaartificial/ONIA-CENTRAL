@@ -12,6 +12,14 @@ Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Decidir los 1
 
 **Primer paso, hecho el 2-nov:** la recomendación de cada PR, revisada por Codex en solo lectura, en [`plataforma/2026-11-02-decision-10-prs.md`](../../plataforma/2026-11-02-decision-10-prs.md). Sigue que Sergio Urcullo elija el orden y apruebe cada merge.
 
+**Lo que eligió Sergio Urcullo el 2-nov,** con botones, en esta sesión ([constancia](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/137)):
+- "Ya, con merges": se empieza por el #154 de `onia-platform`, sin esperar al 6-nov;
+- "QA aparte en el VPS": la base de prueba la arma Boss Code, separada de la de producción.
+
+**Dónde quedó, al cierre del 2-nov:** Boss Code va a revisar en el VPS, sin cambiar nada, qué IP le llega a la app para el #154, y después propone la QA aparte. Espera que Sergio Urcullo cargue la clave del VPS en esta PC. El pedido y su respuesta están en el [tablero #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111). Nada de `onia-platform` está mergeado.
+
+**Para retomar (Codex, desde el 3-nov):** arranca con `codex -p onia-platform`, el perfil con el navegador del área, sin cuentas esta semana ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)). Primero lee la respuesta de Boss Code en el #111. Con eso, prueba el #154 y le lleva a Sergio Urcullo el merge, con la evidencia.
+
 ## Objetivo anterior, cerrado el 2-nov
 
 **Objetivo:** definir qué de ONIA Platform se les ofrece a los inscriptos del taller desde el miércoles 4, sin prometer lo que no está probado. Lo eligió Sergio Urcullo el 2-nov, con botones, en esta sesión: "Oferta a inscriptos (Recomendada)".
