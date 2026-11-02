@@ -88,7 +88,7 @@ Consultados el 1-nov con `session_connectors_status` de la app, sin leer secreto
 
 Definido el 2-nov-2026 por pedido de Sergio Urcullo, vía la sesión Administrador.
 
-- **Escribo:** este archivo; `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md` y `workshops-comunidad/claude-0-a-100/` (el PR de materiales, hoy con precios viejos); `docs/decisiones/` solo para decisiones de ventas, cobro y finanzas.
+- **Escribo:** este archivo; `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md` y `workshops-comunidad/claude-0-a-100/` (todavía no está en `main`: vive en el PR de materiales del taller, abierto y con precios viejos); `docs/decisiones/` solo para decisiones de ventas, cobro y finanzas.
 - **Solo leo:** `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y el resto de `docs/decisiones/`, `workshops-comunidad/plan-meta-ads-borrador.md`, `marca-personal/`, `plataforma/` y los estados de las otras áreas.
 - **Servicios:** WhatsApp +591 75414930, Instagram, Yolo Pago (QR), el banco para conciliar, Google Calendar (salas de Meet) y Chatwoot para leer chats. Los cobros y los chats no se ven desde esta PC: lo que hace falta de ahí lo trae Sergio Urcullo. Ningún mensaje sale a un lead sin su sí con captura.
 - **Navegador de Ubuntu:** solo para revisar el QR de Yolo Pago y la bandeja de WhatsApp o Chatwoot cuando Sergio Urcullo cargue la cuenta; una sesión a la vez, y sin enviar, publicar ni comprar.
