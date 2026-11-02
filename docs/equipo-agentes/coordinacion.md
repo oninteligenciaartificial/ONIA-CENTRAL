@@ -6,7 +6,7 @@ Según `get_usage` de la app de Claude, la sesión tenía 415.051 tokens usados 
 
 ## Objetivo del próximo Administrador
 
-Coordinar el lanzamiento de la campaña del taller el 3-nov y el paso del equipo a Codex ese mismo día.
+Coordinar el lanzamiento de la campaña del taller el 3-nov y el paso del equipo a Codex ese mismo día. El Administrador lee lo necesario y delega cada tarea en la sesión de su área, sin hacer el trabajo de un área, y revisa que la infraestructura y las reglas estén en orden (`AGENTS.md`, "Equipo de agentes").
 
 **Hecho cuando:**
 - la campaña está prendida con el sí de Sergio;
