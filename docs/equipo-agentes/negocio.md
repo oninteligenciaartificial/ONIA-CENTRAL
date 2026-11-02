@@ -6,19 +6,19 @@ Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de ot
 
 Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Lo de abajo que dice martes 3, miércoles 4 y jueves 5 está reemplazado por esa decisión. Texto del 1-nov: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
 
-## Objetivo: Bs 3.000 cobrados al 5-nov
+## Objetivo: Bs 3.000 cobrados al 6-nov (antes 5-nov; Sergio lo confirmó el 2-nov)
 
-Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`). Los impuestos los ve él con el contador.
+Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`); el 2-nov confirmó que el corte pasa al 6-nov. Los impuestos los ve él con el contador.
 
 | # | Hecho cuando | Estado |
 |---|---|---|
 | 1 | Una sola oferta en `docs/decisiones/` y acá | Hecho por este PR |
 | 2 | Salas de Meet en las fechas nuevas, sin invitados | Hecho el 1-nov |
 | 3 | Comprobado si Meet gratis graba | No graba (abajo); Sergio elige cómo grabar |
-| 4 | Textos de WhatsApp y del QR corregidos, en borrador | En un PR aparte, para su sí con captura |
+| 4 | Textos de WhatsApp y del QR corregidos | Hecho: aprobados por Sergio Urcullo el 2-nov y en `main` (con las fechas 4, 5 y 6-nov) |
 | 5 | Pago de prueba con Yolo Pago | Lo hace Sergio |
 | 6 | Registro privado de consultas, comprobantes y pagos, fuera de Git | Pendiente |
-| 7 | Bs 3.000 conciliados con el banco al 5-nov | Pendiente |
+| 7 | Bs 3.000 conciliados con el banco al 6-nov | Pendiente |
 
 ## Taller "Claude de 0 a 100"
 
@@ -54,7 +54,7 @@ En `main`:
 - `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md`: fechas, sala y precio del taller.
 - `workshops-comunidad/plan-meta-ads-borrador.md`: plan del 29-oct, con oferta, cobro, devolución y textos. Las fechas del 17 y 19-nov quedaron reemplazadas por las del 3, 5 y 7-nov.
 
-En GitHub, sin mergear:
+En GitHub, sin mergear (el `whatsapp.md` de este PR es una versión vieja: lo reemplazan los textos aprobados y en `main`, `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`, con las fechas 4, 5 y 6-nov):
 - [PR que prepara el temario, los textos de WhatsApp, los guiones y la lista para lanzar el taller](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72): `workshops-comunidad/claude-0-a-100/` con `whatsapp.md` (bienvenida, "/taller", "/qr", "/pagado"). Es anterior a la decisión del 31-oct. Sus Bs 70 no son el precio de inscripción: son lo que paga quien hizo la clase 1 para completar las clases 2 y 3, hasta el jueves 5 (su `README.md`, elegido por Sergio Urcullo el 30-oct).
 
 En GitHub, en la rama `origin/grokbot/workspace-20261101` (commit `23c342d`, del 1-nov a las 19:10): una copia de parte de `/workspace` que subió Grok Bot, según avisó la sesión coordinadora. Dentro de `grokbot-workspace/` trae, entre otras, `ventas/`, `taller-claude/`, `decisiones/` (`INDICE.md` y 21 archivos, de `D-20261101-001.md` a `D-20261101-021.md`) y `manuales/`, con `negocio/` y `finanzas-legal/`. Grok Bot dice que dejó afuera el QR de pago y los logs de ventas, y que los borradores de seguimiento no tienen datos de leads. Esta área todavía no lo comprobó: nada de esa rama pasa a `main` sin revisar antes que no tenga datos de clientes.
@@ -69,12 +69,32 @@ Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. 
 
 Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar: para leer eventos y para crear las 6 salas de Meet; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
 
+## Para seguir en Codex
+
+Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRALoss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
+
+**En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel y no está publicada.
+
+**Qué sigue (lo hace esta área):**
+1. Armar el registro privado de consultas, comprobantes y pagos, fuera de Git. Falta decidir dónde vive (Google Sheets u otro).
+2. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
+3. Pasarle a Boss Code el texto de lo que Sergio Urcullo decida para la página.
+4. Conciliar los pagos con el banco al 6-nov.
+
+**Qué espera a Sergio Urcullo:**
+- Hacer el pago de prueba con el QR de Yolo Pago.
+- Probar OBS con audio para grabar las clases, y elegir dónde se comparten las grabaciones.
+- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: hasta el miércoles 4 a las 19:00, sin límite, y sí).
+- Mandar su video de repos para definir temario y skills a regalar.
+- El nombre "Claude de 0 a 100", a confirmar con un abogado.
+- Aprobar el análisis de los referentes (`marca-personal/referentes/funnel-fomo-2026-11-02.md`, PR abierto).
+
 ## Pendientes del área
 
 - [ ] Pago de prueba con el QR de Yolo Pago antes del martes 3 (lo hace Sergio Urcullo).
-- [ ] Textos de WhatsApp del taller con la oferta nueva, en borrador, en un PR aparte que aprueba Sergio Urcullo con captura. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar, y el guion de Grok Bot dice Bs 70 desde el 2-nov.
+- [x] Textos de WhatsApp del taller con la oferta nueva: aprobados por Sergio Urcullo el 2-nov y en `main`. `workshops-comunidad/plan-meta-ads-borrador.md` es de Marketing, que corrige la oferta vieja.
 - [ ] Registro privado de consultas, comprobantes y pagos verificados, fuera de Git porque tiene datos de clientes.
-- [ ] Conciliar los pagos con el banco al 5-nov.
+- [ ] Conciliar los pagos con el banco al 6-nov.
 - [ ] Traer de `/workspace` los borradores de diagnóstico gratis, sin datos de clientes, si Sergio Urcullo los pide.
 
 ## Para otras áreas
