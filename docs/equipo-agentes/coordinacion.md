@@ -7,7 +7,7 @@ Lo dejó listo el Administrador el 2-nov, por pedido de Sergio: "recorda que él
 - **Cada sesión tiene su carpeta fija,** en `C:\dev\worktrees\ONIA-CENTRAL\<sesión>`, fuera de las de Claude, para que no se borre al archivarlas.
 - **Cada sesión tiene su perfil de Codex,** en `C:\Users\PC\.codex\<sesión>.config.toml`, con el modelo y el esfuerzo del [plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 4. Recepción no está en el plan: va con `gpt-6.1-sol` y `medium`, como propuesta del Administrador. Las áreas traen también su propio navegador ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)).
 - **Cada línea va en su propia ventana de PowerShell,** porque Codex ocupa la ventana.
-- **Se abren de a una,** con unos segundos entre una y otra, por precaución. En el ensayo, Boss Code y ONIA Platform, las dos primeras con navegador, arrancaron con un segundo de diferencia y no lo vieron. Abiertas solas, después, sí. La causa no está confirmada.
+- **Se abren de a una,** con unos segundos entre una y otra, por precaución. En el ensayo, Boss Code y ONIA Platform, las dos primeras con navegador propio, no lo vieron; abiertas solas, después, sí. Recepción tampoco lo vio en su primera búsqueda, y sí en la segunda. La causa no está confirmada: puede ser que la herramienta tarde en aparecer, o el arranque a la vez. Por eso cada encargo dice que, si no aparece, espere y la busque de nuevo.
 - **La primera vez,** Codex puede preguntar si se confía en la carpeta. Se contesta que sí, una vez por carpeta.
 - **Si `git pull` falla,** Codex no se abre, y la sesión sigue en su rama sin traer `main`.
 
@@ -38,7 +38,7 @@ Set-Location C:\dev\worktrees\ONIA-CENTRAL\administrador; git pull --ff-only ori
 ```
 
 ```powershell
-Set-Location C:\dev\worktrees\ONIA-CENTRAL\pelau; git pull --ff-only origin main; if ($?) { codex -p pelau "Sos Pelau de ONIA: solo das resúmenes cortos. Leé el AGENTS.md, docs/lecciones.md y los estados de docs/equipo-agentes/, y dale a Sergio un resumen corto de cómo están las áreas." }
+Set-Location C:\dev\worktrees\ONIA-CENTRAL\pelau; git pull --ff-only origin main; if ($?) { codex -p pelau "Sos Pelau de ONIA: solo das resúmenes cortos. Leé el AGENTS.md, docs/lecciones.md, los estados de docs/equipo-agentes/ y los PRs abiertos, y dale a Sergio un resumen corto de cómo están las áreas." }
 ```
 
 ```powershell
@@ -48,7 +48,7 @@ Set-Location C:\dev\worktrees\ONIA-CENTRAL\analista; git pull --ff-only origin m
 **Ensayo del 2-nov,** con `codex -p <sesión> exec --sandbox read-only` en cada carpeta, entre las 13:15 y las 13:16. Los registros están en `C:\Users\PC\.codex\sessions\2026\11\02\`.
 - Las ocho arrancaron con su modelo y su esfuerzo, y contestaron empezando con "Sergio Urcullo,". Eso muestra que cargaron el `AGENTS.md` global de Codex (`C:\Users\PC\.codex\AGENTS.md`), donde está ese saludo.
 - Leyeron su estado. Marketing lo encontró solo porque se le nombró su PR abierto.
-- El navegador anduvo en Recepción, Marketing y Boss No-Code. En Boss Code (13:15:37) y ONIA Platform (13:15:38) no apareció. Abiertas solas, después, sí: Boss Code a las 13:24 y ONIA Platform a las 13:40.
+- El navegador anduvo en Recepción, Marketing y Boss No-Code. En Boss Code (13:15:37) y ONIA Platform (13:15:38) no apareció. Abiertas solas, después, sí: Boss Code a las 13:24 y ONIA Platform a las 13:39.
 - **Sin probar:** el modo interactivo.
 
 ## Relevo del Administrador (2-nov, a la tarde)
@@ -60,8 +60,10 @@ La sesión de Claude es `local_23a5279d-9550-4284-828e-bf8bef1d59c2`. Coordina a
 **Pendiente:**
 - **Marketing:** su estado, `marketing.md`, tiene que estar en `main`. Está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), y se le pidió mergearlo el 2-nov.
 - **Campaña de Meta Ads:** el [PR de la campaña con la oferta 3-4-5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) sigue abierto. Meta todavía no tiene página ni tarjeta: según Marketing, el 2-nov, eso lo hace Sergio (sin enlace). Lo lleva Marketing con él.
-- **Ramas de Grok con datos de un lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): nadie tiene asignado borrarlas. Sergio ya eligió borrarlas después del rescate, pero asignárselo a Boss No-Code lo frenó la app, por irreversible. Falta que Sergio diga quién se lo pide.
-- **Herramientas de Codex** ([issue #128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128)): Higgsfield, Vercel y Gmail quedan con la regla de no usarlas sin su sí, como eligió Sergio. Notion y Drive, que se apagaron el 28-oct, figuran prendidos con otro nombre; falta preguntarle.
+- **Ramas de Grok con datos de un lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): quedan como están hasta después del taller. Sergio eligió, con botones, "Después del taller" (2-nov, sesión del Administrador). Después, alguien tiene que pedirle a Boss No-Code que las borre, con el sí de Sergio citado.
+- **Herramientas de Codex** ([issue #128](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128)): Higgsfield, Vercel y Gmail quedan con la regla de no usarlas sin su sí, como eligió Sergio. Para Notion y Drive, que se apagaron el 28-oct y figuran prendidos con otro nombre, Sergio eligió "Sí, apagarlos (Recomendada)" (2-nov). No se apagan desde `config.toml`: se probó `enabled = false` y Codex los siguió viendo, así que se volvió atrás. Vienen de su cuenta de ChatGPT. Falta pasarle los pasos oficiales para apagarlos ahí.
+- **Qué deciden solas las sesiones:** hay un borrador de matriz de autonomía, armado y verificado el 2-nov, en `C:\Users\PC\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_b6a36bc7-c263-4551-8a70-0d2980e34ab4\autonomia-borrador-2nov.json`. Las dos verificaciones pidieron cambios. Lo más urgente: desde el 3-nov, el `AGENTS.md` global de Codex pide el OK de Sergio para cada push y merge, y el del repo dice que Codex no mergea ([issue #106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)). Así, cada PR le llega a él.
+- **Panel de dirección:** está en la rama `claude/panel-direccion`, en `otros/panel-direccion/`, y se abre en localhost con el comando de su `README.md`. Falta su PR.
 - **Boss Code:** el inventario del VPS, cuando Sergio cargue la clave.
 - **Analista:** auditar los PRs del 2-nov, en su primera sesión en Codex.
 

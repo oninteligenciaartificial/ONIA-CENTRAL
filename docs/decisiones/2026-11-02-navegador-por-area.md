@@ -55,4 +55,4 @@ Ese ejemplo es el de Marketing; para otra área se cambia `marketing` por su nom
 
 ## Cómo se vuelve atrás
 
-Restaurar `config.toml` desde el respaldo y borrar los ocho `<sesión>.config.toml` de `C:\Users\PC\.codex\`: los cinco de las áreas y los de Administrador, Pelau y Analista. Las carpetas de los perfiles, en `/home/pc-linux-sergio/.onia-browser/`, se pueden borrar después.
+Restaurar `config.toml` desde el respaldo y borrar los cinco `<área>.config.toml` de `C:\Users\PC\.codex\`. Los de Administrador, Pelau y Analista solo fijan modelo y esfuerzo, y pueden quedar. Las carpetas de los perfiles, en `/home/pc-linux-sergio/.onia-browser/`, se pueden borrar después.
