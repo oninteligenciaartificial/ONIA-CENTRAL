@@ -1,6 +1,6 @@
 # Campaña de Meta Ads del taller (clases 4-5-6-nov): qué cambia y qué falta
 
-2-nov-2026, por la sesión Marketing (Claude Code). Parte de la oferta de `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y de la [decisión del 2-nov que pasa las clases al miércoles 4, jueves 5 y viernes 6, a las 19:00](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136) (precio, grabaciones y devolución no cambian). Corrige, para la campaña, el [plan de Meta Ads](plan-meta-ads-borrador.md) (secciones "Estructura de la campaña", "Mensaje" y "Creativos con su cara") y el texto del anuncio del [PR #72 (temario, WhatsApp y guiones)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72), que siguen con Bs 50 o Bs 120 y fechas del 3, 5 y 7.
+2-nov-2026, por la sesión Marketing (Claude Code). Parte de la oferta de `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md` y de la [decisión del 2-nov que pasa las clases al miércoles 4, jueves 5 y viernes 6, a las 19:00](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136) (el precio no cambia; las grabaciones se entregan el viernes 6 y quedan para siempre, y no hay devolución salvo que ONIA no dé una clase, que se pasa a otra fecha). Corrige, para la campaña, el [plan de Meta Ads](plan-meta-ads-borrador.md) (secciones "Estructura de la campaña", "Mensaje" y "Creativos con su cara") y el texto del anuncio del [PR #72 (temario, WhatsApp y guiones)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72), que siguen con Bs 50 o Bs 120 y fechas del 3, 5 y 7.
 
 **Estado: borrador.** Lo ve un cliente y es gasto: Sergio Urcullo aprueba los textos y los creativos con captura, y la campaña queda en pausa hasta su sí.
 
@@ -33,9 +33,9 @@ Para anunciar con una página hay que asociarla a la cuenta, y no se comprobó s
 
 - **Fechas fuera del anuncio**, como dice el plan: la campaña corre varios días y un anuncio con "miércoles 4" quedaría viejo el 5. Las fechas van en el saludo de WhatsApp.
 - **Un solo precio:** "Un solo pago de Bs 50 por las 3 clases". Sin Bs 120 (decisión del 1-nov). Los cupos: el [PR #110](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110) no los usa y la decisión del 1-nov no dice nada; sin decidir, por eso el anuncio no los nombra.
-- **Grabaciones:** "grabaciones incluidas", sin plazo, porque hasta cuándo y dónde no está decidido.
+- **Grabaciones:** "grabaciones incluidas". Quedan para siempre (decisión del 2-nov); dónde se comparten sigue sin decidir.
 - **Cómo se graban las clases** no está decidido (Meet gratis no graba, según la decisión del 1-nov). El anuncio promete grabaciones: hay que resolverlo antes del miércoles 4. Las grabaciones se entregan el viernes 6, al terminar la última clase (decisión del 2-nov).
-- **Nada de "devolución"** ni certificado en el anuncio: no están decididos.
+- **Devolución:** ninguna, salvo que ONIA no dé una clase, que se pasa a otra fecha (decisión del 2-nov). No va en el anuncio: la dicen el saludo de WhatsApp y la web. El certificado no está decidido y no se nombra.
 
 ### Texto principal
 
