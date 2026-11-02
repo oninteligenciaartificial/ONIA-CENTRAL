@@ -38,21 +38,31 @@ Se mide el **contexto ocupado**, no las horas ni los días que lleva abierta una
 
 Fuente de las mediciones: los [datos del día](2026-11-01-plan-equipo-datos.md); método: [Claude `/context`](https://code.claude.com/docs/es/commands), [Codex `/status`](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
 
-### Topes propuestos
+### Topes medidos
 
-Son presupuestos de ONIA, **incluyen la carga inicial** y deben validarse con las primeras tareas reales.
+Corrección del 1-nov-2026, aprobada por Sergio con botones: "Sí, corregilo (Recomendada)". Los topes anteriores (20% a 25% de la ventana) caían casi en el arranque. Lo marcó él: "¿Cómo vas a archivar las sesiones o hacer relevo a partir del 20% si ese es literalmente el inicio de cada sesión?". Una sesión de Claude llega a unos 120.000 tokens (12%) antes de empezar a trabajar.
 
-| Tipo de sesión | Tope sobre su ventana | Claude: 1.000.000 | Codex Sol/Terra: 500.000 | Codex Astra/Luna: 272.000 |
-|---|---:|---:|---:|---:|
-| Área, objetivo normal | 25% | 250.000 | 125.000 | 68.000 |
-| Coordinadora / Pelau | 20% | 200.000 | 100.000 | 54.400 |
-| Analista | 25% | 250.000 | 125.000 | 68.000 |
-| Revisión independiente | 20% | 200.000 | 100.000 | 54.400 |
-| Trabajo largo, dividido en hitos | 40% | 400.000 | 200.000 | 108.800 |
+Se mide en dos puntos:
+- **A, al abrir,** antes del primer mensaje. En Claude, entre 92.247 y 99.197 tokens (`get_usage`, 1-nov).
+- **B, después del relevo:** con `AGENTS.md`, las lecciones, este plan, el estado del área y el encargo ya leídos. En Claude, unos 120.000. Es una estimación: se sumó lo que se lee al arrancar, a unos 3,1 caracteres por token, que es lo que dio la medición de los archivos que Claude carga solo. Cada sesión mide su B y lo anota en su estado.
 
-Ventanas de Codex: los [datos del día](2026-11-01-plan-equipo-datos.md), «Modelos de la cuenta»; Sol también figura en [modelos oficiales](https://learn.chatgpt.com/docs/models). Ventanas de los modelos Claude elegidos: [configuración de modelos](https://code.claude.com/docs/es/model-config).
+El trabajo se cuenta desde B:
 
-**Regla propuesta:** el último 20% de cada presupuesto se reserva para cerrar el hito y escribir el relevo. Con un tope de 125.000, el relevo empieza a los 100.000. No es capacidad adicional. Si la carga inicial ya alcanza ese punto, se reduce lo que se carga o se divide el encargo antes de trabajar. Los números no quedan validados hasta medir Codex. Base técnica: [ingeniería de contexto de Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
+| Tipo de sesión | Trabajo desde B | Relevo en Claude (B ≈ 120.000) | Relevo en Codex Sol/Terra |
+|---|---:|---:|---:|
+| Área, objetivo normal | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
+| Coordinadora / Pelau | 120.000 | ≈ 240.000 (24%) | B + 80.000 |
+| Analista, por auditoría | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
+| Revisión independiente | una revisión | sesión nueva cada vez | sesión nueva cada vez |
+| Trabajo largo, por hitos | 400.000 | ≈ 520.000 (52%) | B + 200.000 |
+
+- **Techo:** ninguna sesión pasa del 60% de su ventana: 600.000 tokens en Claude, 300.000 en Codex Sol y Terra, y 163.000 en Astra y Luna.
+- **De dónde sale el trabajo de 200.000:** el 1-nov, cada área gastó entre 50.000 y 120.000 tokens en su primer objetivo. Pasó de unos 96.000 al abrir a entre 168.000 y 220.000 (`get_usage`). Son unos dos objetivos como esos.
+- **En Codex,** A y B no están medidos. Se miden el 3-nov con `/status` en la primera sesión de cada área, y se ajustan acá los números.
+- **Cómo bajar B:**
+  - `docs/lecciones.md` pesa unos 11.200 tokens y se carga en cada sesión;
+  - del plan de aprendizaje (`otros/aprender-ia-y-agentes.md`, unos 9.800) alcanza con leer el tema actual;
+  - cada área puede quedarse solo con sus conectores: hoy las herramientas MCP ocupan entre 20.000 y 26.000 tokens.
 
 Se releva también al terminar el objetivo, cambiar de asunto o perder claridad, aunque quede ventana. «Trabajo largo» se define al empezar; no sirve para extender una sesión que mezcló objetivos. `AGENTS.md:34`.
 
