@@ -8,7 +8,7 @@
 
 Con botones, en la sesión Marketing (sin enlace):
 
-- **Presupuesto:** "US$10/día hasta el 5-nov (Recomendada)", elegido cuando las clases eran 3-4-5. Son unos US$30 en 3 días (3, 4 y 5-nov), si arranca el 3-nov. Con las clases del 4 al 6, si sigue hasta el 6-nov son US$40: **sin decidir**, lo decide Sergio Urcullo.
+- **Presupuesto:** "US$10/día hasta el 5-nov (Recomendada)", elegido cuando las clases eran 3-4-5. Son unos US$30 en 3 días (3, 4 y 5-nov), si arranca el 3-nov. Con las clases del 4 al 6, el 2-nov lo confirmó: "Empecemos hasta el 5 de noviembre".
 - **Fechas (2-nov, después):** clases miércoles 4, jueves 5 y viernes 6, a las 19:00. La campaña arranca el 3-nov, un día antes de la primera clase.
 - **Creativos:** "Grabás 2 videos con los guiones del plan (Recomendada)". Los graba él; los guiones son los de abajo.
 - **Nombre:** "claude de 0 a 100 y no es ilegal, no creo que este registrado, solo fue usado una vez, no habra problemas". Queda ese nombre, **sin confirmar con un abogado** (`docs/lecciones.md`). El anuncio dice "Taller independiente, no oficial de Anthropic" y no usa el logo de Claude.
@@ -68,7 +68,7 @@ Sigue la estructura del plan (ayuda de Meta: [anuncios a WhatsApp](https://www.f
 | Nivel | Valor |
 |---|---|
 | Campaña | "Claude 0 a 100 · V1 · WhatsApp". Interacción, destino WhatsApp |
-| Conjunto | Toda Bolivia, 18 años o más, sin intereses, ubicaciones automáticas. Presupuesto diario US$10. Inicio martes 3-nov. Fin: jueves 5-nov (lo elegido) o viernes 6-nov: sin decidir. Hora de inicio y zona horaria de la cuenta: **sin confirmar** (Bolivia es UTC−4) |
+| Conjunto | Toda Bolivia, 18 años o más, sin intereses, ubicaciones automáticas. Presupuesto diario US$10. Inicio martes 3-nov. Fin jueves 5-nov. Hora de inicio y zona horaria de la cuenta: **sin confirmar** (Bolivia es UTC−4) |
 | Anuncios | "Video 1 · contraste" y "Video 2 · demo", con el texto de arriba |
 | Estado | Borrador o en pausa. Publicar es activar (`ads_activate_entity`): solo con el sí de Sergio Urcullo con captura |
 
