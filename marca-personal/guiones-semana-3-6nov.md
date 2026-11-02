@@ -18,6 +18,7 @@
 - **Sin prometer ingresos ni ahorros en plata, sin "con la cuenta gratis"** (el temario no tiene esa prueba en `main`), **sin la edad** (no está en `main`) y **sin decir que ONIA Platform anda para clientes** (issues #27 y #28).
 - **Sin datos de clientes ni de alumnos en pantalla:** ni chats, ni nombres, ni caras de la clase. Las demos usan archivos de ejemplo, como `ventas-octubre-ejemplo.csv` del [PR #72](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72).
 - **Sin el logo de Claude** y sin dar a entender que el taller es oficial de Anthropic.
+- **El nombre "Claude de 0 a 100"** lo eligió Sergio Urcullo el 2-nov: "claude de 0 a 100 y no es ilegal, no creo que este registrado, solo fue usado una vez, no habra problemas" (sesión Marketing). Sigue **sin confirmar con un abogado** (`docs/lecciones.md`); si hiciera falta, la opción sin la marca es "Taller de IA de 0 a 100".
 - **Formato:** vertical 9:16, 30 a 45 segundos, subtítulos grandes palabra por palabra y el texto dentro de la zona segura ([guía de anuncios](guias/anuncios.md)).
 - **Se graban juntos** el lunes 2 a la noche, con los 2 videos del anuncio, salvo el reel 6, que necesita la clase 1.
 
@@ -27,7 +28,7 @@
 
 - **Gancho (0-3 s, a cámara):** "Mañana empiezo a enseñar a usar Claude de 0 a 100."
 - **Objeción (3-8 s):** "Pero Sergio, nunca usé una IA más que para preguntarle cosas."
-- **Cuerpo (8-25 s):** "Justo para eso es. Empezamos de cero: cómo pedirle bien, cómo darle tus archivos y cómo armar un proyecto para no explicarle todo cada vez. Tres clases en vivo, miércoles, jueves y viernes a las siete de la noche."
+- **Cuerpo (8-25 s):** "Justo para eso es. Empezamos de cero: cómo pedirle bien, cómo darle tus archivos y cómo armar un proyecto para no explicarle todo cada vez. Tres clases en vivo, miércoles, jueves y viernes a las siete de la noche, hora de Bolivia."
 - **Cierre (25-35 s):** "Un solo pago de cincuenta bolivianos por las tres, con las grabaciones. Tocá el link de mi bio y escribime."
 - **Texto en pantalla:** "Claude de 0 a 100" · "Mié 4, jue 5 y vie 6 · 19:00" · "Bs 50 las 3 clases · con grabaciones" · "Link en la bio".
 
@@ -43,7 +44,7 @@
 
 ### Reel 3 · mañana · "Hoy arranca"
 
-- **Gancho (0-3 s, a cámara):** "Hoy a las siete arranca Claude de 0 a 100."
+- **Gancho (0-3 s, a cámara):** "Hoy a las siete de la noche, hora de Bolivia, arranca Claude de 0 a 100."
 - **Objeción (3-7 s):** "Pero Sergio, hoy no puedo a esa hora."
 - **Cuerpo (7-20 s):** "Tranqui: las tres clases quedan grabadas y te las paso el viernes, para siempre."
 - **Cierre (20-30 s):** "Bs 50 por las tres. Tocá el link de mi bio y escribime."
@@ -55,7 +56,7 @@ Se publica después de la clase, a las 21:30 o más tarde.
 
 - **Gancho (0-3 s, a cámara):** "Mi empresa la llevan agentes de IA. Yo apruebo."
 - **Objeción (3-7 s):** "Pero Sergio, ¿y si se equivocan?"
-- **Cuerpo (7-30 s, pantalla con b-roll):** "Por eso cada área tiene su agente, cada cambio pasa por la revisión de otro agente que no lo escribió, y lo que se publica o cuesta plata lo apruebo yo. Esta semana, por ejemplo, uno armó la campaña del taller y otro la revisó."
+- **Cuerpo (7-30 s, pantalla con b-roll):** "Por eso cada área tiene su agente, cada cambio pasa por la revisión de otro agente que no lo escribió, y lo que se publica o cuesta plata lo apruebo yo. Esta semana, por ejemplo, uno armó la campaña del taller y otro la revisó." Fuente: la campaña del taller tiene sus revisiones escritas de Codex en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120#issuecomment-6581740551), del 2-nov.
 - **Cierre (30-38 s):** "Para llegar a eso, primero hay que saber pedirle bien a la IA. Eso enseño en el taller. Link en la bio."
 - **Toma:** la lista de sesiones o un PR con su revisión, **sin** secretos, cuentas, números de teléfono ni datos de clientes. La pantalla la revisa Sergio Urcullo antes de usarla.
 
@@ -63,10 +64,10 @@ Se publica después de la clase, a las 21:30 o más tarde.
 
 ### Reel 5 · mañana · "La fórmula para pedirle bien"
 
-- **Gancho (0-3 s, a cámara):** "Si la IA te responde cualquier cosa, el problema es el pedido."
+- **Gancho (0-3 s, a cámara):** "Si la respuesta de la IA no te sirve, probá mejorar el pedido."
 - **Objeción (3-6 s):** "Pero Sergio, yo le escribo clarito."
 - **Pasos (6-28 s, tarjetas):** "Probá con cuatro partes. Quién sos y para qué es. Qué querés exactamente. Cómo lo querés: tabla, lista o mensaje. Y un ejemplo de cómo te gusta."
-- **Cierre (28-35 s):** "Guardalo. Y si querés practicarlo en vivo, hoy es la clase dos. Link en la bio."
+- **Cierre (28-35 s):** "Guardalo. Y si querés practicarlo en vivo, hoy a las siete, hora de Bolivia, es la clase dos. Link en la bio."
 - **Texto en pantalla:** "1. Contexto" · "2. Tarea" · "3. Formato" · "4. Ejemplo".
 
 ### Reel 6 · noche · "Lo que pasó en la clase 1"
@@ -85,7 +86,7 @@ Solo si hay material de la clase 1 que no muestre a nadie. Si no, se reemplaza p
 - **Gancho (0-3 s, a cámara):** "Hoy es la última clase de Claude de 0 a 100."
 - **Objeción (3-7 s):** "Pero Sergio, me perdí las dos primeras."
 - **Cuerpo (7-20 s):** "No pasa nada: te sumás hoy en vivo y esta noche te llegan las grabaciones de las tres."
-- **Cierre (20-28 s):** "Bs 50. Tocá el link de mi bio y escribime antes de las siete."
+- **Cierre (20-28 s):** "Bs 50. Tocá el link de mi bio y escribime antes de las siete de la noche, hora de Bolivia."
 
 ### Reel 8 · noche · "Tres cosas que Claude hace con un archivo tuyo"
 
