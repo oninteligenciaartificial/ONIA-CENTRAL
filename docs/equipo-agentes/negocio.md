@@ -8,17 +8,17 @@ Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisi�
 
 ## Objetivo: Bs 3.000 cobrados al 6-nov (antes 5-nov; Sergio lo confirmó el 2-nov)
 
-Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`). Los impuestos los ve él con el contador.
+Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`); el 2-nov confirmó que el corte pasa al 6-nov. Los impuestos los ve él con el contador.
 
 | # | Hecho cuando | Estado |
 |---|---|---|
 | 1 | Una sola oferta en `docs/decisiones/` y acá | Hecho por este PR |
 | 2 | Salas de Meet en las fechas nuevas, sin invitados | Hecho el 1-nov |
 | 3 | Comprobado si Meet gratis graba | No graba (abajo); Sergio elige cómo grabar |
-| 4 | Textos de WhatsApp y del QR corregidos, en borrador | En un PR aparte, para su sí con captura |
+| 4 | Textos de WhatsApp y del QR corregidos | Hecho: aprobados por Sergio Urcullo el 2-nov y en `main` (con las fechas 4, 5 y 6-nov) |
 | 5 | Pago de prueba con Yolo Pago | Lo hace Sergio |
 | 6 | Registro privado de consultas, comprobantes y pagos, fuera de Git | Pendiente |
-| 7 | Bs 3.000 conciliados con el banco al 5-nov | Pendiente |
+| 7 | Bs 3.000 conciliados con el banco al 6-nov | Pendiente |
 
 ## Taller "Claude de 0 a 100"
 
@@ -92,9 +92,9 @@ Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA
 ## Pendientes del área
 
 - [ ] Pago de prueba con el QR de Yolo Pago antes del martes 3 (lo hace Sergio Urcullo).
-- [ ] Textos de WhatsApp del taller con la oferta nueva, en borrador, en un PR aparte que aprueba Sergio Urcullo con captura. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar, y el guion de Grok Bot dice Bs 70 desde el 2-nov.
+- [x] Textos de WhatsApp del taller con la oferta nueva: aprobados por Sergio Urcullo el 2-nov y en `main`. `workshops-comunidad/plan-meta-ads-borrador.md` es de Marketing, que corrige la oferta vieja.
 - [ ] Registro privado de consultas, comprobantes y pagos verificados, fuera de Git porque tiene datos de clientes.
-- [ ] Conciliar los pagos con el banco al 5-nov.
+- [ ] Conciliar los pagos con el banco al 6-nov.
 - [ ] Traer de `/workspace` los borradores de diagnóstico gratis, sin datos de clientes, si Sergio Urcullo los pide.
 
 ## Para otras áreas
