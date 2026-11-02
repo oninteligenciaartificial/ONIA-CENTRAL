@@ -6,11 +6,11 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 ## Qué hay y dónde
 
-| Cosa | Dónde está | Comprobado el 1-nov |
+| Cosa | Dónde está | Comprobación y fecha |
 |---|---|---|
 | Sitio personal `sergiourcullo.vercel.app` | Repo privado `oninteligenciaartificial/sergiourcullo`, copia local en `C:\dev\proyectos\sergiourcullo-deploy`, al día con `origin/main` | El sitio responde 200. Último commit `7412814`, del 19-sep. Cada commit a `main` lo publica Vercel solo, en Production (deployments de `vercel[bot]` en GitHub). Mergear a `main` de ese repo es publicar. |
 | Web del taller | [PR del sitio que agrega `/taller`](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1), rama `taller-3-4-5` | 2-nov: rehecha corta desde la web de Grok, con la revisión 2 de Codex en "aprobar". Sin publicar: espera el sí de Sergio Urcullo. La web original de Grok está en la rama `grokbot/workspace-20261101` de ONIA-CENTRAL, en `grokbot-workspace/entregables-workshop/`. |
-| WhatsApp del taller, +591 75414930 | `wa.me/59175414930` | 2-nov: sin login, el enlace abre el chat de la cuenta "Onia" con el texto ya escrito. No se mandó nada. |
+| WhatsApp del taller, +591 75414930 | `wa.me/59175414930?text=TALLER` | 2-nov: sin login, el enlace abre el chat de la cuenta "Onia" con "TALLER" ya escrito. No se mandó nada. |
 | Cal.com | `/llamada` del sitio redirige a `cal.com/sergiourcullo/20min` (`vercel.json`) | La redirección da 307 y la página de Cal.com da 200. |
 | VPS, Chatwoot y n8n de producción | En el VPS | No se probó el acceso: no se entró al VPS ni se usó ninguna clave. No hay conector de la app para Chatwoot, n8n ni Cal.com. |
 
@@ -57,6 +57,6 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 
 ## Cómo se comprobó (2-nov)
 
-- WhatsApp: el enlace `wa.me/59175414930`, abierto sin login en el navegador de la app de Claude.
+- WhatsApp: el enlace `wa.me/59175414930?text=TALLER`, abierto sin login en el navegador de la app de Claude.
 - Web: la página servida en local, vista a 375 px y en escritorio, sin scroll horizontal. La vista previa de Vercel de la rama dio `success` (`gh api .../deployments`) y pide login de Vercel.
 - Revisión: dos rondas de `codex exec --sandbox read-only`, escritas en el PR.
