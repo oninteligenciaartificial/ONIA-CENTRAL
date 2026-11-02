@@ -41,6 +41,8 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 ## 5. Confirmación (solo con el pago verificado)
 
+En los tramos de abajo, la hora de inicio entra y la de fin no: a las 21:00 en punto rige el tramo que empieza a las 21:00.
+
 "¡Listo, ya tienes tu lugar en *Claude de 0 a 100*! 🎉 Te sumo al grupo de WhatsApp del taller, donde pasamos el link de Meet antes de cada clase. [FRASE DE CLASE]"
 
 [FRASE DE CLASE], según cuándo se verifica el pago (hora de Bolivia). Cada clase va de 19:00 a 21:00, en dos salas:
@@ -53,6 +55,8 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 - Desde el 6-nov a las 21:00: "Las 3 clases ya pasaron: te paso las grabaciones enseguida."
 
 ## 6. Recordatorio a quien no pagó
+
+Igual que arriba: la hora de inicio entra y la de fin no.
 
 Una sola vez, unas 20 horas después de su último mensaje, y solo si nadie más escribió en ese chat:
 
