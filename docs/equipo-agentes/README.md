@@ -17,10 +17,10 @@ Claude vence el 3-nov ([un jefe por área](../decisiones/2026-11-02-tres-proyect
 **Cuando hace falta la PC** (`AGENTS.md`, "La PC, cuando hace falta"):
 
 1. Si se puede hacer en el repo, se hace en el repo.
-2. Si no, el jefe abre un issue en ONIA-CENTRAL con la tarea: qué hacer, qué no tocar y dónde dejar el resultado, en un PR o en el mismo issue. Si toca producción, gasto o algo que se publica, nada de eso se hace sin el sí de Sergio Urcullo (`AGENTS.md`, "Frenos"). Los logins, las claves y las cuentas los hace él.
+2. Si no, el jefe abre un issue en ONIA-CENTRAL con la tarea: qué hacer, qué no tocar y dónde dejar el resultado, en un PR o en el mismo issue. El issue no lleva datos de clientes ni secretos. Si toca producción, gasto o algo que se publica, nada de eso se hace sin el sí de Sergio Urcullo (`AGENTS.md`, "Frenos"). Los logins, las claves y las cuentas los hace él.
 3. En el issue deja escrita la línea entera para abrir la sesión de Codex del área: la de su proyecto en "En Codex, después", con este texto entre las comillas: `Hacé solo el issue N de ONIA-CENTRAL, que es una tarea de la PC, y dejá el resultado donde dice el issue.`, con el número del issue en lugar de la N.
 4. Sergio Urcullo la corre en una ventana de PowerShell. Si la tarea es suya, como cargar una clave, la hace él y lo anota en el issue.
-5. El jefe sigue desde el issue o el PR. Nada queda solo en la PC.
+5. El jefe sigue desde el issue o el PR. Nada queda solo en la PC, salvo lo que no entra a Git (`AGENTS.md`, "Qué no entra a Git"), como las claves o el registro privado con datos de clientes: de eso, al repo va solo qué se hizo.
 
 Texto para las instrucciones de cada proyecto:
 
@@ -54,10 +54,11 @@ Cada jefe es una sesión de Codex en su carpeta y con su perfil. Las carpetas y 
 
 **Los navegadores, sin decidir:** Marketing y ventas arranca con el perfil `marketing`, donde va la cuenta de Meta. Los perfiles `boss-no-code` (pedido para WhatsApp, Yolo Pago y Chatwoot) y `recepcion` (para las cuentas secundarias de Instagram y TikTok) eran de áreas que ahora son parte de Marketing y ventas. Juntar esas cuentas en `marketing` las pone en el mismo navegador que Meta, y Sergio Urcullo pidió un navegador por área para que una sesión no "se meta a Meta" ([navegador por área](../decisiones/2026-11-02-navegador-por-area.md)). Qué perfiles quedan y qué cuentas lleva cada uno lo decide él, que es quien las carga.
 
-**Antes de usar las líneas de abajo, una sesión en la PC las lee con `ParseInput`, sin correrlas** ("Núcleo" de [`docs/lecciones.md`](../lecciones.md), punto 14). En este cambio no se leyeron, porque se armó en una computadora sin PowerShell. La primera vez, Sergio Urcullo abre la sesión de Desarrollo a mano, con los mismos comandos del ensayo del 2-nov sin `exec`, y le pide que las lea:
+**Antes de usar las líneas de abajo, una sesión en la PC las lee con `ParseInput`, sin correrlas** ("Núcleo" de [`docs/lecciones.md`](../lecciones.md), punto 14). En este cambio no se leyeron, porque se armó en una computadora sin PowerShell. La primera vez, Sergio Urcullo abre la sesión de Desarrollo a mano, con estos comandos, que primero traen `main` para que la sesión arranque con las reglas nuevas, y le pide que las lea. Si `git pull` da error, no se abre Codex:
 
 ```powershell
 Set-Location C:\dev\worktrees\ONIA-CENTRAL\boss-code
+git pull --ff-only origin main
 codex -p boss-code
 ```
 
@@ -95,7 +96,7 @@ Cuando se termine Claude, el 3-nov o cuando se corte la mensualidad, Codex sigue
 
 ## Qué pasó con las otras sesiones
 
-- **Las sesiones viejas de Claude Code:** antes de crear los proyectos, Sergio Urcullo archiva las que siguen abiertas, las de cada área y las dos del Administrador, para que ninguna siga escribiendo en los estados (`AGENTS.md`, "Cada área tiene un solo jefe a la vez"). Cuáles eran está en [coordinacion](coordinacion.md), "Sesiones abiertas". La propuesta mínima de hooks de Grok Bot, que llevaba una del Administrador, pasa a Desarrollo.
+- **Las sesiones viejas de Claude Code:** antes de crear los proyectos, Sergio Urcullo archiva las que sigan abiertas, de cada área y del Administrador, para que ninguna siga escribiendo en los estados (`AGENTS.md`, "Cada área tiene un solo jefe a la vez"). Antes de archivar cada una, se mira que no deje trabajo sin guardar: que lo suyo esté en un PR, o que `git status` en su carpeta no muestre cambios, porque archivar puede borrar su carpeta ([coordinacion](coordinacion.md), "Para abrir las sesiones en Codex (3-nov)"). Las que había el 2-nov están en [coordinacion](coordinacion.md), "Sesiones abiertas".
 - **Administrador:** no hay. Su infraestructura pasa a Desarrollo. Si dos proyectos necesitan el mismo archivo, va primero el que ya tiene el PR abierto, y si no se ponen de acuerdo, decide Sergio Urcullo (`AGENTS.md`, "Un agente por tarea").
 - **Pelau:** cada jefe le da su resumen a Sergio Urcullo al cerrar un trabajo.
 - **Analista:** cada PR sigue con su revisión independiente escrita, y Desarrollo encarga una auditoría por semana, en vez de una por día.

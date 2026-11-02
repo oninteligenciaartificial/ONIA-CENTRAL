@@ -17,9 +17,10 @@ Al cierre del 2-nov. Desde el 3-nov, esto lo lleva el jefe de ONIA Platform; có
 - **El panel interno que armó Grok Bot** (`/panel`, rama `feat/panel-interno`, commit `edef74d`): está solo en su `/workspace`, no en GitHub. El Administrador lo replicó como página local en `otros/panel-direccion/` ([PR #155](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/155), mergeado el 2-nov), porque Sergio Urcullo lo pidió para ese día. Sus datos los pone al día Desarrollo. Subir la rama de Grok Bot a `onia-platform` queda para cuando él lo decida. Si la sube, se revisa antes de armar el PR: según el plan de Grok Bot, en el servidor mostraría los datos del día en que se arma, no en vivo, y trae una página sin login para usar desde la propia PC.
 
 **Qué sigue:**
-1. Leer en el #111 lo que encontró Desarrollo (antes Boss Code) en el VPS: qué IP le llega a la app y la propuesta de la QA aparte.
-2. Con eso, probar el #154 de `onia-platform` y llevarle a Sergio Urcullo el merge, con la evidencia.
-3. Seguir el orden de la recomendación: #168, #185, #184 y #70, y después los cinco para arreglar, cada uno en su rama.
+1. Pasar a este "Ahora" lo que anotó la cola del 2-nov en el [PR #167](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/167), que quedó abierto sobre la versión anterior de este archivo (el runner de la CI apagado, lo que espera a Sergio Urcullo sobre la promesa "a cualquier hora" y la constancia de aceptación), y cerrarlo.
+2. Leer en el #111 lo que encontró Desarrollo (antes Boss Code) en el VPS: qué IP le llega a la app y la propuesta de la QA aparte.
+3. Con eso, probar el #154 de `onia-platform` y llevarle a Sergio Urcullo el merge, con la evidencia.
+4. Seguir el orden de la recomendación: #168, #185, #184 y #70, y después los cinco para arreglar, cada uno en su rama.
 
 **Lo que espera a Sergio Urcullo:**
 - cargar la clave del VPS en esta PC, para que entre Desarrollo;

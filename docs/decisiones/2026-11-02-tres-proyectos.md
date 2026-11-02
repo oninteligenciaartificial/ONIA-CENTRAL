@@ -1,6 +1,6 @@
 # Un jefe por área: tres proyectos
 
-2-nov-2026. **Propuesta, pendiente de la aprobación de Sergio Urcullo.** Toca el `AGENTS.md` y cómo trabaja la empresa, así que la aprueba él (`AGENTS.md`, "Lo aprueba Sergio Urcullo, siempre"). Su respuesta se cita al final antes del merge.
+2-nov-2026. **Aprobada por Sergio Urcullo el 2-nov,** con lo que sumó: su respuesta está citada al final, en "Aprobación de Sergio Urcullo". Toca el `AGENTS.md` y cómo trabaja la empresa, así que la aprueba él (`AGENTS.md`, "Lo aprueba Sergio Urcullo, siempre").
 
 ## Qué pidió Sergio Urcullo
 
@@ -73,7 +73,6 @@ Así no queda nada sin dueño. Sale de la sección "Equipo de agentes" del `AGEN
 | Pasar lo de un área a otra | El Administrador repartía las tareas, Recepción pasaba lo útil de lo que mandaba Sergio y Pelau sumaba el tablero a sus resúmenes | Cada jefe mira al arrancar lo que el tablero tiene sin contestar para su área, y anota ahí lo que deja para otra | `AGENTS.md` anterior, "Equipo de agentes"; `recepcion.md` |
 | Lo que solo está en la PC | Cada sesión de Claude Code, en la PC | La sesión de Codex del área, que abre Sergio para esa sola tarea, o él mismo, con el pedido y el resultado en el repo | `AGENTS.md`, "La PC, cuando hace falta" |
 | Archivar las sesiones viejas de Claude Code, para que ninguna siga escribiendo en los estados | Administrador | Sergio, antes de crear los proyectos; Desarrollo comprueba con él que quedaron archivadas | `coordinacion.md`, "Sesiones abiertas" |
-| La propuesta mínima de hooks de Grok Bot (rama `claude/hooks-contexto-20261102`) | Administrador | Desarrollo, en un PR propio que aprueba Sergio porque toca permisos | `coordinacion.md`, "Actualización del 2-nov, cerca de las 10:00 de Bolivia" |
 | Ordenar quién va primero cuando dos necesitan el mismo archivo | Administrador | Va primero el que ya tiene el PR abierto; si no se ponen de acuerdo, decide Sergio | `AGENTS.md`, "Un agente por tarea" |
 | Auditoría de PRs y revisiones | Analista, una vez al día | Desarrollo, una vez por semana, con un agente nuevo; la primera cubre desde el 2-nov. El informe va a un issue, y Desarrollo le pasa a cada área lo suyo por el tablero | `AGENTS.md` |
 | Revisión de cada PR | Un agente nuevo | Un agente nuevo; en Codex, con `codex exec --sandbox read-only` | `AGENTS.md` |
@@ -95,4 +94,4 @@ Los frenos, lo que aprueba Sergio Urcullo, los permisos, la revisión escrita en
 
 Se le preguntó el 2-nov-2026, en el hilo del armado del proyecto Onia de claude.ai, como dice "Aprobaciones rápidas", del `AGENTS.md`: "Sergio, tenés este cambio: el equipo queda en 3 proyectos, Marketing y ventas, Desarrollo y ONIA Platform, cada uno con su jefe y sin jefe general, para que ninguno cargue lo de los otros. ¿Lo aceptás?". La pregunta nombraba lo que suma a su pedido, con las dos decisiones suyas que cambia (Pelau y la auditoría diaria), y daba tres opciones: "Sí, todo" (recomendada), "Sí, pero la auditoría sigue siendo diaria" y "No, cambiá algo". La pregunta completa está en el PR.
 
-Respondió el mismo día: "Está bien el plan, pero también necesitamos que a veces use la PC y que algunos cambios, o en lugar de que vayan a la PC, vayan al repositorio." Lo de la PC entró en el punto 5 y en el `AGENTS.md`, "La PC, cuando hace falta".
+Respondió el mismo día: "Está bien el plan, pero también necesitamos que a veces use la PC y que algunos cambios, o en lugar de que vayan a la PC, vayan al repositorio." Lo de la PC entró en el punto 5 y en el `AGENTS.md`, "La PC, cuando hace falta". Después, ante la revisión 3, dijo: "Cerralo ahora, necesitamos enviar los trabajos, no hay yanto que analizar" (2-nov, 19:54 de Bolivia), y el cambio entró con los arreglos de esa revisión, sin otra ronda.

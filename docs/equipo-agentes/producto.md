@@ -41,6 +41,7 @@ Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; c�
 Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones").
 
 - 2-nov: Sergio Urcullo dijo que al día siguiente tenían que correr los anuncios, y el hilo del armado del equipo pidió abrir ya un hilo para lanzarlos. Él quería primero terminar el armado y crear los proyectos ("No dije que lances, primero esperamos que terminamos y ahi armaos los proyects"). Regla: se sigue su orden de pasos, y lo demás se le propone sin lanzarlo. Ya era lección ("Trabajo con Sergio Urcullo"), y pasó al Núcleo.
+- 2-nov: en el hilo del armado del equipo se le contaron las rondas de revisión sin decir qué se revisaba, y preguntó "Te puedo preguntar que tanto revisas?" y "Pero revision de que???". Regla: al hablarle de una revisión, primero se dice en palabras simples qué texto se revisa y para qué, y cuánto falta.
 
 ## Heredado del Administrador
 
@@ -51,7 +52,9 @@ Desde el 3-nov, Desarrollo hace lo que hacía el Administrador con la infraestru
 - poner al día los datos del panel de dirección (`otros/panel-direccion/datos.json`);
 - medir A y B de Codex con `/status` en su primera sesión ([plan del 1-nov](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2);
 - pedirle a Sergio Urcullo, todo junto, lo suyo en la PC: Orca y Antigravity, los accesos de `.onia` y las claves de `.claude.json`;
-- la propuesta mínima de hooks de Grok Bot (rama `claude/hooks-contexto-20261102`), en un PR propio que aprueba Sergio Urcullo porque toca permisos;
+- el [PR #161](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/161) del Administrador, abierto, con los pasos para abrir las ocho áreas en la app de Codex: rescatar lo que sirva para los tres proyectos, como el `.codex\config.toml` de cada carpeta, y cerrarlo;
+- el panel de dirección (`otros/panel-direccion/datos.json`) todavía tiene pendientes del Administrador y del equipo viejo: pasarlos a cada proyecto;
+- proponerle a Sergio Urcullo un tope de rondas de revisión en el `AGENTS.md`, porque la regla pide revisar de nuevo después de cada arreglo, sin tope (hilo del armado del equipo, 2-nov);
 - comprobar con Sergio Urcullo que quedaron archivadas las sesiones viejas de Claude Code ([README](README.md), "Qué pasó con las otras sesiones");
 - lo que ONIA Platform dejó para la coordinación (`platform.md`, "Para otras áreas"): el `COMO-TRABAJAR.md` de la rama de Grok Bot pide tuteo, y la regla es el voseo. El respaldo del VPS ya está en el orden de "VPS", arriba;
 - para después: el bot en la nube del [#96](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/96), comprobar que nada dependa de Grok Bot antes de retirarlo, y las skills `/empezar`, `/cerrar` y `/auditar`.
