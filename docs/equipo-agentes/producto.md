@@ -4,6 +4,20 @@
 
 Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cómo se comprobó cada cosa está al final. El estado que dejó el bot de Grok está en la rama `origin/onia-loop-excepcion-d003` (commit `c2796fa`), en este mismo archivo. Se tomó como dato, no como regla, y no se copia acá.
 
+## Para seguir en Codex
+
+Al cerrar el 2-nov-2026. Desde el 3-nov, Boss Code corre en Codex. Se abre en `C:\dev\worktrees\ONIA-CENTRAL\boss-code` con `codex -p boss-code`, que ya trae el modelo, el esfuerzo y un navegador propio, sin cuentas (lo armó el Administrador el 2-nov). La rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
+
+- **Web del taller:** publicada, no hay nada que hacer hasta el 6-nov. Si Sergio Urcullo decide algo de lo que la página no dice, Boss No-Code pasa el texto y se suma por PR, con su sí antes de publicar. Después del 6-nov, se baja o se cambia, también con su sí.
+- **VPS:** todo espera la clave. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en este orden:
+  1. el inventario que pidió Sergio Urcullo el 2-nov, por el Administrador ("limpia el vps ordenalo o eso dejaselo a la sesion que le toque"): contenedores, servicios, tareas programadas, memoria, disco y CPU, qué sobra, el Hermes viejo, y si entra el navegador de Linux de las áreas, que hoy usa unos 3,4 GB de la PC;
+  2. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
+  3. si sigue corriendo el respaldo semanal.
+
+  Después van la lista de qué limpiar y la base de QA sin datos de clientes, que Sergio Urcullo pidió el 2-nov ("Hoy, mirar y armar la QA"). Cada cambio se le pregunta así: "Sergio, tenés este cambio: … ¿Lo aceptás?".
+- **La clave:** Sergio Urcullo eligió el 2-nov la de la bóveda, `claude-cloud-vps-20260930`. Él guarda el adjunto en `C:\Users\PC\.ssh\`, como dice la [guía de KeePassXC](https://keepassxc.org/docs/KeePassXC_UserGuide) en "Advanced Entry Handling". Después, en una PowerShell como administrador, pone `ssh-agent` en automático y lo arranca. Carga la clave con `ssh-add` y borra el archivo, como dice la [guía de Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement). Por último pasa el servidor y el usuario, que no son secretos. El 2-nov, `ssh-agent` estaba en `Disabled` y `Stopped`.
+- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; cada cambio en el VPS; cualquier cambio en `/taller`.
+
 ## Qué hay y dónde
 
 | Cosa | Dónde está | Comprobación y fecha |
@@ -30,7 +44,7 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
   - el repo `onia-platform`: no lo toco. Es de ONIA Platform.
 - **Navegador de Ubuntu:** solo para comprobar sin login páginas publicadas, como el sitio, el enlace de WhatsApp o Cal.com, cuando no alcanza el navegador de la app de Claude. Lo usa una sola sesión a la vez, como dice el `AGENTS.md`. El 2-nov no lo usé.
 - **Cruces con otras áreas:**
-  - las ramas de Grok Bot con datos de un lead ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): Boss No-Code las revisa y rescata lo útil (#101). Boss Code solo tomó de ahí la web del taller. Quién borra las ramas, después del rescate, lo ordena el Administrador;
+  - las ramas de Grok Bot con datos de un lead ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): Boss No-Code las revisa y rescata lo útil (#101). Boss Code solo tomó de ahí la web del taller. Las ramas las borra Boss No-Code, después del rescate, como ordenó el Administrador el 2-nov;
   - la web del taller: los textos y la marca son de Marketing. El código, el PR y la publicación, de Boss Code. Si Marketing cambia un texto, me lo pasa y lo cambio en el PR;
   - el WhatsApp +591 75414930: lo atiende Boss No-Code. Boss Code solo comprueba que el enlace abra.
 - **No hago:** mensajes a clientes, respuestas en WhatsApp, anuncios ni la campaña, código de ONIA Platform, borrar ramas sin que me lo asignen, ni nada en producción sin el sí de Sergio Urcullo.
@@ -54,8 +68,8 @@ Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta
 ## Pendiente
 
 - Bajar o cambiar `/taller` después del 6-nov. Cambiarla es publicar, así que va con el sí de Sergio Urcullo.
-- Compartido, sin quién lo haga: borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113. Quién lo hace lo ordena el Administrador, y se coordina por el tablero (#111). Boss Code no lo hace si no se lo asignan.
-- Comprobar el acceso al VPS sin cambiar nada, cuando Sergio Urcullo lo autorice y la clave esté en la bóveda.
+- Borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113: lo hace Boss No-Code, como ordenó el Administrador el 2-nov. Boss Code ya dejó escrito en el #113 que no necesita nada más de esas ramas.
+- El VPS: ver "Para seguir en Codex", arriba.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
 - n8n de prueba: el bot de Grok lo dejó como pendiente (sus decisiones D-017 y T-15, que están solo en `/workspace`).
 - Revisar las 11 mejoras de seguridad del harness que propuso el bot. Están en esa rama, en `docs/equipo-agentes/analista/comparativa-harness-20261101.md`.
