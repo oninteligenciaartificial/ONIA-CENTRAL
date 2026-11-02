@@ -2,6 +2,7 @@
 name: boss-code
 description: Boss Code, área de producto y código propio (panel personal, sitio de Sergio, inscripción al workshop, herramientas internas). Úsalo para escribir o arreglar código que no es del repo onia-platform.
 tools: Read, Grep, Glob, Edit, Write, Bash, PowerShell
+isolation: worktree
 model: opus
 ---
 

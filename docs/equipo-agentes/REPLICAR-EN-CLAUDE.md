@@ -12,7 +12,7 @@ Fuentes oficiales (revisadas el 1-nov-2026): [subagentes](https://code.claude.co
 | En Grok Bot (servidor) | En Claude Code (laptop) | Dónde queda |
 |---|---|---|
 | Un bot por área (Pelau, ONIA Platform, Boss Code, Boss No-Code, Marketing) | Un **subagente** por área | `.claude/agents/<nombre>.md` |
-| Analista (audita a pedido) | Subagente `analista` + comando `/auditar` | `.claude/agents/analista.md`, `.claude/commands/auditar.md` |
+| Analista (audita a pedido) | Subagente `analista` + comando `/auditar` | `.claude/agents/analista.md`, `.agents/skills/auditar/SKILL.md` |
 | Archivos de estado (`/workspace/estado/*.md`) | Los mismos archivos, ahora leídos directo del repo | `docs/equipo-agentes/*.md` |
 | `APRENDIZAJES.md` + Bitácora | Igual; Claude Code lo carga solo desde `CLAUDE.md` | `docs/equipo-agentes/APRENDIZAJES.md` |
 | Reglas en el prompt del bot | `CLAUDE.md` con `@imports` | `CLAUDE.md` (ya existe) |
@@ -20,8 +20,8 @@ Fuentes oficiales (revisadas el 1-nov-2026): [subagentes](https://code.claude.co
 | `onia-llm --motor claude --nivel X` | El `model:` de cada subagente (opus / sonnet / haiku) | frontmatter de cada agente |
 | `onia-llm --motor codex` (revisión de otra familia) | `codex exec --sandbox read-only ...` por la terminal | dentro de cada agente y de `/cerrar` |
 | Cola y `--fondo` | Subagentes en segundo plano (Claude Code los lanza solo) | — |
-| "Al iniciar, lee estado y reporta lo pendiente" | Comando `/empezar <agente>` | `.claude/commands/empezar.md` |
-| "Al cerrar, estado + Bitácora + commit local" | Comando `/cerrar <agente>` | `.claude/commands/cerrar.md` |
+| "Al iniciar, lee estado y reporta lo pendiente" | Comando `/empezar <agente>` | `.agents/skills/empezar/SKILL.md` |
+| "Al cerrar, estado + Bitácora + commit local" | Comando `/cerrar <agente>` | `.agents/skills/cerrar/SKILL.md` |
 
 ### Modelo de cada agente (de la tabla "Modelos por bot" de `COMO-TRABAJAR.md`)
 
@@ -55,8 +55,8 @@ Cada archivo es Markdown con frontmatter: `name`, `description` (obligatorios), 
 
 Si creas la carpeta `agents` por primera vez, cierra y vuelve a abrir Claude Code.
 
-### Comandos (`.claude/commands/`)
-`/empezar <agente>`, `/cerrar <agente>` y `/auditar`. `$ARGUMENTS` se reemplaza por lo que escribes después del comando. Hoy Anthropic recomienda *skills* (`.claude/skills/<nombre>/SKILL.md`) para lo nuevo, pero `.claude/commands/` sigue funcionando igual ([comandos](https://code.claude.com/docs/en/slash-commands)).
+### Skills (`.agents/skills/`, enlazada como `.claude/skills`)
+`/empezar <agente>`, `/cerrar <agente>` y `/auditar`. `$ARGUMENTS` se reemplaza por lo que escribes después del comando. Desde 2026-11-02 son *skills* en `.agents/skills/<nombre>/SKILL.md`. Claude las ve por el junction `.claude\skills` → `.agents\skills` de `docs/decisiones/2026-10-28-skills-compartidas.md`, y Codex las lee directo. Llevan `disable-model-invocation: true` (solo los llamas tú). `.claude/commands/` queda solo con alias de 1 línea que mandan a leer el skill. Así funcionan aunque falte el junction, y si existen los dos gana el skill ([skills](https://code.claude.com/docs/en/skills)).
 
 ### El guard: `settings.json` con `deny`
 `permissions.deny` bloquea aunque el modelo "quiera": lo hace cumplir Claude Code ([permisos](https://code.claude.com/docs/en/permissions)). El archivo bloquea:
@@ -112,7 +112,7 @@ El problema: el servidor hace commits **locales** y no los sube. Si no se suben,
 4. **Entrar:** corre `claude` y sigue el navegador para entrar con tu cuenta (Pro o Max; la gratis no incluye Claude Code).
 5. **Codex CLI:** instálalo desde la [página oficial de Codex CLI](https://learn.chatgpt.com/docs/codex/cli), pestaña Windows. Después corre `codex` y elige "Sign in with ChatGPT".
 6. **Clonar el repo:** `git clone https://github.com/oninteligenciaartificial/ONIA-CENTRAL.git C:\dev\proyectos\ONIA-CENTRAL`
-7. **Revisar la config de Claude Code:** ya está en `.claude/` (`agents/`, `commands/`, `settings.json`), ver punto 6 abajo. Si al clonar no aparece `.claude/` (porque todavía no entró al repo), cópiala del respaldo:
+7. **Revisar la config de Claude Code:** ya está en `.claude/` (`agents/`, `commands/` (alias), `hooks/`, `rules/`, `reglas-criticas.md`, `settings.json`; `skills` es el junction a `.agents/skills`, no se copia), ver punto 6 abajo. Si al clonar no aparece `.claude/` (porque todavía no entró al repo), cópiala del respaldo:
    ```powershell
    cd C:\dev\proyectos\ONIA-CENTRAL
    New-Item -ItemType Directory -Force .claude | Out-Null
@@ -125,7 +125,7 @@ Los pasos 1, 2, 4, 5 y 6 los haces tú (logins y tu PowerShell). Los comandos de
 
 ## 6. Dónde está la config: `.claude/` y su respaldo
 
-Claude Code busca la config en `.claude/` (`agents/`, `commands/`, `settings.json`). **`docs/equipo-agentes/claude-config/` es una copia idéntica de `.claude/`**, archivo por archivo: no se edita una sola de las dos. Si cambias algo en una, copias a la otra en el mismo cambio y lo compruebas con `diff -r docs/equipo-agentes/claude-config .claude` (no tiene que mostrar nada).
+Claude Code busca la config en `.claude/` (`agents/`, `commands/` (alias), `hooks/`, `rules/`, `reglas-criticas.md`, `settings.json`; `skills` es el junction a `.agents/skills`, no se copia). **`docs/equipo-agentes/claude-config/` es una copia idéntica de `.claude/`**, archivo por archivo: no se edita una sola de las dos. Si cambias algo en una, copias a la otra en el mismo cambio y lo compruebas con `diff -r -x skills docs/equipo-agentes/claude-config .claude` (no tiene que mostrar nada).
 
 Ojo: `.claude/` todavía no está commiteada. Commitear `.claude/settings.json` en el repo cambia permisos: según `AGENTS.md`, eso lo apruebas tú. Hasta entonces, en la laptop puede que tengas que copiarla del respaldo (paso 7).
 
@@ -388,3 +388,23 @@ Cómo se coordinan Claude y Grok:
 3. Nunca se trabaja el repo en dos lados a la vez: si Grok está trabajando en el box, Claude no edita en el PC, y al revés. Para trabajar en paralelo, cada uno usa su rama o su worktree.
 4. Si Claude necesita algo que solo Grok puede hacer (conector, navegador, algo siempre encendido, búsqueda en X), lo deja anotado en `docs/equipo-agentes/tareas.md` para Grok, y viceversa.
 5. Las reglas son las mismas para los dos: nada se sube al remoto, se publica, se paga ni se toca en producción sin el sí de Sergio, y nada de secretos en git.
+
+## Hooks, contexto y cómo probarlos (rama `claude/hooks-contexto-20261102`)
+
+Qué hay (según https://code.claude.com/docs/en/hooks, /memory, /skills y /sub-agents):
+- **Guard PreToolUse** (`.claude/hooks/guard.sh` para Bash/WSL/Git Bash y `guard.ps1` para la herramienta PowerShell): sale con `exit 2` y bloquea push, merge, deploy (vercel, netlify, firebase, wrangler), npm publish, `rm -rf`, `Remove-Item -Recurse` y comandos que nombran `.env` (salvo `.env.example`), `~/.ssh` o `~/.aws`. Tiene `onFailure: "block"`: si el script falta o se cae, **bloquea**. Los `deny` de `settings.json` siguen siendo la pared principal (más `Read`/`Edit` de `~/.ssh` y `~/.aws`). El guard es la segunda capa porque un deny no atrapa `sh -c` ni rutas completas.
+- **SessionStart `compact`**: después de compactar, vuelve a meter `.claude/reglas-criticas.md` (unos 900 caracteres).
+- **Menos contexto**: CLAUDE.md ya no importa `APRENDIZAJES.md`. Se cargan unas 177 líneas (antes eran 493). `/empezar` lee solo las secciones del área, y `.claude/rules/` carga reglas cortas solo al tocar `.ps1` o APRENDIZAJES.
+- **Worktrees**: `boss-code` y `onia-platform` tienen `isolation: worktree`, así trabajan en una copia aislada y no se pisan.
+- **/cerrar**: ahora Codex revisa el diff guardado en un archivo y se escribe un handoff en `ESTADO-ACTUAL.md`.
+
+Cómo probar en tu PC (necesita Claude Code v2.1.295 o más nuevo, por `onFailure`; mira con `claude --version`):
+0. Si no existe el junction `.claude\skills`, créalo (comando en `docs/decisiones/2026-10-28-skills-compartidas.md`); sin él, `/empezar` y los demás funcionan por el alias de `.claude/commands/`.
+1. En el repo corre `claude` y luego `/hooks`: tienen que aparecer PreToolUse (Bash y PowerShell) y SessionStart (compact).
+2. **Comando prohibido falso**: pide "ejecuta con Bash: `cat C:/no-existe/.env`" y "ejecuta `git -C C:/no-existe push`". Los dos tienen que salir "Bloqueado por guard (OnIA)" o por deny. No usan archivos reales.
+3. **Comando permitido**: "ejecuta `git status`" tiene que andar.
+4. **Script ausente = bloqueo**: renombra `.claude\hooks\guard.sh` a `guard.sh.bak`, abre una sesión nueva y pide `ls`: tiene que salir bloqueado por el hook. Vuelve a ponerle el nombre y comprueba que `ls` anda. (Haz lo mismo con `guard.ps1` si usas la herramienta PowerShell.)
+5. **Compact**: corre `/compact` y pregunta "¿cuáles son tus reglas críticas?": tiene que responder con las de `reglas-criticas.md`.
+6. En Windows, el guard de Bash necesita Git Bash con `jq`. Si `jq` no está, el guard bloquea todo. Instálalo con `winget install jqlang.jq` o usa WSL.
+
+Probado en el box (Linux, Claude Code 2.1.316): 23 comandos de ejemplo contra `guard.sh` (14 bloqueados y 9 permitidos, todos como se esperaba). Con `claude -p` real, `cat /tmp/no-existe/.env` quedó bloqueado por el guard, y con el script ausente `ls` quedó bloqueado por `onFailure`. `guard.ps1` **no se probó** (en el box no hay PowerShell).

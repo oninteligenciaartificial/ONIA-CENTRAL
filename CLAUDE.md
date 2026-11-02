@@ -1,8 +1,7 @@
 @AGENTS.md
 @docs/equipo-agentes/COMO-TRABAJAR.md
-@docs/equipo-agentes/APRENDIZAJES.md
 
-Antes de trabajar, lee `AGENTS.md`, `docs/equipo-agentes/COMO-TRABAJAR.md` (reglas) y `docs/equipo-agentes/APRENDIZAJES.md` (aprendizajes).
+Antes de trabajar, usa `/empezar <agente>`: lee el estado y solo las secciones de tu área en `docs/equipo-agentes/APRENDIZAJES.md` (ya no se carga entero para ahorrar contexto). Al terminar, `/cerrar <agente>`.
 
 Reglas:
 - Nada a producción, nada publicado y nada de gasto sin el sí de Sergio.

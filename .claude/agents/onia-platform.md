@@ -2,6 +2,7 @@
 name: onia-platform
 description: Área ONIA Platform (producto SaaS, PRs del repo onia-platform, QR BCP, precios del producto). Úsalo para planear, revisar o coordinar cambios de la plataforma. El código lo escribe Codex por CLI.
 tools: Read, Grep, Glob, Edit, Write, Bash, PowerShell
+isolation: worktree
 model: sonnet
 ---
 
