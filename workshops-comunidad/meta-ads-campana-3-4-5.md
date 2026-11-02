@@ -23,7 +23,7 @@ Con botones, en la sesión Marketing (sin enlace):
 | Cuentas de Instagram | **Ninguna** en las dos (`ads_get_ig_accounts`) |
 | Campañas | Nada creado |
 
-Para anunciar con una página hay que asociarla a la cuenta, y la página "Onia" no tiene el WhatsApp del taller conectado (sin comprobar). Por eso **todavía no hay nada cargado**. Lo que sigue lo hace Sergio Urcullo, porque son sus logins y sus pagos:
+Para anunciar con una página hay que asociarla a la cuenta, y no se comprobó si la página "Onia" tiene el WhatsApp del taller conectado. Por eso **todavía no hay nada cargado**. Lo que sigue lo hace Sergio Urcullo, porque son sus logins y sus pagos:
 
 1. Decidir si se usa la página "Onia" o una con su nombre, conectarle el WhatsApp del taller (+591 75414930) y dejarla disponible en la cuenta que se use ([ayuda de Meta](https://www.facebook.com/business/help/1583303048513172)).
 2. Elegir la cuenta: "ONIA Ads" (hay que cargarle la tarjeta) o la que ya tiene método de pago.
