@@ -11,7 +11,7 @@ Decisiones de Sergio Urcullo del 1-nov-2026, tomadas con botones en la sesión c
 ## Qué queda
 
 - El equipo son sesiones de Claude Code en esta PC, una por área: Boss No-Code, Marketing, Boss Code y ONIA Platform. Cada una trabaja en su worktree, con sus PRs y su archivo de estado en `docs/equipo-agentes/`.
-- La sesión coordinadora reparte, ordena y le resume a Sergio Urcullo. Codex revisa en solo lectura, como revisor independiente.
+- La sesión coordinadora reparte, ordena y le resume a Sergio Urcullo. Codex revisa en solo lectura, como revisor independiente. Desde el 2-nov, los resúmenes los da Pelau, y el rol de la coordinadora, que pasó a llamarse Administrador, está en `AGENTS.md`, "Equipo de agentes".
 - Hermes y Grok Bot dejan de orquestar. Lo que los describe queda como historia. Apagar el Hermes de Windows o el del VPS sigue siendo decisión de Sergio Urcullo.
 - `docs/harness/onia-llm.md` queda como propio de Grok Bot. Pierde la excepción "arreglos menores del servidor con respaldo", porque choca con los frenos de producción del `AGENTS.md`.
 - El `CLAUDE.md` del repo deja de cargar `docs/reglas/equipo-grok-bot.md`, cuya regla 2 pedía opciones para cada cambio, contra "Los planes no se le preguntan". También deja de decir "sin merge", que chocaba con la regla de merges del `AGENTS.md`.

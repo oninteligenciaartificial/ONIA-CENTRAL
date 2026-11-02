@@ -51,7 +51,7 @@ El trabajo se cuenta desde B:
 | Tipo de sesión | Trabajo desde B | Relevo en Claude (B ≈ 120.000) | Relevo en Codex Sol/Terra |
 |---|---:|---:|---:|
 | Área, objetivo normal | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
-| Administrador (coordina) | 120.000 | ≈ 240.000 (24%) | B + 80.000 |
+| Administrador (delega y revisa infraestructura y reglas) | 120.000 | ≈ 240.000 (24%) | B + 80.000 |
 | Pelau (solo resúmenes cortos) | 60.000 | ≈ 180.000 (18%) | B + 40.000, también en Luna |
 | Analista, por auditoría | 200.000 | ≈ 320.000 (32%) | B + 120.000 |
 | Revisión independiente | una revisión | sesión nueva cada vez | sesión nueva cada vez |
@@ -129,7 +129,7 @@ Los subagentes se usan para subtareas acotadas que justifiquen separarse. No se 
 | 1–2 nov | `claude-opus-5-5` · `high` | `claude-sonnet-5-5` · `medium` | `gpt-6.1-sol` · `high` |
 | Desde 3 nov | `gpt-6.1-terra` · `high` | `gpt-6.1-sol` · `medium` | `gpt-6.1-sol` · `high` |
 
-**Administrador — reparto, dependencias y configuración.** Es la sesión coordinadora de `AGENTS.md:56`. Se llama así desde el 1-nov, por pedido de Sergio: "Recorda que pelau solo da resumenes, dejemos esta como “administrador” y crea un “pelau” que solo de resumenes cortos" (sin enlace).
+**Administrador — delega, ordena y revisa la infraestructura y las reglas.** Es la sesión coordinadora de `AGENTS.md:56`. Lee lo necesario y le pasa cada tarea a la sesión del área, sin hacer el trabajo de un área. Lo aclaró Sergio el 2-nov, en la sesión del Administrador (sin enlace). Primero dijo "ahora recorda que administrador no envia tareas aqui, simplemente revisa la infraestructura y reglas y que este todo en orden", y enseguida lo corrigió: "lo olvide, que adminsitrador delegue o que lea lo suficiente pero cada area trabaja en su sesion para no pisarse y todos comparten todo". Se llama así desde el 1-nov, por pedido de Sergio: "Recorda que pelau solo da resumenes, dejemos esta como “administrador” y crea un “pelau” que solo de resumenes cortos" (sin enlace).
 
 | Etapa | Sesión | Subagentes | Revisión de sus cambios |
 |---|---|---|---|
