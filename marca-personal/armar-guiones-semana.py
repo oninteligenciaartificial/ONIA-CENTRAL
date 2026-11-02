@@ -27,7 +27,8 @@ def gb(lid, dia, fr, cta):
     t = re.sub(r'\s+', ' ', t).strip() + ' ' + cta
     add(lid, dia, fr, 'marca', g['formato'], g['titulo'], g['gancho'], t,
         ' · '.join(g.get('tomas', [])), cta,
-        'Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)', 'revisar')
+        'Grok Bot, 1-nov (en tú; sin las fechas ni el CTA viejos)' + (' · Confirmar que querés decir tu edad' if '16' in t + g['titulo'] else ''),
+        'falta_dato' if '16' in t + g['titulo'] else 'revisar')
 
 
 gb('L1', '2026-11-03', 'R1', CTA_S); gb('L3', '2026-11-03', 'R2', CTA_T)

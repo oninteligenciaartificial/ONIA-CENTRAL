@@ -15,7 +15,7 @@
 - **Dos por día,** a la mañana y a la noche. La cantidad por día no está decidida: el plan de marca personal propone 3 y está sin aprobar.
 - **Un solo llamado:** "Tocá el link de mi bio y escribime". El link de la bio es `https://wa.me/59175414930?text=Hola%2C%20quiero%20info%20del%20taller%20de%20Claude`, que abre el chat con el mismo mensaje que el anuncio, y el saludo de WhatsApp le contesta con fechas, precio y grabaciones (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`). Así lo que dice el reel coincide con lo que llega al chat (`docs/lecciones.md`, "Anuncios y venta").
 - **De vos,** como el anuncio. Los textos de WhatsApp están de tú: si se unifica, lo decide Sergio Urcullo.
-- **Sin prometer ingresos ni ahorros en plata, sin "con la cuenta gratis"** (el temario no tiene esa prueba en `main`), **sin la edad** (no está en `main`) y **sin decir que ONIA Platform anda para clientes** (issues #27 y #28).
+- **Sin prometer ingresos ni ahorros en plata, sin "con la cuenta gratis"** (el temario no tiene esa prueba en `main`), **la edad, solo si Sergio Urcullo confirma que la quiere decir** (no está en `main`; en el panel, los guiones de Grok Bot que la nombran quedan en "Falta un dato tuyo") y **sin decir que ONIA Platform anda para clientes** (issues #27 y #28).
 - **Sin datos de clientes ni de alumnos en pantalla:** ni chats, ni nombres, ni caras de la clase. Las demos usan archivos de ejemplo, como `ventas-octubre-ejemplo.csv` del [PR #72](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/72).
 - **Sin el logo de Claude** y sin dar a entender que el taller es oficial de Anthropic.
 - **El nombre "Claude de 0 a 100"** lo eligió Sergio Urcullo el 2-nov: "claude de 0 a 100 y no es ilegal, no creo que este registrado, solo fue usado una vez, no habra problemas" (sesión Marketing). Sigue **sin confirmar con un abogado** (`docs/lecciones.md`); si hiciera falta, la opción sin la marca es "Taller de IA de 0 a 100".
@@ -72,7 +72,7 @@ Se publica después de la clase, a las 21:30 o más tarde.
 
 ### Reel 6 · noche · "Lo que pasó en la clase 1"
 
-Solo si hay material de la clase 1 que no muestre a nadie. Si no, se reemplaza por el reel 8.
+Solo si hay material de la clase 1 que no muestre a nadie. Si no, va este otro: "Hoy es la clase dos de Claude de 0 a 100, a las siete de la noche, hora de Bolivia. Pero Sergio, me perdí la primera. Te queda grabada y te la paso el viernes con las otras dos. Bs 50 por las tres. Link en la bio."
 
 - **Gancho (0-3 s):** "Ayer di mi primera clase de Claude."
 - **Cuerpo (3-25 s):** qué se hizo y la pregunta que más se repitió, contada por Sergio Urcullo, sin nombres.
