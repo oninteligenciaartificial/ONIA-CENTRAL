@@ -4,22 +4,38 @@
 
 Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de otra área se anota abajo como "para <área>".
 
-Actualizado: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`db605e0`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
+Actualizado: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
+
+## Objetivo: Bs 3.000 cobrados al 5-nov
+
+Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`). Los impuestos los ve él con el contador.
+
+| # | Hecho cuando | Estado |
+|---|---|---|
+| 1 | Una sola oferta en `docs/decisiones/` y acá | Hecho por este PR |
+| 2 | Salas de Meet en las fechas nuevas, sin invitados | Hecho el 1-nov |
+| 3 | Comprobado si Meet gratis graba | No graba (abajo); Sergio elige cómo grabar |
+| 4 | Textos de WhatsApp y del QR corregidos, en borrador | En un PR aparte, para su sí con captura |
+| 5 | Pago de prueba con Yolo Pago | Lo hace Sergio |
+| 6 | Registro privado de consultas, comprobantes y pagos, fuera de Git | Pendiente |
+| 7 | Bs 3.000 conciliados con el banco al 5-nov | Pendiente |
 
 ## Taller "Claude de 0 a 100"
 
-- Fechas: martes 3, jueves 5 y sábado 7-nov, 19:00 de Bolivia, por Google Meet (`docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md`).
+- Fechas: martes 3, miércoles 4 y jueves 5-nov, 19:00 de Bolivia, por Google Meet. Un solo pago de Bs 50 por las tres clases, con grabaciones (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`).
 - Inscripción: WhatsApp +591 75414930. Cobro con QR, confirmado a mano (`workshops-comunidad/plan-meta-ads-borrador.md`).
 - Cobrado al 1-nov: Bs 0, según la rama. Sin confirmar en esta PC.
+- Grabar: Meet gratis no graba. La [ayuda de Google Meet](https://support.google.com/meet/answer/9308681?hl=es) lista solo ediciones de Workspace, Workspace Individual y Google One de 2 TB o más. En Bolivia, la [página de planes de Google One](https://one.google.com/about/plans) mostró el 1-nov Lite, Basic y Google AI Pro (5 TB, BOB 139,99 por mes); de esos, solo AI Pro llega a 2 TB. Que AI Pro también saque el corte de 60 minutos no figura en esas páginas: sin confirmar.
 
 ## Decisiones de Sergio Urcullo del 1-nov
 
-Las tomó en esta sesión, a la noche, con botones. Sus palabras van entre comillas.
+Las tomó a la noche, con botones: las cuatro primeras en esta sesión y las de la oferta y la meta en la sesión coordinadora. Sus palabras van entre comillas.
 
 - **Precio:** Bs 50. "cuesta 50bs". Reemplaza los Bs 70 desde el 2-nov de `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md`.
-- **Pago:** a la pregunta de seguir con Bs 120 las tres clases y sin devolución, contestó "no esta definido ningun cambio, workshop pago unico". Qué cubre ese pago único (si los Bs 50 son por las tres clases o por cada una, y si quedan los combos y las clases sueltas del plan del 29-oct) está sin confirmar: se le pregunta.
+- **Pago:** primero contestó "no esta definido ningun cambio, workshop pago unico". Después lo cerró: "Hagamos las clases seguidas 3-4-5 y un solo pago y damos grabaciones". Son Bs 50 por las tres clases.
 - **QR:** "Yolo Pago (Ganadero)". El del BCP queda para ONIA Platform, según la rama. Falta un pago de prueba antes del martes 3.
-- **Salas de Meet:** "Las creo yo". Esta sesión las creó el 1-nov con `create_event` de Google Calendar, en el calendario principal de la cuenta de Google conectada a la app: 6 eventos, 2 por clase (Sala 1 de 19:00 a 20:00 y Sala 2 de 20:00 a 21:00, hora de Bolivia), con Meet, sin invitados y con `notificationLevel: NONE`, para que no salga ningún correo. La herramienta devolvió los 6 eventos confirmados. Los enlaces están en esos eventos y no se copian en Git.
+- **Salas de Meet:** "Las creo yo". Esta sesión las creó el 1-nov con `create_event` de Google Calendar, en el calendario principal de la cuenta de Google conectada a la app: 6 eventos, 2 por clase (Sala 1 de 19:00 a 20:00 y Sala 2 de 20:00 a 21:00, hora de Bolivia), con Meet, sin invitados y con `notificationLevel: NONE`, para que no salga ningún correo. Esa misma noche, con `update_event` y `notificationLevel: NONE`, las de la clase 2 pasaron al 4-nov y las de la clase 3 al 5-nov. La herramienta devolvió los eventos confirmados. Los enlaces están en esos eventos y no se copian en Git.
+- **Meta:** "Brutos: 60 pagos (Recomendada)", con corte "5-nov (Recomendada)".
 - **Cómo se le presentan las decisiones:** "las decisiones no me las envies vos, que queden cada decision en su respectiva sesion". Se lee como que cada sesión le presenta solo las de su área; lo de otra área va abajo, "para <área>".
 
 ## Decisiones que siguen abiertas
@@ -27,6 +43,7 @@ Las tomó en esta sesión, a la noche, con botones. Sus palabras van entre comil
 | # | Tema | Estado |
 |---|---|---|
 | 1 | Devolución | `main` propone sin devolución, dicho antes de pagar, con la grabación incluida (plan del 29-oct). La rama la tenía pendiente (D-013). Sin decidir |
+| 1b | Cómo se graba y hasta cuándo quedan las grabaciones | Meet gratis no graba (arriba). El guion de Grok Bot decía hasta el 7-dic, con la clase 3 el 7-nov. Sin decidir |
 | 2 | Mensaje de diagnóstico gratis a los chats en espera | Borradores con enlace de Cal.com, solo en `/workspace`; falta su sí (D-012) y el acceso a la bandeja de Chatwoot. Bloqueado: los borradores no están en esta PC |
 | 3 | Plantillas de WhatsApp (D-015) y migración de WhatsApp (D-018) | Pendientes, detalle solo en `/workspace/decisiones/` |
 | 4 | Nombre "Claude de 0 a 100" | Usa una marca ajena en algo pago: a confirmar con un abogado (`docs/lecciones.md`) |
@@ -55,15 +72,16 @@ Consultados el 1-nov con `session_connectors_status` de la app, sin leer secreto
 ## Pendientes del área
 
 - [ ] Pago de prueba con el QR de Yolo Pago antes del martes 3 (lo hace Sergio Urcullo).
-- [ ] Poner al día los textos de WhatsApp del taller con Bs 50 y el QR de Yolo Pago, en borrador, cuando Sergio Urcullo confirme qué cubre el pago único. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar.
-- [ ] Planilla de cobros del taller, sin datos de clientes en Git.
+- [ ] Textos de WhatsApp del taller con la oferta nueva, en borrador, en un PR aparte que aprueba Sergio Urcullo con captura. Hoy `workshops-comunidad/plan-meta-ads-borrador.md` y el PR de materiales del taller todavía dicen Bs 50 la clase, Bs 120 las tres y Bs 70 para completar, y el guion de Grok Bot dice Bs 70 desde el 2-nov.
+- [ ] Registro privado de consultas, comprobantes y pagos verificados, fuera de Git porque tiene datos de clientes.
+- [ ] Conciliar los pagos con el banco al 5-nov.
 - [ ] Traer de `/workspace` los borradores de diagnóstico gratis, sin datos de clientes, si Sergio Urcullo los pide.
 
 ## Para otras áreas
 
-- Para Marketing: captions de reels y anuncios con Bs 50, decidido por Sergio Urcullo el 1-nov; qué cubre el pago único, sin confirmar (arriba). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
+- Para Marketing: captions de reels y anuncios con la oferta del 1-nov (3, 4 y 5-nov, Bs 50 por las tres clases, con grabaciones). Y el presupuesto de anuncios (`main` dice US$10 por día en pausa; la rama, US$10 o US$5).
 - Para Marketing: dónde se publica la web de invitación del taller. Vercel u onia.com.bo son producción.
-- Para la sesión coordinadora: `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo Bs 70 desde el 2-nov. Esta área no lo toca, porque no es su archivo.
+- Para la sesión coordinadora: `docs/decisiones/2026-10-31-decisiones-taller-y-agentes.md` sigue diciendo 3, 5 y 7-nov y Bs 70 desde el 2-nov. Lo reemplaza `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`; esta área no toca el archivo viejo, porque no es suyo.
 - Para ONIA Platform: el cobro con el QR del BCP y los precios de los planes, que siguen como propuesta.
 
 ## Notas
