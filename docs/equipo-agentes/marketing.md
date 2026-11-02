@@ -37,12 +37,12 @@ Vistos el 1-nov con el estado de conectores de la sesión, sin leer secretos ni 
 
 ## Pendiente de Sergio Urcullo
 
-Al 2-nov a la tarde. Lo ya resuelto ese día: Bs 50 por las 3 clases, clases 4, 5 y 6-nov ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)), US$10 por día del 3 al 5-nov y el nombre "Claude de 0 a 100", sin confirmar con un abogado.
+Al 2-nov a la tarde. Lo ya resuelto: Bs 50 por las 3 clases y clases 4, 5 y 6-nov ([decisión del 2-nov](../decisiones/2026-11-02-taller-4-5-6.md)). En la sesión Marketing, el 2-nov, Sergio Urcullo eligió "US$10/día hasta el 5-nov (Recomendada)" y lo confirmó con "Empecemos hasta el 5 de noviembre"; el inicio, con "La campaña la lanzamos mañana en la mañana" (el 3-nov); y el nombre, con "claude de 0 a 100 y no es ilegal […] no habra problemas", sin confirmar con un abogado. Están citados en `workshops-comunidad/meta-ads-campana-3-4-5.md` (el nombre del archivo es histórico: el contenido es de las clases 4, 5 y 6).
 
 1. Aprobar los textos del anuncio y grabar los 2 videos.
 2. Probar cómo se graban las clases antes de activar el anuncio: Meet gratis no graba.
-3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Hoy ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta.
-4. Pasar el panel de contenido a Notion: prender Notion en Codex y conectar su cuenta.
+3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Al 2-nov, ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta: lo mostraron `ads_get_ad_accounts`, `ads_get_ad_account_pages` y `ads_get_ig_accounts` del conector de Meta Ads, en la sesión Marketing. `ads_get_user_pages` mostró solo la página "Onia", sin asociar a ninguna cuenta.
+4. Decidir si el panel de contenido pasa a Notion. Es una propuesta sin aprobar: necesita prender Notion en Codex y conectar su cuenta.
 5. Vos o tú en los guiones, y si quiere decir su edad.
 6. El presupuesto de TikTok, si se pauta ahí.
 
@@ -69,12 +69,11 @@ Desde el 3-nov, Marketing sigue en Codex: `codex -p marketing` en `C:\dev\worktr
 - **En qué estoy:**
   - la campaña de Meta Ads del taller, en borrador, en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) (`workshops-comunidad/meta-ads-campana-3-4-5.md`). La revisión dio "aprobar"; falta el sí de Sergio Urcullo con captura. No hay nada cargado en Meta;
   - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles.
-- **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo (probado el 2-nov). Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. La salida que recomiendo es pasarlo a Notion, que necesita lo del punto 4 de "Pendiente".
+- **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo: el 2-nov, `codex exec` listó sus herramientas y MCP (Canva, Drive, Notion, Higgsfield y otras, con Notion y Drive apagados en esta PC) y ninguna lee o escribe artifacts de claude.ai. Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. Si no hay una sesión de Claude, la fuente es el JSON del repo y el panel queda con la última versión subida. La propuesta es pasarlo a Notion (punto 4 de "Pendiente"), sin aprobar todavía.
 - **Meta Ads en Codex:** Codex no tiene el conector de Meta Ads. Se hace con el navegador, cuando Sergio Urcullo cargue su cuenta en el perfil de Marketing.
-- **Qué sigue:** cerrar las revisiones de los PR #120 y #139; cargar la campaña en pausa cuando estén la página y la tarjeta; corregir la oferta vieja en `plan-meta-ads-borrador.md`; sumar las métricas al panel; y la ficha de chase.h.ai con la skill `investigar-referente`.
-
-## Próximo
-
-- Con el texto del lote y el precio: dejar los reels del lunes listos para grabar, en voseo o tuteo según decida Sergio Urcullo, con revisión de Codex en solo lectura.
-- Con los videos grabados: cargar los 2 anuncios en pausa en Meta, a US$10 por día, sin activarlos. TikTok, cuando tenga presupuesto.
-- 2-nov: la campaña quedó en borrador en el [PR #120 (campaña con la oferta 3-4-5)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120). Meta no tiene páginas ni Instagram en ninguna cuenta: Sergio Urcullo crea la página, elige la cuenta, carga la tarjeta y graba los 2 videos. Decidió US$10 por día hasta el 5-nov y mantener el nombre "Claude de 0 a 100", sin confirmar con un abogado.
+- **Orden de trabajo, con su "hecho cuando":**
+  1. Guiones (PR #139): mergeado cuando la última revisión escrita en el PR da "aprobar" y Sergio Urcullo aprueba los guiones. Lo que marcó cada revisión está en los comentarios del PR.
+  2. Campaña (PR #120): cargada en Meta en pausa, con los 2 videos, cuando Sergio Urcullo aprueba con captura y están la página y la tarjeta. La prende él, o Marketing con su sí.
+  3. Métricas en el panel: conversaciones y costo por conversación de la campaña, cuando corra.
+  4. Corregir la oferta vieja (3-5-7, combos) en `plan-meta-ads-borrador.md`, por PR.
+  5. La ficha de chase.h.ai con la skill `investigar-referente` (post https://www.instagram.com/p/DfKquhHHK3B/).
