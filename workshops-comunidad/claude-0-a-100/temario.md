@@ -178,7 +178,7 @@ Para cada punto, anotá si anduvo y cómo se llama el menú en español. Si algo
 - [ ] Las skills que ya vienen: ¿están en Customize > Skills?
 
 **Clase 3:**
-- [ ] Conectar Google Drive, Gmail y Google Calendar con una cuenta de Google sin datos de clientes, que tenga en su Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt` ([lista](lista-jueves-viernes.md), paso 7). ¿Entran los tres en el plan gratis? ¿Encuentra el documento?
+- [ ] Conectar Google Drive, Gmail y Google Calendar con una cuenta de Google sin datos de clientes, que tenga en su Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt`. ¿Entran los tres en el plan gratis? ¿Encuentra el documento?
 - [ ] Pedirle a Claude la skill en .zip, subirla y probarla en un chat nuevo.
 - [ ] Guardar algo en las preferencias.
 
