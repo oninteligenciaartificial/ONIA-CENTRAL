@@ -1,0 +1,532 @@
+{
+  "actualizado": "2-nov-2026 13:50 (Bolivia)",
+  "tarjetas": {
+    "taller": {
+      "titulo": "Claude de 0 a 100",
+      "conexion": "Sin conectar",
+      "cobrado": "Sin dato de cobros",
+      "meta": "Bs 3.000 brutos al 6-nov, confirmado por Sergio el 2-nov",
+      "inscritos": "Sin dato",
+      "inicio": "4 nov",
+      "nota": "Mié 4, jue 5 y vie 6-nov, 19:00 de Bolivia, por Google Meet. Un solo pago de Bs 50 por las 3 clases, con grabaciones: la meta son 60 pagos. Los cobros y los chats no se ven desde esta PC.",
+      "fuente": "docs/decisiones/2026-11-02-taller-4-5-6.md:7 y :12-14 (main @54b24e7, PR #148); docs/equipo-agentes/negocio.md:9-11 y :113 (main @54b24e7)"
+    },
+    "conversaciones": {
+      "titulo": "Conversaciones",
+      "canales": "WhatsApp · Instagram",
+      "conexion": "Sin conectar",
+      "abiertas": "Sin dato",
+      "pendientes": "Sin dato",
+      "nota": "WhatsApp, Instagram y Chatwoot no tienen conector en esta PC: los chats no se ven desde acá. Boss No-Code pidió WhatsApp y Chatwoot en su navegador; esas cuentas las decidís y las cargás vos.",
+      "fuente": "docs/equipo-agentes/negocio.md:70 y :113 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:24 (main @54b24e7)"
+    },
+    "norte": {
+      "etiqueta": "NORTE DE LA EMPRESA",
+      "titulo": "Ganancia neta",
+      "valor": "US$ 5.000",
+      "meta": "31 dic 2026",
+      "avance": "Avance sin conectar",
+      "nota": "Meta que mostraba el panel de Grok Bot; sin decisión escrita en el repo.",
+      "fuente": "panel de Grok Bot, captura de Sergio del 2-nov; git grep en main @54b24e7, sin resultados"
+    }
+  },
+  "tablero": {
+    "decidir": [
+      {"titulo": "Aprobá la campaña de Meta Ads del taller", "estado": "pendiente", "area": "Marketing", "proyecto": "Campaña de Meta Ads", "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:5, :11 y :37; última revisión en aprobar, 12:28", "fecha": "2026-11-02", "nota": "Textos y 2 videos, con captura. US$10 por día del 3 al 5-nov, unos US$30. No se activa sin probar la grabación de las clases."},
+      {"titulo": "Decidí cierre, cupo y precio de /taller", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Página del taller", "fuente": "docs/equipo-agentes/negocio.md:87 y :90 (main @54b24e7); PR #141 @4b12fff: marca-personal/referentes/funnel-fomo-2026-11-02.md:139-145", "fecha": "2026-11-02", "nota": "Recomendada: inscripción hasta el miércoles 4 a las 19:00, sin límite de personas y Bs 50 como precio de esta edición. El análisis de referentes (PR #141, en aprobar) también espera tu sí."},
+      {"titulo": "Aprobá los guiones de reels del 3 al 6-nov", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:5, :15 y :100-105; gh pr view 139 (sin comentarios)", "fecha": "2026-11-02", "nota": "8 guiones, dos por día, todavía sin revisión escrita. Se aprueban antes de grabar, y cada video, con captura, antes de publicar."},
+      {"titulo": "Elegí vos o tú, y si los reels dicen tu edad", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:17-18; PR #102 @11fb300: docs/equipo-agentes/marketing.md:46", "fecha": "2026-11-02", "nota": "Reels y anuncio van de vos; los textos de WhatsApp, de tú. Sin tu sí, la edad no se dice."},
+      {"titulo": "Decidí dónde se comparten las grabaciones", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:86 (main @54b24e7); docs/decisiones/2026-11-02-taller-4-5-6.md:8 (main @54b24e7); PR #66 (tu comentario del 29-oct)", "fecha": "2026-11-02", "nota": "Dijiste OBS el 29-oct (PR #66); falta probarlo. Sin decidir dónde se comparten. Se entregan el viernes 6, al terminar la última clase, y quedan para siempre."},
+      {"titulo": "Elegí las skills a regalar y cerrá el temario", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:80 y :88 (main @54b24e7); PR #131 (última revisión en aprobar, 11:49)", "fecha": "2026-11-02", "nota": "Mandá tu video con los repos: con eso se eligen las skills y se rehace el temario, que aprobás vos porque lo ve un cliente."},
+      {"titulo": "Decidí dónde va el registro privado de pagos", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:79 y :96 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Consultas, comprobantes y pagos, fuera de Git porque tiene datos de clientes: Google Sheets u otro."},
+      {"titulo": "Decidí si se suben plantillas de WhatsApp", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:79-81 (main @54b24e7); docs/equipo-agentes/negocio.md:48 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Plantillas de Meta para escribir primero, fuera de las 24 horas. Es gasto: se cobra cada mensaje entregado."},
+      {"titulo": "Decidí si el taller da certificado", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:74 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:38", "fecha": "2026-11-02", "nota": "Hoy no se nombra en el anuncio, y a quien pregunta se lo deriva."},
+      {"titulo": "Decidí si los agentes leen Instagram y TikTok", "estado": "pendiente", "area": "Recepción", "proyecto": "Equipo de agentes", "fuente": "issue #80; Términos de uso de Instagram, 4.2; docs/equipo-agentes/recepcion.md:35 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Los Términos de Instagram (4.2) prohíben recopilar datos de forma automatizada; los de TikTok, sin confirmar. Es tema legal, a confirmar con un abogado. Si sigue, creás el correo y las cuentas secundarias de Recepción."},
+      {"titulo": "Decidí qué cuentas faltan en los navegadores", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "docs/decisiones/2026-11-02-navegador-por-area.md:24 y :52 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Si Boss No-Code suma Google Calendar e Instagram de ONIA, y a qué área pasa la cuenta que cargaste en el perfil equipo: hasta que lo digas, en Codex no la usa nadie."},
+      {"titulo": "Decidí si el panel de contenido pasa a Notion", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:45 y :72; PR #151 @96cd1aa: docs/equipo-agentes/coordinacion.md, relevo del Administrador; issue #128", "fecha": "2026-11-02", "nota": "Codex no puede actualizar el panel de claude.ai. Notion y Drive, que se apagaron en Codex el 28-oct, figuran prendidos en Codex con otro nombre."},
+      {"titulo": "Decidí si pautás en TikTok y con cuánto", "estado": "pendiente", "area": "Marketing", "proyecto": "Anuncios", "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:47", "fecha": "2026-11-02", "nota": "Es gasto. La campaña de esta semana es solo de Meta."},
+      {"titulo": "Decidí quién borra las ramas de Grok Bot", "estado": "pendiente", "area": "Administrador", "proyecto": "Orden del repo", "fuente": "issue #113 (tu decisión del 2-nov); PR #151 @96cd1aa: docs/equipo-agentes/coordinacion.md, relevo del Administrador; docs/equipo-agentes/producto.md:71 (main @54b24e7), que todavía se lo da a Boss No-Code", "fecha": "2026-11-02", "nota": "Tienen datos de un lead. Elegiste borrarlas después del rescate (#101), pero nadie lo tiene asignado: la app frenó pasárselo a Boss No-Code por irreversible."},
+      {"titulo": "Elegí los precios de ONIA Platform", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "docs/equipo-agentes/platform.md:91, :110 y :116 (main @54b24e7)", "fecha": "2026-11-02", "nota": "La escalera del código (Bs 320, 550, 890 y 1.290 por mes) o la propuesta de Grok Bot (Bs 390, 590 y 990). Ninguna está decidida."},
+      {"titulo": "Decidí qué le pedís a Grok Bot de /workspace", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "docs/equipo-agentes/platform.md:15, :25 y :114 (main @54b24e7)", "fecha": "2026-11-02", "nota": "La rama del panel interno y los parches de la plataforma están solo ahí. Si no, se rehace desde acá lo necesario."},
+      {"titulo": "Decidí cómo se cuenta la gracia de 7 días", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "plataforma/2026-11-02-decision-10-prs.md:20 y :40 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Regla comercial que ve el cliente. Hoy el código la cuenta distinto de lo que dice el cambio (#113 de onia-platform)."},
+      {"titulo": "Decidí qué hacer con las claves de .claude.json", "estado": "pendiente", "area": "Administrador", "proyecto": "Orden de la PC", "fuente": "docs/equipo-agentes/coordinacion.md:98 (main @54b24e7); docs/estado-limpieza-2026-10-28.md:26-27 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Están en texto plano. Salió de la verificación del 1-nov y no se volvió a comprobar."},
+      {"titulo": "Decidí el 12-nov si renovás ChatGPT", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/coordinacion.md:90 (main @54b24e7); docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:247 y :288 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Con lo que haya vendido el taller. Vence el 14-nov, y sin él el equipo se queda sin motor."},
+      {"titulo": "Decidí a qué repo va lo de onia-hermes", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "issue #134", "fecha": "2026-11-02", "nota": "El chatbot de WhatsApp, onia.com.bo, SIAT y el configurador. Nada arranca antes del 6-nov: ONIA Platform te trae las opciones."},
+      {"titulo": "Decidí si se desinstala OpenClaw", "estado": "pendiente", "area": "Administrador", "proyecto": "Orden de la PC", "fuente": "issue #33", "fecha": "2026-10-29", "nota": "Instalado y sin correr el 29-oct. Abierto desde entonces."},
+      {"titulo": "Decidí si revisar las lecciones cada 2 semanas", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "issue #37", "fecha": "2026-10-29", "nota": "Cambia cómo se trabaja, por eso lo decidís vos. Abierto desde el 29-oct."}
+    ],
+    "hacer": [
+      {"titulo": "Probá OBS con audio para grabar las clases", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:86 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:37; PR #66 (tu comentario del 29-oct)", "fecha": "2026-11-02", "nota": "Antes del martes 3 a la mañana: sin esa prueba el anuncio no se activa."},
+      {"titulo": "Probá el QR de Yolo Pago y completá el titular", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:85 y :94 (main @54b24e7); workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:12, :30 y :33 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Antes del martes 3: el pago de prueba, y el nombre del titular en el mensaje del QR, que no va en Git. Sin eso, ese mensaje no se manda."},
+      {"titulo": "Grabá hoy los 2 videos del anuncio y los reels", "estado": "pendiente", "area": "Marketing", "proyecto": "Campaña de Meta Ads", "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:13 y :30; PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:23 y :103", "fecha": "2026-11-02", "nota": "Juntos, el lunes 2 a la noche; el reel 6 necesita la clase 1. Videos en 1080 × 1920, .mp4 o .mov, en E: o Drive. Los reels, después de aprobar los guiones."},
+      {"titulo": "Dejá listas en Meta página, cuenta y plantilla", "estado": "pendiente", "area": "Marketing", "proyecto": "Campaña de Meta Ads", "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:21-29, :65 y :78", "fecha": "2026-11-02", "nota": "Página: Onia u otra con tu nombre, con el WhatsApp del taller. Cuenta: ONIA Ads, cargándole la tarjeta, o la que ya tiene pago. Plantilla de mensaje: Hola, quiero info del taller de Claude. Sin eso no se carga nada."},
+      {"titulo": "Poné en tu bio el link de WhatsApp del taller", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:16 y :104", "fecha": "2026-11-02", "nota": "Abre el chat con el mismo mensaje del anuncio. Siete de los ocho reels cierran pidiéndolo."},
+      {"titulo": "Probá el temario con una cuenta gratis nueva", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "PR #131 @7d64b21: workshops-comunidad/claude-0-a-100/temario.md:5 y :158-160", "fecha": "2026-11-02", "nota": "Antes de la clase 1; la cuenta la creás vos. Hasta probarlo, ningún anuncio dice con la cuenta gratis."},
+      {"titulo": "Confirmá en el banco cada pago del taller", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:40 (main @54b24e7); docs/equipo-agentes/negocio.md:113 (main @54b24e7)", "fecha": "2026-11-02", "nota": "La inscripción se confirma solo cuando ves el pago en el banco: los cobros no se ven desde la PC."},
+      {"titulo": "Consultá con un abogado el nombre del taller", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:49 y :89 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:14", "fecha": "2026-11-02", "nota": "Decidiste mantener Claude de 0 a 100. Usa una marca ajena en algo pago: es tema legal sin confirmar."},
+      {"titulo": "Cargá la clave del VPS para Boss Code", "estado": "pendiente", "area": "Boss Code", "proyecto": "VPS", "fuente": "docs/equipo-agentes/producto.md:12, :18 y :19 (main @54b24e7); docs/equipo-agentes/platform.md:23 (main @54b24e7)", "fecha": "2026-11-02", "nota": "La que elegiste de la bóveda, al ssh-agent de la PC; pasale el servidor y el usuario. Destraba el VPS y el primer merge de la plataforma."},
+      {"titulo": "Cargá las cuentas de cada área en su navegador", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/coordinacion.md:99 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:22-41 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Boss No-Code: WhatsApp, Yolo Pago y Chatwoot. Marketing: Meta. Recepción: sus cuentas secundarias, si decidís que sigue. Se usan desde el 3-nov, en Codex."},
+      {"titulo": "Mañana abrí cada sesión en Codex con su línea", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "PR #151 @96cd1aa: docs/equipo-agentes/coordinacion.md, Para abrir las sesiones en Codex (3-nov); gh pr view 151", "fecha": "2026-11-02", "nota": "Una línea de PowerShell por sesión, cada una en su ventana y de a una. Están en el PR #151, abierto: su revisión 1 pidió cambios y el arreglo espera otra revisión."},
+      {"titulo": "Mandale a Recepción un video con voz", "estado": "pendiente", "area": "Recepción", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/recepcion.md:7, :13 y :34 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Para probar ver-video, que solo se probó sin voz. Dejalo en E:\\ONIA\\recepcion\\ o pasale la ruta."},
+      {"titulo": "Probá el QR del BCP para cobrar la plataforma", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "docs/equipo-agentes/platform.md:117 (main @54b24e7); issue #28", "fecha": "2026-11-02", "nota": "Aparte del cobro del taller. Hace falta antes del primer cliente."},
+      {"titulo": "Corré la limpieza de Orca y Antigravity", "estado": "pendiente", "area": "Administrador", "proyecto": "Orden de la PC", "fuente": "docs/equipo-agentes/coordinacion.md:96 (main @54b24e7); docs/estado-limpieza-2026-10-28.md:16-23 (main @54b24e7)", "fecha": "2026-11-02", "nota": "En una PowerShell de administrador: 6 reglas del firewall, una credencial, el PATH y un acceso directo. No se comprobó si ya la corriste."},
+      {"titulo": "Pasá a la bóveda los accesos de .onia", "estado": "pendiente", "area": "Administrador", "proyecto": "Orden de la PC", "fuente": "docs/equipo-agentes/coordinacion.md:97 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Dos archivos en C:\\Users\\PC\\.onia, si son claves. Nadie los abrió."}
+    ],
+    "agentes": [
+      {"titulo": "Arma el registro privado de consultas y pagos", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:79 y :96 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Fuera de Git, porque tiene datos de clientes. Espera que decidas dónde va."},
+      {"titulo": "Concilia con el banco los pagos al 6-nov", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:21, :82 y :97 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Contra la meta de Bs 3.000 brutos, con los pagos que vos confirmás en el banco."},
+      {"titulo": "Rehace el temario y cierra el PR viejo", "estado": "pendiente", "area": "Boss No-Code", "proyecto": "Taller Claude de 0 a 100", "fuente": "docs/equipo-agentes/negocio.md:80 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Espera tu video con los repos. El PR viejo del taller (#72) se cierra sin mergear, con lo que se rescató."},
+      {"titulo": "Suman a /taller lo que decidas", "estado": "pendiente", "area": "Boss No-Code y Boss Code", "proyecto": "Página del taller", "fuente": "docs/equipo-agentes/negocio.md:81 (main @54b24e7); docs/equipo-agentes/producto.md:11 y :64 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Boss No-Code pasa el texto y Boss Code lo suma por PR; publicar va con tu sí. Después del 6-nov se baja o se cambia, también con tu sí."},
+      {"titulo": "Termina la revisión escrita de los guiones", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #139 @f7668cf (sin comentarios); PR #102 @11fb300: docs/equipo-agentes/marketing.md:71 y :75", "fecha": "2026-11-02", "nota": "Último commit a las 13:24 y ninguna revisión escrita en el PR. Después te los trae para aprobar."},
+      {"titulo": "Carga la campaña de Meta Ads en pausa", "estado": "pendiente", "area": "Marketing", "proyecto": "Campaña de Meta Ads", "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:67-78; PR #102 @11fb300: docs/equipo-agentes/marketing.md:73 y :76", "fecha": "2026-11-02", "nota": "Espera tu sí con captura, la página, la cuenta y los 2 videos. En Codex no hay conector de Meta: va por el navegador, con tu cuenta en el perfil de Marketing."},
+      {"titulo": "Mantiene el panel de guiones de la semana", "estado": "pendiente", "area": "Marketing", "proyecto": "Marca personal", "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:107-113; PR #102 @11fb300: docs/equipo-agentes/marketing.md:72", "fecha": "2026-11-02", "nota": "En claude.ai, del 3 al 8-nov. Codex no lo puede actualizar: los guiones cambian en el JSON por PR. Faltan las métricas, porque la campaña no está cargada."},
+      {"titulo": "Deja su estado en main para seguir en Codex", "estado": "pendiente", "area": "Marketing", "proyecto": "Equipo de agentes", "fuente": "PR #102 @11fb300 (commits de las 13:16 y 13:25; última revisión en aprobar, 11:59); PR #151 @96cd1aa", "fecha": "2026-11-02", "nota": "Es la única área sin relevo en main. Los commits nuevos llegaron después de la última revisión: falta revisarlos antes del merge."},
+      {"titulo": "Revisa el VPS en solo lectura", "estado": "pendiente", "area": "Boss Code", "proyecto": "VPS", "fuente": "docs/equipo-agentes/producto.md:12-17 (main @54b24e7); docs/equipo-agentes/platform.md:18-19 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Espera la clave. En orden: inventario (qué corre y qué sobra, con el Hermes viejo), qué IP le llega a la app para el #154 de onia-platform y si sigue el respaldo semanal. Cada cambio, con tu sí."},
+      {"titulo": "Lleva los 10 PRs de onia-platform", "estado": "pendiente", "area": "ONIA Platform", "proyecto": "ONIA Platform", "fuente": "docs/equipo-agentes/platform.md:14 y :18-20 (main @54b24e7); plataforma/2026-11-02-decision-10-prs.md:26-30 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Empieza por el #154, que espera la revisión de Boss Code en el VPS. Nada mergeado: cada merge publica en producción y te lo trae con evidencia para tu sí."},
+      {"titulo": "Recibe tus archivos y videos y los reparte", "estado": "pendiente", "area": "Recepción", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/recepcion.md:3 y :34 (main @54b24e7)", "fecha": "2026-11-02", "nota": "Espera un video con voz para probar ver-video, y tu decisión sobre Instagram y TikTok para mirar redes."},
+      {"titulo": "Coordina la campaña y el paso a Codex del 3-nov", "estado": "pendiente", "area": "Administrador", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/coordinacion.md:25-32 (main @54b24e7); PR #151 @96cd1aa", "fecha": "2026-11-02", "nota": "Hecho cuando la campaña está prendida con tu sí, cada área dejó su estado en main (falta Marketing) y la Analista auditó los PRs del día."},
+      {"titulo": "Replica tu panel en localhost", "estado": "pendiente", "area": "Administrador", "proyecto": "Panel de ONIA", "fuente": "docs/equipo-agentes/platform.md:15 (main @54b24e7)", "fecha": "2026-11-02", "nota": "El que armó Grok Bot, como página local en ONIA-CENTRAL: es este panel."},
+      {"titulo": "Audita los PRs del 2-nov", "estado": "pendiente", "area": "Analista", "proyecto": "Equipo de agentes", "fuente": "docs/equipo-agentes/coordinacion.md:32 y :88 (main @54b24e7); PR #151 @96cd1aa", "fecha": "2026-11-02", "nota": "En su primera sesión en Codex, el 3-nov. Deja su informe en un issue nuevo."}
+    ]
+  },
+  "resumen": [
+    {
+      "titulo": "Taller Claude de 0 a 100",
+      "texto": "Miércoles 4, jueves 5 y viernes 6-nov, a las 19:00 de Bolivia, por Google Meet. Un solo pago de Bs 50 por las 3 clases, con grabaciones que se entregan el viernes 6 y quedan para siempre. Sin devolución, salvo que ONIA no dé una clase: se pasa a otra fecha.",
+      "fuente": "docs/decisiones/2026-11-02-taller-4-5-6.md:7-9 (main @54b24e7)"
+    },
+    {
+      "titulo": "Meta y cobros",
+      "texto": "Bs 3.000 brutos al 6-nov, confirmado por Sergio el 2-nov: 60 pagos de Bs 50, conciliados con el banco. Cobrado e inscritos: sin dato, porque los cobros y los chats no se ven desde esta PC.",
+      "fuente": "docs/decisiones/2026-11-02-taller-4-5-6.md:12-14 (main @54b24e7, PR #148); docs/equipo-agentes/negocio.md:9-11 y :113 (main @54b24e7)"
+    },
+    {
+      "titulo": "Campaña de Meta Ads",
+      "texto": "En borrador, sin nada cargado en Meta. US$10 por día del martes 3 al jueves 5-nov, unos US$30, en pausa hasta tu sí con captura. Su última revisión dio aprobar a las 12:28.",
+      "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:5, :11 y :67-76; gh pr view 120"
+    },
+    {
+      "titulo": "Lo que falta antes del martes 3",
+      "texto": "Probar OBS con audio (sin eso el anuncio no se activa), hacer el pago de prueba con el QR de Yolo Pago, grabar los 2 videos y dejar listas en Meta la página, la cuenta y la plantilla.",
+      "fuente": "docs/equipo-agentes/negocio.md:85-86 y :94 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:26-30, :37 y :78"
+    },
+    {
+      "titulo": "WhatsApp y web del taller",
+      "texto": "Los textos de WhatsApp están aprobados y en main, con las fechas 4, 5 y 6; las plantillas de Meta siguen en borrador. La web sergiourcullo.vercel.app/taller está publicada con tu sí (PR #1 del repo del sitio, mergeado a las 12:24). Después del 6-nov se baja o se cambia, también con tu sí.",
+      "fuente": "workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:5 y :79-81 (main @54b24e7); docs/equipo-agentes/producto.md:26 y :66 (main @54b24e7); gh pr view 1 -R oninteligenciaartificial/sergiourcullo"
+    },
+    {
+      "titulo": "Grabación",
+      "texto": "Dijiste OBS el 29-oct (PR #66); falta probarlo. Sin decidir dónde se comparten. Los 2 videos del anuncio y los reels los grabás vos, juntos, el lunes 2 a la noche.",
+      "fuente": "PR #66 (tu comentario del 29-oct); docs/equipo-agentes/negocio.md:86 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:13 y :30; PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:23"
+    },
+    {
+      "titulo": "Equipo y paso a Codex",
+      "texto": "Seis sesiones abiertas y quietas a las 13:50, más el Administrador. Desde el 3-nov, todo el equipo en Codex. Boss No-Code, Recepción, ONIA Platform y Boss Code dejaron su relevo en main; el de Marketing sigue en el PR #102. Según el relevo del Administrador, las carpetas fijas y los perfiles de Codex ya están, y las líneas para abrir cada sesión van en el PR #151, abierto.",
+      "fuente": "list_sessions, 2-nov 13:50; docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:9 (main @54b24e7); PR #147, #148, #149 y #150 (mergeados); PR #102 y #151 (abiertos)"
+    },
+    {
+      "titulo": "ONIA Platform",
+      "texto": "Objetivo: decidir los 10 PRs abiertos de onia-platform; ninguno mergeado y cada merge publica en producción. Primero va el #154, que espera la revisión de Boss Code en el VPS cuando cargues la clave. La plataforma no se nombra en el taller esta semana.",
+      "fuente": "docs/equipo-agentes/platform.md:14, :18-19, :29 y :45 (main @54b24e7)"
+    }
+  ],
+  "uso_ia": [
+    {
+      "herramienta": "Claude: cuota semanal, todos los modelos",
+      "dato": "60% usado. Se renueva el jueves 5-nov a las 04:00 (Bolivia).",
+      "fuente": "get_usage de la app de Claude, 2-nov 13:50 (Bolivia)"
+    },
+    {
+      "herramienta": "Claude: cuota semanal del modelo Fable",
+      "dato": "0% usado. Se renueva el jueves 5-nov a las 04:00 (Bolivia).",
+      "fuente": "get_usage de la app de Claude, 2-nov 13:50 (Bolivia)"
+    },
+    {
+      "herramienta": "Claude: plan y uso extra",
+      "dato": "Plan Ultra. Uso extra apagado.",
+      "fuente": "get_usage de la app de Claude, 2-nov 13:50 (Bolivia)"
+    },
+    {
+      "herramienta": "Claude: contexto del Administrador",
+      "dato": "73% de la ventana: 727.118 de 1.000.000 tokens, arriba del techo del 60% (600.000) que propone el plan. El relevo del Administrador estaba propuesto cerca de los 240.000.",
+      "fuente": "get_usage de la sesión que armó este panel, 2-nov 13:50; docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:54 y :62 (main @54b24e7)"
+    },
+    {
+      "herramienta": "Codex: cuota semanal",
+      "dato": "Sin dato desde las 10:00 del 2-nov.",
+      "fuente": "docs/equipo-agentes/coordinacion.md:21 (main @54b24e7)"
+    },
+    {
+      "herramienta": "Motor del equipo",
+      "dato": "Hoy, Claude Code en la app de escritorio. Desde el 3-nov, todo el equipo en Codex (codex-cli 0.166.0); Claude no se renueva.",
+      "fuente": "docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:9 (main @54b24e7); docs/equipo-agentes/stack.md:10 (main @54b24e7)"
+    },
+    {
+      "herramienta": "ChatGPT (Codex)",
+      "dato": "Vence el 14-nov. El 12-nov decidís si lo renovás, con lo que haya vendido el taller.",
+      "fuente": "docs/equipo-agentes/coordinacion.md:90 (main @54b24e7); docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:247 y :288 (main @54b24e7)"
+    },
+    {
+      "herramienta": "Higgsfield",
+      "dato": "Cobra por generación: nada sin tu sí. En Codex sus herramientas siguen visibles, con esa regla. Lo que gastó Grok Bot en el anuncio UGC, sin confirmar.",
+      "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:20 y :32; issue #128 (tu decisión del 2-nov)"
+    },
+    {
+      "herramienta": "Grok Bot",
+      "dato": "Sigue para investigar en X y auditar; no orquesta. Que no se renueve sigue igual hasta que decidas otra cosa.",
+      "fuente": "AGENTS.md:68-69 (main @54b24e7)"
+    }
+  ],
+  "orquestacion": [
+    {
+      "sesion": "Administrador (actual)",
+      "rol": "Coordina a todas las sesiones, como un jefe: les pasa tareas y reglas, ordena quién va primero y revisa infraestructura y reglas. No hace el trabajo de un área.",
+      "estado": "En marcha: arma este panel. Contexto al 73% (727.118 tokens), arriba del techo del 60%. Mañana sigue en Codex; su relevo está en el PR #151.",
+      "fuente": "AGENTS.md:59 (main @54b24e7); get_usage, 2-nov 13:50; docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md:62 (main @54b24e7); PR #151 @96cd1aa"
+    },
+    {
+      "sesion": "Administrador anterior",
+      "rol": "Dejó el relevo del 2-nov a las 2:40; después quedó con rehacer en versión mínima la propuesta de hooks de Grok Bot.",
+      "estado": "Archivada; última actividad 10:49. La rama claude/hooks-contexto-20261102 no tiene PR (último commit, 02:43).",
+      "fuente": "list_sessions con archivadas, 2-nov 13:41; docs/equipo-agentes/coordinacion.md:3 y :10 (main @54b24e7); git log y gh pr list de esa rama"
+    },
+    {
+      "sesion": "Pelau",
+      "rol": "Solo le da a Sergio resúmenes cortos de lo que hicieron las áreas. No cambia archivos.",
+      "estado": "Quieta; última actividad 12:40. Hoy Haiku, medium.",
+      "fuente": "list_sessions, 2-nov 13:50; AGENTS.md:61 (main @54b24e7); docs/equipo-agentes/coordinacion.md:44 (main @54b24e7)"
+    },
+    {
+      "sesion": "Boss No-Code",
+      "rol": "Ventas, WhatsApp del taller, cobro y finanzas.",
+      "estado": "Quieta; última actividad 13:43. Dejó su relevo para Codex en main (PR #148). Espera tu pago de prueba, tu prueba de OBS y lo que decidas de la página. Hoy Sonnet, medium.",
+      "fuente": "list_sessions, 2-nov 13:50; docs/equipo-agentes/negocio.md:72-90 (main @54b24e7); docs/equipo-agentes/coordinacion.md:45 (main @54b24e7)"
+    },
+    {
+      "sesion": "Marketing",
+      "rol": "Reels, marca personal y anuncios, que siempre se crean en pausa.",
+      "estado": "Quieta; última actividad 13:25. Campaña en el PR #120, en aprobar (12:28): espera tu sí con captura. Guiones en el PR #139, sin revisión escrita. Su estado y su relevo siguen en el PR #102, con commits sin revisar. Hoy Sonnet, medium.",
+      "fuente": "list_sessions, 2-nov 13:50; gh pr view 102, 120 y 139; docs/equipo-agentes/coordinacion.md:46 (main @54b24e7)"
+    },
+    {
+      "sesion": "Boss Code",
+      "rol": "VPS, Chatwoot, n8n, Cal.com y la web del taller.",
+      "estado": "Quieta; última actividad 13:19. Publicó /taller con tu sí (PR #1 del repo del sitio, 12:24) y dejó su relevo para Codex en main (PR #150). Lo del VPS espera la clave. Hoy Opus, high.",
+      "fuente": "list_sessions, 2-nov 13:50; docs/equipo-agentes/producto.md:7-19 y :26 (main @54b24e7); docs/equipo-agentes/coordinacion.md:47 (main @54b24e7)"
+    },
+    {
+      "sesion": "ONIA Platform",
+      "rol": "Producto y código de la plataforma, en el repo onia-platform.",
+      "estado": "Quieta; última actividad 13:17. Dejó su relevo para Codex en main (PR #149). Objetivo: decidir los 10 PRs de onia-platform; ninguno mergeado. Hoy Opus, high.",
+      "fuente": "list_sessions, 2-nov 13:50; docs/equipo-agentes/platform.md:7-25 (main @54b24e7); docs/equipo-agentes/coordinacion.md:48 (main @54b24e7)"
+    },
+    {
+      "sesion": "Recepción",
+      "rol": "Recibe imágenes, PDF, enlaces y videos de Sergio y pasa lo útil a cada área.",
+      "estado": "Quieta; última actividad 13:17. Dejó su relevo para Codex en main (PR #147). Hoy Sonnet; desde el 3-nov, Codex.",
+      "fuente": "list_sessions, 2-nov 13:50; docs/equipo-agentes/recepcion.md:3, :14 y :30-35 (main @54b24e7)"
+    },
+    {
+      "sesion": "Analista",
+      "rol": "Audita el trabajo y las revisiones. No corrige lo que audita ni cambia permisos.",
+      "estado": "Sin sesión abierta: se abre una vez al día, al cerrar la tanda de PRs, y se archiva. La próxima, en Codex, audita los PRs del 2-nov.",
+      "fuente": "AGENTS.md:62 (main @54b24e7); docs/equipo-agentes/coordinacion.md:50 y :88 (main @54b24e7); PR #151 @96cd1aa; list_sessions con archivadas, 2-nov 13:41"
+    }
+  ],
+  "equipo": [
+    {
+      "area": "Todas",
+      "escribe": "Cada una en su worktree; main cambia solo por PR.",
+      "servicios": "Tu PC con Windows 11 y Ubuntu 26.04 en WSL para el navegador y las herramientas de Linux. Hoy, Claude Code en la app de escritorio; desde el 3-nov, Codex (codex-cli 0.166.0). El VPS de producción es de Boss Code, y tocarlo pide tu sí.",
+      "cuentas": "En Codex, cada área tiene su propio navegador con solo sus cuentas, que decidís y cargás vos. En Claude Code sigue el perfil compartido equipo. Una sesión real de Codex ya navegó con su perfil; que los logins queden guardados, sin probar.",
+      "skills": "llevar-issue es la común; las de cada área están en .agents/skills/.",
+      "fuente": "docs/equipo-agentes/stack.md:9-13 y :29 (main @54b24e7); AGENTS.md:39 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:47-48 (main @54b24e7)"
+    },
+    {
+      "area": "Boss No-Code",
+      "escribe": "negocio.md, los textos de WhatsApp y el material del taller en workshops-comunidad/, y decisiones de ventas, cobro y finanzas.",
+      "servicios": "WhatsApp del taller, Yolo Pago, Google Calendar (salas de Meet), Chatwoot para leer e Instagram. El banco lo mirás vos. Cobros y chats no se ven desde esta PC.",
+      "cuentas": "WhatsApp, Yolo Pago y Chatwoot, para revisar. Pidió sumar Google Calendar e Instagram de ONIA: sin decidir.",
+      "skills": "llevar-issue",
+      "fuente": "docs/equipo-agentes/stack.md:20 (main @54b24e7); docs/equipo-agentes/negocio.md:113-114 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:24 (main @54b24e7)"
+    },
+    {
+      "area": "Marketing",
+      "escribe": "marketing.md, marca-personal/, y la campaña y el plan de Meta Ads en workshops-comunidad/.",
+      "servicios": "Meta Ads, siempre en borrador o pausa; Higgsfield, solo con tu sí; el panel de contenido en claude.ai, que Codex no puede actualizar. No hay conector para publicar en Instagram o TikTok, y en Codex tampoco el de Meta Ads: va por el navegador.",
+      "cuentas": "Meta, para ver pantallas y referencias.",
+      "skills": "investigar-referente, llevar-issue",
+      "fuente": "docs/equipo-agentes/stack.md:21 (main @54b24e7); PR #102 @11fb300: docs/equipo-agentes/marketing.md:51-53 y :72-73; docs/decisiones/2026-11-02-navegador-por-area.md:25 (main @54b24e7)"
+    },
+    {
+      "area": "Boss Code",
+      "escribe": "producto.md, las decisiones de su área y el repo del sitio personal sergiourcullo, por PR; mergear ahí publica.",
+      "servicios": "VPS, Chatwoot y n8n de producción (hoy no los toca y nunca entró), Vercel solo para leer, Cal.com para comprobar que responda, y revisiones con codex exec en solo lectura.",
+      "cuentas": "Ninguna: solo páginas publicadas, sin login.",
+      "skills": "llevar-issue",
+      "fuente": "docs/equipo-agentes/stack.md:22 (main @54b24e7); docs/equipo-agentes/producto.md:37-45 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:26 (main @54b24e7)"
+    },
+    {
+      "area": "ONIA Platform",
+      "escribe": "platform.md, plataforma/ y las decisiones de su área. En el repo onia-platform, ramas y PRs; mergear a master publica en producción.",
+      "servicios": "Repo onia-platform; el VPS, su Supabase y sus crons (producción, nunca entró); Vercel y Supabase para leer; Codex para leer y revisar.",
+      "cuentas": "Ninguna esta semana. Para probar como cliente, una cuenta de prueba de la propia plataforma, sin datos de clientes.",
+      "skills": "llevar-issue",
+      "fuente": "docs/equipo-agentes/stack.md:23 (main @54b24e7); docs/equipo-agentes/platform.md:51-58 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:27 (main @54b24e7)"
+    },
+    {
+      "area": "Recepción",
+      "escribe": "recepcion.md y la skill ver-video. Carpetas de trabajo en /tmp de Ubuntu, fuera de Git.",
+      "servicios": "E:\\ONIA\\recepcion\\, ffmpeg y faster-whisper en Ubuntu. Pasa lo útil a las áreas con SendMessage, con copia en el tablero del issue #111.",
+      "cuentas": "Cuentas secundarias para investigar redes: Instagram y TikTok, Facebook si hace falta, con un correo nuevo. Las creás y las cargás vos, en el perfil recepcion.",
+      "skills": "ver-video",
+      "fuente": "docs/equipo-agentes/stack.md:24 (main @54b24e7); docs/equipo-agentes/recepcion.md:18-25 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:28 (main @54b24e7)"
+    },
+    {
+      "area": "Pelau",
+      "escribe": "Nada.",
+      "servicios": "Lee main, los PRs y los issues con gh. No usa navegador.",
+      "cuentas": "Ninguna: navegador sin cuentas guardadas.",
+      "skills": "Ninguna",
+      "fuente": "docs/equipo-agentes/stack.md:25 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:12 y :29 (main @54b24e7)"
+    },
+    {
+      "area": "Administrador",
+      "escribe": "coordinacion.md y las reglas, por PR. La configuración de las sesiones vive fuera del repo, y su cambio se anota por PR.",
+      "servicios": "Las sesiones de Claude Code y de Codex, su configuración y gh.",
+      "cuentas": "Ninguna: navegador sin cuentas guardadas.",
+      "skills": "llevar-issue",
+      "fuente": "docs/equipo-agentes/stack.md:26 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:12 y :29 (main @54b24e7)"
+    },
+    {
+      "area": "Analista",
+      "escribe": "Nada en lo que audita.",
+      "servicios": "Lee los PRs y sus revisiones.",
+      "cuentas": "Ninguna: navegador sin cuentas guardadas.",
+      "skills": "Ninguna",
+      "fuente": "docs/equipo-agentes/stack.md:27 (main @54b24e7); AGENTS.md:62 (main @54b24e7); docs/decisiones/2026-11-02-navegador-por-area.md:12 y :29 (main @54b24e7)"
+    }
+  ],
+  "grabacion": [
+    {
+      "titulo": "Clases del taller (4, 5 y 6-nov)",
+      "estado": "Dijiste OBS el 29-oct (PR #66); falta probarlo. Sin decidir dónde se comparten. Meet gratis no graba. Se entregan el viernes 6, al terminar la última clase, y quedan para siempre.",
+      "fuente": "PR #66 (tu comentario del 29-oct); docs/equipo-agentes/negocio.md:28 y :86 (main @54b24e7); docs/decisiones/2026-11-02-taller-4-5-6.md:8 (main @54b24e7)"
+    },
+    {
+      "titulo": "Prueba de la grabación",
+      "estado": "Pendiente: probar OBS con audio antes del martes 3 a la mañana. El anuncio promete grabaciones: sin esa prueba no se activa.",
+      "fuente": "docs/equipo-agentes/negocio.md:86 (main @54b24e7); PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:37"
+    },
+    {
+      "titulo": "Cómo se graba en clase",
+      "estado": "Borrador en el temario: desde las 18:50, solo la ventana de Claude, con el micrófono prendido y el sonido de la compu apagado; una toma por sala, cortando a las 20:00, para que ningún archivo pase de una hora. Sin caras, nombres ni el chat de Meet.",
+      "fuente": "PR #131 @7d64b21: workshops-comunidad/claude-0-a-100/temario.md:45-49"
+    },
+    {
+      "titulo": "2 videos del anuncio de Meta",
+      "estado": "Por grabar, por vos: el video 1 (el contraste) y el video 2 (la demo con un archivo de ejemplo), en 1080 × 1920, .mp4 o .mov, en E: o Drive. Con eso, la página y la cuenta, Marketing carga los 2 anuncios en pausa.",
+      "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:13, :26-30 y :56-58"
+    },
+    {
+      "titulo": "8 reels de marca personal (3 al 6-nov)",
+      "estado": "Guiones en borrador, sin revisión escrita. Se graban con los 2 videos del anuncio el lunes 2 a la noche, salvo el reel 6, que necesita la clase 1. Vertical 9:16, de 30 a 45 segundos.",
+      "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:5, :15 y :22-23"
+    },
+    {
+      "titulo": "Revisión de videos (Recepción)",
+      "estado": "Se dejan en E:\\ONIA\\recepcion\\ y se miran con la skill ver-video. Probada con un video de 5 s sin voz; falta uno real con voz.",
+      "fuente": "docs/equipo-agentes/recepcion.md:7 y :13 (main @54b24e7)"
+    }
+  ],
+  "contenido": [
+    {
+      "titulo": "Guiones de reels del 3 al 6-nov",
+      "estado": "Borrador: 8 guiones, dos por día: siete cierran con el link de tu bio y el último pide seguirte. PR #139 abierto, sin revisión escrita. Falta tu aprobación, el link en tu bio y elegir vos o tú.",
+      "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:5, :15-17 y :100-105; gh pr view 139"
+    },
+    {
+      "titulo": "Panel de guiones de la semana (3 al 8-nov)",
+      "estado": "En tu panel privado de claude.ai: 3 verticales y 1 horizontal por día de marca personal, más el taller y los 2 videos del anuncio. Junta los 21 guiones de Grok Bot, sin fechas viejas, precios ni el llamado DIAGNÓSTICO, con los nuevos. Faltan las métricas.",
+      "fuente": "PR #139 @f7668cf: marca-personal/guiones-semana-3-6nov.md:107-113"
+    },
+    {
+      "titulo": "Anuncio de Meta Ads",
+      "estado": "Borrador: texto, título Claude de 0 a 100 · en vivo y grabado y cierre de los 2 videos, sin fechas, con un solo precio y la aclaración de taller independiente, no oficial de Anthropic. Última revisión en aprobar (12:28). Lo aprobás con captura: lo ve un cliente y es gasto.",
+      "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:5, :34-35, :42-48 y :56-58; gh pr view 120"
+    },
+    {
+      "titulo": "Textos de WhatsApp del taller",
+      "estado": "Aprobados por vos el 2-nov y en main: saludo, precio, QR, grabaciones, devolución y recordatorios con las fechas 4, 5 y 6. Están de tú. Las plantillas de Meta siguen en borrador: subirlas es gasto.",
+      "fuente": "PR #110 (tu aprobación del 2-nov); workshops-comunidad/whatsapp-taller-3-4-5-borrador.md:5-16 y :79-81 (main @54b24e7)"
+    },
+    {
+      "titulo": "Web del taller",
+      "estado": "Publicada con tu sí en sergiourcullo.vercel.app/taller (PR #1 del repo del sitio, mergeado a las 12:24): cuenta regresiva al miércoles 4 a las 19:00, temario previsto, preguntas frecuentes y 4 botones a WhatsApp. No dice cierre, cupo ni precio de esta edición hasta que lo decidas.",
+      "fuente": "docs/equipo-agentes/producto.md:26 y :63-65 (main @54b24e7); gh pr view 1 -R oninteligenciaartificial/sergiourcullo"
+    },
+    {
+      "titulo": "Temario y material de práctica",
+      "estado": "Borrador en el PR #131, con revisión en aprobar (11:49): 3 clases de 19:00 a 21:00 y 2 archivos de práctica de una panadería inventada. Falta probarlo con una cuenta gratis. Lo aprobás vos, porque lo ve un cliente.",
+      "fuente": "PR #131 @7d64b21: workshops-comunidad/claude-0-a-100/temario.md:5 y :22; gh pr view 131"
+    },
+    {
+      "titulo": "Funnel y FOMO de los referentes",
+      "estado": "Análisis interno para la página del taller, en el PR #141, con revisión en aprobar (12:13). Espera tu sí.",
+      "fuente": "PR #141 @4b12fff; docs/equipo-agentes/negocio.md:90 (main @54b24e7)"
+    },
+    {
+      "titulo": "Plan de marca personal y escalera de ventas",
+      "estado": "PR #66, abierto: la última revisión (29-oct) da aprobar, pero falta sumarle tus respuestas del 29-oct antes de tu sí.",
+      "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:23; gh pr view 66"
+    },
+    {
+      "titulo": "Fichas de 4 referentes nuevos",
+      "estado": "PR #71, abierto, con revisión en aprobar del 29-oct.",
+      "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:24; gh pr view 71"
+    },
+    {
+      "titulo": "Material viejo del taller (PR #72)",
+      "estado": "Abierto, con la oferta vieja (3, 5 y 7-nov, Bs 50 o Bs 120). El temario se rescata en el PR #131 y el anuncio en el PR #120; se cierra sin mergear cuando cierres el temario.",
+      "fuente": "PR #120 @bc7b468: workshops-comunidad/meta-ads-campana-3-4-5.md:3; docs/equipo-agentes/negocio.md:80 (main @54b24e7)"
+    },
+    {
+      "titulo": "Material de Grok Bot fuera de esta PC",
+      "estado": "Al 1-nov, el lote de 9 reels de los días 1 a 3 y el anuncio UGC con avatar de IA de Higgsfield, este sin tu revisión, estaban solo en la computadora en la nube de Grok Bot. Se le piden si hacen falta.",
+      "fuente": "PR #102 @11fb300: docs/equipo-agentes/marketing.md:14, :18 y :20"
+    }
+  ],
+  "fuentes": [
+    {
+      "nombre": "Decisión: taller al 4, 5 y 6-nov (PR #136 y #148)",
+      "ruta": "docs/decisiones/2026-11-02-taller-4-5-6.md",
+      "que_da": "Fechas, grabaciones, devolución, salas de Meet y la meta de Bs 3.000 al 6-nov, confirmada por Sergio el 2-nov."
+    },
+    {
+      "nombre": "Oferta y meta del 1-nov",
+      "ruta": "docs/decisiones/2026-11-01-oferta-taller-3-4-5.md",
+      "que_da": "Un solo pago de Bs 50 y la meta de 60 pagos (Bs 3.000 brutos)."
+    },
+    {
+      "nombre": "Estado de Boss No-Code (PR #148)",
+      "ruta": "docs/equipo-agentes/negocio.md",
+      "que_da": "Cobro, grabación, qué espera a Sergio y cómo sigue en Codex."
+    },
+    {
+      "nombre": "Estado de Boss Code (PR #150)",
+      "ruta": "docs/equipo-agentes/producto.md",
+      "que_da": "Web del taller publicada, el VPS y cómo sigue en Codex."
+    },
+    {
+      "nombre": "Estado de ONIA Platform (PR #149)",
+      "ruta": "docs/equipo-agentes/platform.md",
+      "que_da": "Los 10 PRs de onia-platform, el #154 y cómo sigue en Codex."
+    },
+    {
+      "nombre": "Estado de Recepción (PR #147)",
+      "ruta": "docs/equipo-agentes/recepcion.md",
+      "que_da": "Cómo recibe videos, la prueba de ver-video y cómo sigue en Codex."
+    },
+    {
+      "nombre": "Estado de la coordinación",
+      "ruta": "docs/equipo-agentes/coordinacion.md",
+      "que_da": "Sesiones y su modelo, cuota de Codex de las 10:00, Analista, ChatGPT y lo que le toca a Sergio."
+    },
+    {
+      "nombre": "Relevo del Administrador y líneas para Codex (PR #151, abierto)",
+      "ruta": "gh pr diff 151: docs/equipo-agentes/coordinacion.md, rama claude/relevo-codex",
+      "que_da": "Una línea por sesión para abrirla en Codex y lo pendiente del Administrador. Su revisión 1 pidió cambios."
+    },
+    {
+      "nombre": "Stack de cada área (PR #143)",
+      "ruta": "docs/equipo-agentes/stack.md",
+      "que_da": "Qué escribe, qué servicios y qué skills usa cada área."
+    },
+    {
+      "nombre": "Navegador por área (PR #133)",
+      "ruta": "docs/decisiones/2026-11-02-navegador-por-area.md",
+      "que_da": "El navegador de cada área en Codex y qué cuentas pidió cada una."
+    },
+    {
+      "nombre": "Plan del equipo y paso a Codex (PR #105)",
+      "ruta": "docs/decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md",
+      "que_da": "Paso a Codex el 3-nov, topes de contexto y vencimiento de ChatGPT."
+    },
+    {
+      "nombre": "AGENTS.md",
+      "ruta": "AGENTS.md",
+      "que_da": "Roles del Administrador, Pelau, la Analista y Grok Bot, y el navegador de Ubuntu."
+    },
+    {
+      "nombre": "Decisión de los 10 PRs de onia-platform (PR #137)",
+      "ruta": "plataforma/2026-11-02-decision-10-prs.md",
+      "que_da": "Recomendación y orden de los 10 PRs, y la gracia de 7 días."
+    },
+    {
+      "nombre": "Estado de la limpieza",
+      "ruta": "docs/estado-limpieza-2026-10-28.md",
+      "que_da": "Lo que queda de Orca y Antigravity, y las claves en texto plano de .claude.json."
+    },
+    {
+      "nombre": "Textos de WhatsApp (PR #110, mergeado)",
+      "ruta": "workshops-comunidad/whatsapp-taller-3-4-5-borrador.md",
+      "que_da": "Lo que llega al chat: fechas, precio, grabaciones y devolución."
+    },
+    {
+      "nombre": "Estado de Marketing (PR #102, abierto)",
+      "ruta": "gh pr diff 102: docs/equipo-agentes/marketing.md, rama claude/area-marketing-ac507b",
+      "que_da": "Material, conectores, pendientes de Marketing y cómo sigue en Codex. Commits de las 13:16 y 13:25 sin revisar."
+    },
+    {
+      "nombre": "Campaña de Meta Ads (PR #120, abierto)",
+      "ruta": "workshops-comunidad/meta-ads-campana-3-4-5.md, rama marketing/meta-ads-textos-3-4-5",
+      "que_da": "Texto del anuncio, los 2 videos, el presupuesto y lo comprobado en Meta."
+    },
+    {
+      "nombre": "Guiones de reels (PR #139, abierto)",
+      "ruta": "marca-personal/guiones-semana-3-6nov.md, rama marketing/guiones-marca-3-6nov",
+      "que_da": "Los 8 guiones, cuándo se graban y el panel de guiones."
+    },
+    {
+      "nombre": "Temario del taller (PR #131, abierto)",
+      "ruta": "workshops-comunidad/claude-0-a-100/temario.md, rama claude/taller-temario-3-4-5",
+      "que_da": "Las 3 clases de 19:00 a 21:00 y cómo se graba en clase."
+    },
+    {
+      "nombre": "Funnel de los referentes (PR #141, abierto)",
+      "ruta": "marca-personal/referentes/funnel-fomo-2026-11-02.md, rama claude/taller-funnel-referentes",
+      "que_da": "Lo que decide Sergio para la página del taller."
+    },
+    {
+      "nombre": "Página /taller (PR #1 del repo sergiourcullo)",
+      "ruta": "gh pr view 1 -R oninteligenciaartificial/sergiourcullo",
+      "que_da": "Mergeada el 2-nov a las 12:24 (Bolivia), merge e72690b."
+    },
+    {
+      "nombre": "Términos de uso de Instagram, punto 4.2",
+      "ruta": "https://help.instagram.com/581066165581870",
+      "que_da": "Prohíben recopilar datos de forma automatizada sin permiso. Tema legal, a confirmar con un abogado (issue #80)."
+    },
+    {
+      "nombre": "Cuota y contexto de Claude",
+      "ruta": "get_usage de la app de Claude, 2-nov 13:50",
+      "que_da": "Cuota semanal, plan, uso extra y contexto de la sesión del Administrador."
+    },
+    {
+      "nombre": "Sesiones del equipo",
+      "ruta": "list_sessions de la app de Claude, 2-nov 13:50 (con archivadas, 13:41)",
+      "que_da": "Qué sesiones hay, si están archivadas, si tienen un turno en curso y su última actividad."
+    },
+    {
+      "nombre": "Estado de los PRs",
+      "ruta": "gh pr list y gh pr view --json, 2-nov 13:50",
+      "que_da": "Si cada PR está abierto, mergeado o cerrado, y la línea Veredicto de su última revisión."
+    },
+    {
+      "nombre": "Panel de Grok Bot, captura de Sergio del 2-nov",
+      "ruta": "Captura, fuera del repo",
+      "que_da": "El norte: ganancia neta de US$ 5.000 al 31 dic 2026. Sin decisión escrita en el repo."
+    }
+  ]
+}
