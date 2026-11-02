@@ -89,7 +89,7 @@ for n in nuevos[7:]:
 A = 'Marketing, PR #120 (de vos)'
 add('A1', '2026-11-02', 'Anuncio', 'taller', 'vertical', 'Anuncio · Video 1, el contraste',
     'Si a la IA solo le hacés preguntas, la estás usando a medias.',
-    'Si a la IA solo le hacés preguntas, la estás usando a medias. Le preguntás algo, copiás, pegás… y la próxima vez le volvés a explicar todo de cero. En 3 clases en vivo te enseño a usar Claude con tus archivos y tus proyectos. Sin programar. En vivo, con grabaciones. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime.',
+    'Si a la IA solo le hacés preguntas, la estás usando a medias. Le preguntás algo, copiás, pegás… y la próxima vez le volvés a explicar todo de cero. En 3 clases te enseño a usar Claude con tus archivos y tus proyectos. Sin programar. En vivo y grabadas. Un solo pago de Bs 50 por las tres clases. Tocá el botón y escribime.',
     'A cámara, vertical, unos 35 s, subtítulos grandes', 'Tocá el botón y escribime.', A, 'revisar')
 add('A2', '2026-11-02', 'Anuncio', 'taller', 'vertical', 'Anuncio · Video 2, la demo',
     'Mirá lo que le pido a Claude un lunes a la mañana.',
