@@ -1,4 +1,4 @@
-# Estado de la coordinación (Pelau)
+# Estado de la coordinación (Administrador)
 
 Relevo del 1-nov-2026, a las 20:45 de Bolivia. Lo escribió la sesión coordinadora de Claude Code cuando llegó al 63% de su contexto, según `get_usage` de la app de Claude a las 20:40: 625.909 tokens usados de 1.000.000. El tope para la coordinadora, corregido después, es de unos 240.000 tokens en total en Claude ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La sigue una sesión coordinadora nueva.
 
