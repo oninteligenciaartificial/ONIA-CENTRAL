@@ -17,7 +17,7 @@
 
 ## Qué usa cada área
 
-Sale de la sección "Qué toco y qué no" de [`negocio.md`](../equipo-agentes/negocio.md), [`producto.md`](../equipo-agentes/producto.md) y [`platform.md`](../equipo-agentes/platform.md), del [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102) y del [PR del alcance de Recepción](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/135), los dos abiertos, y de la sesión del Administrador y los mensajes que recibió el 2-nov (sin enlace). Qué cuentas se conectan lo decide Sergio: la tabla dice qué pidió cada área.
+Sale de la sección "Qué toco y qué no" de [`negocio.md`](../equipo-agentes/negocio.md), [`producto.md`](../equipo-agentes/producto.md) y [`platform.md`](../equipo-agentes/platform.md) y [`recepcion.md`](../equipo-agentes/recepcion.md), del [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, y de la sesión del Administrador y los mensajes que recibió el 2-nov (sin enlace). Qué cuentas se conectan lo decide Sergio: la tabla dice qué pidió cada área.
 
 | Área | Arranca con | Cuentas en su navegador, que carga Sergio |
 |---|---|---|
@@ -25,7 +25,7 @@ Sale de la sección "Qué toco y qué no" de [`negocio.md`](../equipo-agentes/ne
 | Marketing | `codex -p marketing` | Meta, para ver pantallas y referencias (PR #102) |
 | Boss Code | `codex -p boss-code` | Ninguna: solo páginas publicadas, sin login (`producto.md`) |
 | ONIA Platform | `codex -p onia-platform` | Ninguna esta semana. Para probar la plataforma como cliente, una cuenta de prueba de la propia plataforma, sin datos de clientes (`platform.md`) |
-| Recepción | `codex -p recepcion` | Sin definir. Sergio pidió el 2-nov preparar con ella cuentas para investigar redes sociales (sesión del Administrador, sin enlace). Según su mensaje al Administrador (2-nov, sin enlace), Recepción le propuso a Sergio Instagram y TikTok secundarias, y Facebook si hace falta. Las crea y las carga él (PR #135), y las decide él |
+| Recepción | `codex -p recepcion` | Cuentas secundarias para investigar redes: Instagram y TikTok, Facebook si hace falta, con un correo nuevo. Las pidió Sergio el 2-nov, según el mensaje de Recepción al Administrador (sin enlace). Las crea y las carga él (`recepcion.md`) |
 | Administrador, Pelau, Analista y revisiones | `codex` | Ninguna (`--isolated`). Pelau dijo que no usa navegador (mensaje al Administrador, 2-nov, sin enlace) |
 
 Ninguna área entra a una cuenta que Sergio no decidió ni cargó en su perfil. Entrar a una cuenta no da permisos: nada se publica, se envía ni se compra sin el sí de Sergio (`AGENTS.md`, "Frenos").
@@ -50,7 +50,7 @@ Ese ejemplo es el de Marketing; para otra área se cambia `marketing` por su nom
 
 - **El perfil `equipo`:** Sergio avisó el 2-nov "ya cargue mi cuenta" (pedido que pasó el Administrador anterior, sin enlace), y la carpeta cambió ese día a las 10:12. No se sabe qué cuenta es. Pasa a la carpeta del área que corresponda cuando él lo diga. Hasta entonces, en Codex no lo usa nadie.
 - **Claude Code no cambió:** sus sesiones siguen con el perfil `equipo` y con los conectores de la app, como Meta Ads. Hasta el paso a Codex, las áreas no usan el navegador de Ubuntu (pedido del Administrador a las áreas, 2-nov).
-- **Otras herramientas de Codex, sin revisar:** el perfil por área separa solo el navegador de Ubuntu. `codex mcp list` muestra prendidos `cua_repl`, `node_repl` y `playwright`, y `codex_app` apagado. En `config.toml` están prendidos, entre otros, los plugins `chrome@openai-bundled`, `browser@openai-bundled`, `computer-use@openai-bundled`, `unified-computer-use@openai-bundled` y `codex-app-tools@openai-bundled`, y los perfiles por área no los cambian. Qué exponen no se miró: si alguno llega al Chrome de Sergio o al escritorio, un área podría entrar a una cuenta que no está en su fila. Sigue en el [issue de frenos en Codex](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128).
+- **Otras herramientas de Codex, sin revisar:** el perfil por área separa solo el navegador de Ubuntu. `codex mcp list` muestra prendidos `cua_repl`, `node_repl` y `playwright`, y `codex_app` apagado. En `config.toml` están prendidos, entre otros, los plugins `chrome@openai-bundled`, `browser@openai-bundled`, `computer-use@openai-bundled`, `unified-computer-use@openai-bundled` y `codex-app-tools@openai-bundled`, y los perfiles por área no los cambian. Qué exponen no se miró: si alguno llega al Chrome de Sergio o al escritorio, un área podría entrar a una cuenta que no es suya. Sigue en el [issue de frenos en Codex](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/128).
 
 ## Cómo se vuelve atrás
 
