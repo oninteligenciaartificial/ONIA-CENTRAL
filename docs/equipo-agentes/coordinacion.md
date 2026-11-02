@@ -1,6 +1,6 @@
 # Estado de la coordinación (Pelau)
 
-Relevo del 1-nov-2026, a las 20:45 de Bolivia. Lo escribió la sesión coordinadora de Claude Code cuando llegó al 63% de su contexto. El tope para la coordinadora es 20% ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La sigue una sesión coordinadora nueva.
+Relevo del 1-nov-2026, a las 20:45 de Bolivia. Lo escribió la sesión coordinadora de Claude Code cuando llegó al 63% de su contexto, según `get_usage` de la app de Claude a las 20:40. El tope para la coordinadora es 20% ([plan](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), punto 2). La sigue una sesión coordinadora nueva.
 
 ## Objetivo de la próxima coordinadora
 
@@ -14,7 +14,7 @@ Lanzar el plan en cada área: una sesión por área, con el modelo y el esfuerzo
 |---|---|---|
 | Boss No-Code | `negocio.md`, PRs #97 y #104 | Pago de prueba con Yolo Pago y saber qué cubre el pago único. Las 6 salas de Meet del taller están creadas, sin invitados. |
 | Marketing | Todavía no está | El PR #102 lleva su estado. Codex lo aprobó, y espera que Sergio diga cómo sigue. El lote de reels no estaba en la PC: está en la rama `grokbot/workspace-20261101`. |
-| Boss Code | `producto.md`, PR #99 | Sergio decidió traer la web del taller de la rama de Grok Bot, publicarla en `/taller` y cobrar Bs 50 la serie completa. Publicar es producción: pide su sí. |
+| Boss Code | `producto.md`, PR #99 | La sesión de Boss Code reportó el 1-nov (sin enlace) que Sergio decidió traer la web del taller de la rama de Grok Bot, publicarla en `/taller` y cobrar Bs 50 la serie completa. Todavía no está en `producto.md`: sin comprobar en el repo. Publicar es producción y pide su sí. |
 | ONIA Platform | `platform.md`, PR #98 | Revisó el worktree que dejó Orca en onia-platform y lo anotó en el [#63](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/63). |
 | Analista | Sin archivo | Arrancó su primera auditoría de los PRs del 1-nov y quedó frenada antes de terminar. |
 
@@ -33,7 +33,7 @@ Las sesiones del 1-nov, que se pueden archivar cuando Sergio diga:
 - La rama `onia-loop-excepcion-d003` de Grok Bot no se mergea: se rescata en PRs chicos, sin datos de clientes. Su material está en la rama `grokbot/workspace-20261101`.
 - Grok Bot no se renueva.
 - El 12-nov, Sergio decide si renueva ChatGPT, que vence el 14-nov.
-- El merge se delega a Codex más adelante ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)). Hasta entonces, Codex no mergea.
+- Sobre el merge, Sergio eligió "Delegarlo después": se propone más adelante un cambio de reglas que lo delegue en Codex ([#106](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/106)), y él decide si lo aprueba. Hasta entonces, Codex no mergea.
 
 ## Lo que le toca a Sergio
 
