@@ -46,14 +46,14 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
 
 Decisiones de Sergio Urcullo del 2-nov-2026, en esta sesión, con la herramienta de preguntas (sin enlace): "Web corta antes del 3" y "sergiourcullo.vercel.app/taller (Recomendada)". Sobre las ramas de Grok Bot con datos de un lead, eligió "Borrar después del rescate (Recomendada)", y quedó en el [issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113#issuecomment-6570861813).
 
-- **Qué tiene:** las fechas y el precio de la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md), el temario "previsto" del plan de Meta Ads y dos botones a WhatsApp con "vengo de la web" ya escrito, para distinguir esos chats.
-- **Qué no dice, porque no está decidido:** la devolución, hasta cuándo quedan las grabaciones y lo legal del nombre.
+- **Qué tiene:** el precio de la [oferta del 1-nov](../decisiones/2026-11-01-oferta-taller-3-4-5.md), y las fechas, la devolución y las grabaciones de la decisión del 2-nov que movió el taller al 4, 5 y 6-nov ([PR #136](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/136), sin mergear el 2-nov), el temario "previsto" del plan de Meta Ads y dos botones a WhatsApp con "vengo de la web" ya escrito, para distinguir esos chats.
+- **Qué no dice, porque no está decidido:** lo legal del nombre.
 - **Para publicarla:** Sergio Urcullo mira la captura o la vista previa de Vercel, que pide su login, y da el sí. Con su sí citado en el PR, se mergea, y Vercel la publica. Después se comprueba `sergiourcullo.vercel.app/taller` sin login.
-- **Después del 5-nov:** la página queda con fechas pasadas. Se baja o se cambia para la próxima edición.
+- **Después del 6-nov:** la página queda con fechas pasadas. Se baja o se cambia para la próxima edición.
 
 ## Pendiente
 
-- Publicar la web del taller, con el sí de Sergio Urcullo. Las clases son el martes 3, el miércoles 4 y el jueves 5-nov.
+- Publicar la web del taller, con el sí de Sergio Urcullo. Las clases son el miércoles 4, el jueves 5 y el viernes 6-nov.
 - Compartido, sin quién lo haga: borrar las dos ramas de Grok Bot cuando termine el rescate del #101, como decidió Sergio Urcullo en el #113. Quién lo hace lo ordena el Administrador, y se coordina por el tablero (#111). Boss Code no lo hace si no se lo asignan.
 - Comprobar el acceso al VPS sin cambiar nada, cuando Sergio Urcullo lo autorice y la clave esté en la bóveda.
 - El respaldo semanal del VPS era una rutina del bot de Operaciones. Según el estado del bot de Grok, hay que pasarlo a n8n o a cron antes de borrar ese bot. Sin confirmar si sigue corriendo.
