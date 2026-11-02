@@ -17,7 +17,7 @@ Lo que va [entre corchetes] está pendiente: el texto no se manda hasta completa
 
 ## 1. Saludo
 
-"¡Hola! 👋 Qué bueno que escribiste. *Claude de 0 a 100* son 3 clases en vivo por Google Meet, el martes 3, el miércoles 4 y el jueves 5 de noviembre a las 19:00 (hora Bolivia). Arrancamos desde cero, practicamos con tareas que hoy te llevan mucho tiempo y te quedan las grabaciones. ¿Para qué te gustaría usarla: trabajo, estudios o tu negocio?"
+"¡Hola! 👋 Qué bueno que escribiste. *Claude de 0 a 100* son 3 clases en vivo por Google Meet, el martes 3, el miércoles 4 y el jueves 5 de noviembre a las 19:00 (hora Bolivia), con un solo pago de *Bs 50* por las 3 clases y las grabaciones incluidas. Arrancamos desde cero, practicamos con tareas que hoy te llevan mucho tiempo. ¿Para qué te gustaría usarla: trabajo, estudios o tu negocio?"
 
 ## 2. Precio
 
