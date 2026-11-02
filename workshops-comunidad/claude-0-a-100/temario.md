@@ -2,7 +2,7 @@
 
 29-oct-2026, por Claude Code. Sale del [plan del taller](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41), que trae las decisiones de Sergio Urcullo.
 
-**Estado: borrador, rescatado del PR #72 el 2-nov-2026 y adaptado a la oferta del 1-nov (3, 4 y 5-nov, Bs 50 por las tres clases, con grabaciones; `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`).** Lo que dicen las clases lo aprueba Sergio Urcullo, porque lo ve un cliente. **Pendiente:** las tablas de horas de cada clase son de la versión de 90 minutos y hay que rehacerlas para 19:00 a 21:00 con cambio de sala a las 20:00; la lista de pruebas con cuenta gratis (al final) sigue sin hacerse. Hasta entonces, "con la cuenta gratis" no se dice en ningún anuncio.
+**Estado: borrador, rescatado del PR #72 el 2-nov-2026 y adaptado a la oferta del 1-nov (3, 4 y 5-nov, Bs 50 por las tres clases, con grabaciones; `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`).** Lo que dicen las clases lo aprueba Sergio Urcullo, porque lo ve un cliente. Las tablas de horas van de 19:00 a 21:00, con cambio de sala a las 20:00. **Pendiente:** la lista de pruebas con cuenta gratis (al final) sigue sin hacerse. Hasta entonces, "con la cuenta gratis" no se dice en ningún anuncio.
 
 ## Lo que trae el plan gratis
 
@@ -10,10 +10,10 @@ Según la [página de precios de Claude](https://claude.com/pricing), consultada
 
 - **Subir archivos** no figura en esa página. Se prueba antes de la clase 1.
 - **Las skills** están en el plan gratis y necesitan prendido "crear y editar archivos" ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)).
-- **Gmail, Google Calendar y Google Drive** están "para todos los usuarios", según la [ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Se prueba igual el jueves.
+- **Gmail, Google Calendar y Google Drive** están "para todos los usuarios", según la [ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Se prueba igual antes de la clase 1.
 - **El límite de uso del plan gratis** es por sesión y se renueva cada 5 horas ([ayuda de Claude](https://support.claude.com/en/articles/8114491-get-started-with-claude)). Gastan más los mensajes largos, los archivos grandes, los chats largos, la búsqueda web, los artefactos y las tareas de varios pasos ([ayuda de Claude](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)).
 
-Los nombres de los menús salen de la ayuda en inglés, como "Customize > Skills". En español pueden decir otra cosa: la prueba del jueves anota cómo se llaman.
+Los nombres de los menús salen de la ayuda en inglés, como "Customize > Skills". En español pueden decir otra cosa: la prueba anota cómo se llaman.
 
 ## Cómo es cada clase
 
@@ -36,7 +36,7 @@ En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien 
 
 ### Antes de cada clase (Sergio Urcullo)
 
-- **La víspera:** crear los enlaces de las salas en Meet, uno por sala, con Nueva reunión > "Crear una reunión para más tarde" ([ayuda de Google Meet](https://support.google.com/meet/answer/9302870?hl=es-419)), y pegar el de la sala 1 en el recordatorio. Los crea Sergio Urcullo con su cuenta: con una cuenta personal, solo quien crea la reunión puede admitir a los que no tienen invitación (misma ayuda).
+- **La víspera:** los enlaces de las salas ya existen en Google Calendar (los creó esta área el 1-nov); comprobar que abran. Si hace falta crear otro, se usa Nueva reunión > "Crear una reunión para más tarde" ([ayuda de Google Meet](https://support.google.com/meet/answer/9302870?hl=es-419)), y pegar el de la sala 1 en el recordatorio. Los crea Sergio Urcullo con su cuenta: con una cuenta personal, solo quien crea la reunión puede admitir a los que no tienen invitación (misma ayuda).
 - **30 minutos antes:**
   - abrir Claude con la cuenta gratis de prueba, con los dos archivos de práctica a mano;
   - cerrar todo lo que tenga datos de clientes y prender "No molestar" en Windows;
@@ -54,19 +54,16 @@ En el cambio, el enlace de la sala 2 va al grupo de la clase y por chat a quien 
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
-| 19:00 | 5 | Bienvenida | Quién soy, en 30 segundos. Cómo es la clase. Aviso de que se graba solo la pantalla y mi voz. Las preguntas van al chat de Meet. A las 19:45 y a las 20:40 cambiamos de sala: el enlace llega al grupo |
+| 19:00 | 5 | Bienvenida | Quién soy, en 30 segundos. Cómo es la clase. Aviso de que se graba solo la pantalla y mi voz. Las preguntas van al chat de Meet. A las 20:00 cambiamos de sala: el enlace llega al grupo |
 | 19:05 | 10 | Qué es Claude y qué lo hace distinto | Un asistente de IA de la empresa Anthropic. Qué trae el plan gratis y qué no. Qué hace bien: leer y escribir mucho, trabajar con tus archivos, armar documentos. Qué no: puede inventar un dato con total seguridad, así que las cifras y los nombres se revisan siempre. Privacidad: no subas datos sensibles de clientes, y en la configuración elegís si tus chats se usan para entrenar a Claude |
 | 19:15 | 5 | Todos adentro | Cada uno abre claude.ai y escribe "Hola, trabajo en [tu rubro]". Avisa en el chat de Meet cuando le contesta. Quien no tiene cuenta, la crea ahora |
 | 19:20 | 20 | Pedirle bien las cosas | Demo: el mismo pedido dicho mal y dicho bien. Las 4 partes: el contexto (quién sos y para qué), la tarea, el formato y cómo te das cuenta de que está bien. Si no sale, se corrige en el mismo chat; para otro tema, un chat nuevo. **Ejercicio rápido, 5 minutos:** reescribí con las 4 partes algo que le pedirías a Claude esta semana |
-| 19:40 | 5 | Preguntas y aviso de sala | — |
-| 19:45 | 5 | Cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
-| 19:50 | 15 | Subirle archivos | Demo con `ventas-octubre-ejemplo.csv`: "Resumime en 3 líneas cómo nos fue", "Armame una tabla de ventas por producto" y "¿Qué producto conviene hacer más?". Se comprueba la respuesta con las cifras de abajo. Qué más se puede subir: un PDF, un Excel, la foto de un documento |
-| 20:05 | 10 | Búsqueda web y memoria | Cuándo prender la búsqueda web y pedirle las fuentes. La memoria: qué recuerda de un chat a otro, dónde se ve y cómo se borra. El chat de incógnito, para lo que no querés que recuerde |
-| 20:15 | 20 | Tu primer proyecto | Demo: proyecto "Panadería La Esquina", con instrucciones y los dos archivos de práctica. Pedido: "Un cliente pide una torta para mañana a las 10. Contestale". Claude debería decir que hacen falta 48 horas, porque está en las instrucciones. **Ejercicio de la clase,** 10 minutos (abajo) |
-| 20:35 | 5 | Aviso de sala | — |
-| 20:40 | 5 | Cambio a la sala 3 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
-| 20:45 | 10 | Preguntas | — |
-| 20:55 | 5 | Cierre | La tarea. La grabación llega al grupo. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
+| 19:40 | 15 | Subirle archivos | Demo con `ventas-octubre-ejemplo.csv`: "Resumime en 3 líneas cómo nos fue", "Armame una tabla de ventas por producto" y "¿Qué producto conviene hacer más?". Se comprueba la respuesta con las cifras de abajo. Qué más se puede subir: un PDF, un Excel, la foto de un documento |
+| 19:55 | 5 | Aviso y cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
+| 20:00 | 10 | Búsqueda web y memoria | Cuándo prender la búsqueda web y pedirle las fuentes. La memoria: qué recuerda de un chat a otro, dónde se ve y cómo se borra. El chat de incógnito, para lo que no querés que recuerde |
+| 20:10 | 20 | Tu primer proyecto | Demo: proyecto "Panadería La Esquina", con instrucciones y los dos archivos de práctica. Pedido: "Un cliente pide una torta para mañana a las 10. Contestale". Claude debería decir que hacen falta 48 horas, porque está en las instrucciones. **Ejercicio de la clase,** 10 minutos (abajo) |
+| 20:30 | 20 | Preguntas | — |
+| 20:50 | 10 | Cierre | La tarea. La grabación llega al grupo. Pedido de testimonio: "Si te sirvió, contame en una frase qué armaste". La clase 2: qué se ve |
 
 **Las cifras del archivo de práctica,** para comprobar lo que contesta Claude:
 - Del 1 al 28 de octubre se vendieron Bs 17.766.
@@ -89,16 +86,16 @@ Lo tenés cuando Claude te contesta usando tus documentos, sin que se los expliq
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
-| 19:00 | 5 | Bienvenida | Aviso de grabación. A las 19:45 cambiamos de sala |
+| 19:00 | 5 | Bienvenida | Aviso de grabación. A las 20:00 cambiamos de sala |
 | 19:05 | 5 | Repaso de la tarea | 2 o 3 cuentan en el chat qué tarea le pasaron a su proyecto |
 | 19:10 | 15 | Artefactos | Qué son: lo que Claude arma aparte del chat, como una página, una planilla que calcula, un diagrama o una mini app. Demo: "Armame una calculadora para presupuestar tortas por encargo: tamaño, sabor y precio". Cómo pedirle cambios. Si se publica, el enlace lo puede abrir cualquiera: nada privado. **Ejercicio rápido, 5 minutos:** un artefacto para algo de tu trabajo |
 | 19:25 | 15 | Documentos | Pedirle un Word, un Excel o un PDF para bajar. Demo con el archivo de práctica: "Informe de octubre en Word, con una tabla y 3 recomendaciones" y "Excel con los totales por semana". Claude Docs, si la prueba dla prueba lo confirma. Se revisan los números antes de mandar nada |
-| 19:40 | 5 | Preguntas y aviso de sala | — |
-| 19:45 | 5 | Cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
-| 19:50 | 15 | Presentaciones | Demo: "Con este informe, armame 5 diapositivas para mi equipo". Con Slides o como archivo de PowerPoint, según lo que confirme la prueba. Cómo pedirle que cambie una sola diapositiva |
-| 20:05 | 10 | Skills que ya vienen | Una skill es un paquete de instrucciones que Claude usa solo cuando hace falta. Ya vienen las de Excel, Word, PowerPoint y PDF, y Claude las usa solo ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)). Dónde se ven y se prenden. En la clase 3 armás la tuya |
-| 20:15 | 10 | Ejercicio de la clase | Abajo |
-| 20:25 | 5 | Cierre | La tarea, la grabación, el testimonio y la clase 3 |
+| 19:40 | 15 | Presentaciones | Demo: "Con este informe, armame 5 diapositivas para mi equipo". Con Slides o como archivo de PowerPoint, según lo que confirme la prueba. Cómo pedirle que cambie una sola diapositiva |
+| 19:55 | 5 | Aviso y cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
+| 20:00 | 10 | Skills que ya vienen | Una skill es un paquete de instrucciones que Claude usa solo cuando hace falta. Ya vienen las de Excel, Word, PowerPoint y PDF, y Claude las usa solo ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)). Dónde se ven y se prenden. En la clase 3 armás la tuya |
+| 20:10 | 20 | Ejercicio de la clase | Abajo |
+| 20:30 | 20 | Preguntas | — |
+| 20:50 | 10 | Cierre | La tarea, la grabación, el testimonio y la clase 3 |
 
 **Ejercicio de la clase: de un archivo a tres entregas.** Con un archivo tuyo, o con el de práctica:
 1. un artefacto: una tabla o un tablero;
@@ -115,14 +112,14 @@ Lo tenés cuando bajaste el documento y la presentación, y después de revisarl
 
 | Hora | Min | Qué | Cómo |
 |---|---|---|---|
-| 9:00 | 5 | Bienvenida | Aviso de grabación. A las 9:45 cambiamos de sala. 2 o 3 cuentan en el chat el pedido que guardaron |
-| 9:05 | 20 | Conectores | Qué son y qué permiso le das. Claude pide tu OK antes de mandar o borrar algo, y lo que lee queda guardado con el chat ([ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)). Demo con Google Drive, en una cuenta de Google sin datos de clientes que tiene en Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt`: "Buscá mi documento de precios y resumilo". Gmail y Google Calendar, si la prueba los confirma. El directorio con las demás apps. **Ejercicio rápido, 5 minutos:** conectá Drive u otra app tuya y pedile algo |
-| 9:25 | 15 | Pedidos que se reusan | Tres lugares: las instrucciones de un proyecto; tus preferencias, que Claude lee en todos los chats; y tu "recetario" de pedidos en un documento. Demo: "Convertí lo que hicimos en un pedido que pueda pegar la próxima vez" |
-| 9:40 | 5 | Preguntas y aviso de sala | — |
-| 9:45 | 5 | Cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
-| 9:50 | 20 | Tu propia skill | Demo: la skill "respuestas de la panadería". Se le pide a Claude que la escriba como una carpeta con un `SKILL.md`, comprimida en .zip. Se sube en Customize > Skills, con "+", "Create skill" y "Upload a skill" ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)), y se prueba en un chat nuevo. **Ejercicio de la clase** (abajo) |
-| 10:10 | 10 | Tu plan para seguir | Elegí 3 tareas de tu semana y a dónde va cada una: un proyecto, una skill o un conector. Cuándo conviene un plan pago: más uso y programar tareas. El Pro cuesta US$20 por mes, o US$17 por mes pagando el año ([precios de Claude](https://claude.com/pricing), 29-oct-2026). {Con el gratis se hace todo lo de esta serie}, si la prueba dla prueba lo confirma |
-| 10:20 | 10 | Preguntas y cierre | El testimonio, la grabación y cómo seguir |
+| 19:00 | 5 | Bienvenida | Aviso de grabación. A las 20:00 cambiamos de sala. 2 o 3 cuentan en el chat el pedido que guardaron |
+| 19:05 | 20 | Conectores | Qué son y qué permiso le das. Claude pide tu OK antes de mandar o borrar algo, y lo que lee queda guardado con el chat ([ayuda de Claude](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors)). Demo con Google Drive, en una cuenta de Google sin datos de clientes que tiene en Drive el documento de Google "Precios de la panadería", con el texto de `mi-negocio-ejemplo.txt`: "Buscá mi documento de precios y resumilo". Gmail y Google Calendar, si la prueba los confirma. El directorio con las demás apps. **Ejercicio rápido, 5 minutos:** conectá Drive u otra app tuya y pedile algo |
+| 19:25 | 15 | Pedidos que se reusan | Tres lugares: las instrucciones de un proyecto; tus preferencias, que Claude lee en todos los chats; y tu "recetario" de pedidos en un documento. Demo: "Convertí lo que hicimos en un pedido que pueda pegar la próxima vez" |
+| 19:40 | 15 | Preguntas | — |
+| 19:55 | 5 | Aviso y cambio a la sala 2 | "/sala" en el grupo, desde el celular. Toma nueva de grabación |
+| 20:00 | 20 | Tu propia skill | Demo: la skill "respuestas de la panadería". Se le pide a Claude que la escriba como una carpeta con un `SKILL.md`, comprimida en .zip. Se sube en Customize > Skills, con "+", "Create skill" y "Upload a skill" ([ayuda de Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)), y se prueba en un chat nuevo. **Ejercicio de la clase** (abajo) |
+| 20:20 | 15 | Tu plan para seguir | Elegí 3 tareas de tu semana y a dónde va cada una: un proyecto, una skill o un conector. Cuándo conviene un plan pago: más uso y programar tareas. El Pro cuesta US$20 por mes, o US$17 por mes pagando el año ([precios de Claude](https://claude.com/pricing), 29-oct-2026). {Con el gratis se hace todo lo de esta serie}, si la prueba dla prueba lo confirma |
+| 20:35 | 25 | Preguntas y cierre | El testimonio, la grabación y cómo seguir |
 
 **Ejercicio de la clase: tu skill.**
 1. Elegí una tarea que repetís cada semana, por ejemplo contestar un tipo de consulta o armar un informe.
@@ -160,7 +157,7 @@ Si te sale el aviso de que llegaste al límite, no te frenes: seguí la demo y h
 
 ## Qué probar la prueba con una cuenta gratis
 
-Lo hace Sergio Urcullo con una cuenta gratis nueva, no con la suya paga, porque la paga trae cosas que el gratis no tiene. Crear la cuenta lo hace él. Los pasos para abrirla aparte están en la [lista del jueves y el viernes](lista-jueves-viernes.md).
+Lo hace Sergio Urcullo con una cuenta gratis nueva, no con la suya paga, porque la paga trae cosas que el gratis no tiene. Crear la cuenta lo hace él. 
 
 Para cada punto, anotá si anduvo y cómo se llama el menú en español. Si algo no anda, se saca del temario.
 
@@ -192,4 +189,4 @@ Para cada punto, anotá si anduvo y cómo se llama el menú en español. Si algo
 **En el celular:**
 - [ ] En la app de Claude, ¿se ve el proyecto, se sube un archivo, se conecta Drive y se sube el .zip de una skill? Si las 3 clases andan en el celular, "/taller" puede sumarlo.
 
-**Qué hacer con el resultado:** mandale a un agente la lista marcada con capturas, sin datos personales. El agente corrige este temario. Si todo anda con la cuenta gratis, el anuncio puede decir "con la cuenta gratis" ([anuncio.md](anuncio.md)), y "/taller" y la confirmación, "cuenta gratis" (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`).
+**Qué hacer con el resultado:** mandale a un agente la lista marcada con capturas, sin datos personales. El agente corrige este temario. Si todo anda con la cuenta gratis, el anuncio puede decir "con la cuenta gratis" (los anuncios son del área de Marketing), y "/taller" y la confirmación, "cuenta gratis" (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`).
