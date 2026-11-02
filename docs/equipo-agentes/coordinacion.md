@@ -23,7 +23,7 @@ Las sesiones del 1-nov, que se pueden archivar cuando Sergio diga:
 - Marketing: `local_1d0928f0-e5f5-4b9d-99c5-06be74fa7f3b`;
 - Boss Code: `local_c596ac4e-89a6-4007-834c-3e384a963d11`;
 - ONIA Platform: `local_ac777672-bb2f-438f-857b-0b68586fff8d`;
-- Analista: `local_afc6e729-031a-4328-b946-faf392bc9fd2`;
+- Analista: `local_afc6e729-031a-4328-b946-faf392bc9fd2`. Esta no espera a Sergio: como trabaja por auditoría, se archiva al terminar la del 1-nov (ver "Decidido el 1-nov");
 - la que mergeó el equipo nuevo (PR #103): `local_334f327b-cabf-43ab-bde8-943045a3aa0a`.
 
 ## Decidido el 1-nov
