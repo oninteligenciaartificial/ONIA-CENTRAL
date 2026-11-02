@@ -6,7 +6,7 @@ Los mensajes a leads quedan en borrador hasta el sí de Sergio Urcullo. Lo de ot
 
 Actualizado: 2-nov-2026 (las fechas del taller pasaron al 4, 5 y 6-nov: [decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Lo de abajo que dice martes 3, miércoles 4 y jueves 5 está reemplazado por esa decisión. Texto del 1-nov: 1-nov-2026, a la noche (Bolivia), con las decisiones de Sergio Urcullo de esa noche. Fuentes: `main` (`56fa46a`), la rama `origin/onia-loop-excepcion-d003` (`c2796fa`) y los conectores de esta sesión, consultados ese día. Lo que dice la rama lo escribió Grok Bot, no tiene cita de Sergio Urcullo, y va como dato, no como regla.
 
-## Objetivo: Bs 3.000 cobrados al 5-nov
+## Objetivo: Bs 3.000 cobrados al 6-nov (antes 5-nov; Sergio lo confirmó el 2-nov)
 
 Lo fijó Sergio Urcullo el 1-nov: 60 pagos de Bs 50, brutos, conciliados con el banco al 5-nov (`docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`). Los impuestos los ve él con el contador.
 
@@ -68,6 +68,26 @@ Solo en `/workspace`, la computadora en la nube de Grok Bot, que esta PC no ve. 
 ## Conectores de esta sesión
 
 Consultados el 1-nov con `session_connectors_status` de la app, sin leer secretos. Figuran como conectados, entre otros, Google Calendar, Gmail, Google Drive, Notion y Meta Ads. De esos, solo se usó Google Calendar: para leer eventos y para crear las 6 salas de Meet; que los demás anden para esta área queda sin confirmar. No figura ningún conector de WhatsApp, Instagram, Chatwoot ni del banco: los leads y los cobros no se ven desde acá.
+
+## Para seguir en Codex
+
+Escrito el 2-nov-2026 a la noche (Bolivia). Se arranca en `C:\dev\worktrees\ONIA-CENTRALoss-no-code` con `codex -p boss-no-code`. Los mensajes entre áreas van al tablero del issue #111.
+
+**En qué estoy:** el taller es el miércoles 4, jueves 5 y viernes 6-nov a las 19:00 de Bolivia, Bs 50 por las 3 clases ([decisión](../decisiones/2026-11-02-taller-4-5-6.md)). Los textos de WhatsApp y del QR están aprobados por Sergio Urcullo y en `main`, y las 6 salas de Meet están movidas. Boss Code rehízo la página `/taller` con mi análisis de funnel y no está publicada.
+
+**Qué sigue (lo hace esta área):**
+1. Armar el registro privado de consultas, comprobantes y pagos, fuera de Git. Falta decidir dónde vive (Google Sheets u otro).
+2. Cuando Sergio Urcullo defina el temario y las skills para regalar con su video de repos, rehacer el temario (en el PR de `workshops-comunidad/claude-0-a-100/`, abierto) y cerrar el PR viejo del taller (#72) sin mergear, con un comentario de qué se rescató.
+3. Pasarle a Boss Code el texto de lo que Sergio Urcullo decida para la página.
+4. Conciliar los pagos con el banco al 6-nov.
+
+**Qué espera a Sergio Urcullo:**
+- Hacer el pago de prueba con el QR de Yolo Pago.
+- Probar OBS con audio para grabar las clases, y elegir dónde se comparten las grabaciones.
+- Para la página: hasta cuándo se inscribe la gente, si hay límite de personas y si Bs 50 es "precio de esta edición" (recomendado: hasta el miércoles 4 a las 19:00, sin límite, y sí).
+- Mandar su video de repos para definir temario y skills a regalar.
+- El nombre "Claude de 0 a 100", a confirmar con un abogado.
+- Aprobar el análisis de los referentes (`marca-personal/referentes/funnel-fomo-2026-11-02.md`, PR abierto).
 
 ## Pendientes del área
 
