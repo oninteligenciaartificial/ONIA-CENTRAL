@@ -25,8 +25,8 @@ Las lanzó el Administrador el 2-nov, cerca de las 2:20 de Bolivia, por pedido d
 |---|---|---|---|---|
 | Pelau | `local_dcf76b4f-5a6e-4d16-af1c-d84513c5e5c4` | Haiku, `medium` | Resúmenes cortos | Dio el primer resumen y espera |
 | Boss No-Code | `local_813868ac-94a1-493d-8343-a3de32f590af` | Sonnet, `medium` | Que el 3-nov se pueda inscribir y pagar por WhatsApp | Espera que Sergio conteste su QA |
-| Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA |
-| Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y los datos del lead en las ramas de Grok ([#113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)) | Espera que Sergio conteste su QA |
+| Marketing | `local_a0b7d137-fa8f-43da-8302-bbb9f19d282c` | Sonnet, `medium` | La campaña de Meta Ads en pausa, lista para el 3-nov. Después, la ficha de chase.h.ai | Espera que Sergio conteste su QA. Su estado, `marketing.md`, todavía no está en `main`: está en el [PR del estado de Marketing](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/102), abierto, que su auditoría pidió poner al día con la oferta y las fechas nuevas y volver a revisar |
+| Boss Code | `local_8befe9bd-85fa-44f8-82a0-7793dfccbdee` | Opus, `high` | El enlace de WhatsApp, la web del taller y qué hacer con las ramas de Grok que tienen datos de un lead | Espera que Sergio conteste su QA |
 | ONIA Platform | `local_3542ddf0-d533-4ca5-9227-d8ae370ce11b` | Opus, `high` | Su próximo objetivo, con la recomendada ligada a vender esta semana | Espera que Sergio conteste su QA |
 | Analista | ninguna | — | Se abre al cerrar la tanda de PRs del día | — |
 
@@ -35,13 +35,14 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
 **Sesiones archivadas el 2-nov:**
 - las cinco del 1-nov (Boss No-Code, Marketing, Boss Code, ONIA Platform y Analista). Sergio pidió "archiva las antiguas y lanzas las nuevas"; la app no dejó archivarlas desde acá porque esperaban su respuesta, y él avisó: "ya las archive". No tenían nada sin guardar: se miró `git status` en cada worktree;
 - la que mergeó el equipo nuevo;
-- este Administrador, `local_b6a36bc7-c263-4551-8a70-0d2980e34ab4`.
+- este Administrador, `local_b6a36bc7-c263-4551-8a70-0d2980e34ab4`, que se archiva al dejar este relevo.
 
 ## Dependencias entre áreas para el 3-nov
 
 - **Marketing y Boss No-Code:** el llamado a la acción del anuncio coincide con el texto que llega al chat de WhatsApp (`docs/lecciones.md`). Los textos están en el [PR de los textos de WhatsApp y del QR](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/110).
 - **Boss Code y Marketing:** si la campaña lleva web del taller, va antes de prender los anuncios. Publicarla es producción.
 - **Boss No-Code:** sin el pago de prueba con Yolo Pago, no se cobra con confianza.
+- **Boss No-Code y Boss Code, con los datos del lead** ([issue #113](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/113)): el issue le encarga la revisión a Boss No-Code. El 2-nov, el encargo de la sesión nueva de Boss Code sumó preguntarle a Sergio qué hacer con esas ramas, porque borrar una rama no se deshace. Que se pongan de acuerdo por el tablero, para que ninguna lo deje ni lo hagan las dos.
 
 ## Cómo quedó lo del equipo
 
@@ -50,7 +51,7 @@ Cada área hace su QA con Sergio en su propia sesión, por pedido de él: "las d
   - la ventana visible;
   - varias sesiones juntas.
 
-  Las cuentas las carga Sergio cuando un área las necesite.
+  Lo que sí se sabe: el perfil compartido lo usa un solo navegador a la vez, así que las áreas se turnan hasta probar otra solución. Las cuentas las carga Sergio cuando un área las necesite.
 - **Memoria compartida:** es el repo: `AGENTS.md`, `docs/lecciones.md`, el plan, los estados de esta carpeta, los PRs y el tablero del issue #111. La memoria de Claude Code no la leen Codex ni las otras sesiones (`docs/lecciones.md`). En Codex, la función `memories` figura en `false` (`codex features list`, 2-nov). Lo que falta del [#38](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/38) sigue abierto.
 - **Mensajes entre sesiones:**
   - **Del Administrador a las áreas, en Claude:** anda. El 1-nov, el Administrador les mandó con `SendMessage` la regla de las respuestas cortas a las cinco sesiones de ese día. En las transcripciones de Marketing, Boss Code y ONIA Platform se ve el mensaje recibido, y Boss No-Code y Boss Code contestaron que tomaban la regla (`list_events`, 2-nov). La de la Analista no se miró.
