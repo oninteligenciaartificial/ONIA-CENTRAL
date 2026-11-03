@@ -69,7 +69,7 @@ Al 2-nov a la noche. Lo ya resuelto ([decisión del 2-nov](../decisiones/2026-11
 
 1. Aprobar los textos del anuncio y grabar los 2 videos.
 2. Probar cómo se graban las clases antes de activar el anuncio: Meet gratis no graba.
-3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Al 2-nov, ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta: lo mostraron `ads_get_ad_accounts`, `ads_get_ad_account_pages` y `ads_get_ig_accounts` del conector de Meta Ads, en la sesión Marketing. `ads_get_user_pages` mostró solo la página "Onia", sin asociar a ninguna cuenta. A las 23:00 del 2-nov seguía igual; además, `ads_get_ad_entities` mostró en "ONIA Ads" un borrador de campaña "Claude 0 a 100 - WhatsApp" (31-oct), sin conjunto ni anuncios, que figura ACTIVE: si se publica así, sale prendida.
+3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Al 2-nov, ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta: lo mostraron `ads_get_ad_accounts`, `ads_get_ad_account_pages` y `ads_get_ig_accounts` del conector de Meta Ads, en la sesión Marketing. `ads_get_user_pages` mostró solo la página "Onia", sin asociar a ninguna cuenta. A las 23:00 del 2-nov seguía igual; además, `ads_get_ad_entities` mostró en "ONIA Ads" un borrador de campaña "Claude 0 a 100 - WhatsApp" (31-oct), sin conjunto ni anuncios, que figura ACTIVE (qué pasa si se publica así no se comprobó: se pasa a pausa antes).
 4. Decidir si el panel de contenido pasa a Notion. Es una propuesta sin aprobar: necesita prender Notion en Codex y conectar su cuenta.
 5. Vos o tú en los guiones, y si quiere decir su edad.
 6. El presupuesto de TikTok, si se pauta ahí.

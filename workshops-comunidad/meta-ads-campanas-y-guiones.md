@@ -12,7 +12,7 @@
 - **Otras dos quedan armadas, apagadas y sin gasto** para después del 6-nov: audiencia (B) y segunda edición (C). Las enciende Sergio Urcullo, con los números de A y su sí.
 - **Guiones:** 2 videos para A, que son los del #120; 2 para C, con lo que solo Sergio Urcullo sabe entre [corchetes]; B usa un reel que ya existe.
 - **Para lanzar A falta casi todo lo que depende de Sergio Urcullo.** Comprobado en Meta esta noche: las dos cuentas siguen sin página asociada ni Instagram, "ONIA Ads" sigue sin tarjeta y no hay anuncios publicados. Sí hay un borrador de campaña en "ONIA Ads" (ver "Qué hay hoy"). Los pasos están en "Qué falta para lanzar A".
-- **Los anuncios solos no llegan a los Bs 3.000.** Con US$30, solo el mejor caso de la tabla de "Números" da 60 pagos. Lo normal es que el perfil, los estados y los grupos de Sergio Urcullo pongan una parte.
+- **Los anuncios solos no llegan a los Bs 3.000.** Con US$30, solo el mejor caso de la tabla de "Números" da 60 pagos. Si no llegan, el resto tiene que venir del perfil, los estados y los grupos de Sergio Urcullo.
 
 ## Qué hay hoy
 
@@ -24,7 +24,7 @@ Comprobado el 2-nov entre las 23:00 y las 23:15 (hora de Bolivia), solo lectura,
 | Páginas | Ninguna asociada a las dos cuentas. La única que ve el usuario es "Onia" (1140384625819526), que es de la empresa OniaAgency, la misma de "ONIA Ads" | `ads_get_ad_account_pages`, `ads_get_user_pages`, `ads_get_pages_for_business` |
 | Instagram | Ninguna cuenta conectada en las dos | `ads_get_ig_accounts` |
 | Campañas publicadas | Ninguna en las dos cuentas | `ads_get_ad_entities` |
-| Borradores | En "ONIA Ads": una campaña "Claude 0 a 100 - WhatsApp", objetivo Interacción, creada con la "creación rápida" del Administrador y modificada por última vez el 31-oct a las 17:57 (hora de Bolivia). No tiene conjunto, anuncios, presupuesto ni fechas, y figura con estado ACTIVE: si se publica así, sale prendida. En la otra cuenta, la herramienta no responde todavía ("se está habilitando de a poco") | `ads_get_ad_entities` con `object_state=draft` |
+| Borradores | En "ONIA Ads": una campaña "Claude 0 a 100 - WhatsApp", objetivo Interacción, creada con la "creación rápida" del Administrador y modificada por última vez el 31-oct a las 17:57 (hora de Bolivia). No tiene conjunto, anuncios, presupuesto ni fechas, y figura con estado ACTIVE. Qué pasa si se publica así no se comprobó: se lo pasa a pausa antes de publicar. En la otra cuenta, la herramienta no responde todavía ("se está habilitando de a poco") | `ads_get_ad_entities` con `object_state=draft` |
 | Web del taller | `sergiourcullo.vercel.app/taller`, publicada el 2-nov con el sí de Sergio Urcullo. Sus 4 botones abren el WhatsApp +591 75414930 con "Hola Sergio, vengo de la web y quiero inscribirme al taller Claude de 0 a 100" | [Tablero #111, comentario de Boss Code del 2-nov](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6582395284) |
 | Textos de WhatsApp | Aprobados por Sergio Urcullo el 2-nov y en `main`: `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`. Si ya están cargados en la app WhatsApp Business, sin comprobar: no hay conector de WhatsApp | `docs/equipo-agentes/negocio.md` |
 | Otros anuncios de IA en Bolivia | Búsqueda "taller inteligencia artificial": unos 191 anuncios activos, estimación de la Biblioteca de anuncios por texto (cuenta también lo que no es un taller). Dos títulos vistos: un taller presencial en La Paz a Bs 250 con "Últimos 20 cupos" (Academi365 Latam) y "Domina la IA en 28 Días, aunque empieces desde cero" (Educly App AI) | `ads_library_search`, país BO |
@@ -49,7 +49,7 @@ Sigue la estructura del #120 (ayuda de Meta: [anuncios a WhatsApp](https://www.f
 
 | Nivel | Valor |
 |---|---|
-| Campaña | "Claude 0 a 100 · V1 · WhatsApp". Interacción, sin categoría especial. Nuevo: el borrador que ya existe en "ONIA Ads" tiene ese objetivo y se puede seguir en vez de crear otra campaña (sin comprobar que el conector pueda agregarle conjunto y anuncios). Hay que cambiarle el nombre, y como figura ACTIVE, al publicarlo queda apagado hasta el sí de Sergio Urcullo |
+| Campaña | "Claude 0 a 100 · V1 · WhatsApp". Interacción, sin categoría especial. Nuevo: el borrador que ya existe en "ONIA Ads" tiene ese objetivo y se puede seguir en vez de crear otra campaña (sin comprobar que el conector pueda agregarle conjunto y anuncios). Hay que cambiarle el nombre y pasarlo a pausa antes de publicarlo: figura ACTIVE y no se comprobó qué pasa al publicarlo así |
 | Conjunto | Destino WhatsApp, optimizado a conversaciones. Toda Bolivia, 18 años o más, sin intereses, ubicaciones automáticas. US$10 por día. Inicio martes 3-nov, fin jueves 5-nov a las 23:59. La zona horaria de la cuenta está sin confirmar (Bolivia es UTC−4). Nuevo: puja de mayor volumen, sin tope de costo, como ya está en el borrador |
 | Anuncios | "Video 1 · contraste" y "Video 2 · demo", con el mismo texto y título |
 | Mensaje de WhatsApp | Plantilla con saludo y una pregunta sugerida, que escribe Sergio Urcullo en el Administrador porque el conector no la carga (#120). Nuevo: el saludo dice "el precio" y no "los precios", porque hay un solo precio |
