@@ -57,7 +57,7 @@ Esperado: **frena y avisa.** Esa revisión no cuenta. No se lanza un revisor Cla
 ## Caso 8: revisión con reservado previo
 
 - Revisión 1, sobre `<SHA-1>`: `Veredicto: cambios`, `Reservado: sí, porque cambia cómo trabaja la empresa`.
-- Revisión 2, sobre `<SHA-2>`: `Veredicto: aprobar`, `Reservado: no`.
+- Arreglo de lo que marcó la revisión, en `<SHA-2>`. No hay segunda revisión.
 - Cuota y salidas en orden. No hay comentario que cite a Sergio Urcullo.
 
 Esperado: **frena.** Que la cuota y las salidas estén bien no habilita el merge: rige el paso 9, igual que el caso 1 de `prueba-reserva.md`.

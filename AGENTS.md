@@ -17,7 +17,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 ## Cómo se trabaja
 
 - `main` cambia solo por PR. Un PR es un cambio chico, con un título que dice qué hace.
-- **Lo mergea Claude sin preguntar** (y, desde el 3-nov-2026, Codex) solo si el PR toca nada más que documentos internos de `docs/`, la estructura de carpetas, skills escritas en este repo que no hacen nada de la lista de abajo, o pruebas. Antes tiene que pasar una revisión con veredicto "aprobar" y sin cambios pendientes, hecha por un agente que no comparte el contexto del autor: un agente nuevo, o Codex si lo escribió Claude, u otro Codex nuevo si lo escribió Codex.
+- **Lo mergea Claude sin preguntar** (y, desde el 3-nov-2026, Codex) solo si el PR toca nada más que documentos internos de `docs/`, la estructura de carpetas, skills escritas en este repo que no hacen nada de la lista de abajo, o pruebas. Antes tiene que pasar la revisión única de "Revisión escrita en cada PR": que dé "aprobar", o que el autor haya arreglado lo que marcó y lo haya dejado escrito.
 - **Lo aprueba Sergio Urcullo, siempre:**
   - lo que se publica o ve un cliente, incluidos los guiones, páginas y mensajes de `marca-personal/` y `workshops-comunidad/`;
   - el gasto;
@@ -28,10 +28,11 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
   - cualquier cambio a `AGENTS.md`, `CLAUDE.md`, `.gitignore`, los permisos o esta regla.
 
   Si un PR entra en las dos listas, o hay duda, lo aprueba él.
-- **Revisión escrita en cada PR.** La hace un agente que no comparte el contexto del autor (un agente nuevo, o Codex si lo escribió Claude), y queda como comentario del PR: qué se revisó, quién lo revisó, qué falló, por qué y qué se corrigió. Después de cada arreglo se vuelve a revisar, y se mergea recién cuando la última revisión da "aprobar". La auditoría del 29-oct encontró revisiones que no quedaron escritas y PRs mergeados segundos después de "corrige lo de la revisión", sin volver a revisar.
+- **Una sola revisión escrita en cada PR, hecha por un solo agente.** Lo revisa un agente que no comparte el contexto del autor (un agente nuevo, o Codex si lo escribió Claude), una vez, y queda como comentario del PR: qué se revisó, quién lo revisó, qué falló y por qué. Si da "aprobar", sigue al merge. Si marca algo, el autor arregla solo eso y lo deja en otro comentario: qué corrigió y en qué commit. Ese arreglo no se vuelve a revisar: se entrega. No se lanzan más agentes ni rondas. Lo decidió Sergio Urcullo el 3-nov, porque un trabajo tardó más de dos horas en revisiones con decenas de agentes.
 - **Aprobaciones rápidas.** A Sergio Urcullo se le pide el sí así: "Sergio, tenés este cambio: <qué cambia y para qué, en una o dos líneas>. ¿Lo aceptás?". Si es algo visible, va con su captura, como dice "Frenos". Sin números de PR ni enlaces para leer, porque no quiere tener que entrar a GitHub a leerlo. Si hay que elegir, se le dan opciones cortas, con la recomendada marcada. Su aprobación se cita en un comentario del PR, con la pregunta tal como se le hizo, su respuesta textual y la fecha, porque la cuenta de GitHub es compartida.
 - **Los planes no se le preguntan (autonomía mediana).** Cada sesión decide sola lo de su área que este archivo no le reserva a Sergio Urcullo, y lo técnico, con una revisión independiente. A él se le lleva lo que este archivo le reserva (entre otras cosas, la lista "Lo aprueba Sergio Urcullo, siempre" y los "Frenos") y lo que solo él puede hacer, como logins, cuentas, secretos o comandos en su PowerShell, todo junto en un solo mensaje. Si hay duda, se le pregunta.
 - Una sesión, un objetivo, con su "hecho cuando" definido al empezar. Lo que aparece fuera de ese objetivo va a un issue.
+- **Cada encargo es una sola tarea, de unos 30 minutos como mucho.** Si no entra, se parte en encargos más chicos. Lo pidió Sergio Urcullo el 3-nov.
 - **Un agente por tarea.** Una sesión no toca archivos que tiene abiertos otra. Si dos necesitan el mismo, va primero la que ya tiene el PR abierto, y la otra espera el merge; si no se ponen de acuerdo, decide Sergio Urcullo.
 - Skills y herramientas: primero las oficiales (Anthropic o el proveedor de la herramienta). Instalar algo pide el OK de Sergio Urcullo.
 - **La automatización y los scripts los arma la sesión del área,** con el flujo oficial de la herramienta y leyendo su documentación. El código de cada producto, scripts incluidos, va en su repo y por PR: nada vive solo en una computadora.
@@ -72,8 +73,8 @@ Reglas del equipo:
 - **Entre proyectos** se avisan por el tablero del issue #111, para que quede escrito. Lo que un estado deja "Para otras áreas" también se anota en el tablero, porque el otro jefe no lee ese estado al arrancar.
 - **El resumen para Sergio Urcullo** lo da cada jefe al cerrar su trabajo, en su sesión.
 - **Auditoría semanal:** cada sábado, Desarrollo encarga una auditoría en solo lectura de los PRs mergeados en la semana: revisión escrita, veredicto, y la aprobación de Sergio Urcullo citada cuando hacía falta. El informe queda en un issue, y Desarrollo le pasa a cada área lo suyo por el tablero. La primera, el 7-nov, cubre desde el 2-nov.
-- **Cada trabajo lo revisa, en solo lectura, un agente nuevo que no comparte el contexto del autor.** En Codex, con `codex exec --sandbox read-only`. La revisión queda escrita en el PR, como dice "Cómo se trabaja".
-- **Codex mergea solo lo que deja "Lo mergea Claude sin preguntar",** con la última revisión en "aprobar", y nunca hace push a `main` ni a `master`. Lo aceptó Sergio Urcullo el 2-nov, con botones (sesión del Administrador). El cambio de equipo no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
+- **Cada trabajo lo revisa una vez, en solo lectura, un agente nuevo que no comparte el contexto del autor.** En Codex, con `codex exec --sandbox read-only`. La revisión queda escrita en el PR, como dice "Cómo se trabaja".
+- **Codex mergea solo lo que deja "Lo mergea Claude sin preguntar",** con la revisión en "aprobar" o su arreglo escrito, y nunca hace push a `main` ni a `master`. Lo aceptó Sergio Urcullo el 2-nov, con botones (sesión del Administrador). El cambio de equipo no cambia los permisos ni reemplaza las aprobaciones de Sergio Urcullo.
 
 ## Hermes y Grok Bot: historia
 
