@@ -1,5 +1,7 @@
 # Skills de ONIA: una sola carpeta para Hermes, Claude Code y Codex
 
+> **Historia en lo de Hermes.** Hermes no orquesta desde el 31-oct-2026 y el 1-nov ya no estaba en la PC (`AGENTS.md`, "Hermes y Grok Bot: historia"). Lo que este documento dice de Hermes no se aplica.
+
 28-oct-2026. **Sergio Urcullo aprobó las decisiones 1 a 6 del punto 8 el mismo día.** Hasta ese momento no había cambiado nada: ni la configuración de los agentes, ni el `.gitignore`, ni había skills en el repo. **Esa misma noche quedaron aplicadas y probadas: los tres agentes cargan la skill (punto 9).** Se recomienda no aplicar la 7 por ahora; la decide él. Sale del [issue #10](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/10).
 
 Cómo se armó, todo de solo lectura salvo las pruebas en una carpeta temporal:
