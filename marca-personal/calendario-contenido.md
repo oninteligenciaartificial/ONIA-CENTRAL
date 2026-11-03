@@ -62,18 +62,19 @@ Cada semana tiene un trabajo. Así el que te encuentra el primer día llega a la
 
 ### Repos, casos de uso y series que llevan al taller
 
-Lo sumó Sergio Urcullo el 3-nov ("videos enseñando repositorios, noticias, algún caso de uso, … algún tutorial que luego se escala a un taller").
+Lo pidió Sergio Urcullo el 3-nov, en el hilo "Armar los guiones diarios de contenido" ("videos enseñando repositorios, noticias, algún caso de uso, … algún tutorial que luego se escala a un taller").
 
 - **Repo de la semana (sábados, en el lugar de N).** Una herramienta de GitHub que Sergio probó: qué hace, cómo se usa y qué **no** hace, como los videos de Erik. El repo se elige ese día. El guion lleva el enlace, las estrellas y la fecha en que se vieron, y solo dice lo que se probó.
-- **Caso de uso real (jueves 12 y 19, en el lugar de P).** La IA resolviendo un problema de un negocio de verdad. Es el formato de Santiago que más vistas tuvo: "Voy a un negocio y le dejo la IA funcionando", con 113.870 en el de la cafetería ([resumen de referentes](referentes/resumen-2026-10-29.md)). **Necesita un negocio que acepte salir y que Sergio Urcullo lo consiga**, por ejemplo la empresa familiar. Sin datos de sus clientes en pantalla. Si no hay negocio, va un P normal.
+- **Caso de uso real (jueves 12 y 19, en el lugar de P).** La IA resolviendo un problema de un negocio de verdad. Es uno de los formatos que mejor le funcionan a Santiago: "Voy a un negocio y le dejo la IA funcionando", con 113.870 vistas en el de la cafetería al 29-oct-2026 ([resumen de referentes](referentes/resumen-2026-10-29.md)). **Necesita un negocio que acepte salir y que Sergio Urcullo lo consiga**, por ejemplo la empresa familiar. Sin datos de sus clientes en pantalla. Si no hay negocio, va un P normal.
 - **Series que llevan al taller (Propuesta).** Los V se agrupan en 3 series. Cada serie termina en una clase del taller: el video da una parte gratis, y la clase la completa en vivo. Cuando el temario quede firme, se ajusta qué clase corresponde a cada serie.
   - **Serie 1 · Pedirle bien a la IA:** contexto, ejemplo, formato, que te pregunte y revisar lo que escribe.
   - **Serie 2 · Tus archivos y proyectos:** darle tus archivos, proyectos de Claude y resumir datos.
   - **Serie 3 · Casos completos:** demos de punta a punta, con un negocio de ejemplo.
+  - **Sin serie:** las muestras del taller, las comparaciones, los repasos del domingo y las objeciones de la semana 3. Esos llevan directo a la lista del taller.
 
 ## Día por día
 
-N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa misma mañana. Por eso abajo solo dice "noticia del día", salvo que ya haya una. Si P no dice "historia", va en pantalla partida.
+N es la noticia oficial del día, de 7 días como mucho, y se elige esa misma mañana; los sábados es el repo de la semana. Por eso abajo solo dice "noticia del día", salvo que ya haya una. Si P no dice "historia", va en pantalla partida.
 
 ### Semana 1 · Quién soy y qué enseño
 

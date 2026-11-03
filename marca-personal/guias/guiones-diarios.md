@@ -22,7 +22,7 @@ Cada día lleva uno de cada tipo. Así los 3 videos no se parecen, y cada uno tr
 
 | Tipo | Para qué sirve | Duración | Formato (Propuesta) |
 |---|---|---|---|
-| **N. Noticia o herramienta de IA** | Que te sigan para estar al día. Es el gancho de Santiago ("México lanzó su chatbot… y se rompió") y de Iman ("Breaking: AI has just opened up…") | 30 a 45 s | `titular-fijo` |
+| **N. Noticia o herramienta de IA** (los sábados, repo de la semana) | Que te sigan para estar al día. Es el gancho de Santiago ("México lanzó su chatbot… y se rompió") y de Iman ("Breaking: AI has just opened up…") | 30 a 45 s | `titular-fijo` |
 | **P. Proceso: armar la empresa con IA** (si se dice que es estudiante lo confirma Sergio Urcullo, junto con la edad) | Que te sigan por vos. Es el detrás de escena de Erik (homelab, 254 mil vistas en el short) y el "mi empresa la llevan agentes" | 30 a 60 s | `pantalla-partida` si muestra algo funcionando; `historia-con-imagenes` si cuenta una historia o un antes y después |
 | **V. Valor: enseñar una cosa** | Que te guarden y compartan. Es el tutorial de Enrique (un reel por día, de 46 a 113 s) | 45 s a 2:20 | `cara-con-iconos`, paso a paso |
 
