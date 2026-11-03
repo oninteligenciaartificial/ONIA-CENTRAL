@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+  Plantilla "cara con íconos" de la guía de estilo de edición (estilo-de-edicion.md).
+  Sale del reel de Erik Taveras sobre la vulnerabilidad de Node.js, mirado a un cuadro por segundo el 3-nov-2026.
+  Para usarla: copiar este archivo a un proyecto de `hyperframes init`, poner el video de Sergio en #cara
+  (quitar #fondo), y cambiar los subtítulos, los íconos y la palabra del cierre. Los tiempos van en segundos.
+-->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --fondo: #0b0d10;
+        --texto: #ffffff;
+        --acento: #3ee0a1;
+        --suave: rgba(255, 255, 255, 0.6);
+        --mono: "DejaVu Sans Mono", monospace;
+        --titular: "Oswald", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--fondo); }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--titular); }
+      #cara, #fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #fondo { background: radial-gradient(circle at 50% 40%, #2a2f3a, var(--fondo) 70%); }
+
+      /* Subtítulos: 2 a 4 palabras, mayúsculas, arriba, una palabra en el acento. */
+      .sub {
+        position: absolute; top: 150px; left: 0; width: 100%;
+        text-align: center; color: var(--texto);
+        font-size: 64px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em;
+        text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+      }
+      .sub b { color: var(--acento); font-weight: 700; }
+
+      /* Gráfico: íconos a la altura del pecho, unidos por líneas finas, con etiquetas monoespaciadas. */
+      #grafico { position: absolute; left: 0; top: 1020px; width: 100%; height: 520px; }
+      .etiqueta { font-family: var(--mono); font-size: 28px; letter-spacing: 0.14em; color: var(--suave); text-transform: uppercase; }
+      .etiqueta::before { content: "• "; color: var(--acento); }
+      .nodo .etiqueta::before { content: none; }
+      #titulo-grafico { position: absolute; left: 0; top: 0; width: 100%; text-align: center; }
+      .nodo { position: absolute; width: 150px; text-align: center; }
+      .nodo .icono {
+        width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 50%;
+        border: 3px solid var(--acento); display: flex; align-items: center; justify-content: center;
+        color: var(--texto); font-family: var(--mono); font-size: 30px; font-weight: 700; background: rgba(0, 0, 0, 0.45);
+      }
+      #n1 { left: 230px; top: 70px; }
+      #n2 { left: 700px; top: 70px; }
+      #n3 { left: 465px; top: 300px; }
+      #lineas { position: absolute; inset: 0; }
+      #lineas line { stroke: var(--acento); stroke-width: 3; }
+
+      /* Cierre: "Comenta PALABRA" con un óvalo que se dibuja. */
+      #cierre { position: absolute; left: 0; top: 1150px; width: 100%; text-align: center; }
+      #cierre .comenta { color: var(--texto); font-size: 54px; font-weight: 700; text-transform: uppercase; }
+      #cierre .palabra { position: relative; display: inline-block; margin-top: 10px; color: var(--acento); font-size: 96px; font-weight: 700; text-transform: uppercase; padding: 10px 50px; }
+      #ovalo { position: absolute; left: -10px; top: -10px; width: calc(100% + 20px); height: calc(100% + 20px); overflow: visible; }
+      #ovalo ellipse { fill: none; stroke: var(--acento); stroke-width: 5; }
+      #cierre .etiqueta { margin-top: 26px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <!-- Con el video de Sergio: <video id="cara" class="clip" data-start="0" data-duration="8" data-track-index="0" src="cara.mp4" muted playsinline></video> -->
+      <div id="fondo" class="clip" data-start="0" data-duration="8" data-track-index="0"></div>
+
+      <div id="s1" class="sub clip" data-start="0" data-duration="1" data-track-index="1">Aviso <b>importante</b></div>
+      <div id="s2" class="sub clip" data-start="1" data-duration="1" data-track-index="1">Para quien tiene <b>agentes</b></div>
+      <div id="s3" class="sub clip" data-start="2" data-duration="1.5" data-track-index="1">Hermes o <b>OpenClaw</b></div>
+      <div id="s4" class="sub clip" data-start="3.5" data-duration="1.5" data-track-index="1">Hay una <b>vulnerabilidad</b></div>
+
+      <div id="grafico" class="clip" data-start="2" data-duration="3" data-track-index="2">
+        <div id="titulo-grafico" class="etiqueta">Aviso de seguridad · 2 nov 2026</div>
+        <svg id="lineas" viewBox="0 0 1080 520">
+          <line id="l1" x1="305" y1="180" x2="540" y2="360" />
+          <line id="l2" x1="775" y1="180" x2="540" y2="360" />
+        </svg>
+        <div class="nodo" id="n1"><div class="icono">H</div><div class="etiqueta">Hermes</div></div>
+        <div class="nodo" id="n2"><div class="icono">OC</div><div class="etiqueta">OpenClaw</div></div>
+        <div class="nodo" id="n3"><div class="icono">JS</div><div class="etiqueta">Node.js</div></div>
+      </div>
+
+      <div id="cierre" class="clip" data-start="5" data-duration="3" data-track-index="2">
+        <div class="comenta">Comenta</div>
+        <div class="palabra">
+          Actualizar
+          <svg id="ovalo" viewBox="0 0 100 100" preserveAspectRatio="none"><ellipse cx="50" cy="50" rx="49" ry="46" pathLength="1" /></svg>
+        </div>
+        <div class="etiqueta">Te envío la guía</div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Subtítulos: entran de golpe, con un salto chico.
+      gsap.utils.toArray(".sub").forEach((el) => {
+        tl.fromTo(el, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power2.out" }, Number(el.dataset.start));
+      });
+      // Gráfico: cada ícono entra con el subtítulo de su palabra (en el reel, en el mismo cuadro).
+      tl.from("#titulo-grafico", { opacity: 0, duration: 0.2 }, 2);
+      tl.from("#n1", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 2.1);
+      tl.from("#n2", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 2.6);
+      tl.from("#n3", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 3.5);
+      tl.from(["#l1", "#l2"], { attr: { x2: (i) => (i ? 775 : 305), y2: 180 }, duration: 0.4, ease: "power1.inOut" }, 3.6);
+      // Cierre: la palabra entra y el óvalo se dibuja un segundo después, como en el reel.
+      tl.from("#cierre .comenta", { y: 30, opacity: 0, duration: 0.2 }, 5);
+      tl.from("#cierre .palabra", { scale: 0.8, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 5.1);
+      tl.fromTo("#ovalo ellipse", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, 6);
+      tl.from("#cierre .etiqueta", { opacity: 0, duration: 0.2 }, 6.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
