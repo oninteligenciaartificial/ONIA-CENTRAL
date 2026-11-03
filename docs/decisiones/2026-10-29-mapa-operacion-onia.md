@@ -1,5 +1,7 @@
 # Mapa para operar ONIA con agentes
 
+> **Historia en lo de Hermes.** Este mapa pone a Hermes como orquestador, y Hermes no orquesta desde el 31-oct-2026 (`AGENTS.md`, "Hermes y Grok Bot: historia"). Cómo trabaja hoy el equipo: [un jefe por área](2026-11-02-tres-proyectos.md).
+
 29-oct-2026. Lo pidió Sergio Urcullo esa noche: "quiero que documentes y investigues todo lo que te falta, y yo solo te pongo las cuentas y te digo datos, solo quiero que configures todo, todas las areas de la empresa que necesitemos".
 
 Es solo investigación: no se instaló, no se conectó y no se configuró nada. Sale de:

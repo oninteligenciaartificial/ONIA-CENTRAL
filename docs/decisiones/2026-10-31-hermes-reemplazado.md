@@ -1,5 +1,7 @@
 # Hermes queda reemplazado por los agentes Grok Bot
 
+> **Historia desde el 1-nov-2026.** Los agentes Grok Bot tampoco orquestan: el 1-nov el equipo pasó a sesiones de Claude Code ([equipo de Claude Code](2026-11-01-equipo-claude-code.md)) y el 3-nov a un jefe por área ([un jefe por área](2026-11-02-tres-proyectos.md)). Lo que quedaba de esta lista se sigue en el [issue #101](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/101).
+
 Decisión de Sergio Urcullo del 31-oct-2026: los 7 agentes Grok Bot (Operaciones, Contenido y Marca, Talleres, Growth y Anuncios, Finanzas y Legal, ONIA Platform, y Ventas y Atención) reemplazan a Hermes como orquestador. **Este PR no borra ni cambia nada.** Solo lista lo que nombra a Hermes y propone qué hacer; cada propuesta la aprueba Sergio.
 
 ## Lo que hay en el repo

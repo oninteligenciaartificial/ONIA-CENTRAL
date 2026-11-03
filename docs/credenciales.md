@@ -2,7 +2,9 @@
 
 28-oct-2026. Resuelve el [issue #5](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/5) y reemplaza la regla de credenciales del `CLAUDE.md` global de Sergio Urcullo. El procedimiento del repo viejo no se usa.
 
-Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afuera.
+Vale para Claude Code y Codex en la laptop. El VPS y la nube quedan afuera.
+
+> **Lo de Hermes es historia.** Hermes no orquesta desde el 31-oct-2026, y el 1-nov `%LOCALAPPDATA%\hermes` ya no existía en la PC (`AGENTS.md`, "Hermes y Grok Bot: historia"). Lo que este archivo dice de Hermes vale solo si Sergio Urcullo lo vuelve a instalar.
 
 ## La regla
 
@@ -31,7 +33,7 @@ Vale para Claude Code, Codex y Hermes en la laptop. El VPS y la nube quedan afue
 
 | Agente | Su login | Otras claves | Logins de sitios |
 |---|---|---|---|
-| Hermes | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, y `browser-profile\` si se usa el perfil real |
+| Hermes (historia) | `%LOCALAPPDATA%\hermes\auth.json` | `%LOCALAPPDATA%\hermes\.env` | `%LOCALAPPDATA%\hermes\vault\`, y `browser-profile\` si se usa el perfil real |
 | Claude Code | `C:\Users\PC\.claude\.credentials.json` | `C:\Users\PC\.claude.json` | las sesiones del navegador, y el perfil `equipo` del [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md) |
 | Codex | `C:\Users\PC\.codex\auth.json` | `C:\Users\PC\.codex\config.toml` | un perfil por área del navegador de WSL ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)) |
 
@@ -59,7 +61,7 @@ Siempre igual:
    - Lo que queda es esto: mientras el comando corre, otros programas del mismo usuario pueden ver su línea de comandos. Por eso se usa solo para cargar el secreto una vez.
 4. **El historial del portapapeles (Win+V):** KeePassXC marca lo que copia para que no quede ahí. Lo que se copia desde otro programa, como PowerShell o el navegador, sí queda, y en la nube si está activada. Después de pegarlo, se borra esa entrada en Win+V, o todo el historial en *Configuración → Sistema → Portapapeles → Borrar*.
 
-### Hermes
+### Hermes (historia)
 
 Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú Inicio. El porqué está en [Hermes oficial](decisiones/2026-10-28-hermes-oficial.md).
 
@@ -75,7 +77,7 @@ Los comandos los corre Sergio Urcullo en una PowerShell abierta desde el menú I
   - A `execute_code` le saca toda variable con KEY, TOKEN, SECRET, PASSWORD, CREDENTIAL, PASSWD o AUTH en el nombre.
   - A sus servidores MCP no les pasa nada, salvo lo que se nombra en su `env`. Ahí se escribe `"${NOMBRE}"` y el valor queda en el `.env`, así `config.yaml` no guarda el secreto (`reference/mcp-config-reference.md`).
 
-#### La clave de API de Anthropic
+#### La clave de API de Anthropic (para Hermes, historia)
 
 1. **En la consola de Anthropic** (`platform.claude.com`), Sergio Urcullo:
    - crea un espacio de trabajo (*Workspace*) solo para Hermes. El espacio por defecto no acepta topes de gasto;
@@ -143,7 +145,7 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 
 **Para todos:**
 - Los agentes usan sesiones que ya están abiertas. El login, la verificación en dos pasos, el consentimiento de Google y las sesiones vencidas los resuelve Sergio Urcullo en su pantalla.
-- Ningún agente escribe una contraseña en un formulario. La excepción es Hermes con su cofre, que no se la muestra al modelo.
+- Ningún agente escribe una contraseña en un formulario. La excepción era Hermes con su cofre, que no se la mostraba al modelo (historia).
 - Los perfiles de navegador que se armen a mano para un agente van en `C:\Users\PC\BovedaPrivada\BrowserProfiles`, hoy vacía, y nunca dentro de un repo. La copia que hace Hermes de un perfil real queda en su carpeta, que maneja él.
   - La excepción son los perfiles del navegador de WSL: `equipo` ([navegador de WSL](decisiones/2026-11-01-navegador-wsl.md)) y uno por área ([navegador por área](decisiones/2026-11-02-navegador-por-area.md)). Viven dentro de Ubuntu, en `/home/pc-linux-sergio/.onia-browser/`, porque Microsoft recomienda que los archivos que se usan desde Linux estén en el sistema de archivos de WSL. También quedan fuera de todo repo.
 - Cada perfil lo usa un agente a la vez. No se copian cookies entre worktrees.
@@ -158,7 +160,7 @@ Lo mismo se repite con `ELEVENLABS_API_KEY` y `N8N_MCP_TOKEN`. Desde Claude se p
 - Las sesiones las abre él en la ventana visible, como dicen el [navegador de WSL](decisiones/2026-11-01-navegador-wsl.md) y, para el perfil de cada área, el [navegador por área](decisiones/2026-11-02-navegador-por-area.md).
 - Entrar a una cuenta sigue sin dar más permisos.
 
-**Hermes** ([detalle en su documentación](https://hermes-agent.nousresearch.com/docs), `user-guide/features/browser.md`):
+**Hermes (historia)** ([detalle en su documentación](https://hermes-agent.nousresearch.com/docs), `user-guide/features/browser.md`):
 - Por defecto abre un Chromium limpio, sin sesiones.
 - Para los sitios con login usa su cofre (`hermes vault add`).
 - `browser.use_real_profile: true` copia el perfil activo del navegador predeterminado a `%LOCALAPPDATA%\hermes\browser-profile\`, con sus cookies, sus contraseñas guardadas y sus preferencias.

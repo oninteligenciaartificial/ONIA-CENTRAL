@@ -1,5 +1,7 @@
 # Hermes oficial: dónde se abre, dónde se maneja y cómo queda uno solo
 
+> **Historia desde el 31-oct-2026.** Hermes ya no orquesta, y el 1-nov ya no estaba en la PC (`AGENTS.md`, "Hermes y Grok Bot: historia"). Este documento no se usa como guía. Vale solo si Sergio Urcullo vuelve a usar Hermes. El Hermes del VPS sigue instalado y es producción. Cómo trabaja hoy el equipo: [un jefe por área](2026-11-02-tres-proyectos.md).
+
 28-oct-2026. Sale de dos trabajos:
 - una investigación con 3 agentes y 3 verificadores, contra la fuente oficial: el repo `NousResearch/hermes-agent` en el tag v0.22.5 y `hermes-agent.nousresearch.com/docs`;
 - un inventario de la PC hecho solo con metadatos.

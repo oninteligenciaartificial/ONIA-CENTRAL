@@ -1,5 +1,7 @@
 # Plan de arranque de ONIA-CENTRAL
 
+> **Historia.** Lo que este plan dice de Hermes ya no vale: Hermes no orquesta desde el 31-oct-2026 (`AGENTS.md`, "Hermes y Grok Bot: historia"). Cómo trabaja hoy el equipo: [un jefe por área](2026-11-02-tres-proyectos.md).
+
 28-oct-2026. **Aprobado por Sergio Urcullo el mismo día**, con las recomendaciones: Hermes, Hermes pensando con los créditos de API de Claude, y la regla de merges (ajustada después de la revisión del PR para cerrar sus huecos). Quedan abiertos el plan de ChatGPT y lo de Vercel.
 
 **Cambio del mismo 28-oct:** Sergio Urcullo decidió que Hermes piense con la suscripción de ChatGPT, con un login propio de Hermes, en vez de los créditos de API de Claude. El detalle está en `2026-10-28-hermes-oficial.md`.
