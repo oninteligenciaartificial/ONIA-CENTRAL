@@ -42,4 +42,39 @@ La lista sale de los nombres de las carpetas de cada repo, vistos el 3-nov. Falt
 - **`media-use`, de HyperFrames:** según [skills compartidas](decisiones/2026-10-28-skills-compartidas.md), hace llamadas pagas a HeyGen sin confirmar. Es gasto.
 - **Higgsfield y Fish Audio:** cobran por uso. Solo con el sí de Sergio.
 
-Por qué quedó así cada una de las 30 del video de @heysansser está en el hilo de edición del proyecto Onia, del 3-nov.
+## Los 30 del video de @heysansser
+
+Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/reel/DfBQ1AgOC1S/) con 30 plugins para Claude. El veredicto sale de lo que dice el texto del reel. De los repos, solo se leyeron los de HyperFrames, OpenMontage, REA y Marketing Skills; el resto se lee antes de sumarlo. "Usar" no instala nada: lo que viene de afuera entra con el OK de Sergio.
+
+| Grupo | Repo | Veredicto | Por qué |
+|---|---|---|---|
+| Código | Superpowers | Después | ONIA Platform: planifica y prueba antes de programar |
+| Código | Matt Pocock Skills | No | Repite buenas prácticas de programación; alcanza con una |
+| Código | ECC | No | Paquete enorme de skills y agentes, llena el contexto |
+| Código | Karpathy Skills | No | Repite lo de Superpowers |
+| Código | Ponytail | No | Repite lo de Superpowers |
+| Código | Agent Skills | No | Repite lo de Superpowers |
+| Investigar | Graphify | Después | ONIA Platform: mapa del código |
+| Investigar | Agent Reach | Después | Marketing: leer Reddit, X y YouTube; ver antes si pide APIs pagas |
+| Investigar | Understand Anything | No | Repite lo de Graphify |
+| Investigar | Last 30 Days | Después | Marketing: tendencias del último mes; ver si pide APIs pagas |
+| Investigar | Career Ops | No | Busca trabajo |
+| Investigar | REA | No | Desarma programas, no videos |
+| Proyectos grandes | gstack | No | Equipos de agentes: choca con "un agente por tarea" |
+| Proyectos grandes | Caveman | No | Recorta cómo se le explican las cosas a Sergio |
+| Proyectos grandes | Claude-Mem | No | Es del método viejo apartado |
+| Proyectos grandes | Headroom | No | Recorta lo que lee el agente; el repo ya ordena qué se lee |
+| Proyectos grandes | GSD | No | Equipos de agentes |
+| Proyectos grandes | BMAD Method | No | Equipos de agentes |
+| Diseño | UI UX Pro Max | Después | ONIA Platform: elegir una sola entre esta, Taste e Impeccable |
+| Diseño | Taste | Después | La misma elección |
+| Diseño | Archify | Después | Marketing: diagramas para carruseles |
+| Diseño | Impeccable | Después | La misma elección que UI UX Pro Max |
+| Diseño | PPT Master | Después | Presentaciones del taller; antes ver el tipo Slides de claude.ai |
+| Diseño | Diagram Design | Después | Marketing: diagramas para carruseles |
+| Escritura y video | Skills by Anthropic | Usar | Son las oficiales; varias ya están en la cuenta (skill-creator, docx, pptx, pdf) |
+| Escritura y video | OpenMontage | No | Muy grande, con APIs pagas, y licencia AGPL |
+| Escritura y video | HyperFrames | Usar | Ya se usa su CLI en `editar-video`; las skills, en "Las que conviene sumar" |
+| Escritura y video | Humanizer | No | Pensada para inglés |
+| Escritura y video | I Have ADHD | No | Lo que hace ya está en las reglas de cómo se le escribe a Sergio |
+| Escritura y video | Marketing Skills | Usar | Ver "Las que conviene sumar" |
