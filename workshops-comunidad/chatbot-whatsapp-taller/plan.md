@@ -24,6 +24,10 @@
 | Textos del taller | `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md` (en `main`, aprobados el 2-nov) | Saludo, precio, QR, comprobante, confirmación, recordatorio y preguntas frecuentes. Tienen las fechas viejas 4, 5 y 6-nov. |
 | Saludo nuevo sin fechas | Rama del hilo del embudo, `workshops-comunidad/embudo-taller/textos.md`, sección 3 | Reemplaza al saludo viejo hasta que Sergio Urcullo elija la fecha nueva. Ese texto dice que el saludo lo cambia él "en la app de WhatsApp Business". |
 
+### Actualización del 3-nov a la mañana: duda cerrada
+
+Sergio Urcullo confirmó en el hilo, el 3-nov a las 13:47 UTC, que el 75414930 "es un número que está conectado mediante API", no por la app WhatsApp Business, y que se usa ese. Va la opción A. El saludo, entonces, no se cambia en la app: lo manda el bot. El flujo y su guía están en [`README.md`](README.md) y [`workflow-n8n.json`](workflow-n8n.json), en esta carpeta. Lo que sigue abajo queda como estaba la mañana del 3-nov.
+
 ### La duda que hay que cerrar primero
 
 Dos fuentes no cierran entre sí:
