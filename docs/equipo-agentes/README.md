@@ -92,7 +92,7 @@ Cuando se termine Claude, el 3-nov o cuando se corte la mensualidad, Codex sigue
 3. **Después, Marketing y ventas y ONIA Platform,** cada una con su línea, de a una.
 4. **Cada sesión de Codex sigue como su proyecto de Claude:** lee lo mismo al arrancar, escribe en el mismo estado y usa el mismo tablero. Cambian tres cosas: pasa las tareas largas a un subagente o a la skill `encargar`; revisa con `codex exec --sandbox read-only`; y, como corre en la PC, hace ella misma lo de la PC que sus permisos dejen, con los mismos frenos.
 5. **En su primer trabajo real,** cada una comprueba lo que sigue sin probar ("Qué está probado y qué no", arriba). Si pasar una tarea a otro agente no anda, sigue lo que dice [un jefe por área](../decisiones/2026-11-02-tres-proyectos.md), "Si pasar la tarea a otro agente no anda en Codex".
-6. **Codex también vence, el 14-nov.** Si se renueva lo decide Sergio Urcullo el 12-nov, con lo que haya vendido el taller ([plan del 1-nov](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), "Codex también vence").
+6. **Codex también vence, el 14-nov.** Si se renueva lo decide Sergio Urcullo el 12-nov, con lo que haya vendido el taller ([plan del 1-nov](../decisiones/2026-11-01-plan-equipo-y-paso-a-codex.md), "Codex también vence"). Las opciones, con su costo y la recomendada, están en [relevo a Codex](../decisiones/2026-11-03-relevo-a-codex.md), punto 2, y lo que espera a Sergio Urcullo, en [`pendientes-de-sergio.md`](../pendientes-de-sergio.md).
 
 ## Qué pasó con las otras sesiones
 
