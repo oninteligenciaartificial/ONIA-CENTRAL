@@ -32,7 +32,7 @@ Archivos de esta carpeta:
 La guía oficial dice dos cosas que hay que comprobar en la práctica:
 
 - Para una app que usa solo una cuenta propia, alcanza el **acceso estándar** y no hace falta la revisión ([App Review for Instagram API](https://developers.facebook.com/documentation/instagram-platform/app-review), tabla "Development scenarios": "My app is only for a business I own or manage … Standard Access … Not required").
-- Pero también avisa que, con acceso estándar, "some features might not work properly until your app has been granted Advanced Access" (misma fuente), y que los avisos de comentarios por webhook piden acceso avanzado ([Webhooks](https://developers.facebook.com/docs/instagram-platform/webhooks/): "Advanced Access is required to receive comments and live_comments webhook notifications").
+- Pero también avisa que, con acceso estándar, "some features might not work properly until your app has been granted Advanced Access" ([Overview de Instagram Platform](https://developers.facebook.com/docs/instagram-platform/overview/), "Advanced Access"), y que los avisos de comentarios por webhook piden acceso avanzado ([Webhooks](https://developers.facebook.com/docs/instagram-platform/webhooks/): "Advanced Access is required to receive comments and live_comments webhook notifications").
 
 Por eso este flujo no usa webhook, y por eso la prueba con una segunda cuenta (paso 4 de "Cómo se prueba") es obligatoria antes del viernes: comprueba que el DM le llega a alguien que no tiene ningún rol en la app.
 
@@ -51,8 +51,8 @@ Con el método nuevo de Meta, "Instagram API with Instagram Login", **no hace fa
 
 1. **Cuenta profesional y pública.** En la app de Instagram, en la cuenta de marca personal: Configuración → "Tipo de cuenta y herramientas" → tiene que decir cuenta profesional (de creador o de empresa). Y la cuenta tiene que ser pública, porque Meta lo pide ([Webhooks](https://developers.facebook.com/docs/instagram-platform/webhooks/): "The Instagram professional account that owns the media objects must be public").
 2. **Permitir los mensajes de herramientas.** En la app de Instagram: Configuración → "Mensajes y respuestas a historias" → "Controles de mensajes" → "Herramientas conectadas" → activar "Permitir acceso a los mensajes". Sin eso, la API no puede mandar DMs ([Instagram Messaging, Getting Started](https://developers.facebook.com/documentation/business-messaging/instagram-messaging/get-started): "Instagram Settings > Messages and story replies > Message controls > Connected Tools > toggle Allow Access to Messages").
-3. **Sacar el token.** En [developers.facebook.com/apps](https://developers.facebook.com/apps) → "OnIA Social API" → "Casos de uso" → "Manage messaging & content on Instagram" → "Personalizar" → "API setup with Instagram login" → "Generate access tokens" → "Add account" → entrás con la cuenta de Instagram y aceptás los permisos ([Create an app](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/create-a-meta-app-with-instagram), paso "Generate access tokens"). Te muestra el token **una sola vez**.
-   - Los permisos que tiene que pedir son `instagram_business_basic`, `instagram_business_manage_comments` e `instagram_business_manage_messages` ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Requirements").
+3. **Sacar el token.** En [developers.facebook.com/apps](https://developers.facebook.com/apps) → "OnIA Social API" → "Instagram" → "API Setup with Instagram login" → "Generate access tokens" → agregar la cuenta de Instagram, entrar con ella y aceptar los permisos ([Create an app](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/create-a-meta-app-with-instagram), paso "Generate access tokens", que nombra "Instagram > API Setup with Instagram login" y pide que la cuenta sea pública). Si el panel muestra otros nombres, buscá "API Setup with Instagram login" dentro de los casos de uso de la app. Copiá el token apenas aparezca: que se muestre una sola vez está **sin confirmar** en la guía oficial, así que mejor no cerrar la ventana antes de guardarlo.
+   - Los permisos que tiene que pedir son `instagram_business_basic` e `instagram_business_manage_comments` ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Requirements"), y `instagram_business_manage_messages`, el permiso de mensajes de Instagram Login ([Overview de Instagram Platform](https://developers.facebook.com/docs/instagram-platform/overview/), "Features and permissions").
 4. **Guardar el token en n8n, no en el chat.** En el n8n del VPS: "Credentials" → "Add credential" → "Header Auth" → nombre `Instagram ONIA (token)`, en "Name" va `Authorization` y en "Value" va `Bearer ` (con espacio) seguido del token. También guardalo en tu bóveda, como dice [credenciales](../../../docs/credenciales.md).
 5. **Anotar en el calendario: renovar el token antes de 60 días.** Un token largo dura 60 días y se renueva ([Refresh Access Token](https://developers.facebook.com/docs/instagram-platform/reference/refresh_access_token/): "Refreshed tokens are valid for 60 days").
 6. **Tener una segunda cuenta de Instagram para probar**, que no sea administradora de la app. Puede ser una secundaria tuya o la de alguien de confianza.
@@ -66,7 +66,7 @@ Con el método nuevo de Meta, "Instagram API with Instagram Login", **no hace fa
 5. **Traer comentarios:** hasta 50 por publicación, los más nuevos primero ([Comments](https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-media/comments/): "Returns a maximum of 50 comments per query").
 6. **Elegir a quién responder:** se queda con los comentarios que tienen la palabra clave sola (no cuenta "ia" dentro de "familia"), sin importar mayúsculas ni acentos. Descarta los propios, los anteriores a `SOLO_DESDE` y los que tienen casi 7 días, porque Meta deja responder solo dentro de 7 días ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Limitations"). Recuerda los que ya vio, para no mandar dos veces.
 7. **¿Enviar de verdad?:** según el `MODO`, va a "Enviar DM" o a "Solo simulado (no se envió nada)".
-8. **Enviar DM:** la respuesta privada oficial, `POST https://graph.instagram.com/v25.0/<ID de la cuenta>/messages`, con `recipient.comment_id` y `message.text` ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Send a Private Reply"). Si uno falla, sigue con los demás, y el error queda en el historial de ejecuciones de n8n.
+8. **Enviar DM:** la respuesta privada oficial, `POST https://graph.instagram.com/v25.0/<ID de la cuenta>/messages`, con `recipient.comment_id` y `message.text` ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Send a Private Reply"). Si uno falla (token vencido, demasiadas consultas o falta de permisos), sigue con los demás, y el error queda en la salida del nodo "Enviar DM", no como ejecución fallida. **Ese comentario no se vuelve a intentar:** el flujo ya lo dio por visto. Por eso, los primeros días hay que mirar la salida de "Enviar DM" en el historial de ejecuciones.
 
 ### Configuración (nodo "Configuración")
 
@@ -77,7 +77,7 @@ Con el método nuevo de Meta, "Instagram API with Instagram Login", **no hace fa
 | `TEXTO_DM` | El mensaje. Puede usar `{usuario}` y `{link}`. | Pendiente, igual que la palabra. Lo aprueba Sergio Urcullo, porque lo ve un cliente. |
 | `LINK` | El link al que lleva el DM. | Pendiente. |
 | `TESTERS` | Usuarios de prueba, separados por coma, sin `@`. | vacío |
-| `SOLO_DESDE` | Fecha y hora desde la que cuentan los comentarios, para no contestarle de golpe a los viejos. Formato `2026-11-06T00:00:00-04:00` (hora de Bolivia). | 6-nov, 00:00 |
+| `SOLO_DESDE` | Fecha y hora desde la que cuentan los comentarios, para no contestarle de golpe a los viejos. Formato `2026-11-06T00:00:00-04:00` (hora de Bolivia). Si queda vacío o con otro formato, el flujo se corta con un error, para no descartar comentarios en silencio. | 6-nov, 00:00 |
 | `CANTIDAD_PUBLICACIONES` | Cuántas publicaciones recientes mira. | 3 |
 | `MAX_POR_CORRIDA` | Cuántos DMs como mucho cada 3 minutos; el resto va en la vuelta siguiente. | 20 |
 | `API_VERSION` | Versión de la API de Meta. | `v25.0` |
@@ -86,10 +86,10 @@ Ojo: el flujo recuerda también los comentarios que solo simuló. Al pasar de `p
 
 ## Cómo se prueba (antes del viernes 6, con el sí de Sergio Urcullo en cada paso que toca producción)
 
-Importar el flujo al n8n del VPS es tocar producción, así que pide el sí de Sergio Urcullo (`AGENTS.md`, "Lo aprueba Sergio Urcullo, siempre"). Lo hace Desarrollo, o Codex desde el 14-nov.
+Importar el flujo al n8n del VPS es tocar producción, así que pide el sí de Sergio Urcullo (`AGENTS.md`, "Lo aprueba Sergio Urcullo, siempre"). Lo hace Desarrollo.
 
 1. **Importar:** en n8n, "Workflows" → "Import from File" → `workflow-n8n.json`. Queda **apagado**. En los 4 nodos de Instagram ("Leer mi cuenta", "Traer publicaciones", "Traer comentarios", "Enviar DM"), elegir la credencial `Instagram ONIA (token)`.
-   - El archivo no se pudo probar importándolo en un n8n de verdad desde la nube: el paquete de n8n no se pudo instalar ahí. La lógica del nodo "Elegir a quién responder" sí se probó, con comentarios inventados (palabra con acento y mayúsculas, "familia", comentario propio, comentario viejo, tester y no tester).
+   - El archivo no se pudo probar importándolo en un n8n de verdad desde la nube: el paquete de n8n no se pudo instalar ahí. La lógica del nodo "Elegir a quién responder" sí se probó, con comentarios inventados (palabra con acento y mayúsculas, "familia", comentario propio, comentario viejo, tester y no tester, `SOLO_DESDE` inválido).
 2. **Prueba en seco:** completar `PALABRAS_CLAVE` y poner `SOLO_DESDE` en una fecha de ayer. Con `MODO` en `prueba`, apretar "Test workflow". Tiene que mostrar en "Solo simulado" los comentarios con la palabra y **no mandar nada**. Si "Leer mi cuenta" da error, el token o sus permisos están mal.
 3. **Probar con la segunda cuenta:** desde la segunda cuenta, comentar la palabra en un reel. Poner su usuario en `TESTERS` y `MODO` en `solo_testers`. Apretar "Test workflow". Le tiene que llegar el DM a la segunda cuenta, en "Solicitudes" si no sigue a Sergio.
 4. **Si el paso 3 anduvo, la vía A está comprobada.** Si "Enviar DM" da un error de permisos, se pasa a la vía C (ManyChat) para el viernes, y se pide la revisión de la app para más adelante.
@@ -99,7 +99,7 @@ Importar el flujo al n8n del VPS es tocar producción, así que pide el sí de S
 
 - **Un solo DM por comentario.** Para seguir hablando, la persona tiene que contestar, y después hay 24 horas para responderle ([Private Replies](https://developers.facebook.com/docs/instagram-platform/private-replies/), "Limitations"). Por eso el DM tiene que llevar el link y una pregunta que invite a contestar.
 - **Hasta 3 minutos de demora.** Si hace falta que sea instantáneo, es la vía B, con la revisión de Meta.
-- **Cuántas consultas por día:** cada vuelta hace 5 llamadas (cuenta, publicaciones y 3 comentarios), unas 2.400 por día. Meta tiene topes por cuenta que dependen del alcance. Si n8n muestra errores de "rate limit", subir a 5 minutos o bajar `CANTIDAD_PUBLICACIONES`.
+- **Cuántas consultas por día:** cada vuelta hace 5 llamadas (cuenta, publicaciones y 3 comentarios), unas 2.400 por día. Meta pone topes de consultas por cuenta; cuánto da para esta cuenta está **sin confirmar** (no se leyó la página oficial de topes). Si n8n muestra errores de "rate limit", subir a 5 minutos o bajar `CANTIDAD_PUBLICACIONES`.
 - **No mira comentarios de anuncios.** Los comentarios de un anuncio son de otro tipo y no salen por esta vía ([Comments](https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-media/comments/), "Non-Organic Comments").
 - **Solo comentarios principales.** Las respuestas a otros comentarios no entran.
 
@@ -109,5 +109,5 @@ Importar el flujo al n8n del VPS es tocar producción, así que pide el sí de S
 |---|---|
 | Pasos 1 a 6 de "Qué tiene que hacer Sergio Urcullo" | Sergio Urcullo |
 | Palabra clave, texto del DM y link | El hilo de la campaña (investigación de funnels); lo aprueba Sergio Urcullo |
-| Importar a n8n, probar y activar | Desarrollo, o Codex desde el 14-nov, con el sí de Sergio Urcullo |
+| Importar a n8n, probar y activar | Desarrollo, con el sí de Sergio Urcullo |
 | Pedir la revisión de la app para el webhook (vía B) | Más adelante, si hace falta el DM instantáneo |
