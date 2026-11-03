@@ -50,4 +50,4 @@ Revisado el 3-nov en la PC de Sergio. Los conectores se leyeron de la lista de h
   - "nada de secretos en el chat".
 
   Lo demás ya está en el `AGENTS.md`. Codex no lee ese archivo.
-- **La memoria de Claude Code de este proyecto** (`C:\Users\PC\.claude\projects\C--dev-proyectos-ONIA-CENTRAL\memory\`): lo que todavía no estaba en el repo pasó a `docs/lecciones.md`, en la sección "Lo que estaba solo en la memoria de Claude".
+- **La memoria de Claude Code de este proyecto** (`C:\Users\PC\.claude\projects\C--dev-proyectos-ONIA-CENTRAL\memory\`): las reglas que todavía no estaban en el repo pasaron a `docs/lecciones.md`, en la sección "Lo que estaba solo en la memoria de Claude". El resto ya estaba: `edicion-de-video` está en la skill `editar-video` y en la guía de estilo; `administrador-rol` y `orquestador-grok-bot` son historia, y el equipo actual está en el `AGENTS.md`; `mensajes-instructivos` y `opciones-y-nombres-de-sesiones` están en el `AGENTS.md` y en `docs/lecciones.md`; y `msix-registro-virtualizado` está en `docs/lecciones.md`, en "Windows y la app de Claude".

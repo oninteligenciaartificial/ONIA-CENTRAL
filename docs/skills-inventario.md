@@ -29,9 +29,7 @@ Sergio las aprobó el 3-nov y quedaron copiadas en `.agents/skills/`, con la ver
 | De dónde | Cuáles | Para qué | Licencia |
 |---|---|---|---|
 | [Marketing Skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines) | `events`, `offers`, `copywriting`, `lead-magnets`, `emails`, `community-marketing`, `social`, `video` | Página y anuncios del taller, la oferta, los mensajes, la comunidad y los guiones | MIT |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli` | Que el agente sepa armar composiciones y subtítulos sin adivinar, con el commit fijado y sin telemetría, como recomendó [skills compartidas](decisiones/2026-10-28-skills-compartidas.md). Hoy usamos solo la CLI. | Apache-2.0 |
-
-
+| [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli` | Que el agente sepa armar composiciones y subtítulos sin adivinar, con el commit fijado y sin telemetría, como recomendó [skills compartidas](decisiones/2026-10-28-skills-compartidas.md). Están en `.agents/skills/`, junto con la CLI que ya usa `editar-video`. | Apache-2.0 |
 
 ## Las que no
 

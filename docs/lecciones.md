@@ -166,7 +166,7 @@ Historia: Hermes no orquesta desde el 31-oct (`AGENTS.md`, "Hermes y Grok Bot: h
 
 ## Lo que estaba solo en la memoria de Claude
 
-Pasó al repo el 3-nov-2026, a pedido de Sergio Urcullo: "quiero que todo esté en repositorio para que si me mudo a Codex, para que lea el repositorio y no lea la computadora". Antes vivía en la memoria de Claude Code de la PC, que Codex no lee.
+Pasó al repo el 3-nov-2026, a pedido de Sergio Urcullo en el chat del proyecto Onia de claude.ai: "quiero que todo esté en repositorio para que si me mudo a Codex, para que lea el repositorio y no lea la computadora". Antes vivía en la memoria de Claude Code de la PC, que Codex no lee.
 
 - **Si falta un dato que solo tiene Sergio Urcullo y no es de lo reservado, se toma un supuesto razonable, se escribe y se corrige después.**
   - Por qué: no puede revisar todo y prefiere que los agentes avancen con controles entre ellos. Lo pidió el 28-oct: "no puedo estar aceptando y verificando todo".
@@ -177,7 +177,7 @@ Pasó al repo el 3-nov-2026, a pedido de Sergio Urcullo: "quiero que todo esté 
 - **Avanzar sin quedarse perfeccionando: lo que valida algo es un trabajo real, y las decisiones de un cambio se le juntan en una sola pregunta.**
   - Por qué: el 29-oct dijo: "estamos haciendo pruebas tontas y no estamos armando lo que debemos".
 - **Las preguntas a Sergio Urcullo van con botones cuando la herramienta los tiene,** con la recomendada primera.
-  - Por qué: lo pidió el 29-oct. En el chat de Codex, que no tiene botones, van como opciones numeradas.
+  - Por qué: lo pidió el 29-oct. En una herramienta sin botones, como el chat de Codex, la propuesta del autor es darlas como opciones numeradas.
 
 ## Plata y gasto
 
