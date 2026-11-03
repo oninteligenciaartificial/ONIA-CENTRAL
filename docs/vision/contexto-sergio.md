@@ -1,5 +1,7 @@
 # Contexto de Sergio Urcullo
 
+**Versión del 3-nov-2026.** Es lo que piensa Sergio Urcullo hoy y puede cambiar. Si cambia, este archivo se pone al día y el cambio se anota en el [historial](historial.md), con fecha, qué cambió y por qué.
+
 Lo que contó el 3-nov-2026, en el chat del proyecto Onia, para planificar con sus tiempos reales.
 
 ## Meta

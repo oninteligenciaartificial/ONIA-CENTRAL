@@ -87,7 +87,7 @@ Set-Location C:\dev\worktrees\ONIA-CENTRAL\onia-platform; git pull --ff-only ori
 
 Cuando se termine Claude, el 3-nov o cuando se corte la mensualidad, Codex sigue con los tres proyectos. Lo pidió Sergio Urcullo el 2-nov: "él sería tu sucesor para seguir trabajando".
 
-1. **Antes del corte,** cada proyecto de Claude cierra como dice "Al cerrar una sesión", abajo: "Ahora" y "Correcciones de Sergio" al día y mergeados, y en el "Ahora", cada PR suyo que quede abierto. Lo que quede solo en los hilos o en la memoria del proyecto, Codex no lo ve.
+1. **Antes del corte,** cada proyecto de Claude cierra como dice "Al cerrar una sesión", abajo: "Ahora" y "Correcciones de Sergio" al día y mergeados, y en el "Ahora", cada PR suyo que quede abierto. Lo que quede solo en los hilos o en la memoria del proyecto, Codex no lo ve. Lo del proyecto Onia del 3-nov está en el [traspaso del 3-nov](traspaso-codex-2026-11-03.md).
 2. **Primero se abre Desarrollo,** a mano, con los dos comandos de "En Codex, después". Su primera tarea es leer las líneas de esa sección con `ParseInput` y corregirlas por PR si hace falta.
 3. **Después, Marketing y ventas y ONIA Platform,** cada una con su línea, de a una.
 4. **Cada sesión de Codex sigue como su proyecto de Claude:** lee lo mismo al arrancar, escribe en el mismo estado y usa el mismo tablero. Cambian tres cosas: pasa las tareas largas a un subagente o a la skill `encargar`; revisa con `codex exec --sandbox read-only`; y, como corre en la PC, hace ella misma lo de la PC que sus permisos dejen, con los mismos frenos.

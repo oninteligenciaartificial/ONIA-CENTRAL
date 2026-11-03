@@ -1,5 +1,7 @@
 # Punto 4: formas de ingreso
 
+**Versión del 3-nov-2026.** Es lo que piensa Sergio Urcullo hoy y puede cambiar. Si cambia, este archivo se pone al día y el cambio se anota en el [historial](historial.md), con fecha, qué cambió y por qué.
+
 Del 3-nov-2026, en el chat del proyecto Onia. Sergio Urcullo **no descarta ninguna**: todas son posibles. El orden de abajo es una **recomendación**, no una decisión suya.
 
 ## Las formas
