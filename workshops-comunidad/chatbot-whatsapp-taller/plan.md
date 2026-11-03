@@ -26,7 +26,7 @@
 
 ### Actualización del 3-nov a la mañana: duda cerrada
 
-Sergio Urcullo confirmó en el hilo, el 3-nov a las 13:47 UTC, que el 75414930 "es un número que está conectado mediante API", no por la app WhatsApp Business, y que se usa ese. Va la opción A. El saludo, entonces, no se cambia en la app: lo manda el bot. El flujo y su guía están en [`README.md`](README.md) y [`workflow-n8n.json`](workflow-n8n.json), en esta carpeta. Lo que sigue abajo queda como estaba la mañana del 3-nov.
+Sergio Urcullo confirmó en el hilo, el 3-nov a las 13:47 UTC, que el 75414930 "es un número que está conectado mediante API", no por la app WhatsApp Business, y que se usa ese. Con eso, la opción A (el bot) queda como la recomendada, pero la decide él con su sí al flujo; la B sigue siendo contestar a mano, ahora desde Chatwoot. En cualquiera de las dos, el saludo ya no se cambia en la app de WhatsApp Business. El flujo y su guía están en [`README.md`](README.md) y [`workflow-n8n.json`](workflow-n8n.json), en esta carpeta. Lo que sigue abajo queda como estaba la mañana del 3-nov.
 
 ### La duda que hay que cerrar primero
 
