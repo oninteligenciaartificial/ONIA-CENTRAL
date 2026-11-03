@@ -46,20 +46,19 @@ Cada tarea es de unos 30 minutos y va por PR (`AGENTS.md`, "Cómo se trabaja"). 
 
 **5. ONIA Platform y Desarrollo.** El runner de la CI de `onia-platform` se rearmó el 3-nov y quedó corriendo las pruebas ([`producto.md`](producto.md), "Runner de la CI"). Que terminara bien la primera prueba no estaba confirmado al escribir esto. Lo que se propone después es diagnosticar el core en solo lectura (ver el punto 1, arriba). El resto del orden sigue en [`platform.md`](platform.md) y [`producto.md`](producto.md).
 
-## Calendario propuesto (sin aprobar)
+## Calendario del lanzamiento
 
-Lo propuso el proyecto Onia el 3-nov. **Sergio Urcullo todavía no lo aprobó:** se le presenta como opción, no se da por decidido ("Núcleo" de [`docs/lecciones.md`](../lecciones.md), punto 2).
+El 3-nov, Sergio Urcullo pidió "mínimo 3 días más para armar todo y grabar todo el contenido y seguir posteando", con la PC prendida trabajando todo el día (proyecto Onia, sin enlace). Con eso, el lanzamiento queda alrededor del **viernes 6-nov**. El reparto de los días es una propuesta del proyecto Onia y se ajusta con él.
 
 | Cuándo | Qué |
 |---|---|
-| Noches del 3 y el 4-nov | Plantillas de edición, guía de guiones, investigación del embudo y conexión de n8n. Los agentes pueden trabajar de noche, sin Sergio. |
-| Noche del 4-nov | Sergio Urcullo une la cuenta de Instagram a la página de Onia (requisito de abajo). |
-| 5-nov, noche del 6 y 7-nov | Grabar en bloque. Si se usa Higgsfield para planos y elementos de IA, son generaciones pagas, cada una con su sí (`AGENTS.md`, "Frenos"). |
-| Desde el 6-nov | Publicar 3 videos por día, sin anuncios. Cada publicación, con su sí. |
-| 8-nov | Probar el embudo de punta a punta. |
-| Lunes 9-nov | Lanzamiento. Codex sigue hasta el 14 para arreglos. Anuncios pagos solo con las primeras ventas y con su sí. |
+| 3 al 5-nov, también de noche, con la PC prendida | Plantillas de edición, guía de guiones, investigación del embudo y conexión de n8n. |
+| Noches del miércoles 4 y el jueves 5-nov | Sergio Urcullo graba en bloque y une la cuenta de Instagram a la página de Onia (requisito de abajo). Si se usa Higgsfield para planos y elementos de IA, son generaciones pagas, cada una con su sí (`AGENTS.md`, "Frenos"). |
+| Todos los días | Seguir publicando, sin anuncios. Cada publicación, con su sí. |
+| Antes del 6-nov | Probar el embudo de punta a punta. Si la prueba falla, no se lanza. |
+| Viernes 6-nov | Lanzamiento. Codex sigue hasta el 14 para arreglos. Anuncios pagos solo con las primeras ventas y con su sí. |
 
-Reemplaza una propuesta anterior, con lanzamiento el 16-nov, que Sergio Urcullo encontró "muy lejos" (3-nov, sin enlace). La fecha del taller la decide él.
+Reemplaza dos propuestas anteriores, con lanzamiento el 16 y el 9-nov, que a él le parecieron lejos. La fecha del taller la decide él.
 
 Requisito, según el coordinador del proyecto Onia: la cuenta de Instagram tiene que ser profesional y estar unida a la página de Facebook de Onia. El cambio de cuenta y la unión los hace Sergio Urcullo.
 
