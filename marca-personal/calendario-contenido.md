@@ -18,23 +18,27 @@ Del miércoles 4 al viernes 20-nov-2026. Lo armó Claude Code el 3-nov, a pedido
 
 - **De dónde salen las horas.** Buffer analizó 9,6 millones de publicaciones de Instagram, de enero de 2024 a diciembre de 2025, y las pasó a hora local. Sus mejores horas son el jueves a las 9, el miércoles a las 12 y el miércoles a las 18. Entre semana, de 18 a 23 rinde más que el resto del día, salvo el jueves. Los viernes y sábados son los peores días ([Buffer](https://buffer.com/resources/when-is-the-best-time-to-post-on-instagram), actualizado en sep-2026). Es un promedio mundial, no tu público.
 - **Cómo se ajusta.** Cuando las estadísticas de tu cuenta muestren a qué hora está activa tu gente, se cambian las horas con ese dato. Se revisa el domingo 15-nov.
-- **Vos no publicás a mano.** A las 9:00 y a las 12:30 estás en el colegio, así que los videos se dejan programados la noche anterior. Con qué herramienta, sin confirmar.
+- **Se dejan programados la noche anterior.** A las 9:00 estás en el colegio (de 8 a 12, según `docs/vision/contexto-sergio.md`, en un cambio todavía sin aprobar). La de las 12:30 cae en tu pausa, pero igual conviene programarla. Con qué herramienta se programa está sin confirmar.
 
 ### Formato de edición de cada tipo
 
 Los formatos salen del [estilo de edición](guias/estilo-de-edicion.md), medidos en los reels de Erik.
 
-| Tipo | Formato | Duración | Estado de la plantilla |
-|---|---|---|---|
-| N | Cara a cuadro completo, con íconos ([plantilla](guias/plantillas/cara-con-iconos/index.html)). Es el formato de "avisos y noticias cortas" | 30 a 45 s | Pasa a firme cuando se apruebe el cambio que está abierto, con 3 referencias |
-| P | Cara con capturas que tapan la mitad de arriba: tu trabajo real (repo, agentes, chats de prueba) | 30 a 60 s | Borrador, con 1 referencia |
-| V | Cara con íconos paso a paso (1:30 a 2:20), o pantalla partida si explica un sistema con varias piezas | 45 s a 2:20 | Cara con íconos: igual que en N. Pantalla partida: borrador, con 1 referencia |
+- **N:** cara a cuadro completo, con íconos ([plantilla](guias/plantillas/cara-con-iconos/index.html)), que es el formato de los avisos cortos.
+  - De 30 a 45 s.
+  - Plantilla firme, con 3 referencias.
+- **P:** cara con capturas que tapan la mitad de arriba, con tu trabajo real (el repo, los agentes, chats de prueba).
+  - De 30 a 60 s.
+  - Borrador, con 1 referencia.
+- **V:** cara con íconos paso a paso, o pantalla partida si explica un sistema con varias piezas.
+  - De 45 s a 2:20.
+  - Cara con íconos: firme. Pantalla partida: borrador, con 1 referencia.
 
 Cuando el hilo de los formatos de los referentes sume plantillas nuevas, se agregan acá.
 
 ### Trial reels: 1 por día (Propuesta)
 
-- **Qué son.** Un trial reel lo ve primero gente que no te sigue; tus seguidores no lo ven en el feed. A las 24 horas ves cómo le fue. Si en las primeras 72 horas anda bien, lo podés compartir con todos, a mano o en automático ([Instagram](https://creators.instagram.com/blog/instagram-trial-reels), 10-dic-2024). Si tu cuenta ya puede usarlos, está sin comprobar.
+- **Qué son.** Un trial reel lo ve primero gente que no te sigue; tus seguidores no lo ven en el feed. A las 24 horas ves cómo le fue. Lo podés compartir con todos a mano cuando quieras, o dejar que se comparta solo si anda bien en sus primeras 72 horas ([Instagram](https://creators.instagram.com/blog/instagram-trial-reels), 10-dic-2024). Si tu cuenta ya puede usarlos, está sin comprobar.
 - **Cuál va.** El V del día, con **otro gancho**: es la versión "yapeada". Se graba el gancho dos veces y lo demás es lo mismo. Así se prueba qué gancho funciona sin gastar en anuncios.
 - **Cómo se aprende.** Cada domingo se anota cuál de los dos ganchos tuvo más vistas, y el que gana se usa más.
 
@@ -44,14 +48,13 @@ Cuando el hilo de los formatos de los referentes sume plantillas nuevas, se agre
 - **Cómo se graba.** Las tomas de pantalla de los V se graban en 16:9 desde el principio, y para Instagram se recortan a 9:16.
 - **Cuándo.** El domingo, preparado el sábado. Arranca el domingo 8-nov.
 
-### Llamado a la acción
+### Llamado a la acción: palabra clave
 
-Todos los días, en las 3 piezas:
+Cada pieza lleva su palabra clave y su recurso, como dice la [guía](guias/guiones-diarios.md) en "Llamado a la acción" (decisión de Sergio Urcullo, 3-nov): "Comentá <PALABRA> y te mando <el recurso>". El aviso del taller va en el mensaje, con el recurso. La palabra de cada día la pone el que escribe los guiones, en la línea de cada pieza.
 
-> "Tocá el link de mi bio y escribime: te aviso cuando abra el taller Claude de 0 a 100."
+**El modelo de cada tema** (Sergio Urcullo, 3-nov): el vertical lo explica por encima, el YouTube horizontal más a fondo, la comunidad gratis da un recurso exclusivo y, después, un curso más largo. Por eso el YouTube semanal sale de los V, y cada recurso se guarda en la bóveda.
 
-- Cambia cuando Sergio Urcullo decida la fecha y el funnel. Ver la [guía](guias/guiones-diarios.md), "Llamado a la acción".
-- **Antes del 4-nov hay que cambiar el saludo automático de WhatsApp,** que todavía da las fechas viejas.
+- **Antes del 4-nov hay que tener armados los recursos de ese día y cambiar el saludo automático de WhatsApp,** que todavía da las fechas viejas.
 
 ### La secuencia hacia la venta del taller (Propuesta)
 
@@ -59,7 +62,7 @@ Cada semana tiene un trabajo. Así el que te encuentra el primer día llega a la
 
 1. **4 al 8-nov · Quién soy y qué enseño.** Que te conozcan: qué hacés, por qué con IA y una primera muestra de lo que enseña el taller. El viernes 6, la Propuesta es **anunciar que se abre la lista del taller**. No es la fecha del taller: esa sigue en pausa.
 2. **9 al 15-nov · Prueba.** Demos reales de lo que se aprende en el taller y tu sistema funcionando. Las preguntas que te llegan por WhatsApp se convierten en guiones.
-3. **16 al 20-nov · Calentar la venta.** Las objeciones ("no tengo tiempo", "no sé nada de IA", "¿sirve con la cuenta gratis?", que se dice solo si está probado), el detrás de escena de cómo preparás el taller, y la apertura de inscripción **si Sergio Urcullo ya decidió fecha y precio**. Si no, sigue la lista.
+3. **16 al 20-nov · Calentar la venta.** Las objeciones ("no tengo tiempo", "no sé nada de IA", "¿sirve con la cuenta gratis?", que se dice solo si está probado), el detrás de escena de cómo preparás el taller, y la apertura de inscripción **si Sergio Urcullo ya decidió la fecha** (el precio, Bs 50, ya está decidido: `docs/decisiones/2026-11-01-oferta-taller-3-4-5.md`). Si no, sigue la lista.
 
 **Los temas de V** salen del temario del taller ("cómo pedirle bien, cómo darle tus archivos y cómo armar un proyecto", como en los guiones del 3 al 8-nov, que siguen en borrador). Cuando el temario quede firme, se ajustan.
 
@@ -70,9 +73,9 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 ### Semana 1 · Quién soy y qué enseño
 
 **Mié 4-nov** · Estado: `escrito` ([guiones](guiones/2026-11-04.md))
-- 09:00 N · Anthropic pidió salir a la bolsa (9 días: va solo si no hay una noticia más nueva)
-- 12:30 P · Cada error de mis agentes se vuelve una regla
-- 19:30 V · Por qué la IA te responde genérico · trial: otro gancho
+- 09:00 N · Anthropic pidió salir a la bolsa (9 días: va solo si no hay una noticia más nueva) · FUENTES
+- 12:30 P · Cada error de mis agentes se vuelve una regla · REGLAS
+- 19:30 V · Por qué la IA te responde genérico · PEDIDO · trial: otro gancho
 
 **Jue 5-nov** · Estado: `pendiente`
 - 09:00 N · Noticia del día
@@ -140,7 +143,7 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 
 **Mar 17-nov** · `pendiente`
 - 09:00 N · Noticia del día
-- 12:30 P · Por qué Bs 50 (solo si el precio sigue en pie)
+- 12:30 P · Por qué el taller cuesta Bs 50
 - 19:30 V · "No tengo tiempo": la IA en 10 minutos por día · trial
 
 **Mié 18-nov** · `pendiente`
@@ -153,7 +156,7 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 - 12:30 P · Detrás de escena: el temario del taller
 - 19:30 V · Las 3 cosas que vas a saber hacer al terminar el taller · trial
 
-**Vie 20-nov** · `pendiente` · **Propuesta: se abre la inscripción, si ya hay fecha y precio decididos**
+**Vie 20-nov** · `pendiente` · **Propuesta: se abre la inscripción, si ya hay fecha decidida**
 - 09:00 N · Noticia del día
 - 12:30 P · Por qué empiezo con un taller y no con un curso grabado
 - 19:30 V · Anuncio del taller, o, si sigue sin fecha, "la lista ya tiene X personas" (el número real) · trial
@@ -163,3 +166,4 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 - El sí de Sergio Urcullo a las horas, a los trial reels, al YouTube semanal y a la secuencia.
 - Cambiar el saludo automático de WhatsApp.
 - Saber si tu cuenta ya tiene trial reels y con qué se programan los videos.
+- Armar el recurso de cada palabra clave antes de publicar su video.

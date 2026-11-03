@@ -56,16 +56,28 @@ Elegí uno por guion y no repitas el mismo tipo dos veces el mismo día.
 | "Te muestro cómo uso X" | "Te muestro cómo uso X" | Erik |
 | Pregunta en el título | "Mi homelab con IA local: vale la pena?" | Erik |
 
-### Llamado a la acción, mientras el funnel no esté decidido
+### Llamado a la acción: una palabra clave por guion
 
-Hasta que se investigue el funnel (hilo de la campaña del taller), **todos los guiones apuntan a la lista del taller "Claude de 0 a 100"**, con una sola frase:
+Sergio Urcullo lo decidió el 3-nov, en el chat del proyecto: "cada guión tiene que tener una palabra clave". Es lo que hacen Erik, Enrique y Santiago: con ese llamado, los comentarios de Enrique llegan al 40-80% de los "me gusta", y sin él, al 3-8% ([resumen de referentes](../referentes/resumen-2026-10-29.md)).
 
-> "Tocá el link de mi bio y escribime: te aviso cuando abra el taller Claude de 0 a 100."
+> "Comentá <PALABRA> y te mando <el recurso>."
 
-- **Un solo llamado por video,** siempre el mismo, para que el que mira sepa qué hacer.
-- **Sin fecha ni precio:** el 3-nov, en el hilo de la campaña del taller, Sergio Urcullo dejó la fecha en pausa: "no definimos fecha tenemos tiempo armemos todo primero". Los estados de Marketing y de negocio todavía dan el 4, 5 y 6-nov: los pone al día el próximo cambio de esa área.
-- **Antes de publicar el primer video, hay que cambiar el saludo automático de WhatsApp**, que hoy contesta con las fechas del 4, 5 y 6-nov (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`). Lo que dice el reel tiene que coincidir con lo que llega al chat (`docs/lecciones.md`, "Anuncios y venta"). Es un mensaje a clientes: lo aprueba Sergio Urcullo.
-- **Propuesta para después:** cerrar con una palabra y una entrega ("escribime GUÍA y te la paso"), como Erik, Enrique y Santiago. Con ese llamado, los comentarios de Enrique llegan al 40-80% de los "me gusta", y sin él al 3-8% ([resumen de referentes](../referentes/resumen-2026-10-29.md)). Necesita la guía escrita y decidir el funnel.
+- **Una palabra por guion,** corta, en mayúsculas y ligada al tema (por ejemplo, PEDIDO para un video sobre cómo pedirle a la IA). No se repite en la misma semana, para saber qué video trajo a quién.
+- **El recurso tiene que existir antes de publicar.** Es lo que se manda por mensaje directo: una guía, una plantilla o un pedido listo para copiar. Va en la bóveda (ver "El modelo de contenido", abajo). Sin recurso, no se publica el video.
+- **Quién lo manda:** por ahora, Sergio Urcullo o quien él diga, a mano. Hoy no hay un mensaje automático en Instagram. Un ManyChat o un agente propio tendrían costo y lo aprueba él ([cómo trabaja Erik](../referentes/erik-taveras-como-trabaja-2026-11-03.md), en borrador, punto 12).
+- **El taller va en el mensaje, no en el video:** con el recurso se manda "y si querés, te aviso cuando abra el taller Claude de 0 a 100". La fecha está en pausa desde el 3-nov ("no definimos fecha tenemos tiempo armemos todo primero", Sergio Urcullo, hilo de la campaña del taller). Los estados de Marketing y de negocio todavía dan el 4, 5 y 6-nov: los pone al día el próximo cambio de esa área.
+- **Hay que cambiar el saludo automático de WhatsApp** antes del primer video, porque hoy contesta con las fechas del 4, 5 y 6-nov (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`). Es un mensaje a clientes: lo aprueba Sergio Urcullo.
+
+## El modelo de contenido
+
+Sergio Urcullo lo contó el 3-nov, en el chat del proyecto. Cada tema baja en cuatro escalones:
+
+1. **Video vertical:** explica el tema por encima. Es el gancho gratis.
+2. **Video horizontal (YouTube):** el mismo tema, más a fondo.
+3. **Comunidad gratis:** un recurso exclusivo de ese tema. Es lo que se gana por entrar.
+4. **Curso:** después, un curso más largo de ese tema, para el que ya mostró interés.
+
+**La bóveda.** Es la página "Sergio Urcullo", que él estaba armando como la de Erik y Enrique: skills, noticias, la entrada a la comunidad gratis y la agenda para llamadas 1 a 1. Ahí viven los recursos que pide cada palabra clave. Qué tiene hoy y dónde está publicada no se miró en este trabajo (el código de su web está en el repo `sergiourcullo`). Mientras no esté, el recurso se manda como archivo o enlace por mensaje directo.
 
 ## Reglas de cada guion
 
@@ -83,7 +95,7 @@ Hasta que se investigue el funnel (hilo de la campaña del taller), **todos los 
 2. **Proceso (P):** mirar qué se hizo ayer en el repo (`git log --since=yesterday` y los hilos del proyecto) y elegir una cosa que se pueda mostrar en pantalla.
 3. **Valor (V):** una cosa que se enseñe en 60 segundos y que salga del temario del taller, para que el video ya sea una muestra.
 4. Escribir los 3 con la ficha de abajo, en `marca-personal/guiones/AAAA-MM-DD.md`.
-5. Revisar con esta lista antes de entregar: ¿tiene el por qué?, ¿el gancho se entiende sin sonido?, ¿hay algo que solo Sergio puede decir?, ¿el llamado es el de arriba?, ¿la noticia tiene enlace y fecha?
+5. Revisar con esta lista antes de entregar: ¿tiene el por qué?, ¿el gancho se entiende sin sonido?, ¿hay algo que solo Sergio puede decir?, ¿tiene palabra clave y su recurso existe?, ¿la noticia tiene enlace y fecha?
 
 ### Ficha de cada guion
 
@@ -95,7 +107,9 @@ Hasta que se investigue el funnel (hilo de la campaña del taller), **todos los 
 - El por qué (7-15 s): …
 - Pasos o prueba (15-40 s): …
 - Límite honesto: …
-- Llamado (últimos 5 s): "Tocá el link de mi bio y escribime: te aviso cuando abra el taller Claude de 0 a 100."
+- Palabra clave: …
+- Recurso que se manda: … (dónde está)
+- Llamado (últimos 5 s): "Comentá <PALABRA> y te mando <el recurso>."
 - Tomas: qué se graba a cámara y qué es pantalla o b-roll.
 - Edición: plantilla.
 - Fuente: enlace y fecha (obligatorio en N).
