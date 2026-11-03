@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  Plantilla "caja roja" de la guía de estilo de edición (estilo-de-edicion.md).
+  Sale de tres reels de Alex Hormozi ("Why do my employees leave?", "A bad fit is worse than an empty seat" y
+  "Master the script like the top 0.01%"), mirados el 3-nov-2026. La pregunta o la promesa va en una caja roja a media
+  altura los primeros segundos, con el nombre debajo; después quedan subtítulos chicos de 2 o 3 palabras, con una en color.
+  Para usarla: copiar a un proyecto de `hyperframes init`, poner el video de Sergio en #cara (quitar #fondo),
+  y cambiar la caja, el nombre y los subtítulos. Los tiempos van en segundos.
+-->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --rojo: #e3161b;
+        --texto: #ffffff;
+        --acento: #ffd21f; /* en el clip de escenario; en el de podcast la palabra va solo en negrita */
+        --fuente: "Montserrat", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #111; }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--fuente); }
+      #cara, #fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #fondo { background: radial-gradient(circle at 50% 35%, #4a3a3a, #121212 70%); }
+
+      /* Caja roja: mayúsculas, cursiva gruesa, a media altura. */
+      #caja { position: absolute; top: 760px; left: 0; width: 100%; text-align: center; }
+      #caja span { display: inline-block; background: var(--rojo); color: var(--texto); font-size: 58px; font-weight: 900; font-style: italic; text-transform: uppercase; line-height: 1.15; padding: 14px 28px; border-radius: 14px; }
+      /* Nombre debajo, como en el de podcast. */
+      #nombre { position: absolute; top: 980px; left: 0; width: 100%; text-align: center; color: var(--texto); }
+      #nombre b { display: block; font-size: 52px; font-weight: 900; text-transform: uppercase; }
+      #nombre small { font-size: 28px; opacity: 0.85; }
+
+      /* Subtítulos chicos a media altura, 2 o 3 palabras, una en color. */
+      .sub { position: absolute; top: 1080px; left: 0; width: 100%; text-align: center; color: var(--texto); font-size: 46px; font-weight: 600; text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
+      .sub b { color: var(--acento); font-weight: 900; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9" data-width="1080" data-height="1920">
+      <!-- Con el video de Sergio: <video id="cara" class="clip" data-start="0" data-duration="9" data-track-index="0" src="cara.mp4" muted playsinline></video> -->
+      <div id="fondo" class="clip" data-start="0" data-duration="9" data-track-index="0"></div>
+
+      <div id="caja" class="clip" data-start="0" data-duration="5" data-track-index="1"><span>"¿Por qué mis clientes<br />no vuelven?"</span></div>
+      <div id="nombre" class="clip" data-start="0" data-duration="5" data-track-index="2"><b>Sergio Urcullo</b><small>texto de ejemplo</small></div>
+
+      <div id="s1" class="sub clip" data-start="5" data-duration="1.3" data-track-index="3">porque nadie les <b>escribe</b></div>
+      <div id="s2" class="sub clip" data-start="6.3" data-duration="1.2" data-track-index="3">después de la <b>venta</b></div>
+      <div id="s3" class="sub clip" data-start="7.5" data-duration="1.5" data-track-index="3">y eso se <b>automatiza</b></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // La caja y el nombre ya están en el primer cuadro; los subtítulos entran de golpe.
+      gsap.utils.toArray(".sub").forEach((el) => {
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.06 }, Number(el.dataset.start));
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
