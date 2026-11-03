@@ -113,6 +113,16 @@ Sin esto, cada persona deja Bs 50 y nada más (investigación de la campaña, se
 
 **La gratis y la paga son dos cosas distintas,** como en Erik: Onia Community sigue gratis y es donde llegan los recursos de cada reel; la paga es un grupo aparte, con la clase semanal.
 
+**¿Cobrarla o no? (pregunta de Sergio Urcullo, 3-nov; sin decidir).** Tres caminos, medidos contra la meta de Bs 3.000 del taller (60 pagos de Bs 50):
+
+| Camino | Qué suma a la meta del taller | Qué cuesta |
+|---|---|---|
+| Paga desde el primer día | Nada. Aparte, si entra entre un 10% y un 20% de los 60 (supuesto, sacado de cifras de webinars B2B en inglés), son 6 a 12 personas: Bs 600 a 1.200 por mes a Bs 100 | 4 clases por mes, comprometidas antes de saber si alguien viene |
+| Gratis | Nada. Ya existe Onia Community, que es gratis | Lo mismo, sin ingreso |
+| **Primer mes incluido con el taller, después paga (recomiendo)** | El taller pasa a ser "3 clases + 1 mes de comunidad": vale más por los mismos Bs 50 | 4 clases el primer mes, sin cobrar. Da el dato de cuántos vienen de verdad antes de cobrar |
+
+Si se elige el primer mes incluido, el texto 4a de `textos.md` cambia: el precio de fundador se ofrece al terminar ese mes, no al final de la clase 3.
+
 **Qué se propone para ONIA (opciones, nada decidido):**
 
 - **Qué incluye:** una clase en vivo por semana a las 19:00, las grabaciones, las plantillas y los prompts del taller, y un grupo para preguntas. Todo lo que ya se arma para el contenido.
