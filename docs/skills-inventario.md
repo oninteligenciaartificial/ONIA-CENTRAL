@@ -31,6 +31,10 @@ Sergio las aprobó el 3-nov y quedaron copiadas en `.agents/skills/`, con la ver
 | [Marketing Skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines) | `events`, `offers`, `copywriting`, `lead-magnets`, `emails`, `community-marketing`, `social`, `video` | Página y anuncios del taller, la oferta, los mensajes, la comunidad y los guiones | MIT |
 | [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli` | Que el agente sepa armar composiciones y subtítulos sin adivinar, con el commit fijado y sin telemetría, como recomendó [skills compartidas](decisiones/2026-10-28-skills-compartidas.md). Están en `.agents/skills/`, junto con la CLI que ya usa `editar-video`. | Apache-2.0 |
 
+## GSAP
+
+Las plantillas de edición animan con GSAP 3.15.0, que cargan desde cdn.jsdelivr.net, como viene en HyperFrames. Se revisó el 3-nov, después de usarlo: según el README de las skills oficiales de GreenSock ([gsap-skills](https://github.com/greensock/gsap-skills), MIT), desde que Webflow compró GSAP es gratis para todos, incluido el uso comercial y todos los plugins. La página de la licencia (gsap.com/standard-license) no abrió desde el navegador del equipo, así que eso sale solo del README. Las skills `gsap-*` están instaladas en la PC como plugin de Claude Code, para toda la PC, desde el 6-ago-2026, y no están en el repo: se proponen para `.agents/skills/` con el mismo método que Marketing Skills.
+
 ## Las que no
 
 - **`reverse-any-video`, de HyperFrames:** pide el plan pago y vuelve a grabar a las personas con HeyGen.
@@ -50,7 +54,7 @@ Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/
 | Código | Matt Pocock Skills | No | Repite buenas prácticas de programación; alcanza con una |
 | Código | ECC | No | "A huge pack of skills and agents"; que llene el contexto es hipótesis |
 | Código | Karpathy Skills | No | Buenas prácticas de programación; que alcance con una es hipótesis |
-| Código | Ponytail | No | "Write way less code"; que alcance con Superpowers es hipótesis |
+| Código | Ponytail | Después | ONIA Platform y Codex. [Repo](https://github.com/DietrichGebert/ponytail), MIT, leído el 3-nov: son reglas de texto para escribir menos código. En Claude Code se instala como plugin con hooks de Node, que guardan un registro CSV por proyecto. Una prueba de JetBrains del 28-jul-2026 midió un 10,3 % menos de costo y un 15 % menos de código ([nota](https://blog.jetbrains.com/ai/2026/07/ponytail-skill-claude-tested/)). Copiar solo el `SKILL.md` no alcanza: en esa prueba no se activó nunca. |
 | Código | Agent Skills | No | Buenas prácticas de programación; que alcance con una es hipótesis |
 | Investigar | Graphify | Después | ONIA Platform: mapa del código |
 | Investigar | Agent Reach | Después | Marketing: leer Reddit, X y YouTube; ver antes si pide APIs pagas |
@@ -64,10 +68,10 @@ Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/
 | Proyectos grandes | Headroom | No | Recorta lo que lee el agente; el repo ya ordena qué se lee |
 | Proyectos grandes | GSD | No | "Plans and builds step by step"; si mete equipos de agentes, sin confirmar |
 | Proyectos grandes | BMAD Method | No | Equipos de agentes |
-| Diseño | UI UX Pro Max | Después | ONIA Platform: elegir una sola entre esta, Taste e Impeccable |
-| Diseño | Taste | Después | La misma elección |
+| Diseño | UI UX Pro Max | No | ONIA Platform ya tiene Taste e Impeccable |
+| Diseño | Taste | Ya está | En el repo `onia-platform`, `.agents/skills/` (de `Leonxlnx/taste-skill`, según su `skills-lock.json`) |
 | Diseño | Archify | Después | Marketing: diagramas para carruseles |
-| Diseño | Impeccable | Después | La misma elección que UI UX Pro Max |
+| Diseño | Impeccable | Ya está | En el repo `onia-platform`, `.agents/skills/impeccable` (de `pbakaus/impeccable`) |
 | Diseño | PPT Master | Después | Presentaciones del taller; antes ver el tipo Slides de claude.ai |
 | Diseño | Diagram Design | Después | Marketing: diagramas para carruseles |
 | Escritura y video | Skills by Anthropic | Usar | Son las oficiales. Varias (skill-creator, docx, pptx, pdf) figuraban como disponibles en la sesión de Claude Code del 3-nov |

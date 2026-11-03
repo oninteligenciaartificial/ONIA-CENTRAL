@@ -10,7 +10,7 @@ Revisado el 3-nov en la PC de Sergio. Los conectores se leyeron de la lista de h
 |---|---|---|
 | Referentes | `investigar-referente` | Fichas en `marca-personal/referentes/` |
 | Guiones y contenido | `copywriting`, `social` y `video` (Marketing Skills) | `marca-personal/guias/guiones-diarios.md` |
-| Edición de los 3 videos diarios | `editar-video`, `ver-video`, `hyperframes` y `hyperframes-cli` | Guía y plantillas en `marca-personal/guias/`. En Ubuntu: HyperFrames 0.9.6, FFmpeg, faster-whisper y gallery-dl. |
+| Edición de los 3 videos diarios | `editar-video`, `ver-video`, `hyperframes` y `hyperframes-cli`. GSAP, en [skills-inventario](skills-inventario.md#gsap). | Guía y plantillas en `marca-personal/guias/`. En Ubuntu: HyperFrames 0.9.6, FFmpeg, faster-whisper y gallery-dl. |
 | Taller, oferta y embudo | `events`, `offers` y `lead-magnets` (Marketing Skills) | `docs/plan/taller-3000.md` |
 | Mensajes, correos y comunidad | `emails` y `community-marketing` (Marketing Skills) | Nada se manda sin el sí de Sergio ("Frenos") |
 | Anuncios | — | `marca-personal/guias/anuncios.md`. Conectores de Meta Ads y TikTok Ads en la cuenta de Claude. |
@@ -30,7 +30,8 @@ Revisado el 3-nov en la PC de Sergio. Los conectores se leyeron de la lista de h
 | Para qué | Skill | Otras fuentes |
 |---|---|---|
 | Código del producto | `supabase`, `supabase-postgres-best-practices` y `prisma-cli` | Repo `onia-platform`. Hasta el 3-nov, esas tres skills estaban solo en la PC (`C:\Users\PC\.claude\skills`). Pasan a ese repo por un PR propio. Conector de Supabase en la cuenta de Claude. |
-| Propuestas del inventario | Superpowers, Graphify y una de diseño de pantallas | Están "Después" en [skills-inventario.md](skills-inventario.md). Superpowers está instalado como plugin solo en el proyecto Gestios de la PC. |
+| Diseño de pantallas | Ya en `onia-platform/.agents/skills/`: Taste (12 skills de `Leonxlnx/taste-skill`), `impeccable`, `emil-design-eng`, `transitions-dev` y `shadcn`, más las propias de `.claude/skills/` (`onia-backend`, `onia-db`, `onia-deploy`, `onia-frontend`, `onia-seguridad` y `onia-verificacion`) | Según su `skills-lock.json`, visto el 3-nov. |
+| Propuestas del inventario | Superpowers, Graphify y Ponytail | Están "Después" en [skills-inventario.md](skills-inventario.md). Superpowers está instalado como plugin solo en el proyecto Gestios de la PC. |
 
 ## Todas las secciones
 
