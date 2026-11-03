@@ -39,7 +39,7 @@ Meta: Bs 3.000 cobrados con el taller del 4, 5 y 6-nov ([`negocio.md`](../equipo
 
 **Recomendación:**
 
-1. **Hasta el 14-nov, nada cambia:** el Pro ya está pago y es el que tiene más margen. Los restablecimientos que caducan el 6-nov conviene usarlos antes, en el taller. Se usa para el taller y para dejar todo andando en Codex.
+1. **Hasta el 14-nov, nada cambia:** el Pro ya está pago y es el que tiene más margen. Se usa para el taller y para dejar todo andando en Codex.
 2. **El 12-nov, cuando Sergio Urcullo decide** ([plan del 1-nov](2026-11-01-plan-equipo-y-paso-a-codex.md), "Codex también vence"):
    - si el taller llegó a la meta, seguir con A, porque tres áreas a la vez gastan mucho;
    - si vendió algo pero no la meta, bajar a B (US$20), que mantiene la CLI y lo armado;
