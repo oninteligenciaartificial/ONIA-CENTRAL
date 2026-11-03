@@ -26,11 +26,11 @@ Fuentes: [precios de Codex](https://learn.chatgpt.com/docs/pricing), [AGENTS.md 
 
 ## 2. A dónde mudarse y cuánto cuesta
 
-Meta: Bs 3.000 cobrados con el taller del 4, 5 y 6-nov ([`negocio.md`](../equipo-agentes/negocio.md)). El criterio de abajo, no sumar gasto hasta tener ventas, es la recomendación de este documento, no una decisión de Sergio Urcullo. Que hoy se paga ChatGPT Pro de US$100 hasta el 14-nov sale de la memoria del proyecto Onia de claude.ai (2-nov, sin enlace) y no está confirmado en el repo: `docs/decisiones/2026-10-29-mapa-operacion-onia.md` todavía lo da como "Plus o Pro". Precios en dólares por mes, con pago mensual, de las páginas oficiales del 3-nov: [Codex](https://learn.chatgpt.com/docs/pricing) y [Claude](https://claude.com/pricing). En bolivianos, al cambio de Bs 12,12 del 29-oct que usa el plan del taller (`workshops-comunidad/plan-meta-ads-borrador.md`, línea 120); el banco puede cobrar con otro.
+Meta: Bs 3.000 cobrados con el taller del 4, 5 y 6-nov ([`negocio.md`](../equipo-agentes/negocio.md)). El criterio de abajo, no sumar gasto hasta tener ventas, es la recomendación de este documento, no una decisión de Sergio Urcullo. Hoy se paga ChatGPT Pro de US$100, activo hasta el 14-nov: lo dijo Sergio Urcullo el 2-nov en el proyecto Onia de claude.ai (sin enlace). Ese día tenía el 62% del cupo semanal y 3 restablecimientos completos, que caducan el 6-nov, el 30-nov y el 1-dic. Con eso queda contestado qué plan se paga hoy (la pregunta de `docs/decisiones/2026-10-28-plan-arranque.md`). Elegir entre Plus y Pro para después del 14-nov sigue abierto: es el punto 2 de la recomendación, abajo. Precios en dólares por mes, con pago mensual, de las páginas oficiales del 3-nov: [Codex](https://learn.chatgpt.com/docs/pricing) y [Claude](https://claude.com/pricing). En bolivianos, al cambio de Bs 12,12 del 29-oct que usa el plan del taller (`workshops-comunidad/plan-meta-ads-borrador.md`, línea 120); el banco puede cobrar con otro.
 
 | Opción | US$/mes | Bs/mes | Qué da | Contra |
 |---|---|---|---|---|
-| A. ChatGPT Pro (el de hoy, sin confirmar) | 100 | 1.212 | Todo lo de Plus, sin tope de 5 horas | Es caro para hoy: unas 25 inscripciones de Bs 50, antes de impuestos, solo para pagarlo |
+| A. ChatGPT Pro (el de hoy) | 100 | 1.212 | Todo lo de Plus, sin tope de 5 horas | Es caro para hoy: unas 25 inscripciones de Bs 50, antes de impuestos, solo para pagarlo |
 | B. ChatGPT Plus | 20 | 242 | CLI, web, extensión, celular y nube. Tope por 5 horas: 15 a 160 mensajes con GPT-6.1 Sol, 350 a 3.000 con GPT-6 Luna | Unas 5 inscripciones de Bs 50 por mes. Con tres áreas a la vez puede quedarse corto en el modelo grande |
 | C. ChatGPT Go o Free | 8 o 0 | 97 o 0 | Solo la app de escritorio, con GPT-6 Luna, "sujeto a despliegue" | No trae la CLI, que es lo que está armado y probado |
 | D. Volver a Claude Pro | 20 | 242 | Claude Code incluido | Hay que rehacer en Claude lo que se armó para Codex (perfiles, `encargar`); tope de uso propio |
@@ -39,7 +39,7 @@ Meta: Bs 3.000 cobrados con el taller del 4, 5 y 6-nov ([`negocio.md`](../equipo
 
 **Recomendación:**
 
-1. **Hasta el 14-nov, nada cambia:** lo que ya está pago se usa; si es el Pro, es el que tiene más margen. Se usa para el taller y para dejar todo andando en Codex.
+1. **Hasta el 14-nov, nada cambia:** el Pro ya está pago y es el que tiene más margen. Se usa para el taller y para dejar todo andando en Codex.
 2. **El 12-nov, cuando Sergio Urcullo decide** ([plan del 1-nov](2026-11-01-plan-equipo-y-paso-a-codex.md), "Codex también vence"):
    - si el taller llegó a la meta, seguir con A, porque tres áreas a la vez gastan mucho;
    - si vendió algo pero no la meta, bajar a B (US$20), que mantiene la CLI y lo armado;
