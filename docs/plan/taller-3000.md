@@ -132,7 +132,7 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 13. ~~Dar el sí al cambio de edición~~: hecho el 3-nov; ya está en `main`.
 14. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
 
-**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
+**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
 
 ## Para aprender
 
