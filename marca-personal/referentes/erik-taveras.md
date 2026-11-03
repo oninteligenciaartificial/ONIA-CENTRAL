@@ -103,9 +103,9 @@ Casi no hace videos de venta directa. Vende con la demo de su propio producto (T
 - **Desarrollo:** datos rápidos de cada pieza.
 - **Cierre:** "un reel no alcanza" más la palabra clave, para que la guía llegue por mensaje directo.
 
-**Edición:**
+**Edición:** el análisis de cuatro reels, del 2-nov-2026, está en [erik-taveras-edicion.md](erik-taveras-edicion.md).
 - **Cómo edita los reels:** lo cuenta él mismo, porque vende el taller "el mismo sistema con el que edito mis reels". Edita con Claude Code o Codex y una skill propia.
-- Subtítulos palabra por palabra que marcan la palabra que está diciendo.
+- Subtítulos que marcan la palabra que está diciendo. En los reels de Instagram vistos el 2-nov, de 2 a 4 palabras por vez ([erik-taveras-edicion.md](erik-taveras-edicion.md)).
 - Tarjetas y diagramas con íconos que se dibujan mientras habla, y logos reales de las marcas.
 - Grafismos de suspenso en las demos, b-roll, y efectos y música libres de derechos (CC0) bajos, debajo de la voz.
 - Pantalla dividida, demos grabadas con el celular, videos horizontales pasados a vertical y datos sensibles difuminados.
@@ -118,7 +118,7 @@ Casi no hace videos de venta directa. Vende con la demo de su propio producto (T
 2. Short "Experimento de moral y legalidad con ChatGPT": 220 mil vistas, fecha no visible. https://www.youtube.com/shorts/cYjCTsYvajY
 3. Video largo "Mi homelab con IA local: vale la pena?": 32 mil vistas en 2 días (publicado alrededor del 27-oct-2026), 8:17. https://www.youtube.com/watch?v=zXHJ-IJ59AM. Lo siguen de cerca "Cómo Instalar OpenClaw en un VPS" (31 mil, unos 8 meses, 19:25) y "Tesla P40" (30 mil, unos 5 meses, 13:52).
 
-Los reels de Instagram y TikTok no se pudieron ver sin sesión.
+Los reels de Instagram y TikTok no se pudieron ver sin sesión el 29-oct. El 2-nov se vieron cuatro de Instagram con la sesión de Sergio Urcullo: [erik-taveras-edicion.md](erik-taveras-edicion.md).
 
 Fuentes: https://www.youtube.com/@ErikTaverasT/videos ; https://www.youtube.com/@ErikTaverasT/shorts ; https://www.youtube.com/watch?v=zXHJ-IJ59AM ; https://www.youtube.com/watch?v=X519BLT6wJw ; https://www.youtube.com/watch?v=ecg6gbZXXu8 ; https://www.youtube.com/shorts/m39RZLNxBds ; https://www.youtube.com/shorts/htdtjmJuN2k ; https://workshops.eriktaveras.com/w/sistema-de-edicion-17-oct/ (todas consultadas el 29-oct-2026)
 
