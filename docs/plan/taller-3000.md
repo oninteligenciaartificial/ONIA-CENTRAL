@@ -27,7 +27,7 @@ Sale del [embudo del taller](https://github.com/oninteligenciaartificial/ONIA-CE
 
 ## 3. Lo que hace falta, pieza por pieza
 
-Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, alrededor de las 15 o 16 h de Bolivia. Después sigue **Codex** hasta el 14-nov, desde el proyecto Marketing y ventas o Desarrollo (`AGENTS.md`, "Equipo de agentes"). Higgsfield sigue hasta el 1-dic.
+Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, alrededor de las 15 o 16 h de Bolivia (lo dijo Sergio Urcullo en el proyecto Onia, sin enlace). Después sigue **Codex** hasta el 14-nov, desde el proyecto Marketing y ventas o Desarrollo (`AGENTS.md`, "Equipo de agentes"). Higgsfield sigue hasta el 1-dic.
 
 ### 3.1 Contenido: 3 videos por día
 
@@ -38,11 +38,12 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 
 ### 3.2 Edición: formatos y Higgsfield
 
-- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). En la rama `claude/project-thread-u6u3bz` hay dos formatos firmes más (pantalla partida e historia con imágenes) y dos en borrador (titular fijo y tarjetas de app), con revisión: esperan su sí. Las plantillas se ven en el panel de HyperFrames de la PC (`localhost:3002`).
+- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). En la rama `claude/project-thread-u6u3bz` hay dos formatos firmes más (pantalla partida e historia con imágenes) y dos en borrador (titular fijo y tarjetas de app), con revisión: esperan su sí. Las plantillas se ven en el panel de HyperFrames de la PC, en `localhost:3002` (lo abrió el hilo de edición el 3-nov, sin enlace).
 - **Falta:** editar el primer video real de Sergio de punta a punta con una plantilla; definir qué formato va con cada tipo de guion (noticia, proceso, valor).
-- **Higgsfield:** lo investiga esta noche el hilo "Investigar formatos de video con Higgsfield". **Cada generación es paga y necesita su sí** (`AGENTS.md`, "Frenos"). Se suma acá cuando termine.
+- **Higgsfield** (investigación en `main`: `marca-personal/guias/higgsfield.md`, 3-nov): no edita, genera materia prima, y HyperFrames arma el video gratis. Sirven imágenes (de 0,125 a 2 créditos cada una), planos de b-roll de 5 s (unos 22 a 30 créditos cada uno, según la fuente y la fecha que cita esa guía), portadas de YouTube y efectos de reel. No van las funciones que cambian o reemplazan la cara real. Desde el conector siempre se cobran créditos.
+- **Recomendación de esa guía:** noticia con imágenes y a veces un plano de gancho; proceso con imágenes (historia); valor con cara e íconos, sin Higgsfield. Como mucho 12 planos hasta el 20-nov, de 283 a 379 créditos, que entran en los 432,93 que había el 29-oct. **Cada generación es gasto y necesita su sí** (`AGENTS.md`, "Frenos").
 - **Quién:** el hilo de formatos hasta hoy; después, Codex con la skill `editar-video`.
-- **Sergio:** su sí a los formatos; un video suyo hablando a cámara para armar el primero.
+- **Sergio:** su sí a los formatos; un video suyo hablando a cámara para armar el primero; reconectar el conector de Higgsfield (venció el inicio de sesión) y fijar un tope de créditos.
 
 ### 3.3 DM automático por Instagram (n8n)
 
@@ -60,7 +61,7 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 
 ### 3.5 Bóveda, página del taller y web
 
-- **Hoy:** el sitio `sergiourcullo` tiene las guías `/claude-code`, `/stack`, `/homelab` y `/vps`, la llamada gratis `/llamada` (Cal.com), la página `/taller` (publicada el 2-nov, con la fecha vieja) y el enlace a Onia Community.
+- **Hoy:** el sitio `sergiourcullo` tiene las guías `/claude-code`, `/stack`, `/homelab` y `/vps`, la llamada gratis `/llamada` (Cal.com), la página `/taller` (mergeada el 2-nov con la fecha vieja; que se vea publicada, sin confirmar) y el enlace a Onia Community.
 - **Falta:** una guía "Claude para empezar" para la palabra `CLAUDE` (la de `/claude-code` dice que el plan gratis no lo incluye, y el taller enseña desde cero); poner `/taller` al día con la fecha nueva; mejorar el sitio mirando referentes (lo sigue investigando el hilo del embudo).
 - **Quién:** Codex de Desarrollo, en el repo `sergiourcullo`, por PR.
 - **Sergio:** cada cambio del sitio es publicar: su sí con captura.
@@ -68,7 +69,7 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 ### 3.6 Comunidad
 
 - **Gratis, Onia Community:** existe (grupo de WhatsApp enlazado en el sitio). Falta el recurso exclusivo de cada tema.
-- **Paga:** sin decidir. Opciones del embudo: Bs 70, **Bs 100 (recomendado)** o Bs 150 por mes, con precio de fundador; y si va paga desde el día uno, gratis, o **el primer mes incluido con el taller (recomendado)**. Vive en WhatsApp más Meet, sin gasto.
+- **Paga:** sin decidir. Opciones del embudo: Bs 70, **Bs 100 (recomendado)** o Bs 150 por mes, con precio de fundador; y si va paga desde el día uno, gratis, o **el primer mes incluido con el taller (recomendado)**. Dónde vive, opción recomendada: WhatsApp más Meet, sin gasto.
 - **Sergio:** precio, forma y qué día da la clase semanal.
 
 ### 3.7 Pagos y registro
@@ -87,7 +88,7 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 - **Hoy:** hay 5 skills escritas en este repo, en `.agents/skills/`: `editar-video`, `ver-video`, `investigar-referente`, `encargar` y `llevar-issue`. Codex las lee de ahí.
 - **Dónde se ven:** Codex, local o en la nube, sí. Claude Code en la PC, sí, por el enlace `.claude\skills` del checkout principal. **Las sesiones de Claude en la nube, como este hilo, no:** `.claude/skills` está en el `.gitignore` y el clon no trae el enlace. Se comprobó el 3-nov: en este hilo no aparecen en la lista de skills.
 - **Arreglo recomendado:** una línea en el `CLAUDE.md` que diga que las skills están en `.agents/skills/` y que se lea el `SKILL.md` que corresponda. Toca el `CLAUDE.md`, así que lo decide Sergio. Como Claude vence hoy, rinde solo si lo renueva.
-- **Skills de afuera propuestas:** Marketing Skills (oferta, textos, comunidad, guiones; licencia MIT) y las de HyperFrames (que el agente arme composiciones y subtítulos sin adivinar; Apache-2.0). Ninguna cobra. Falta leer qué ejecuta cada una antes de instalar, y entran con su sí. El detalle está en `docs/skills-inventario.md`, rama `claude/project-thread-u6u3bz`.
+- **Skills de afuera propuestas:** Marketing Skills (oferta, textos, comunidad, guiones; licencia MIT) y las de HyperFrames (que el agente arme composiciones y subtítulos sin adivinar; Apache-2.0). Si alguna cobra, se sabe recién al leer qué ejecuta cada una (la lista salió de los nombres de las carpetas); entran con su sí. El detalle está en `docs/skills-inventario.md`, rama `claude/project-thread-u6u3bz`.
 
 ### 3.10 Medir
 
@@ -98,7 +99,7 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 | Cuándo | Qué |
 |---|---|
 | Martes 3, mañana | Sergio decide y hace lo de la sección 5. Los hilos de Claude cierran sus ramas antes de las 15 h. |
-| Martes 3, tarde y noche | Codex: guiones del 5 y 6, guía "Claude para empezar", `/taller` con la fecha nueva. Flujo de DM en modo `solo_testers`. |
+| Martes 3, tarde y noche | Codex: guiones del 5 y 6, guía "Claude para empezar", `/taller` con la fecha nueva. Flujo de DM en modo `solo_testers`, si Sergio dio el sí para importarlo al n8n del VPS (es producción). |
 | Miércoles 4 y jueves 5, noche | Sergio graba en bloque. Codex edita con las plantillas. |
 | Jueves 5 | Prueba de punta a punta: comentar con la segunda cuenta → DM → guía → comunidad → WhatsApp → pago de prueba. Si falla, no se lanza. |
 | Viernes 6 | Lanzamiento orgánico: el flujo de DM pasa a `real`, con su sí. |
@@ -110,16 +111,17 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 1. Fecha del taller.
 2. Comunidad paga: precio (recomiendo Bs 100) y si el primer mes va incluido (recomiendo que sí).
 3. Pagos: verificar a mano o pagar una pasarela (recomiendo a mano por ahora).
+4. Higgsfield: el tope de créditos hasta el 20-nov (la guía estima de 283 a 379).
 
 **Hacer (unos 30 minutos):**
 
-4. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
-5. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
-6. Tener a mano una segunda cuenta de Instagram para la prueba.
-7. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
-8. Hacer el pago de prueba con el QR.
-
-9. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
+5. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
+6. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
+7. Tener a mano una segunda cuenta de Instagram para la prueba.
+8. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
+9. Hacer el pago de prueba con el QR.
+10. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
+11. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
 
 **Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
 
@@ -129,4 +131,4 @@ Un **embudo** es el camino que hace una persona desde que ve un video hasta que 
 
 ## Historial
 
-- **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Ya suma el resultado del hilo de edición y skills. Faltan Higgsfield y el chatbot de WhatsApp, que se suman cuando terminen.
+- **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Ya suma el resultado del hilo de edición y skills, y el de Higgsfield. Falta el chatbot de WhatsApp, que se suman cuando terminen.
