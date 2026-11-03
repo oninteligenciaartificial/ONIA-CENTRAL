@@ -19,7 +19,7 @@ Estas reglas estaban solo en la memoria del proyecto de Claude, que Codex y Grok
 2. **No se lanza un hilo ni una tarea nueva hasta que él diga "lanzá".** Lo que no pidió se le propone en una línea. Las cosas se estudian con investigación, no se adivinan.
 3. **Terminar antes de abrir** (3-nov, 05:32 UTC). No se abre otra tarea ni se relanza un hilo hasta cerrar la que está en curso. Su mayor miedo son las sesiones llenas de contexto que no terminan. Cada hilo tiene definido su paso final.
 4. **Al terminar cada hilo, se le dice cómo seguir** (3-nov, 05:35 UTC): el siguiente paso concreto.
-5. **Tareas cortas, un entregable.** Las áreas son carpetas del repo, y van 2 o 3 tareas a la vez como mucho.
+5. **Tareas cortas, un entregable.** Que las áreas sean carpetas del repo, con 2 o 3 tareas a la vez como mucho, es una propuesta del 3-nov sin aprobar: hasta que Sergio la apruebe, vale "Equipo de agentes" del `AGENTS.md`.
 6. **Una revisión, un agente.** Nunca rondas con muchos agentes. Si dice "cerralo", "pará" o "vas X horas", se frena todo en ese turno, se sube lo hecho y se contesta en una línea qué quedó.
 7. **No se le nombran PRs por número.** Se le dice qué cambia y para qué, y "¿Lo aceptás?".
 8. **Cuentas del navegador del equipo, solo lectura.** Instagram está con la sesión `sergiourcullo`. Las credenciales nunca van por chat.
@@ -32,8 +32,8 @@ Estas reglas estaban solo en la memoria del proyecto de Claude, que Codex y Grok
 
 - **Meta:** Bs 3.000, o sea 60 talleres de Bs 50.
 - **Fecha del taller:** en pausa desde el 3-nov ("no definimos fecha, tenemos tiempo, armemos todo primero"). Ya no son el 4, 5 y 6-nov.
-- **Lanzamiento de la campaña:** viernes 6-nov, orgánica primero, 3 videos por día. El miércoles 4 y el jueves 5 a la noche graba y une Instagram con la página de Facebook de Onia, con una prueba completa antes del 6.
-- **Embudo:** reel con palabra clave, DM automático, guía en la bóveda "Sergio Urcullo" (con video horizontal), recurso exclusivo en Onia Community, taller de Bs 50, comunidad paga (propuesta: Bs 100/mes, precio fundador). Sin cuestionario.
+- **Lanzamiento de la campaña:** viernes 6-nov, orgánica primero, 3 videos por día. Propuesta, que se ajusta con él: el miércoles 4 y el jueves 5 a la noche graba y une Instagram con la página de Facebook de Onia, con una prueba completa antes del 6.
+- **Embudo:** reel con palabra clave, DM automático, guía en la bóveda "Sergio Urcullo" (con video horizontal), recurso exclusivo en Onia Community, taller de Bs 50, comunidad paga. Sin cuestionario. El precio de la comunidad está sin decidir; lo recomendado es Bs 100/mes, precio fundador.
 - **Calendario de contenido:** del 4 al 20-nov; 09:00 noticia, 12:30 proceso, 19:30 valor; un trial reel por día; YouTube horizontal los domingos; se ajustan los horarios el 15-nov.
 - **Herramientas:** Codex hasta el 14-nov; Higgsfield hasta el 1-dic; n8n en el VPS de Hostinger. Modelos: Sonnet 5.5 en Marketing, Opus 5.5 en Desarrollo y Platform (bajar un hilo a Sonnet falló el 3-nov: no está disponible para Claude Code en la organización).
 - **WhatsApp de ventas:** +591 75414930, conectado solo por la API, no por la app (3-nov).
@@ -63,7 +63,7 @@ Orden de apertura. "En main" quiere decir mergeado; "sin mergear", que está en 
 - **Quedó:** Remote Control anda en la PC (`desktop-env6sda\pc`), con WSL Ubuntu. Claude Code está instalado también en Ubuntu, con su propio login.
 
 ### 6. Armar el relevo de Claude a Codex (3-nov) — cerrado
-- **Quedó en main:** [relevo a Codex](decisiones/2026-11-03-relevo-a-codex.md) y [pendientes de Sergio](pendientes-de-sergio.md) (PRs #172 y #173). Recomendación: el 12-nov, si el taller llegó a la meta, sigue Pro (US$100); si no, ChatGPT Plus (US$20). No volver a Claude por ahora.
+- **Quedó en main:** [relevo a Codex](decisiones/2026-11-03-relevo-a-codex.md) y [pendientes de Sergio](pendientes-de-sergio.md) (PRs #172 y #173). Recomendación: el 12-nov, si el taller llegó a la meta, sigue Pro (US$100); si vendió algo sin llegar, ChatGPT Plus (US$20); si no vendió nada, Plus o cortar. No volver a Claude por ahora.
 - **Espera a Sergio:** si cada jefe lee y pone al día `pendientes-de-sergio.md` (cambia el `AGENTS.md`).
 
 ### 7. Elegir cómo coordinar las 3 áreas (3-nov) — cerrado
@@ -118,7 +118,7 @@ Orden de apertura. "En main" quiere decir mergeado; "sin mergear", que está en 
 - **Espera a Sergio:** la fecha del taller, el precio de la comunidad, si los cobros se revisan a mano, y el OK a las skills de afuera.
 
 ### 18. Investigar formatos de video con Higgsfield (3-nov) — abierto, espera a Sergio
-- **En main:** la guía `marca-personal/guias/higgsfield.md` (PRs #193, #199, #200). Higgsfield genera la materia prima y HyperFrames arma el video gratis. Desde el conector siempre se cobran créditos. Tope recomendado: 12 planos hasta el 20-nov. Un reel en animación 3D cuesta de 72 a 128 créditos más el personaje.
+- **En main:** la guía `marca-personal/guias/higgsfield.md` (PRs #193, #199, #200). Higgsfield genera la materia prima y HyperFrames arma el video gratis. Desde el conector siempre se cobran créditos. Tope recomendado: 12 planos hasta el 20-nov. La parte en 3D de ese reel (3 o 4 escenas) cuesta de 72 a 128 créditos, más el personaje, que no tiene precio publicado (guía de Higgsfield, 3-nov).
 - **Último hallazgo:** la skill "anunciante-supremo" está en la cuenta de claude.ai desde el 17-oct, apagada. Usa APIMART, un servicio externo, que probablemente sea gasto aparte.
 - **Espera a Sergio:** prenderla para leerla, o dejarla; reconectar el conector de Higgsfield; el tope de créditos. Cada generación pide su sí.
 
