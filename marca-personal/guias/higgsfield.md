@@ -7,8 +7,8 @@
 ## Lo corto
 
 - **Higgsfield no reemplaza a HyperFrames: le da materia prima.** HyperFrames arma el video (subtítulos, gráficos, cierre) gratis en la PC. Higgsfield genera lo que no se puede grabar: imágenes, planos cortos de b-roll y portadas.
-- **El saldo no alcanza para video generado en los 3 videos de todos los días.** Con 2 planos de 5 s por video, son unos 2.200 créditos hasta el 20-nov (cuenta abajo), y la cuenta tenía 432,93 el 29-oct ([anuncios](anuncios.md)).
-- **La recomendación:** imágenes de Higgsfield (casi gratis) animadas en HyperFrames para todos los días, y planos de video generado solo para el gancho de 1 video por día, como mucho.
+- **El saldo no alcanza para video generado en los 3 videos de todos los días.** Con 2 planos de 5 s por video, son entre 2.244 y 3.060 créditos hasta el 20-nov (cuenta abajo), y la cuenta tenía 432,93 el 29-oct ([anuncios](anuncios.md)).
+- **La recomendación:** imágenes de Higgsfield (casi gratis) animadas en HyperFrames para todos los días, y un plano de video generado solo para el gancho, en 12 de los 17 días como mucho.
 
 ## Qué ofrece Higgsfield que sirve acá
 
@@ -17,7 +17,7 @@ Fuentes: el catálogo de flujos del conector de Higgsfield (`get_workflow_instru
 | Herramienta | Qué hace | Para cuál de los 3 videos | Costo |
 |---|---|---|---|
 | Imágenes (Soul 2.0, Nano Banana Pro, FLUX.2 Pro) | Una imagen desde un texto | Fondos, "pantallas" de ejemplo y escenas para N y V, animadas después en HyperFrames | Soul 2.0: 0,125 créditos; FLUX.2 Pro: 1; Nano Banana Pro: 2 [P1] |
-| Video (Seedance 2.0, Kling, Veo) | Un plano corto de 5 a 8 s desde un texto o una imagen | B-roll del gancho: "un negocio de noche con el celular sonando" | Seedance 2.0, 5 s a 720p: unos 22 [P1]; Seedance 2.0 Fast, 8 s a 720p: 28 [P2] |
+| Video (Seedance 2.0, Kling, Veo) | Un plano corto de 5 a 8 s desde un texto o una imagen | B-roll del gancho: "un negocio de noche con el celular sonando" | Seedance 2.0, 5 s a 720p: unos 22 según [P1] el 3-nov, y 30 según la misma página el 29-oct ([anuncios](anuncios.md)); Seedance 2.0 Fast, 8 s a 720p: 28 [P2] |
 | `reel-effects` | Efectos fijos sobre un video de cara: texto detrás de la cabeza, cuadro congelado con nombre, gráfico de vidrio, antes y después, ranking, subtítulos | V y P, sobre la grabación de Sergio | El único paso pago es recortar el fondo (`remove_background`), sin precio publicado; el resto corre en la nube de Higgsfield sin generar [W1] |
 | `thumbnail-generation` | Portadas de YouTube e Instagram | El video horizontal del domingo | Por imagen, sin precio fijo publicado [W1] |
 | Shorts Studio | Cambia el estilo visual de un clip de hasta 2 min, a 720p | No conviene: cambia la cara real de Sergio | Unos US$4 por clip de 25 s [P3] |
@@ -34,13 +34,13 @@ Lo que pesa para elegir:
 - **Santiago Muñoz:** b-roll y animaciones con Higgsfield conectado a Claude, y edita con Claude Code y HyperFrames o Remotion ([ficha](../referentes/santiago-munoz.md)). Es el mismo armado que se propone acá.
 - **Enrique Rocha:** hace tutoriales sobre la herramienta, como clonar anuncios con Higgsfield ([ficha](../referentes/enrique-rocha.md)). Higgsfield aparece como tema de un video V, no como forma de editar.
 - **Iman Gadzhi:** lo promociona como inversor ([ficha](../referentes/iman-gadzhi.md)). No es prueba de uso.
-- **Erik Taveras:** en los 6 reels medidos no hay planos generados: cara, gráficos propios y capturas reales ([estilo de edición](estilo-de-edicion.md)).
+- **Erik Taveras:** en los 6 reels vistos no se identificaron planos generados, aunque nadie lo buscó a propósito: sin confirmar. Lo que sí se ve es cara, gráficos propios y capturas reales ([estilo de edición](estilo-de-edicion.md)).
 
 Sin confirmar: cuánto b-roll generado usa cada uno por video. No se midió.
 
 ## El flujo propuesto (Propuesta)
 
-Cada formato del [estilo de edición](estilo-de-edicion.md) con lo que le suma Higgsfield:
+Cada formato con lo que le suma Higgsfield. Los formatos están en la [guía de guiones diarios](guiones-diarios.md) y el [calendario](../calendario-contenido.md); solo `cara-con-iconos` es firme (con plantilla en el [estilo de edición](estilo-de-edicion.md)), y los otros tres esperan el sí de Sergio Urcullo:
 
 | Video del día | Formato | Qué pone Higgsfield | Qué hace HyperFrames |
 |---|---|---|---|
@@ -60,15 +60,16 @@ Los pasos, para un agente (Claude o Codex, que también tiene el conector de Hig
 
 ## Cuánto cuesta (Propuesta de presupuesto)
 
-Calendario del 4 al 20-nov: 17 días, 3 videos por día, 51 videos ([calendario](../calendario-contenido.md)). Créditos según el blog oficial [P1]:
+Calendario del 4 al 20-nov: 17 días, 3 videos por día, 51 videos ([calendario](../calendario-contenido.md)). El precio de Seedance 2.0 a 720p cambió en la misma página oficial [P1]: 30 créditos el 29-oct ([anuncios](anuncios.md)) y unos 22 el 3-nov. Se calcula con los dos:
 
-| Opción | Qué se genera | Créditos hasta el 20-nov |
-|---|---|---|
-| A. Solo imágenes | 3 imágenes Soul 2.0 por video | unos 19 (51 × 3 × 0,125) |
-| B. Imágenes y 1 plano por día (recomendada) | A, más 1 plano Seedance 2.0 de 5 s a 720p por día | unos 393 (19 + 17 × 22) |
-| C. 2 planos en cada video | 102 planos Seedance 2.0 de 5 s a 720p | unos 2.244 (102 × 22) |
+| Opción | Qué se genera | Con 22 créditos por plano | Con 30 créditos por plano |
+|---|---|---|---|
+| A. Solo imágenes | 3 imágenes Soul 2.0 por video | unos 19 (51 × 3 × 0,125) | unos 19 |
+| B. Imágenes y 1 plano en 12 días (recomendada) | A, más 12 planos Seedance 2.0 de 5 s a 720p | unos 283 (19 + 12 × 22) | unos 379 (19 + 12 × 30) |
+| C. Imágenes y 1 plano todos los días | A, más 17 planos | unos 393 | unos 529 |
+| D. 2 planos en cada video | 102 planos | unos 2.244 (102 × 22) | unos 3.060 (102 × 30) |
 
-La B entra en los 432,93 créditos del 29-oct, si siguen ahí: no se pudo comprobar. Los precios por crédito pueden haber cambiado desde el 24-oct, fecha del blog.
+La B entra en los 432,93 créditos del 29-oct con cualquiera de los dos precios, si el saldo sigue ahí: no se pudo comprobar. La C entra solo con el precio de 22. El arreglo de la tabla de [anuncios](anuncios.md) queda para otro cambio.
 
 ## Lo que falta investigar (sin la cuenta)
 
