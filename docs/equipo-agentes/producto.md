@@ -83,7 +83,7 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
   - el repo del sitio personal, `oninteligenciaartificial/sergiourcullo`: escribo en ramas y por PR. Mergear publica, así que se mergea solo con el sí de Sergio Urcullo;
   - Vercel: leo los despliegues. No despliego: `vercel` pide el sí en la app ([permisos](../decisiones/2026-11-02-permisos-claude-code.md));
   - Cal.com: solo compruebo que `/llamada` responda;
-  - el VPS, Chatwoot y n8n de producción: son del área, pero hoy no los toco. Nunca entré. Hace falta el sí de Sergio Urcullo y la clave en la bóveda, como dice `docs/credenciales.md`;
+  - el VPS, Chatwoot y n8n de producción: son del área. Desde el 3-nov entro en solo lectura ("Accesos desde esta PC"); cada cambio pide el sí de Sergio Urcullo;
   - el repo `onia-platform`: no lo toco. Es de ONIA Platform.
 - **Navegador de Ubuntu:** solo para comprobar sin login páginas publicadas, como el sitio, el enlace de WhatsApp o Cal.com, cuando no alcanza el navegador de la app de Claude. Lo usa una sola sesión a la vez, como dice el `AGENTS.md`. El 2-nov no lo usé.
 - **Cruces con otras áreas:**
@@ -97,7 +97,7 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
 - **GitHub:** `gh` con la cuenta `oninteligenciaartificial`.
 - **Conectores de la app que sirven al área:** Vercel, Cloudflare, Supabase y Google Calendar, todos conectados. No se usaron para esto.
 - **Programas instalados:** `vercel` 53.2.0, `codex-cli` 0.166.0, `n8n` (una instalación local, no la del VPS) y `ssh`.
-- **SSH al VPS:** `ssh root@187.77.16.63`, con la clave `claude-cloud-20260930` cargada en el `ssh-agent` de Windows. Anda desde PowerShell, con el `ssh` de Windows. Desde Git Bash no: su `ssh` no ve el agente de Windows y da "Permission denied". En `C:\Users\PC\.ssh` hay otras dos claves, sin `config`, que no se usan.
+- **SSH al VPS:** `ssh root@187.77.16.63`, con la clave del archivo `claude-cloud-vps-20260930` (su comentario interno dice `claude-cloud-20260930`) cargada en el `ssh-agent` de Windows. Anda desde PowerShell, con el `ssh` de Windows. Desde Git Bash no: su `ssh` no ve el agente de Windows y da "Permission denied". En `C:\Users\PC\.ssh` hay otras dos claves, sin `config`, que no se usan.
 - **Correr varios comandos en el VPS:** se escriben en un `.sh` en la carpeta temporal de la sesión y se pasan por la entrada, sin el BOM ni los `\r` de Windows: `([IO.File]::ReadAllText($s)).TrimStart([char]0xFEFF) -replace "`r","" | ssh root@187.77.16.63 'bash -s'`. Con los comandos en una sola línea entre comillas, PowerShell rompe los `{{.Names}}` de `docker`.
 
 ## Runner de la CI
@@ -110,8 +110,7 @@ El CI de `onia-platform` corre en un runner propio del VPS (`runs-on: [self-host
   - `registrar.sh` lo registra en GitHub. El código de registro sale de `gh api -X POST repos/oninteligenciaartificial/onia-platform/actions/runners/registration-token --jq .token` y se le pasa por la entrada, nunca como argumento, como dice el comentario del script;
   - antes, se borra en GitHub el registro viejo apagado, para que el nombre quede libre.
 - **Rearmado el 3-nov:** Sergio Urcullo contestó "Si a todo" a "Sergio Urcullo, tenés este cambio: volver a armar en el VPS el runner de ONIA Platform, la máquina que corre las pruebas de cada cambio. ¿Lo aceptás?" (proyecto Onia de claude.ai, hilo "Volver a prender el backend", sin enlace). Se armó la imagen con `nice`, se levantó solo `onia-runner-platform` con los topes de arriba y se registró con `--replace`, que reusa el registro viejo, así que no hizo falta borrarlo. A las 05:10 (UTC) GitHub lo mostró `online` y tomó la primera corrida en cola. El de Hermes no se rearmó.
-- **Trampa al registrarlo desde PowerShell:** PowerShell 5.1 le agrega `` al código que pasa por la entrada, y GitHub contesta "Request headers must contain only ASCII characters". Se limpia del lado del VPS: `gh api ... --jq .token | ssh root@187.77.16.63 'tr -cd "A-Za-z0-9
-" | bash /opt/onia-runner/registrar.sh onia-runner-platform oninteligenciaartificial/onia-platform onia-vps-platform'`.
+- **Trampa al registrarlo desde PowerShell:** PowerShell 5.1 le agrega `\r` al código que pasa por la entrada, y GitHub contesta "Request headers must contain only ASCII characters". Se limpia del lado del VPS, dejando solo letras, números y el salto de línea: `gh api -X POST repos/oninteligenciaartificial/onia-platform/actions/runners/registration-token --jq .token | ssh root@187.77.16.63 'tr -cd "A-Za-z0-9\n" | bash /opt/onia-runner/registrar.sh onia-runner-platform oninteligenciaartificial/onia-platform onia-vps-platform'`.
 
 ## La web del taller
 
