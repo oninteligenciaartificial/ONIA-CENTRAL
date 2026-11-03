@@ -29,7 +29,9 @@ Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en C
 
 ## Correcciones de Sergio
 
-Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones"). Todavía ninguna.
+Una línea por corrección, en el mismo turno: fecha, qué pasó y la regla (`AGENTS.md`, "Errores y lecciones").
+
+- **3-nov:** se buscaron skills solo en el repo y no en las carpetas de la PC (`C:\Users\PC\.claude\skills` y los plugins). Ponytail se descartó sin leer su repo, y las plantillas usaron GSAP sin revisar su licencia. Regla: antes de proponer o usar una skill o una librería, se mira qué hay en el repo, en la PC y en los otros repos de ONIA, y se lee su repo y su licencia.
 
 ## De dónde sale
 

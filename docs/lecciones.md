@@ -164,6 +164,21 @@ Historia: Hermes no orquesta desde el 31-oct (`AGENTS.md`, "Hermes y Grok Bot: h
 - **El Administrador no le dice a Sergio Urcullo qué tiene que hacer o contestar en cada sesión: se encarga de la infraestructura y de que todo funcione.** Lo que un área necesita de él se lo pide esa sesión, en la suya. Las 3 opciones del Administrador son sobre su propio trabajo. Desde el 3-nov no hay Administrador ni jefe general, y la infraestructura es de Desarrollo (`AGENTS.md`, "Equipo de agentes").
   - Por qué: el 2-nov, en la sesión del Administrador, se le cerraron varias respuestas con lo que tenía que contestar en cada sesión y en qué orden. Contestó: "VOS NO ME DECIS QUE DEBE HACER CADA SESION, SOLO TE ENCARGAS QUE TODO FUNCIONE BIEN, NO ME DIGAS AQUI QUE HACER EN CADA MOMENTO, VOS ENCARGATE DE LA INFRAESTRUCTURA Y QUE TODO FUNCIONE CORRECTAMENTE. TE AVISO SI ESTA ALGO MAL" (sin enlace).
 
+## Lo que estaba solo en la memoria de Claude
+
+Pasó al repo el 3-nov-2026, a pedido de Sergio Urcullo en el chat del proyecto Onia de claude.ai: "quiero que todo esté en repositorio para que si me mudo a Codex, para que lea el repositorio y no lea la computadora". Antes vivía en la memoria de Claude Code de la PC, que Codex no lee.
+
+- **Si falta un dato que solo tiene Sergio Urcullo y no es de lo reservado, se toma un supuesto razonable, se escribe y se corrige después.**
+  - Por qué: no puede revisar todo y prefiere que los agentes avancen con controles entre ellos. Lo pidió el 28-oct: "no puedo estar aceptando y verificando todo".
+- **Lo que aparece fuera del objetivo va a un issue, y ese issue se ofrece enseguida para su propia sesión, en vez de juntarlo.**
+  - Por qué: el 28-oct preguntó "por qué no los vamos arreglando tras que salen en lugar de esperar".
+- **Las reglas se aplican con criterio: la seguridad, que funcione de verdad y el beneficio real son el espíritu, no un cuestionario.** Cada recomendación dice qué regla o qué dato la sostiene.
+  - Por qué: el 29-oct aclaró que eso "ya es a criterio del agents.md y de todas las reglas que tengamos".
+- **Avanzar sin quedarse perfeccionando: lo que valida algo es un trabajo real, y las decisiones de un cambio se le juntan en una sola pregunta.**
+  - Por qué: el 29-oct dijo: "estamos haciendo pruebas tontas y no estamos armando lo que debemos".
+- **Las preguntas a Sergio Urcullo van con botones cuando la herramienta los tiene,** con la recomendada primera.
+  - Por qué: lo pidió el 29-oct. En una herramienta sin botones, como el chat de Codex, la propuesta del autor es darlas como opciones numeradas.
+
 ## Plata y gasto
 
 - **Cada herramienta o automatización que se propone dice si cobra por uso.** Si cobra, se marca como gasto.
