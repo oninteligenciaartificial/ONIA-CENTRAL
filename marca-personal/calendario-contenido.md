@@ -60,6 +60,17 @@ Cada semana tiene un trabajo. Así el que te encuentra el primer día llega a la
 
 **Los temas de V** salen del temario del taller ("cómo pedirle bien, cómo darle tus archivos y cómo armar un proyecto", como en los guiones del 3 al 8-nov, que siguen en borrador). Cuando el temario quede firme, se ajustan.
 
+### Repos, casos de uso y series que llevan al taller
+
+Lo sumó Sergio Urcullo el 3-nov ("videos enseñando repositorios, noticias, algún caso de uso, … algún tutorial que luego se escala a un taller").
+
+- **Repo de la semana (sábados, en el lugar de N).** Una herramienta de GitHub que Sergio probó: qué hace, cómo se usa y qué **no** hace, como los videos de Erik. El repo se elige ese día. El guion lleva el enlace, las estrellas y la fecha en que se vieron, y solo dice lo que se probó.
+- **Caso de uso real (jueves 12 y 19, en el lugar de P).** La IA resolviendo un problema de un negocio de verdad. Es el formato de Santiago que más vistas tuvo: "Voy a un negocio y le dejo la IA funcionando", con 113.870 en el de la cafetería ([resumen de referentes](referentes/resumen-2026-10-29.md)). **Necesita un negocio que acepte salir y que Sergio Urcullo lo consiga**, por ejemplo la empresa familiar. Sin datos de sus clientes en pantalla. Si no hay negocio, va un P normal.
+- **Series que llevan al taller (Propuesta).** Los V se agrupan en 3 series. Cada serie termina en una clase del taller: el video da una parte gratis, y la clase la completa en vivo. Cuando el temario quede firme, se ajusta qué clase corresponde a cada serie.
+  - **Serie 1 · Pedirle bien a la IA:** contexto, ejemplo, formato, que te pregunte y revisar lo que escribe.
+  - **Serie 2 · Tus archivos y proyectos:** darle tus archivos, proyectos de Claude y resumir datos.
+  - **Serie 3 · Casos completos:** demos de punta a punta, con un negocio de ejemplo.
+
 ## Día por día
 
 N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa misma mañana. Por eso abajo solo dice "noticia del día", salvo que ya haya una. Si P no dice "historia", va en pantalla partida.
@@ -69,12 +80,12 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 **Mié 4-nov** · Estado: `escrito` ([guiones](guiones/2026-11-04.md))
 - 09:00 N · Anthropic pidió salir a la bolsa (9 días: va solo si no hay una noticia más nueva) · FUENTES
 - 12:30 P · Cada error de mis agentes se vuelve una regla · REGLAS · pantalla partida
-- 19:30 V · Por qué la IA te responde genérico · PEDIDO · trial: otro gancho
+- 19:30 V · Por qué la IA te responde genérico · Serie 1 · PEDIDO · trial: otro gancho
 
 **Jue 5-nov** · Estado: `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Por qué armo una empresa con IA y no con empleados · historia
-- 19:30 V · Cómo darle tus archivos a la IA para que trabaje con lo tuyo · trial
+- 19:30 V · Cómo darle tus archivos a la IA para que trabaje con lo tuyo · Serie 2 · trial
 
 **Vie 6-nov** · Estado: `pendiente` · **Propuesta: se abre la lista del taller**
 - 09:00 N · Noticia del día
@@ -82,46 +93,46 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 - 19:30 V · "Claude de 0 a 100": qué vas a poder hacer al terminar (muestra del taller, sin fecha) · trial
 
 **Sáb 7-nov** · Estado: `pendiente`
-- 09:00 N · Herramienta de la semana: una que probaste vos
+- 09:00 N · **Repo de la semana:** una herramienta de GitHub que probaste vos, qué hace y qué NO hace
 - 12:30 P · Mi semana en 30 segundos: qué hicieron mis agentes y qué aprobé yo
-- 19:30 V · Proyectos en Claude: no le expliques todo cada vez · trial
+- 19:30 V · Proyectos en Claude: no le expliques todo cada vez · Serie 2 · trial
 
 **Dom 8-nov** · Estado: `pendiente` · **YouTube: "Lo que aprendí esta semana de IA" (1)**
 - 09:00 N · Resumen de las 3 noticias de IA de la semana
 - 12:30 P · Cómo planifico la semana con IA
-- 19:30 V · El pedido en 3 partes: contexto, ejemplo y formato (repaso) · trial
+- 19:30 V · El pedido en 3 partes: contexto, ejemplo y formato (repaso) · Serie 1 · trial
 
 ### Semana 2 · Prueba
 
 **Lun 9-nov** · `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Una pregunta que me llegó por WhatsApp, contestada
-- 19:30 V · Que la IA te haga preguntas antes de responder · trial
+- 19:30 V · Que la IA te haga preguntas antes de responder · Serie 1 · trial
 
 **Mar 10-nov** · `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Lo que me salió mal esta semana y qué cambié · historia
-- 19:30 V · Revisar lo que escribe la IA: 3 cosas que siempre miro · trial
+- 19:30 V · Revisar lo que escribe la IA: 3 cosas que siempre miro · Serie 1 · trial
 
 **Mié 11-nov** · `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Te muestro mi sistema: un agente por área
-- 19:30 V · Demo: de un archivo de ventas de ejemplo a un resumen en 1 minuto · trial
+- 19:30 V · Demo: de un archivo de ventas de ejemplo a un resumen en 1 minuto · Serie 2 · trial
 
 **Jue 12-nov** · `pendiente`
 - 09:00 N · Noticia del día
-- 12:30 P · Cómo estudio y armo la empresa en el mismo día
+- 12:30 P · **Caso de uso real:** la IA resolviendo un problema de un negocio de verdad, con su permiso
 - 19:30 V · Un mismo pedido en ChatGPT y en Claude: qué cambia · trial
 
 **Vie 13-nov** · `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Qué aprendí copiando a mis referentes
-- 19:30 V · Demo: respuestas para los clientes de un negocio de ejemplo · trial
+- 19:30 V · Demo: respuestas para los clientes de un negocio de ejemplo · Serie 3 · trial
 
 **Sáb 14-nov** · `pendiente`
-- 09:00 N · Herramienta de la semana
+- 09:00 N · **Repo de la semana**
 - 12:30 P · Mi semana en 30 segundos
-- 19:30 V · 5 pedidos que uso todos los días · trial
+- 19:30 V · 5 pedidos que uso todos los días · Serie 1 · trial
 
 **Dom 15-nov** · `pendiente` · **YouTube (2)** · **Revisión de horarios con las estadísticas de la cuenta**
 - 09:00 N · Resumen de la semana
@@ -143,11 +154,11 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 **Mié 18-nov** · `pendiente`
 - 09:00 N · Noticia del día
 - 12:30 P · Lo que me pidieron que enseñe, y qué entra al taller
-- 19:30 V · Demo larga: un proyecto armado de punta a punta · trial
+- 19:30 V · Demo larga: un proyecto armado de punta a punta · Serie 3 · trial
 
 **Jue 19-nov** · `pendiente`
 - 09:00 N · Noticia del día
-- 12:30 P · Detrás de escena: el temario del taller
+- 12:30 P · **Caso de uso real** (el segundo, o la segunda parte del primero)
 - 19:30 V · Las 3 cosas que vas a saber hacer al terminar el taller · trial
 
 **Vie 20-nov** · `pendiente` · **Propuesta: se abre la inscripción, si ya hay fecha decidida**
