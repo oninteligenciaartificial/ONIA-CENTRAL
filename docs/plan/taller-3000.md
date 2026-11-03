@@ -57,13 +57,13 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 Investigación en `main`: [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md) (3-nov).
 
 - **Número, recomendado:** el mismo de ventas, sin chip nuevo ni APIs no oficiales, que arriesgan la baja del número.
-- **Confirmado el 3-nov:** el número de ventas está conectado solo por la API oficial, no por la app de WhatsApp Business (lo confirmó Sergio Urcullo en el hilo del chatbot). Por eso la bienvenida no se cambia en la app: la manda el bot.
+- **Confirmado el 3-nov:** el número de ventas está conectado solo por la API oficial, no por la app de WhatsApp Business (lo confirmó Sergio Urcullo en el hilo del chatbot). Por eso la bienvenida no se cambia en la app: con A la manda el bot, y con B se manda a mano desde Chatwoot.
 - **Cuentas:** el portfolio de ONIA y la app de Meta "Onia Bot", que ya manda los mensajes a Chatwoot. No hace falta app nueva. n8n y Chatwoot ya corren en el VPS.
 - **Costo (gasto, con su sí):** Meta da 1.000 mensajes de servicio gratis por número al mes y después cobra; las plantillas de marketing se cobran aparte. El plan estima de US$10 a 43 en el mes, para 240 a 600 conversaciones: es aproximado, sin dato propio, con unos 8 mensajes por persona, y sin contar los que llegan por anuncios (gratis) ni las plantillas de la plataforma, que usan el mismo cupo. Precios y fuentes, en ese plan.
 - **Dos caminos:** A, bot por reglas con n8n y Chatwoot; B, todo a mano desde la bandeja de Chatwoot hasta después del taller. Con el número en la API, **recomiendo A, si su prueba sale bien antes del viernes;** si no, B, porque un bot a medias el día del lanzamiento es peor que responder a mano.
 - **Flujo armado:** el flujo de n8n, apagado y en modo prueba, y su guía están en la rama `claude/project-thread-vru1dc`, carpeta `workshops-comunidad/chatbot-whatsapp-taller/`, sin mergear: esperan el "acepto" de Sergio.
 - **Antes del primer video:** que el bot mande la bienvenida nueva, sin las fechas viejas (embudo, sección 4). Si va B, ese texto se manda a mano desde Chatwoot.
-- **Sergio:** elegir A o B; el tope de gasto en mensajes; si va A, seguir los pasos de la guía del flujo: mirar qué bot tiene la bandeja de Chatwoot, crear el atributo "Paso del taller" y el bot, guardar el token en n8n y en su bóveda (nunca en el chat) y dar el sí para importar el flujo, que es producción.
+- **Sergio:** elegir A o B; el tope de gasto en mensajes; si va A, seguir los pasos de la guía del flujo: mirar qué bot tiene la bandeja de Chatwoot, crear el atributo "Paso del taller", importar el flujo (queda apagado), cambiar la clave del aviso, crear el bot y guardar su token en n8n y en su bóveda (nunca en el chat), completar el número de prueba y dar el sí para activar la prueba, que es producción. Pasar a real, cuando el bot ya contesta a la gente, pide otro sí suyo y la fecha del taller elegida.
 
 ### 3.5 Bóveda, página del taller y web
 
@@ -127,7 +127,7 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 7. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
 8. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
 9. Tener a mano una segunda cuenta de Instagram para la prueba.
-10. Si va A, seguir los pasos de la guía del bot de WhatsApp (Chatwoot, token e importar el flujo); la bienvenida nueva la manda el bot (primero aprobar el texto).
+10. Si va A, seguir los pasos de la guía del bot de WhatsApp (Chatwoot, importar el flujo apagado, token y número de prueba) y dar el sí para activar la prueba; la bienvenida nueva la manda el bot (primero aprobar el texto).
 11. Hacer el pago de prueba con el QR.
 12. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
 13. ~~Dar el sí al cambio de edición~~: hecho el 3-nov; ya está en `main`.
