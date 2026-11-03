@@ -38,7 +38,7 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 
 ### 3.2 Edición: formatos y Higgsfield
 
-- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). En la rama `claude/project-thread-u6u3bz` hay tres formatos firmes más (pantalla partida, historia con imágenes y caja roja, de Hormozi) y dos en borrador (titular fijo y tarjetas de app), con revisión: esperan su sí. Con eso serían 6 formatos para rotar. Las plantillas se ven en el panel de HyperFrames de la PC, en `localhost:3002` (lo abrió el hilo de edición el 3-nov, sin enlace).
+- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). Desde el 3-nov, con el sí de Sergio, también están en `main` tres formatos firmes más (pantalla partida, historia con imágenes y caja roja, de Hormozi) y dos en borrador (titular fijo y tarjetas de app): 6 formatos para rotar. Las plantillas se ven en el panel de HyperFrames de la PC, en `localhost:3002` (lo abrió el hilo de edición el 3-nov, sin enlace).
 - **Falta:** editar el primer video real de Sergio de punta a punta con una plantilla; definir qué formato va con cada tipo de guion (noticia, proceso, valor).
 - **Higgsfield** (investigación en `main`: `marca-personal/guias/higgsfield.md`, 3-nov): no edita, genera materia prima, y HyperFrames arma el video gratis. Sirven imágenes (de 0,125 a 2 créditos cada una), planos de b-roll de 5 s (unos 22 a 30 créditos cada uno, según la fuente y la fecha que cita esa guía), portadas de YouTube y efectos de reel. No van las funciones que cambian o reemplazan la cara real. Desde el conector siempre se cobran créditos.
 - **Recomendación de esa guía:** noticia con imágenes y a veces un plano de gancho; proceso con imágenes (historia); valor con cara e íconos, sin Higgsfield. Como mucho 12 planos hasta el 20-nov, de 283 a 379 créditos, que entran en los 432,93 que había el 29-oct. **Cada generación es gasto y necesita su sí** (`AGENTS.md`, "Frenos").
@@ -93,8 +93,8 @@ Investigación en `main`: [plan del chatbot](../../workshops-comunidad/chatbot-w
 - **Hoy:** hay 5 skills escritas en este repo, en `.agents/skills/`: `editar-video`, `ver-video`, `investigar-referente`, `encargar` y `llevar-issue`. Codex las lee de ahí.
 - **Dónde se ven:** Codex, local o en la nube, sí. Claude Code en la PC, sí, por el enlace `.claude\skills` del checkout principal. **Las sesiones de Claude en la nube, como este hilo, no:** `.claude/skills` está en el `.gitignore` y el clon no trae el enlace. Se comprobó el 3-nov: en este hilo no aparecen en la lista de skills.
 - **Arreglo recomendado:** una línea en el `CLAUDE.md` que diga que las skills están en `.agents/skills/` y que se lea el `SKILL.md` que corresponda. Toca el `CLAUDE.md`, así que lo decide Sergio. Como Claude vence hoy, rinde solo si lo renueva.
-- **Los 30 repositorios del video de @heysansser:** sí se usaron. El veredicto de cada uno está en `docs/skills-inventario.md`, sección "Los 30 del video de @heysansser", en la rama `claude/project-thread-u6u3bz`, sin mergear: 3 para usar (las skills oficiales de Anthropic, HyperFrames y Marketing Skills), 10 para después y 17 que no. Es propuesta del hilo de edición, no decisión de Sergio.
-- **Skills de afuera propuestas:** Marketing Skills (oferta, textos, comunidad, guiones; licencia MIT) y las de HyperFrames (que el agente arme composiciones y subtítulos sin adivinar; Apache-2.0). Si alguna cobra, se sabe recién al leer qué ejecuta cada una (la lista salió de los nombres de las carpetas); entran con su sí. El detalle está en `docs/skills-inventario.md`, rama `claude/project-thread-u6u3bz`.
+- **Los 30 repositorios del video de @heysansser:** sí se usaron. El veredicto de cada uno está en `docs/skills-inventario.md`, sección "Los 30 del video de @heysansser": 3 para usar (las skills oficiales de Anthropic, HyperFrames y Marketing Skills), 10 para después y 17 que no. Es propuesta del hilo de edición, no decisión de Sergio.
+- **Skills de afuera propuestas:** Marketing Skills (oferta, textos, comunidad, guiones; licencia MIT) y dos de HyperFrames, `hyperframes` y `hyperframes-cli` (que el agente arme composiciones y subtítulos sin adivinar; Apache-2.0; `media-use` queda afuera porque es gasto). Si alguna cobra, se sabe recién al leer qué ejecuta cada una (la lista salió de los nombres de las carpetas); entran con su sí. El detalle está en `docs/skills-inventario.md`.
 
 ### 3.10 Medir
 
@@ -129,10 +129,10 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 10. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
 11. Hacer el pago de prueba con el QR.
 12. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
-13. Dar el sí al cambio de edición (6 formatos, el inventario de skills y el veredicto de los 30 repositorios), que quedó listo pero sin subir porque la PC frenó el permiso.
+13. ~~Dar el sí al cambio de edición~~: hecho el 3-nov; ya está en `main`.
 14. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
 
-**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
+**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
 
 ## Para aprender
 
@@ -143,3 +143,4 @@ Un **embudo** es el camino que hace una persona desde que ve un video hasta que 
 - **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Ya suma el resultado del hilo de edición y skills, y el de Higgsfield. Falta el chatbot de WhatsApp, que se suman cuando terminen.
 - **3-nov-2026, chatbot y embudo en `main`.** Enlaza la investigación del embudo, ya mergeada, y suma a la sección 3.4 y al checklist el [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md), ya en `main`. Reemplaza el "se suma cuando termine" de la primera versión.
 - **3-nov-2026, edición y 30 repositorios.** Suma caja roja como sexto formato, el veredicto de los 30 repositorios y el sí al cambio de edición en el checklist. Ese cambio sigue en su rama; cuando entre a `main`, se cambian las rutas de la rama por las de `main`.
+- **3-nov-2026, cambio de edición en `main`.** Sergio Urcullo le dio el sí ("Si", 13:46 UTC). Las rutas de la rama pasan a `main` y el punto 13 del checklist queda hecho.
