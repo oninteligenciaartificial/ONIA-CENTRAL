@@ -1,0 +1,600 @@
+{
+  "name": "Bot del taller por WhatsApp (Chatwoot)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bot-taller-CAMBIAR-POR-UNA-CLAVE-LARGA",
+        "options": {}
+      },
+      "name": "Aviso de Chatwoot",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8bf13061-7714-5b88-ac91-8308b3d557d6",
+      "webhookId": "c90a5ed1-3702-5331-844c-e38dcf570eee"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1da23f1-f4a5-5b08-91f1-116eee21d849",
+              "name": "MODO",
+              "value": "prueba",
+              "type": "string"
+            },
+            {
+              "id": "cda6b67e-c999-5ebd-9191-ace869adf2b4",
+              "name": "TELEFONO_PRUEBA",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "59ed9239-a15f-5db0-b387-4ffa82fc2f61",
+              "name": "CHATWOOT_URL",
+              "value": "https://chat.onia.com.bo",
+              "type": "string"
+            },
+            {
+              "id": "f4032e44-89b5-5c37-9a07-e978dbfae23a",
+              "name": "BANDEJA_ID",
+              "value": 5,
+              "type": "number"
+            },
+            {
+              "id": "c1d737c0-ed9d-5b25-a423-0bea5cef8fd3",
+              "name": "QR_IMAGEN_URL",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Configuración",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "1b843960-157c-511d-b49d-ab302c1c8b17"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e806bddc-b5dc-5422-90a1-41e74580e9b3",
+              "name": "SALUDO",
+              "value": "¡Hola! 👋 Qué bueno que escribiste. *Claude de 0 a 100* son 3 clases en vivo por Google Meet a las 19:00 (hora Bolivia), con un solo pago de *Bs 50* por las 3 y las grabaciones incluidas. Estamos cerrando la fecha de la próxima edición: te aviso por aquí apenas esté. Mientras, cuéntame: ¿para qué te gustaría usar la IA, trabajo, estudios o tu negocio?",
+              "type": "string"
+            },
+            {
+              "id": "9ac4585f-1473-577d-be59-a1a5fdecbe6a",
+              "name": "PRECIO",
+              "value": "¡Buenísimo! En las clases practicamos con tareas reales del día a día. Es un solo pago de *Bs 50* por las 3 clases, con las grabaciones incluidas. No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. ¿Te reservo el lugar?",
+              "type": "string"
+            },
+            {
+              "id": "62755f3c-5b4a-57b5-855c-16b1f7ddd89d",
+              "name": "QR",
+              "value": "¡Genial! Te paso el QR de pago de *Bs 50* por las 3 clases (Yolo Pago, Banco Ganadero). Antes de pagar, ten en cuenta que no hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha. Cuando pagues, mándame por aquí la foto del comprobante con tu nombre completo. Al pagar te va a salir el nombre de [TITULAR], es nuestra cuenta de cobro.",
+              "type": "string"
+            },
+            {
+              "id": "9e148848-513e-5934-aa58-98ba5c521e12",
+              "name": "COMPROBANTE",
+              "value": "¡Gracias! Recibí tu comprobante. Sergio verifica el pago y te confirma lo antes posible. 🙌",
+              "type": "string"
+            },
+            {
+              "id": "7c91423f-f038-5551-b3f0-76c5e1fd8a66",
+              "name": "DERIVAR",
+              "value": "Le paso tu consulta a Sergio y te responde lo antes posible.",
+              "type": "string"
+            },
+            {
+              "id": "5ff5f41d-b8f8-5c76-b97b-2d047d3ac034",
+              "name": "FAQ_SABER",
+              "value": "No, arrancamos desde cero. Si sabes mandar un WhatsApp, puedes hacerlo.",
+              "type": "string"
+            },
+            {
+              "id": "3d160a49-1132-5c2e-8723-193d26c759d3",
+              "name": "FAQ_GRABADO",
+              "value": "Sí, [CUÁNDO SE ENTREGAN] te paso las grabaciones de las 3 y son tuyas para siempre, así que no te pierdes nada si faltas.",
+              "type": "string"
+            },
+            {
+              "id": "4b0ab76b-cffe-5bb0-a699-9ef681b96f5c",
+              "name": "FAQ_POR_CLASE",
+              "value": "No, es un solo pago de Bs 50 por las 3 clases.",
+              "type": "string"
+            },
+            {
+              "id": "0c9348d9-f563-59fc-9caf-7e6f29804d92",
+              "name": "FAQ_DEVOLUCION",
+              "value": "No hay devolución, salvo que nosotros no demos una clase: en ese caso la pasamos a otra fecha.",
+              "type": "string"
+            },
+            {
+              "id": "317a9ff1-0918-53e5-abc2-a6f744c7be47",
+              "name": "FAQ_DESCUENTO",
+              "value": "No tenemos descuentos ni cuotas: son Bs 50 por las 3 clases.",
+              "type": "string"
+            },
+            {
+              "id": "4f22f711-debf-5e10-9d53-c38a359f55c8",
+              "name": "FAQ_TITULAR",
+              "value": "Buena pregunta. Al pagar te va a salir el nombre de [TITULAR], es nuestra cuenta de cobro. Si prefieres confirmarlo antes con Sergio, dime.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Textos",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        0
+      ],
+      "id": "9748fd53-54f3-5d62-8106-43a41f19cff7"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Deja pasar solo un mensaje NUEVO que escribió la persona (no el bot, no una nota interna).\n// Si no corresponde, devuelve nada y el flujo termina acá.\nconst b = $('Aviso de Chatwoot').first().json.body || {};\nconst tipo = b.message_type;\nconst esEntrante = tipo === 'incoming' || tipo === 0;\nif (b.event !== 'message_created' || !esEntrante || b.private === true || !b.conversation?.id) return [];\nreturn [{ json: { conversacion: b.conversation.id } }];\n"
+      },
+      "name": "Filtrar aviso",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        0
+      ],
+      "id": "e2d8b13c-b8bc-51bf-b2f1-6ded2085add9"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Decide qué hace el bot con UN mensaje nuevo. No manda nada: solo arma el pedido.\n// Lee la configuración, los textos y el aviso de Chatwoot. Todo lo de la conversación\n// (estado, paso, teléfono) viene en el aviso: el token de un bot de Chatwoot 4.12 no puede leerla aparte.\nconst cfg = $('Configuración').first().json;\nconst T = $('Textos').first().json;\nconst aviso = $('Aviso de Chatwoot').first().json.body || {};\nconst conv = aviso.conversation || {};\n\nconst normalizar = (t) => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();\nconst soloDigitos = (t) => String(t || '').replace(/\\D/g, '');\n\nconst modo = normalizar(cfg.MODO);\nconst texto = normalizar(aviso.content);\nconst adjuntos = Array.isArray(aviso.attachments) ? aviso.attachments : [];\nconst atributos = (conv.custom_attributes && typeof conv.custom_attributes === 'object') ? conv.custom_attributes : {};\nconst paso = String(atributos.taller_paso || '');\nconst telefono = soloDigitos(conv.meta?.sender?.phone_number);\nconst estado = String(conv.status || '');\nconst bandeja = Number(conv.inbox_id ?? aviso.inbox?.id);\n\n// Lo que sale de acá.\nconst salida = (accion, extra = {}) => [{ json: {\n  accion,                       // 'responder' | 'solo_pasar' | 'nada'\n  conversacion: conv.id,\n  texto: '',                    // texto a mandar (uno por mensaje)\n  mandarQR: false,\n  atributosNuevos: null,        // custom_attributes completos si cambia el paso; null si no\n  pasarASergio: false,\n  motivo: '',\n  ...extra,\n} }];\n\n// 1. Solo la bandeja configurada y solo conversaciones que todavía son del bot (\"pendiente\").\nif (!conv.id || bandeja !== Number(cfg.BANDEJA_ID)) return salida('nada', { motivo: 'otra bandeja o sin conversación' });\nif (estado !== 'pending') return salida('nada', { motivo: 'la conversación ya la atiende una persona' });\n\n// 2. En modo prueba, el bot solo le contesta al teléfono de prueba. A todos los demás\n//    los pasa enseguida a \"abierto\", así siguen llegando a Sergio como hoy.\nif (modo !== 'real') {\n  const prueba = soloDigitos(cfg.TELEFONO_PRUEBA);\n  if (!prueba || telefono !== prueba) return salida('solo_pasar', { pasarASergio: true, motivo: 'modo prueba: no es el teléfono de prueba' });\n}\n\n// 3. Pedidos de baja: no se contesta (la plataforma registra la baja) y pasa a Sergio.\n//    Mismas palabras que lib/whatsapp-onia/baja.ts de onia-platform.\nconst RE_BAJA = new RegExp([\n  '^\\\\s*(?:stop|baja|unsubscribe|bajarme)\\\\s*[!.]*$',\n  '^\\\\s*no,?\\\\s*gracias\\\\s*[!.]*$',\n  '\\\\bstop\\\\b',\n  '\\\\b(?:desuscrib\\\\w+|dar de baja|darme de baja|dame de baja|borrame)\\\\b',\n  '\\\\bno me (?:escribas|escriban|escriba|contactes|contacten|molestes|molesten|molestar|mandes|manden|mandeis|envies|envien|llames|llamen)\\\\b',\n  '\\\\bno quiero que me (?:\\\\w+\\\\s+){0,2}(?:escrib\\\\w+|contact\\\\w+|molest\\\\w+|llam\\\\w+|mand\\\\w+|envi\\\\w+)\\\\b',\n  '\\\\bdej(?:a|e)n?me en paz\\\\b',\n  '\\\\bdej(?:a|e)n?me de (?:escribir|molestar|mandar|escribirme|joder)\\\\b',\n  '\\\\bno me interesa\\\\b(?!\\\\s+(?:el|la|los|las|tu|su|ese|esa|eso|este|esta)\\\\b)',\n].join('|'));\nif (RE_BAJA.test(texto)) return salida('solo_pasar', { pasarASergio: true, motivo: 'pedido de baja' });\n\n// El paso del taller se guarda en un atributo de la conversación (taller_paso), porque el token\n// de un bot de Chatwoot 4.12 no puede poner etiquetas. Los pasos van en orden.\nconst ORDEN = ['', 'consulta', 'precio', 'qr', 'comprobante'];\nconst E = { consulta: 'consulta', precio: 'precio', qr: 'qr', comprobante: 'comprobante' };\nconst tiene = (e) => ORDEN.indexOf(paso) >= ORDEN.indexOf(e);\n// Se manda el objeto entero, porque la API reemplaza todos los atributos.\nconst con = (nuevo) => ({ ...atributos, taller_paso: nuevo });\n\n// Arma la respuesta. En modo real, un texto con algo [ENTRE CORCHETES] sin completar\n// no sale: se manda la frase de derivar y pasa a Sergio.\nconst responder = (clave, extra = {}) => {\n  let t = String(T[clave] || '');\n  if (!t.trim()) return salida('solo_pasar', { pasarASergio: true, motivo: `texto vacío: ${clave}` });\n  if (modo === 'real' && /\\[[^\\]]+\\]/.test(t)) {\n    return salida('responder', { texto: T.DERIVAR, pasarASergio: true, motivo: `texto sin completar: ${clave}` });\n  }\n  return salida('responder', { texto: t, motivo: clave, ...extra });\n};\n\nconst ES_TALLER = /\\b(taller|claude|workshop|clases?|curso|0 a 100|cero a cien|inscrib\\w*|vengo de la web)\\b/;\nconst QUIERE_PERSONA = /\\b(sergio|humano|persona|asesor|hablar con alguien|llamada)\\b/;\nconst QUIERE_QR = /\\b(qr|pagar|pago|reserv\\w*|me anoto|anotame|inscribime|quiero (?:mi lugar|inscribirme|entrar|reservar)|dale|si|claro|ok|okey|listo)\\b/;\nconst PREGUNTA_PRECIO = /\\b(precio|cuanto|costo|cuesta|vale|info|informacion)\\b/;\n\n// 4. Primer mensaje de la conversación, todavía sin paso del taller.\nif (!tiene(E.consulta)) {\n  // Si no habla del taller (por ejemplo, alguien de la plataforma), no se mete: pasa a Sergio.\n  if (!ES_TALLER.test(texto)) return salida('solo_pasar', { pasarASergio: true, motivo: 'no menciona el taller' });\n  return responder('SALUDO', { atributosNuevos: con(E.consulta) });\n}\n\n// 5. Foto o PDF: se toma como comprobante y pasa a Sergio, que verifica en el banco.\nif (adjuntos.length > 0) return responder('COMPROBANTE', { atributosNuevos: con(E.comprobante), pasarASergio: true });\n\n// 6. Pide hablar con alguien.\nif (QUIERE_PERSONA.test(texto)) return responder('DERIVAR', { pasarASergio: true });\n\n// Dice que no le interesa algo: mejor que lo vea Sergio.\nif (/\\bno me interesa\\b/.test(texto)) return responder('DERIVAR', { pasarASergio: true });\n\n// 7. Preguntas frecuentes.\nif (/\\bcertificad\\w*/.test(texto)) return responder('DERIVAR', { pasarASergio: true });\nif (/\\b(grabad\\w*|grabacion\\w*|no puedo ir|si falto)\\b/.test(texto)) return responder('FAQ_GRABADO');\nif (/\\b(devolucion|devuelven|reembolso)\\b/.test(texto)) return responder('FAQ_DEVOLUCION');\nif (/\\b(descuento|cuotas?|promo\\w*|rebaja)\\b/.test(texto)) return responder('FAQ_DESCUENTO');\nif (/\\b(por clase|cada clase)\\b/.test(texto)) return responder('FAQ_POR_CLASE');\nif (/\\b(saber algo|conocimientos?|desde cero|nunca use|no se nada|principiante)\\b/.test(texto)) return responder('FAQ_SABER');\nif (/\\b(otra persona|nombre de|a nombre)\\b/.test(texto) && tiene(E.qr)) return responder('FAQ_TITULAR');\n\n// 8. Ya tiene el QR y escribe otra cosa: pasa a Sergio.\nif (tiene(E.qr)) return responder('DERIVAR', { pasarASergio: true });\n\n// 9. Ya vio el precio y dice que sí: QR.\nif (tiene(E.precio) && QUIERE_QR.test(texto)) {\n  const hayImagen = String(cfg.QR_IMAGEN_URL || '').trim() !== '';\n  // Sin imagen configurada, el texto sale igual y Sergio adjunta el QR a mano.\n  return responder('QR', { atributosNuevos: con(E.qr), mandarQR: hayImagen, pasarASergio: !hayImagen });\n}\n\n// 10. Contesta el saludo (trabajo, estudios, negocio) o pregunta el precio: precio.\nif (!tiene(E.precio)) return responder('PRECIO', { atributosNuevos: con(E.precio) });\nif (PREGUNTA_PRECIO.test(texto)) return responder('PRECIO');\n\n// 11. Cualquier otra cosa: pasa a Sergio.\nreturn responder('DERIVAR', { pasarASergio: true });\n"
+      },
+      "name": "Decidir",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        0
+      ],
+      "id": "6d4325b0-ef8d-529f-9bd0-0de13cb3d273"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "368f8e9c-4c62-5e67-86da-55e1ca40f194",
+              "leftValue": "={{ $json.accion === 'responder' && !!$json.texto }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "¿Hay texto?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        -200
+      ],
+      "id": "bbb50821-5c8d-5257-9a89-dc5e125f8c99"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.CHATWOOT_URL }}/api/v1/accounts/{{ $('Aviso de Chatwoot').first().json.body.account.id }}/conversations/{{ $('Decidir').first().json.conversacion }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ content: $('Decidir').first().json.texto, message_type: 'outgoing', private: false }) }}",
+        "options": {}
+      },
+      "name": "Enviar mensaje",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        -200
+      ],
+      "id": "6b9c5991-146d-5a92-8a8c-0e4c244ce8cf",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Chatwoot bot taller (token)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8f57178e-8bc6-5616-9324-0224eba893fe",
+              "leftValue": "={{ $('Decidir').first().json.mandarQR === true }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "¿Va la imagen del QR?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        -200
+      ],
+      "id": "4bfee58c-e826-5016-bf93-f2212cc7def5"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Configuración').first().json.QR_IMAGEN_URL }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "qr"
+            }
+          }
+        }
+      },
+      "name": "Descargar QR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        -200
+      ],
+      "id": "87bc3331-f4c5-589d-a814-f11a3934a6a8",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.CHATWOOT_URL }}/api/v1/accounts/{{ $('Aviso de Chatwoot').first().json.body.account.id }}/conversations/{{ $('Decidir').first().json.conversacion }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message_type",
+              "value": "outgoing"
+            },
+            {
+              "name": "private",
+              "value": "false"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "attachments[]",
+              "inputDataFieldName": "qr"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Enviar QR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        -200
+      ],
+      "id": "77c4d554-edf0-5808-b283-e2e6f617bc5f",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Chatwoot bot taller (token)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e33e4c12-3cb3-5c30-8327-e65e4e1dfeab",
+              "leftValue": "={{ $json.atributosNuevos !== null && typeof $json.atributosNuevos === 'object' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "¿Cambia el paso?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        0
+      ],
+      "id": "b30814bf-4006-57ca-9ea1-6091e8977c40"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.CHATWOOT_URL }}/api/v1/accounts/{{ $('Aviso de Chatwoot').first().json.body.account.id }}/conversations/{{ $('Decidir').first().json.conversacion }}/custom_attributes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ custom_attributes: $('Decidir').first().json.atributosNuevos }) }}",
+        "options": {}
+      },
+      "name": "Guardar paso",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        0
+      ],
+      "id": "b607c344-0d78-58b4-8a8e-a182747181bc",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Chatwoot bot taller (token)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "86e7e4fa-cb37-5a4c-9d79-95ad799ba4dd",
+              "leftValue": "={{ $json.pasarASergio === true }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "¿Pasar a Sergio?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        200
+      ],
+      "id": "72e32b03-935f-5187-b2e5-8e4bc4766c70"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.CHATWOOT_URL }}/api/v1/accounts/{{ $('Aviso de Chatwoot').first().json.body.account.id }}/conversations/{{ $('Decidir').first().json.conversacion }}/toggle_status",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ status: 'open' }) }}",
+        "options": {}
+      },
+      "name": "Pasar a Sergio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        200
+      ],
+      "id": "a24383d3-a002-5f68-a579-80f9ceac6251",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Chatwoot bot taller (token)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Aviso de Chatwoot": {
+      "main": [
+        [
+          {
+            "node": "Configuración",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuración": {
+      "main": [
+        [
+          {
+            "node": "Textos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Textos": {
+      "main": [
+        [
+          {
+            "node": "Filtrar aviso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar aviso": {
+      "main": [
+        [
+          {
+            "node": "Decidir",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay texto?": {
+      "main": [
+        [
+          {
+            "node": "Enviar mensaje",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar mensaje": {
+      "main": [
+        [
+          {
+            "node": "¿Va la imagen del QR?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Va la imagen del QR?": {
+      "main": [
+        [
+          {
+            "node": "Descargar QR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar QR": {
+      "main": [
+        [
+          {
+            "node": "Enviar QR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Cambia el paso?": {
+      "main": [
+        [
+          {
+            "node": "Guardar paso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Pasar a Sergio?": {
+      "main": [
+        [
+          {
+            "node": "Pasar a Sergio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decidir": {
+      "main": [
+        [
+          {
+            "node": "¿Hay texto?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "¿Cambia el paso?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "¿Pasar a Sergio?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
