@@ -22,16 +22,16 @@ Están en `.agents/skills/`. Las lee Codex y, en esta PC, Claude Code, a través
   1. Sumar al `CLAUDE.md` una línea que diga que las skills están en `.agents/skills/` y que se lea el `SKILL.md` de la que corresponda. Es lo más simple y no duplica nada. (Recomendada.)
   2. Crear el enlace en el script de inicio del entorno de la nube. Según [skills compartidas](decisiones/2026-10-28-skills-compartidas.md), no está probado.
 
-## Las que conviene sumar para el taller
+## Las que se sumaron para el taller
 
-Todas son de afuera: se leen antes de instalar y entran por PR con el OK de Sergio. Si alguna cobra, se sabe recién después de leer qué ejecuta, y en ese caso se marca como gasto.
+Sergio las aprobó el 3-nov y quedaron copiadas en `.agents/skills/`, con la versión fija, la licencia y un `ORIGEN.md` que dice de dónde salen, qué ejecutan y qué reglas rigen. Las de Marketing Skills son solo texto. De `hyperframes` se sacó la carpeta `scripts/`, que llama a una API paga y baja mapas de terceros.
 
 | De dónde | Cuáles | Para qué | Licencia |
 |---|---|---|---|
 | [Marketing Skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines) | `events`, `offers`, `copywriting`, `lead-magnets`, `emails`, `community-marketing`, `social`, `video` | Página y anuncios del taller, la oferta, los mensajes, la comunidad y los guiones | MIT |
 | [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli` | Que el agente sepa armar composiciones y subtítulos sin adivinar, con el commit fijado y sin telemetría, como recomendó [skills compartidas](decisiones/2026-10-28-skills-compartidas.md). Hoy usamos solo la CLI. | Apache-2.0 |
 
-La lista sale de los nombres de las carpetas de cada repo, vistos el 3-nov. Falta leer qué ejecuta cada una antes de proponerla.
+
 
 ## Las que no
 
