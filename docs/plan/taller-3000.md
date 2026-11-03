@@ -38,7 +38,7 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 
 ### 3.2 Edición: formatos y Higgsfield
 
-- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). En la rama `claude/project-thread-u6u3bz` hay tres formatos firmes más (pantalla partida, historia con imágenes, tarjetas de app) y uno en borrador (titular fijo), con revisión: esperan su sí.
+- **Hoy:** en `main`, la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md) (edita con HyperFrames, gratis, en la PC) y un formato firme, "cara con íconos" (`marca-personal/guias/estilo-de-edicion.md`). En la rama `claude/project-thread-u6u3bz` hay dos formatos firmes más (pantalla partida e historia con imágenes) y dos en borrador (titular fijo y tarjetas de app), con revisión: esperan su sí. Las plantillas se ven en el panel de HyperFrames de la PC (`localhost:3002`).
 - **Falta:** editar el primer video real de Sergio de punta a punta con una plantilla; definir qué formato va con cada tipo de guion (noticia, proceso, valor).
 - **Higgsfield:** lo investiga esta noche el hilo "Investigar formatos de video con Higgsfield". **Cada generación es paga y necesita su sí** (`AGENTS.md`, "Frenos"). Se suma acá cuando termine.
 - **Quién:** el hilo de formatos hasta hoy; después, Codex con la skill `editar-video`.
@@ -85,8 +85,9 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 ### 3.9 Skills en el repo
 
 - **Hoy:** hay 5 skills escritas en este repo, en `.agents/skills/`: `editar-video`, `ver-video`, `investigar-referente`, `encargar` y `llevar-issue`. Codex las lee de ahí.
-- **Hallazgo:** los proyectos de Claude no las cargan. Claude Code busca skills en `.claude/skills/`, y en este hilo no aparecieron en la lista de skills disponibles (3-nov). Arreglarlo es una carpeta `.claude/skills` que apunte a `.agents/skills`. Como Claude vence hoy, rinde poco; si renueva Claude, conviene hacerlo.
-- **Qué skills nuevas conviene usar:** lo inventaría esta noche el hilo "Analizar a Eric Taveras y elegir skills". Instalar una skill de afuera necesita su sí (`AGENTS.md`, "Cómo se trabaja").
+- **Dónde se ven:** Codex, local o en la nube, sí. Claude Code en la PC, sí, por el enlace `.claude\skills` del checkout principal. **Las sesiones de Claude en la nube, como este hilo, no:** `.claude/skills` está en el `.gitignore` y el clon no trae el enlace. Se comprobó el 3-nov: en este hilo no aparecen en la lista de skills.
+- **Arreglo recomendado:** una línea en el `CLAUDE.md` que diga que las skills están en `.agents/skills/` y que se lea el `SKILL.md` que corresponda. Toca el `CLAUDE.md`, así que lo decide Sergio. Como Claude vence hoy, rinde solo si lo renueva.
+- **Skills de afuera propuestas:** Marketing Skills (oferta, textos, comunidad, guiones; licencia MIT) y las de HyperFrames (que el agente arme composiciones y subtítulos sin adivinar; Apache-2.0). Ninguna cobra. Falta leer qué ejecuta cada una antes de instalar, y entran con su sí. El detalle está en `docs/skills-inventario.md`, rama `claude/project-thread-u6u3bz`.
 
 ### 3.10 Medir
 
@@ -118,7 +119,9 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 7. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
 8. Hacer el pago de prueba con el QR.
 
-**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, los textos del embudo y este plan.
+9. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
+
+**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
 
 ## Para aprender
 
@@ -126,4 +129,4 @@ Un **embudo** es el camino que hace una persona desde que ve un video hasta que 
 
 ## Historial
 
-- **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Faltan los resultados de Higgsfield, del chatbot de WhatsApp y del inventario de skills, que se suman cuando terminen.
+- **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Ya suma el resultado del hilo de edición y skills. Faltan Higgsfield y el chatbot de WhatsApp, que se suman cuando terminen.
