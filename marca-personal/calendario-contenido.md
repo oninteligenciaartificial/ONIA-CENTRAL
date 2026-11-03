@@ -18,7 +18,7 @@ Del miércoles 4 al viernes 20-nov-2026. Lo armó Claude Code el 3-nov, a pedido
 
 - **De dónde salen las horas.** Buffer analizó 9,6 millones de publicaciones de Instagram, de enero de 2024 a diciembre de 2025, y las pasó a hora local. Sus mejores horas son el jueves a las 9, el miércoles a las 12 y el miércoles a las 18. Entre semana, de 18 a 23 rinde más que el resto del día, salvo el jueves. Los viernes y sábados son los peores días ([Buffer](https://buffer.com/resources/when-is-the-best-time-to-post-on-instagram), actualizado en sep-2026). Es un promedio mundial, no tu público.
 - **Cómo se ajusta.** Cuando las estadísticas de tu cuenta muestren a qué hora está activa tu gente, se cambian las horas con ese dato. Se revisa el domingo 15-nov.
-- **Se dejan programados la noche anterior.** A las 9:00 estás en el colegio (de 8 a 12, según `docs/vision/contexto-sergio.md`, en un cambio todavía sin aprobar). La de las 12:30 cae en tu pausa, pero igual conviene programarla. Con qué herramienta se programa está sin confirmar.
+- **Se dejan programados la noche anterior.** A las 9:00 estás en el colegio (de 8 a 12, según `docs/vision/contexto-sergio.md`). La de las 12:30 cae en tu pausa, pero igual conviene programarla. Con qué herramienta se programa está sin confirmar.
 
 ### Formato de edición de cada tipo
 
