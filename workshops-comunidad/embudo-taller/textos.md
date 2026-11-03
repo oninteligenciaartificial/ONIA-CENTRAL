@@ -23,7 +23,7 @@ Cuántos mensajes se pueden mandar y en qué plazo lo fija la API de Instagram. 
 
 > ¡Hola! 👋 Acá tenés la guía completa de [TEMA], con el video paso a paso: [ENLACE DE LA GUÍA]
 >
-> El recurso exclusivo de este tema lo subo a Onia Community, mi comunidad gratis por WhatsApp. Ahí subo uno cada día: [ENLACE DE ONIA COMMUNITY]
+> El recurso exclusivo de este tema lo subo a Onia Community, mi comunidad gratis por WhatsApp. Ahí subo recursos (según el sitio, uno por día): [ENLACE DE ONIA COMMUNITY]
 
 `[ENLACE DE ONIA COMMUNITY]` es el mismo grupo que enlaza la página principal del sitio. No se copia acá: lo toma el hilo de n8n de ahí.
 
@@ -47,7 +47,7 @@ No se usa en el lanzamiento: el DM manda a la guía de la bóveda (ver el [READM
 
 **Resultado.** Se arma con las respuestas 1 y 3:
 
-> Para lo que hacés ([respuesta 1, en minúsculas]), lo que más te va a ahorrar tiempo es aprender a darle a Claude tus archivos y tus tareas de [respuesta 3, en minúsculas]. Eso es justo lo que practicamos en *Claude de 0 a 100*: 3 clases en vivo por Meet, desde cero y sin programar, con las grabaciones incluidas. Un solo pago de Bs 50 por las 3 clases.
+> Para lo que hacés ([respuesta 1, en minúsculas]), un buen punto de partida es aprender a darle a Claude tus archivos y tus tareas de [respuesta 3, en minúsculas]. Eso es lo que practicamos en *Claude de 0 a 100*: 3 clases en vivo por Meet, desde cero y sin programar, con las grabaciones incluidas. Un solo pago de Bs 50 por las 3 clases.
 
 Si en la 4 eligió "grabadas", se suma: "Si no llegás en vivo, te quedan las grabaciones para siempre."
 
@@ -67,17 +67,17 @@ Reemplaza el saludo de la sección 1 de `whatsapp-taller-3-4-5-borrador.md`, que
 
 El mensaje de bienvenida lo cambia Sergio Urcullo en la app de WhatsApp Business, porque es su cuenta.
 
-## 4. Oferta de la comunidad (al final de la clase 3)
+## 4. Oferta de la comunidad (opción; no decidida)
 
-Precio sin decidir: va `[PRECIO]`. Las opciones están en el [README](README.md), sección 3.
+Son dos caminos, y Sergio Urcullo no eligió: ofrecerla al final de la clase 3 (4a y 4b) o incluir el primer mes con el taller y ofrecerla al terminar ese mes (README, sección 3; ahí cambian la hora y el texto). Hasta que elija, van entre corchetes: `[PRECIO]`, `[VENTANA]`, `[DÍA DE LA CLASE]`. La ventana de 48 horas, la clase semanal a las 19:00 y "congelado" de abajo son la opción, no una decisión. Las opciones están en el [README](README.md), sección 3.
 
 **4a. Lo que dice Sergio Urcullo en vivo, al cierre** (unos 2 minutos):
 
-> Esto fue el 0 a 100. El que sigue practicando cada semana es el que lo convierte en costumbre. Por eso abrimos la comunidad de ONIA: una clase en vivo por semana a las 19:00, las grabaciones, las plantillas que usamos hoy y un grupo para preguntas. Ustedes, que hicieron el taller, entran a precio de fundador: [PRECIO] por mes, y ese precio les queda congelado mientras sigan. Está abierto por 48 horas. Les dejo el mensaje por WhatsApp.
+> Esto fue el 0 a 100. El que sigue practicando cada semana es el que lo convierte en costumbre. Por eso abrimos la comunidad de ONIA: una clase en vivo por semana [DÍA DE LA CLASE], las grabaciones, las plantillas que usamos hoy y un grupo para preguntas. Ustedes, que hicieron el taller, entran a precio de fundador: [PRECIO] por mes, y ese precio les queda congelado mientras sigan. Está abierto por [VENTANA]. Les dejo el mensaje por WhatsApp.
 
 **4b. WhatsApp, al terminar la clase 3:**
 
-> ¡Gracias por llegar hasta el final de *Claude de 0 a 100*! 🙌 Como te conté en la clase, abrimos la comunidad de ONIA: una clase en vivo por semana a las 19:00, las grabaciones, las plantillas y un grupo para preguntas. Precio de fundador: *[PRECIO] por mes*, congelado mientras sigas. Lo puedes tomar hasta el [DÍA] a las [HORA]. ¿Te paso el QR?
+> ¡Gracias por llegar hasta el final de *Claude de 0 a 100*! 🙌 Como te conté en la clase, abrimos la comunidad de ONIA: una clase en vivo por semana [DÍA DE LA CLASE], las grabaciones, las plantillas y un grupo para preguntas. Precio de fundador: *[PRECIO] por mes*, congelado mientras sigas. Lo puedes tomar hasta el [DÍA] a las [HORA]. ¿Te paso el QR?
 
 **4c. Recordatorio, una sola vez, unas 20 horas después, solo a quien no contestó:**
 

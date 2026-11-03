@@ -11,7 +11,9 @@ Archivos de esta carpeta:
 | `README.md` | La recomendación, el recorrido completo y qué es automático |
 | `textos.md` | Textos del DM de Instagram, del mensaje automático de WhatsApp, de la oferta de la comunidad paga y un cuestionario opcional |
 
-Fuentes: las fichas de `marca-personal/referentes/` (29-oct), la [investigación de la campaña](../investigacion-campana-taller-2026-11-03.md) (3-nov) y lo que sume la revisión de Instagram del 3-nov, en `../referentes-como-venden-2026-11-03.md` cuando esté.
+Fuentes: las fichas de `marca-personal/referentes/` (29-oct), la [investigación de la campaña](../investigacion-campana-taller-2026-11-03.md) (3-nov) y la [revisión de Instagram del 3-nov](../referentes-como-venden-2026-11-03.md).
+
+El nombre "Claude de 0 a 100" es idéntico al del workshop de Enrique Rocha y usa la marca Claude en algo pago: está **a confirmar con un abogado** (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`, línea 14, y `docs/lecciones.md`, "Anuncios y venta"). Todos los textos de esta carpeta lo usan como está; si se cambia, hay que cambiarlo en todos.
 
 ## 1. Qué hacen los referentes (resumen)
 
@@ -26,7 +28,7 @@ Sale del [resumen de referentes](../../marca-personal/referentes/resumen-2026-10
 
 Lo que se repite:
 
-1. **Reel con "comentá PALABRA"** y un DM automático. En Enrique, los comentarios llegan al 40-80% de los "me gusta" con ese llamado, y al 3-8% sin él.
+1. **Reel con "comentá PALABRA"** y un DM automático. En la ficha de Enrique (29-oct), los tutoriales con "comentá y te mando" tienen comentarios por el 40-80% de sus "me gusta", y los de humor o comunidad, sin ese llamado, por el 3-8%.
 2. **Algo gratis a cambio del contacto:** una guía o un mini curso.
 3. **Algunos preguntan antes de recomendar:** Santiago pregunta para qué querés aprender; Erik tiene un cuestionario de diagnóstico.
 4. **El workshop se vende directo,** sin clase gratis antes (Erik y Enrique). La clase gratis o el reto la usan los que venden algo caro (Santiago, Iman).
@@ -36,10 +38,11 @@ Lo que se repite:
 
 Detalle y fuentes en [`referentes-como-venden-2026-11-03.md`](../referentes-como-venden-2026-11-03.md). Sobre 9 cuentas:
 
-- **5 de 9 venden con palabra clave en los comentarios y respuesta automática:** Víctor Heras, Santi Muñoz, Erik Taveras, softgirlnocode y Hormozi (de Hormozi se vio la palabra, no la respuesta). El pie del reel dice "Comenta X y te mando…".
+- **7 de 9 usan una palabra clave en los reels o la bio:** Hormozi, Gonzalo Teba (solo en la bio), Jorge Darek, Gary Vee, Víctor Heras, Santi Muñoz y Erik Taveras. softgirlnocode no la tiene en sus últimos 3 reels. El pie dice "Comenta X y te mando…".
+- **4 de 9 tienen respuesta automática vista en los comentarios:** Víctor Heras, softgirlnocode, Santi Muñoz y Erik Taveras. De Hormozi, Gonzalo Teba, Jorge Darek y Gary Vee no se vio; Gonzalo Teba responde a mano.
 - **La respuesta pública rota varias frases**, por ejemplo Erik: "Te lo envié por mensaje privado 📩 si no lo ves, revisa tus solicitudes de mensaje". Es lo que ya dejé en `textos.md`, sección 1a.
-- **Dos mandan a un cuestionario** antes de vender: Hormozi (nombre y contacto, para su equipo de ventas) y Víctor Heras (admisión para una consultoría 1 a 1). Erik tiene un centro de enlaces con tres caminos ("No sé por dónde empezar", "Tengo un problema concreto", "Quiero un proyecto completo"). Las preguntas siguientes de los dos primeros no se vieron.
-- **Las comunidades de IA en español cobran de US$59 a US$64 por mes:** Erik a US$59 (sube a US$79 a los 250 miembros) y Santi a US$64. Las dos con una clase en vivo y una garantía (14 y 30 días).
+- **Dos mandan a un cuestionario** antes de vender: Hormozi (pide nombre y autoriza el contacto por teléfono, SMS o correo; que sea para su equipo de ventas es **sin confirmar**) y Víctor Heras (admisión para una consultoría 1 a 1). Erik tiene un centro de enlaces con tres caminos ("No sé por dónde empezar", "Tengo un problema concreto", "Quiero un proyecto completo"). Las preguntas siguientes de los dos primeros no se vieron.
+- **Las comunidades de IA en español cobran de US$59 a US$64 por mes:** Erik a US$59 (sube a US$79 a los 250 miembros) y Santi a US$64. Erik incluye una llamada en vivo por semana y devuelve el dinero si a los 14 días no tenés tu primer flujo funcionando; Santi ofrece acompañamiento 1 a 1 si a los 30 días tu primer bot no corre (relevamiento, secciones de cada uno).
 - **El producto de entrada barato existe:** Jorge Darek vende una guía a 4,95 € como lanzamiento con sorteo; softgirlnocode, un curso de US$89 con preventa a US$71,20.
 - **No se pudo ver** qué mensaje llega por DM ni las preguntas siguientes de los cuestionarios: habría que comentar o contestar, y eso necesita el sí de Sergio Urcullo.
 
@@ -91,7 +94,8 @@ Comprobante → Sergio verifica a la noche → confirmación y grupo
 Taller: 3 clases en vivo a las 19:00
         │
         ▼
-Al final de la clase 3: oferta de la comunidad con precio de fundador (48 h)
+Oferta de la comunidad (opción; cuándo se ofrece, por cuánto tiempo y a qué precio
+  está sin decidir, ver sección 3)
         │
         ▼
 Mensaje automático por WhatsApp a quien no entró, una sola vez
@@ -99,7 +103,7 @@ Mensaje automático por WhatsApp a quien no entró, una sola vez
 
 ### Qué es automático y qué hace Sergio Urcullo
 
-Sergio Urcullo está libre desde las 19:00. Todo lo de antes de esa hora tiene que andar solo.
+Según el coordinador (3-nov), Sergio Urcullo está libre desde las 19:00. Todo lo de antes de esa hora tiene que andar solo.
 
 | Paso | Automático | Sergio Urcullo, desde las 19:00 |
 |---|---|---|
@@ -116,7 +120,7 @@ Sergio Urcullo está libre desde las 19:00. Todo lo de antes de esa hora tiene q
 
 ### Una palabra clave por guion
 
-Cada guion cierra con su propia palabra (la regla es de Sergio Urcullo, 3-nov), y cada palabra lleva a su guía, como hace Erik con AUTOMATA, BASE, PLUGIN y LOCAL. El hilo de n8n necesita una tabla con la palabra y su enlace. La arma el hilo de guiones a medida que escribe cada uno. Para el primer reel del taller, la palabra es `CLAUDE` y la guía es `/claude-code`, que ya existe. Ojo: esa guía es de Claude Code, que pide plan pago (lo dice la propia página), y el taller enseña Claude desde cero. Si el reel es del taller, conviene una guía nueva de Claude para empezar. Mientras no exista, `/claude-code` es la que hay.
+Cada guion cierra con su propia palabra (la regla es de Sergio Urcullo, 3-nov), y cada palabra lleva a su guía, como hace Erik con AUTOMATA, BASE, PLUGIN y LOCAL. El hilo de n8n necesita una tabla con la palabra y su enlace. La arma el hilo de guiones a medida que escribe cada uno. Para el primer reel del taller, la palabra es `CLAUDE` y la guía es `/claude-code`, que ya existe. Ojo: esa guía es de Claude Code y su propia página dice que el plan gratis de Claude no lo incluye (sitio `sergiourcullo`, rama `main`, 3-nov, página `/claude-code`), y el taller enseña Claude desde cero. Si el reel es del taller, conviene una guía nueva de Claude para empezar. Mientras no exista, `/claude-code` es la que hay.
 
 ## 3. La comunidad paga (la oferta después del taller)
 
@@ -130,7 +134,7 @@ Sin esto, cada persona deja Bs 50 y nada más (investigación de la campaña, se
 
 | Camino | Qué suma a la meta del taller | Qué cuesta |
 |---|---|---|
-| Paga desde el primer día | Nada. Aparte, si entra entre un 10% y un 20% de los 60 (supuesto, sacado de cifras de webinars B2B en inglés), son 6 a 12 personas: Bs 600 a 1.200 por mes a Bs 100 | 4 clases por mes, comprometidas antes de saber si alguien viene |
+| Paga desde el primer día | Nada. Aparte, si compra entre un 10% y un 20% de quienes hacen el taller (supuesto mío, sin dato de Bolivia; la investigación da 5 a 20% de los asistentes que compran una oferta, de webinars B2B en inglés). La meta de 60 son pagos, no asistentes, son 6 a 12 personas: Bs 600 a 1.200 por mes a Bs 100 | 4 clases por mes, comprometidas antes de saber si alguien viene |
 | Gratis | Nada. Ya existe Onia Community, que es gratis | Lo mismo, sin ingreso |
 | **Primer mes incluido con el taller, después paga (recomiendo)** | El taller pasa a ser "3 clases + 1 mes de comunidad": vale más por los mismos Bs 50 | 4 clases el primer mes, sin cobrar. Da el dato de cuántos vienen de verdad antes de cobrar |
 
@@ -138,8 +142,8 @@ Si se elige el primer mes incluido, el texto 4a de `textos.md` cambia: el precio
 
 **Qué se propone para ONIA (opciones, nada decidido):**
 
-- **Qué incluye:** una clase en vivo por semana a las 19:00, las grabaciones, las plantillas y los prompts del taller, y un grupo para preguntas. Todo lo que ya se arma para el contenido.
-- **Precio de fundador, congelado para quien entra en las primeras 48 horas.** Opciones de precio, a decidir por Sergio Urcullo:
+- **Qué incluye (opción, sin decidir):** una clase en vivo por semana, las grabaciones, las plantillas y los prompts del taller, y un grupo para preguntas. El día y la hora de la clase los decide Sergio Urcullo.
+- **Precio de fundador, congelado para quien entra dentro de una ventana (opción: 48 horas).** Opciones de precio, a decidir por Sergio Urcullo:
   - Bs 70 por mes: poco más que el taller, así el que pagó Bs 50 no lo piensa mucho.
   - **Bs 100 por mes (recomiendo):** el doble del taller, que es más o menos el salto de los workshops de Enrique a su nivel 2 (de US$97 a US$167 o más).
   - Bs 150 por mes: deja margen para subir, pero entran menos.

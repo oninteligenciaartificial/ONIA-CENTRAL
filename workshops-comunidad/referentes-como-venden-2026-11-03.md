@@ -15,7 +15,7 @@ Cómo leer las fuentes:
 |---|---|---|---|---|
 | imangadzhi | Registro a un reto gratis de 5 días (7 al 15-nov) | Ninguna | No | No se ve en la página; el reto es gratis |
 | hormozi | Formulario de "Scaling Roadmap" gratis | WIN | No se vio | Cursos y workshops de Acquisition.com, sin precio en esa página |
-| gonzaloteba | No tiene enlace | "444" por DM (en la bio) | No se vio | Asesoría de entrenamiento online, sin precio |
+| gonzaloteba | No tiene enlace | "444" por DM (en la bio) | No: responde a mano | Asesoría de entrenamiento online, sin precio |
 | jorge.darek | Página de pago de una guía | LIBRE, BALI | No se vio | Guía de 4,95 € (tachado 97 €) + sorteo de un retiro en Bali |
 | garyvee | Presentación de Google Slides | Dad Gang | No se vio | Nada directo en los reels; enlaces a contenido y eventos |
 | herasmedia | Página del método, con botón a un cuestionario de admisión | CONTEXTO, VIRAL, NICHO | Sí: "Enviado", "Revisa tu DM" | Consultoría 1 a 1 (llamada), sin precio |
