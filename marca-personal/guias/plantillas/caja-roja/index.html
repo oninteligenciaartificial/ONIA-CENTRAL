@@ -3,7 +3,7 @@
   Plantilla "caja roja" de la guía de estilo de edición (estilo-de-edicion.md).
   Sale de tres reels de Alex Hormozi ("Why do my employees leave?", "A bad fit is worse than an empty seat" y
   "Master the script like the top 0.01%"), mirados el 3-nov-2026. La pregunta o la promesa va en una caja roja a media
-  altura los primeros segundos, con el nombre debajo; después quedan subtítulos chicos de 2 o 3 palabras, con una en color.
+  altura los primeros segundos, con el nombre debajo; después quedan subtítulos chicos de 2 a 4 palabras, con una en color.
   Para usarla: copiar a un proyecto de `hyperframes init`, poner el video de Sergio en #cara (quitar #fondo),
   y cambiar la caja, el nombre y los subtítulos. Los tiempos van en segundos.
 -->
@@ -33,7 +33,7 @@
       #nombre b { display: block; font-size: 52px; font-weight: 900; text-transform: uppercase; }
       #nombre small { font-size: 28px; opacity: 0.85; }
 
-      /* Subtítulos chicos a media altura, 2 o 3 palabras, una en color. */
+      /* Subtítulos chicos a media altura, 2 a 4 palabras, una en color. */
       .sub { position: absolute; top: 1080px; left: 0; width: 100%; text-align: center; color: var(--texto); font-size: 46px; font-weight: 600; text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); }
       .sub b { color: var(--acento); font-weight: 900; }
     </style>
@@ -47,8 +47,8 @@
       <div id="nombre" class="clip" data-start="0" data-duration="5" data-track-index="2"><b>Sergio Urcullo</b><small>texto de ejemplo</small></div>
 
       <div id="s1" class="sub clip" data-start="5" data-duration="1.3" data-track-index="3">porque nadie les <b>escribe</b></div>
-      <div id="s2" class="sub clip" data-start="6.3" data-duration="1.2" data-track-index="3">después de la <b>venta</b></div>
-      <div id="s3" class="sub clip" data-start="7.5" data-duration="1.5" data-track-index="3">y eso se <b>automatiza</b></div>
+      <div id="s2" class="sub clip" data-start="6.3" data-duration="1.2" data-track-index="3">tras la <b>venta</b></div>
+      <div id="s3" class="sub clip" data-start="7.5" data-duration="1.5" data-track-index="3">eso se <b>automatiza</b></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
