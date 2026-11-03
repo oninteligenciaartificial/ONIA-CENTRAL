@@ -10,12 +10,12 @@ Actualizado el 2-nov-2026, con lo comprobado el 1 y el 2-nov desde esta PC. Cóm
 
 Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; cómo se abre, en Claude o en Codex, está en el [README](README.md). En la PC, la rama del sitio personal sigue en el worktree `C:\dev\worktrees\sergiourcullo-taller`. Los mensajes entre áreas van al tablero, el [issue #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111).
 
-**Objetivo y hecho cuando:** los del orden de "VPS", abajo, que pidió Sergio Urcullo el 2-nov. **Próximo paso:** que él cargue la clave, porque sin ella el VPS no se puede mirar.
+**Objetivo y hecho cuando:** los del orden de "VPS", abajo, que pidió Sergio Urcullo el 2-nov. **Próximo paso:** con su sí, rearmar el runner de la CI de la plataforma ("Runner de la CI", abajo); después, el orden de "VPS".
 
 **Decisiones vigentes de Sergio Urcullo:** van citadas en cada punto de abajo; lo que espera su decisión, en el último.
 
 - **Web del taller:** publicada. El 2-nov, Boss No-Code pasó "Bs 50, precio de esta edición" y el texto de después del inicio ("El taller ya empezó: escribinos y te pasamos las clases grabadas."). Están en el [PR del sitio que suma el precio de esta edición](https://github.com/oninteligenciaartificial/sergiourcullo/pull/2), que espera el sí de Sergio Urcullo con captura, porque mergear publica. Que no haya cierre de inscripción (se vendería hasta el viernes 6, con las clases grabadas, como dice el borrador de WhatsApp, `workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`) ni límite de personas es la propuesta de Boss No-Code: lo decide Sergio Urcullo ([`negocio.md`](negocio.md), "Qué espera a Sergio Urcullo"). Después del 6-nov, la página se baja o se cambia, también con su sí.
-- **VPS:** todo espera la clave, que se le pidió a Sergio Urcullo el 2-nov a la noche. Primero se comprueba con `ssh-add -l` que esté cargada. Después, en solo lectura y en el orden que pidió el Administrador el 2-nov, por un pedido de Sergio Urcullo ("Primero lo de onia, necesitamos tener todo listo hasta hoy", [constancia en el #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6587567915)):
+- **VPS (3-nov):** ya se entra. La clave está cargada en el `ssh-agent` de Windows, y el servidor y el usuario están en "Accesos desde esta PC". El VPS está prendido (16 días sin reiniciarse), con 11 GB de memoria y 84 GB de disco libres, y la plataforma, su Supabase, Chatwoot, n8n y el correo andan. Lo único caído es el runner de la CI de ONIA Platform: ver "Runner de la CI", abajo. Lo que sigue va en solo lectura y en el orden que pidió el Administrador el 2-nov, por un pedido de Sergio Urcullo ("Primero lo de onia, necesitamos tener todo listo hasta hoy", [constancia en el #111](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/111#issuecomment-6587567915)):
   1. para ONIA Platform, antes de mergear el [onia-platform #154](https://github.com/oninteligenciaartificial/onia-platform/pull/154): qué le llega a la app en `X-Forwarded-For` y en `CF-Connecting-IP`, según la configuración de Traefik y Cloudflare;
   2. para ONIA Platform: si el runbook de correos del [onia-platform #70](https://github.com/oninteligenciaartificial/onia-platform/pull/70) está aplicado en el VPS, como dice ese PR.
 
@@ -31,10 +31,10 @@ Al cerrar el 2-nov-2026. Desde el 3-nov, esto lo lleva el jefe de Desarrollo; c�
   - en una PowerShell como administrador, poner `ssh-agent` en automático, arrancarlo, cargar la clave suelta con `ssh-add` y borrarla, como dice la [guía de Microsoft](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement);
   - pasar el servidor y el usuario, que no son secretos.
 
-  No se sabe si la clave pública está autorizada en el VPS.
+  El 3-nov, `ssh-add -l` mostró la clave cargada, el servicio `ssh-agent` estaba en automático y la clave privada ya no estaba suelta en `BovedaPrivada` (queda la `.pub`). La bóveda `Agentes.kdbx` todavía no existe: falta confirmar con Sergio Urcullo dónde quedó guardada la copia de la clave, porque si no está en ningún lado, se pierde al reinstalar Windows.
 - **Heredado del Administrador (3-nov):** la lista está en "Heredado del Administrador", abajo.
 - **Auditoría semanal:** cada sábado, con un agente nuevo en solo lectura; la primera, el 7-nov, cubre desde el 2-nov (`AGENTS.md`, "Equipo de agentes").
-- **Espera a Sergio Urcullo:** cargar la clave y pasar el servidor y el usuario; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
+- **Espera a Sergio Urcullo:** el sí para rearmar el runner y dónde quedó la copia de la clave; el sí con captura del PR del sitio; cada cambio en el VPS; cualquier otro cambio en `/taller`; los puntos A, B y C del issue de mejoras de seguridad.
 
 ## Correcciones de Sergio
 
@@ -69,7 +69,7 @@ El detalle está en `coordinacion.md`, "Relevo del Administrador (2-nov, a la ta
 | Web del taller | `sergiourcullo.vercel.app/taller`, publicada desde el [PR del sitio que agrega `/taller`](https://github.com/oninteligenciaartificial/sergiourcullo/pull/1) (merge `e72690b`) | 2-nov: publicada con el sí de Sergio Urcullo ("publicala"), citado en el PR. Sin login, la página da 200, la cuenta regresiva corre y los 4 botones abren el chat de "Onia" con "vengo de la web" ya escrito. |
 | WhatsApp del taller, +591 75414930 | `wa.me/59175414930?text=TALLER` | 2-nov: sin login, el enlace abre el chat de la cuenta "Onia" con "TALLER" ya escrito. No se mandó nada. |
 | Cal.com | `/llamada` del sitio redirige a `cal.com/sergiourcullo/20min` (`vercel.json`) | La redirección da 307 y la página de Cal.com da 200. |
-| VPS, Chatwoot y n8n de producción | En el VPS | No se probó el acceso: no se entró al VPS ni se usó ninguna clave. No hay conector de la app para Chatwoot, n8n ni Cal.com. |
+| VPS, Chatwoot y n8n de producción | Hostinger, `187.77.16.63` (`srv1360183`), con Easypanel | 3-nov: se entró en solo lectura. 25 contenedores arriba, entre ellos `onia-platform`, el Supabase, Chatwoot, `n8n-sergio_n8n` y `onia-mail`. No hay conector de la app para Chatwoot, n8n ni Cal.com. |
 
 El bot de Grok dejó escrito que no encontró el código del sitio personal y que el sitio no respondía. Desde esta PC están las dos cosas.
 
@@ -97,7 +97,19 @@ Lo pidió Sergio Urcullo el 2-nov-2026, por el Administrador: "pedile a cada ses
 - **GitHub:** `gh` con la cuenta `oninteligenciaartificial`.
 - **Conectores de la app que sirven al área:** Vercel, Cloudflare, Supabase y Google Calendar, todos conectados. No se usaron para esto.
 - **Programas instalados:** `vercel` 53.2.0, `codex-cli` 0.166.0, `n8n` (una instalación local, no la del VPS) y `ssh`.
-- **SSH:** en `C:\Users\PC\.ssh` hay dos claves, sin `config`. Una lleva "hermes" en el nombre. No se usaron. `docs/credenciales.md` dice que la clave del VPS va en la bóveda.
+- **SSH al VPS:** `ssh root@187.77.16.63`, con la clave `claude-cloud-20260930` cargada en el `ssh-agent` de Windows. Anda desde PowerShell, con el `ssh` de Windows. Desde Git Bash no: su `ssh` no ve el agente de Windows y da "Permission denied". En `C:\Users\PC\.ssh` hay otras dos claves, sin `config`, que no se usan.
+- **Correr varios comandos en el VPS:** se escriben en un `.sh` en la carpeta temporal de la sesión y se pasan por la entrada, sin el BOM ni los `\r` de Windows: `([IO.File]::ReadAllText($s)).TrimStart([char]0xFEFF) -replace "`r","" | ssh root@187.77.16.63 'bash -s'`. Con los comandos en una sola línea entre comillas, PowerShell rompe los `{{.Names}}` de `docker`.
+
+## Runner de la CI
+
+El CI de `onia-platform` corre en un runner propio del VPS (`runs-on: [self-hosted, linux, onia-vps]` en su `ci.yml`), para no gastar los minutos de GitHub, que se agotaron el 27-sep.
+
+- **Qué pasó (visto el 3-nov en el diario del VPS):** el 31-oct a la noche, el contenedor `onia-runner-platform` se reiniciaba solo cada minuto. Esa noche, durante la limpieza de Hermes, se borró `onia-runner-hermes`, y después dejaron de existir también `onia-runner-platform` y su imagen `onia-gh-runner:2.337.0`. En GitHub figura `onia-vps-platform`, apagado. Desde entonces las corridas quedan en cola: el 3-nov había 6, y 10 PRs abiertos de la plataforma.
+- **Cómo se rearma:** en el VPS quedaron los scripts, en `/opt/onia-runner`, con el instalador del runner ya bajado:
+  - `instalar.sh` arma la imagen (comprueba el SHA-256 del instalador) y levanta los contenedores. Levanta también el de Hermes, que ya no va: para rearmar solo el de la plataforma se corre a mano su `docker build` y el `docker run` de `onia-runner-platform` (1 CPU, 6 GB, `cpu-shares` 256 contra 1024 de producción);
+  - `registrar.sh` lo registra en GitHub. El código de registro sale de `gh api -X POST repos/oninteligenciaartificial/onia-platform/actions/runners/registration-token --jq .token` y se le pasa por la entrada, nunca como argumento, como dice el comentario del script;
+  - antes, se borra en GitHub el registro viejo apagado, para que el nombre quede libre.
+- **Es producción:** rearmarlo pide el sí de Sergio Urcullo. Se le pidió el 3-nov.
 
 ## La web del taller
 
