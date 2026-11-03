@@ -18,7 +18,7 @@ Foto del 3-nov-2026, armada desde el "Ahora" y las listas de pendientes de cada 
 
 | Qué | Área | Detalle |
 |---|---|---|
-| El sí para rearmar el runner de la CI de la plataforma en el VPS, y decir dónde quedó guardada la copia de la clave del VPS | Desarrollo | [`producto.md`](equipo-agentes/producto.md), "Ahora" y "Runner de la CI" |
+| Decir dónde quedó guardada la copia de la clave del VPS (la bóveda todavía no existe) | Desarrollo | [`producto.md`](equipo-agentes/producto.md), "Ahora" |
 | Mejoras de seguridad A, B y C | Desarrollo | [`producto.md`](equipo-agentes/producto.md), "Ahora" |
 | Qué hacer con los 10 PRs de la plataforma (cada merge publica) | ONIA Platform | [`platform.md`](equipo-agentes/platform.md), "Le falta decidir a Sergio Urcullo" |
 | Precios de la plataforma y el QR del BCP | ONIA Platform | [`platform.md`](equipo-agentes/platform.md), "Le falta decidir a Sergio Urcullo" |
