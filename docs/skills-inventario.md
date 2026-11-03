@@ -24,12 +24,12 @@ Están en `.agents/skills/`. Las lee Codex y, en esta PC, Claude Code, a través
 
 ## Las que conviene sumar para el taller
 
-Todas son de afuera: se leen antes de instalar y entran por PR con el OK de Sergio. Ninguna cobra por sí misma.
+Todas son de afuera: se leen antes de instalar y entran por PR con el OK de Sergio. Si alguna cobra, se sabe recién después de leer qué ejecuta, y en ese caso se marca como gasto.
 
 | De dónde | Cuáles | Para qué | Licencia |
 |---|---|---|---|
 | [Marketing Skills](https://github.com/coreyhaines31/marketingskills) (Corey Haines) | `events`, `offers`, `copywriting`, `lead-magnets`, `emails`, `community-marketing`, `social`, `video` | Página y anuncios del taller, la oferta, los mensajes, la comunidad y los guiones | MIT |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli`, `media-use` | Que el agente sepa armar composiciones, subtítulos y efectos de sonido sin adivinar. Hoy usamos solo la CLI. | Apache-2.0 |
+| [HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen) | `hyperframes`, `hyperframes-cli` | Que el agente sepa armar composiciones y subtítulos sin adivinar, con el commit fijado y sin telemetría, como recomendó [skills compartidas](decisiones/2026-10-28-skills-compartidas.md). Hoy usamos solo la CLI. | Apache-2.0 |
 
 La lista sale de los nombres de las carpetas de cada repo, vistos el 3-nov. Falta leer qué ejecuta cada una antes de proponerla.
 
@@ -39,6 +39,7 @@ La lista sale de los nombres de las carpetas de cada repo, vistos el 3-nov. Falt
 - **REA:** desarma programas, no videos.
 - **Claude-Mem:** es del método viejo apartado.
 - **gstack, BMAD y GSD:** meten equipos de agentes, y chocan con "un agente por tarea".
+- **`media-use`, de HyperFrames:** según [skills compartidas](decisiones/2026-10-28-skills-compartidas.md), hace llamadas pagas a HeyGen sin confirmar. Es gasto.
 - **Higgsfield y Fish Audio:** cobran por uso. Solo con el sí de Sergio.
 
 Por qué quedó así cada una de las 30 del video de @heysansser está en el hilo de edición del proyecto Onia, del 3-nov.
