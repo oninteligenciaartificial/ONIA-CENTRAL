@@ -1,0 +1,390 @@
+{
+  "name": "IG · DM por comentario (modo prueba)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 3
+            }
+          ]
+        }
+      },
+      "name": "Cada 3 minutos",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6971e554-41f6-52eb-b5a6-7b370e856d5c"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "06d264d1-0b62-5c96-b716-41b42f2ad196",
+              "name": "MODO",
+              "value": "prueba",
+              "type": "string"
+            },
+            {
+              "id": "6f69f087-d1aa-5f36-ba3c-0920a249c981",
+              "name": "PALABRAS_CLAVE",
+              "value": "PENDIENTE_PALABRA",
+              "type": "string"
+            },
+            {
+              "id": "9b5a7a11-1ee3-58d6-ae18-4a1b8a2ec9ea",
+              "name": "TEXTO_DM",
+              "value": "PENDIENTE: texto del DM, sale de la investigación de funnels. Puede usar {usuario} y {link}.",
+              "type": "string"
+            },
+            {
+              "id": "c55b66c4-99c0-5fef-8444-80b93ca72c47",
+              "name": "LINK",
+              "value": "PENDIENTE_LINK",
+              "type": "string"
+            },
+            {
+              "id": "332ffc59-bce3-5843-b0e5-5f4e23db6fb3",
+              "name": "TESTERS",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "c1a6e92d-2e3f-5e6c-be89-f9cb34128178",
+              "name": "SOLO_DESDE",
+              "value": "2026-11-06T00:00:00-04:00",
+              "type": "string"
+            },
+            {
+              "id": "57def054-94c7-51dd-b751-aab4541acfe3",
+              "name": "CANTIDAD_PUBLICACIONES",
+              "value": 3,
+              "type": "number"
+            },
+            {
+              "id": "08073361-b5fb-58b6-82ae-1719ceca08e9",
+              "name": "MAX_POR_CORRIDA",
+              "value": 20,
+              "type": "number"
+            },
+            {
+              "id": "ecb0438d-28b3-5a4d-adc5-39da06c778b7",
+              "name": "API_VERSION",
+              "value": "v25.0",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Configuración",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "71039e6c-de90-565a-8cd7-89b263271615"
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/{{ $('Configuración').first().json.API_VERSION }}/me?fields=user_id,username",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "name": "Leer mi cuenta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "ada24f49-cd00-53a6-97d8-9753b2f33e2f",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Instagram ONIA (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/{{ $('Configuración').first().json.API_VERSION }}/me/media?fields=id,timestamp,media_product_type,permalink&limit={{ $('Configuración').first().json.CANTIDAD_PUBLICACIONES }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "name": "Traer publicaciones",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        0
+      ],
+      "id": "aa1c6d55-4b69-54dd-b925-4c59dfa2e91b",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Instagram ONIA (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "name": "Separar publicaciones",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ],
+      "id": "6cf96eb0-d436-58d8-a8d8-e9142c5d348f"
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/{{ $('Configuración').first().json.API_VERSION }}/{{ $json.id }}/comments?fields=id,text,username,timestamp,from,media&limit=50",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "name": "Traer comentarios",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        0
+      ],
+      "id": "c9c9c437-1a1c-5646-b47f-5f4e9b49da6f",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Instagram ONIA (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "name": "Separar comentarios",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        0
+      ],
+      "id": "cac67e42-720f-5729-ab9a-9b1be0770531"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Elige a qué comentarios responder. No envía nada: solo arma la lista.\n// Lee la configuración del nodo \"Configuración\" y la cuenta del nodo \"Leer mi cuenta\".\nconst cfg = $('Configuración').first().json;\nconst cuenta = $('Leer mi cuenta').first().json;\nconst memoria = $getWorkflowStaticData('global');\nif (!Array.isArray(memoria.procesados)) memoria.procesados = [];\nconst yaVistos = new Set(memoria.procesados);\n\n// Saca acentos y pasa a minúsculas, para que \"ÍA\", \"ia\" e \"Ia\" cuenten igual.\nconst normalizar = (t) => String(t || '')\n  .normalize('NFD').replace(/[̀-ͯ]/g, '')\n  .toLowerCase();\nconst lista = (t) => String(t || '').split(',').map((p) => normalizar(p).trim()).filter(Boolean);\n\nconst palabras = lista(cfg.PALABRAS_CLAVE);\nconst testers = lista(cfg.TESTERS).map((u) => u.replace(/^@/, ''));\nconst modo = normalizar(cfg.MODO).trim();\nconst desde = Date.parse(cfg.SOLO_DESDE);\nif (Number.isNaN(desde) || !/^\\d{4}-\\d{2}-\\d{2}T/.test(String(cfg.SOLO_DESDE))) {\n  // Sin una fecha válida no se sabe desde cuándo contestar: se corta, para no descartar comentarios en silencio.\n  throw new Error('SOLO_DESDE no es una fecha válida. Usá el formato 2026-11-06T00:00:00-04:00');\n}\nconst maximo = Number(cfg.MAX_POR_CORRIDA) || 20;\nconst SIETE_DIAS_MENOS_MARGEN = (7 * 24 - 6) * 3600 * 1000; // Meta deja responder hasta 7 días; dejamos 6 horas de margen.\nconst ahora = Date.now();\nconst miUsuario = normalizar(cuenta.username);\n\n// La palabra tiene que estar sola, no dentro de otra (\"ia\" no cuenta en \"familia\").\nconst tienePalabra = (texto) => {\n  const t = normalizar(texto);\n  return palabras.some((p) => {\n    const escapada = p.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n    return new RegExp('(^|[^a-z0-9])' + escapada + '($|[^a-z0-9])').test(t);\n  });\n};\n\nconst salida = [];\nfor (const item of $input.all()) {\n  const c = item.json;\n  if (!c || !c.id || yaVistos.has(c.id)) continue;\n  const usuario = normalizar(c.username || (c.from && c.from.username));\n  const cuando = Date.parse(c.timestamp);\n  const motivo =\n    usuario === miUsuario ? 'es un comentario propio' :\n    !tienePalabra(c.text) ? 'no tiene la palabra clave' :\n    !(cuando >= desde) ? 'es anterior a SOLO_DESDE' :\n    ahora - cuando > SIETE_DIAS_MENOS_MARGEN ? 'pasaron casi 7 días' :\n    null;\n  if (motivo) {\n    // Los que no tienen la palabra no se guardan: si el comentario se edita no vuelve a llegar igual, y así la memoria queda chica.\n    if (motivo !== 'no tiene la palabra clave') yaVistos.add(c.id);\n    continue;\n  }\n  if (salida.length >= maximo) break; // el resto queda para la próxima vuelta\n  const enviar = modo === 'real' || (modo === 'solo_testers' && testers.includes(usuario));\n  const mensaje = String(cfg.TEXTO_DM || '')\n    .split('{usuario}').join(c.username || '')\n    .split('{link}').join(cfg.LINK || '');\n  salida.push({ json: {\n    accion: enviar ? 'enviar' : 'simular',\n    modo,\n    ig_user_id: cuenta.user_id,\n    comment_id: c.id,\n    usuario: c.username || '',\n    comentario: c.text || '',\n    publicacion: (c.media && c.media.id) || '',\n    fecha_comentario: c.timestamp,\n    mensaje,\n  } });\n  yaVistos.add(c.id);\n}\n\n// Se guarda solo lo último, para que la memoria no crezca sin fin.\nmemoria.procesados = Array.from(yaVistos).slice(-3000);\nreturn salida;\n"
+      },
+      "name": "Elegir a quién responder",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        0
+      ],
+      "id": "6f95f5be-80b2-5720-8cca-c458b86b673e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "70db2eb9-867e-5d44-a5ec-53cf56a3b00f",
+              "leftValue": "={{ $json.accion }}",
+              "rightValue": "enviar",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "¿Enviar de verdad?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        0
+      ],
+      "id": "c57ba639-2cb3-5a8f-8d21-e2cd3bc5db40"
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/{{ $('Configuración').first().json.API_VERSION }}/{{ $json.ig_user_id }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ recipient: { comment_id: $json.comment_id }, message: { text: $json.mensaje } }) }}"
+      },
+      "name": "Enviar DM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        -120
+      ],
+      "id": "1e1b3e78-5bcf-51ed-a375-1a68894d9387",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ELEGIR_AL_IMPORTAR",
+          "name": "Instagram ONIA (token)"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "name": "Solo simulado (no se envió nada)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        120
+      ],
+      "id": "7ba98cc4-881f-52c6-8957-c82dd9ce4934"
+    }
+  ],
+  "connections": {
+    "Cada 3 minutos": {
+      "main": [
+        [
+          {
+            "node": "Configuración",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuración": {
+      "main": [
+        [
+          {
+            "node": "Leer mi cuenta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer mi cuenta": {
+      "main": [
+        [
+          {
+            "node": "Traer publicaciones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Traer publicaciones": {
+      "main": [
+        [
+          {
+            "node": "Separar publicaciones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar publicaciones": {
+      "main": [
+        [
+          {
+            "node": "Traer comentarios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Traer comentarios": {
+      "main": [
+        [
+          {
+            "node": "Separar comentarios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar comentarios": {
+      "main": [
+        [
+          {
+            "node": "Elegir a quién responder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Elegir a quién responder": {
+      "main": [
+        [
+          {
+            "node": "¿Enviar de verdad?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Enviar de verdad?": {
+      "main": [
+        [
+          {
+            "node": "Enviar DM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Solo simulado (no se envió nada)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "nota": "Importado apagado. Antes de activarlo, leé el README de esta carpeta."
+  }
+}
