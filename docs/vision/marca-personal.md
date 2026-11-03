@@ -22,7 +22,9 @@ Sergio Urcullo dijo que es correcta, pero que no es la frase final que se va a u
 
 ## Producción
 
-- **Meta:** 3 piezas por día.
+- **Meta:** 3 piezas por día, sobre IA y sobre su espacio personal.
+- **Estética:** la de un founder de EE.UU. (salud, comida sin procesados, productividad, lo que aprende de ventas y startups).
+- **YouTube horizontal:** también, además de los reels. Sin fecha.
 - **Se graba en tandas,** y la IA edita y saca versiones distintas de cada video para los trial reels (videos que Instagram muestra solo a gente que no lo sigue).
 - Cómo se edita: [guía de edición](../../marca-personal/guias/estilo-de-edicion.md) y skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md).
 
