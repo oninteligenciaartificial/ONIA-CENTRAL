@@ -75,7 +75,11 @@ La B entra en los 432,93 créditos del 29-oct con cualquiera de los dos precios,
 
 Lo pidió Sergio Urcullo el 3-nov, con el reel https://www.instagram.com/reel/DfKFEcsOUHB/: "Mira ese formato disney, eso es a lo que me refiero que aprenda higgsfield".
 
-**El reel no se pudo ver todavía.** Desde la nube, Instagram rechaza la conexión, y la página no deja que la lea un agente. Así que no se sabe con qué está hecho, qué modelos usa ni cuánto dura. Lo que sigue son las tres formas de lograr ese aspecto con Higgsfield. Cuál usa el reel queda **sin confirmar**, hasta verlo con la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md), paso 1 de "Aprender de un video". Para eso, Sergio aprobó el 3-nov bajar reels de referencia con gallery-dl desde su PC.
+**Cómo es el reel.** Lo vio el hilo de edición desde la PC de Sergio, el 3-nov; lo que sigue es lo que ese hilo informó, sin un archivo de medición en el repo. Es de la cuenta @dropship, "Who's laughing now?", del 31-oct-2026:
+- **Historia en dos partes.** Del segundo 0 al 12, personajes en 3D de estilo animación, con la misma cara en todas las escenas: unos chicos se ríen del protagonista porque dice "FOCUS ON AI". Desde el segundo 14 hay un giro a tomas reales de lujo, y cierra con el logo.
+- **Texto:** 1 o 2 palabras en mayúsculas blancas, en el centro.
+- **Ritmo:** 21,7 s con 19 cortes duros, más seguidos después del giro. Audio a -14,2 LUFS: si es solo música no se sabe, porque `audio` no separa la voz de la música ([estilo de edición](estilo-de-edicion.md)).
+- **Herramienta:** sin confirmar. Lo más probable es un generador de video con un personaje de referencia. Por eso parece la **forma 2** de la tabla de abajo (sin confirmar): el hilo de edición informó que no es un video redibujado (forma 1). Si lleva voz en off no se informó.
 
 | Forma | Cómo se hace | Qué queda | Costo |
 |---|---|---|---|
@@ -83,16 +87,26 @@ Lo pidió Sergio Urcullo el 3-nov, con el reel https://www.instagram.com/reel/Df
 | **2. Personaje y escenas** | Primero un personaje de Sergio en 3D (`character-sheet`, o imágenes con Nano Banana Pro); después cada escena como imagen, y cada imagen se anima con Seedance [W1] | Una historia con escenas nuevas que no se pueden grabar | Por escena de 5 s: unos 2 créditos la imagen [P1] y el video, unos 22 [P1] o 30 según la misma página el 29-oct ([anuncios](anuncios.md)). Un reel de 30 s, con 6 escenas: de 144 a 192 créditos, sin contar el personaje, que no tiene precio publicado |
 | **3. Cuento narrado** | El flujo `faceless-video` arma un video narrado con un estilo fijo no realista, una sola voz y subtítulos; tiene los tipos "Picture Story" y "Fairy Tale & Myth" [W1] | Sin cara: voz en off sobre escenas animadas | Sin precio fijo publicado; usa varias generaciones de imagen, video y voz [W1] |
 
+**Cómo se haría el de Sergio con la forma 2 (Propuesta):**
+1. **Un personaje fijo:** Sergio en 3D, armado una sola vez y usado de referencia en todas las escenas, para que tenga la misma cara.
+2. **La parte en 3D, unos 12 s:** de 3 a 4 escenas de 5 s, cada una con su imagen y su video, recortadas después en la edición (generan de 15 a 20 s para usar 12). Cuántas escenas tiene el reel no se contó: el número es una estimación.
+3. **El giro, unos 8 s:** tomas reales de Sergio, grabadas con el celular (su escritorio, la PC, una clase, el equipo de agentes), cortadas más rápido. No gastan créditos.
+4. **El texto y el cierre en HyperFrames:** 1 o 2 palabras en mayúsculas blancas, al centro, y el cierre con la palabra clave. Gratis.
+
+**Costo de la parte en 3D:** de 72 créditos (3 escenas × (2 de imagen + 22 de video)) a 128 (4 × (2 + 30)), según el precio de Seedance de cada fecha [P1] ([anuncios](anuncios.md)). Se suma el personaje, que no tiene precio publicado, y los intentos que salgan mal. Es entre un sexto y casi un tercio de los 432,93 créditos del 29-oct.
+
 Lo que pesa para elegir (Propuesta):
-- **La forma 1 es la única que conserva a Sergio actuando,** y la cara real es lo que genera confianza ([anuncios](anuncios.md), "Con Higgsfield"). Encaja como un formato especial para P (proceso, contado como historia), no para todos los días.
-- **La forma 2 es la única con un costo que se puede calcular:** de 144 a 192 créditos por reel, sin el personaje. Es entre un tercio y casi la mitad de los 432,93 créditos del 29-oct.
+- **La forma 2 parece la que usa el reel (sin confirmar),** y la mitad final puede ser real: así Sergio aparece de verdad, y la cara real es lo que genera confianza ([anuncios](anuncios.md), "Con Higgsfield").
+- **Encaja como formato especial,** no diario: por ejemplo, 1 por semana en el video P (proceso), contando su historia ("se reían de que estudiaba IA").
+- **La forma 1 queda para probar después:** conserva su actuación, pero el precio solo se ve en el conector.
 - **Nombre y marca:** "Disney" y "Pixar" son marcas ajenas. No se usan en los títulos, los textos ni las palabras clave del video; el formato se llama "animación 3D". Si hace falta nombrarlas, es tema legal, a confirmar con un abogado (`docs/lecciones.md`, "Anuncios y venta").
-- **Sugerencia de prueba, antes de gastar:** ver el reel, elegir la forma y pedir el precio exacto en el conector con 1 video corto de Sergio, sin generar.
+- **Se copia la técnica, no el contenido:** ni la historia, ni la música, ni las tomas de @dropship (skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md), "Frenos").
+- **Antes de gastar:** pedir el sí de Sergio con el guion, las escenas y los créditos, y empezar por el personaje y 1 escena.
 
 ## Lo que falta investigar (sin la cuenta)
 
 - Probar en la PC si las imágenes animadas en HyperFrames se ven bien, con una imagen gratis de prueba, antes de gastar créditos.
-- Ver el reel "estilo Disney" (arriba) y anotar la forma, los modelos y la duración.
+- Contar las escenas y los planos de la parte en 3D del reel de @dropship, con `measure cuts` de `editar-video`.
 - Medir 3 reels de Santiago Muñoz con b-roll generado, con `editar-video`, para saber cuántos segundos de b-roll usa y dónde.
 
 ## Fuentes
