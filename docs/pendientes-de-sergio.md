@@ -2,7 +2,7 @@
 
 El lugar fijo para ver lo que espera a Sergio Urcullo y las decisiones que vienen. Cada línea dice qué hay que decidir o hacer, de qué área es y dónde está el detalle; el detalle no se copia acá. Para verlo sin entrar a GitHub, le pide a cualquier jefe "¿qué decisiones tengo pendientes?". Por qué existe: [relevo a Codex](decisiones/2026-11-03-relevo-a-codex.md), punto 3.
 
-Foto del 3-nov-2026, armada desde el "Ahora" y las listas de pendientes de cada estado. Hasta que Sergio Urcullo decida si cada jefe lo pone al día al cerrar, la fuente sigue siendo el estado de cada área.
+Foto del 3-nov-2026, armada desde el "Ahora" y las listas de pendientes de cada estado y comprobada punto por punto contra ellos. Varias líneas juntan puntos de una misma lista. Hasta que Sergio Urcullo decida si cada jefe lo pone al día al cerrar, la fuente sigue siendo el estado de cada área.
 
 ## Ahora (taller del 4, 5 y 6-nov)
 
@@ -24,6 +24,9 @@ Foto del 3-nov-2026, armada desde el "Ahora" y las listas de pendientes de cada 
 | Precios de la plataforma y el QR del BCP | ONIA Platform | [`platform.md`](equipo-agentes/platform.md), "Le falta decidir a Sergio Urcullo" |
 | Nombre "Claude de 0 a 100": confirmarlo con un abogado | Marketing y ventas | [`negocio.md`](equipo-agentes/negocio.md), "Decisiones que siguen abiertas" |
 | Panel de contenido en Notion, vos o tú en los guiones, presupuesto de TikTok | Marketing y ventas | [`marketing.md`](equipo-agentes/marketing.md), "Pendiente de Sergio Urcullo" |
+| Mandar su video de repos, para definir el temario y las skills a regalar | Marketing y ventas | [`negocio.md`](equipo-agentes/negocio.md), "Qué espera a Sergio Urcullo" |
+| Aprobar el análisis de los referentes | Marketing y ventas | [`negocio.md`](equipo-agentes/negocio.md), "Qué espera a Sergio Urcullo" |
+| Si se le piden a Grok Bot los archivos de `/workspace/platform` o se rehace lo necesario, y si sube la rama del panel | ONIA Platform | [`platform.md`](equipo-agentes/platform.md), "Ahora" y "Le falta decidir a Sergio Urcullo" |
 | Qué perfiles de navegador quedan y qué cuentas lleva cada uno | Desarrollo | [README de los tres proyectos](equipo-agentes/README.md), "Los navegadores, sin decidir" |
 
 ## Decisiones con fecha
