@@ -6,7 +6,7 @@ Este archivo manda sobre el "Ahora" de los estados de `docs/equipo-agentes/` don
 
 ## 1. Qué cambió el 3-nov
 
-- **La visión de ONIA está en [`docs/vision/`](../vision/README.md):** los 6 puntos que repasó Sergio Urcullo (cada archivo dice qué cerró y qué sigue abierto) y su contexto (meta, plata, horarios). No se copia acá. Al escribir esto estaba en un cambio sin mergear, rama `claude/project-thread-e8umfe`; si `docs/vision/` no está en `main`, se lee de esa rama con `git show origin/claude/project-thread-e8umfe:docs/vision/README.md`.
+- **La visión de ONIA está en [`docs/vision/`](../vision/README.md):** los 6 puntos que repasó Sergio Urcullo (cada archivo dice qué cerró y qué sigue abierto) y su contexto (meta, plata, horarios). No se copia acá. Es lo que él piensa al 3-nov y puede cambiar: cuando cambie, se pone al día el archivo del punto y se suma una entrada nueva al final del [historial](../vision/historial.md), sin borrar ni editar las anteriores.
 - **Plan número uno: el taller**, para sacar ingresos ya ([cómo mejorar](../vision/como-mejorar.md)). Meta: Bs 3.000 = 60 pagos de Bs 50 ([contexto de Sergio](../vision/contexto-sergio.md)).
 - **La fecha del taller del 4, 5 y 6-nov está en pausa** desde el 3-nov, por decisión de Sergio Urcullo en el proyecto Onia (sin enlace). Todo lo que en el repo dice "4, 5 y 6-nov" (estados, campaña, textos, página) queda como borrador hasta que él fije otra fecha. No se lanza, se publica ni se gasta nada con la fecha vieja.
 - **3 videos por día, con calidad alta.** Sergio Urcullo rechazó bajar a 1. Su principio: "para que algo funcione, tiene que verse bien, tiene que funcionar bien, tiene que estar bien hecho".

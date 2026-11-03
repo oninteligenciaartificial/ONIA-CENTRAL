@@ -1,5 +1,7 @@
 # Punto 5: dónde estamos parados
 
+**Versión del 3-nov-2026.** Es lo que piensa Sergio Urcullo hoy y puede cambiar. Si cambia, este archivo se pone al día y el cambio se anota en el [historial](historial.md), con fecha, qué cambió y por qué.
+
 Del 3-nov-2026, en el chat del proyecto Onia. Es el diagnóstico que se le propuso a Sergio Urcullo y que él confirmó, junto con el objetivo 1. Los datos son de esa fecha y salen de ese repaso, no de una comprobación nueva.
 
 ## A favor

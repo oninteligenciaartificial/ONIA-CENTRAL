@@ -1,5 +1,7 @@
 # Punto 1: marca personal
 
+**Versión del 3-nov-2026.** Es lo que piensa Sergio Urcullo hoy y puede cambiar. Si cambia, este archivo se pone al día y el cambio se anota en el [historial](historial.md), con fecha, qué cambió y por qué.
+
 Cerrado por Sergio Urcullo el 3-nov-2026, a las 04:44 UTC, en el chat del proyecto Onia. Sale de su mensaje de visión de esa noche y de la propuesta que aceptó.
 
 ## Para qué sirve

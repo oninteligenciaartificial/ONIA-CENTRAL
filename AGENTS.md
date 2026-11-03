@@ -13,6 +13,7 @@ El repo viejo `onia-hermes` y sus copias, estén donde estén (C:, E:, Temp, el 
 | `plataforma/` | Decisiones y pedidos de ONIA Platform. El código vive en el repo `onia-platform`. |
 | `otros/` | Lo que no entra en las tres anteriores. |
 | `docs/decisiones/` | Por qué está armada así cada cosa, con fecha. |
+| `docs/vision/` | Hacia dónde va ONIA, según Sergio Urcullo. Es lo que piensa hoy y puede cambiar: cuando cambia, se pone al día el archivo y se suma una entrada al final del [historial](docs/vision/historial.md), sin borrar las viejas. |
 
 ## Cómo se trabaja
 

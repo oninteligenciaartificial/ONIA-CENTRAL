@@ -1,5 +1,7 @@
 # Punto 3: ventas
 
+**Versión del 3-nov-2026.** Es lo que piensa Sergio Urcullo hoy y puede cambiar. Si cambia, este archivo se pone al día y el cambio se anota en el [historial](historial.md), con fecha, qué cambió y por qué.
+
 Cerrado por Sergio Urcullo el 3-nov-2026, en el chat del proyecto Onia. El embudo exacto del camino A sigue abierto (ver "Borrador del embudo").
 
 ## Nada de freelance
