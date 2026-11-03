@@ -263,26 +263,25 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
 8. **Si pide cambios:**
    - relanzá a quien escribió, en el mismo worktree, con lo que falló;
    - mirá el diff, y hacé commit y push (paso 5);
-   - volvé al paso 7 con un revisor nuevo, sin la sesión anterior.
+   - publicá un comentario "Arreglo" que dice qué se corrigió de la revisión y el SHA completo del commit.
 
-   Hasta tres vueltas. Si la tercera revisión sigue pidiendo cambios, se frena: el PR queda abierto sin mergear, con un comentario que dice qué sigue fallando, y se cuenta en el cierre (paso 11). No se le pregunta a Sergio Urcullo, salvo que lo que traba sea reservado o algo que solo él puede hacer (paso 10).
+   No se vuelve al paso 7: hay una sola revisión, como dice "Revisión escrita en cada PR" del `AGENTS.md`.
 9. **Merge.**
    - **Se leen todos los comentarios "Revisión" del PR, no solo el último.** En cada uno se busca la línea `Reservado:`. Si alguno dice "Reservado: sí", el PR es reservado aunque una revisión posterior diga "no": que dos revisiones no coincidan es la duda del `AGENTS.md`. Un comentario "Revisión" sin la línea `Reservado:`, o una lista de comentarios que no se pudo leer entera, también cuenta como duda.
    - **Sin preguntar,** solo si se cumplen las cuatro:
      - el PR entra en "Lo mergea Claude sin preguntar" del `AGENTS.md` y en nada de "Lo aprueba Sergio Urcullo, siempre". Por ejemplo, un PR que toca solo `docs/` o una skill, pero cambia cómo trabaja la empresa, es reservado;
      - ningún comentario "Revisión" dice "Reservado: sí";
-     - la última revisión dice "aprobar";
-     - esa revisión nombra el último commit del PR.
-   - **Si es reservado,** no se mergea hasta que haya un comentario del PR que cite con sus palabras la aprobación de Sergio Urcullo y cubra todo lo reservado (paso 10). El pedido de llevar, resolver o cerrar el issue no es esa aprobación. Con ella, igual hace falta que la última revisión diga "aprobar" y nombre el último commit. Si falta algo de esto o no se puede comprobar, se frena: no se da el permiso por supuesto.
+     - la revisión dice "aprobar" y nombra el último commit del PR, o hay un comentario "Arreglo" que nombra el último commit.
+   - **Si es reservado,** no se mergea hasta que haya un comentario del PR que cite con sus palabras la aprobación de Sergio Urcullo y cubra todo lo reservado (paso 10). El pedido de llevar, resolver o cerrar el issue no es esa aprobación. Con ella, igual hace falta que la revisión diga "aprobar", o el comentario "Arreglo", y que nombre el último commit. Si falta algo de esto o no se puede comprobar, se frena: no se da el permiso por supuesto.
    - Primero, Hermes borra el worktree, que ya está todo pusheado: `git -C C:/dev/proyectos/ONIA-CENTRAL worktree remove C:/dev/worktrees/ONIA-CENTRAL/issue-<N>`. Es porque `--delete-branch` borra también la rama local, y git no borra una rama abierta en un worktree.
    - Después lanza a Claude Code con `<notas>/prompt-merge.md`, que dice:
      - que mergea según el `AGENTS.md`, con las dos listas "Lo mergea Claude sin preguntar" y "Lo aprueba Sergio Urcullo, siempre" copiadas tal cual del `AGENTS.md` de `main` en ese momento. Van en el prompt porque Claude Code con `--restricted` no carga el `AGENTS.md` y el que mergea no tiene con qué leerlo (probado el 29-oct);
-     - el número del PR y el SHA completo del commit que aprobó la última revisión;
+     - el número del PR y el SHA completo del último commit, el que nombra la revisión o el "Arreglo";
      - qué comprobar:
        - con `gh pr view <PR> --json files,commits,comments,mergeable`, leyendo todos los comentarios, no solo el último:
          - que ningún comentario "Revisión" diga "Reservado: sí", ni falte en alguno la línea `Reservado:`. Si alguno lo dice o le falta, el PR es reservado aunque otra revisión, también la última, diga "no";
          - que los archivos entren en "Lo mergea Claude sin preguntar" o, si es reservado, que haya un comentario que cite con sus palabras la aprobación de Sergio Urcullo y cubra todo lo reservado. El pedido de llevar el issue no es esa aprobación;
-         - que el último comentario "Revisión" tenga `Veredicto: aprobar` y nombre ese SHA;
+         - que el comentario "Revisión" tenga `Veredicto: aprobar` y nombre ese SHA, o que haya un comentario "Arreglo" que lo nombre;
          - que sea mergeable;
          - que se vieron todos los comentarios: si falta una revisión numerada o la lista parece cortada, que los relea con `gh pr view <PR> --comments`, y si sigue faltando, que no mergee;
        - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
@@ -304,10 +303,10 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
 
     Cuando contesta, Hermes deja un comentario en el PR con la pregunta tal como se le hizo, sus palabras textuales y la fecha, como dice "Aprobaciones rápidas", del `AGENTS.md`, porque la cuenta de GitHub es compartida. Recién ahí vuelve al paso 9.
 11. **Cerrar.**
-    - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR. Si quedó trabado en el paso 8, el PR y el issue siguen abiertos.
+    - Comprobá que `gh pr view <PR> --json state` dé `MERGED` y que `gh issue view <N> --json state` dé `CLOSED`. Si el issue no se cerró, cerralo con un comentario que enlace el PR.
     - Poné al día el checkout principal, para que los tres agentes vean lo nuevo: `git -C C:/dev/proyectos/ONIA-CENTRAL pull --ff-only`.
     - Leé la cuota una vez más, para el "Después". Como ya no se lanza nada, si el comando está bloqueado va "sin medir: `hermes usage` bloqueado", salvo que Sergio Urcullo haya pasado una lectura de después del último lanzamiento.
-    - Contale a Sergio Urcullo en corto, sin números de PR o de issue ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, cuántas vueltas hubo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después". En ese mensaje, la línea "Créditos extra" va sin el número ni el enlace del issue: "según lo confirmó Sergio Urcullo". En el PR queda completa.
+    - Contale a Sergio Urcullo en corto, sin números de PR o de issue ni enlaces: qué se resolvió y qué cambió, quién escribió, quién revisó, si hubo arreglo, qué quedó afuera y la sección "Consumo" completa, con el "Antes", cada ejecución y el "Después". En ese mensaje, la línea "Créditos extra" va sin el número ni el enlace del issue: "según lo confirmó Sergio Urcullo". En el PR queda completa.
     - Lo que apareció fuera del issue va a un issue nuevo con `gh issue create`, no a este PR.
 
 ## Varios issues a la vez
@@ -355,12 +354,11 @@ En el TUI de Hermes, abierto desde ONIA-CENTRAL, o en Telegram. Antes de un obje
 ## Cómo se comprueba
 
 - El PR dice `Closes #<N>`, quién orquestó, quién escribió y quién revisó.
-- Hay un comentario "Revisión <R>" por cada vuelta, con el commit que revisó.
+- Hay un solo comentario "Revisión", con el commit que revisó, y un "Arreglo" si pidió cambios.
 - Si se mergeó:
-  - la última revisión dice "aprobar" y nombra el último commit;
+  - la revisión dice "aprobar", o el "Arreglo", y nombra el último commit;
   - si era reservado o alguna revisión dijo "Reservado: sí", hay un comentario con la aprobación de Sergio Urcullo, citada con sus palabras, que cubre todo lo reservado;
   - el PR está mergeado, el issue cerrado, la rama y el worktree borrados, y el checkout principal al día.
-- Si quedó trabado en el paso 8: el PR y el issue siguen abiertos, hay un comentario que dice qué sigue fallando, y se contó en el cierre.
 - El PR y el cierre tienen la sección "Consumo", con fuente y fecha en cada dato, o "sin medir" y el porqué.
 - Cuándo frena el paso 9 por las revisiones se prueba a mano con los casos de `references/prueba-reserva.md`, sin mergear ni usar la red.
 - El freno por cuota, la lectura de lo que devuelven y los procesos se prueban a mano con los casos de `references/prueba-consumo.md`, sin lanzar nada ni usar la red.
