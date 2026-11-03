@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  Plantilla "historia con imágenes" de la guía de estilo de edición (estilo-de-edicion.md).
+  Sale de tres reels de Iman Gadzhi, mirados el 3-nov-2026: tomas de apoyo (paisajes, manos, caminando) cortadas
+  cada 1 a 3 s, con música, sin hablarle a cámara. Si llevan voz en off: sin confirmar (`audio` los clasifica como música). Los tres reels son viejos (de 2020 a 2023).
+  Para usarla: copiar a un proyecto de `hyperframes init`, poner cada toma en su <video> (quitar los marcadores),
+  sumar la voz y la música como <audio>, y cambiar la frase. Los tiempos van en segundos.
+-->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root { --texto: #ffffff; --fuente: "Playfair Display", serif; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--fuente); }
+      .toma { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      /* Marcadores de las tomas; con video, cada uno es un <video class="toma clip">. */
+      #t1 { background: linear-gradient(#7d93a8, #c9d3dc); }
+      #t2 { background: linear-gradient(#2b2b2b, #5a4a3a); }
+      #t3 { background: linear-gradient(#3d5a3c, #a8b38f); }
+      #t4 { background: linear-gradient(#1a1a1a, #444); }
+      /* Una sola frase, chica y centrada, en las tomas que la necesitan. */
+      .frase { position: absolute; top: 1380px; left: 120px; width: 840px; text-align: center; color: var(--texto); font-size: 44px; font-style: italic; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <div id="t1" class="toma clip" data-start="0" data-duration="1.5" data-track-index="0"></div>
+      <div id="t2" class="toma clip" data-start="1.5" data-duration="2.5" data-track-index="0"></div>
+      <div id="t3" class="toma clip" data-start="4" data-duration="1.2" data-track-index="0"></div>
+      <div id="t4" class="toma clip" data-start="5.2" data-duration="2.8" data-track-index="0"></div>
+
+      <div id="f1" class="frase clip" data-start="1.5" data-duration="2.5" data-track-index="1">Hace un año no tenía clientes.</div>
+      <div id="f2" class="frase clip" data-start="5.2" data-duration="2.8" data-track-index="1">Esto fue lo que cambié.</div>
+      <!-- <audio class="clip" data-start="0" data-duration="8" data-track-index="2" src="voz.wav"></audio>
+           <audio class="clip" data-start="0" data-duration="8" data-track-index="3" data-volume="0.25" src="musica.mp3"></audio> -->
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Cortes secos entre tomas; la frase aparece suave.
+      gsap.utils.toArray(".frase").forEach((el) => {
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.4 }, Number(el.dataset.start));
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

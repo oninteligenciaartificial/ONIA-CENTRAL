@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  Plantilla "tarjetas de app" de la guía de estilo de edición (estilo-de-edicion.md).
+  Sale de tres reels de softgirlnocode ("Codex edits my YouTube", "AI edits my YouTube" y "Claude Motion Graphics"),
+  mirados el 3-nov-2026. Es un borrador que sigue a "AI edits my YouTube": ventanas de app (Claude, Codex, GitHub, un prompt)
+  redibujadas en HTML, claras y redondeadas, con el título arriba y la frase en una pastilla gris abajo, alternadas con la cara.
+  Para usarla: copiar a un proyecto de `hyperframes init`, poner el video de Sergio en #cara (quitar #m-cara),
+  y cambiar el título, el contenido de las ventanas y las frases. Los tiempos van en segundos.
+-->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --fondo: #f1f0ee;
+        --tarjeta: #ffffff;
+        --texto: #111111;
+        --gris: #6b6b6b;
+        --resalte: #cfe0ff;
+        --azul: #1f5fd6;
+        --fuente: "Inter", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--fondo); }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--fuente); color: var(--texto); }
+
+      /* Título fijo arriba, con el logo de la herramienta en una pastilla. */
+      #titulo { position: absolute; top: 170px; left: 0; width: 100%; text-align: center; font-size: 64px; font-weight: 800; letter-spacing: -0.02em; }
+      #titulo .logo { display: inline-block; background: #e62117; color: #fff; border-radius: 14px; padding: 2px 18px; font-size: 52px; vertical-align: middle; }
+
+      /* Ventana de app: blanca, redondeada, con sombra suave y los tres puntos de macOS. */
+      .ventana { position: absolute; left: 90px; width: 900px; background: var(--tarjeta); border-radius: 28px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12); padding: 34px 40px; }
+      .puntos { display: flex; gap: 12px; margin-bottom: 24px; }
+      .puntos i { width: 18px; height: 18px; border-radius: 50%; display: block; }
+      .ventana h3 { font-size: 34px; margin-bottom: 18px; }
+      .ventana p { font-size: 32px; line-height: 1.45; color: #333; }
+      .ventana mark { background: var(--resalte); color: var(--azul); font-weight: 700; padding: 0 6px; border-radius: 6px; }
+      #v1 { top: 360px; }
+      #v2 { top: 860px; }
+
+      /* Frase abajo, en una pastilla gris. */
+      .pastilla { position: absolute; top: 1560px; left: 0; width: 100%; text-align: center; }
+      .pastilla span { display: inline-block; background: #7a7a7a; color: #fff; font-size: 40px; font-weight: 600; padding: 10px 26px; border-radius: 12px; }
+
+      /* Toma de cara, con la frase en blanco a media altura. */
+      #cara, #m-cara { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #m-cara { background: radial-gradient(circle at 50% 45%, #b89a78, #4a3b2d 75%); }
+      .sub-cara { position: absolute; top: 1150px; left: 0; width: 100%; text-align: center; color: #fff; font-size: 52px; font-weight: 700; text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9" data-width="1080" data-height="1920">
+      <!-- Escena 1 (0 a 6 s): ventanas de app. -->
+      <div id="titulo" class="clip" data-start="0" data-duration="6" data-track-index="1">Claude edita mi <span class="logo">YouTube</span></div>
+      <div id="v1" class="ventana clip" data-start="0.4" data-duration="5.6" data-track-index="2">
+        <div class="puntos"><i style="background: #ff5f57"></i><i style="background: #febc2e"></i><i style="background: #28c840"></i></div>
+        <h3>Material en bruto · 6 archivos · 40 min</h3>
+        <p>Grabaciones de pantalla y de cámara, sin editar.</p>
+      </div>
+      <div id="v2" class="ventana clip" data-start="2.4" data-duration="3.6" data-track-index="3">
+        <div class="puntos"><i style="background: #ff5f57"></i><i style="background: #febc2e"></i><i style="background: #28c840"></i></div>
+        <h3>Prompt 1 · Reglas de corte</h3>
+        <p>Mantené el <mark>orden de las frases</mark>. Si repito una línea, quedate con la <mark>última toma completa</mark>. <mark>Cortá justo en la última palabra.</mark></p>
+      </div>
+      <div id="p1" class="pastilla clip" data-start="0.4" data-duration="2" data-track-index="4"><span>40 minutos de material</span></div>
+      <div id="p2" class="pastilla clip" data-start="2.4" data-duration="3.6" data-track-index="4"><span>y le doy estas reglas</span></div>
+
+      <!-- Escena 2 (6 a 9 s): la cara. Con el video de Sergio:
+           <video id="cara" class="clip" data-start="6" data-duration="3" data-track-index="0" src="cara.mp4" muted playsinline></video> -->
+      <div id="m-cara" class="clip" data-start="6" data-duration="3" data-track-index="0"></div>
+      <div id="sc1" class="sub-cara clip" data-start="6" data-duration="3" data-track-index="5">y me devuelve el corte listo</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Las ventanas suben un poco y aparecen; las palabras resaltadas se pintan una tras otra.
+      tl.from("#v1", { y: 40, opacity: 0, duration: 0.35, ease: "power2.out" }, 0.4);
+      tl.from("#v2", { y: 40, opacity: 0, duration: 0.35, ease: "power2.out" }, 2.4);
+      gsap.utils.toArray("#v2 mark").forEach((m, i) => {
+        tl.fromTo(m, { backgroundColor: "rgba(207,224,255,0)" }, { backgroundColor: "rgba(207,224,255,1)", duration: 0.25 }, 3 + i * 0.7);
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
