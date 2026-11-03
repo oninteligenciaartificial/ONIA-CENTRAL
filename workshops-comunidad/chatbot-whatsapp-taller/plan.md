@@ -9,7 +9,7 @@
 - **Cloud API:** la puerta oficial de Meta para que un programa mande y reciba mensajes de un número de WhatsApp.
 - **Chatwoot:** la bandeja que ya corre en el VPS (`chat.onia.com.bo`). Junta los chats y deja contestarlos desde la compu o el celular.
 - **Agent Bot de Chatwoot:** un bot enchufado a una bandeja. Cada mensaje nuevo le llega como aviso (webhook), y el bot contesta por la API de Chatwoot. Cuando hace falta una persona, le pasa el chat ("handoff").
-- **Ventana de 24 horas:** después de que alguien escribe, durante 24 horas se le puede contestar cualquier cosa y gratis. Pasado eso, solo con una plantilla aprobada por Meta, que se cobra.
+- **Ventana de 24 horas:** después de que alguien escribe, durante 24 horas se le puede contestar cualquier cosa. Desde el 1-oct-2026 esas respuestas se cobran, con 1.000 gratis por número al mes (ver "Costos"). Pasadas las 24 horas, solo con una plantilla aprobada por Meta, que también se cobra.
 - **Coexistencia:** usar el mismo número en la app WhatsApp Business del celular y en la Cloud API a la vez.
 
 ## Lo que ya existe (comprobado hoy)
@@ -42,9 +42,9 @@ Todo el plan de abajo depende de esto, así que es el paso 1 de la mañana.
 | Opción | A favor | En contra |
 |---|---|---|
 | **A. El 75414930 por la Cloud API, como parece que ya está (recomendada si se confirma)** | No cambia nada para quien escribe. Chatwoot ya lo recibe. | Si no está en coexistencia, en el celular no se ve: se atiende desde la app de Chatwoot. |
-| B. El 75414930 sigue solo en la app del celular, sin bot | Cero riesgo y cero trabajo técnico | Todo a mano: mensaje de bienvenida y respuestas rápidas de la app. Alcanza hasta unas 100 a 150 conversaciones por día, según una agencia (`investigacion-campana-taller-2026-11-03.md`, rama del embudo), sin dato propio. |
-| C. Un chip nuevo en la Cloud API, solo para el bot | No toca el número de hoy | Hay que cambiar el número en anuncios, página y textos. Un número nuevo arranca con límites bajos para escribir primero (250 personas distintas por día hasta verificar la empresa, `docs/decisiones/2026-10-29-mapa-operacion-onia.md`). Cuesta el chip. |
-| D. Una API no oficial (Evolution, WAHA, Baileys) sobre el número | Gratis y rápido | **No se recomienda.** Imita a WhatsApp Web, va contra las reglas de WhatsApp y arriesga que den de baja el número (`docs/decisiones/2026-10-29-mapa-operacion-onia.md`, por el adaptador de Hermes). Perder el 75414930 en plena campaña es lo peor que puede pasar. |
+| B. El 75414930 sigue solo en la app del celular, sin bot | Cero riesgo y cero trabajo técnico | Todo a mano: mensaje de bienvenida y respuestas rápidas de la app. Alcanza hasta unas 100 a 150 conversaciones por día, según una agencia (`workshops-comunidad/investigacion-campana-taller-2026-11-03.md`, rama del embudo), sin dato propio. |
+| C. Un chip nuevo en la Cloud API, solo para el bot | No toca el número de hoy | Hay que cambiar el número en anuncios, página y textos. Según el mapa de operación, un portfolio nuevo puede escribir primero a 250 personas distintas por día hasta verificar la empresa (`docs/decisiones/2026-10-29-mapa-operacion-onia.md`). Con qué límite arranca un número nuevo dentro del portfolio de ONIA está **sin confirmar**. Cuesta el chip. |
+| D. Una API no oficial que imita a WhatsApp Web (como Baileys) sobre el número | Gratis y rápido | **No se recomienda.** El mapa de operación dice que eso "arriesga que den de baja el número" (`docs/decisiones/2026-10-29-mapa-operacion-onia.md`, por el adaptador de Hermes con Baileys). Otras herramientas parecidas, como Evolution o WAHA, no se revisaron. Perder el 75414930 en plena campaña es lo peor que puede pasar. |
 
 **Sobre el baneo:** con la Cloud API oficial no hay riesgo de baja por usar un bot. El riesgo es la **calidad**: si mucha gente bloquea o denuncia, Meta baja los límites del número. Se evita contestando solo a quien escribió y mandando plantillas solo a quien dio su número para eso.
 
@@ -54,7 +54,7 @@ Todo el plan de abajo depende de esto, así que es el paso 1 de la mañana.
 
 - **El portfolio de negocio de ONIA** (id `1451773736711697`), que ya tiene la app "Onia Bot", y la cuenta de WhatsApp Business (WABA) con el número.
 - **La app "Onia Bot"** (id `1078962684709749`): es la que ya manda los mensajes a Chatwoot. **No hace falta crear otra app.** Las otras dos con WhatsApp ("onia-mensajes" y "Onia Agency Chatbots") no se usan para esto.
-- Nada de esto pide la revisión de Meta (App Review), porque el número es propio.
+- Que para un número propio no haga falta la revisión de Meta (App Review) está **sin confirmar** en una guía oficial de WhatsApp. La app ya recibe mensajes hoy, así que no debería frenar el plan.
 
 ## Cómo se arma (opción A)
 
@@ -79,7 +79,7 @@ Así lo describe la [guía de Agent Bots de Chatwoot](https://www.chatwoot.com/h
 
 **Por qué n8n detrás de Chatwoot, y no n8n directo con Meta:** Chatwoot ya recibe el número, guarda el historial y tiene app de celular para que Sergio conteste. Si n8n se conectara directo a Meta, habría que mover el webhook de "Onia Bot" fuera de Chatwoot, y la plataforma dejaría de ver esa bandeja.
 
-**Bot por reglas, sin IA, para el viernes.** Contesta con los textos ya aprobados según palabras y botones. Es gratis, hace siempre lo mismo y no inventa precios ni promesas (`docs/lecciones.md`, "Anuncios y venta" y los límites de los textos de WhatsApp). Un modelo de IA para preguntas fuera del guion va después del taller, y **es gasto** porque cobra por uso.
+**Bot por reglas, sin IA, para el viernes.** Contesta con los textos ya aprobados según palabras y botones. No paga un modelo de IA, hace siempre lo mismo y no inventa precios ni promesas (`docs/lecciones.md`, "Anuncios y venta" y los límites de los textos de WhatsApp). Un modelo de IA para preguntas fuera del guion va después del taller, y **es gasto** porque cobra por uso.
 
 ## El flujo de la conversación
 
@@ -96,22 +96,22 @@ Los textos salen de `whatsapp-taller-3-4-5-borrador.md` y del saludo nuevo del e
 | 7. Recordatorio | 20 horas sin pagar, dentro de las 24 horas | Sección 6, una sola vez. Pasadas las 24 horas, solo con plantilla (gasto, decisión de Sergio) | — |
 
 - **El pago lo confirma siempre Sergio Urcullo**, mirando el banco. El bot nunca dice "pago confirmado" solo. Que el cobro sea automático pide una pasarela, y eso es gasto (`embudo-taller/README.md`, rama del embudo).
-- **Botones:** la Cloud API deja mandar hasta 3 botones de respuesta. Si Chatwoot los pasa por su API, **sin confirmar**: si no, el bot pide "Responde 1, 2 o 3".
+- **Botones:** la Cloud API tiene mensajes con botones de respuesta; cuántos entran está **sin confirmar** en la guía oficial. Si Chatwoot los pasa por su API, **sin confirmar**: si no, el bot pide "Responde 1, 2 o 3".
 - **Cuenta de inscriptos:** las etiquetas de Chatwoot dan los números del corte de cada día (consultas, QR enviados, comprobantes, pagados) sin sacar nombres ni teléfonos del VPS.
 
 ## Costos (en dólares, por mensaje, tarifa de Meta para "Resto de Latinoamérica", donde entra Bolivia)
 
 | Qué | Costo | Fuente |
 |---|---|---|
-| Contestar dentro de las 24 horas (todo el flujo de arriba) | **Gratis** | [Precios de Meta](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing): "Non-template messages … within an open customer service window, are free" |
-| Plantilla de utilidad dentro de las 24 horas | Gratis | Misma página |
-| Quien llega por un anuncio que abre WhatsApp | Gratis durante 72 horas, si se contesta dentro de las primeras 24 | Misma página: "FEP windows remain open for 72 hours". `docs/decisiones/2026-10-29-mapa-operacion-onia.md` dice "hasta 7 días": la página de hoy dice 72 horas |
+| Contestar dentro de las 24 horas (todo el flujo de arriba) | **1.000 mensajes gratis por número al mes**; después, US$0,0113 cada uno | [Precios de Meta](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing), leída el 3-nov: desde el 1-oct-2026 se cobran, con "a free tier of 1,000 service messages per month". La tarifa, de `docs/decisiones/2026-10-29-mapa-operacion-onia.md` (29-oct) |
+| Plantilla de utilidad dentro de las 24 horas | Se cobra desde el 1-oct-2026 (US$0,0113) | Misma página y misma tarifa |
+| Quien llega por un anuncio que abre WhatsApp | Gratis mientras dure esa ventana, si se contesta dentro de las primeras 24 horas | Misma página: "The FEP window may remain open for up to 7 days", igual que el mapa de operación |
 | Plantilla de marketing fuera de la ventana (por ejemplo, el seguimiento) | US$0,0740 | `docs/decisiones/2026-10-29-mapa-operacion-onia.md`, leído de Meta el 29-oct, tarifa del 1-oct |
 | Plantilla de utilidad fuera de la ventana (recordatorio de clase) | US$0,0113 | Misma fuente |
 | n8n, Chatwoot, VPS | Ya se pagan; nada nuevo | — |
 | Modelo de IA (solo si se suma después) | Por uso: **gasto** | — |
 
-Con el bot por reglas y sin plantillas, el chatbot del taller **no suma gasto**.
+**Cuenta aproximada, sin dato propio.** Si el bot manda unos 8 mensajes por persona (saludo, precio, QR, comprobante, confirmación y alguna pregunta), los 1.000 gratis alcanzan para unas 125 personas al mes. El plan de venta habla de 240 a 600 conversaciones para llegar a 60 pagos (`plan-venta-taller-4-5-6.md`, en los archivos del proyecto): serían unos 1.900 a 4.800 mensajes, o sea entre US$10 y US$43 en el mes, menos lo que entre por anuncios, que es gratis. Además, el mismo número ya manda plantillas de la plataforma, que comparten ese cupo. **Contestar con el bot es gasto** pasado el cupo: lo aprueba Sergio Urcullo antes de encenderlo.
 
 ## Lo que tiene que hacer Sergio Urcullo a la mañana
 
