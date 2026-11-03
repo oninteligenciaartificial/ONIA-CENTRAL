@@ -1,11 +1,11 @@
 ---
 name: llevar-issue
-description: Lleva un issue de GitHub de ONIA-CENTRAL de punta a punta. Lo toma, abre un worktree y una rama, hace que Claude Code o Codex lo resuelvan, pide una revisión independiente, abre el PR con la revisión escrita, lo hace mergear según el AGENTS.md y le lleva a Sergio Urcullo solo lo reservado. Usala cuando Sergio Urcullo pida llevar, resolver, cerrar o repartir uno o varios issues, o cuando Hermes orqueste el trabajo de ONIA.
+description: Lleva un issue de GitHub de ONIA-CENTRAL de punta a punta. Lo toma, abre un worktree y una rama, hace que Claude Code o Codex lo resuelvan, pide una revisión independiente, abre el PR con la revisión escrita, lo hace mergear según el AGENTS.md y le lleva a Sergio Urcullo solo lo reservado. Usala cuando Sergio Urcullo pida llevar, resolver, cerrar o repartir uno o varios issues.
 ---
 
 # Llevar un issue de punta a punta
 
-La usa sobre todo Hermes, que orquesta: toma el issue, lanza a quien escribe y a quien revisa, y lo sigue hasta el merge. Claude Code y Codex ejecutan. Si la usa Claude Code o Codex por su cuenta, los pasos son los mismos.
+La usa la sesión del área (el jefe de su proyecto, en Claude o en Codex): toma el issue, lanza a quien escribe y a quien revisa, y lo sigue hasta el merge. Se escribió cuando orquestaba Hermes, que desde el 31-oct ya no orquesta (`AGENTS.md`, "Hermes y Grok Bot: historia"). Donde los pasos dicen "Hermes", lo hace la sesión que usa la skill. Ojo: el "Freno por cuota" lee la cuota de ChatGPT con `hermes usage`, y Hermes ya no está en la PC (`AGENTS.md`). Sin esa lectura, el freno frena, así que esta skill no lanza nada hasta que Desarrollo arme otra forma probada de leer la cuota. Mientras tanto, el trabajo del día va con [`encargar`](../encargar/SKILL.md).
 
 ## Frenos
 

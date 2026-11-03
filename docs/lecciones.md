@@ -51,6 +51,8 @@ Se lee siempre, al arrancar. Cada línea remite a su lección completa, con el p
 
 ## Hermes
 
+Historia: Hermes no orquesta desde el 31-oct (`AGENTS.md`, "Hermes y Grok Bot: historia"). Estas lecciones valen solo si Sergio Urcullo vuelve a usar Hermes, y no se leen para otra tarea.
+
 - **A una aprobación de Hermes se contesta "once", nunca "always".** `command_allowlist` tiene que estar vacía.
   - Por qué: "always" la guarda en `command_allowlist` y vale para todas las sesiones. Un "always" del 28-oct dejó correr sin preguntar `python -c`, `node -e` y `powershell -Command`, hasta que se vació la lista. [hermes-oficial](decisiones/2026-10-28-hermes-oficial.md).
 - **No se usan `hermes -z` ni `hermes --oneshot`.**
