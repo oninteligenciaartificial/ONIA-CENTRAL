@@ -57,12 +57,13 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 Investigación en `main`: [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md) (3-nov).
 
 - **Número, recomendado:** el mismo de ventas, sin chip nuevo ni APIs no oficiales, que arriesgan la baja del número.
-- **Sin confirmar:** si ese número está en la app de WhatsApp Business o en la API oficial. El código de la plataforma dice que ya está en la API, conectado a Chatwoot; los textos de venta dicen que Sergio usa la app. Las dos a la vez solo con "coexistencia", que Meta da por medio de un proveedor. Se resuelve con capturas de WhatsApp Manager y de la bandeja de Chatwoot.
+- **Confirmado el 3-nov:** el número de ventas está conectado solo por la API oficial, no por la app de WhatsApp Business (lo confirmó Sergio Urcullo en el hilo del chatbot). Por eso la bienvenida no se cambia en la app: la manda el bot.
 - **Cuentas:** el portfolio de ONIA y la app de Meta "Onia Bot", que ya manda los mensajes a Chatwoot. No hace falta app nueva. n8n y Chatwoot ya corren en el VPS.
 - **Costo (gasto, con su sí):** Meta da 1.000 mensajes de servicio gratis por número al mes y después cobra; las plantillas de marketing se cobran aparte. El plan estima de US$10 a 43 en el mes, para 240 a 600 conversaciones: es aproximado, sin dato propio, con unos 8 mensajes por persona, y sin contar los que llegan por anuncios (gratis) ni las plantillas de la plataforma, que usan el mismo cupo. Precios y fuentes, en ese plan.
-- **Dos caminos:** A, bot por reglas con n8n y Chatwoot; B, todo a mano en la app hasta después del taller. **Recomiendo B para el lanzamiento si el número resulta estar solo en la app,** y migrar después: un bot a medias el día del lanzamiento es peor que respuestas fijas. Si ya está en la API, A es viable con su prueba antes del viernes.
-- **Antes del primer video, en los dos caminos:** cambiar la bienvenida, que da las fechas viejas (embudo, sección 4).
-- **Sergio:** las capturas; elegir A o B; el tope de gasto en mensajes; si va A, crear el bot en Chatwoot y su token (a su bóveda y a n8n, nunca al chat) y dar el sí para cargar el flujo, que es producción.
+- **Dos caminos:** A, bot por reglas con n8n y Chatwoot; B, todo a mano desde la bandeja de Chatwoot hasta después del taller. Con el número en la API, **recomiendo A, si su prueba sale bien antes del viernes;** si no, B, porque un bot a medias el día del lanzamiento es peor que responder a mano.
+- **Flujo armado:** el flujo de n8n, apagado y en modo prueba, y su guía están en la rama `claude/project-thread-vru1dc`, carpeta `workshops-comunidad/chatbot-whatsapp-taller/`, sin mergear: esperan el "acepto" de Sergio.
+- **Antes del primer video:** que el bot mande la bienvenida nueva, sin las fechas viejas (embudo, sección 4). Si va B, ese texto se manda a mano desde Chatwoot.
+- **Sergio:** elegir A o B; el tope de gasto en mensajes; si va A, seguir los pasos de la guía del flujo: mirar qué bot tiene la bandeja de Chatwoot, crear el atributo "Paso del taller" y el bot, guardar el token en n8n y en su bóveda (nunca en el chat) y dar el sí para importar el flujo, que es producción.
 
 ### 3.5 Bóveda, página del taller y web
 
@@ -118,21 +119,21 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 2. Comunidad paga: precio (recomiendo Bs 100) y si el primer mes va incluido (recomiendo que sí).
 3. Pagos: verificar a mano o pagar una pasarela (recomiendo a mano por ahora).
 4. Higgsfield: el tope de créditos hasta el 20-nov (la guía estima de 283 a 379).
-5. WhatsApp: bot por reglas (A) o a mano en la app hasta después del taller (B), y el tope de gasto en mensajes (estimado aproximado: US$10 a 43 por mes).
+5. WhatsApp: bot por reglas (A, recomendado si pasa la prueba) o a mano desde Chatwoot hasta después del taller (B), y el tope de gasto en mensajes (estimado aproximado: US$10 a 43 por mes).
 
 **Hacer (unos 30 minutos):**
 
-6. Mandar capturas de WhatsApp Manager y de la bandeja de Chatwoot, para saber dónde está conectado el número.
+6. ~~Confirmar dónde está conectado el número~~: hecho el 3-nov; está solo en la API.
 7. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
 8. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
 9. Tener a mano una segunda cuenta de Instagram para la prueba.
-10. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
+10. Si va A, seguir los pasos de la guía del bot de WhatsApp (Chatwoot, token e importar el flujo); la bienvenida nueva la manda el bot (primero aprobar el texto).
 11. Hacer el pago de prueba con el QR.
 12. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
 13. ~~Dar el sí al cambio de edición~~: hecho el 3-nov; ya está en `main`.
 14. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
 
-**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
+**Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo, el flujo del bot de WhatsApp y su guía, y este plan.
 
 ## Para aprender
 
@@ -144,3 +145,4 @@ Un **embudo** es el camino que hace una persona desde que ve un video hasta que 
 - **3-nov-2026, chatbot y embudo en `main`.** Enlaza la investigación del embudo, ya mergeada, y suma a la sección 3.4 y al checklist el [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md), ya en `main`. Reemplaza el "se suma cuando termine" de la primera versión.
 - **3-nov-2026, edición y 30 repositorios.** Suma caja roja como sexto formato, el veredicto de los 30 repositorios y el sí al cambio de edición en el checklist. Ese cambio sigue en su rama; cuando entre a `main`, se cambian las rutas de la rama por las de `main`.
 - **3-nov-2026, cambio de edición en `main`.** Sergio Urcullo le dio el sí ("Si", 13:46 UTC). Las rutas de la rama pasan a `main` y el punto 13 del checklist queda hecho.
+- **3-nov-2026, WhatsApp solo por la API.** Sergio Urcullo confirmó en el hilo del chatbot que el número de ventas está conectado solo por la API. La sección 3.4 y el checklist dejan de pedir capturas y cambiar la bienvenida en la app: la manda el bot. El camino B pasa a ser a mano desde Chatwoot, y se recomienda A si pasa su prueba. Suma el flujo del bot, todavía en su rama.
