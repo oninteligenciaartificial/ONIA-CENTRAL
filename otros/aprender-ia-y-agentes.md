@@ -1,5 +1,7 @@
 # Plan para aprender IA y agentes
 
+> **Hermes es historia desde el 31-oct-2026,** y el 1-nov ya no estaba en la PC (`AGENTS.md`, "Hermes y Grok Bot: historia"). Los ejercicios que corren `hermes` no se hacen: donde dicen Hermes, se hacen solo con Claude Code y Codex. Las lecturas de la documentación de Hermes siguen sirviendo como explicación general.
+
 Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/8). Arranca el lunes 2-nov-2026.
 
 **Para qué:** entender qué hacen por dentro Claude Code, Codex y Hermes, y poder hacer a mano lo básico, sin IA: moverte en la terminal, usar git, revisar un PR y leer lo que devuelve una API. No hace falta programar.
@@ -25,7 +27,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 ## Para practicar sin riesgo
 
 - Ningún ejercicio gasta plata ni pide claves nuevas.
-- Los comandos `hermes` se corren en una PowerShell abierta desde el menú Inicio, nunca en la terminal de la app de Claude: desde ahí escriben en una copia escondida.
+- Los ejercicios que corren `hermes` no se hacen: ver el aviso del inicio.
 - Los ejercicios de git se hacen en una carpeta de práctica, `C:\dev\practica-git`, no en ONIA-CENTRAL. En ONIA-CENTRAL solo se mira.
 - Donde dice "solo mirar", no se cambia nada.
 - Ningún secreto va al chat ni a un archivo, tampoco para practicar.
