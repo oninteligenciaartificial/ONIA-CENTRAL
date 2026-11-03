@@ -44,16 +44,16 @@ La lista sale de los nombres de las carpetas de cada repo, vistos el 3-nov. Falt
 
 ## Los 30 del video de @heysansser
 
-Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/reel/DfBQ1AgOC1S/) con 30 plugins para Claude. El veredicto sale de lo que dice el texto del reel. De los repos, solo se leyeron los de HyperFrames, OpenMontage, REA y Marketing Skills; el resto se lee antes de sumarlo. "Usar" no instala nada: lo que viene de afuera entra con el OK de Sergio.
+Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/reel/DfBQ1AgOC1S/) con 30 plugins para Claude. La columna "Propuesta" es del autor, no una decisión de Sergio: sale del texto del reel. De los repos, se leyeron la portada de OpenMontage, la de REA y la de HyperFrames, más la lista de carpetas de HyperFrames y de Marketing Skills; el resto no se leyó. Lo que no sale del reel ni de un repo leído va como hipótesis. "Usar" no instala nada: lo que viene de afuera entra con el OK de Sergio.
 
-| Grupo | Repo | Veredicto | Por qué |
+| Grupo | Repo | Propuesta | Por qué |
 |---|---|---|---|
 | Código | Superpowers | Después | ONIA Platform: planifica y prueba antes de programar |
 | Código | Matt Pocock Skills | No | Repite buenas prácticas de programación; alcanza con una |
-| Código | ECC | No | Paquete enorme de skills y agentes, llena el contexto |
-| Código | Karpathy Skills | No | Repite lo de Superpowers |
-| Código | Ponytail | No | Repite lo de Superpowers |
-| Código | Agent Skills | No | Repite lo de Superpowers |
+| Código | ECC | No | "A huge pack of skills and agents"; que llene el contexto es hipótesis |
+| Código | Karpathy Skills | No | Buenas prácticas de programación; que alcance con una es hipótesis |
+| Código | Ponytail | No | "Write way less code"; que alcance con Superpowers es hipótesis |
+| Código | Agent Skills | No | Buenas prácticas de programación; que alcance con una es hipótesis |
 | Investigar | Graphify | Después | ONIA Platform: mapa del código |
 | Investigar | Agent Reach | Después | Marketing: leer Reddit, X y YouTube; ver antes si pide APIs pagas |
 | Investigar | Understand Anything | No | Repite lo de Graphify |
@@ -61,10 +61,10 @@ Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/
 | Investigar | Career Ops | No | Busca trabajo |
 | Investigar | REA | No | Desarma programas, no videos |
 | Proyectos grandes | gstack | No | Equipos de agentes: choca con "un agente por tarea" |
-| Proyectos grandes | Caveman | No | Recorta cómo se le explican las cosas a Sergio |
+| Proyectos grandes | Caveman | No | "Talks short"; que recorte las explicaciones que Sergio pidió es hipótesis |
 | Proyectos grandes | Claude-Mem | No | Es del método viejo apartado |
 | Proyectos grandes | Headroom | No | Recorta lo que lee el agente; el repo ya ordena qué se lee |
-| Proyectos grandes | GSD | No | Equipos de agentes |
+| Proyectos grandes | GSD | No | "Plans and builds step by step"; si mete equipos de agentes, sin confirmar |
 | Proyectos grandes | BMAD Method | No | Equipos de agentes |
 | Diseño | UI UX Pro Max | Después | ONIA Platform: elegir una sola entre esta, Taste e Impeccable |
 | Diseño | Taste | Después | La misma elección |
@@ -72,9 +72,9 @@ Sergio Urcullo pasó el 3-nov un reel de @heysansser (https://www.instagram.com/
 | Diseño | Impeccable | Después | La misma elección que UI UX Pro Max |
 | Diseño | PPT Master | Después | Presentaciones del taller; antes ver el tipo Slides de claude.ai |
 | Diseño | Diagram Design | Después | Marketing: diagramas para carruseles |
-| Escritura y video | Skills by Anthropic | Usar | Son las oficiales; varias ya están en la cuenta (skill-creator, docx, pptx, pdf) |
+| Escritura y video | Skills by Anthropic | Usar | Son las oficiales. Varias (skill-creator, docx, pptx, pdf) figuraban como disponibles en la sesión de Claude Code del 3-nov |
 | Escritura y video | OpenMontage | No | Muy grande, con APIs pagas, y licencia AGPL |
-| Escritura y video | HyperFrames | Usar | Ya se usa su CLI en `editar-video`; las skills, en "Las que conviene sumar" |
-| Escritura y video | Humanizer | No | Pensada para inglés |
+| Escritura y video | HyperFrames | Usar | Ya se usa su CLI en `editar-video`; las skills, en "Las que conviene sumar". `media-use` es gasto |
+| Escritura y video | Humanizer | No | "Removes the AI feel from writing"; que sirva solo para inglés es hipótesis |
 | Escritura y video | I Have ADHD | No | Lo que hace ya está en las reglas de cómo se le escribe a Sergio |
 | Escritura y video | Marketing Skills | Usar | Ver "Las que conviene sumar" |
