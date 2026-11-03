@@ -11,7 +11,7 @@ Un solo sistema en la nube (el VPS), pensado desde el principio para varios rubr
 
 ## Qué se hace ahora
 
-- **Se termina solo el core:** inventario y chatbot de WhatsApp andando sin errores.
+- **Se termina solo el core,** empezando por lo que Sergio Urcullo nombró: inventario y chatbot de WhatsApp andando sin errores. Qué falta en usuarios y créditos, sin comprobar.
 - **Los módulos de rubro quedan congelados** hasta que el core esté listo.
 
 ## Cómo se adapta a cada cliente

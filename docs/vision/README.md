@@ -10,7 +10,7 @@ Empezó el 3-nov-2026, en el proyecto Onia de Claude, para que Codex lo herede.
 | 2. ONIA Platform | [onia-platform.md](onia-platform.md) | Cerrado el 3-nov |
 | 3. Ventas | [ventas.md](ventas.md) | Cerrado el 3-nov; el embudo exacto, sin decidir |
 | 4. Formas de ingreso | [formas-de-ingreso.md](formas-de-ingreso.md) | Ninguna descartada; el orden es recomendación |
-| 5. Dónde estamos parados | — | Sin cerrar |
+| 5. Dónde estamos parados | [donde-estamos.md](donde-estamos.md) | Confirmado el 3-nov, con el objetivo 1 |
 | 6. Cómo mejorar | — | Sin cerrar |
 
 Aparte: [contexto de Sergio Urcullo](contexto-sergio.md), con su meta, su plata y sus horarios.

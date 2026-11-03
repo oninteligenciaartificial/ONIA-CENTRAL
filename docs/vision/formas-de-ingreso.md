@@ -17,7 +17,7 @@ Del 3-nov-2026, en el chat del proyecto Onia. Sergio Urcullo **no descarta ningu
 
 1. **Noviembre:** taller y afiliados de herramientas de IA.
 2. **Después del primer taller:** comunidad paga.
-3. **Diciembre** (vacaciones de Sergio Urcullo y el core listo): auditorías y ONIA, empezando por la empresa familiar.
+3. **Diciembre** (vacaciones de Sergio Urcullo), si el core ya está listo: auditorías y ONIA, empezando por la empresa familiar.
 4. **Ebook:** mejor como regalo gratis para juntar contactos (un "imán de leads") que como venta.
 5. **Llamadas 1 a 1:** como un extra caro, o como el diagnóstico del camino B ([ventas](ventas.md)).
 6. **YouTube y marcas:** a futuro.
