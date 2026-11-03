@@ -23,7 +23,7 @@ Reel con "Comentá PALABRA" (3 por día)
   → Oferta de la comunidad paga
 ```
 
-Sale del [embudo del taller](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/blob/claude/project-thread-dnmeq4/workshops-comunidad/embudo-taller/README.md) (rama sin mergear) y del modelo que contó Sergio Urcullo el 3-nov. Si una pieza falla, no se vende: por eso el traspaso pide **probar el recorrido de punta a punta antes del 6-nov**.
+Sale del [embudo del taller](../../workshops-comunidad/embudo-taller/README.md) y del modelo que contó Sergio Urcullo el 3-nov. La investigación de fondo, en `main` desde el 3-nov: [investigación de la campaña](../../workshops-comunidad/investigacion-campana-taller-2026-11-03.md), [cómo venden los referentes](../../workshops-comunidad/referentes-como-venden-2026-11-03.md) y [comparación de páginas de venta](../../workshops-comunidad/embudo-taller/paginas-de-venta-comparacion.md). Los textos para clientes (`embudo-taller/textos.md`) siguen en la rama `claude/project-thread-dnmeq4`, esperando su sí con captura. Si una pieza falla, no se vende: por eso el traspaso pide **probar el recorrido de punta a punta antes del 6-nov**.
 
 ## 3. Lo que hace falta, pieza por pieza
 
@@ -54,10 +54,15 @@ Quién lo hace: los hilos del proyecto Onia de Claude trabajan hasta el 3-nov, a
 
 ### 3.4 WhatsApp: bienvenida y chatbot en n8n
 
-- **Hoy:** el WhatsApp de ventas es la app WhatsApp Business. Su mensaje de bienvenida da las fechas viejas y hay que cambiarlo **antes del primer video** (embudo, sección 4). n8n y Chatwoot corren en el VPS.
-- **El chatbot con n8n** lo investiga esta noche el hilo "Planear el chatbot de WhatsApp en n8n": qué número usar, si la API oficial deja seguir usando la app en el mismo número, qué cuentas hacen falta y cuánto cobra Meta por mensaje. Se suma acá cuando termine.
-- **Recomiendo:** para el 6-nov, la bienvenida y las respuestas rápidas de WhatsApp Business (gratis, sin tocar producción), y el chatbot de n8n como segundo paso, cuando esté probado. Un chatbot a medias el día del lanzamiento es peor que respuestas fijas.
-- **Sergio:** aprobar el texto de bienvenida y cambiarlo en el celular; decidir el número del chatbot cuando el hilo lo traiga.
+Investigación en `main`: [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md) (3-nov).
+
+- **Número, recomendado:** el mismo de ventas, sin chip nuevo ni APIs no oficiales, que arriesgan la baja del número.
+- **Sin confirmar:** si ese número está en la app de WhatsApp Business o en la API oficial. El código de la plataforma dice que ya está en la API, conectado a Chatwoot; los textos de venta dicen que Sergio usa la app. Las dos a la vez solo con "coexistencia", que Meta da por medio de un proveedor. Se resuelve con capturas de WhatsApp Manager y de la bandeja de Chatwoot.
+- **Cuentas:** el portfolio de ONIA y la app de Meta "Onia Bot", que ya manda los mensajes a Chatwoot. No hace falta app nueva. n8n y Chatwoot ya corren en el VPS.
+- **Costo (gasto, con su sí):** Meta da 1.000 mensajes de servicio gratis por número al mes y después cobra; las plantillas de marketing se cobran aparte. El plan estima de US$10 a 43 en el mes, para 240 a 600 conversaciones: es aproximado, sin dato propio, con unos 8 mensajes por persona, y sin contar los que llegan por anuncios (gratis) ni las plantillas de la plataforma, que usan el mismo cupo. Precios y fuentes, en ese plan.
+- **Dos caminos:** A, bot por reglas con n8n y Chatwoot; B, todo a mano en la app hasta después del taller. **Recomiendo B para el lanzamiento si el número resulta estar solo en la app,** y migrar después: un bot a medias el día del lanzamiento es peor que respuestas fijas. Si ya está en la API, A es viable con su prueba antes del viernes.
+- **Antes del primer video, en los dos caminos:** cambiar la bienvenida, que da las fechas viejas (embudo, sección 4).
+- **Sergio:** las capturas; elegir A o B; el tope de gasto en mensajes; si va A, crear el bot en Chatwoot y su token (a su bóveda y a n8n, nunca al chat) y dar el sí para cargar el flujo, que es producción.
 
 ### 3.5 Bóveda, página del taller y web
 
@@ -112,16 +117,18 @@ Cada semana, cuántos comentan la palabra, cuántos llegan al WhatsApp y cuánto
 2. Comunidad paga: precio (recomiendo Bs 100) y si el primer mes va incluido (recomiendo que sí).
 3. Pagos: verificar a mano o pagar una pasarela (recomiendo a mano por ahora).
 4. Higgsfield: el tope de créditos hasta el 20-nov (la guía estima de 283 a 379).
+5. WhatsApp: bot por reglas (A) o a mano en la app hasta después del taller (B), y el tope de gasto en mensajes (estimado aproximado: US$10 a 43 por mes).
 
 **Hacer (unos 30 minutos):**
 
-5. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
-6. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
-7. Tener a mano una segunda cuenta de Instagram para la prueba.
-8. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
-9. Hacer el pago de prueba con el QR.
-10. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
-11. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
+6. Mandar capturas de WhatsApp Manager y de la bandeja de Chatwoot, para saber dónde está conectado el número.
+7. Instagram: cuenta profesional y pública, y "Permitir acceso a los mensajes".
+8. Sacar el token de Instagram y cargarlo en n8n, siguiendo la guía del DM. Nunca por el chat.
+9. Tener a mano una segunda cuenta de Instagram para la prueba.
+10. Cambiar la bienvenida de WhatsApp Business por el texto nuevo (primero aprobarlo).
+11. Hacer el pago de prueba con el QR.
+12. Dar el sí para importar el flujo del DM al n8n del VPS (es producción), en modo de prueba.
+13. Grabar un video corto hablando a cámara, para armar el primer reel completo con una plantilla.
 
 **Aprobar (lo traen los hilos, uno por uno):** los recursos y el calendario de guiones, los formatos de edición, las skills de afuera y la línea del `CLAUDE.md`, los textos del embudo y este plan.
 
@@ -132,3 +139,4 @@ Un **embudo** es el camino que hace una persona desde que ve un video hasta que 
 ## Historial
 
 - **3-nov-2026, primera versión.** Lo pidió Sergio Urcullo en el proyecto Onia de Claude, antes de irse a dormir: dejar anotado el objetivo y todo lo que hace falta para llegar. Se armó leyendo `main` y las ramas de los hilos de esa noche. Ya suma el resultado del hilo de edición y skills, y el de Higgsfield. Falta el chatbot de WhatsApp, que se suman cuando terminen.
+- **3-nov-2026, chatbot y embudo en `main`.** Enlaza la investigación del embudo, ya mergeada, y suma a la sección 3.4 y al checklist el [plan del chatbot](../../workshops-comunidad/chatbot-whatsapp-taller/plan.md), ya en `main`. Reemplaza el "se suma cuando termine" de la primera versión.
