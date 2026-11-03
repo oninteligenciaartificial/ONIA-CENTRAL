@@ -46,6 +46,22 @@ Cada tarea es de unos 30 minutos y va por PR (`AGENTS.md`, "Cómo se trabaja"). 
 
 **5. ONIA Platform y Desarrollo.** El runner de la CI de `onia-platform` se rearmó el 3-nov y quedó corriendo las pruebas ([`producto.md`](producto.md), "Runner de la CI"). Que terminara bien la primera prueba no estaba confirmado al escribir esto. Lo que se propone después es diagnosticar el core en solo lectura (ver el punto 1, arriba). El resto del orden sigue en [`platform.md`](platform.md) y [`producto.md`](producto.md).
 
+## Calendario propuesto (sin aprobar)
+
+Lo propuso el proyecto Onia el 3-nov. **Sergio Urcullo todavía no lo aprobó:** se le presenta como opción, no se da por decidido ("Núcleo" de [`docs/lecciones.md`](../lecciones.md), punto 2).
+
+| Cuándo | Qué |
+|---|---|
+| 3 al 6-nov | Plantillas de edición, guía de guiones, investigación del embudo y la oferta, y este traspaso. |
+| Sábado 7 y domingo 8-nov | Grabar en bloque de 15 a 20 videos. Higgsfield para planos y elementos de IA: son generaciones pagas, cada una con su sí (`AGENTS.md`, "Frenos"). |
+| Desde el 9-nov | Publicar 3 videos por día, sin anuncios. Cada publicación, con su sí. |
+| 9 al 13-nov | n8n con mensaje directo automático en Instagram, página con cuestionario y lista, guiones por Telegram y edición en serie. |
+| 13 y 14-nov | Probar el embudo de punta a punta, antes de que venza Codex el 14. |
+| Lunes 16-nov | Lanzar la campaña: primero sin pagar, y anuncios pagos con las primeras ventas. |
+| Fines de noviembre | Taller posible. La fecha la decide Sergio Urcullo. |
+
+Requisito, según el coordinador del proyecto Onia: la cuenta de Instagram tiene que ser profesional y estar unida a la página de Facebook de Onia. El cambio de cuenta y la unión los hace Sergio Urcullo.
+
 ## 4. Cambios abiertos al 3-nov
 
 Los que importan para el plan. Cada uno espera el sí de Sergio Urcullo, o su revisión.
