@@ -16,12 +16,13 @@ Desde el 3-nov, esto lo lleva el jefe de Marketing y ventas; cómo se abre, en C
 
 - **En qué estoy:**
   - la campaña de Meta Ads del taller, en borrador, en el [PR #120](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/120) (`workshops-comunidad/meta-ads-campana-3-4-5.md`). La revisión dio "aprobar"; falta el sí de Sergio Urcullo con captura. No hay nada cargado en Meta;
-  - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles.
+  - los guiones de la semana del 3 al 8-nov, en el [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139): 24 de marca personal (3 verticales y 1 horizontal por día) y 10 del taller y el anuncio, en `marca-personal/guiones-semana-3-8nov.json`, que arma `marca-personal/armar-guiones-semana.py`. Al 2-nov la revisión seguía en "cambios" por detalles;
+  - el mapa de campañas de Meta y los guiones de cada anuncio, en `workshops-comunidad/meta-ads-campanas-y-guiones.md`: una sola campaña paga ahora (la A, la del PR #120) y dos armadas y apagadas (B y C) para después del 6-nov. Lo que falta para lanzar A, y quién carga cada cosa, está en su sección "Qué falta para lanzar A".
 - **El panel de contenido:** está en claude.ai (https://claude.ai/artifact/VGvvdSxQdfURBy1yDpTfrr) y lee ese JSON. Codex no tiene herramientas para actualizarlo: el 2-nov, `codex exec` listó sus herramientas y MCP (Canva, Drive, Notion, Higgsfield y otras, con Notion y Drive apagados en esta PC) y ninguna lee o escribe artifacts de claude.ai. Mientras tanto, los guiones se cambian en el JSON por PR y una sesión de Claude los sube al panel. Si no hay una sesión de Claude, la fuente es el JSON del repo y el panel queda con la última versión subida. La propuesta es pasarlo a Notion (punto 4 de "Pendiente"), sin aprobar todavía.
 - **Meta Ads en Codex:** Codex no tiene el conector de Meta Ads. Se hace con el navegador, cuando Sergio Urcullo cargue su cuenta en el perfil de Marketing.
 - **Orden de trabajo, con su "hecho cuando":**
   1. Guiones (PR #139): mergeado cuando la última revisión escrita en el PR da "aprobar" y Sergio Urcullo aprueba los guiones. Lo que marcó cada revisión está en los comentarios del PR.
-  2. Campaña (PR #120): cargada en Meta en pausa, con los 2 videos, cuando Sergio Urcullo aprueba con captura y están la página y la tarjeta. La prende él, o Marketing con su sí.
+  2. Campaña (PR #120): cargada en Meta en pausa, con los 2 videos, cuando Sergio Urcullo aprueba con captura y están la página y la tarjeta. La prende él, o Marketing con su sí. Los pasos, en `workshops-comunidad/meta-ads-campanas-y-guiones.md`, "Qué falta para lanzar A".
   3. Métricas en el panel: conversaciones y costo por conversación de la campaña, cuando corra.
   4. Corregir la oferta vieja (3-5-7, combos) en `plan-meta-ads-borrador.md`, por PR.
   5. La ficha de chase.h.ai con la skill `investigar-referente` (post https://www.instagram.com/p/DfKquhHHK3B/).
@@ -68,14 +69,14 @@ Al 2-nov a la noche. Lo ya resuelto ([decisión del 2-nov](../decisiones/2026-11
 
 1. Aprobar los textos del anuncio y grabar los 2 videos.
 2. Probar cómo se graban las clases antes de activar el anuncio: Meet gratis no graba.
-3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Al 2-nov, ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta: lo mostraron `ads_get_ad_accounts`, `ads_get_ad_account_pages` y `ads_get_ig_accounts` del conector de Meta Ads, en la sesión Marketing. `ads_get_user_pages` mostró solo la página "Onia", sin asociar a ninguna cuenta.
+3. Elegir la página de Facebook con el WhatsApp del taller y la cuenta de anuncios, y cargar la tarjeta. Al 2-nov, ninguna cuenta tiene página ni Instagram, y "ONIA Ads" no tiene tarjeta: lo mostraron `ads_get_ad_accounts`, `ads_get_ad_account_pages` y `ads_get_ig_accounts` del conector de Meta Ads, en la sesión Marketing. `ads_get_user_pages` mostró solo la página "Onia", sin asociar a ninguna cuenta. A las 23:00 del 2-nov seguía igual; además, `ads_get_ad_entities` mostró en "ONIA Ads" un borrador de campaña "Claude 0 a 100 - WhatsApp" (31-oct), sin conjunto ni anuncios, que figura ACTIVE: si se publica así, sale prendida.
 4. Decidir si el panel de contenido pasa a Notion. Es una propuesta sin aprobar: necesita prender Notion en Codex y conectar su cuenta.
 5. Vos o tú en los guiones, y si quiere decir su edad.
 6. El presupuesto de TikTok, si se pauta ahí.
 
 ## Qué toco y qué no
 
-- **Escribo (por PR):** `marca-personal/` (contenido, referentes, guías), `workshops-comunidad/meta-ads-campana-3-4-5.md` y `workshops-comunidad/plan-meta-ads-borrador.md`, y este archivo. Todo lo que ve un cliente lo aprueba Sergio Urcullo.
+- **Escribo (por PR):** `marca-personal/` (contenido, referentes, guías), `workshops-comunidad/meta-ads-campana-3-4-5.md`, `workshops-comunidad/meta-ads-campanas-y-guiones.md` y `workshops-comunidad/plan-meta-ads-borrador.md`, y este archivo. Todo lo que ve un cliente lo aprueba Sergio Urcullo.
 - **Solo leo:** `docs/decisiones/`, `docs/lecciones.md`, y la web y el VPS (de Desarrollo). El borrador de WhatsApp (`workshops-comunidad/whatsapp-taller-3-4-5-borrador.md`) lo escribe esta misma área, desde [`negocio.md`](negocio.md).
 - **Servicios:** Meta Ads por el conector de la app, siempre en borrador o pausa. Instagram y TikTok no: no hay conector para publicar. Higgsfield, nada sin el sí de Sergio Urcullo.
 - **Navegador de Ubuntu:** solo si hace falta ver una pantalla de Meta o una referencia, de a una sesión a la vez y sin loguearme: las cuentas las carga Sergio Urcullo.
