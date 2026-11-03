@@ -72,7 +72,7 @@ Los que importan para el plan. Cada uno espera el sí de Sergio Urcullo, o su re
 
 | Qué | Dónde | Espera |
 |---|---|---|
-| Visión de ONIA, 6 puntos y contexto | [PR #186](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/186) | Sí de Sergio. El [PR #182](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/182) es una versión vieja con solo el punto 1: se cierra sin mergear cuando entre el #186. |
+| Visión vieja, solo con el punto 1 | [PR #182](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/182) | Se cierra sin mergear: la visión completa entró el 3-nov con el PR #186. |
 | Investigación para vender el taller | [PR #180](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/180) | Respuesta de Sergio a sus opciones |
 | Análisis de Erik Taveras | [PR #177](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/177) | Sí de Sergio |
 | Mapa de campañas de Meta y guiones de anuncios | [PR #176](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/176) | Fecha nueva del taller |
