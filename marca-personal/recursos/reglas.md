@@ -9,7 +9,7 @@ Le corregís algo a la IA, te pide perdón, y en el chat siguiente lo hace igual
 **Dónde se escribe:**
 
 - **En Claude (la app):** creá un proyecto, tocá "Set project instructions" y pegá tus reglas. Claude las usa en todos los chats de ese proyecto. Los proyectos también están en la cuenta gratis, hasta 5 ([ayuda de Claude](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)).
-- **En Claude Code o Codex (para los que programan):** en un archivo `CLAUDE.md` o `AGENTS.md` del proyecto, que se carga al empezar cada sesión ([docs de Claude Code](https://code.claude.com/docs/en/memory)).
+- **En Claude Code (para los que programan):** en un archivo `CLAUDE.md` en la carpeta del proyecto, que se carga al empezar cada sesión ([docs de Claude Code](https://code.claude.com/docs/en/memory)).
 
 **Cómo se escribe una regla que funciona:**
 
@@ -26,7 +26,7 @@ Le corregís algo a la IA, te pide perdón, y en el chat siguiente lo hace igual
 
 ## Recurso exclusivo (Onia Community): plantilla del archivo de reglas
 
-Copiala en las instrucciones de tu proyecto y cambiá los ejemplos por los tuyos:
+Está armada como la mía, en chico. Copiala en las instrucciones de tu proyecto y cambiá los ejemplos por los tuyos:
 
 ```
 # Reglas

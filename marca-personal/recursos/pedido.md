@@ -36,7 +36,7 @@ Formato: 4 líneas como mucho, de vos, un emoji, y que cierre con "Escribime por
 
 ## Recurso exclusivo (Onia Community): 5 pedidos en 3 partes, listos para copiar
 
-Cambiá lo que está entre corchetes.
+Cambiá lo que está entre corchetes. Cada uno dice qué duda le saca a la IA.
 
 **1. Responder a un cliente**
 ```
@@ -44,13 +44,15 @@ Contexto: tengo [negocio]. Un cliente me escribió esto: "[mensaje]". Quiero res
 Ejemplo de cómo hablo: "[un mensaje tuyo]".
 Formato: 3 líneas como mucho, amable y con una pregunta al final.
 ```
+Por qué: la pregunta del final mantiene viva la conversación, y tu ejemplo evita que suene a contestador automático.
 
 **2. Un post para redes**
 ```
 Contexto: soy [quién], le hablo a [a quién] y quiero que [qué hagan].
-Ejemplo de cómo escribo: "[un post tuyo]".
-Formato: [largo], [tono] y que cierre con [llamado].
+Ejemplo de cómo escribo: "[un post tuyo que haya funcionado]".
+Formato: 4 líneas como mucho, de vos, un solo emoji y que cierre con "Escribime por WhatsApp".
 ```
+Por qué: sin un largo y un cierre fijos, la IA escribe de más y termina con un "¡No dudes en contactarnos!" que nadie lee.
 
 **3. Resumir un documento**
 ```
@@ -58,6 +60,7 @@ Contexto: te paso [documento]. Lo voy a usar para [para qué].
 Ejemplo de resumen que me sirve: "[un resumen que te guste]".
 Formato: 5 líneas, lo más importante primero. Si algo no está en el documento, no lo agregues.
 ```
+Por qué: decirle para qué lo vas a usar le marca qué es importante, y la última frase evita que complete con datos inventados.
 
 **4. Ordenar tus tareas**
 ```
@@ -65,10 +68,12 @@ Contexto: estas son mis tareas de la semana: [lista]. Tengo [horas] libres.
 Ejemplo de cómo me organizo: "[cómo lo hacés hoy]".
 Formato: una tabla por día, con lo urgente primero.
 ```
+Por qué: con tus horas libres no te arma un plan imposible, y con tu forma de organizarte no te cambia el sistema.
 
 **5. Preparar una reunión**
 ```
 Contexto: mañana me reúno con [quién] para [qué].
-Ejemplo de lo que me preocupa: "[una duda tuya]".
-Formato: 3 preguntas para hacerle y 3 respuestas para las objeciones que me puede plantear.
+Ejemplo de cómo hablo con esa persona: "[un mensaje que le hayas mandado]".
+Formato: 3 preguntas para hacerle y 3 respuestas para las objeciones que me puede plantear, con mis palabras.
 ```
+Por qué: con tu forma de hablarle, las respuestas suenan a vos y no a un manual de ventas.

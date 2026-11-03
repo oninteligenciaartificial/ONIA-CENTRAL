@@ -14,7 +14,7 @@ La mayoría de las "noticias de IA" que ves en redes ya pasaron por tres persona
 
 **Cómo las leo, en 5 minutos:**
 
-1. Miro solo los títulos de los últimos 7 días.
+1. Miro solo lo de los últimos 7 días. Si la lista no muestra la fecha, la miro adentro de la nota.
 2. Para cada uno me pregunto: ¿esto le cambia algo a alguien que usa IA en su trabajo? Si no, lo salteo.
 3. Del que sí, leo la fecha y el primer párrafo. Ahí está lo que pasó; lo demás suele ser contexto.
 4. Me fijo qué **todavía no** pasó. Por ejemplo, el anuncio de Anthropic del 26-oct dice que pidió salir a la bolsa, pero que todavía no se puede comprar nada y que no hay precio ([fuente](https://www.anthropic.com/news/s1-sec)). Esa diferencia es la que la mayoría de los videos no cuenta.
