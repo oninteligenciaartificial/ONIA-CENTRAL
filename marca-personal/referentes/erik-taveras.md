@@ -103,7 +103,7 @@ Casi no hace videos de venta directa. Vende con la demo de su propio producto (T
 - **Desarrollo:** datos rápidos de cada pieza.
 - **Cierre:** "un reel no alcanza" más la palabra clave, para que la guía llegue por mensaje directo.
 
-**Edición:**
+**Edición:** el análisis de cuatro reels, del 2-nov-2026, está en [erik-taveras-edicion.md](erik-taveras-edicion.md).
 - **Cómo edita los reels:** lo cuenta él mismo, porque vende el taller "el mismo sistema con el que edito mis reels". Edita con Claude Code o Codex y una skill propia.
 - Subtítulos palabra por palabra que marcan la palabra que está diciendo.
 - Tarjetas y diagramas con íconos que se dibujan mientras habla, y logos reales de las marcas.
