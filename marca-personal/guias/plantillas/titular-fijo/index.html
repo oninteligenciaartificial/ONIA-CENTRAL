@@ -1,8 +1,8 @@
 <!doctype html>
 <!--
   Plantilla "titular fijo" de la guía de estilo de edición (estilo-de-edicion.md).
-  Sale de tres reels de Gonzalo Teba ("Top 10 mejoras de vida", "Introducción a: El padre más mamado" y
-  "Coach online expuesto"), mirados el 3-nov-2026. Hormozi y Gary Vee usan la misma idea con el título en una caja de color.
+  Sale de dos reels de Gonzalo Teba ("Top 10 mejoras de vida" e "Introducción a: El padre más mamado"), mirados el
+  3-nov-2026. Es un borrador: falta una tercera referencia del mismo estilo.
   Para usarla: copiar a un proyecto de `hyperframes init`, poner el video de Sergio en #cara (quitar #fondo),
   cambiar el título, las imágenes de la franja de arriba y los subtítulos. Los tiempos van en segundos.
 -->
@@ -29,11 +29,11 @@
       .titulo .linea1 { font-size: 46px; }
       .titulo .linea2 { font-size: 46px; margin-top: 360px; } /* debajo de la imagen, como en Gonzalo */
 
-      /* Franja de arriba: una imagen por idea, que cambia cada 1 a 3 s, entre el título y la cara. */
+      /* Franja de arriba: una imagen por idea, que cambia cada 1 a 4 s, entre el título y la cara. */
       .imagen { position: absolute; top: 210px; left: 90px; width: 900px; height: 340px; border-radius: 6px; overflow: hidden; }
       .imagen div { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #fff; font-weight: 700; }
 
-      /* Subtítulos: chicos, en minúsculas como se habla, debajo de la imagen. */
+      /* Subtítulos: chicos, en tipo oración, debajo de la imagen. */
       .sub { position: absolute; top: 570px; left: 0; width: 100%; text-align: center; color: var(--texto); font-size: 34px; font-weight: 600; text-shadow: var(--sombra); -webkit-text-stroke: 2px #000; paint-order: stroke fill; }
     </style>
   </head>
