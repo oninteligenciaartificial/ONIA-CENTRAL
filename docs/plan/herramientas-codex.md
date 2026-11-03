@@ -66,7 +66,7 @@ Hermes, Grok Bot para orquestar y lo apartado del método viejo (`AGENTS.md`, pr
 
 ## 5. El video de los 30 repositorios
 
-Sergio Urcullo mandó un video de @heysansser con unos 30 repositorios. El hilo de edición los repasó el 3-nov: de ahí salen las dos propuestas de la sección 1 y la lista de "las que no" de `docs/skills-inventario.md` (`reverse-any-video`, REA, Claude-Mem, gstack, BMAD, GSD, Higgsfield y Fish Audio). El veredicto de cada uno de los 30 quedó en el chat de ese hilo y **todavía no está en el repo**: se le pidió sumarlo a `docs/skills-inventario.md`.
+Sergio Urcullo mandó el 3-nov un reel de @heysansser con 30 plugins para Claude. El hilo de edición los repasó uno por uno: el veredicto está en `docs/skills-inventario.md`, sección "Los 30 del video de @heysansser", en la rama `claude/project-thread-u6u3bz`, que espera su sí. Propone usar 3 (las skills oficiales de Anthropic, HyperFrames y Marketing Skills), dejar 10 para después (sobre todo para ONIA Platform y diagramas de carruseles) y descartar 17. De la mayoría se leyó solo el texto del reel, no el repo: se lee cada uno antes de instalar.
 
 ## Historial
 
