@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  Plantilla "pantalla partida" de la guía de estilo de edición (estilo-de-edicion.md).
+  Sale de dos reels de Santi Muñoz ("Mi Jarvis" y el de las capturas del celular) y de "IA local", de Erik Taveras,
+  mirados el 3-nov-2026. Arriba va la prueba (una grabación de pantalla, un flujo o el celular) y abajo la cara,
+  con el subtítulo en la línea del medio.
+  Para usarla: copiar a un proyecto de `hyperframes init`, poner la grabación de pantalla en #pantalla y el video de
+  Sergio en #cara (quitar los dos marcadores), y cambiar los subtítulos. Los tiempos van en segundos.
+-->
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --texto: #ffffff;
+        --acento: #ffd400; /* Santi usa amarillo; Erik, verde (#3ee0a1) */
+        --mayus: uppercase; /* Erik va en minúsculas: none */
+        --fuente: "Montserrat", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; font-family: var(--fuente); }
+      /* Mitad de arriba: la prueba. Mitad de abajo: la cara. */
+      #pantalla, #m-pantalla { position: absolute; left: 0; top: 0; width: 1080px; height: 960px; object-fit: cover; }
+      #cara, #m-cara { position: absolute; left: 0; top: 960px; width: 1080px; height: 960px; object-fit: cover; }
+      #m-pantalla { background: repeating-linear-gradient(90deg, #f4f4f6 0 120px, #e3e6ee 120px 240px); }
+      #m-cara { background: radial-gradient(circle at 50% 40%, #3b3f4a, #111 70%); }
+
+      /* Subtítulo en la línea del medio: 2 a 4 palabras, una en el acento, con contorno para leerse sobre las dos mitades. */
+      .sub {
+        position: absolute; top: 905px; left: 0; width: 100%; text-align: center;
+        color: var(--texto); font-size: 66px; font-weight: 900; text-transform: var(--mayus);
+        -webkit-text-stroke: 3px #000; paint-order: stroke fill;
+      }
+      .sub b { color: var(--acento); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <!-- Con los videos: <video id="pantalla" class="clip" data-start="0" data-duration="8" data-track-index="0" src="pantalla.mp4" muted playsinline></video>
+           <video id="cara" class="clip" data-start="0" data-duration="8" data-track-index="1" src="cara.mp4" muted playsinline></video> -->
+      <div id="m-pantalla" class="clip" data-start="0" data-duration="8" data-track-index="0"></div>
+      <div id="m-cara" class="clip" data-start="0" data-duration="8" data-track-index="1"></div>
+
+      <div id="s1" class="sub clip" data-start="0" data-duration="1" data-track-index="2">Esto <b>que</b> ven</div>
+      <div id="s2" class="sub clip" data-start="1" data-duration="1.5" data-track-index="2">es mi <b>asistente</b></div>
+      <div id="s3" class="sub clip" data-start="2.5" data-duration="1.5" data-track-index="2">y se <b>conecta</b></div>
+      <div id="s4" class="sub clip" data-start="4" data-duration="2" data-track-index="2"><b>directamente</b> a mí</div>
+      <div id="s5" class="sub clip" data-start="6" data-duration="2" data-track-index="2">Comenta <b>agente</b></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      gsap.utils.toArray(".sub").forEach((el) => {
+        tl.fromTo(el, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.1, ease: "power2.out" }, Number(el.dataset.start));
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
