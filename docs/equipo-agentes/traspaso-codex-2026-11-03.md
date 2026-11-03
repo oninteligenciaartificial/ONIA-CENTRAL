@@ -44,7 +44,7 @@ Cada tarea es de unos 30 minutos y va por PR (`AGENTS.md`, "Cómo se trabaja"). 
 
 **4. Embudo y oferta después del taller (Marketing y ventas).** Investigar cómo venden sus referentes y qué embudo conviene, con fuentes. El borrador que se habló (reel con "comentá IA", mensaje directo automático, cuestionario, WhatsApp) no está decidido ([ventas](../vision/ventas.md)). Responder solo a comentarios y mensajes directos va después de esto.
 
-**5. ONIA Platform y Desarrollo.** El runner de la CI de `onia-platform` se rearmó el 3-nov y quedó corriendo las pruebas ([`producto.md`](producto.md), "Runner de la CI"). Que terminara bien la primera prueba no estaba confirmado al escribir esto. Lo que sigue es diagnosticar el core, en solo lectura, sin código nuevo. El resto del orden sigue en [`platform.md`](platform.md) y [`producto.md`](producto.md).
+**5. ONIA Platform y Desarrollo.** El runner de la CI de `onia-platform` se rearmó el 3-nov y quedó corriendo las pruebas ([`producto.md`](producto.md), "Runner de la CI"). Que terminara bien la primera prueba no estaba confirmado al escribir esto. Lo que se propone después es diagnosticar el core en solo lectura (ver el punto 1, arriba). El resto del orden sigue en [`platform.md`](platform.md) y [`producto.md`](producto.md).
 
 ## 4. Cambios abiertos al 3-nov
 
