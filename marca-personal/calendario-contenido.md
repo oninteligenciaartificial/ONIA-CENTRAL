@@ -22,19 +22,13 @@ Del miércoles 4 al viernes 20-nov-2026. Lo armó Claude Code el 3-nov, a pedido
 
 ### Formato de edición de cada tipo
 
-Los formatos salen del [estilo de edición](guias/estilo-de-edicion.md), medidos en los reels de Erik.
+Los 3 videos del día van siempre en 3 formatos distintos. Las plantillas están en [`guias/plantillas/`](guias/plantillas/) y se explican en el [estilo de edición](guias/estilo-de-edicion.md).
 
-- **N:** cara a cuadro completo, con íconos ([plantilla](guias/plantillas/cara-con-iconos/index.html)), que es el formato de los avisos cortos.
-  - De 30 a 45 s.
-  - Plantilla firme, con 3 referencias.
-- **P:** cara con capturas que tapan la mitad de arriba, con tu trabajo real (el repo, los agentes, chats de prueba).
-  - De 30 a 60 s.
-  - Borrador, con 1 referencia.
-- **V:** cara con íconos paso a paso, o pantalla partida si explica un sistema con varias piezas.
-  - De 45 s a 2:20.
-  - Cara con íconos: firme. Pantalla partida: borrador, con 1 referencia.
+- **N · `titular-fijo`:** la noticia como titular, con tu opinión. De 30 a 45 s.
+- **P · `pantalla-partida`** cuando mostrás algo tuyo funcionando (la prueba arriba y tu cara abajo), o **`historia-con-imagenes`** cuando contás una historia o un antes y después, con voz en off. De 30 a 60 s.
+- **V · `cara-con-iconos`,** paso a paso. De 45 s a 2:20.
 
-Cuando el hilo de los formatos de los referentes sume plantillas nuevas, se agregan acá.
+`cara-con-iconos` ya es firme. Los otros tres esperan el sí de Sergio Urcullo. Si no los aprueba, se usa cara con íconos y se varía el plano.
 
 ### Trial reels: 1 por día (Propuesta)
 
@@ -68,23 +62,23 @@ Cada semana tiene un trabajo. Así el que te encuentra el primer día llega a la
 
 ## Día por día
 
-N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa misma mañana. Por eso abajo solo dice "noticia del día", salvo que ya haya una.
+N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa misma mañana. Por eso abajo solo dice "noticia del día", salvo que ya haya una. Si P no dice "historia", va en pantalla partida.
 
 ### Semana 1 · Quién soy y qué enseño
 
 **Mié 4-nov** · Estado: `escrito` ([guiones](guiones/2026-11-04.md))
 - 09:00 N · Anthropic pidió salir a la bolsa (9 días: va solo si no hay una noticia más nueva) · FUENTES
-- 12:30 P · Cada error de mis agentes se vuelve una regla · REGLAS
+- 12:30 P · Cada error de mis agentes se vuelve una regla · REGLAS · pantalla partida
 - 19:30 V · Por qué la IA te responde genérico · PEDIDO · trial: otro gancho
 
 **Jue 5-nov** · Estado: `pendiente`
 - 09:00 N · Noticia del día
-- 12:30 P · Por qué armo una empresa con IA y no con empleados
+- 12:30 P · Por qué armo una empresa con IA y no con empleados · historia
 - 19:30 V · Cómo darle tus archivos a la IA para que trabaje con lo tuyo · trial
 
 **Vie 6-nov** · Estado: `pendiente` · **Propuesta: se abre la lista del taller**
 - 09:00 N · Noticia del día
-- 12:30 P · Por qué voy a enseñar lo que estoy aprendiendo
+- 12:30 P · Por qué voy a enseñar lo que estoy aprendiendo · historia
 - 19:30 V · "Claude de 0 a 100": qué vas a poder hacer al terminar (muestra del taller, sin fecha) · trial
 
 **Sáb 7-nov** · Estado: `pendiente`
@@ -106,7 +100,7 @@ N es siempre la noticia oficial del día, de 7 días como mucho, y se elige esa 
 
 **Mar 10-nov** · `pendiente`
 - 09:00 N · Noticia del día
-- 12:30 P · Lo que me salió mal esta semana y qué cambié
+- 12:30 P · Lo que me salió mal esta semana y qué cambié · historia
 - 19:30 V · Revisar lo que escribe la IA: 3 cosas que siempre miro · trial
 
 **Mié 11-nov** · `pendiente`

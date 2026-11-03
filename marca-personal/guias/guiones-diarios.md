@@ -20,11 +20,19 @@ Esta guía junta lo que ya está analizado en el repo, con fuentes:
 
 Cada día lleva uno de cada tipo. Así los 3 videos no se parecen, y cada uno trabaja una parte distinta de la marca: estar al día, la historia de Sergio y enseñar.
 
-| Tipo | Para qué sirve | Duración | Edición (Propuesta) |
+| Tipo | Para qué sirve | Duración | Formato (Propuesta) |
 |---|---|---|---|
-| **N. Noticia o herramienta de IA** | Que te sigan para estar al día. Es el gancho de Santiago ("México lanzó su chatbot… y se rompió") y de Iman ("Breaking: AI has just opened up…") | 30 a 45 s | Cara + captura de la fuente o de la herramienta |
-| **P. Proceso: armar la empresa con IA** (si se dice que es estudiante lo confirma Sergio Urcullo, junto con la edad) | Que te sigan por vos. Es el detrás de escena de Erik (homelab, 254 mil vistas en el short) y el "mi empresa la llevan agentes" | 30 a 60 s | B-roll del día y la pantalla real del repo o de los agentes |
-| **V. Valor: enseñar una cosa** | Que te guarden y compartan. Es el tutorial de Enrique (un reel por día, de 46 a 113 s) | 45 a 90 s | Plantilla "cara con íconos" ([estilo de edición](estilo-de-edicion.md)) |
+| **N. Noticia o herramienta de IA** | Que te sigan para estar al día. Es el gancho de Santiago ("México lanzó su chatbot… y se rompió") y de Iman ("Breaking: AI has just opened up…") | 30 a 45 s | `titular-fijo` |
+| **P. Proceso: armar la empresa con IA** (si se dice que es estudiante lo confirma Sergio Urcullo, junto con la edad) | Que te sigan por vos. Es el detrás de escena de Erik (homelab, 254 mil vistas en el short) y el "mi empresa la llevan agentes" | 30 a 60 s | `pantalla-partida` si muestra algo funcionando; `historia-con-imagenes` si cuenta una historia o un antes y después |
+| **V. Valor: enseñar una cosa** | Que te guarden y compartan. Es el tutorial de Enrique (un reel por día, de 46 a 113 s) | 45 s a 2:20 | `cara-con-iconos`, paso a paso |
+
+**Los 3 videos del día van en 3 formatos distintos,** para que no se vean iguales. Los formatos y sus plantillas están en el [estilo de edición](estilo-de-edicion.md) y en [`plantillas/`](plantillas/):
+- `cara-con-iconos`: avisos de unos 30 s, o paso a paso de 1:30 a 2:20. Es firme, ya en `main`.
+- `titular-fijo`: listas y opiniones.
+- `pantalla-partida`: demos, con la prueba arriba y la cara abajo.
+- `historia-con-imagenes`: historias o antes y después, con voz en off y sin cámara.
+
+Los últimos tres salen del hilo de los formatos de Erik y esperan el sí de Sergio Urcullo. Si no los aprueba, se vuelve a cara con íconos y se varía el plano.
 
 ## La forma de cada guion
 
@@ -111,7 +119,7 @@ Sergio Urcullo lo contó el 3-nov, en el chat del proyecto. Cada tema baja en cu
 - Recurso que se manda: … (dónde está)
 - Llamado (últimos 5 s): "Comentá <PALABRA> y te mando <el recurso>."
 - Tomas: qué se graba a cámara y qué es pantalla o b-roll.
-- Edición: plantilla.
+- Formato: una de las plantillas de [`plantillas/`](plantillas/). Los 3 del día van en 3 formatos distintos.
 - Fuente: enlace y fecha (obligatorio en N).
 ```
 
