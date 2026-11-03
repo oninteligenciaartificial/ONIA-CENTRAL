@@ -5,7 +5,7 @@ description: Lleva un issue de GitHub de ONIA-CENTRAL de punta a punta. Lo toma,
 
 # Llevar un issue de punta a punta
 
-La usa la sesión del área (el jefe de su proyecto, en Claude o en Codex): toma el issue, lanza a quien escribe y a quien revisa, y lo sigue hasta el merge. Se escribió cuando orquestaba Hermes, que desde el 31-oct ya no orquesta (`AGENTS.md`, "Hermes y Grok Bot: historia"). Donde los pasos dicen "Hermes", lo hace la sesión que usa la skill. Los comandos `hermes` (como `hermes usage`) no se usan: lo que dependa de ellos se marca "sin medir".
+La usa la sesión del área (el jefe de su proyecto, en Claude o en Codex): toma el issue, lanza a quien escribe y a quien revisa, y lo sigue hasta el merge. Se escribió cuando orquestaba Hermes, que desde el 31-oct ya no orquesta (`AGENTS.md`, "Hermes y Grok Bot: historia"). Donde los pasos dicen "Hermes", lo hace la sesión que usa la skill. Ojo: el "Freno por cuota" lee la cuota de ChatGPT con `hermes usage`, y Hermes ya no está en la PC (`AGENTS.md`). Sin esa lectura, el freno frena, así que esta skill no lanza nada hasta que Desarrollo arme otra forma probada de leer la cuota. Mientras tanto, el trabajo del día va con [`encargar`](../encargar/SKILL.md).
 
 ## Frenos
 
