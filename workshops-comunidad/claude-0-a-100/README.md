@@ -1,0 +1,42 @@
+# Claude de 0 a 100
+
+El primer taller de ONIA: una serie de 3 clases en vivo por Meet, el martes 3, el jueves 5 y el sábado 7 de noviembre de 2026, a Bs 50 cada clase o Bs 120 las tres. El plan, con las decisiones de Sergio Urcullo, está en [`../plan-meta-ads-borrador.md`](../plan-meta-ads-borrador.md), del [PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41).
+
+**Estado: borrador para que lo apruebe Sergio Urcullo con captura.** Todo esto lo ve un cliente. Nada se publica, se manda, se activa ni se gasta sin su sí.
+
+| Archivo | Qué tiene |
+|---|---|
+| [`temario.md`](temario.md) | Las 3 clases minuto a minuto, el ejercicio de cada una, el de reserva y lo que hay que probar con una cuenta gratis |
+| [`whatsapp.md`](whatsapp.md) | La bienvenida, las respuestas rápidas, la confirmación, el recordatorio y el aviso de que no hay devolución, en las versiones de esta semana y desde el miércoles 4 |
+| [`anuncio.md`](anuncio.md) | Los guiones de los 2 videos, el texto del anuncio, la publicación gratis del viernes y la campaña para cargar en pausa |
+| [`lista-jueves-viernes.md`](lista-jueves-viernes.md) | Lo que hace Sergio Urcullo el jueves 29 y el viernes 30, en orden |
+| [`material/`](material/) | Dos archivos de una panadería inventada, para practicar en clase y para la demo del video 2. Ningún dato es real |
+
+## Lo que ya decidió
+
+**Desde el miércoles 4 se venden la segunda edición y las clases sueltas:** "2ª edición y sueltas", elegido el 29-oct-2026, según el [estado del issue #6 (referentes y workshop) de esa noche](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/6#issuecomment-6513341079). La [constancia del PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6527844776) trae sus palabras, "2ª edición y sueltas (Recomendado)", y dice que contestó con botones el 30-oct, en la sesión coordinadora. Acá va el 29, porque el estado del issue se escribió antes. Es la segunda edición, el martes 10, el jueves 12 y el sábado 14, a Bs 50 cada clase o Bs 120 las tres, y las clases 2 y 3 de esta semana, sueltas, a Bs 50. Las versiones B de [`whatsapp.md`](whatsapp.md) son para esto.
+
+**Quien hizo la clase 1 completa la serie por Bs 70, hasta el jueves 5:** "Bs 70 hasta el jueves 5 (Recomendado)", elegido con un botón el 30-oct-2026 en la sesión coordinadora ([constancia en el PR #41 (plan de Meta Ads)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/41#issuecomment-6527844776)). Se ofrece al cierre de la clase 1 del martes 3 con "Tu clase 1 ya cuenta: completá la serie por Bs 70 (sueltas son Bs 100)", y vale hasta que empiece la clase 2, el jueves 5 a las 19:00. Con la clase 1 suma Bs 120, lo mismo que la serie. Va sin contadores ni cupos inventados.
+
+## Lo que falta decidir
+
+Las decide Sergio Urcullo. La primera opción de cada una es la recomendada. La 1, los Bs 70, ya está decidida, arriba: las demás siguen con su número.
+
+2. **¿Qué tope de gasto lleva "ONIA Ads"?**
+   - **US$70, lo de los 7 días a US$10 (recomendada).** Con presupuesto diario, un día puede gastar hasta el 175% del presupuesto, y una semana, de domingo a sábado, hasta 7 veces el diario ([ayuda de Meta](https://es-la.facebook.com/business/help/190490051321426)). La campaña va del sábado 31 al viernes 6 y cae en dos semanas de Meta: sin tope de cuenta, el gasto puede pasar los US$70. El límite de gasto de la cuenta pausa los anuncios al llegar a US$70 ([ayuda de Meta](https://es-la.facebook.com/business/help/141820733085330)).
+   - US$100, con margen para seguir unos días si das el sí.
+   - Sin tope de cuenta, solo el presupuesto diario.
+3. **¿Se carga la campaña con el conector de Meta?**
+   - **Sí: la carga un agente como borrador, sin gastar, y vos la revisás con captura antes de publicarla (recomendada).** La carga como elegiste el 30-oct para el [issue #55 (campañas de Meta en pausa con tope)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/55#issuecomment-6527845355), "Sesión con frenos (Recomendado)": una sesión de la app de Claude pregunta antes de cada herramienta, no puede activar ni cambiar nada, y después de cada paso comprueba que quedó en pausa o en borrador.
+   - No: la cargás vos a mano con [`anuncio.md`](anuncio.md).
+   - Todavía no.
+4. **¿Va "Taller independiente, no oficial de Anthropic"?**
+   - **Sí, en el anuncio y en "/taller" (recomendada).** El nombre lleva la marca Claude: lo legal queda a confirmar con un abogado (plan, "Mensaje").
+   - Solo en "/taller".
+   - En ninguno.
+5. **¿A quién le escribís uno a uno para ofrecerle la próxima clase o edición?**
+   - **Solo a quien respondió SÍ a la pregunta de permiso (recomendada).** Es lo que propone el [PR #66 (plan de marca personal)](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/66), todavía sin aprobar, por el DS 1793. Es un tema legal: a confirmar con un abogado.
+   - A todos los que pagaron. El plan del taller dice que a quien paga se lo etiqueta "para avisarle de la próxima edición".
+   - A nadie uno a uno: solo en el grupo de la clase.
+
+Y un resultado: si el temario anda con una cuenta gratis, el anuncio dice "con la cuenta gratis" y "/taller" dice "cuenta gratis". Sale de la prueba del jueves 29 ([`temario.md`](temario.md), al final).

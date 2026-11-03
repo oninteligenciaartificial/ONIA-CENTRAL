@@ -1,0 +1,16 @@
+Panadería La Esquina. Negocio inventado para practicar en el taller "Claude de 0 a 100". Ningún dato es real.
+
+Qué somos: una panadería de barrio en Cochabamba, con 4 personas en el equipo. Abrimos de lunes a sábado, de 6:30 a 20:30, y el domingo de 7:00 a 12:00.
+
+Qué vendemos y a cuánto:
+- Marraqueta: Bs 0,50
+- Cuñapé: Bs 2
+- Empanada de queso: Bs 3
+- Salteña: Bs 7 (solo de martes a domingo, hasta las 11:00)
+- Porción de torta: Bs 8. Tortas enteras por encargo, con 48 horas de anticipación.
+
+Cómo cobramos: efectivo y QR. No hacemos envíos.
+
+Cómo hablamos con los clientes: con cercanía, de vos, en mensajes cortos. Nunca prometemos un encargo sin confirmar que hay lugar en el horno.
+
+Lo que más nos cuesta: contestar los pedidos de tortas por WhatsApp a tiempo, y saber qué producto conviene hacer más cada semana.
