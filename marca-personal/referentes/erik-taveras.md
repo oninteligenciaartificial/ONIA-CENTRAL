@@ -2,6 +2,8 @@
 
 Investigado el 29-oct-2026 por Claude Code (subagente de la sesión del issue #6).
 
+Actualización del 3-nov-2026, con lo que cambió, la frecuencia, los ganchos, los anuncios y qué copiar: [cómo trabaja](erik-taveras-como-trabaja-2026-11-03.md).
+
 Dominicano que vive en Estados Unidos. Es desarrollador backend (Python y Django) y enseña automatización con n8n, agentes de IA, WhatsApp e IA local en español para Latinoamérica. Además de crear contenido, tiene producto propio (TalosFlow) y una consultora (Taveras Solutions LLC).
 
 Todas las fuentes se consultaron el 29-oct-2026.
