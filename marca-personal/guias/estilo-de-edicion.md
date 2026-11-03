@@ -38,6 +38,7 @@ Para qué sirve cada formato es una propuesta del autor, no algo que se haya med
   - **"AI edits my YouTube":** el título con el logo de YouTube aparece en los primeros cuadros y después arriba va un encabezado por paso ("1 Install Video Use"). Las ventanas van sobre fondo gris claro, la frase va en una pastilla gris abajo y se alterna con la cara, con la frase en blanco a media altura.
   - **"Codex edits my YouTube":** el título "Codex edits my" con el logo de YouTube queda fijo, sin la cara y con un texto fijo abajo, sin pastilla.
   - **"Claude Motion Graphics":** fondo crema, y casi la mitad de las escenas son negras, con ejemplos de animaciones. No tiene título fijo.
+  - Medido el 3-nov con el archivo y HyperFrames 0.9.6 (`measure cuts`, `measure events` y `audio`): "Codex edits my YouTube", 26,9 s con 1 corte duro, 13 cambios en pantalla y nada quieto más de 3,03 s; voz (0,8), a -14,1 LUFS. "AI edits my YouTube", 34,7 s con 12 cortes duros (mediana de toma 2,07 s), 21 cambios y nada quieto más de 2 s; voz (0,9), a -14,1 LUFS. "Claude Motion Graphics", 30,2 s con 18 cortes duros (mediana 1,03 s), 22 cambios y nada quieto más de 1,3 s; voz (0,88), a -14,1 LUFS.
 
 ## Reglas
 
