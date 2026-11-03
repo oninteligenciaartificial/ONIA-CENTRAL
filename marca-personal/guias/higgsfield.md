@@ -71,9 +71,28 @@ Calendario del 4 al 20-nov: 17 días, 3 videos por día, 51 videos ([calendario]
 
 La B entra en los 432,93 créditos del 29-oct con cualquiera de los dos precios, si el saldo sigue ahí: no se pudo comprobar. La C entra solo con el precio de 22. El arreglo de la tabla de [anuncios](anuncios.md) queda para otro cambio.
 
+## Formato "animación 3D" (el reel "estilo Disney" de Sergio)
+
+Lo pidió Sergio Urcullo el 3-nov, con el reel https://www.instagram.com/reel/DfKFEcsOUHB/: "Mira ese formato disney, eso es a lo que me refiero que aprenda higgsfield".
+
+**El reel no se pudo ver todavía.** Desde la nube, Instagram rechaza la conexión, y la página no deja que la lea un agente. Así que no se sabe con qué está hecho, qué modelos usa ni cuánto dura. Lo que sigue son las tres formas de lograr ese aspecto con Higgsfield. Cuál usa el reel queda **sin confirmar**, hasta verlo con la skill [`editar-video`](../../.agents/skills/editar-video/SKILL.md), paso 1 de "Aprender de un video". Para eso, Sergio aprobó el 3-nov bajar reels de referencia con gallery-dl desde su PC.
+
+| Forma | Cómo se hace | Qué queda | Costo |
+|---|---|---|---|
+| **1. Redibujar el video de Sergio** | Sergio graba como siempre, y un estilo de Genjutsu lo redibuja en 3D animado, con el mismo movimiento, cámara y encuadre [W2]. Los estilos más cercanos al cine animado familiar son "Warm Painterly 3D Animation", "Painterly Cinematic 3D" y "Rounded Toy CGI" [W2] | Su actuación y su voz, con el aspecto de una película animada | Sin precio publicado: el conector lo muestra antes de generar, con el video ya subido [W2]. Como referencia, Genjutsu Lite cuesta 32 créditos por 15 s a 720p [P1], pero no se confirmó que sea la misma herramienta |
+| **2. Personaje y escenas** | Primero un personaje de Sergio en 3D (`character-sheet`, o imágenes con Nano Banana Pro); después cada escena como imagen, y cada imagen se anima con Seedance [W1] | Una historia con escenas nuevas que no se pueden grabar | Por escena de 5 s: unos 2 créditos la imagen [P1] y el video, unos 22 [P1] o 30 según la misma página el 29-oct ([anuncios](anuncios.md)). Un reel de 30 s, con 6 escenas: de 144 a 192 créditos, sin contar el personaje, que no tiene precio publicado |
+| **3. Cuento narrado** | El flujo `faceless-video` arma un video narrado con un estilo fijo no realista, una sola voz y subtítulos; tiene los tipos "Picture Story" y "Fairy Tale & Myth" [W1] | Sin cara: voz en off sobre escenas animadas | Sin precio fijo publicado; usa varias generaciones de imagen, video y voz [W1] |
+
+Lo que pesa para elegir (Propuesta):
+- **La forma 1 es la única que conserva a Sergio actuando,** y la cara real es lo que genera confianza ([anuncios](anuncios.md), "Con Higgsfield"). Encaja como un formato especial para P (proceso, contado como historia), no para todos los días.
+- **La forma 2 es la única con un costo que se puede calcular:** de 144 a 192 créditos por reel, sin el personaje. Es entre un tercio y casi la mitad de los 432,93 créditos del 29-oct.
+- **Nombre y marca:** "Disney" y "Pixar" son marcas ajenas. No se usan en los títulos, los textos ni las palabras clave del video; el formato se llama "animación 3D". Si hace falta nombrarlas, es tema legal, a confirmar con un abogado (`docs/lecciones.md`, "Anuncios y venta").
+- **Sugerencia de prueba, antes de gastar:** ver el reel, elegir la forma y pedir el precio exacto en el conector con 1 video corto de Sergio, sin generar.
+
 ## Lo que falta investigar (sin la cuenta)
 
 - Probar en la PC si las imágenes animadas en HyperFrames se ven bien, con una imagen gratis de prueba, antes de gastar créditos.
+- Ver el reel "estilo Disney" (arriba) y anotar la forma, los modelos y la duración.
 - Medir 3 reels de Santiago Muñoz con b-roll generado, con `editar-video`, para saber cuántos segundos de b-roll usa y dónde.
 
 ## Fuentes
@@ -82,3 +101,4 @@ La B entra en los 432,93 créditos del 29-oct con cualquiera de los dos precios,
 - [P2] Higgsfield, "Seedance 2.0 Pricing", con precios "verificados en octubre de 2026": https://higgsfield.ai/blog/seedance-2-0-pricing-2026 (consultada el 3-nov-2026).
 - [P3] Higgsfield, "How to make YouTube Shorts with AI", 2-jul-2026: https://higgsfield.ai/blog/how-to-make-youtube-shorts-with-ai (consultada el 3-nov-2026).
 - [W1] Catálogo de flujos del conector de Higgsfield (`get_workflow_instructions`, sin argumentos y con `reel-effects`), leído el 3-nov-2026 desde la sesión de Claude Code.
+- [W2] Galería de estilos de Genjutsu del conector de Higgsfield (`get_presets`, `source: genjutsu`, `category: genjutsu-styles`), leída el 3-nov-2026: 20 estilos que "redibujan el video del usuario en este aspecto; el movimiento, la cámara y el encuadre quedan como se grabaron".
