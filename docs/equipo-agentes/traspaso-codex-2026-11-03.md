@@ -6,11 +6,11 @@ Este archivo manda sobre el "Ahora" de los estados de `docs/equipo-agentes/` don
 
 ## 1. Qué cambió el 3-nov
 
-- **La visión de ONIA está en [`docs/vision/`](../vision/README.md):** los 6 puntos que cerró Sergio Urcullo y su contexto (meta, plata, horarios). No se copia acá. Al escribir esto estaba en un cambio sin mergear, rama `claude/project-thread-e8umfe`; si `docs/vision/` no está en `main`, se lee de esa rama con `git show origin/claude/project-thread-e8umfe:docs/vision/README.md`.
+- **La visión de ONIA está en [`docs/vision/`](../vision/README.md):** los 6 puntos que repasó Sergio Urcullo (cada archivo dice qué cerró y qué sigue abierto) y su contexto (meta, plata, horarios). No se copia acá. Al escribir esto estaba en un cambio sin mergear, rama `claude/project-thread-e8umfe`; si `docs/vision/` no está en `main`, se lee de esa rama con `git show origin/claude/project-thread-e8umfe:docs/vision/README.md`.
 - **Plan número uno: el taller**, para sacar ingresos ya ([cómo mejorar](../vision/como-mejorar.md)). Meta: Bs 3.000 = 60 pagos de Bs 50 ([contexto de Sergio](../vision/contexto-sergio.md)).
 - **La fecha del taller del 4, 5 y 6-nov está en pausa** desde el 3-nov, por decisión de Sergio Urcullo en el proyecto Onia (sin enlace). Todo lo que en el repo dice "4, 5 y 6-nov" (estados, campaña, textos, página) queda como borrador hasta que él fije otra fecha. No se lanza, se publica ni se gasta nada con la fecha vieja.
 - **3 videos por día, con calidad alta.** Sergio Urcullo rechazó bajar a 1. Su principio: "para que algo funcione, tiene que verse bien, tiene que funcionar bien, tiene que estar bien hecho".
-- **ONIA Platform, congelada:** solo se termina el core (inventario y chatbot de WhatsApp sin errores) y, por ahora, solo se diagnostica ([ONIA Platform](../vision/onia-platform.md)).
+- **ONIA Platform:** los módulos de rubro quedan congelados y se termina solo el core, empezando por inventario y chatbot de WhatsApp sin errores ([ONIA Platform](../vision/onia-platform.md)). Mientras el taller es la prioridad, la propuesta del proyecto Onia fue diagnosticar el core en solo lectura antes de tocar código; Sergio Urcullo no lo decidió.
 
 ## 2. La línea de producción del contenido
 
@@ -20,7 +20,7 @@ Para sostener 3 videos por día hacen falta 4 pasos. Al 3-nov:
 |---|---|
 | 1. Ideas y guiones | No existe un sistema diario. Lo empezó un hilo el 3-nov (abajo, área 2). |
 | 2. Grabación | La hace Sergio Urcullo, en bloque, después de las 19:00. Necesita guiones listos. |
-| 3. Edición | Plantilla "cara con íconos" (de Erik Taveras) lista para firme, esperando el sí de Sergio. Faltan 2 o 3 formatos más. |
+| 3. Edición | Plantilla "cara con íconos" (de Erik Taveras) en firme desde el 3-nov. Faltan 2 o 3 formatos más. |
 | 4. Publicación y embudo | Sin investigar a fondo. Hasta que se decida, una sola llamada a la acción: anotarse en la lista del taller ([cómo mejorar](../vision/como-mejorar.md), guía 3). |
 
 ## 3. Qué sigue, por prioridad
@@ -29,7 +29,7 @@ Cada tarea es de unos 30 minutos y va por PR (`AGENTS.md`, "Cómo se trabaja"). 
 
 **1. Taller y venta (Marketing y ventas).**
 - Pedirle a Sergio Urcullo la fecha nueva del taller, como opción con la recomendada marcada. Con esa fecha, poner al día textos, página y campaña, cada uno con su sí y captura.
-- Decidir con él qué se ofrece después del taller. La recomendación de la investigación: una clase gratis como entrada, el taller de Bs 50 y una comunidad paga al final. La investigación está en el [PR #180](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/180), que espera su respuesta.
+- El camino ya lo cerró Sergio Urcullo: contenido, mensaje directo, clase gratis, taller de Bs 50 y comunidad paga ([ventas](../vision/ventas.md), "Los dos caminos"). Falta definir el embudo exacto y qué incluye la comunidad paga (precio y contenido), y llevárselo como opciones. La investigación de la campaña está en el [PR #180](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/180).
 - Lo que sigue esperando a Sergio Urcullo para cobrar (pago de prueba con QR, página y cuenta de Meta con tarjeta, OBS): en [`pendientes-de-sergio.md`](../pendientes-de-sergio.md), "Ahora". Las fechas de esa tabla son las viejas.
 
 **2. Guiones diarios (Marketing y ventas).**
@@ -39,7 +39,7 @@ Cada tarea es de unos 30 minutos y va por PR (`AGENTS.md`, "Cómo se trabaja"). 
 - Los guiones de la semana del 3 al 8-nov del [PR #139](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/139) son anteriores a este plan: se rescata lo que sirva y el resto se cierra, con su sí.
 
 **3. Formatos de edición (Marketing y ventas).**
-- La plantilla "cara con íconos" pasa a firme con el [PR #183](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/183), que espera el sí de Sergio Urcullo. El análisis de Erik está en el [PR #177](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/177). La skill es [`editar-video`](../../.agents/skills/editar-video/SKILL.md).
+- La plantilla "cara con íconos" quedó en firme el 3-nov ([PR #183](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/183), mergeado). El análisis de Erik está en el [PR #177](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/177). La skill es [`editar-video`](../../.agents/skills/editar-video/SKILL.md).
 - Lo siguiente: el mismo método (3 reels por formato, cuenta de Instagram solo en lectura) con 2 o 3 referentes de formato distinto al de Erik, de su lista: gonzaloteba, jorge.darek, garyvee, herasmedia, softgirlnocode, sanmunoz.ia, imangadzhi, hormozi. Hecho cuando hay 3 o 4 plantillas en el repo. Los formatos y los guiones tienen que encajar.
 
 **4. Embudo y oferta después del taller (Marketing y ventas).** Investigar cómo venden sus referentes y qué embudo conviene, con fuentes. El borrador que se habló (reel con "comentá IA", mensaje directo automático, cuestionario, WhatsApp) no está decidido ([ventas](../vision/ventas.md)). Responder solo a comentarios y mensajes directos va después de esto.
@@ -53,8 +53,7 @@ Los que importan para el plan. Cada uno espera el sí de Sergio Urcullo, o su re
 | Qué | Dónde | Espera |
 |---|---|---|
 | Visión de ONIA, 6 puntos y contexto | [PR #186](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/186) | Sí de Sergio. El [PR #182](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/182) es una versión vieja con solo el punto 1: se cierra sin mergear cuando entre el #186. |
-| Plantilla "cara con íconos" en firme | [PR #183](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/183) | Sí de Sergio |
-| Investigación para vender el taller | [PR #180](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/180) | Qué se ofrece después del taller |
+| Investigación para vender el taller | [PR #180](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/180) | Respuesta de Sergio a sus opciones |
 | Análisis de Erik Taveras | [PR #177](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/177) | Sí de Sergio |
 | Mapa de campañas de Meta y guiones de anuncios | [PR #176](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/pull/176) | Fecha nueva del taller |
 
