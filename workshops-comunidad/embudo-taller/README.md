@@ -32,6 +32,19 @@ Lo que se repite:
 4. **El workshop se vende directo,** sin clase gratis antes (Erik y Enrique). La clase gratis o el reto la usan los que venden algo caro (Santiago, Iman).
 5. **La comunidad paga tiene precio de fundador** que sube por fecha o por cantidad de miembros, y queda congelado para quien entra antes (Erik y Santiago).
 
+### Lo que se vio en Instagram el 3-nov (solo lectura)
+
+Detalle y fuentes en [`referentes-como-venden-2026-11-03.md`](../referentes-como-venden-2026-11-03.md). Sobre 9 cuentas:
+
+- **5 de 9 venden con palabra clave en los comentarios y respuesta automática:** Víctor Heras, Santi Muñoz, Erik Taveras, softgirlnocode y Hormozi (de Hormozi se vio la palabra, no la respuesta). El pie del reel dice "Comenta X y te mando…".
+- **La respuesta pública rota varias frases**, por ejemplo Erik: "Te lo envié por mensaje privado 📩 si no lo ves, revisa tus solicitudes de mensaje". Es lo que ya dejé en `textos.md`, sección 1a.
+- **Dos mandan a un cuestionario** antes de vender: Hormozi (nombre y contacto, para su equipo de ventas) y Víctor Heras (admisión para una consultoría 1 a 1). Erik tiene un centro de enlaces con tres caminos ("No sé por dónde empezar", "Tengo un problema concreto", "Quiero un proyecto completo"). Las preguntas siguientes de los dos primeros no se vieron.
+- **Las comunidades de IA en español cobran de US$59 a US$64 por mes:** Erik a US$59 (sube a US$79 a los 250 miembros) y Santi a US$64. Las dos con una clase en vivo y una garantía (14 y 30 días).
+- **El producto de entrada barato existe:** Jorge Darek vende una guía a 4,95 € como lanzamiento con sorteo; softgirlnocode, un curso de US$89 con preventa a US$71,20.
+- **No se pudo ver** qué mensaje llega por DM ni las preguntas siguientes de los cuestionarios: habría que comentar o contestar, y eso necesita el sí de Sergio Urcullo.
+
+Qué cambia en esta recomendación: nada de fondo. Se confirma la palabra clave con respuesta automática rotativa. El cuestionario de `textos.md`, sección 2, sigue como opción: dos de nueve lo usan, pero para vender consultoría o llamadas, que no es lo que se vende acá.
+
 ## 2. Recomendación
 
 **Recomiendo vender el taller directo, sin clase gratis antes, y usar el taller como la clase que vende la comunidad.** Es lo que hacen los dos referentes más parecidos a ONIA (en español, workshop barato y sin anuncios). Una clase gratis suma una noche más de Sergio Urcullo y un paso más antes de un pago de Bs 50. Esto cambia lo que dije en la [investigación de la campaña](../investigacion-campana-taller-2026-11-03.md), sección 6, opción 2: ahí recomendaba probar una clase gratis porque es lo más repetido en los anuncios de la región, pero esos anuncios venden cosas más caras.
