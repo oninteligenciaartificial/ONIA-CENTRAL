@@ -38,9 +38,10 @@ Requisitos: Node.js 22 o más nuevo y FFmpeg, los dos instalados. La guía ofici
 
 ## Aprender de un video
 
+0. **Tres referencias del mismo estilo.** Un formato se copia recién con tres videos parecidos, del mismo creador o de varios: lo que se repite es el estilo y lo que cambia es el tema. Con menos, la plantilla queda en borrador. El método sale del video de Lorena Bordonaba "REA + Ingeniería inversa = Clona videos con Claude", del 30-oct-2026 (https://www.youtube.com/watch?v=7Z8BTSx8TNs), visto el 3-nov.
 1. **Conseguir la referencia:**
-   - **Con el archivo** (en `E:\ONIA\recepcion\` o bajado con el sí de Sergio): se sigue en el paso 2.
-   - **Sin el archivo, en Instagram:** con el navegador de Ubuntu (`AGENTS.md`, "Navegador de Ubuntu"), se abre el reel, se pausa el `<video>` y se arma una hoja de 20 cuadros con `browser_evaluate`: se mueve `currentTime`, se dibuja cada cuadro en un `canvas` y se muestra la hoja como imagen para sacarle captura. Conviene que los primeros 10 cuadros caigan en los primeros 8 s, donde está el gancho. Así no hay audio ni cortes exactos, y la guía lo dice. Al terminar se cierra el navegador, porque si no el perfil queda bloqueado.
+   - **Con el archivo** (en `E:\ONIA\recepcion\` o bajado con el sí de Sergio): se sigue en el paso 2. Para bajar está [gallery-dl](https://github.com/mikf/gallery-dl), instalado el 3-nov en `~/.onia-edicion/venv/bin/gallery-dl` (versión 1.31.10, de PyPI). Instagram no deja bajar sin una sesión iniciada, y pasarle las cookies del navegador del equipo es usar el login de Sergio fuera del navegador: pide su sí.
+   - **Sin el archivo, en Instagram:** con el navegador de Ubuntu (`AGENTS.md`, "Navegador de Ubuntu"), se abre el reel, se pausa el `<video>` y se arma una hoja de 20 cuadros con `browser_evaluate`: se mueve `currentTime`, se dibuja cada cuadro en un `canvas` y se muestra la hoja como imagen para sacarle captura. Lo mejor es un cuadro por segundo con su tiempo escrito: un reel de 30 s da 30 cuadros en una sola imagen. Si el reel es largo, que los primeros 10 caigan en los primeros 8 s, donde está el gancho. Así no hay audio ni cortes exactos, y la guía lo dice. Al terminar se cierra el navegador, porque si no el perfil queda bloqueado.
 2. **Medir** (con el archivo):
    - `$HF measure probe ref.mp4`: tamaño, cuadros por segundo y duración.
    - `$HF measure cuts ref.mp4`: cada corte, incluidos los acercamientos dentro de una toma.
@@ -73,7 +74,7 @@ Requisitos: Node.js 22 o más nuevo y FFmpeg, los dos instalados. La guía ofici
 ## Mejorar
 
 - Cada corrección de Sergio sobre una edición se anota en el mismo turno: si es de estilo, en la guía, y si es de cómo usar la skill, en "Errores comunes", abajo. Entra por PR, como dice el `AGENTS.md`, "Errores y lecciones".
-- Cuando un formato de la guía ya tiene tres videos de referencia, se puede pasar a una plantilla de HyperFrames dentro de `marca-personal/guias/`, por PR.
+- **Plantillas por formato:** cada formato de la guía tiene, o va a tener, su plantilla de HyperFrames en `marca-personal/guias/plantillas/<formato>/index.html`, para no armar cada video desde cero. Se edita con lo aprendido de cada referencia nueva y se prueba con `$HF check` y un render antes del PR. Con tres referencias deja de ser borrador.
 
 ## Errores comunes
 
