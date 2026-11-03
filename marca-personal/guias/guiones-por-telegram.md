@@ -2,7 +2,7 @@
 
 3-nov-2026, por Claude Code (hilo "Armar los guiones diarios de contenido"). **Es una propuesta: no se construyó nada.** Toca el VPS, que es producción, y necesita un bot de Telegram a nombre de Sergio Urcullo, así que antes de armarla hace falta su sí (`AGENTS.md`, "Frenos").
 
-**Para qué:** que los 3 guiones del día siguiente le lleguen a Sergio Urcullo al celular a las 19:00, cuando sale del colegio y el gimnasio, sin abrir GitHub ni la PC.
+**Para qué:** que los 3 guiones del día siguiente le lleguen a Sergio Urcullo al celular a las 19:00, la hora desde la que está libre entre semana (lo dijo él el 3-nov, en el chat del proyecto), sin abrir GitHub ni la PC.
 
 ## Cómo funcionaría
 
@@ -16,7 +16,7 @@ Un workflow de n8n en el VPS, con tres nodos oficiales:
 2. **GitHub, "File: Get"**, que lee `marca-personal/guiones/<mañana>.md` de `main` en ONIA-CENTRAL ([docs de n8n](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.github/)). Si no existe, manda "Hoy no hay guiones" en vez de nada, para que se note.
 3. **Telegram, "Send Message"**, un mensaje por guion, para que cada uno se lea solo ([docs de n8n](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/)).
 
-El token del bot se guarda como credencial de n8n, nunca en el repo ni en el chat (`CLAUDE.md` de onia-platform, "n8n VPS": credencial de n8n antes que `$env`). El workflow exportado, sin secretos, va por PR al repo de su producto.
+El token del bot se guarda como credencial de n8n, nunca en el repo ni en el chat (`CLAUDE.md` de onia-platform, "n8n VPS": credencial de n8n antes que `$env`). Para leer el repo, el nodo de GitHub necesita también un token de GitHub de solo lectura de ONIA-CENTRAL, guardado igual, como credencial de n8n. En qué repo vive el workflow exportado, sin secretos, lo decide Desarrollo, y entra por PR.
 
 ### Escribir: tres opciones
 
@@ -34,7 +34,8 @@ El token del bot se guarda como credencial de n8n, nunca en el repo ni en el cha
 
 1. **El sí a la opción** (A, B o C), porque toca producción y B gasta.
 2. **Crear el bot** en Telegram: abrir @BotFather, mandar `/newbot` y seguir los pasos hasta que da el token ([guía oficial de Telegram](https://core.telegram.org/bots/tutorial)). El token es como una contraseña: no va por chat; se carga directo en la credencial de n8n.
-3. **Mandarle un mensaje al bot** desde su Telegram, para que el bot pueda escribirle.
+3. **Crear un token de GitHub de solo lectura** de ONIA-CENTRAL y cargarlo directo en la credencial de n8n ([docs de GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)).
+4. **Mandarle un mensaje al bot** desde su Telegram, para que el bot pueda escribirle.
 
 ## Hecho cuando
 
