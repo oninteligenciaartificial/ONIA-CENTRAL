@@ -52,15 +52,20 @@ Lo propuso el proyecto Onia el 3-nov. **Sergio Urcullo todavía no lo aprobó:**
 
 | Cuándo | Qué |
 |---|---|
-| 3 al 6-nov | Plantillas de edición, guía de guiones, investigación del embudo y la oferta, y este traspaso. |
-| Sábado 7 y domingo 8-nov | Grabar en bloque de 15 a 20 videos. Higgsfield para planos y elementos de IA: son generaciones pagas, cada una con su sí (`AGENTS.md`, "Frenos"). |
-| Desde el 9-nov | Publicar 3 videos por día, sin anuncios. Cada publicación, con su sí. |
-| 9 al 13-nov | n8n con mensaje directo automático en Instagram, página con cuestionario y lista, guiones por Telegram y edición en serie. |
-| 13 y 14-nov | Probar el embudo de punta a punta, antes de que venza Codex el 14. |
-| Lunes 16-nov | Lanzar la campaña: primero sin pagar, y anuncios pagos con las primeras ventas. |
-| Fines de noviembre | Taller posible. La fecha la decide Sergio Urcullo. |
+| Noches del 3 y el 4-nov | Plantillas de edición, guía de guiones, investigación del embudo y conexión de n8n. Los agentes pueden trabajar de noche, sin Sergio. |
+| Noche del 4-nov | Sergio Urcullo une la cuenta de Instagram a la página de Onia (requisito de abajo). |
+| 5-nov, noche del 6 y 7-nov | Grabar en bloque. Si se usa Higgsfield para planos y elementos de IA, son generaciones pagas, cada una con su sí (`AGENTS.md`, "Frenos"). |
+| Desde el 6-nov | Publicar 3 videos por día, sin anuncios. Cada publicación, con su sí. |
+| 8-nov | Probar el embudo de punta a punta. |
+| Lunes 9-nov | Lanzamiento. Codex sigue hasta el 14 para arreglos. Anuncios pagos solo con las primeras ventas y con su sí. |
+
+Reemplaza una propuesta anterior, con lanzamiento el 16-nov, que Sergio Urcullo encontró "muy lejos" (3-nov, sin enlace). La fecha del taller la decide él.
 
 Requisito, según el coordinador del proyecto Onia: la cuenta de Instagram tiene que ser profesional y estar unida a la página de Facebook de Onia. El cambio de cuenta y la unión los hace Sergio Urcullo.
+
+## Cómo organizar el trabajo (propuesta, sin aprobar)
+
+Se le propuso el 3-nov: tareas cortas, cada una con un solo entregable, en vez de una sesión fija por área. Al terminar una se abre la siguiente, y nunca hay más de 2 o 3 a la vez. Las áreas siguen como carpetas del repo y como etiqueta de cada tarea. Esto cambia "Equipo de agentes" del `AGENTS.md`, así que hasta que Sergio Urcullo lo apruebe vale lo que dice ese archivo.
 
 ## 4. Cambios abiertos al 3-nov
 
