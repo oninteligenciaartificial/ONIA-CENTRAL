@@ -12,6 +12,7 @@ Para llevar un issue de GitHub de punta a punta, hasta el PR y el merge, se usa 
 ## Frenos
 
 - Rigen los frenos y la lista "Lo aprueba Sergio Urcullo, siempre" del `AGENTS.md`. Se leen ahí y no se copian acá.
+- **Cada encargo es una sola tarea, de unos 30 minutos como mucho,** como dice el `AGENTS.md`. Si no entra, se parte en varios.
 - **Quien recibe el encargo no hace commit, push, merge ni deploy, y no publica ni envía nada.** Eso lo hace la sesión del área, por PR, después de revisar el resultado.
 - **Nunca** se usan `danger-full-access`, `--dangerously-bypass-approvals-and-sandbox` ni `--yolo`.
 - **La ficha no lleva secretos ni datos de clientes.** Si la tarea los necesita, no se encarga.
@@ -45,7 +46,7 @@ Para llevar un issue de GitHub de punta a punta, hasta el PR y el merge, se usa 
    Fuente de las opciones `--sandbox`, `--json`, `-o`, `--ephemeral` y `-`: [modo no interactivo de Codex](https://learn.chatgpt.com/docs/non-interactive-mode). Va sin `-p <área>`: ese perfil trae el navegador del área, que ya usa la sesión, y cada perfil lo usa una sola sesión a la vez (`AGENTS.md`). El encargo no usa el navegador.
 4. **Leer lo que devolvió,** con los controles de "Cómo se lee lo que devuelven", de `llevar-issue`: código de salida 0 y `resultado.md` no vacío; con `--json`, además, al menos un `turn.completed` y ningún `turn.failed` ni `error` en `uso.jsonl`. Con `workspace-write`, además, `git status --porcelain` en el worktree, que muestra también los archivos nuevos: tiene que tocar solo los de la ficha.
 5. **Revisar contra la ficha:** se cumple cada punto de "Terminado cuando", los datos tienen fuente y no aparecen secretos ni datos de clientes. Si falta algo, se lanza un encargo nuevo con una ficha corregida que dice qué faltó. No se sigue la conversación del encargo anterior.
-6. **Revisión independiente,** si el resultado va a un PR: la pide el `AGENTS.md`, y la hace otro Codex nuevo en solo lectura, con una ficha de revisión que lleva el encargo, el cambio y la evidencia, sin el razonamiento del autor.
+6. **Revisión independiente, una sola,** si el resultado va a un PR: la pide el `AGENTS.md` ("Una sola revisión escrita en cada PR"), y la hace otro Codex nuevo en solo lectura, con una ficha de revisión que lleva el encargo, el cambio y la evidencia, sin el razonamiento del autor.
 7. **Anotar en el estado del área** qué se encargó, dónde quedó el resultado y qué sigue. Si Sergio Urcullo corrigió algo durante la tarea, la corrección se anota en el estado en ese mismo momento, para que el próximo encargo la lleve.
 
 ## Plantilla de la ficha

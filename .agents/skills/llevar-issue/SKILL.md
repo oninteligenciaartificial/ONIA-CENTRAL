@@ -283,7 +283,7 @@ Créditos extra: apagados, según Sergio Urcullo en el #30 (enlace). No dicen cu
          - que los archivos entren en "Lo mergea Claude sin preguntar" o, si es reservado, que haya un comentario que cite con sus palabras la aprobación de Sergio Urcullo y cubra todo lo reservado. El pedido de llevar el issue no es esa aprobación;
          - que el comentario "Revisión" tenga `Veredicto: aprobar` y nombre ese SHA, o que haya un comentario "Arreglo" que lo nombre;
          - que sea mergeable;
-         - que se vieron todos los comentarios: si falta una revisión numerada o la lista parece cortada, que los relea con `gh pr view <PR> --comments`, y si sigue faltando, que no mergee;
+         - que se vieron todos los comentarios: si la lista parece cortada, que los relea con `gh pr view <PR> --comments`, y si sigue faltando, que no mergee;
        - con `gh pr diff <PR>`: que el contenido no haga nada reservado, aunque esté en `docs/` o en `.agents/skills/`; o, si es reservado, que todo lo reservado esté cubierto por la aprobación citada de Sergio Urcullo;
      - que, si todo se cumple, mergee con el comando permitido, que solo mergea ese SHA, enviándolo literalmente: sin anteponer `cd`, ni sumar `&&`, `; echo`, tuberías o sufijos; `workdir` ya fija la carpeta y la herramienta devuelve el código de salida;
      - que, si algo falla, no mergee y diga qué falló.
