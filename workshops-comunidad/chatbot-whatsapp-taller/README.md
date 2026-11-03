@@ -1,6 +1,6 @@
 # Bot del taller por WhatsApp (n8n + Chatwoot)
 
-3-nov-2026. Arma lo que decidió Sergio Urcullo ese día: el bot contesta en el +591 75414930, que está conectado por la API ("es un número que está conectado mediante API… quiero que lo uses ese", hilo "Planear el chatbot de WhatsApp en n8n", 13:47 UTC). El porqué de cada elección está en el [plan](plan.md).
+3-nov-2026. Es la opción A del plan (el bot), recomendada y pendiente del sí de Sergio Urcullo. Usa el número que él confirmó ese día, el +591 75414930, que está conectado por la API ("es un número que está conectado mediante API… quiero que lo uses ese", hilo "Planear el chatbot de WhatsApp en n8n", 13:47 UTC). El porqué de cada elección está en el [plan](plan.md).
 
 **Todavía no manda nada.** El flujo se importa **apagado** y en **modo prueba**. Cargarlo en el n8n del VPS y enchufarlo a Chatwoot es producción: pide el sí de Sergio Urcullo.
 
