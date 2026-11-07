@@ -1,5 +1,7 @@
 # Plan para aprender IA y agentes
 
+> **Hermes es historia desde el 31-oct-2026,** y el 1-nov ya no estaba en la PC (`AGENTS.md`, "Hermes y Grok Bot: historia"). Ningún ejercicio corre `hermes`: los que lo hacían ahora usan Claude Code o Codex. Lo demás que el plan cuenta de Hermes (lo que ya viste, las lecturas y las tablas que lo comparan) queda como ejemplo de un agente que se usó; no hace falta tenerlo instalado.
+
 Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.com/oninteligenciaartificial/ONIA-CENTRAL/issues/8). Arranca el lunes 2-nov-2026.
 
 **Para qué:** entender qué hacen por dentro Claude Code, Codex y Hermes, y poder hacer a mano lo básico, sin IA: moverte en la terminal, usar git, revisar un PR y leer lo que devuelve una API. No hace falta programar.
@@ -25,7 +27,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 ## Para practicar sin riesgo
 
 - Ningún ejercicio gasta plata ni pide claves nuevas.
-- Los comandos `hermes` se corren en una PowerShell abierta desde el menú Inicio, nunca en la terminal de la app de Claude: desde ahí escriben en una copia escondida.
+- Ningún ejercicio corre `hermes`: ver el aviso del inicio.
 - Los ejercicios de git se hacen en una carpeta de práctica, `C:\dev\practica-git`, no en ONIA-CENTRAL. En ONIA-CENTRAL solo se mira.
 - Donde dice "solo mirar", no se cambia nada.
 - Ningún secreto va al chat ni a un archivo, tampoco para practicar.
@@ -61,7 +63,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Ejercicio:**
 1. Pedile a Claude Code, en ONIA-CENTRAL: "¿cuál fue el último commit y qué hay en la carpeta `otros/`?". Para contestar tiene que usar herramientas. Anotá en papel cada paso: qué herramienta pidió, qué aprobaste y qué volvió.
-2. Repetilo con Hermes. En una PowerShell abierta desde Inicio, pegá `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes --tui`. La primera parte lo abre en ONIA-CENTRAL, para que lea el `AGENTS.md`. Compará los dos papeles.
+2. Repetilo con Codex, abierto en ONIA-CENTRAL para que lea el `AGENTS.md`. Compará los dos papeles.
 
 **Si te sobra tiempo:**
 - [Building effective AI agents](https://www.anthropic.com/research/building-effective-agents), Anthropic, dic-2024. Hasta "When (and when not) to use agents": flujo fijo o agente.
@@ -109,8 +111,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Ejercicio:**
 1. En una sesión de Claude Code, escribí `/context` y anotá qué ocupa más lugar.
-2. En una PowerShell abierta desde Inicio, corré `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes prompt-size` y compará: qué carga Hermes antes de que le escribas nada.
-3. Escribí en una frase por qué conviene una sesión nueva para cada objetivo.
+2. Escribí en una frase por qué conviene una sesión nueva para cada objetivo.
 
 **Si te sobra tiempo:**
 - [Ventanas de contexto](https://platform.claude.com/docs/es/build-with-claude/context-windows), docs de la API de Claude, en español.
@@ -118,19 +119,19 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 - [Context Compression and Caching](https://hermes-agent.nousresearch.com/docs/developer-guide/context-compression-and-caching), docs de Hermes.
 - Paper: [Lost in the Middle](https://arxiv.org/abs/2307.03172) (2023), solo el resumen y la primera figura.
 
-**Lo tenés cuando:** podés decir qué llena la ventana de tu Hermes y por qué una sesión larga empieza a fallar.
+**Lo tenés cuando:** podés decir qué llena la ventana de tu sesión de Claude Code y por qué una sesión larga empieza a fallar.
 
 ### 4. La terminal: PowerShell
 
 **Ya lo viste:** los comandos que te preparan los agentes para pegar en una PowerShell abierta desde Inicio.
 
-**Qué vas a entender:** la carpeta actual y las rutas; qué es un comando, sus argumentos y sus opciones; las variables de entorno y el `PATH`, que es por qué `hermes` anda desde cualquier carpeta; la codificación de un archivo; por qué un comando que baja y corre un script de internet (`irm … | iex`) pide más cuidado que uno que solo lee.
+**Qué vas a entender:** la carpeta actual y las rutas; qué es un comando, sus argumentos y sus opciones; las variables de entorno y el `PATH`, que es por qué `codex` anda desde cualquier carpeta; la codificación de un archivo; por qué un comando que baja y corre un script de internet (`irm … | iex`) pide más cuidado que uno que solo lee.
 
 **Lo básico:**
 - PowerShell 101, Microsoft Learn, en español: [Introducción a PowerShell](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/01-getting-started?view=powershell-5.1) y [Detección de objetos, propiedades y métodos](https://learn.microsoft.com/es-es/powershell/scripting/learn/ps101/03-discovering-objects?view=powershell-5.1). Saltá los pasos que piden abrir PowerShell como administrador o correr `Set-ExecutionPolicy` o `Update-Help`: cambian el sistema y no hacen falta.
 
 **Ejercicio:**
-1. Corré, de a uno, y anotá qué hace cada uno: `Get-Location`, `Set-Location C:\dev\proyectos\ONIA-CENTRAL`, `Get-ChildItem`, `Get-Content AGENTS.md -TotalCount 10 -Encoding UTF8`, `Get-Command hermes -All` y `$env:PATH -split ';'`.
+1. Corré, de a uno, y anotá qué hace cada uno: `Get-Location`, `Set-Location C:\dev\proyectos\ONIA-CENTRAL`, `Get-ChildItem`, `Get-Content AGENTS.md -TotalCount 10 -Encoding UTF8`, `Get-Command codex -All` y `$env:PATH -split ';'`.
 2. Probá el `Get-Content` sin `-Encoding UTF8` y mirá cómo salen los acentos. Un archivo es una fila de números, y la codificación dice qué letra es cada uno. PowerShell 5.1 no adivina UTF-8.
 3. Con `Get-Help Get-ChildItem -Online`, abrí la ayuda oficial de un comando sin preguntarle a nadie.
 4. Tomá un comando largo de `docs/decisiones/2026-10-28-hermes-oficial.md` y, sin correrlo, explicá en papel cada parte.
@@ -215,7 +216,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 
 **Ejercicio:**
 1. Elegí un conector y leé la lista de sus herramientas con sus descripciones. Marcá cuáles solo leen y cuáles cambian algo.
-2. Con `Set-Location C:\dev\proyectos\ONIA-CENTRAL; hermes prompt-size`, contá cuántas herramientas ve el modelo de Hermes.
+2. En Claude Code, escribí `/mcp`, elegí ese conector y contá cuántas herramientas tiene.
 
 **Si te sobra tiempo:**
 - [Architecture overview](https://modelcontextprotocol.io/docs/learn/architecture), docs de MCP.
@@ -237,9 +238,8 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 - [Sandbox and approvals](https://learn.chatgpt.com/docs/agent-approvals-security#sandbox-and-approvals), docs de Codex. Solo esa sección.
 
 **Ejercicio:**
-1. Solo mirar: leé tu lista de bloqueos con `hermes config get approvals.deny` y comprobá con `hermes config get command_allowlist` que la otra lista está vacía.
-2. Compará en una tabla los modos de Codex y los de Claude Code: qué puede hacer el agente sin preguntarte en cada uno.
-3. Escribí en una frase por qué a una aprobación de Hermes se contesta "once" y no "always".
+1. Compará en una tabla los modos de Codex y los de Claude Code: qué puede hacer el agente sin preguntarte en cada uno.
+2. Escribí en una frase por qué a una aprobación de Hermes se contesta "once" y no "always".
 
 **Si te sobra tiempo:**
 - [Configurar permisos](https://code.claude.com/docs/es/permissions) entera y [Seguridad](https://code.claude.com/docs/es/security), docs de Claude Code, en español.
@@ -315,7 +315,7 @@ Para Sergio Urcullo. Lo pidió el 28-oct-2026 en el [issue #8](https://github.co
 - [Building effective AI agents](https://www.anthropic.com/research/building-effective-agents), Anthropic, otra vez: ahora la parte de los patrones.
 
 **Ejercicio:**
-1. Dibujá en papel cómo está armado ONIA hoy: Hermes, `claude -p`, `codex exec`, qué ve cada uno, quién aprueba y dónde queda el resultado.
+1. Dibujá en papel cómo está armado ONIA hoy: los tres proyectos, cada uno con su jefe en Claude o en Codex (`AGENTS.md`, "Equipo de agentes"), qué ve cada uno, quién aprueba y dónde queda el resultado.
 2. Ubicá cada patrón en algo que ya hiciste. Por ejemplo, la revisión independiente es un evaluador.
 3. Marcá en el dibujo dónde se podría romper y qué lo frenaría.
 
@@ -347,7 +347,7 @@ Sin IA, vas a poder:
 
 ## Cómo lo usan los agentes
 
-El `AGENTS.md` les pide a Claude Code, Codex y Hermes que lean este archivo al empezar cada sesión con Sergio Urcullo y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
+El `AGENTS.md` les pide a Claude Code y a Codex que lean este archivo al empezar cada sesión con Sergio Urcullo y que cierren cada respuesta a Sergio Urcullo con un bloque corto, "Para aprender". Reglas para ese bloque:
 
 - **Qué tema:** el de "Tema actual", arriba de todo. Antes del 2-nov, el 1. En la semana de repaso, cualquiera del 1 al 3. En las semanas libres, nada nuevo: una idea de lo ya visto. Si Sergio Urcullo dice en la conversación en qué tema está, vale eso para esa sesión.
 - **Otro tema:** si lo que hizo el agente se conecta mejor con un tema anterior, puede usar ese. De un tema que todavía no vio, solo la idea en palabras simples, sin jerga.
